@@ -60,6 +60,8 @@ NAV = [
 
 DISCORD = "https://discord.gg/aP4JZMavxB"
 DISCORD_PATH = re.search(r'd="([^"]+)"', (ROOT / "assets" / "discord.svg").read_text()).group(1)
+LIBERAPAY = "https://liberapay.com/DokT/donate"
+LIBERAPAY_PATH = re.search(r'd="([^"]+)"', (ROOT / "assets" / "liberapay.svg").read_text()).group(1)
 
 
 def bar(page: str, up: str) -> str:
@@ -75,6 +77,7 @@ def bar(page: str, up: str) -> str:
     <nav id="nav" aria-label="Sections">
       {nav}
     </nav>
+    <a class="liberapay-link" href="{LIBERAPAY}" rel="noopener" title="Liberapay"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="{LIBERAPAY_PATH}"/></svg><span class="sr"><span lang="en">Donate (Liberapay)</span><span lang="fr">Faire un don (Liberapay)</span></span></a>
     <a class="discord-link" href="{DISCORD}" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="{DISCORD_PATH}"/></svg><span class="sr">Discord</span></a>
     <div class="lang" role="group" aria-label="Language / Langue">
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -91,7 +94,7 @@ def foot(up: str) -> str:
   <div class="wrap">
     <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
     <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
-    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="{DISCORD}">Discord</a> · <a href="{up}docs.html">Docs</a> · <a href="{up}tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="{up}developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="{DISCORD}">Discord</a> · <a href="{LIBERAPAY}"><span lang="en">Donate</span><span lang="fr">Faire un don</span></a> · <a href="{up}docs.html">Docs</a> · <a href="{up}tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="{up}developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
   </div>
 </footer>
 
@@ -115,6 +118,7 @@ def expand(text: str, page: str) -> str:
     text = re.sub(r"\{\{head:(.*?)\}\}", head, text, flags=re.S)
     text = re.sub(r"\{\{bar:(.*?)\}\}", lambda m: bar(m.group(1).strip(), up), text)
     text = text.replace("{{foot}}", foot(up)).replace("{{discord_path}}", DISCORD_PATH)
+    text = text.replace("{{liberapay_path}}", LIBERAPAY_PATH)
     text = INLINE.sub(r'<span lang="en">\1</span><span lang="fr">\2</span>', text)
     while True:
         new = BLOCK.sub(lambda m: f'<{m.group(1)}{m.group(2)}{m.group(3)}><span lang="en">{m.group(4)}</span>'

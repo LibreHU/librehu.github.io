@@ -42,3 +42,9 @@ before drawing: the saved choice (`localStorage`), else the browser's first Fren
 The top bar links to the official server (<https://discord.gg/aP4JZMavxB>); the home page shows its member and online
 counts, read from Discord's public invite API in the browser. The server's own widget is disabled on Discord's side:
 enabling it (Server settings → Widget) would allow an embedded member list.
+
+## Donations / Dons
+
+The top bar (Liberapay icon), the home page (« Support the project » card, `#donate`) and the footer link to
+<https://liberapay.com/DokT/donate>; the card shows the patron count as a Shields.io badge. No third-party script is
+loaded (Liberapay's own widgets need JavaScript from liberapay.com). Logo: `assets/liberapay.svg` (Simple Icons, CC0).

@@ -190,10 +190,14 @@ pre code { background: none; padding: 0; font-size: inherit; }
   .toc details:not([open]) ol { display: none; }
 }
 
-/* Discord link, mobile menu, screen-reader text */
+/* Discord and Liberapay links, mobile menu, screen-reader text */
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .discord-link { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: #5865F2; flex: none; }
 .discord-link:hover { background: var(--surface-2); }
+/* Liberapay: its yellow square with the dark "lp" cut out, as the official logo */
+.liberapay-link { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: #1A171B; flex: none; }
+.liberapay-link svg { background: #F6C915; border-radius: 4px; }
+.liberapay-link:hover { background: var(--surface-2); }
 .menu { display: none; border: 0; background: transparent; color: var(--text); width: 40px; height: 40px; border-radius: 10px; padding: 8px; cursor: pointer; flex: none; }
 .menu:hover { background: var(--surface-2); }
 @media (max-width: 960px) {
@@ -205,7 +209,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
   }
   .bar nav.open { display: flex; }
   .bar nav a { padding: 10px 12px; border-radius: 10px; font-size: 16px; }
-  .discord-link { margin-left: auto; }
+  .liberapay-link { margin-left: auto; }
   .lang { margin-left: 0; }
   .menu { display: block; }
 }
@@ -216,6 +220,10 @@ pre code { background: none; padding: 0; font-size: inherit; }
 .community p { margin: 0; color: var(--text-dim); }
 .community .count { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
 .btn.discord { background: #5865F2; border-color: #5865F2; color: #fff; }
+.community + .community { margin-top: 16px; }
+.community.support svg { color: #1A171B; background: #F6C915; border-radius: 10px; }
+.btn.liberapay { background: #F6C915; border-color: #F6C915; color: #1A171B; }
+.community .badge { display: block; margin-top: 8px; height: 20px; width: auto; }
 /* Small screens: tighter hero and tables */
 @media (max-width: 600px) {
   .hero { padding: 36px 0 24px; }

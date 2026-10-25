@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutorials – LibreHU</title>
+<meta name="title-en" content="Tutorials – LibreHU">
+<meta name="title-fr" content="Tutos – LibreHU">
+<meta name="description" content="Step-by-step tutorials for LibreHU: install, root, TWRP, kernel, phone app, reverse camera, OBD, steering wheel keys, CAN, Android Auto, CarPlay, styles, backups, porting and building.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="tutorials.html" aria-current="page"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="screenshots/index.html"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap doc">
+<aside class="toc">
+  <details open>
+    <summary><span lang="en">Tutorials</span><span lang="fr">Tutos</span></summary>
+    <ol>
+      <li><a href="#start"><span lang="en">Getting started</span><span lang="fr">Premiers pas</span></a>
+        <ol>
+          <li><a href="#t-first">1. <span lang="en">First install</span><span lang="fr">Première installation</span></a></li>
+          <li><a href="#t-service">2. <span lang="en">Switch to LibreHU service</span><span lang="fr">Passer à LibreHU service</span></a></li>
+          <li><a href="#t-offline">3. <span lang="en">Install offline</span><span lang="fr">Installer hors ligne</span></a></li>
+          <li><a href="#t-generic">4. <span lang="en">Another Android device</span><span lang="fr">Un autre appareil Android</span></a></li>
+        </ol></li>
+      <li><a href="#system"><span lang="en">System</span><span lang="fr">Système</span></a>
+        <ol>
+          <li><a href="#t-backup">5. <span lang="en">Back up the eMMC</span><span lang="fr">Sauvegarder l'eMMC</span></a></li>
+          <li><a href="#t-twrp">6. <span lang="en">Install TWRP</span><span lang="fr">Installer TWRP</span></a></li>
+          <li><a href="#t-kernel">7. <span lang="en">Install the LibreHU kernel</span><span lang="fr">Installer le noyau LibreHU</span></a></li>
+          <li><a href="#t-ksu">8. <span lang="en">Root with KernelSU Next</span><span lang="fr">Root avec KernelSU Next</span></a></li>
+          <li><a href="#t-rootall">9. <span lang="en">Root for every app at once</span><span lang="fr">Root pour toutes les applis</span></a></li>
+          <li><a href="#t-tweaks">10. <span lang="en">Faster with Tweaks</span><span lang="fr">Plus rapide avec Tweaks</span></a></li>
+          <li><a href="#t-standby">11. <span lang="en">Standby after ignition off</span><span lang="fr">Veille à la coupure du contact</span></a></li>
+          <li><a href="#t-settings-backup">12. <span lang="en">Back up the settings</span><span lang="fr">Sauvegarder les réglages</span></a></li>
+        </ol></li>
+      <li><a href="#phone"><span lang="en">Phone</span><span lang="fr">Téléphone</span></a>
+        <ol>
+          <li><a href="#t-pair">13. <span lang="en">Pair the phone app</span><span lang="fr">Associer l'appli téléphone</span></a></li>
+          <li><a href="#t-iphone">14. <span lang="en">iPhone app</span><span lang="fr">Appli iPhone</span></a></li>
+          <li><a href="#t-aa-phone">15. <span lang="en">Phone app in Android Auto</span><span lang="fr">L'appli téléphone dans Android Auto</span></a></li>
+          <li><a href="#t-bt">16. <span lang="en">Bluetooth calls and music</span><span lang="fr">Appels et musique Bluetooth</span></a></li>
+        </ol></li>
+      <li><a href="#car"><span lang="en">Car</span><span lang="fr">Voiture</span></a>
+        <ol>
+          <li><a href="#t-reverse">17. <span lang="en">Rear view camera</span><span lang="fr">Caméra de recul</span></a></li>
+          <li><a href="#t-cameras">18. <span lang="en">Extra cameras</span><span lang="fr">Caméras en plus</span></a></li>
+          <li><a href="#t-obd">19. <span lang="en">OBD adapter</span><span lang="fr">Adaptateur OBD</span></a></li>
+          <li><a href="#t-battery">20. <span lang="en">Car battery alarms</span><span lang="fr">Alarmes de batterie</span></a></li>
+          <li><a href="#t-ddt">21. <span lang="en">Manufacturer values (ddt4all)</span><span lang="fr">Valeurs constructeur (ddt4all)</span></a></li>
+          <li><a href="#t-wheel">22. <span lang="en">Steering wheel buttons</span><span lang="fr">Boutons du volant</span></a></li>
+          <li><a href="#t-can">23. <span lang="en">CAN profile for a new car</span><span lang="fr">Profil CAN d'une nouvelle voiture</span></a></li>
+          <li><a href="#t-tpms">24. <span lang="en">Tyre pressure (TPMS)</span><span lang="fr">Pression des pneus (TPMS)</span></a></li>
+          <li><a href="#t-touch">25. <span lang="en">Calibrate the touch screen</span><span lang="fr">Calibrer l'écran tactile</span></a></li>
+          <li><a href="#t-frontkeys">26. <span lang="en">Front panel touch keys</span><span lang="fr">Touches tactiles de façade</span></a></li>
+        </ol></li>
+      <li><a href="#media"><span lang="en">Media and projection</span><span lang="fr">Médias et projection</span></a>
+        <ol>
+          <li><a href="#t-fm">27. <span lang="en">FM radio</span><span lang="fr">Radio FM</span></a></li>
+          <li><a href="#t-source">28. <span lang="en">MODE / SRC key</span><span lang="fr">Touche MODE / SRC</span></a></li>
+          <li><a href="#t-viper">29. ViPER4Android</a></li>
+          <li><a href="#t-disc">30. <span lang="en">CD and DVD</span><span lang="fr">CD et DVD</span></a></li>
+          <li><a href="#t-aa">31. Android Auto</a></li>
+          <li><a href="#t-carplay">32. CarPlay</a></li>
+          <li><a href="#t-aux">33. <span lang="en">AUX input</span><span lang="fr">Entrée AUX</span></a></li>
+        </ol></li>
+      <li><a href="#look"><span lang="en">Look</span><span lang="fr">Apparence</span></a>
+        <ol>
+          <li><a href="#t-retro">34. <span lang="en">Retro car stereo style</span><span lang="fr">Style autoradio rétro</span></a></li>
+          <li><a href="#t-wallpaper">35. <span lang="en">Animated wallpapers</span><span lang="fr">Fonds animés</span></a></li>
+          <li><a href="#t-widgets">36. <span lang="en">Widgets and layout</span><span lang="fr">Widgets et disposition</span></a></li>
+          <li><a href="#t-clock">37. <span lang="en">Standby clock</span><span lang="fr">Horloge de veille</span></a></li>
+          <li><a href="#t-night">38. <span lang="en">Night mode from the headlights</span><span lang="fr">Mode nuit selon les phares</span></a></li>
+        </ol></li>
+      <li><a href="#help"><span lang="en">Help and development</span><span lang="fr">Aide et développement</span></a>
+        <ol>
+          <li><a href="#t-logs">39. <span lang="en">Report a bug</span><span lang="fr">Signaler un bug</span></a></li>
+          <li><a href="#t-hang">40. <span lang="en">When Android hangs</span><span lang="fr">Quand Android est bloqué</span></a></li>
+          <li><a href="#t-port">41. <span lang="en">Help port LibreHU</span><span lang="fr">Aider au portage</span></a></li>
+          <li><a href="#t-mcuprofile">42. <span lang="en">Write an MCU profile</span><span lang="fr">Écrire un profil MCU</span></a></li>
+          <li><a href="#t-api">43. <span lang="en">Use the service from an app</span><span lang="fr">Utiliser le service depuis une appli</span></a></li>
+          <li><a href="#t-buildapp">44. <span lang="en">Build an app</span><span lang="fr">Compiler une appli</span></a></li>
+          <li><a href="#t-buildkernel">45. <span lang="en">Build the kernel</span><span lang="fr">Compiler le noyau</span></a></li>
+        </ol></li>
+    </ol>
+  </details>
+</aside>
+
+<article>
+<h1><span lang="en">Tutorials</span><span lang="fr">Tutos</span></h1>
+<p class="lead"><span lang="en">Step by step, from the first install to building the kernel. Paths are those of the French interface translated; menus are named the same in both languages of the apps. Something missing or wrong? Ask on <a href="https://discord.gg/aP4JZMavxB">Discord</a>.</span><span lang="fr">Pas à pas, de la première installation à la compilation du noyau. Une étape manque ou est fausse ? Demandez sur <a href="https://discord.gg/aP4JZMavxB">Discord</a>.</span></p>
+
+<h2 id="start"><span lang="en">Getting started</span><span lang="fr">Premiers pas</span></h2>
+
+<h3 id="t-first"><span lang="en">1. First install (stock ROM)</span><span lang="fr">1. Première installation (ROM d'origine)</span></h3>
+<ol class="steps">
+  <li><span lang="en">On a PC, download <a href="https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk">LibreHU-OTA-main.apk</a> and copy it to a FAT32 USB stick.</span><span lang="fr">Sur un PC, télécharger <a href="https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk">LibreHU-OTA-main.apk</a> et le copier sur une clé USB en FAT32.</span></li>
+  <li><span lang="en">Plug the stick into the head unit, open it in the file manager, tap the APK, allow "install unknown apps" for the file manager.</span><span lang="fr">Brancher la clé sur l'autoradio, l'ouvrir dans le gestionnaire de fichiers, toucher l'APK, autoriser « installer des applis inconnues » pour le gestionnaire.</span></li>
+  <li><span lang="en">Open <strong>LibreHU Apps</strong>. Quick setup: choose <strong>ivi</strong> (Jancar's ivi-services kept) for a first try, allow root if asked, keep the ticked apps, Install.</span><span lang="fr">Ouvrir <strong>LibreHU Apps</strong>. Configuration rapide : choisir <strong>ivi</strong> (ivi-services de Jancar gardé) pour un premier essai, autoriser le root si demandé, garder les applis cochées, Installer.</span></li>
+  <li><span lang="en">Press Home, choose <strong>LibreHU Launcher</strong> → Always, then follow its assistant.</span><span lang="fr">Appuyer sur Accueil, choisir <strong>LibreHU Launcher</strong> → Toujours, puis suivre son assistant.</span></li>
+</ol>
+
+<h3 id="t-service"><span lang="en">2. Switch to LibreHU service</span><span lang="fr">2. Passer à LibreHU service</span></h3>
+<ol class="steps">
+  <li><span lang="en">In LibreHU Apps → Settings → Edition, choose <strong>LibreHU service</strong>; install <strong>LibreHU service</strong> and update the apps to that edition.</span><span lang="fr">Dans LibreHU Apps → Réglages → Édition, choisir <strong>LibreHU service</strong> ; installer <strong>LibreHU service</strong> et mettre les applis à jour dans cette édition.</span></li>
+  <li><span lang="en">Disable Jancar's service from a PC (USB debugging on): <code>adb shell pm disable-user --user 0 com.jancar.services</code>.</span><span lang="fr">Désactiver le service de Jancar depuis un PC (débogage USB actif) : <code>adb shell pm disable-user --user 0 com.jancar.services</code>.</span></li>
+  <li><span lang="en">Open LibreHU service: Home must show the link <code>RUNNING</code> and the MCU version. Grant root with "remember".</span><span lang="fr">Ouvrir LibreHU service : l'accueil doit montrer la liaison <code>RUNNING</code> et la version de la MCU. Accorder le root avec « se souvenir ».</span></li>
+  <li><span lang="en">Go back any time: <code>adb shell pm enable com.jancar.services</code> and the ivi edition.</span><span lang="fr">Retour possible à tout moment : <code>adb shell pm enable com.jancar.services</code> et l'édition ivi.</span></li>
+</ol>
+
+<h3 id="t-offline"><span lang="en">3. Install or update without Internet</span><span lang="fr">3. Installer ou mettre à jour sans Internet</span></h3>
+<ol class="steps">
+  <li><span lang="en">On a PC, download the APKs (and zips) from the <a href="index.html#download">download table</a> onto a USB stick.</span><span lang="fr">Sur un PC, télécharger les APK (et zips) depuis le <a href="index.html#download">tableau de téléchargement</a> sur une clé USB.</span></li>
+  <li><span lang="en">LibreHU Apps → Settings → <strong>USB stick (offline)</strong>: pick the files. APKs must carry the LibreHU key; images and zips must match a SHA-256 of the last list received online.</span><span lang="fr">LibreHU Apps → Réglages → <strong>Clé USB (hors ligne)</strong> : choisir les fichiers. Les APK doivent porter la clé LibreHU ; images et zips doivent correspondre à un SHA-256 de la dernière liste reçue en ligne.</span></li>
+</ol>
+
+<h3 id="t-generic"><span lang="en">4. LibreHU apps on another Android device</span><span lang="fr">4. Les applis LibreHU sur un autre appareil Android</span></h3>
+<p><span lang="en">On any Android 9+ device (tablet, other head unit), install the <strong>generic</strong> edition (<code>main</code> branch): launcher, dialer, widgets, BtnRemap, EasySource, Disc, OTA. Car data, MCU and audio chip functions stay empty without LibreHU service and the Jancar hardware.</span><span lang="fr">Sur tout appareil Android 9 ou plus (tablette, autre autoradio), installer l'édition <strong>générique</strong> (branche <code>main</code>) : launcher, téléphone, widgets, BtnRemap, EasySource, Disc, OTA. Les fonctions voiture, MCU et puce audio restent vides sans LibreHU service et le matériel Jancar.</span></p>
+
+<h2 id="system"><span lang="en">System</span><span lang="fr">Système</span></h2>
+
+<h3 id="t-backup"><span lang="en">5. Back up the eMMC (SP Flash Tool)</span><span lang="fr">5. Sauvegarder l'eMMC (SP Flash Tool)</span></h3>
+<ol class="steps">
+  <li><span lang="en">Install SP Flash Tool and the MediaTek USB VCOM driver on a Windows or Linux PC; load the unit's scatter file (<code>MT6761_Android_scatter.txt</code>).</span><span lang="fr">Installer SP Flash Tool et le pilote USB VCOM MediaTek sur un PC Windows ou Linux ; charger le fichier scatter de l'appareil (<code>MT6761_Android_scatter.txt</code>).</span></li>
+  <li><span lang="en">Readback tab: add one line per region, with the addresses of the <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo#installer">TWRP README</a> (preloader, user area up to cache, end of disk; userdata optional).</span><span lang="fr">Onglet Readback : ajouter une ligne par zone, avec les adresses du <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo#installer">README de TWRP</a> (preloader, zone utilisateur jusqu'au cache, fin de disque ; userdata en option).</span></li>
+  <li><span lang="en">Start Readback, then connect the powered-off unit by USB. Keep the files private: they contain your unit's calibration and identifiers.</span><span lang="fr">Lancer Readback, puis brancher l'autoradio éteint en USB. Garder les fichiers privés : ils contiennent la calibration et les identifiants de votre autoradio.</span></li>
+</ol>
+
+<h3 id="t-twrp"><span lang="en">6. Install TWRP</span><span lang="fr">6. Installer TWRP</span></h3>
+<ol class="steps">
+  <li><span lang="en"><strong>With root</strong>: LibreHU Apps → Zips → Recovery → <code>twrp-ujc201</code> (stable) or <code>-beta</code> (steering wheel and CAN box keys). The current recovery is saved in <code>/sdcard/LibreHU/backup</code>.</span><span lang="fr"><strong>Avec root</strong> : LibreHU Apps → Zips → Recovery → <code>twrp-ujc201</code> (stable) ou <code>-beta</code> (touches du volant et du boîtier CAN). Le recovery actuel est sauvegardé dans <code>/sdcard/LibreHU/backup</code>.</span></li>
+  <li><span lang="en"><strong>With a PC</strong>: <code>adb reboot bootloader</code>, <code>fastboot flash recovery twrp_ujc201.img</code> (from the <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/releases">releases</a>), <code>fastboot oem reboot-recovery</code>.</span><span lang="fr"><strong>Avec un PC</strong> : <code>adb reboot bootloader</code>, <code>fastboot flash recovery twrp_ujc201.img</code> (depuis les <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/releases">releases</a>), <code>fastboot oem reboot-recovery</code>.</span></li>
+  <li><span lang="en">Reach TWRP later from the phone app (Tools → reboot to recovery) or LibreHU service. Always flash the released image, never a raw build output.</span><span lang="fr">Revenir dans TWRP plus tard depuis l'appli téléphone (Outils → redémarrer en recovery) ou LibreHU service. Toujours flasher l'image des releases, jamais une sortie de build brute.</span></li>
+</ol>
+
+<h3 id="t-kernel"><span lang="en">7. Install the LibreHU kernel</span><span lang="fr">7. Installer le noyau LibreHU</span></h3>
+<ol class="steps">
+  <li><span lang="en">Make the eMMC backup first (tutorial 5).</span><span lang="fr">Faire d'abord la sauvegarde de l'eMMC (tuto 5).</span></li>
+  <li><span lang="en">LibreHU Apps → Zips → Kernel → <code>kernel-librehu</code>, or <code>kernel-librehu-bootmenu</code> for a TWRP / Android / Fastboot menu at boot. The current <code>boot</code> is saved first; the image is checked (fingerprint, header, AVB footer, size) then read back.</span><span lang="fr">LibreHU Apps → Zips → Noyau → <code>kernel-librehu</code>, ou <code>kernel-librehu-bootmenu</code> pour un menu TWRP / Android / Fastboot au démarrage. Le <code>boot</code> actuel est sauvegardé d'abord ; l'image est vérifiée (empreinte, en-tête, pied AVB, taille) puis relue.</span></li>
+  <li><span lang="en">Reboot. To go back, restore the saved <code>boot</code> image from TWRP.</span><span lang="fr">Redémarrer. Pour revenir en arrière, restaurer l'image <code>boot</code> sauvegardée depuis TWRP.</span></li>
+</ol>
+
+<h3 id="t-ksu"><span lang="en">8. Root with KernelSU Next</span><span lang="fr">8. Root avec KernelSU Next</span></h3>
+<ol class="steps">
+  <li><span lang="en">Install the LibreHU kernel (tutorial 7): it contains KernelSU Next.</span><span lang="fr">Installer le noyau LibreHU (tuto 7) : il contient KernelSU Next.</span></li>
+  <li><span lang="en">Install the <strong>KernelSU Next</strong> manager from LibreHU Apps (its signing key is checked against the catalogue).</span><span lang="fr">Installer le gestionnaire <strong>KernelSU Next</strong> depuis LibreHU Apps (sa clé de signature est vérifiée avec le catalogue).</span></li>
+  <li><span lang="en">In the manager, grant root to the LibreHU apps (Superuser list). Optional: remove the stock SuperSU with the <code>supersu-remove</code> zip.</span><span lang="fr">Dans le gestionnaire, accorder le root aux applis LibreHU (liste Superuser). En option : retirer le SuperSU d'origine avec le zip <code>supersu-remove</code>.</span></li>
+</ol>
+
+<h3 id="t-rootall"><span lang="en">9. Root for every LibreHU app at once</span><span lang="fr">9. Root pour toutes les applis LibreHU d'un coup</span></h3>
+<p><span lang="en">Launcher assistant (or Launcher settings → General → setup) → <strong>Allow root for every LibreHU app</strong>: each app asks in turn, so all prompts come together. Answer each with "remember". KernelSU grants from its manager: LibreHU checks again after 30 s.</span><span lang="fr">Assistant du launcher (ou Paramètres du launcher → Général → assistant) → <strong>Autoriser le root pour toutes les applis LibreHU</strong> : chaque appli demande à son tour, donc toutes les fenêtres arrivent ensemble. Répondre à chacune avec « se souvenir ». KernelSU accorde depuis son gestionnaire : LibreHU revérifie au bout de 30 s.</span></p>
+
+<h3 id="t-tweaks"><span lang="en">10. Make it faster with Tweaks</span><span lang="fr">10. Plus rapide avec Tweaks</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU service → System → <strong>Tweaks</strong>: <strong>Compile all now</strong> (native code for the LibreHU apps, once per version).</span><span lang="fr">LibreHU service → Système → <strong>Tweaks</strong> : <strong>Tout compiler maintenant</strong> (code natif pour les applis LibreHU, une fois par version).</span></li>
+  <li><span lang="en">Turn on <strong>CPU boost on touch</strong> for smoother scrolling (a bit more heat).</span><span lang="fr">Activer <strong>Accélérer le processeur au toucher</strong> pour un défilement plus fluide (un peu plus de chaleur).</span></li>
+  <li><span lang="en">Optional: per cluster governor and min / max frequency, GPU level. Test, then enable <strong>Apply at start-up</strong>: a start that does not survive 90 s after applying them skips them the next time.</span><span lang="fr">En option : gouverneur et fréquences min / max par groupe de cœurs, palier du GPU. Tester, puis activer <strong>Appliquer au démarrage</strong> : un démarrage qui ne tient pas 90 s après les avoir appliqués les saute la fois suivante.</span></li>
+</ol>
+
+<h3 id="t-standby"><span lang="en">11. Standby when the ignition goes off</span><span lang="fr">11. Veille à la coupure du contact</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU service → System → <strong>Standby</strong> card: set the <strong>delay</strong> (3 s default) so a starter dip does not cut the screen.</span><span lang="fr">LibreHU service → Système → carte <strong>Veille</strong> : régler le <strong>délai</strong> (3 s par défaut) pour qu'une baisse de tension au démarreur ne coupe pas l'écran.</span></li>
+  <li><span lang="en">Pick the mode: screen off (cold start next time), <strong>standby</strong> (fast wake, 7 h to 14 days, airplane mode and GPS off while sleeping) or shutdown.</span><span lang="fr">Choisir le mode : écran éteint (démarrage à froid la fois suivante), <strong>veille</strong> (réveil rapide, 7 h à 14 jours, mode avion et GPS coupés pendant la veille) ou extinction.</span></li>
+  <li><span lang="en">Measure the battery after a night in standby before relying on it (not yet validated on every car).</span><span lang="fr">Mesurer la batterie après une nuit en veille avant de s'y fier (pas encore validé sur toutes les voitures).</span></li>
+</ol>
+
+<h3 id="t-settings-backup"><span lang="en">12. Back up and restore the settings</span><span lang="fr">12. Sauvegarder et restaurer les réglages</span></h3>
+<p><span lang="en">LibreHU service → System → <strong>Backup</strong>: settings of every LibreHU app (and ViPER4Android, Open Headunit, CarPlay) go to a <code>.tar</code> in <code>Download/LibreHU</code>. Copy it to a USB stick before a reflash; restore from the same screen.</span><span lang="fr">LibreHU service → Système → <strong>Sauvegarde</strong> : les réglages de toutes les applis LibreHU (et ViPER4Android, Open Headunit, CarPlay) vont dans un <code>.tar</code> de <code>Download/LibreHU</code>. Le copier sur une clé USB avant un reflash ; restaurer depuis le même écran.</span></p>
+
+<h2 id="phone"><span lang="en">Phone</span><span lang="fr">Téléphone</span></h2>
+
+<h3 id="t-pair"><span lang="en">13. Pair the phone app</span><span lang="fr">13. Associer l'appli téléphone</span></h3>
+<ol class="steps">
+  <li><span lang="en">Install <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">LibreHU Bridge</a> on the phone.</span><span lang="fr">Installer <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">LibreHU Bridge</a> sur le téléphone.</span></li>
+  <li><span lang="en">Put phone and head unit on the same Wi-Fi (the phone's hotspot works).</span><span lang="fr">Mettre le téléphone et l'autoradio sur le même Wi-Fi (le point d'accès du téléphone convient).</span></li>
+  <li><span lang="en">On the head unit: launcher assistant, or LibreHU service → Bluetooth → Phone → <strong>LibreHU phone app</strong> → <strong>Pair a phone</strong>: a QR code shows for 5 minutes.</span><span lang="fr">Sur l'autoradio : assistant du launcher, ou LibreHU service → Bluetooth → Téléphone → <strong>Appli téléphone LibreHU</strong> → <strong>Associer un téléphone</strong> : un QR code s'affiche 5 minutes.</span></li>
+  <li><span lang="en">On the phone: <strong>Pair a head unit</strong> → <strong>QR code</strong>, scan. Or, phone already paired in Bluetooth: <strong>Bluetooth</strong>, pick the unit, accept on its screen.</span><span lang="fr">Sur le téléphone : <strong>Associer un autoradio</strong> → <strong>QR code</strong>, scanner. Ou, téléphone déjà appairé en Bluetooth : <strong>Bluetooth</strong>, choisir l'autoradio, accepter sur son écran.</span></li>
+</ol>
+
+<h3 id="t-iphone"><span lang="en">14. Install the iPhone app</span><span lang="fr">14. Installer l'appli iPhone</span></h3>
+<ol class="steps">
+  <li><span lang="en">Download the unsigned <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">LibreHU-iOS-main.ipa</a> (check its SHA-256 in <code>release-ios.txt</code>).</span><span lang="fr">Télécharger le <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">LibreHU-iOS-main.ipa</a> non signé (vérifier son SHA-256 dans <code>release-ios.txt</code>).</span></li>
+  <li><span lang="en">Install it with <a href="https://faq.altstore.io/">AltStore</a> or <a href="https://sideloadly.io/">Sideloadly</a> from a PC or Mac, signed with your Apple ID.</span><span lang="fr">L'installer avec <a href="https://faq.altstore.io/">AltStore</a> ou <a href="https://sideloadly.io/">Sideloadly</a> depuis un PC ou un Mac, signé avec votre identifiant Apple.</span></li>
+  <li><span lang="en">iPhone: Settings → Privacy &amp; Security → <strong>Developer Mode</strong> on; Settings → General → VPN &amp; Device Management → trust the profile.</span><span lang="fr">iPhone : Réglages → Confidentialité et sécurité → <strong>Mode développeur</strong> activé ; Réglages → Général → VPN et gestion de l'appareil → faire confiance au profil.</span></li>
+  <li><span lang="en">Allow camera and local network access, then pair by QR code (Wi-Fi only). With a free Apple ID, re-sign every 7 days (AltStore does it with AltServer on the same Wi-Fi).</span><span lang="fr">Autoriser la caméra et le réseau local, puis associer par QR code (Wi-Fi seulement). Avec un identifiant Apple gratuit, re-signer tous les 7 jours (AltStore le fait avec AltServer sur le même Wi-Fi).</span></li>
+</ol>
+
+<h3 id="t-aa-phone"><span lang="en">15. Show the phone app in Android Auto</span><span lang="fr">15. Afficher l'appli téléphone dans Android Auto</span></h3>
+<p><span lang="en">Android Auto lists Car App Library apps only when installed by a trusted store. With root on the phone: the app's <strong>Reinstall as Google Play</strong> button. Without root, from a PC, after uninstalling it: <code>adb install -r -i com.android.vending LibreHU-Bridge-main.apk</code>. Then Android Auto → Customise launcher → tick LibreHU. Pair again afterwards.</span><span lang="fr">Android Auto ne liste une appli Car App Library que si elle vient d'un store de confiance. Avec root sur le téléphone : bouton <strong>Réinstaller comme Google Play</strong> de l'appli. Sans root, depuis un PC, après l'avoir désinstallée : <code>adb install -r -i com.android.vending LibreHU-Bridge-main.apk</code>. Puis Android Auto → Personnaliser le lanceur → cocher LibreHU. Refaire l'association ensuite.</span></p>
+
+<h3 id="t-bt"><span lang="en">16. Bluetooth calls and music</span><span lang="fr">16. Appels et musique en Bluetooth</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU service → Bluetooth: on, visible, car name; pair the phone from the phone's Bluetooth settings.</span><span lang="fr">LibreHU service → Bluetooth : activé, visible, nom de la voiture ; appairer le téléphone depuis les réglages Bluetooth du téléphone.</span></li>
+  <li><span lang="en">Allow contacts and call log on the phone when asked (PBAP), then use <strong>LibreHU Dialer</strong> for calls; music plays through A2DP with track info.</span><span lang="fr">Autoriser contacts et journal d'appels sur le téléphone quand il le demande (PBAP), puis utiliser <strong>LibreHU Dialer</strong> pour les appels ; la musique passe en A2DP avec les infos du morceau.</span></li>
+  <li><span lang="en">Turn on reconnection and, if wanted, auto answer. Microphone gain and echo cancellation are in Audio.</span><span lang="fr">Activer la reconnexion et, si voulu, la réponse automatique. Gain du micro et annulation d'écho sont dans Audio.</span></li>
+</ol>
+
+<h2 id="car"><span lang="en">Car</span><span lang="fr">Voiture</span></h2>
+
+<h3 id="t-reverse"><span lang="en">17. Set up the rear view camera</span><span lang="fr">17. Régler la caméra de recul</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU service → Vehicle → <strong>Reverse</strong>: on, mode <strong>LibreHU view</strong>; allow the camera and "display over other apps".</span><span lang="fr">LibreHU service → Véhicule → <strong>Recul</strong> : activé, mode <strong>Vue LibreHU</strong> ; autoriser la caméra et « afficher par-dessus les autres applis ».</span></li>
+  <li><span lang="en">Set the <strong>camera format</strong> of your camera (CVBS PAL / NTSC, AHD 720p / 1080p) and the camera (automatic, or by role).</span><span lang="fr">Régler le <strong>format</strong> de votre caméra (CVBS PAL / NTSC, AHD 720p / 1080p) et la caméra (automatique, ou par rôle).</span></li>
+  <li><span lang="en">Open the <strong>preview</strong> (quarter screen): adjust mirror, flip, rotation, zoom, offsets, then the guide lines until they match the car.</span><span lang="fr">Ouvrir l'<strong>aperçu</strong> (quart d'écran) : régler miroir, retournement, rotation, zoom, décalages, puis les lignes de guidage jusqu'à ce qu'elles collent à la voiture.</span></li>
+  <li><span lang="en">Choose the engage sound, music lowered or paused, parking radar (CAN box), motion detection. Test with reverse gear.</span><span lang="fr">Choisir le son d'engagement, musique baissée ou en pause, radar de recul (boîtier CAN), détection de mouvement. Tester en marche arrière.</span></li>
+</ol>
+
+<h3 id="t-cameras"><span lang="en">18. Add extra cameras</span><span lang="fr">18. Ajouter des caméras</span></h3>
+<p><span lang="en">Reverse → extra cameras: up to three more (side, second rear, USB UVC camera), each mirrorable. Layout: <strong>one at a time</strong> (touch switches), <strong>side by side</strong> or <strong>picture in picture</strong>. The unit's camera service must accept several cameras at once, otherwise the extra one shows its error.</span><span lang="fr">Recul → caméras en plus : jusqu'à trois de plus (latérale, deuxième arrière, caméra USB UVC), chacune en miroir si besoin. Disposition : <strong>une à la fois</strong> (un toucher change), <strong>côte à côte</strong> ou <strong>incrustée</strong>. Le service caméra de l'autoradio doit accepter plusieurs caméras à la fois, sinon la caméra en plus affiche son erreur.</span></p>
+
+<h3 id="t-obd"><span lang="en">19. Connect an OBD adapter</span><span lang="fr">19. Brancher un adaptateur OBD</span></h3>
+<ol class="steps">
+  <li><span lang="en">Plug an ELM327 into the OBD socket (under the steering wheel on a Clio 3).</span><span lang="fr">Brancher un ELM327 sur la prise OBD (sous le volant sur une Clio 3).</span></li>
+  <li><span lang="en">Bluetooth adapter: pair it in Android first. USB adapter: plug it and allow USB access.</span><span lang="fr">Adaptateur Bluetooth : l'appairer d'abord dans Android. Adaptateur USB : le brancher et autoriser l'accès USB.</span></li>
+  <li><span lang="en">LibreHU service → Vehicle → <strong>OBD</strong>: on, choose the adapter; state goes to connected. Choose the values to read and those of the widget.</span><span lang="fr">LibreHU service → Véhicule → <strong>OBD</strong> : activé, choisir l'adaptateur ; l'état passe à connecté. Choisir les valeurs à lire et celles du widget.</span></li>
+  <li><span lang="en">Add the <strong>OBD</strong>, <strong>OBD gauges</strong> or <strong>digital OBD cluster</strong> widget in a launcher slot; read and clear fault codes from the same page.</span><span lang="fr">Ajouter le widget <strong>OBD</strong>, <strong>Compteurs OBD</strong> ou <strong>Combiné OBD numérique</strong> dans un emplacement du launcher ; lire et effacer les codes défaut depuis la même page.</span></li>
+</ol>
+
+<h3 id="t-battery"><span lang="en">20. Car battery monitoring</span><span lang="fr">20. Surveiller la batterie</span></h3>
+<p><span lang="en">With the OBD adapter connected, the battery card shows the estimated charge engine off and the charging state engine running. Set the alarm thresholds (low battery, no charge, overvoltage), the sound, and a voltage correction if your adapter reads 0.1–0.3 V off. Cars with a smart alternator may sit near 12.5 V while running: lower the threshold or turn that alarm off.</span><span lang="fr">Avec l'adaptateur OBD connecté, la carte batterie montre la charge estimée moteur arrêté et l'état de charge moteur tournant. Régler les seuils d'alarme (batterie faible, pas de charge, surtension), le son, et une correction de tension si l'adaptateur lit 0,1 à 0,3 V à côté. Les voitures à alternateur piloté peuvent rester vers 12,5 V moteur tournant : baisser le seuil ou couper cette alarme.</span></p>
+
+<h3 id="t-ddt"><span lang="en">21. Read manufacturer values (ddt4all)</span><span lang="fr">21. Lire les valeurs constructeur (ddt4all)</span></h3>
+<ol class="steps">
+  <li><span lang="en">Get ddt4all's <code>ecu.zip</code> (its <code>json/</code> folder: one file per ECU) yourself; LibreHU embeds none.</span><span lang="fr">Récupérer vous-même l'<code>ecu.zip</code> de ddt4all (son dossier <code>json/</code> : un fichier par calculateur) ; LibreHU n'en embarque aucun.</span></li>
+  <li><span lang="en">OBD page → car → import the ECU files of your car (or a <code>librehu-obd-car</code> file), choose the values to show.</span><span lang="fr">Page OBD → voiture → importer les fichiers des calculateurs de votre voiture (ou un fichier <code>librehu-obd-car</code>), choisir les valeurs à afficher.</span></li>
+  <li><span lang="en">Only read requests are kept: nothing can write to the car. CAN ECUs only; values needing an extended session stay "—".</span><span lang="fr">Seules les requêtes de lecture sont gardées : rien ne peut écrire dans la voiture. Calculateurs CAN seulement ; les valeurs qui demandent une session étendue restent à « — ».</span></li>
+</ol>
+
+<h3 id="t-wheel"><span lang="en">22. Map the steering wheel buttons</span><span lang="fr">22. Régler les boutons du volant</span></h3>
+<ol class="steps">
+  <li><span lang="en">Open <strong>LibreHU BtnRemap</strong>, press each wheel button once: it appears in the list (wired keys and CAN box keys alike).</span><span lang="fr">Ouvrir <strong>LibreHU BtnRemap</strong>, appuyer une fois sur chaque bouton du volant : il apparaît dans la liste (touches câblées comme touches du boîtier CAN).</span></li>
+  <li><span lang="en">For each button choose the <strong>short press</strong> and <strong>long press</strong> action (app, next source, play / pause, track, volume, voice assistant…).</span><span lang="fr">Pour chaque bouton, choisir l'action d'<strong>appui court</strong> et d'<strong>appui long</strong> (appli, source suivante, lecture / pause, piste, volume, assistant vocal…).</span></li>
+  <li><span lang="en"><strong>Key test mode</strong> shows each press and what it would do, without running it; two buttons pressed together can become a combination.</span><span lang="fr">Le <strong>mode test des touches</strong> montre chaque appui et ce qu'il ferait, sans l'exécuter ; deux boutons appuyés ensemble peuvent devenir une combinaison.</span></li>
+  <li><span lang="en">Clio 3: the wheel sends a SRC press at ignition; the "ignore keys at start" delay (5 s) hides it.</span><span lang="fr">Clio 3 : la commande au volant envoie un appui SRC à la mise du contact ; le délai « touches ignorées au démarrage » (5 s) le masque.</span></li>
+</ol>
+
+<h3 id="t-can"><span lang="en">23. Write a CAN profile for a new car</span><span lang="fr">23. Écrire un profil CAN pour une nouvelle voiture</span></h3>
+<ol class="steps">
+  <li><span lang="en">Configure the CAN box for your car (its own protocol), then LibreHU service → Vehicle → CAN → profile <code>hiworld-generic</code>.</span><span lang="fr">Régler le boîtier CAN pour votre voiture (son propre protocole), puis LibreHU service → Véhicule → CAN → profil <code>hiworld-generic</code>.</span></li>
+  <li><span lang="en">Start a capture and use one control at a time (doors, lights, wheel buttons, reverse): changed bytes are highlighted. Export the text.</span><span lang="fr">Lancer une capture et actionner une commande à la fois (portes, feux, boutons du volant, marche arrière) : les octets modifiés sont en couleur. Exporter le texte.</span></li>
+  <li><span lang="en">Write the profile (<a href="developers.html#can">format</a>), import it, check the decoded values live. Share it in an issue or on Discord.</span><span lang="fr">Écrire le profil (<a href="developers.html#can">format</a>), l'importer, vérifier les valeurs décodées en direct. Le partager dans une issue ou sur Discord.</span></li>
+</ol>
+
+<h3 id="t-tpms"><span lang="en">24. Tyre pressure sensors (TPMS)</span><span lang="fr">24. Capteurs de pression des pneus (TPMS)</span></h3>
+<ol class="steps">
+  <li><span lang="en">Plug the USB TPMS receiver (the kind sold with "USB TPMS" apps) into the head unit and allow USB access for LibreHU Launcher.</span><span lang="fr">Brancher le récepteur TPMS USB (le genre vendu avec les applis « USB TPMS ») sur l'autoradio et autoriser l'accès USB pour LibreHU Launcher.</span></li>
+  <li><span lang="en">Open <strong>Tyres</strong> from the app drawer: pair each wheel (deflate the tyre slightly or follow the sensor's pairing method), swap positions if needed.</span><span lang="fr">Ouvrir <strong>Pneus</strong> depuis le tiroir d'applis : appairer chaque roue (dégonfler légèrement le pneu ou suivre la méthode d'appairage du capteur), permuter les positions si besoin.</span></li>
+  <li><span lang="en">Set the pressure and temperature thresholds; add the <strong>Tyres</strong> widget.</span><span lang="fr">Régler les seuils de pression et de température ; ajouter le widget <strong>Pneus</strong>.</span></li>
+</ol>
+
+<h3 id="t-touch"><span lang="en">25. Calibrate the touch screen</span><span lang="fr">25. Calibrer l'écran tactile</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU service → Display → <strong>Touch panel</strong> → calibrate (root). If the corners cannot be reached, tick <strong>start from a neutral matrix</strong>.</span><span lang="fr">LibreHU service → Écran → <strong>Dalle tactile</strong> → calibrer (root). Si les coins sont inaccessibles, cocher <strong>partir d'une matrice neutre</strong>.</span></li>
+  <li><span lang="en">Touch the 5 targets precisely; the maximum error shows.</span><span lang="fr">Toucher précisément les 5 cibles ; l'erreur maximale s'affiche.</span></li>
+  <li><span lang="en">During the 20 s trial, touch around: <strong>Keep</strong> saves it; doing nothing goes back to the previous calibration.</span><span lang="fr">Pendant l'essai de 20 s, toucher un peu partout : <strong>Garder</strong> l'enregistre ; ne rien faire revient à la calibration précédente.</span></li>
+</ol>
+
+<h3 id="t-frontkeys"><span lang="en">26. Learn the front panel touch keys</span><span lang="fr">26. Apprendre les touches tactiles de façade</span></h3>
+<p><span lang="en">Touch panel page → front keys → add: hold the printed button for 2 s, then give it a short press action and either a long press action or "repeat while held" (good for volume). Actions include home, back, recent apps, volume, play / pause, screen off, open an app or any Android key code.</span><span lang="fr">Page Dalle tactile → touches de façade → ajouter : tenir le bouton sérigraphié 2 s, puis lui donner une action d'appui court et soit une action d'appui long, soit « répéter tant qu'on appuie » (bien pour le volume). Actions possibles : accueil, retour, applis récentes, volume, lecture / pause, écran éteint, ouvrir une appli ou n'importe quel code de touche Android.</span></p>
+
+<h2 id="media"><span lang="en">Media and projection</span><span lang="fr">Médias et projection</span></h2>
+
+<h3 id="t-fm"><span lang="en">27. FM radio</span><span lang="fr">27. Radio FM</span></h3>
+<ol class="steps">
+  <li><span lang="en">Open <strong>LibreHU FM</strong>, turn the radio on, <strong>scan</strong> the band: stations are listed.</span><span lang="fr">Ouvrir <strong>LibreHU FM</strong>, allumer la radio, <strong>balayer</strong> la bande : les stations sont listées.</span></li>
+  <li><span lang="en">Settings: RDS (station name, radiotext, traffic info), station logos (server, country), audio path.</span><span lang="fr">Paramètres : RDS (nom de station, radiotexte, info trafic), logos des stations (serveur, pays), chemin audio.</span></li>
+  <li><span lang="en">Add the FM widget on the dashboard (one gesture from the launcher's second slot).</span><span lang="fr">Ajouter le widget FM sur le tableau de bord (en un geste depuis le second emplacement du launcher).</span></li>
+</ol>
+
+<h3 id="t-source"><span lang="en">28. Use the MODE / SRC key</span><span lang="fr">28. Utiliser la touche MODE / SRC</span></h3>
+<p><span lang="en">Open <strong>LibreHU EasySource</strong>: turn sources on and order them (FM, Bluetooth music, AUX, music apps), set the delay. Then in BtnRemap, give the MODE button "EasySource: next source". Each press shows the next source full screen; it starts after the delay or at once with OK.</span><span lang="fr">Ouvrir <strong>LibreHU EasySource</strong> : activer et ordonner les sources (FM, musique Bluetooth, AUX, applis de musique), régler le délai. Puis dans BtnRemap, donner au bouton MODE « EasySource : source suivante ». Chaque appui montre la source suivante en plein écran ; elle démarre après le délai ou tout de suite avec OK.</span></p>
+
+<h3 id="t-viper"><span lang="en">29. ViPER4Android</span><span lang="fr">29. ViPER4Android</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU Apps → Zips → <code>viper4android-re</code> (ViPERFX_RE driver), reboot.</span><span lang="fr">LibreHU Apps → Zips → <code>viper4android-re</code> (pilote ViPERFX_RE), redémarrer.</span></li>
+  <li><span lang="en">Install <strong>ViPER4Android LibreHU</strong>, grant root, turn the master switch on; tune each effect (or from the phone app, every parameter).</span><span lang="fr">Installer <strong>ViPER4Android LibreHU</strong>, accorder le root, activer l'interrupteur général ; régler chaque effet (ou depuis l'appli téléphone, chaque paramètre).</span></li>
+  <li><span lang="en">LibreHU service starts ViPER early at boot, so effects apply from the first song.</span><span lang="fr">LibreHU service démarre ViPER tôt au démarrage, donc les effets s'appliquent dès le premier morceau.</span></li>
+</ol>
+
+<h3 id="t-disc"><span lang="en">30. Play and rip CDs and DVDs</span><span lang="fr">30. Lire et extraire CD et DVD</span></h3>
+<ol class="steps">
+  <li><span lang="en">Needs the LibreHU kernel (CD/DVD drivers) and root. Plug a USB optical drive (with its own power if needed).</span><span lang="fr">Demande le noyau LibreHU (pilotes CD/DVD) et le root. Brancher un lecteur optique USB (avec sa propre alimentation si besoin).</span></li>
+  <li><span lang="en">Open <strong>LibreHU Disc</strong>: audio CDs play with names from MusicBrainz; data discs and unprotected DVD video open in their viewer.</span><span lang="fr">Ouvrir <strong>LibreHU Disc</strong> : les CD audio se lisent avec les noms de MusicBrainz ; les disques de données et DVD vidéo non protégés s'ouvrent dans leur lecteur.</span></li>
+  <li><span lang="en">Rip: Settings → format, safe mode and retries, file names, folders, tags.</span><span lang="fr">Extraction : Réglages → format, mode sûr et nombre d'essais, noms de fichiers, dossiers, tags.</span></li>
+</ol>
+
+<h3 id="t-aa"><span lang="en">31. Android Auto</span><span lang="fr">31. Android Auto</span></h3>
+<ol class="steps">
+  <li><span lang="en">Install <strong>Android Auto (Open Headunit LibreHU)</strong> from LibreHU Apps.</span><span lang="fr">Installer <strong>Android Auto (Open Headunit LibreHU)</strong> depuis LibreHU Apps.</span></li>
+  <li><span lang="en">Plug the phone by USB (or set up wireless), accept on the phone. The launcher shows the session card.</span><span lang="fr">Brancher le téléphone en USB (ou régler le sans-fil), accepter sur le téléphone. Le launcher montre la carte de session.</span></li>
+  <li><span lang="en">LibreHU service → Projection → Android Auto: night mode from the headlights, car data, steering wheel keys, back to projection after reversing, low-latency video, and every Open Headunit setting.</span><span lang="fr">LibreHU service → Projection → Android Auto : nuit selon les phares, données de la voiture, touches du volant, retour à la projection après le recul, vidéo basse latence, et tous les réglages d'Open Headunit.</span></li>
+</ol>
+
+<h3 id="t-carplay"><span lang="en">32. CarPlay</span><span lang="fr">32. CarPlay</span></h3>
+<ol class="steps">
+  <li><span lang="en">Install <strong>CarPlay (xcertplay LibreHU)</strong> from LibreHU Apps; it finds the unit's MFi chip by itself (or uses a CH341 adapter).</span><span lang="fr">Installer <strong>CarPlay (xcertplay LibreHU)</strong> depuis LibreHU Apps ; il trouve tout seul la puce MFi de l'autoradio (ou utilise un adaptateur CH341).</span></li>
+  <li><span lang="en">Plug the iPhone by USB; for wireless, set up its hotspot in the app. Night mode follows the headlights.</span><span lang="fr">Brancher l'iPhone en USB ; pour le sans-fil, régler son point d'accès dans l'appli. Le mode nuit suit les phares.</span></li>
+</ol>
+
+<h3 id="t-aux"><span lang="en">33. AUX input</span><span lang="fr">33. Entrée AUX</span></h3>
+<p><span lang="en">LibreHU service → Audio → source <strong>AUX</strong>: the jack goes through the sound processor, with Android's sound (navigation, calls) mixed on top. Back to Android with the same switch, or from EasySource.</span><span lang="fr">LibreHU service → Audio → source <strong>AUX</strong> : la prise passe par le processeur de son, avec le son d'Android (navigation, appels) mélangé par-dessus. Retour à Android avec le même réglage, ou depuis EasySource.</span></p>
+
+<h2 id="look"><span lang="en">Look</span><span lang="fr">Apparence</span></h2>
+
+<h3 id="t-retro"><span lang="en">34. Retro car stereo style</span><span lang="fr">34. Style autoradio rétro</span></h3>
+<ol class="steps">
+  <li><span lang="en">Launcher settings → Customisation → Style → <strong>Retro display</strong>.</span><span lang="fr">Paramètres du launcher → Personnalisation → Style → <strong>Afficheur rétro</strong>.</span></li>
+  <li><span lang="en">Pick an accent colour (presets or the RGB wheel): the whole display palette comes from it, day and night.</span><span lang="fr">Choisir une couleur d'accent (préréglages ou roue RVB) : toute la palette de l'afficheur en découle, jour et nuit.</span></li>
+  <li><span lang="en">Font → <strong>segment display</strong>. Every LibreHU app, its widgets, the lock screen and the standby clock follow.</span><span lang="fr">Police → <strong>afficheur à segments</strong>. Toutes les applis LibreHU, leurs widgets, l'écran de verrouillage et l'horloge de veille suivent.</span></li>
+</ol>
+
+<h3 id="t-wallpaper"><span lang="en">35. Animated wallpapers</span><span lang="fr">35. Fonds animés</span></h3>
+<p><span lang="en">Customisation → Wallpaper: aurora, stars, waves, vaporwave, or a retro display scene (dolphins, spectrum analyser, cassette, night road, rally, deep space, demo mode cycling through them). Turn <strong>GPU acceleration</strong> on to draw them with OpenGL ES (smoother, less CPU), or keep the classic drawing. Also: picture, GIF, looping video, Android live wallpaper, picture of the day.</span><span lang="fr">Personnalisation → Fond d'écran : aurore, étoiles, vagues, vaporwave, ou une scène d'afficheur rétro (dauphins, analyseur de spectre, cassette, route de nuit, rallye, espace, mode démo qui les enchaîne). Activer l'<strong>accélération GPU</strong> pour les dessiner en OpenGL ES (plus fluide, moins de CPU), ou garder le dessin classique. Aussi : image, GIF, vidéo en boucle, fond animé Android, image du jour.</span></p>
+
+<h3 id="t-widgets"><span lang="en">36. Widgets, pages and layout</span><span lang="fr">36. Widgets, pages et disposition</span></h3>
+<ol class="steps">
+  <li><span lang="en">Touch an empty slot to add a widget (navigation, weather, OBD, FM, rear camera, tyres…).</span><span lang="fr">Toucher un emplacement vide pour ajouter un widget (navigation, météo, OBD, FM, caméra de recul, pneus…).</span></li>
+  <li><span lang="en">Customisation → home: add pages; turn on <strong>widget size and layout</strong> to change width, height and move widgets between slots and pages.</span><span lang="fr">Personnalisation → accueil : ajouter des pages ; activer <strong>taille et disposition des widgets</strong> pour changer largeur, hauteur et déplacer les widgets entre emplacements et pages.</span></li>
+  <li><span lang="en">Right-hand drive cars: turn on <strong>right-hand drive</strong> to mirror the home screen.</span><span lang="fr">Voitures à conduite à droite : activer <strong>conduite à droite</strong> pour mettre l'accueil en miroir.</span></li>
+</ol>
+
+<h3 id="t-clock"><span lang="en">37. Standby clock with car values</span><span lang="fr">37. Horloge de veille avec les valeurs de la voiture</span></h3>
+<p><span lang="en">Launcher settings → Standby clock: digital or analog, seconds, date, car battery, up to 6 OBD values (line or tiles), what is playing, brightness, small drift against burn-in. It opens after idle time on the home screen, by touching the clock, from a button (<code>org.librehu.action.STANDBY_CLOCK</code>, e.g. via BtnRemap) or as Android's screen saver.</span><span lang="fr">Paramètres du launcher → Horloge de veille : numérique ou analogique, secondes, date, batterie de la voiture, jusqu'à 6 valeurs OBD (ligne ou tuiles), lecture en cours, luminosité, léger déplacement contre le marquage. Elle s'ouvre après une inactivité sur l'accueil, en touchant l'heure, depuis un bouton (<code>org.librehu.action.STANDBY_CLOCK</code>, par exemple avec BtnRemap) ou comme économiseur d'écran d'Android.</span></p>
+
+<h3 id="t-night"><span lang="en">38. Night mode and brightness from the headlights</span><span lang="fr">38. Mode nuit et luminosité selon les phares</span></h3>
+<p><span lang="en">LibreHU service → Display: Android dark mode with the headlights, day and night brightness, button backlight levels (Lights page). The launcher, the apps and Android Auto / CarPlay switch to night together.</span><span lang="fr">LibreHU service → Écran : mode sombre d'Android avec les phares, luminosité jour et nuit, niveaux de rétroéclairage des boutons (page Lumières). Le launcher, les applis et Android Auto / CarPlay passent en nuit ensemble.</span></p>
+
+<h2 id="help"><span lang="en">Help and development</span><span lang="fr">Aide et développement</span></h2>
+
+<h3 id="t-logs"><span lang="en">39. Report a bug with logs</span><span lang="fr">39. Signaler un bug avec les journaux</span></h3>
+<ol class="steps">
+  <li><span lang="en">Right after the problem: phone app → Tools → <strong>Logs</strong> (LibreHU, full logcat, kernel), saved to the phone. Or LibreHU service → Advanced → Diagnostic → export log.</span><span lang="fr">Juste après le problème : appli téléphone → Outils → <strong>Journaux</strong> (LibreHU, logcat complet, noyau), enregistrés sur le téléphone. Ou LibreHU service → Avancé → Diagnostic → exporter le journal.</span></li>
+  <li><span lang="en">Open an issue on the app's repository (or ask on <a href="https://discord.gg/aP4JZMavxB">Discord</a>): what you did, what happened, the logs, the app version (shown in LibreHU Apps).</span><span lang="fr">Ouvrir une issue sur le dépôt de l'appli (ou demander sur <a href="https://discord.gg/aP4JZMavxB">Discord</a>) : ce que vous avez fait, ce qui s'est passé, les journaux, la version de l'appli (affichée dans LibreHU Apps).</span></li>
+</ol>
+
+<h3 id="t-hang"><span lang="en">40. When Android hangs</span><span lang="fr">40. Quand Android est bloqué</span></h3>
+<p><span lang="en"><strong>Reset SoC</strong> (phone app, or LibreHU service → System → Watchdog card) asks the MCU to power cycle the SoC: it works even when Android no longer responds. <strong>Safe shutdown</strong> mutes, pauses, writes data to disk and tells you when you can turn the ignition off.</span><span lang="fr"><strong>Redémarrer le SoC</strong> (appli téléphone, ou LibreHU service → Système → carte Watchdog) demande à la MCU de couper et rallumer le SoC : ça marche même quand Android ne répond plus. <strong>Arrêt sécurisé</strong> coupe le son, met en pause, écrit les données et indique quand couper le contact.</span></p>
+
+<h3 id="t-port"><span lang="en">41. Help port LibreHU to your head unit</span><span lang="fr">41. Aider à porter LibreHU sur votre autoradio</span></h3>
+<ol class="steps">
+  <li><span lang="en">Check the real Android version (API ≥ 28 needed) and the chip: <a href="headunits.html">head units</a>.</span><span lang="fr">Vérifier la vraie version d'Android (API ≥ 28 nécessaire) et la puce : <a href="headunits.html">autoradios</a>.</span></li>
+  <li><span lang="en">Install <strong>LibreHU Helper</strong> (read-only), grant root if available, build the report (anonymised), export it to a USB stick.</span><span lang="fr">Installer <strong>LibreHU Helper</strong> (lecture seule), accorder le root si possible, faire le rapport (anonymisé), l'exporter sur une clé USB.</span></li>
+  <li><span lang="en">Open an issue or post on Discord with the report and the unit's model and photos of the board.</span><span lang="fr">Ouvrir une issue ou poster sur Discord avec le rapport, le modèle de l'autoradio et des photos de la carte.</span></li>
+</ol>
+
+<h3 id="t-mcuprofile"><span lang="en">42. Write an MCU profile</span><span lang="fr">42. Écrire un profil MCU</span></h3>
+<ol class="steps">
+  <li><span lang="en">LibreHU service → Advanced → MCU: export the Jancar profile as a template.</span><span lang="fr">LibreHU service → Avancé → MCU : exporter le profil Jancar comme modèle.</span></li>
+  <li><span lang="en">From the Helper report or a serial capture, fill in port and speed, header, length and checksum rules, ACK, the input signals and output commands, the GPIO wiring (<a href="developers.html#mcu-profile">format</a>).</span><span lang="fr">À partir du rapport de Helper ou d'une capture série, remplir port et vitesse, en-tête, règles de longueur et de contrôle, acquittement, signaux d'entrée et commandes de sortie, câblage GPIO (<a href="developers.html#mcu-profile">format</a>).</span></li>
+  <li><span lang="en">Import it, restart the link, watch the traffic in MCU tools. Invalid profiles are refused with the reason.</span><span lang="fr">L'importer, relancer la liaison, regarder le trafic dans Outils MCU. Un profil invalide est refusé avec la raison.</span></li>
+</ol>
+
+<h3 id="t-api"><span lang="en">43. Use LibreHU service from your app</span><span lang="fr">43. Utiliser LibreHU service depuis votre appli</span></h3>
+<pre><code>&lt;queries&gt;&lt;package android:name="org.librehu.service" /&gt;&lt;/queries&gt;
+
+val conn = object : ServiceConnection {
+    override fun onServiceConnected(n: ComponentName, b: IBinder) {
+        val api = ILibreHuService.Stub.asInterface(b)
+        val reversing = api.vehicleFlags and (1 shl 4) != 0   // FLAG_REVERSE
+        api.registerCallback(callback)
+    }
+    override fun onServiceDisconnected(n: ComponentName) {}
+}
+bindService(Intent("org.librehu.service.BIND").setPackage("org.librehu.service"), conn, BIND_AUTO_CREATE)</code></pre>
+<p><span lang="en">Copy the <code>.aidl</code> files of LibreHU-service into your app. The user allows your app once (notification). Full API: <a href="developers.html#api">developer reference</a>.</span><span lang="fr">Copier les fichiers <code>.aidl</code> de LibreHU-service dans votre appli. L'utilisateur autorise votre appli une fois (notification). API complète : <a href="developers.html#api">référence développeurs</a>.</span></p>
+
+<h3 id="t-buildapp"><span lang="en">44. Build an app from source</span><span lang="fr">44. Compiler une appli depuis les sources</span></h3>
+<pre><code>git clone https://github.com/LibreHU/LibreHU-Launcher-App &amp;&amp; cd LibreHU-Launcher-App
+git checkout librehu-service          # <span lang="en">or main / ivi</span><span lang="fr">ou main / ivi</span>
+./gradlew :app:assembleRelease        # <span lang="en">JDK 17+, Android SDK (NDK for service, FM, Disc)</span><span lang="fr">JDK 17+, SDK Android (NDK pour service, FM, Disc)</span>
+adb install -r app/build/outputs/apk/release/*.apk</code></pre>
+<p><span lang="en">Release builds are signed with the public LibreHU key from <code>keystore/</code>, so they update the published apps in place.</span><span lang="fr">Les builds release sont signées avec la clé LibreHU publique de <code>keystore/</code>, donc elles mettent à jour les applis publiées sans désinstaller.</span></p>
+
+<h3 id="t-buildkernel"><span lang="en">45. Build the kernel</span><span lang="fr">45. Compiler le noyau</span></h3>
+<p><span lang="en">Linux x86-64, about 10 GB free. Follow the <a href="developers.html#kernel">kernel section</a> (stock toolchain: AOSP GCC 4.9 binutils + clang-4691093, Python 2 for <code>DrvGen.py</code>), then test from the recovery partition before writing <code>boot</code> (<a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/blob/LibreHU-main/docs/BUILD.md">BUILD.md</a>).</span><span lang="fr">Linux x86-64, environ 10 Go libres. Suivre la <a href="developers.html#kernel">section noyau</a> (chaîne d'origine : binutils AOSP GCC 4.9 + clang-4691093, Python 2 pour <code>DrvGen.py</code>), puis tester depuis la partition recovery avant d'écrire <code>boot</code> (<a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/blob/LibreHU-main/docs/BUILD.md">BUILD.md</a>).</span></p>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="docs.html">Docs</a> · <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="assets/lang.js"></script>
+</body>
+</html>
+

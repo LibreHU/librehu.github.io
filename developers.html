@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developers – LibreHU</title>
+<meta name="title-en" content="Developers – LibreHU">
+<meta name="title-fr" content="Développeurs – LibreHU">
+<meta name="description" content="Technical reference of LibreHU: hardware, MCU and CAN protocols, service API, phone bridge protocol, build, release and kernel.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="developers.html" aria-current="page"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="screenshots/index.html"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap doc">
+<aside class="toc">
+  <details open>
+    <summary><span lang="en">Contents</span><span lang="fr">Sommaire</span></summary>
+    <ol>
+      <li><a href="#arch"><span lang="en">Architecture</span><span lang="fr">Architecture</span></a></li>
+      <li><a href="#hw"><span lang="en">Hardware</span><span lang="fr">Matériel</span></a>
+        <ol>
+          <li><a href="#hw-soc">SoC</a></li>
+          <li><a href="#hw-gpio">GPIO, I²C, inputs</a></li>
+          <li><a href="#hw-storage"><span lang="en">Partitions, AVB</span><span lang="fr">Partitions, AVB</span></a></li>
+        </ol></li>
+      <li><a href="#mcu"><span lang="en">MCU protocol</span><span lang="fr">Protocole MCU</span></a>
+        <ol>
+          <li><a href="#mcu-frame"><span lang="en">Frame</span><span lang="fr">Trame</span></a></li>
+          <li><a href="#mcu-tx">SoC → MCU</a></li>
+          <li><a href="#mcu-rx">MCU → SoC</a></li>
+          <li><a href="#mcu-power"><span lang="en">Power states</span><span lang="fr">États d'alimentation</span></a></li>
+          <li><a href="#mcu-profile"><span lang="en">Profiles (JSON)</span><span lang="fr">Profils (JSON)</span></a></li>
+        </ol></li>
+      <li><a href="#can"><span lang="en">CAN box</span><span lang="fr">Boîtier CAN</span></a></li>
+      <li><a href="#api"><span lang="en">Service API</span><span lang="fr">API du service</span></a>
+        <ol>
+          <li><a href="#api-aidl">AIDL</a></li>
+          <li><a href="#api-broadcasts"><span lang="en">Broadcasts, intents</span><span lang="fr">Diffusions, intents</span></a></li>
+          <li><a href="#api-providers"><span lang="en">Providers, permissions</span><span lang="fr">Fournisseurs, permissions</span></a></li>
+          <li><a href="#api-theme"><span lang="en">Theme contract</span><span lang="fr">Contrat de thème</span></a></li>
+          <li><a href="#api-root"><span lang="en">Root handshake</span><span lang="fr">Demande de root</span></a></li>
+        </ol></li>
+      <li><a href="#bridge"><span lang="en">Bridge protocol</span><span lang="fr">Protocole Bridge</span></a></li>
+      <li><a href="#obd">OBD / ddt4all</a></li>
+      <li><a href="#release"><span lang="en">Build, CI, releases</span><span lang="fr">Build, CI, releases</span></a></li>
+      <li><a href="#kernel"><span lang="en">Kernel</span><span lang="fr">Noyau</span></a></li>
+      <li><a href="#twrp">TWRP</a></li>
+      <li><a href="#lineage">LineageOS</a></li>
+      <li><a href="#porting"><span lang="en">Porting</span><span lang="fr">Portage</span></a></li>
+      <li><a href="#repos"><span lang="en">Repositories, rules</span><span lang="fr">Dépôts, règles</span></a></li>
+    </ol>
+  </details>
+</aside>
+
+<article>
+<h1><span lang="en">Developer reference</span><span lang="fr">Référence développeurs</span></h1>
+<p class="lead"><span lang="en">How LibreHU works, down to the bytes. Everything here comes from the repositories' code and docs, the analysis of the stock firmware and measurements on the Jancar UJC201; each section links to its source.</span><span lang="fr">Comment marche LibreHU, jusqu'à l'octet. Tout ici vient du code et de la doc des dépôts, de l'analyse du firmware d'origine et de relevés sur le Jancar UJC201 ; chaque section renvoie à sa source.</span></p>
+
+<h2 id="arch"><span lang="en">Architecture</span><span lang="fr">Architecture</span></h2>
+<p><span lang="en">One privileged service owns the hardware; every other app goes through it. Nothing else opens the MCU serial port.</span><span lang="fr">Un seul service privilégié tient le matériel ; toutes les autres applis passent par lui. Rien d'autre n'ouvre le port série de la MCU.</span></p>
+<div class="diagram">
+<svg viewBox="0 0 980 470" role="img" aria-label="LibreHU architecture" font-family="system-ui, sans-serif" font-size="13">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <g fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.4">
+    <rect x="20" y="20" width="940" height="110" rx="14"/>
+    <rect x="20" y="170" width="600" height="110" rx="14"/>
+    <rect x="650" y="170" width="310" height="110" rx="14"/>
+    <rect x="20" y="320" width="300" height="130" rx="14"/>
+    <rect x="340" y="320" width="280" height="130" rx="14"/>
+    <rect x="650" y="320" width="310" height="130" rx="14"/>
+  </g>
+  <g fill="currentColor">
+    <text x="36" y="44" font-weight="700">Apps</text>
+    <text x="36" y="70">Launcher · FM · Dialer · Widgets · BtnRemap · EasySource · Disc · ViPER4Android</text>
+    <text x="36" y="92">Open Headunit (Android Auto) · xcertplay (CarPlay) · LibreHU Apps (OTA) · Helper</text>
+    <text x="36" y="116" fill-opacity=".7">AIDL ILibreHuService · broadcasts (signature) · &lt;pkg&gt;.bridge providers · theme provider</text>
+    <text x="36" y="194" font-weight="700">LibreHU service (org.librehu.service)</text>
+    <text x="36" y="218">core/: mcu · can · obd · touch · bridge crypto (pure Kotlin, unit tested)</text>
+    <text x="36" y="240">app/: HeadUnit · Standby · ReverseView · Bluetooth · Tweaks · BridgeServer</text>
+    <text x="36" y="262" fill-opacity=".7">JNI liblibrehu_hw.so: raw tty 115200 8N1 · /dev/gpios_ioctl · I²C RDWR · V4L2</text>
+    <text x="666" y="194" font-weight="700">Phone (LibreHU Bridge)</text>
+    <text x="666" y="218">Android · iPhone · Android Auto screen</text>
+    <text x="666" y="240">TCP 47800 / RFCOMM</text>
+    <text x="666" y="262" fill-opacity=".7">ECDH P-256 · AES-256-GCM</text>
+    <text x="36" y="344" font-weight="700">MCU HK32C030 (Cortex-M0)</text>
+    <text x="36" y="368">/dev/ttyS1 ↔ USART2, JAC_V1</text>
+    <text x="36" y="390">ACC, handbrake, lights, keys, PWM</text>
+    <text x="36" y="412">power rails, RTC, standby</text>
+    <text x="36" y="434" fill-opacity=".7">USART1 → CAN box (38400)</text>
+    <text x="356" y="344" font-weight="700">SoC peripherals</text>
+    <text x="356" y="368">BD37534 sound (i2c-6 @0x40)</text>
+    <text x="356" y="390">GPIO 2/5/6/7/110/165/166/167</text>
+    <text x="356" y="412">GT911 touch (mtk-tpd), cameras</text>
+    <text x="356" y="434" fill-opacity=".7">MT6631: Wi-Fi, BT, GPS, FM</text>
+    <text x="666" y="344" font-weight="700">Car</text>
+    <text x="666" y="368">Hiworld CAN box (5A A5 frames)</text>
+    <text x="666" y="390">ELM327 OBD-II (BT / USB)</text>
+    <text x="666" y="412">reverse camera CVBS / AHD</text>
+    <text x="666" y="434" fill-opacity=".7">steering wheel keys (ADC / CAN)</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.6" fill="none" color="currentColor">
+    <path d="M320 132v34" marker-end="url(#a)" marker-start="url(#a)"/>
+    <path d="M622 225h24" marker-end="url(#a)" marker-start="url(#a)"/>
+    <path d="M170 282v34" marker-end="url(#a)" marker-start="url(#a)"/>
+    <path d="M480 282v34" marker-end="url(#a)" marker-start="url(#a)"/>
+    <path d="M322 430h-0M322 434h324" marker-end="url(#a)"/>
+  </g>
+</svg>
+</div>
+<ul>
+  <li><span lang="en"><code>core/</code> of LibreHU-service is plain Kotlin/JVM (MCU framing and profiles, Hiworld decoding, OBD formulas, touch maths, bridge crypto) with unit tests runnable without the Android SDK: <code>./gradlew -PcoreOnly :core:test</code>.</span><span lang="fr"><code>core/</code> de LibreHU-service est du Kotlin/JVM pur (trames et profils MCU, décodage Hiworld, formules OBD, calculs tactiles, crypto du pont) avec des tests unitaires lançables sans SDK Android : <code>./gradlew -PcoreOnly :core:test</code>.</span></li>
+  <li><span lang="en">All apps: Kotlin, Jetpack Compose, minSdk 28 (Android 9), target 35, R8 without obfuscation, one shared public signing key.</span><span lang="fr">Toutes les applis : Kotlin, Jetpack Compose, minSdk 28 (Android 9), cible 35, R8 sans renommage, une clé de signature publique commune.</span></li>
+</ul>
+
+<h2 id="hw"><span lang="en">Hardware: Jancar UJC201</span><span lang="fr">Matériel : Jancar UJC201</span></h2>
+<h3 id="hw-soc">SoC</h3>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Item</span><span lang="fr">Élément</span></th><th><span lang="en">Value</span><span lang="fr">Valeur</span></th></tr></thead>
+<tbody>
+<tr><td><span lang="en">Unit</span><span lang="fr">Autoradio</span></td><td><span lang="en">Jancar UJC201, board <code>JAC_8258C</code> (<code>jancar_board_id</code> <code>A0_AN</code>), sold as SIXWIN, Podofo, Hikity…</span><span lang="fr">Jancar UJC201, carte <code>JAC_8258C</code> (<code>jancar_board_id</code> <code>A0_AN</code>), vendu sous SIXWIN, Podofo, Hikity…</span></td></tr>
+<tr><td>SoC</td><td><span lang="en">Autochips AC8257 (MediaTek MT6761/MT6765 family), <code>ro.product.device=ac8257_demo</code>; 4 × Cortex-A53 (MIDR <code>410fd034</code>, <code>SMP: Total of 4 processors activated</code>), stock table up to 2.0 GHz; ARM9 "ARM2" for fast reverse before Linux</span><span lang="fr">Autochips AC8257 (famille MediaTek MT6761/MT6765), <code>ro.product.device=ac8257_demo</code> ; 4 × Cortex-A53 (MIDR <code>410fd034</code>, <code>SMP: Total of 4 processors activated</code>), table d'origine jusqu'à 2,0 GHz ; ARM9 « ARM2 » pour le recul rapide avant Linux</span></td></tr>
+<tr><td>GPU</td><td><span lang="en">PowerVR GE8300 (<code>rgx</code>, DDK 1.10@5130912), OpenGL ES 3.2, no vendor Vulkan driver</span><span lang="fr">PowerVR GE8300 (<code>rgx</code>, DDK 1.10@5130912), OpenGL ES 3.2, pas de pilote Vulkan vendor</span></td></tr>
+<tr><td>Android</td><td><span lang="en">9 (SDK 28); <code>ro.build.version.release</code> faked to <code>12</code> by Jancar; system-as-root (<code>skip_initramfs</code>); SELinux permissive</span><span lang="fr">9 (SDK 28) ; <code>ro.build.version.release</code> falsifié en <code>12</code> par Jancar ; system-as-root (<code>skip_initramfs</code>) ; SELinux permissif</span></td></tr>
+<tr><td><span lang="en">Kernel</span><span lang="fr">Noyau</span></td><td><span lang="en">Linux 4.9.117+ #72 (stock, 22/01/2026)</span><span lang="fr">Linux 4.9.117+ #72 (origine, 22/01/2026)</span></td></tr>
+<tr><td><span lang="en">Display</span><span lang="fr">Écran</span></td><td><span lang="en">1280 × 720 panel mounted landscape (<code>persist.sf.hwrotation=90</code>, rotation read from the metazone)</span><span lang="fr">Dalle 1280 × 720 montée en paysage (<code>persist.sf.hwrotation=90</code>, rotation lue dans la metazone)</span></td></tr>
+<tr><td><span lang="en">Touch</span><span lang="fr">Tactile</span></td><td><span lang="en">Goodix GT911 (firmware 1060) driven by MediaTek's GT928 driver, input <code>mtk-tpd</code>; calibration matrix <code>/sys/devices/platform/touch/gt9xx_props</code> = <code>A B C D E F Div</code>, x' = (A·x + B·y + C) / Div</span><span lang="fr">Goodix GT911 (firmware 1060) piloté par le pilote GT928 de MediaTek, entrée <code>mtk-tpd</code> ; matrice de calibration <code>/sys/devices/platform/touch/gt9xx_props</code> = <code>A B C D E F Div</code>, x' = (A·x + B·y + C) / Div</span></td></tr>
+<tr><td><span lang="en">Sound</span><span lang="fr">Son</span></td><td><span lang="en">ROHM BD37534 on <code>/dev/i2c-6</code>, address <code>0x40</code>, driven from Android (no ALSA control)</span><span lang="fr">ROHM BD37534 sur <code>/dev/i2c-6</code>, adresse <code>0x40</code>, piloté depuis Android (aucun contrôle ALSA)</span></td></tr>
+<tr><td><span lang="en">Connectivity</span><span lang="fr">Connectivité</span></td><td><span lang="en">MT6631 combo: Wi-Fi (<code>wlan_drv_gen4m</code>), BT, GPS, FM (<code>fmradio_drv</code>, <code>/dev/fm</code>); no I²C tuner (<code>jancar.radio.id=-1</code>)</span><span lang="fr">Combo MT6631 : Wi-Fi (<code>wlan_drv_gen4m</code>), BT, GPS, FM (<code>fmradio_drv</code>, <code>/dev/fm</code>) ; pas de tuner I²C (<code>jancar.radio.id=-1</code>)</span></td></tr>
+<tr><td><span lang="en">Cameras</span><span lang="fr">Caméras</span></td><td><span lang="en">CVBS by the integrated TVD (720 × 576), AHD by Techpoint TP9963 on MIPI CSI-2; HAL ids: USB 0, MIPI 2, CVBS 3, MIPI VC 8</span><span lang="fr">CVBS par le TVD intégré (720 × 576), AHD par Techpoint TP9963 en MIPI CSI-2 ; ids de la HAL : USB 0, MIPI 2, CVBS 3, MIPI VC 8</span></td></tr>
+<tr><td>MCU</td><td><span lang="en">HK32C030C8T7 (Cortex-M0, STM32F030 clone, 64 KB flash, 8 KB RAM, 48 MHz), firmware <code>JCST_AC8257_8T7-2024.08.09</code></span><span lang="fr">HK32C030C8T7 (Cortex-M0, clone STM32F030, 64 Ko flash, 8 Ko RAM, 48 MHz), firmware <code>JCST_AC8257_8T7-2024.08.09</code></span></td></tr>
+</tbody></table></div>
+
+<h3 id="hw-gpio">GPIO, I²C, inputs</h3>
+<p><span lang="en"><code>/dev/gpios_ioctl</code> (Jancar module, reimplemented in the LibreHU kernel): <code>ioctl(fd, cmd, &amp;gpio)</code>, the argument points to the GPIO number. <code>0x6B00</code> high, <code>0x6B01</code> low, <code>0x6B02</code> input, <code>0x6B03</code> read (level returned). Reading switches the pin to input: never read an output.</span><span lang="fr"><code>/dev/gpios_ioctl</code> (module Jancar, réimplémenté dans le noyau LibreHU) : <code>ioctl(fd, cmd, &amp;gpio)</code>, l'argument pointe vers le numéro de GPIO. <code>0x6B00</code> haut, <code>0x6B01</code> bas, <code>0x6B02</code> entrée, <code>0x6B03</code> lecture (niveau renvoyé). Lire passe la broche en entrée : ne jamais lire une sortie.</span></p>
+<div class="table"><table>
+<thead><tr><th>GPIO</th><th><span lang="en">Role</span><span lang="fr">Rôle</span></th><th><span lang="en">Direction / logic</span><span lang="fr">Sens / logique</span></th></tr></thead>
+<tbody>
+<tr><td>2</td><td><span lang="en">reverse gear (CCD)</span><span lang="fr">marche arrière (CCD)</span></td><td><span lang="en">input, active low</span><span lang="fr">entrée, actif bas</span></td></tr>
+<tr><td>7 / 6</td><td><span lang="en">left / right turn signal</span><span lang="fr">clignotant gauche / droit</span></td><td><span lang="en">input, active low</span><span lang="fr">entrée, actif bas</span></td></tr>
+<tr><td>5</td><td><span lang="en">screen backlight</span><span lang="fr">rétroéclairage écran</span></td><td><span lang="en">output, 1 = on</span><span lang="fr">sortie, 1 = allumé</span></td></tr>
+<tr><td>166</td><td><span lang="en">amplifier mute</span><span lang="fr">sourdine ampli</span></td><td><span lang="en">output, 1 = muted</span><span lang="fr">sortie, 1 = muet</span></td></tr>
+<tr><td>110</td><td><span lang="en">radio antenna power (with MCU <code>43</code>)</span><span lang="fr">alimentation antenne radio (avec MCU <code>43</code>)</span></td><td><span lang="en">output</span><span lang="fr">sortie</span></td></tr>
+<tr><td>167 / 165</td><td><span lang="en">CVBS video switch SW1 / SW2: AV → (0,0), front camera → (1,0), rear camera → (1,1)</span><span lang="fr">commutateur vidéo CVBS SW1 / SW2 : AV → (0,0), caméra avant → (1,0), caméra arrière → (1,1)</span></td><td><span lang="en">output</span><span lang="fr">sortie</span></td></tr>
+<tr><td>112</td><td><span lang="en">tuner power / reset</span><span lang="fr">alimentation / reset tuner</span></td><td><span lang="en">output, 1 at boot</span><span lang="fr">sortie, 1 au démarrage</span></td></tr>
+<tr><td>174</td><td><span lang="en">USB hub reset</span><span lang="fr">reset du hub USB</span></td><td><span lang="en">0 for 20 ms then 1</span><span lang="fr">0 pendant 20 ms puis 1</span></td></tr>
+</tbody></table></div>
+<ul>
+  <li><span lang="en">I²C: <code>/dev/i2c-0..6</code>, <code>I2C_SLAVE_FORCE</code> (<code>0x706</code>) then <code>I2C_RDWR</code> (<code>0x707</code>). <code>i2c-1</code> and <code>i2c-6</code> are labelled <code>mfi_auth_device</code> (CarPlay MFi chip).</span><span lang="fr">I²C : <code>/dev/i2c-0..6</code>, <code>I2C_SLAVE_FORCE</code> (<code>0x706</code>) puis <code>I2C_RDWR</code> (<code>0x707</code>). <code>i2c-1</code> et <code>i2c-6</code> sont étiquetés <code>mfi_auth_device</code> (puce MFi de CarPlay).</span></li>
+  <li><span lang="en">Inputs: <code>mtk-kpd</code> (event0, SoC keys), <code>gpio_ir_recv</code> (event1, IR), <code>mtk-tpd</code> (event2, touch); found by name in <code>/proc/bus/input/devices</code>. Front panel keys are touch areas outside the display, read raw from the event device (<code>struct input_event</code>, 24 bytes on arm64).</span><span lang="fr">Entrées : <code>mtk-kpd</code> (event0, touches du SoC), <code>gpio_ir_recv</code> (event1, IR), <code>mtk-tpd</code> (event2, tactile) ; trouvées par nom dans <code>/proc/bus/input/devices</code>. Les touches de façade sont des zones tactiles hors de l'affichage, lues brutes sur le périphérique d'entrée (<code>struct input_event</code>, 24 octets en arm64).</span></li>
+  <li><span lang="en">Device permissions on stock: <code>/dev/gpios_ioctl</code> 0777, <code>/dev/i2c-*</code> 0777 system, <code>/dev/ttyS1..3</code> 0666 system.</span><span lang="fr">Droits sur la ROM d'origine : <code>/dev/gpios_ioctl</code> 0777, <code>/dev/i2c-*</code> 0777 system, <code>/dev/ttyS1..3</code> 0666 system.</span></li>
+</ul>
+
+<h3 id="hw-storage"><span lang="en">Partitions, AVB</span><span lang="fr">Partitions, AVB</span></h3>
+<ul>
+  <li><span lang="en"><code>recovery</code> is exactly 32 MiB; the bootloader message (BCB) lives on <code>para</code> (no <code>/misc</code>); <code>boot</code> is system-as-root.</span><span lang="fr"><code>recovery</code> fait exactement 32 Mio ; le message du bootloader (BCB) est sur <code>para</code> (pas de <code>/misc</code>) ; <code>boot</code> est en system-as-root.</span></li>
+  <li><span lang="en">The stock <code>vbmeta</code> chains <code>recovery</code> (Jancar key, public key digest <code>0aa0987116fc792f36bc909b0a4d530413f02a54</code>, rollback location 1): a custom recovery must carry the stock recovery's vbmeta footer, else Android bootloops. TWRP's post-processing does that.</span><span lang="fr">Le <code>vbmeta</code> d'origine chaîne <code>recovery</code> (clé Jancar, empreinte de clé publique <code>0aa0987116fc792f36bc909b0a4d530413f02a54</code>, rollback location 1) : un recovery modifié doit porter le pied vbmeta du recovery d'origine, sinon Android boucle. Le post-traitement de TWRP le fait.</span></li>
+  <li><span lang="en"><code>fastboot boot</code> does not work on this unit: flash <code>recovery</code>. Init does not rewrite recovery at boot (<code>flash_recovery</code> commented out in <code>/system/init.rc</code>).</span><span lang="fr"><code>fastboot boot</code> ne marche pas sur cet autoradio : flasher <code>recovery</code>. Init ne réécrit pas le recovery au démarrage (<code>flash_recovery</code> commenté dans <code>/system/init.rc</code>).</span></li>
+  <li><span lang="en">Metazone (<code>/dev/mtz</code>, Autochips): rotation, camera format, panel parameters. LibreHU reads it and writes only the camera format, like Jancar.</span><span lang="fr">Metazone (<code>/dev/mtz</code>, Autochips) : rotation, format caméra, paramètres de dalle. LibreHU la lit et n'écrit que le format caméra, comme Jancar.</span></li>
+</ul>
+
+<h2 id="mcu"><span lang="en">MCU protocol (JAC_V1)</span><span lang="fr">Protocole MCU (JAC_V1)</span></h2>
+<p><span lang="en">Reverse engineered from the firmware (<code>jacmcu.bin</code>) and the stock Android stack; full analysis in <a href="https://github.com/LibreHU/MCU-tools-app/blob/main/docs/mcu_firmware.md">MCU-tools-app/docs/mcu_firmware.md</a>.</span><span lang="fr">Retrouvé à partir du firmware (<code>jacmcu.bin</code>) et de la pile Android d'origine ; analyse complète dans <a href="https://github.com/LibreHU/MCU-tools-app/blob/main/docs/mcu_firmware.md">MCU-tools-app/docs/mcu_firmware.md</a>.</span></p>
+<h3 id="mcu-frame"><span lang="en">Frame</span><span lang="fr">Trame</span></h3>
+<pre><code>EE FA LEN CMD D0 .. Dn-1 CS     LEN = n + 1     CS = (EE + FA + LEN + CMD + D0 + .. + Dn-1) &amp; 0xFF
+<span lang="en">examples</span><span lang="fr">exemples</span>: EE FA 02 1F 01 0A   (PC_READY)     EE FA 03 F0 00 00 DB   (<span lang="en">ACC?</span><span lang="fr">ACC ?</span>)</code></pre>
+<ul>
+  <li><span lang="en"><code>/dev/ttyS1</code> ↔ MCU USART2, 115200 8N1. Data ≤ 130 bytes; the MCU drops a frame after 1 s without a byte.</span><span lang="fr"><code>/dev/ttyS1</code> ↔ USART2 de la MCU, 115200 8N1. Données ≤ 130 octets ; la MCU abandonne une trame après 1 s sans octet.</span></li>
+  <li><span lang="en">Every valid frame except <code>C0</code> is acknowledged with <code>C0 &lt;cmd&gt; &lt;d0&gt; &lt;d1&gt;</code>. LibreHU resends <code>1F 08 01 F1 80</code> every 500 ms, 5 times, until acknowledged.</span><span lang="fr">Toute trame valide sauf <code>C0</code> est acquittée par <code>C0 &lt;cmd&gt; &lt;d0&gt; &lt;d1&gt;</code>. LibreHU renvoie <code>1F 08 01 F1 80</code> toutes les 500 ms, 5 fois, jusqu'à l'acquittement.</span></li>
+  <li><span lang="en">Long frames (CAN data, <code>LEN</code> ≥ <code>0x80</code>) must be read with an unsigned length: the stock Android stack crashes on them.</span><span lang="fr">Les trames longues (données CAN, <code>LEN</code> ≥ <code>0x80</code>) doivent être lues avec une longueur non signée : la pile Android d'origine plante dessus.</span></li>
+  <li><span lang="en">At start, send <code>1F 01</code> (PC_READY): the MCU answers ACC (<code>00</code>), version (<code>0A</code>, +200 ms), date and time (<code>09</code>, +400 ms). No heartbeat to keep.</span><span lang="fr">Au démarrage, envoyer <code>1F 01</code> (PC_READY) : la MCU répond ACC (<code>00</code>), version (<code>0A</code>, +200 ms), date et heure (<code>09</code>, +400 ms). Aucun battement de cœur à entretenir.</span></li>
+</ul>
+
+<h3 id="mcu-tx">SoC → MCU</h3>
+<div class="table"><table>
+<thead><tr><th>Cmd</th><th><span lang="en">Data</span><span lang="fr">Données</span></th><th><span lang="en">Effect</span><span lang="fr">Effet</span></th></tr></thead>
+<tbody>
+<tr><td><code>01</code></td><td><code>[type ..]</code></td><td><span lang="en">type 3..5: delayed power-off (15 min max); type 2 (sent by stock Android at ACC off) ignored</span><span lang="fr">type 3..5 : extinction différée (15 min au plus) ; type 2 (envoyé par Android d'origine à la coupure) ignoré</span></td></tr>
+<tr><td><code>08</code></td><td><code>[0/1]</code></td><td><span lang="en">mute (PA0)</span><span lang="fr">sourdine (PA0)</span></td></tr>
+<tr><td><code>09</code></td><td><code>[0, yy/100, yy%100, month, day]</code> · <code>[1, h, m, s]</code></td><td><span lang="en">set the RTC</span><span lang="fr">règle la RTC</span></td></tr>
+<tr><td><code>0E</code></td><td><code>[0, 0, 0]</code></td><td><span lang="en">reset the SoC (power cycle of its rails), works when Android hangs</span><span lang="fr">reset du SoC (coupure de ses rails), marche quand Android est bloqué</span></td></tr>
+<tr><td><code>0F</code></td><td><code>[sub ..]</code></td><td><span lang="en">configuration, see below</span><span lang="fr">configuration, voir ci-dessous</span></td></tr>
+<tr><td><code>10</code></td><td><span lang="en">bytes</span><span lang="fr">octets</span></td><td><span lang="en">copied as is to USART1 (CAN box)</span><span lang="fr">recopiés tels quels sur USART1 (boîtier CAN)</span></td></tr>
+<tr><td><code>11</code> / <code>21</code></td><td><code>[2]</code> / <span lang="en">other</span><span lang="fr">autre</span></td><td><span lang="en">steering wheel / front panel key learning start / end</span><span lang="fr">début / fin d'apprentissage des touches volant / façade</span></td></tr>
+<tr><td><code>1F</code></td><td><code>[01]</code></td><td>PC_READY</td></tr>
+<tr><td><code>43</code></td><td><code>[0/1]</code></td><td><span lang="en">radio antenna power (PF6)</span><span lang="fr">alimentation antenne radio (PF6)</span></td></tr>
+<tr><td><code>44</code></td><td><code>[0/1]</code></td><td><span lang="en">REM output, external amplifier (PB3)</span><span lang="fr">sortie REM, ampli externe (PB3)</span></td></tr>
+<tr><td><code>80</code></td><td><code>[00 ..]</code></td><td><span lang="en">jump to the MCU bootloader (firmware update)</span><span lang="fr">passage au bootloader de la MCU (mise à jour du firmware)</span></td></tr>
+<tr><td><code>F0</code></td><td><code>[qq, 00]</code></td><td><span lang="en">query: <code>00</code> ACC, <code>04</code> handbrake, <code>08</code> mute, <code>09</code> clock, <code>0A</code> version, <code>0B</code> lights, <code>0D</code> backlight, <code>43</code> radio, <code>0F 07</code> option</span><span lang="fr">requête : <code>00</code> ACC, <code>04</code> frein à main, <code>08</code> sourdine, <code>09</code> heure, <code>0A</code> version, <code>0B</code> feux, <code>0D</code> rétroéclairage, <code>43</code> radio, <code>0F 07</code> option</span></td></tr>
+<tr><td><code>F1</code></td><td><code>[n]</code></td><td><span lang="en">standby duration n × 420 min (0 = power off)</span><span lang="fr">durée de veille n × 420 min (0 = extinction)</span></td></tr>
+</tbody></table></div>
+<p><span lang="en"><code>0F</code> sub-commands: <code>00 [i]</code> CAN USART speed (9600…460800, i = 0..6, default 38400) · <code>02 [p]</code> / <code>03 [p]</code> PWM brightness 5..100 % (PA8, PB14) · <code>04 [type, R, G, B, mode]</code> front LEDs (R/G/B 0..99, mode 1 auto cycle, 2 manual, 3 semi-auto) · <code>06</code> knob parameters · <code>08 [type]</code> panel type · <code>0A [i]</code> high threshold 16..20 V · <code>0B [i]</code> low threshold 9 / 9.5 / 10 V. Settings are stored in a flash page (<code>0x08002000</code>) written 3 s after the last change.</span><span lang="fr">Sous-commandes <code>0F</code> : <code>00 [i]</code> vitesse de l'USART du CAN (9600…460800, i = 0..6, 38400 par défaut) · <code>02 [p]</code> / <code>03 [p]</code> luminosité PWM 5..100 % (PA8, PB14) · <code>04 [type, R, V, B, mode]</code> LED de façade (R/V/B 0..99, mode 1 cycle auto, 2 manuel, 3 semi-auto) · <code>06</code> paramètres de la molette · <code>08 [type]</code> type de façade · <code>0A [i]</code> seuil haut 16..20 V · <code>0B [i]</code> seuil bas 9 / 9,5 / 10 V. Les réglages sont gardés dans une page de flash (<code>0x08002000</code>) écrite 3 s après le dernier changement.</span></p>
+
+<h3 id="mcu-rx">MCU → SoC</h3>
+<div class="table"><table>
+<thead><tr><th>Cmd</th><th><span lang="en">Data</span><span lang="fr">Données</span></th><th><span lang="en">When</span><span lang="fr">Quand</span></th></tr></thead>
+<tbody>
+<tr><td><code>00</code></td><td><code>[acc]</code></td><td><span lang="en">after PC_READY, ignition change, query</span><span lang="fr">après PC_READY, changement du contact, requête</span></td></tr>
+<tr><td><code>04</code></td><td><code>[hb]</code></td><td><span lang="en">handbrake change, query</span><span lang="fr">changement du frein à main, requête</span></td></tr>
+<tr><td><code>09</code></td><td><code>[0, 20, yy, mm, dd]</code> · <code>[1, h, m, s]</code></td><td><span lang="en">+400 ms after PC_READY, query</span><span lang="fr">+400 ms après PC_READY, requête</span></td></tr>
+<tr><td><code>0A</code></td><td><span lang="en">32 ASCII bytes, e.g. <code>JCST_AC8257_8T7-2024.08.09_12:59</code></span><span lang="fr">32 octets ASCII, ex. <code>JCST_AC8257_8T7-2024.08.09_12:59</code></span></td><td><span lang="en">+200 ms after PC_READY</span><span lang="fr">+200 ms après PC_READY</span></td></tr>
+<tr><td><code>0B</code></td><td><code>[ill]</code></td><td><span lang="en">lights change</span><span lang="fr">changement des feux</span></td></tr>
+<tr><td><code>10</code></td><td><span lang="en">≤ 128 bytes</span><span lang="fr">≤ 128 octets</span></td><td><span lang="en">CAN box data, ~20 ms after its last byte</span><span lang="fr">données du boîtier CAN, ~20 ms après son dernier octet</span></td></tr>
+<tr><td><code>20</code> / <code>30</code></td><td><code>[ch, v1, v2, v3, v4]</code></td><td><span lang="en">key (<code>30</code> while learning): channel 5-6 steering wheel (3 ADC readings, released = <code>FF FF FF</code>), 3-4 front panel, 2 knob</span><span lang="fr">touche (<code>30</code> pendant l'apprentissage) : canal 5-6 volant (3 mesures ADC, relâché = <code>FF FF FF</code>), 3-4 façade, 2 molette</span></td></tr>
+<tr><td><code>C0</code></td><td><code>[cmd, d0, d1]</code></td><td>ACK</td></tr>
+</tbody></table></div>
+
+<h3 id="mcu-power"><span lang="en">Power states</span><span lang="fr">États d'alimentation</span></h3>
+<div class="table"><table>
+<thead><tr><th><span lang="en">State</span><span lang="fr">État</span></th><th><span lang="en">Behaviour (100 ms task)</span><span lang="fr">Comportement (tâche 100 ms)</span></th></tr></thead>
+<tbody>
+<tr><td>0</td><td><span lang="en">off, waiting for ACC; ACC and voltage below the high threshold → powers the SoC</span><span lang="fr">éteint, attente du contact ; contact et tension sous le seuil haut → alimente le SoC</span></td></tr>
+<tr><td>1</td><td><span lang="en">cold start: SoC rail at +1.5 s, waits for <code>1F 01</code> up to 15 min; warm start (from standby): wake pulse, waits 10 s</span><span lang="fr">démarrage à froid : rail du SoC à +1,5 s, attend <code>1F 01</code> jusqu'à 15 min ; à chaud (sortie de veille) : impulsion de réveil, attend 10 s</span></td></tr>
+<tr><td>2</td><td><span lang="en">running; ACC lost (1 s filter) or overvoltage for 3 s → sends <code>00 00</code></span><span lang="fr">marche ; contact perdu (filtre 1 s) ou surtension 3 s → envoie <code>00 00</code></span></td></tr>
+<tr><td>3</td><td><span lang="en">ACC off: ACC back → <code>00 01</code>; else SoC cut after 15 s (40 s if not running)</span><span lang="fr">contact coupé : retour → <code>00 01</code> ; sinon SoC coupé après 15 s (40 s s'il ne tourne pas)</span></td></tr>
+<tr><td>4</td><td><span lang="en">standby / off: with an <code>F1</code> duration, SoC kept suspended, RTC wake-ups, full off below the low threshold</span><span lang="fr">veille / arrêt : avec une durée <code>F1</code>, SoC gardé en suspension, réveils RTC, arrêt complet sous le seuil bas</span></td></tr>
+</tbody></table></div>
+<p><span lang="en">LibreHU-service exposes two states: <code>FLAG_ACC</code> (the ignition line, at once) and <code>FLAG_POWERED</code> (follows ACC but drops only after the engine-start delay, 0..10 s). Screen, sound, amplifier and standby follow <code>POWERED</code>. Source: <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/power.md">docs/power.md</a>.</span><span lang="fr">LibreHU-service expose deux états : <code>FLAG_ACC</code> (le fil de contact, tout de suite) et <code>FLAG_POWERED</code> (suit le contact mais ne retombe qu'après le délai de démarrage moteur, 0..10 s). Écran, son, ampli et veille suivent <code>POWERED</code>. Source : <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/power.md">docs/power.md</a>.</span></p>
+
+<h3 id="mcu-profile"><span lang="en">MCU profiles (JSON)</span><span lang="fr">Profils MCU (JSON)</span></h3>
+<p><span lang="en">The protocol is data, not code: <code>jancar-jac-v1</code> runs on a native implementation, any other profile on a generic engine; a unit test checks both produce the same frames for the Jancar profile. Import / export in Advanced → MCU.</span><span lang="fr">Le protocole est une donnée, pas du code : <code>jancar-jac-v1</code> tourne sur une implémentation native, tout autre profil sur un moteur générique ; un test unitaire vérifie que les deux produisent les mêmes trames pour le profil Jancar. Import / export dans Avancé → MCU.</span></p>
+<pre><code>{
+  "format": "librehu-mcu-profile", "version": 1, "id": "jancar-jac-v1",
+  "serial": { "port": "/dev/ttyS1", "baud": 115200 },
+  "frame": { "header": "EE FA", "lengthOffset": 2, "lengthCounts": "cmd_data", "lengthAdd": 0, "cmdOffset": 3,
+             "checksum": "sum8", "checksumFrom": 0, "checksumAdjust": 0, "maxData": 130 },
+  "ack": { "cmd": "C0", "ackedByte": 0, "needs": ["01", "08", "1F", "80", "F1"], "timeoutMs": 500, "tries": 5 },
+  "inputs": [ { "signal": "acc", "cmd": "00" },
+              { "signal": "date", "cmd": "09", "match": { "0": "00" }, "fields": { "yearHi": 1, "yearLo": 2, "month": 3, "day": 4 } } ],
+  "outputs": { "pcReady": "1F 01", "muteOn": "08 01", "muteOff": "08 00",
+               "date": "09 00 {yearHi} {yearLo} {month} {day}", "can": "10 {data}" },
+  "board": { "reverseGpio": 2, "turnLeftGpio": 7, "turnRightGpio": 6, "backlightGpio": 5, "ampMuteGpio": 166,
+             "antennaGpio": 110, "audioChip": "bd37534", "audioBus": 6, "audioAddress": "40" }
+}</code></pre>
+<ul>
+  <li><span lang="en"><code>lengthCounts</code>: <code>data</code>, <code>cmd_data</code>, <code>frame</code> or <code>after_length</code>; <code>checksum</code>: <code>none</code>, <code>sum8</code>, <code>xor8</code>, <code>twos8</code>, from <code>checksumFrom</code>, plus <code>checksumAdjust</code>.</span><span lang="fr"><code>lengthCounts</code> : <code>data</code>, <code>cmd_data</code>, <code>frame</code> ou <code>after_length</code> ; <code>checksum</code> : <code>none</code>, <code>sum8</code>, <code>xor8</code>, <code>twos8</code>, depuis <code>checksumFrom</code>, plus <code>checksumAdjust</code>.</span></li>
+  <li><span lang="en">Input signals: <code>acc</code>, <code>handbrake</code>, <code>headlight</code>, <code>backlight</code>, <code>reverse</code> (<code>byte</code>, <code>mask</code>, <code>invert</code>), <code>version</code>, <code>date</code>, <code>time</code>, <code>key</code>, <code>can</code>; first match wins.</span><span lang="fr">Signaux d'entrée : <code>acc</code>, <code>handbrake</code>, <code>headlight</code>, <code>backlight</code>, <code>reverse</code> (<code>byte</code>, <code>mask</code>, <code>invert</code>), <code>version</code>, <code>date</code>, <code>time</code>, <code>key</code>, <code>can</code> ; le premier qui correspond gagne.</span></li>
+  <li><span lang="en">Outputs: <code>pcReady</code>, <code>muteOn/Off</code>, <code>ampOn/Off</code>, <code>antennaOn/Off</code>, <code>date</code>, <code>time</code>, <code>can</code>, <code>queryClock</code>, <code>watchdogOff</code>, <code>resetSoc</code>, <code>sleepTimer</code> (<code>{units}</code>); a missing output is not sent. <code>board</code> GPIOs may be <code>null</code> (not wired).</span><span lang="fr">Sorties : <code>pcReady</code>, <code>muteOn/Off</code>, <code>ampOn/Off</code>, <code>antennaOn/Off</code>, <code>date</code>, <code>time</code>, <code>can</code>, <code>queryClock</code>, <code>watchdogOff</code>, <code>resetSoc</code>, <code>sleepTimer</code> (<code>{units}</code>) ; une sortie absente n'est pas envoyée. Les GPIO de <code>board</code> peuvent valoir <code>null</code> (non câblé).</span></li>
+</ul>
+
+<h2 id="can"><span lang="en">CAN box (Hiworld)</span><span lang="fr">Boîtier CAN (Hiworld)</span></h2>
+<p><span lang="en">The CAN box sits on CAN-H / CAN-L and translates the car's bus into its own messages, configured per car (Renault: protocol LNP002). The MCU only relays bytes (USART1, command <code>10</code>); LibreHU rebuilds and decodes them.</span><span lang="fr">Le boîtier CAN est branché sur CAN-H / CAN-L et traduit le bus de la voiture en ses propres messages, réglés par voiture (Renault : protocole LNP002). La MCU ne fait que relayer les octets (USART1, commande <code>10</code>) ; LibreHU les reconstitue et les décode.</span></p>
+<pre><code>5A A5 LEN CMD D0 .. Dn-1 CS     LEN = n     CS = ((LEN + CMD + D0 + .. + Dn-1) &amp; 0xFF) - 1
+ACK: 5A A5 01 FF &lt;cmd&gt; CS</code></pre>
+<p><span lang="en">Vehicle profiles (<code>librehu-can-vehicle</code>, signal syntax of <a href="https://github.com/Tanchouteur/CliOS">CliOS</a>):</span><span lang="fr">Profils de voiture (<code>librehu-can-vehicle</code>, syntaxe des signaux de <a href="https://github.com/Tanchouteur/CliOS">CliOS</a>) :</span></p>
+<pre><code>{ "format": "librehu-can-vehicle", "version": 1, "id": "my-car", "box": "hiworld",
+  "messages": { "0x11": { "name": "State", "signals": {
+    "status":   { "start_byte": 0, "bits": { "ACC": 0, "lights": 1 } },
+    "key":      { "start_byte": 2, "mask": "0x1F", "values": { "1": "volume +" } },
+    "steering": { "start_byte": 6, "size": 2, "sign_magnitude": true, "factor": 0.1, "unit": "°" } } } } }</code></pre>
+<p><span lang="en">Signal fields: <code>start_byte</code> (from D0), <code>size</code> 1..8, <code>endian</code>, <code>mask</code>, <code>shift</code>, <code>signed</code> + <code>bit_length</code>, <code>sign_magnitude</code>, <code>factor</code>, <code>offset</code>, <code>min_value</code> / <code>max_value</code>, <code>bits</code>, <code>values</code>, <code>ascii</code>, <code>unit</code>, <code>label</code>. Built in: <code>renault-clio3-hiworld</code>, <code>hiworld-generic</code> (raw). Steering wheel keys come in command <code>0x11</code>. CliOS dictionaries index raw CAN ids (<code>0x181</code>…) that never reach the head unit through the box, so they are not importable as is.</span><span lang="fr">Champs d'un signal : <code>start_byte</code> (depuis D0), <code>size</code> 1..8, <code>endian</code>, <code>mask</code>, <code>shift</code>, <code>signed</code> + <code>bit_length</code>, <code>sign_magnitude</code>, <code>factor</code>, <code>offset</code>, <code>min_value</code> / <code>max_value</code>, <code>bits</code>, <code>values</code>, <code>ascii</code>, <code>unit</code>, <code>label</code>. Intégrés : <code>renault-clio3-hiworld</code>, <code>hiworld-generic</code> (brut). Les touches du volant arrivent dans la commande <code>0x11</code>. Les dictionnaires de CliOS indexent des identifiants CAN bruts (<code>0x181</code>…) qui n'arrivent jamais à l'autoradio par le boîtier : ils ne sont pas importables tels quels.</span></p>
+
+<h2 id="api"><span lang="en">Service API</span><span lang="fr">API du service</span></h2>
+<h3 id="api-aidl">AIDL</h3>
+<pre><code>&lt;queries&gt;&lt;package android:name="org.librehu.service" /&gt;&lt;/queries&gt;
+
+bindService(Intent("org.librehu.service.BIND").setPackage("org.librehu.service"), conn, BIND_AUTO_CREATE)
+// onServiceConnected: val api = ILibreHuService.Stub.asInterface(binder)
+api.setVolume(20); api.setBalanceFade(30, 20); api.registerCallback(callback)</code></pre>
+<p><span lang="en">Copy the <code>.aidl</code> files (package <code>org.librehu.service</code>, plus <code>bt/</code> and <code>bt/BtParcels.kt</code> for Bluetooth) into the client. Access control works like SuperSU: <code>org.librehu.*</code> and system apps are allowed, any other app gets a <code>SecurityException</code> until the user allows it. Current level: <strong>API 8</strong>; new methods are only appended, so older clients keep their transaction numbers.</span><span lang="fr">Copier les fichiers <code>.aidl</code> (paquet <code>org.librehu.service</code>, plus <code>bt/</code> et <code>bt/BtParcels.kt</code> pour le Bluetooth) dans le client. Contrôle d'accès façon SuperSU : les applis <code>org.librehu.*</code> et système sont autorisées, toute autre reçoit une <code>SecurityException</code> jusqu'à ce que l'utilisateur l'autorise. Niveau actuel : <strong>API 8</strong> ; les nouvelles méthodes ne sont qu'ajoutées à la fin, donc les anciens clients gardent leurs numéros de transaction.</span></p>
+<div class="table"><table>
+<thead><tr><th>API</th><th><span lang="en">Methods</span><span lang="fr">Méthodes</span></th></tr></thead>
+<tbody>
+<tr><td>1</td><td><code>getApiVersion</code> · <code>getStatus</code> · <code>getMcuVersion</code> · <code>getVehicleFlags</code> · <code>get/setVolume</code>, <code>getMaxVolume</code> · <code>isMuted/setMuted</code> · <code>getTone/setTone(bass, middle, treble)</code> 0..20 · <code>getBalanceFade/setBalanceFade</code> 0..60 (30 = <span lang="en">centre</span><span lang="fr">centre</span>) · <code>get/setLoudness</code> 0..15 · <code>isSubwooferOn</code>, <code>getSubwooferLevel</code>, <code>setSubwoofer(on, 0..12)</code> · <code>is/setExternalAmpEnabled</code> · <code>sendMcuFrame(cmd, data)</code> · <code>sendCanData(data)</code> · <code>register/unregisterCallback</code></td></tr>
+<tr><td>2</td><td><code>setRadioAntenna(on)</code>, <code>isRadioAntennaOn</code> <span lang="en">(GPIO 110 + MCU 43, cut at ACC off)</span><span lang="fr">(GPIO 110 + MCU 43, coupée à la coupure du contact)</span></td></tr>
+<tr><td>3</td><td><code>getBluetooth(): ILibreHuBluetooth</code> <span lang="en">(hands-free, music, phone book)</span><span lang="fr">(mains libres, musique, répertoire)</span></td></tr>
+<tr><td>4</td><td><code>getObdValues(): Bundle</code> <span lang="en">(RPM, SPEED, COOLANT_TEMP…, BATTERY)</span><span lang="fr">(RPM, SPEED, COOLANT_TEMP…, BATTERY)</span> · <code>getObdState()</code> <span lang="en">0 off, 1 connecting, 2 init, 3 connected, 4 error</span><span lang="fr">0 arrêt, 1 connexion, 2 init, 3 connecté, 4 erreur</span> · <code>getMcuProtocol()</code></td></tr>
+<tr><td>5</td><td><code>resetSoc()</code> <span lang="en">(MCU <code>0E</code>)</span><span lang="fr">(MCU <code>0E</code>)</span></td></tr>
+<tr><td>6</td><td><code>setAudioSource(0 Android / 1 AUX)</code>, <code>getAudioSource</code></td></tr>
+<tr><td>7</td><td><code>runKeyAction(name)</code> <span lang="en">(TouchAction: VOLUME_UP, NEXT, VOICE_ASSISTANT…; routed to Android Auto, EasySource or the sound menu when shown)</span><span lang="fr">(TouchAction : VOLUME_UP, NEXT, VOICE_ASSISTANT… ; vers Android Auto, EasySource ou le menu son s'ils sont affichés)</span></td></tr>
+<tr><td>8</td><td><code>getObdBattery()</code> <span lang="en">(voltage, percent, status ENGINE_OFF / CHARGING / NOT_CHARGING / OVERVOLTAGE)</span><span lang="fr">(voltage, percent, status ENGINE_OFF / CHARGING / NOT_CHARGING / OVERVOLTAGE)</span> · <code>getObdCarValues()</code> <span lang="en">("&lt;ECU&gt;/&lt;value&gt;" → name, ecu, text, unit, number, error)</span><span lang="fr">(« &lt;ECU&gt;/&lt;valeur&gt; » → name, ecu, text, unit, number, error)</span></td></tr>
+</tbody></table></div>
+<p><span lang="en">Callback (<code>oneway</code>): <code>onVehicleFlags(flags)</code>, <code>onAudioChanged()</code>, <code>onMcuFrame(cmd, data, fromMcu)</code> (both directions), <code>onKey(channel, values, released, learning)</code>, <code>onCanData(data)</code>.</span><span lang="fr">Rappel (<code>oneway</code>) : <code>onVehicleFlags(flags)</code>, <code>onAudioChanged()</code>, <code>onMcuFrame(cmd, data, fromMcu)</code> (les deux sens), <code>onKey(channel, values, released, learning)</code>, <code>onCanData(data)</code>.</span></p>
+<div class="table"><table>
+<thead><tr><th>Bit</th><th>Flag</th><th><span lang="en">Meaning</span><span lang="fr">Sens</span></th></tr></thead>
+<tbody>
+<tr><td>0</td><td><code>FLAG_MCU_ONLINE</code></td><td><span lang="en">MCU link up</span><span lang="fr">liaison MCU active</span></td></tr>
+<tr><td>1</td><td><code>FLAG_ACC</code></td><td><span lang="en">ignition line</span><span lang="fr">fil de contact</span></td></tr>
+<tr><td>2</td><td><code>FLAG_HANDBRAKE</code></td><td><span lang="en">handbrake on</span><span lang="fr">frein à main serré</span></td></tr>
+<tr><td>3</td><td><code>FLAG_HEADLIGHT</code></td><td><span lang="en">lights on</span><span lang="fr">feux allumés</span></td></tr>
+<tr><td>4</td><td><code>FLAG_REVERSE</code></td><td><span lang="en">reverse gear</span><span lang="fr">marche arrière</span></td></tr>
+<tr><td>5 / 6</td><td><code>FLAG_TURN_LEFT</code> / <code>RIGHT</code></td><td><span lang="en">turn signals</span><span lang="fr">clignotants</span></td></tr>
+<tr><td>7</td><td><code>FLAG_POWERED</code></td><td><span lang="en">powered (ACC with the engine-start delay)</span><span lang="fr">alimenté (contact avec le délai de démarrage)</span></td></tr>
+</tbody></table></div>
+
+<h3 id="api-broadcasts"><span lang="en">Broadcasts and intents</span><span lang="fr">Diffusions et intents</span></h3>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Action</span><span lang="fr">Action</span></th><th><span lang="en">Extras / role</span><span lang="fr">Extras / rôle</span></th></tr></thead>
+<tbody>
+<tr><td><code>org.librehu.action.VEHICLE_STATE</code></td><td><span lang="en"><code>flags</code> + one boolean per flag (<code>acc</code>, <code>handbrake</code>, <code>headlight</code>, <code>reverse</code>, <code>powered</code>…)</span><span lang="fr"><code>flags</code> + un booléen par drapeau (<code>acc</code>, <code>handbrake</code>, <code>headlight</code>, <code>reverse</code>, <code>powered</code>…)</span></td></tr>
+<tr><td><code>org.librehu.action.ACC</code> · <code>REVERSE</code></td><td><code>acc</code> · <code>reverse</code></td></tr>
+<tr><td><code>org.librehu.action.OBD</code></td><td><span lang="en">≈ 1/s, value name → double (<code>RPM</code>, <code>SPEED</code>…), <code>BATTERY_PERCENT</code>, <code>BATTERY_STATUS</code></span><span lang="fr">≈ 1/s, nom de valeur → double (<code>RPM</code>, <code>SPEED</code>…), <code>BATTERY_PERCENT</code>, <code>BATTERY_STATUS</code></span></td></tr>
+<tr><td><code>org.librehu.action.THEME_CHANGED</code></td><td><span lang="en">launcher style, font and palette (same names as the theme provider)</span><span lang="fr">style, police et palette du launcher (mêmes noms que le fournisseur de thème)</span></td></tr>
+<tr><td><code>org.librehu.action.HOME_VISIBLE</code></td><td><span lang="en">launcher dashboard shown</span><span lang="fr">tableau de bord du launcher affiché</span></td></tr>
+<tr><td><code>org.librehu.action.REQUEST_ROOT</code> / <code>ROOT_RESULT</code></td><td><span lang="en">root handshake (below)</span><span lang="fr">demande de root (ci-dessous)</span></td></tr>
+<tr><td><code>org.librehu.service.AUDIO_SOURCE</code> · <code>RESET_SOC</code> · <code>SAFE_SHUTDOWN</code> · <code>SAFE_SHUTDOWN_RESUME</code> · <code>REVERSE_VIEW_TOGGLE</code> · <code>SOURCE_SWITCHER</code> · <code>RESTART</code></td><td><span lang="en">commands to the service</span><span lang="fr">commandes au service</span></td></tr>
+<tr><td><code>org.librehu.service.CLAIM_KEYS</code></td><td><span lang="en">BtnRemap takes the key actions (needs <code>HEADUNIT</code>)</span><span lang="fr">BtnRemap prend les actions des touches (demande <code>HEADUNIT</code>)</span></td></tr>
+<tr><td><code>org.librehu.service.REAR_PREVIEW</code></td><td><span lang="en">Messenger service: the launcher hands a <code>Surface</code> (<code>MSG_ATTACH</code>) and the camera draws straight into it</span><span lang="fr">service Messenger : le launcher confie une <code>Surface</code> (<code>MSG_ATTACH</code>) et la caméra y dessine directement</span></td></tr>
+</tbody></table></div>
+<p><span lang="en">Vehicle, ACC, reverse and OBD broadcasts are sent under the signature permission <code>org.librehu.permission.VEHICLE</code>: only apps signed with the LibreHU key receive them.</span><span lang="fr">Les diffusions véhicule, contact, marche arrière et OBD partent sous la permission de signature <code>org.librehu.permission.VEHICLE</code> : seules les applis signées avec la clé LibreHU les reçoivent.</span></p>
+
+<h3 id="api-providers"><span lang="en">Providers and permissions</span><span lang="fr">Fournisseurs et permissions</span></h3>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Name</span><span lang="fr">Nom</span></th><th><span lang="en">Kind</span><span lang="fr">Type</span></th><th><span lang="en">Role</span><span lang="fr">Rôle</span></th></tr></thead>
+<tbody>
+<tr><td><code>org.librehu.permission.VEHICLE</code></td><td>signature</td><td><span lang="en">receive vehicle / OBD broadcasts</span><span lang="fr">recevoir les diffusions véhicule / OBD</span></td></tr>
+<tr><td><code>org.librehu.permission.HEADUNIT</code></td><td>signature</td><td><span lang="en">claim the keys (BtnRemap)</span><span lang="fr">réclamer les touches (BtnRemap)</span></td></tr>
+<tr><td><code>org.librehu.permission.ROOT_REQUEST</code></td><td>signature</td><td><span lang="en">send <code>REQUEST_ROOT</code>; declared by every app so it exists in any install order</span><span lang="fr">envoyer <code>REQUEST_ROOT</code> ; déclarée par chaque appli pour exister dans tout ordre d'installation</span></td></tr>
+<tr><td><code>org.librehu.permission.BRIDGE</code></td><td>signature</td><td><span lang="en">call <code>&lt;pkg&gt;.bridge</code> providers and <code>bridgepair</code></span><span lang="fr">appeler les fournisseurs <code>&lt;pkg&gt;.bridge</code> et <code>bridgepair</code></span></td></tr>
+<tr><td><code>org.librehu.permission.SOS</code></td><td>signature</td><td><span lang="en">open the launcher's emergency call screen</span><span lang="fr">ouvrir l'écran d'appel d'urgence du launcher</span></td></tr>
+<tr><td><code>content://org.librehu.service.vehicle</code></td><td>provider</td><td><span lang="en">vehicle sheet and Bluetooth / Wi-Fi addresses for LibreHU apps</span><span lang="fr">fiche du véhicule et adresses Bluetooth / Wi-Fi pour les applis LibreHU</span></td></tr>
+<tr><td><code>content://org.librehu.service.bridgepair</code></td><td>provider</td><td><span lang="en"><code>call()</code>: <code>pair</code>, <code>cancel</code>, <code>answer</code>, <code>enable</code>, <code>state</code></span><span lang="fr"><code>call()</code> : <code>pair</code>, <code>cancel</code>, <code>answer</code>, <code>enable</code>, <code>state</code></span></td></tr>
+<tr><td><code>content://&lt;pkg&gt;.bridge</code></td><td>provider</td><td><span lang="en"><code>call("pages")</code>, <code>call("set", "page/item", {value})</code>, <code>call("action", …)</code></span><span lang="fr"><code>call("pages")</code>, <code>call("set", "page/élément", {value})</code>, <code>call("action", …)</code></span></td></tr>
+<tr><td><code>content://org.librehu.launcher.theme/theme</code></td><td>provider</td><td><span lang="en">style, font and palette</span><span lang="fr">style, police et palette</span></td></tr>
+</tbody></table></div>
+<p class="note"><span lang="en">Android 9 does not enforce a provider's read / write permission on <code>call()</code> (<code>ContentProvider.Transport.call</code>): every LibreHU provider checks <code>checkCallingPermission("org.librehu.permission.BRIDGE")</code> itself, through the shared <code>BridgeKit.kt</code>.</span><span lang="fr">Android 9 n'applique pas la permission de lecture / écriture d'un fournisseur à <code>call()</code> (<code>ContentProvider.Transport.call</code>) : chaque fournisseur LibreHU vérifie lui-même <code>checkCallingPermission("org.librehu.permission.BRIDGE")</code>, par le <code>BridgeKit.kt</code> commun.</span></p>
+
+<h3 id="api-theme"><span lang="en">Theme contract</span><span lang="fr">Contrat de thème</span></h3>
+<p><span lang="en">The launcher publishes its look so every app follows it: columns <code>style</code>, <code>font</code>, <code>background</code>, <code>surface</code>, <code>surface_high</code>, <code>on_accent</code>, <code>text</code>, <code>text_dim</code> in <code>content://org.librehu.launcher.theme/theme</code>, same names as extras of <code>org.librehu.action.THEME_CHANGED</code>. Retro style = car stereo display palette derived from the accent colour (day / night); segment font = "LibreHU Seg14" (from DSEG14 © keshikan, SIL OFL 1.1), upper case without accents.</span><span lang="fr">Le launcher publie son apparence pour que toutes les applis la suivent : colonnes <code>style</code>, <code>font</code>, <code>background</code>, <code>surface</code>, <code>surface_high</code>, <code>on_accent</code>, <code>text</code>, <code>text_dim</code> dans <code>content://org.librehu.launcher.theme/theme</code>, mêmes noms que les extras de <code>org.librehu.action.THEME_CHANGED</code>. Style rétro = palette d'afficheur d'autoradio tirée de la couleur d'accent (jour / nuit) ; police à segments = « LibreHU Seg14 » (tirée de DSEG14 © keshikan, SIL OFL 1.1), en majuscules sans accents.</span></p>
+<p><span lang="en"><strong>Widgets</strong>: Android 9 refuses app fonts in the restricted context of a home screen (<code>TextView</code> / <code>RemoteViews</code>). <code>SegmentViews</code> inflates the widget layout, applies the segment font, measures it at the widget's real size (<code>OPTION_APPWIDGET_MAX_WIDTH</code> / <code>MIN_HEIGHT</code>, given by the launcher with <code>updateAppWidgetSize</code>), draws each TextView into a bitmap (ellipsis kept) and shows it in an <code>ImageView &lt;id&gt;_seg</code> added next to each text by <code>tools/segment_widgets.py</code>.</span><span lang="fr"><strong>Widgets</strong> : Android 9 refuse les polices d'appli dans le contexte restreint d'un écran d'accueil (<code>TextView</code> / <code>RemoteViews</code>). <code>SegmentViews</code> gonfle le layout du widget, applique la police à segments, le mesure à la vraie taille du widget (<code>OPTION_APPWIDGET_MAX_WIDTH</code> / <code>MIN_HEIGHT</code>, donnée par le launcher avec <code>updateAppWidgetSize</code>), dessine chaque TextView dans une image (ellipse gardée) et l'affiche dans une <code>ImageView &lt;id&gt;_seg</code> ajoutée à côté de chaque texte par <code>tools/segment_widgets.py</code>.</span></p>
+
+<h3 id="api-root"><span lang="en">Root handshake</span><span lang="fr">Demande de root</span></h3>
+<p><span lang="en">To get every root prompt at once, the launcher sends <code>org.librehu.action.REQUEST_ROOT</code> to each LibreHU package in turn (protected by <code>ROOT_REQUEST</code>); its <code>RootRequestReceiver</code> runs <code>su -c id</code> once and answers <code>org.librehu.action.ROOT_RESULT</code> (<code>package</code>, <code>granted</code>) to <code>reply_to</code>. Nothing but <code>id</code> runs; a second request within 20 s is ignored. Root commands run with a real timeout (output read on its own thread).</span><span lang="fr">Pour avoir toutes les demandes de root d'un coup, le launcher envoie <code>org.librehu.action.REQUEST_ROOT</code> à chaque paquet LibreHU à tour de rôle (protégé par <code>ROOT_REQUEST</code>) ; son <code>RootRequestReceiver</code> lance une fois <code>su -c id</code> et répond <code>org.librehu.action.ROOT_RESULT</code> (<code>package</code>, <code>granted</code>) à <code>reply_to</code>. Rien d'autre que <code>id</code> n'est lancé ; une seconde demande dans les 20 s est ignorée. Les commandes root ont un vrai délai maximal (sortie lue sur son propre fil).</span></p>
+
+<h2 id="bridge"><span lang="en">Bridge protocol (phone ↔ head unit)</span><span lang="fr">Protocole Bridge (téléphone ↔ autoradio)</span></h2>
+<ul>
+  <li><span lang="en"><strong>Transport</strong>: TCP <code>47800</code> (Wi-Fi) or RFCOMM UUID <code>6c1b2e6a-8f0e-4b8c-9a51-1ebd2d4c0b01</code>; at most 4 connections; a connection that has not finished key exchange and pairing in 80 s is closed.</span><span lang="fr"><strong>Transport</strong> : TCP <code>47800</code> (Wi-Fi) ou RFCOMM UUID <code>6c1b2e6a-8f0e-4b8c-9a51-1ebd2d4c0b01</code> ; 4 connexions au plus ; une connexion qui n'a pas fini l'échange de clés et l'association en 80 s est fermée.</span></li>
+  <li><span lang="en"><strong>Handshake</strong>: ephemeral ECDH P-256 both ways; the head unit signs the SHA-256 of the exchange with its permanent ECDSA P-256 key; the phone checks it against the fingerprint from the QR code.</span><span lang="fr"><strong>Poignée de main</strong> : ECDH P-256 éphémère des deux côtés ; l'autoradio signe le SHA-256 de l'échange avec sa clé ECDSA P-256 permanente ; le téléphone la vérifie avec l'empreinte du QR code.</span></li>
+  <li><span lang="en"><strong>Session</strong>: HKDF-SHA256 (RFC 5869) keys, one per direction; AES-256-GCM frames, nonce = direction + counter (replayed, changed or reordered frames are refused).</span><span lang="fr"><strong>Session</strong> : clés HKDF-SHA256 (RFC 5869), une par sens ; trames AES-256-GCM, nonce = sens + compteur (trame rejouée, modifiée ou déplacée refusée).</span></li>
+  <li><span lang="en"><strong>Phone authentication</strong>: first time, the QR token (24 random bytes, 5 min, single use) proven by HMAC-SHA256 of the transcript; the head unit then gives an id and a 32-byte access key, proven the same way at each connection (kept in the Android Keystore / iOS keychain). Or Bluetooth-paired phone + confirmation on the head unit (60 s).</span><span lang="fr"><strong>Authentification du téléphone</strong> : la première fois, le jeton du QR code (24 octets aléatoires, 5 min, usage unique) prouvé par HMAC-SHA256 de l'échange ; l'autoradio donne alors un identifiant et une clé d'accès de 32 octets, prouvée de la même façon à chaque connexion (gardée dans le Keystore Android / trousseau iOS). Ou téléphone appairé en Bluetooth + confirmation sur l'autoradio (60 s).</span></li>
+</ul>
+<pre><code>librehu://pair?v=1&amp;fp=&lt;fingerprint&gt;&amp;t=&lt;token&gt;&amp;n=&lt;name&gt;&amp;ip=&lt;IPv4,…&gt;&amp;p=47800&amp;bt=&lt;bluetooth address&gt;
+
+→ {"id":1,"m":"page","p":{"id":"audio"}}       ← {"id":1,"r":{…}}   |   {"id":1,"e":"error"}
+← {"ev":"values","d":{…}}   (1/s after "subscribe")</code></pre>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Level</span><span lang="fr">Niveau</span></th><th><span lang="en">Methods</span><span lang="fr">Méthodes</span></th></tr></thead>
+<tbody>
+<tr><td>1</td><td><code>hello</code> · <code>pages</code> · <code>page(id)</code> · <code>set(page, item, value)</code> · <code>action(page, item)</code> · <code>values</code> · <code>subscribe</code> · <code>key(action)</code> · <code>forget</code></td></tr>
+<tr><td>2</td><td><code>apps</code> (PNG 96 px base64) · <code>launch(pkg)</code> · <code>reboot(normal|recovery|bootloader)</code> · <code>system</code> · <code>gps</code> <span lang="en">(satellites, C/N0, fix; never the position)</span><span lang="fr">(satellites, C/N0, fix ; jamais la position)</span> · <code>gps.watch(on)</code> · <code>fs.roots</code> · <code>fs.list</code> · <code>fs.read(path, offset, length ≤ 512 KiB)</code> · <code>fs.write</code> · <code>fs.delete</code> · <code>fs.mkdir</code> · <code>fs.rename</code> · <code>logs(logcat|kernel|librehu)</code> · <code>settings.list/put/delete(ns, key)</code></td></tr>
+</tbody></table></div>
+<p><span lang="en">Page items: <code>section</code>, <code>info</code>, <code>switch</code>, <code>slider</code> (<code>min</code>, <code>max</code>, <code>step</code>, <code>unit</code>, <code>display</code>), <code>choice</code> (<code>options</code>: <code>{v, l}</code>), <code>text</code> (<code>max</code>), <code>button</code> (<code>confirm</code>, <code>hint</code>). The head unit describes the pages, so a new setting needs no phone update; the phone reloads the page after each change. Files: internal storage and removable volumes only, absolute paths, <code>..</code> refused, links resolved before checks; the whole file system only with a switch that can only be set on the head unit. Full spec: <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/bridge.md">docs/bridge.md</a>.</span><span lang="fr">Éléments de page : <code>section</code>, <code>info</code>, <code>switch</code>, <code>slider</code> (<code>min</code>, <code>max</code>, <code>step</code>, <code>unit</code>, <code>display</code>), <code>choice</code> (<code>options</code> : <code>{v, l}</code>), <code>text</code> (<code>max</code>), <code>button</code> (<code>confirm</code>, <code>hint</code>). L'autoradio décrit les pages, donc un nouveau réglage ne demande pas de mise à jour du téléphone ; le téléphone relit la page après chaque changement. Fichiers : stockage interne et volumes amovibles seulement, chemins absolus, <code>..</code> refusé, liens résolus avant contrôle ; tout le système de fichiers seulement avec un interrupteur réglable uniquement sur l'autoradio. Spécification complète : <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/bridge.md">docs/bridge.md</a>.</span></p>
+
+<h2 id="obd">OBD / ddt4all</h2>
+<ul>
+  <li><span lang="en">ELM327 init: <code>ATZ ATE0 ATL0 ATS0 ATH0 ATAT1 ATSP0</code>, then <code>0100 0120 0140</code> for supported PIDs; fast values every loop, slow ones every 5 loops; <code>ATRV</code> for the battery voltage. One session at a time (a stale session stops itself).</span><span lang="fr">Init ELM327 : <code>ATZ ATE0 ATL0 ATS0 ATH0 ATAT1 ATSP0</code>, puis <code>0100 0120 0140</code> pour les PID gérés ; valeurs rapides à chaque tour, lentes tous les 5 tours ; <code>ATRV</code> pour la tension de la batterie. Une seule session à la fois (une session périmée s'arrête d'elle-même).</span></li>
+  <li><span lang="en">Manufacturer values: ddt4all ECU JSON files (yours, nothing embedded). Addressing like ddt4all: <code>ATSH &lt;send&gt;</code>, <code>ATFCSH</code>, <code>ATFCSD300000</code>, <code>ATFCSM1</code>, <code>ATCRA &lt;recv&gt;</code>, then back to <code>ATSH7DF</code>. Values: <code>firstbyte</code> from 1 (service byte included), <code>bitoffset</code> from the MSB, <code>scaled = (raw × step + offset) / divideby</code>; checked against ddt4all's Python on the same bytes (<code>ObdCarTest</code>).</span><span lang="fr">Valeurs constructeur : fichiers JSON de calculateurs ddt4all (les vôtres, rien d'embarqué). Adressage comme ddt4all : <code>ATSH &lt;envoi&gt;</code>, <code>ATFCSH</code>, <code>ATFCSD300000</code>, <code>ATFCSM1</code>, <code>ATCRA &lt;réception&gt;</code>, puis retour à <code>ATSH7DF</code>. Valeurs : <code>firstbyte</code> depuis 1 (octet de service compris), <code>bitoffset</code> depuis le bit de poids fort, <code>scaled = (brut × step + offset) / divideby</code> ; comparé au Python de ddt4all sur les mêmes octets (<code>ObdCarTest</code>).</span></li>
+  <li><span lang="en"><strong>Read-only by design</strong>: only services <code>21</code> / <code>22</code> without parameters are kept at import; no write, reset, actuator test or diagnostic session is ever sent; adapter commands that write its memory (<code>ATPP</code>, <code>ATSD</code>…) are refused.</span><span lang="fr"><strong>Lecture seule par construction</strong> : seuls les services <code>21</code> / <code>22</code> sans paramètre sont gardés à l'import ; aucune écriture, aucun reset, aucun test d'actionneur ni ouverture de session de diagnostic n'est jamais envoyé ; les commandes qui écrivent la mémoire de l'adaptateur (<code>ATPP</code>, <code>ATSD</code>…) sont refusées.</span></li>
+</ul>
+
+<h2 id="release"><span lang="en">Build, CI, releases</span><span lang="fr">Build, CI, releases</span></h2>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Topic</span><span lang="fr">Sujet</span></th><th><span lang="en">Rule</span><span lang="fr">Règle</span></th></tr></thead>
+<tbody>
+<tr><td><span lang="en">Editions</span><span lang="fr">Éditions</span></td><td><span lang="en">launcher, FM, Dialer, Widgets, BtnRemap: commit on <code>main</code>, merge into <code>ivi</code> and <code>librehu-service</code>. Forks: branch <code>librehu</code> (+ <code>master</code> / <code>main</code> published). ViPER: <code>librehu-service</code>.</span><span lang="fr">launcher, FM, Dialer, Widgets, BtnRemap : commit sur <code>main</code>, fusion dans <code>ivi</code> et <code>librehu-service</code>. Forks : branche <code>librehu</code> (+ <code>master</code> / <code>main</code> publiées). ViPER : <code>librehu-service</code>.</span></td></tr>
+<tr><td>Releases</td><td><span lang="en">each push publishes a rolling prerelease <code>latest-&lt;branch&gt;</code> (APK + <code>release.txt</code>: versionCode, versionName, commit, name, size, SHA-256) and a frozen <code>build-&lt;branch&gt;-&lt;versionCode&gt;</code></span><span lang="fr">chaque push publie une pré-release continue <code>latest-&lt;branche&gt;</code> (APK + <code>release.txt</code> : versionCode, versionName, commit, nom, taille, SHA-256) et une figée <code>build-&lt;branche&gt;-&lt;versionCode&gt;</code></span></td></tr>
+<tr><td>Versions</td><td><span lang="en"><code>versionCode</code> = number of commits of the branch; <code>versionName</code> = <code>git describe</code> (rolling tags excluded) + <code>-&lt;branch&gt;</code>. Rewriting history must keep the commit count, or Android refuses the next update as a downgrade.</span><span lang="fr"><code>versionCode</code> = nombre de commits de la branche ; <code>versionName</code> = <code>git describe</code> (tags continus exclus) + <code>-&lt;branche&gt;</code>. Réécrire l'historique doit garder le nombre de commits, sinon Android refuse la mise à jour suivante comme une rétrogradation.</span></td></tr>
+<tr><td><span lang="en">Signing</span><span lang="fr">Signature</span></td><td><span lang="en"><code>keystore/librehu.jks</code>, alias and passwords <code>librehu</code>, public on purpose (like Android's debug key). RSA 2048, SHA384withRSA, CN=LibreHU. Certificate SHA-256 <code>91:A1:E7:A1:CA:2C:51:DA:CB:FD:63:8A:15:07:18:7B:40:D9:40:03:94:D2:90:2A:32:15:F6:10:D3:FC:00:DC</code>. A private key can replace it with the CI secret <code>LIBREHU_KEYSTORE_B64</code>.</span><span lang="fr"><code>keystore/librehu.jks</code>, alias et mots de passe <code>librehu</code>, public exprès (comme la clé debug d'Android). RSA 2048, SHA384withRSA, CN=LibreHU. Certificat SHA-256 <code>91:A1:E7:A1:CA:2C:51:DA:CB:FD:63:8A:15:07:18:7B:40:D9:40:03:94:D2:90:2A:32:15:F6:10:D3:FC:00:DC</code>. Une clé privée peut la remplacer par le secret CI <code>LIBREHU_KEYSTORE_B64</code>.</span></td></tr>
+<tr><td>R8</td><td><span lang="en"><code>isMinifyEnabled = true</code>, <code>-dontobfuscate</code> (readable stack traces); <code>usage.txt</code> in the CI's "R8 reports" artifact shows what was removed.</span><span lang="fr"><code>isMinifyEnabled = true</code>, <code>-dontobfuscate</code> (traces lisibles) ; <code>usage.txt</code> dans l'artefact CI « R8 reports » montre ce qui a été retiré.</span></td></tr>
+<tr><td><span lang="en">OTA catalogue</span><span lang="fr">Catalogue OTA</span></td><td><span lang="en"><code>catalog.json</code> of LibreHU-OTA-app: apps (<code>id</code>, <code>name</code>, <code>repo</code>, <code>package</code>, <code>branches</code>, <code>tagged</code>, <code>asset</code> regex, <code>cert</code> SHA-256 for non-LibreHU APKs) and configs (<code>type</code> FILE / RECOVERY_ZIP, <code>url</code>, <code>dest</code>, <code>mode</code>, <code>owner</code>, <code>sha256</code>, <code>reboot</code>). <code>tools/check_releases.py</code> checks every published branch.</span><span lang="fr"><code>catalog.json</code> de LibreHU-OTA-app : applis (<code>id</code>, <code>name</code>, <code>repo</code>, <code>package</code>, <code>branches</code>, <code>tagged</code>, regex <code>asset</code>, <code>cert</code> SHA-256 pour les APK hors LibreHU) et configs (<code>type</code> FILE / RECOVERY_ZIP, <code>url</code>, <code>dest</code>, <code>mode</code>, <code>owner</code>, <code>sha256</code>, <code>reboot</code>). <code>tools/check_releases.py</code> vérifie chaque branche publiée.</span></td></tr>
+<tr><td>Zips</td><td><span lang="en">release <code>zips</code> of LibreHU-flashablesZips, rebuilt hourly: <code>index.json</code> with <code>categories</code> and <code>zips</code> (<code>id</code>, <code>category</code>, <code>devices</code>, <code>version</code>, <code>url</code>, <code>size</code>, <code>sha256</code>, <code>image_url</code>, <code>image_sha256</code>, <code>partition</code>, <code>restore</code>, <code>warning</code>, <code>license</code>)</span><span lang="fr">release <code>zips</code> de LibreHU-flashablesZips, refaite toutes les heures : <code>index.json</code> avec <code>categories</code> et <code>zips</code> (<code>id</code>, <code>category</code>, <code>devices</code>, <code>version</code>, <code>url</code>, <code>size</code>, <code>sha256</code>, <code>image_url</code>, <code>image_sha256</code>, <code>partition</code>, <code>restore</code>, <code>warning</code>, <code>license</code>)</span></td></tr>
+</tbody></table></div>
+<pre><code># <span lang="en">any app</span><span lang="fr">n'importe quelle appli</span> (JDK 17+, Android SDK; NDK for service, FM, Disc)
+./gradlew :app:assembleRelease
+# <span lang="en">service core only, no Android SDK</span><span lang="fr">cœur du service seul, sans SDK Android</span>
+./gradlew -PcoreOnly :core:test
+# <span lang="en">iPhone app</span><span lang="fr">appli iPhone</span> (Xcode 16, XcodeGen)
+cd ios &amp;&amp; xcodegen generate &amp;&amp; xcodebuild -project LibreHU.xcodeproj -scheme LibreHU -sdk iphoneos CODE_SIGNING_ALLOWED=NO build</code></pre>
+
+<h2 id="kernel"><span lang="en">Custom kernel</span><span lang="fr">Noyau modifié</span></h2>
+<p><span lang="en">The <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9">LibreHU kernel</a> starts from the GPL source package Jancar's distributor sent on 19/10/2026 (Autochips reference kernel, Linux 4.9.117), with what the package lacked rebuilt from the stock image. It boots the stock ROM from <code>boot</code>, at parity with the stock kernel for Wi-Fi, BT, GPS, FM, audio, touch, MCU, rear camera and CVBS inputs.</span><span lang="fr">Le <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9">noyau LibreHU</a> part du paquet de sources GPL envoyé par le distributeur de Jancar le 19/10/2026 (noyau de référence Autochips, Linux 4.9.117), avec ce qui manquait au paquet reconstruit depuis l'image d'origine. Il démarre la ROM d'origine depuis <code>boot</code>, à parité avec le noyau d'origine pour le Wi-Fi, le BT, le GPS, la FM, l'audio, le tactile, la MCU, la caméra de recul et les entrées CVBS.</span></p>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Branch</span><span lang="fr">Branche</span></th><th><span lang="en">Content</span><span lang="fr">Contenu</span></th></tr></thead>
+<tbody>
+<tr><td><code>autochips-gpl</code></td><td><span lang="en">the GPL package as received (<code>kernel-4.9.tgz</code>, SHA-256 <code>f0303951…7d83c577</code>), untouched</span><span lang="fr">le paquet GPL tel que reçu (<code>kernel-4.9.tgz</code>, SHA-256 <code>f0303951…7d83c577</code>), intact</span></td></tr>
+<tr><td><code>reverse-engineering</code></td><td><span lang="en">earlier kernel rebuilt from MediaTek MT6761 sources + reverse engineering</span><span lang="fr">noyau reconstruit plus tôt depuis les sources MediaTek MT6761 + rétro-ingénierie</span></td></tr>
+<tr><td><strong><code>LibreHU-main</code></strong></td><td><span lang="en"><code>autochips-gpl</code> + LibreHU changes (main branch); defconfig <code>ac8257_ujc201_defconfig</code> = stock #72 config</span><span lang="fr"><code>autochips-gpl</code> + modifications LibreHU (branche principale) ; defconfig <code>ac8257_ujc201_defconfig</code> = config de l'origine #72</span></td></tr>
+<tr><td><code>connectivity-builtin</code></td><td><span lang="en">Wi-Fi / BT / GPS / FM GPL drivers built in instead of vendor modules (testing)</span><span lang="fr">pilotes GPL Wi-Fi / BT / GPS / FM intégrés au lieu des modules vendor (en test)</span></td></tr>
+</tbody></table></div>
+<ul>
+  <li><span lang="en"><strong>Root</strong>: KernelSU Next v3.4.0-legacy with manual hooks (manager hash from <code>KSU_NEXT_MANAGER_HASH</code>).</span><span lang="fr"><strong>Root</strong> : KernelSU Next v3.4.0-legacy avec hooks manuels (empreinte du gestionnaire dans <code>KSU_NEXT_MANAGER_HASH</code>).</span></li>
+  <li><span lang="en"><strong>CPU</strong>: 16 OPPs up to 2.6 GHz, 2.3 GHz at boot (2.4 GHz stable under Geekbench 5); voltages rising above 2.0 GHz up to 1.11875 V; adjustable <code>ac8257_cpufreq.volt_uv</code> / <code>volt_offset_uv</code> (0.65–1.10 V, sent to the SSPM). <strong>GPU</strong> 730 MHz and adjustable VCORE (<code>ac8257_gpufreq.vcore_uv</code>, 0.60–0.90 V). Governors conservative and schedutil added (interactive stays the default), zram lz4, deadline I/O, touch boost.</span><span lang="fr"><strong>CPU</strong> : 16 OPP jusqu'à 2,6 GHz, 2,3 GHz au démarrage (2,4 GHz stable sous Geekbench 5) ; tensions croissantes au-dessus de 2,0 GHz jusqu'à 1,11875 V ; réglables par <code>ac8257_cpufreq.volt_uv</code> / <code>volt_offset_uv</code> (0,65–1,10 V, envoyées à la SSPM). <strong>GPU</strong> 730 MHz et VCORE réglable (<code>ac8257_gpufreq.vcore_uv</code>, 0,60–0,90 V). Gouverneurs conservative et schedutil ajoutés (interactive reste par défaut), zram lz4, E/S deadline, boost tactile.</span></li>
+  <li><span lang="en"><strong>Rebuilt drivers</strong>: Jancar <code>/dev/gpios_ioctl</code> (<code>CONFIG_JANCAR_GPIOS</code>), TP9963 AHD camera decoder (<code>tp9963_yuv</code>, from the stock image, cross-checked with OpenIPC and Allwinner GPL drivers), Jancar touch calibration nodes, IR remote table (<code>rc-jancar</code>), other touch panels (FocalTech FT8201, ILITEK, Himax HX83102, Hynitron CST340).</span><span lang="fr"><strong>Pilotes reconstruits</strong> : <code>/dev/gpios_ioctl</code> de Jancar (<code>CONFIG_JANCAR_GPIOS</code>), décodeur caméra AHD TP9963 (<code>tp9963_yuv</code>, depuis l'image d'origine, recoupé avec les pilotes GPL OpenIPC et Allwinner), nœuds de calibration tactile Jancar, table de télécommande IR (<code>rc-jancar</code>), autres dalles (FocalTech FT8201, ILITEK, Himax HX83102, Hynitron CST340).</span></li>
+  <li><span lang="en"><strong>Added</strong>: USB CD / DVD (<code>BLK_DEV_SR</code>, <code>CHR_DEV_SG</code>, <code>UDF_FS</code>, plus a fix of a 4.9 NULL <code>rq-&gt;sense</code> panic in <code>cdrom_read_cdda_bpc</code>), USB Ethernet (RTL8152/8153, RNDIS, iPhone, LAN78xx, SMSC…), boot menu image (TWRP / Android / Fastboot).</span><span lang="fr"><strong>Ajouts</strong> : CD / DVD USB (<code>BLK_DEV_SR</code>, <code>CHR_DEV_SG</code>, <code>UDF_FS</code>, plus la correction d'une panique 4.9 sur <code>rq-&gt;sense</code> NULL dans <code>cdrom_read_cdda_bpc</code>), Ethernet USB (RTL8152/8153, RNDIS, iPhone, LAN78xx, SMSC…), image avec menu de démarrage (TWRP / Android / Fastboot).</span></li>
+  <li><span lang="en"><strong>Fixes vs the package</strong>: no TDA7729 ALSA controls (absent chip, panic at 6.5 s), camera decoder power like stock (panic at 26 s), no <code>mmc0/sw_wp_en</code> (made <code>/system</code> read-only), no X axis inversion on the GT928 driver.</span><span lang="fr"><strong>Corrections par rapport au paquet</strong> : pas de contrôles ALSA TDA7729 (puce absente, panique à 6,5 s), alimentation des décodeurs caméra comme l'origine (panique à 26 s), pas de <code>mmc0/sw_wp_en</code> (rendait <code>/system</code> non inscriptible), pas d'inversion de l'axe X du pilote GT928.</span></li>
+</ul>
+<pre><code># <span lang="en">toolchain of the stock kernel: AOSP GCC 4.9 binutils + AOSP clang 6.0.2 (clang-4691093), Python 2 for DrvGen.py</span><span lang="fr">chaîne du noyau d'origine : binutils AOSP GCC 4.9 + AOSP clang 6.0.2 (clang-4691093), Python 2 pour DrvGen.py</span>
+git clone -b LibreHU-main https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9 kernel &amp;&amp; cd kernel
+git clone --depth 1 -b lineage-17.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 ../gcc49
+mkdir -p ../clang &amp;&amp; curl -fL https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r61/clang-4691093.tar.gz | tar xz -C ../clang
+export PATH="$HOME/ac8257-host:$PWD/../clang/bin:$PWD/../gcc49/bin:$PATH" LD_LIBRARY_PATH="$HOME/ac8257-host"
+
+M='O=out ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- CC=clang CLANG_TRIPLE=aarch64-linux-gnu-'
+M="$M ATC_DISABLE_BATTERY_CHARGER=yes ATC_FASTDISP_VERSION=2.0 python=python"
+make $M HOSTCC="gcc -fcommon" ac8257_ujc201_defconfig
+make $M HOSTCC="gcc -fcommon" -j"$(nproc)" Image.gz-dtb
+
+# <span lang="en">images from the stock templates</span><span lang="fr">images depuis les gabarits d'origine</span>
+python3 tools/ac8257/repack_boot.py tools/ac8257/stock/boot_template_250718.img out/arch/arm64/boot/Image.gz-dtb \
+    boot_ac8257.img --size 10485760</code></pre>
+<p><span lang="en"><code>~/ac8257-host</code> holds Python 2.7 and <code>libtinfo.so.5</code> (Ubuntu 24.04 / 26.04 lack them). Exact steps, also for a recovery test image: <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/blob/LibreHU-main/docs/BUILD.md">docs/BUILD.md</a>; status per function: <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9#ce-qui-marche-sur-lunite">README</a>; overclock: <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/blob/LibreHU-main/docs/TUNING.md">docs/TUNING.md</a>.</span><span lang="fr"><code>~/ac8257-host</code> contient Python 2.7 et <code>libtinfo.so.5</code> (absents d'Ubuntu 24.04 / 26.04). Étapes exactes, aussi pour une image de test en recovery : <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/blob/LibreHU-main/docs/BUILD.md">docs/BUILD.md</a> ; état par fonction : <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9#ce-qui-marche-sur-lunite">README</a> ; overclock : <a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/blob/LibreHU-main/docs/TUNING.md">docs/TUNING.md</a>.</span></p>
+
+<h2 id="twrp">TWRP</h2>
+<p><span lang="en"><a href="https://github.com/LibreHU/android_device_alps_ac8257_demo">android_device_alps_ac8257_demo</a>, branch <code>twrp</code> (TWRP 12.1). The image is post-processed: stock kernel with <code>skip_initramfs</code> → <code>want_initramfs</code>, stock <code>dtbo</code>, and the stock recovery's vbmeta as AVB footer (<code>BOARD_AVB_ENABLE := false</code>). <code>touchfix</code> (static aarch64, no libc) fixes touch, front keys and inverted brightness; the BCB is redirected to <code>para</code>; MCU state in the status bar; key navigation from the steering wheel and the Hiworld CAN box (channel <code>10</code> frames). CI releases <code>twrp-build-&lt;n&gt;</code>.</span><span lang="fr"><a href="https://github.com/LibreHU/android_device_alps_ac8257_demo">android_device_alps_ac8257_demo</a>, branche <code>twrp</code> (TWRP 12.1). L'image est post-traitée : noyau d'origine avec <code>skip_initramfs</code> → <code>want_initramfs</code>, <code>dtbo</code> d'origine, et le vbmeta du recovery d'origine en pied AVB (<code>BOARD_AVB_ENABLE := false</code>). <code>touchfix</code> (aarch64 statique, sans libc) corrige le tactile, les touches de façade et la luminosité inversée ; le BCB est redirigé vers <code>para</code> ; état de la MCU dans la barre d'état ; navigation au volant et par le boîtier CAN Hiworld (trames <code>10</code>). Releases CI <code>twrp-build-&lt;n&gt;</code>.</span></p>
+
+<h2 id="lineage">LineageOS <span class="status wip"><span lang="en">in preparation</span><span lang="fr">en préparation</span></span></h2>
+<p><span lang="en">A real ROM, not a GSI: LineageOS 16.0 (Android 9) for the UJC201 on branch <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/tree/lineage-16.0"><code>lineage-16.0</code></a> of the device tree: LineageOS system + stock vendor (extracted with <code>extract-files.sh</code> from your own unit, never published) + the LibreHU apps in <code>/system/app</code>, precompiled with the <code>speed</code> filter, ViPER4Android and its ViPERFX_RE driver included. More LineageOS versions are planned once it runs.</span><span lang="fr">Une vraie ROM, pas une GSI : LineageOS 16.0 (Android 9) pour l'UJC201 sur la branche <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/tree/lineage-16.0"><code>lineage-16.0</code></a> de l'arbre de l'appareil : système LineageOS + vendor d'origine (extrait avec <code>extract-files.sh</code> de votre propre autoradio, jamais publié) + les applis LibreHU dans <code>/system/app</code>, précompilées avec le filtre <code>speed</code>, ViPER4Android et son pilote ViPERFX_RE compris. D'autres versions de LineageOS sont prévues une fois celle-ci fonctionnelle.</span></p>
+
+<h2 id="porting"><span lang="en">Porting to other platforms</span><span lang="fr">Portage sur d'autres plateformes</span></h2>
+<p><span lang="en">LibreHU targets the UJC201 first; once it is mature, it will be adapted to other head units. What is already data-driven:</span><span lang="fr">LibreHU vise d'abord l'UJC201 ; une fois mûr, il sera adapté à d'autres autoradios. Ce qui est déjà piloté par des données :</span></p>
+<ul>
+  <li><span lang="en">MCU protocol: JSON profiles (serial port and speed, framing, checksum, ACK, signals, commands, GPIO wiring, audio chip address).</span><span lang="fr">Protocole MCU : profils JSON (port et vitesse, trame, contrôle, acquittement, signaux, commandes, câblage GPIO, adresse de la puce audio).</span></li>
+  <li><span lang="en">Car: CAN vehicle profiles (JSON) and OBD car files; generic OBD-II works on any car.</span><span lang="fr">Voiture : profils CAN (JSON) et fichiers voiture OBD ; l'OBD-II générique marche sur toute voiture.</span></li>
+  <li><span lang="en">Apps: the <code>main</code> edition runs on any Android 9+ device; LibreHU Helper collects what a port needs.</span><span lang="fr">Applis : l'édition <code>main</code> tourne sur tout appareil Android 9+ ; LibreHU Helper rassemble ce qu'il faut pour un portage.</span></li>
+</ul>
+<p><span lang="en">Still tied to the UJC201, from easiest to hardest:</span><span lang="fr">Encore liés à l'UJC201, du plus simple au plus difficile :</span></p>
+<div class="table"><table>
+<thead><tr><th>#</th><th><span lang="en">Hard-coded</span><span lang="fr">Codé en dur</span></th><th><span lang="en">Where</span><span lang="fr">Où</span></th></tr></thead>
+<tbody>
+<tr><td>1</td><td><span lang="en">"stock service running" guard watches <code>com.jancar.services</code> only</span><span lang="fr">la garde « service d'origine actif » ne surveille que <code>com.jancar.services</code></span></td><td><code>LibreHuService.startHardware</code></td></tr>
+<tr><td>2</td><td><span lang="en">native code arm64 only</span><span lang="fr">code natif en arm64 seulement</span></td><td><code>abiFilters</code></td></tr>
+<tr><td>3</td><td><span lang="en">no inverted-XOR checksum (Raise boxes) in profiles</span><span lang="fr">pas de contrôle « XOR inversé » (boîtiers Raise) dans les profils</span></td><td><code>McuProfile.kt</code></td></tr>
+<tr><td>4</td><td><span lang="en">CAN box: Hiworld only, relayed by the MCU (<code>10</code>); CAN steering keys: Hiworld <code>0x11</code></span><span lang="fr">boîtier CAN : Hiworld seulement, relayé par la MCU (<code>10</code>) ; touches CAN : Hiworld <code>0x11</code></span></td><td><code>core/can/Hiworld.kt</code>, <code>CanMonitor</code>, <code>CanWheelKeys</code></td></tr>
+<tr><td>5</td><td><span lang="en">GPIO only through <code>/dev/gpios_ioctl</code></span><span lang="fr">GPIO uniquement par <code>/dev/gpios_ioctl</code></span></td><td><code>NativeHw</code></td></tr>
+<tr><td>6</td><td><span lang="en">one sound processor (BD37534)</span><span lang="fr">un seul processeur de son (BD37534)</span></td><td><code>McuProfile.kt</code></td></tr>
+<tr><td>7</td><td><span lang="en">Jancar / Autochips extras: touch keys and calibration (<code>/jancar/config</code>), microphone, CVBS / camera, video out, ATC</span><span lang="fr">extras Jancar / Autochips : touches tactiles et calibration (<code>/jancar/config</code>), micro, CVBS / caméra, sortie vidéo, ATC</span></td><td><code>touch/</code>, <code>Microphone</code>, <code>car/</code>, <code>atc/</code></td></tr>
+</tbody></table></div>
+<p><span lang="en">Most common head unit chips and their real Android versions: <a href="headunits.html">head units</a>. To help a port: run LibreHU Helper on the target unit and open an issue with its report.</span><span lang="fr">Puces d'autoradio les plus courantes et leurs vraies versions d'Android : <a href="headunits.html">autoradios</a>. Pour aider un portage : lancer LibreHU Helper sur l'autoradio visé et ouvrir une issue avec son rapport.</span></p>
+
+<h2 id="repos"><span lang="en">Repositories and rules</span><span lang="fr">Dépôts et règles</span></h2>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Repository</span><span lang="fr">Dépôt</span></th><th><span lang="en">Package / content</span><span lang="fr">Paquet / contenu</span></th><th>Branches</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-service">LibreHU-service</a></td><td><code>org.librehu.service</code></td><td><code>main</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-Launcher-App">LibreHU-Launcher-App</a></td><td><code>org.librehu.launcher</code></td><td><code>main</code>, <code>ivi</code>, <code>librehu-service</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-OTA-app">LibreHU-OTA-app</a></td><td><code>org.librehu.ota</code></td><td><code>main</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-FM-app">LibreHU-FM-app</a> · <a href="https://github.com/LibreHU/LibreHU-dialer-app">dialer</a> · <a href="https://github.com/LibreHU/LibreHU-widget-app">widget</a> · <a href="https://github.com/LibreHU/LibreHU-BtnRemap-app">BtnRemap</a></td><td><code>org.librehu.fm</code> · <code>.dialer</code> · <code>.widgets</code> · <code>.btnremap</code></td><td><code>main</code>, <code>ivi</code>, <code>librehu-service</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-EasySource-app">EasySource</a> · <a href="https://github.com/LibreHU/LibreHU-disc-app">disc</a> · <a href="https://github.com/LibreHU/LibreHU-helper-app">helper</a> · <a href="https://github.com/LibreHU/LibreHU-bridge-app">bridge</a></td><td><code>org.librehu.easysource</code> · <code>.disc</code> · <code>.helper</code> · <span lang="en">phone app</span><span lang="fr">appli téléphone</span></td><td><code>main</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-ViPER4Android-app">ViPER4Android</a></td><td><code>com.llsl.viper4android</code></td><td><code>librehu-service</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-open-headunit-app">Open Headunit</a> · <a href="https://github.com/LibreHU/LibreHU-xcertplay-app">xcertplay</a></td><td><code>org.librehu.headunit</code> · <code>org.librehu.carplay</code></td><td><code>librehu</code> (+ <code>main</code> / <code>master</code>)</td></tr>
+<tr><td><a href="https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9">android_kernel_autochips_ac8257_4.9</a></td><td><span lang="en">kernel</span><span lang="fr">noyau</span></td><td><code>LibreHU-main</code>, <code>autochips-gpl</code>, <code>reverse-engineering</code>, <code>connectivity-builtin</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/android_device_alps_ac8257_demo">android_device_alps_ac8257_demo</a></td><td><span lang="en">TWRP, LineageOS device tree</span><span lang="fr">TWRP, arbre LineageOS</span></td><td><code>twrp</code>, <code>lineage-16.0</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/LibreHU-flashablesZips">LibreHU-flashablesZips</a></td><td><span lang="en">flashable zips, <code>index.json</code></span><span lang="fr">zips flashables, <code>index.json</code></span></td><td><code>main</code></td></tr>
+<tr><td><a href="https://github.com/LibreHU/MCU-tools-app">MCU-tools-app</a></td><td><span lang="en"><code>com.dokt.jacmcu</code> (legacy), MCU firmware analysis</span><span lang="fr"><code>com.dokt.jacmcu</code> (legacy), analyse du firmware MCU</span></td><td><code>main</code></td></tr>
+</tbody></table></div>
+<ul>
+  <li><span lang="en"><strong>Never published</strong>: vendor images and proprietary blobs (LineageOS extracts them from your own unit), and any unit's own partitions (nvram, nvdata, proinfo, persist, metazone).</span><span lang="fr"><strong>Jamais publiés</strong> : images vendor et blobs propriétaires (LineageOS les extrait de votre propre autoradio), et les partitions propres à un autoradio (nvram, nvdata, proinfo, persist, metazone).</span></li>
+  <li><span lang="en"><strong>Verified boot</strong>: nothing disables dm-verity or writes vbmeta automatically.</span><span lang="fr"><strong>Démarrage vérifié</strong> : rien ne désactive dm-verity ni n'écrit vbmeta automatiquement.</span></li>
+  <li><span lang="en"><strong>Contributing</strong>: issues and pull requests on each repository; attach logs or a Helper report.</span><span lang="fr"><strong>Contribuer</strong> : issues et pull requests sur chaque dépôt ; joindre des journaux ou un rapport de Helper.</span></li>
+</ul>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="docs.html">Docs</a> · <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="assets/lang.js"></script>
+</body>
+</html>
+

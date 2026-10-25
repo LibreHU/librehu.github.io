@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation – LibreHU</title>
+<meta name="title-en" content="Documentation – LibreHU">
+<meta name="title-fr" content="Documentation – LibreHU">
+<meta name="description" content="How to install, set up and use every LibreHU app on a Jancar / Autochips AC8257 (UJC201) head unit.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="docs.html" aria-current="page"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="screenshots/index.html"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap doc">
+<aside class="toc">
+  <details open>
+    <summary><span lang="en">Contents</span><span lang="fr">Sommaire</span></summary>
+    <ol>
+      <li><a href="#before"><span lang="en">Before you start</span><span lang="fr">Avant de commencer</span></a></li>
+      <li><a href="#install"><span lang="en">Installation</span><span lang="fr">Installation</span></a>
+        <ol>
+          <li><a href="#editions"><span lang="en">Editions</span><span lang="fr">Éditions</span></a></li>
+          <li><a href="#ota"><span lang="en">LibreHU Apps</span><span lang="fr">LibreHU Apps</span></a></li>
+          <li><a href="#ivi"><span lang="en">Replacing ivi-services</span><span lang="fr">Remplacer ivi-services</span></a></li>
+          <li><a href="#setup"><span lang="en">First start of the launcher</span><span lang="fr">Premier démarrage du launcher</span></a></li>
+          <li><a href="#root"><span lang="en">Root</span><span lang="fr">Root</span></a></li>
+        </ol></li>
+      <li><a href="#service">LibreHU service</a>
+        <ol>
+          <li><a href="#svc-link"><span lang="en">MCU link</span><span lang="fr">Liaison MCU</span></a></li>
+          <li><a href="#svc-audio">Audio</a></li>
+          <li><a href="#svc-vehicle"><span lang="en">Vehicle and CAN</span><span lang="fr">Véhicule et CAN</span></a></li>
+          <li><a href="#svc-reverse"><span lang="en">Rear view camera</span><span lang="fr">Caméra de recul</span></a></li>
+          <li><a href="#svc-video"><span lang="en">Video inputs</span><span lang="fr">Entrées vidéo</span></a></li>
+          <li><a href="#svc-obd">OBD</a></li>
+          <li><a href="#svc-bt">Bluetooth</a></li>
+          <li><a href="#svc-power"><span lang="en">Ignition and standby</span><span lang="fr">Contact et veille</span></a></li>
+          <li><a href="#svc-touch"><span lang="en">Touch panel</span><span lang="fr">Dalle tactile</span></a></li>
+          <li><a href="#svc-display"><span lang="en">Display and lights</span><span lang="fr">Écran et lumières</span></a></li>
+          <li><a href="#svc-tweaks">Tweaks</a></li>
+          <li><a href="#svc-backup"><span lang="en">Backup</span><span lang="fr">Sauvegarde</span></a></li>
+        </ol></li>
+      <li><a href="#launcher">LibreHU Launcher</a></li>
+      <li><a href="#bridge"><span lang="en">Phone app (Bridge)</span><span lang="fr">Appli téléphone (Bridge)</span></a></li>
+      <li><a href="#apps"><span lang="en">Other apps</span><span lang="fr">Autres applis</span></a></li>
+      <li><a href="#projection">Android Auto · CarPlay</a></li>
+      <li><a href="#system"><span lang="en">TWRP, kernel, zips</span><span lang="fr">TWRP, noyau, zips</span></a></li>
+      <li><a href="#trouble"><span lang="en">Troubleshooting</span><span lang="fr">Dépannage</span></a></li>
+    </ol>
+  </details>
+</aside>
+
+<article>
+<h1><span lang="en">Documentation</span><span lang="fr">Documentation</span></h1>
+<p class="lead"><span lang="en">Everything to install, set up and use LibreHU on a Jancar / Autochips AC8257 (UJC201) head unit. For protocols, APIs and building from source, see the <a href="developers.html">developer reference</a>.</span><span lang="fr">Tout pour installer, régler et utiliser LibreHU sur un autoradio Jancar / Autochips AC8257 (UJC201). Pour les protocoles, les API et la compilation, voir la <a href="developers.html">référence développeurs</a>.</span></p>
+
+<h2 id="before"><span lang="en">Before you start</span><span lang="fr">Avant de commencer</span></h2>
+<ul>
+  <li><span lang="en"><strong>Check the board.</strong> Settings → About should show <code>ac8257_demo</code>. The stock ROM displays a fake Android version (often "12"): the real one is Android 9 (API 28), readable with AIDA64 or CPU-Z. See <a href="headunits.html">head units</a>.</span><span lang="fr"><strong>Vérifier la carte.</strong> Paramètres → À propos doit montrer <code>ac8257_demo</code>. La ROM d'origine affiche une fausse version d'Android (souvent « 12 ») : la vraie est Android 9 (API 28), lisible avec AIDA64 ou CPU-Z. Voir <a href="headunits.html">autoradios</a>.</span></li>
+  <li><span lang="en"><strong>Back up the eMMC</strong> before touching recovery or boot: SP Flash Tool, Readback tab, with the addresses of the unit's scatter file (preloader, user area up to cache, optional userdata, end of disk). The exact table is in the <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo#installer">TWRP README</a>.</span><span lang="fr"><strong>Sauvegarder l'eMMC</strong> avant de toucher au recovery ou au boot : SP Flash Tool, onglet Readback, avec les adresses du fichier scatter de l'appareil (preloader, zone utilisateur jusqu'au cache, userdata en option, fin de disque). Le tableau exact est dans le <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo#installer">README de TWRP</a>.</span></li>
+  <li><span lang="en"><strong>Never publish</strong> your unit's own partitions (nvram, nvdata, proinfo, persist, metazone): they hold its calibration and identifiers.</span><span lang="fr"><strong>Ne jamais publier</strong> les partitions propres à votre autoradio (nvram, nvdata, proinfo, persist, metazone) : elles contiennent sa calibration et ses identifiants.</span></li>
+  <li><span lang="en"><strong>Most apps work without root</strong>; LibreHU service, Disc, ViPER4Android, Tweaks, backups and zip flashing need it.</span><span lang="fr"><strong>La plupart des applis marchent sans root</strong> ; LibreHU service, Disc, ViPER4Android, Tweaks, les sauvegardes et le flash des zips en ont besoin.</span></li>
+</ul>
+
+<h2 id="install"><span lang="en">Installation</span><span lang="fr">Installation</span></h2>
+<h3 id="editions"><span lang="en">Editions</span><span lang="fr">Éditions</span></h3>
+<p><span lang="en">The launcher, FM, Dialer, Widgets and BtnRemap exist in three builds, one per branch. Pick one edition for all of them:</span><span lang="fr">Le launcher, FM, Dialer, Widgets et BtnRemap existent en trois builds, une par branche. Choisir une seule édition pour toutes :</span></p>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Edition</span><span lang="fr">Édition</span></th><th><span lang="en">Branch</span><span lang="fr">Branche</span></th><th><span lang="en">For</span><span lang="fr">Pour</span></th></tr></thead>
+<tbody>
+<tr><td><strong>LibreHU service</strong></td><td><code>librehu-service</code></td><td><span lang="en">LibreHU service replaces Jancar's ivi-services (recommended): car data, keys, audio and camera come from it.</span><span lang="fr">LibreHU service remplace ivi-services de Jancar (recommandé) : données de la voiture, touches, audio et caméra viennent de lui.</span></td></tr>
+<tr><td><strong>ivi</strong></td><td><code>ivi</code></td><td><span lang="en">Stock ROM with Jancar's ivi-services still running.</span><span lang="fr">ROM d'origine avec ivi-services de Jancar toujours actif.</span></td></tr>
+<tr><td><span lang="en"><strong>Generic</strong></span><span lang="fr"><strong>Générique</strong></span></td><td><code>main</code></td><td><span lang="en">Any Android 9+ device, without head unit integration.</span><span lang="fr">Tout appareil Android 9 ou plus, sans intégration à l'autoradio.</span></td></tr>
+</tbody></table></div>
+
+<h3 id="ota">LibreHU Apps</h3>
+<ol class="steps">
+  <li><span lang="en">Download <a href="https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk">LibreHU-OTA-main.apk</a>, copy it to a USB stick (or download it on the unit) and open it with a file manager. Allow installs from that app when Android asks.</span><span lang="fr">Télécharger <a href="https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk">LibreHU-OTA-main.apk</a>, le copier sur une clé USB (ou le télécharger sur l'autoradio) et l'ouvrir avec un gestionnaire de fichiers. Autoriser l'installation depuis cette appli quand Android le demande.</span></li>
+  <li><span lang="en"><strong>Quick setup</strong> (first launch, or Settings → Quick setup): edition, root (silent installs), apps of the edition already ticked, then their installation with progress for each one. Skip closes it; everything stays editable.</span><span lang="fr"><strong>Configuration rapide</strong> (premier lancement, ou Réglages → Configuration rapide) : édition, root (installations silencieuses), applis de l'édition déjà cochées, puis leur installation avec l'avancement de chacune. Passer la ferme ; tout reste modifiable.</span></li>
+  <li><span lang="en"><strong>Updates</strong>: LibreHU Apps checks GitHub, shows the commits of each new version, verifies the SHA-256 and the signing key before installing. An app can be kept on a version, rolled back to an older one, or installed in <code>/system</code> (root).</span><span lang="fr"><strong>Mises à jour</strong> : LibreHU Apps interroge GitHub, montre les commits de chaque nouvelle version, vérifie le SHA-256 et la clé de signature avant d'installer. Une appli peut rester sur une version, revenir à une plus ancienne ou être installée dans <code>/system</code> (root).</span></li>
+  <li><span lang="en"><strong>Offline</strong>: Settings → USB stick installs APKs (LibreHU key or the installed app's key) and images or zips whose SHA-256 matches the last list received online.</span><span lang="fr"><strong>Hors ligne</strong> : Réglages → Clé USB installe des APK (clé LibreHU ou celle de l'appli installée) et des images ou zips dont le SHA-256 correspond à la dernière liste reçue en ligne.</span></li>
+  <li><span lang="en"><strong>Native compilation</strong>: Android 9 leaves sideloaded apps interpreted (<code>speed-profile</code> without a profile). LibreHU service (or the Compilation tab when the service is absent) compiles them with <code>cmd package compile -m speed</code>, once per version (root).</span><span lang="fr"><strong>Compilation native</strong> : Android 9 laisse les applis installées à la main interprétées (<code>speed-profile</code> sans profil). LibreHU service (ou l'onglet Compilation sans le service) les compile avec <code>cmd package compile -m speed</code>, une fois par version (root).</span></li>
+</ol>
+
+<h3 id="ivi"><span lang="en">Replacing ivi-services</span><span lang="fr">Remplacer ivi-services</span></h3>
+<p><span lang="en">Jancar's <code>com.jancar.services</code> and LibreHU service both open the MCU serial port <code>/dev/ttyS1</code>; two readers steal each other's bytes, so LibreHU service refuses to start while ivi-services runs. Disable it:</span><span lang="fr"><code>com.jancar.services</code> de Jancar et LibreHU service ouvrent tous deux le port série de la MCU <code>/dev/ttyS1</code> ; deux lecteurs se volent les octets, donc LibreHU service refuse de démarrer tant qu'ivi-services tourne. Le désactiver :</span></p>
+<pre><code>adb shell pm disable-user --user 0 com.jancar.services
+# <span lang="en">back to stock</span><span lang="fr">retour à l'origine</span>
+adb shell pm enable com.jancar.services</code></pre>
+<p><span lang="en">Jancar's own apps (settings, radio, Bluetooth, rear view…) depend on ivi-services and lose those functions; the LibreHU apps replace them. "Start despite ivi-services" forces a quick test, at the risk of serial conflicts. For the clock (<code>SET_TIME</code>) and a reliable start, LibreHU service can be installed as a privileged app (<code>/system/priv-app</code>).</span><span lang="fr">Les applis de Jancar (réglages, radio, Bluetooth, recul…) dépendent d'ivi-services et perdent ces fonctions ; les applis LibreHU les remplacent. « Démarrer malgré ivi-services » force un essai rapide, au risque de conflits sur le port série. Pour l'horloge (<code>SET_TIME</code>) et un démarrage fiable, LibreHU service peut être installé en appli privilégiée (<code>/system/priv-app</code>).</span></p>
+
+<h3 id="setup"><span lang="en">First start of the launcher</span><span lang="fr">Premier démarrage du launcher</span></h3>
+<p><span lang="en">Set LibreHU Launcher as the home app. Its assistant walks through: notification access (now playing), root for every LibreHU app at once, Bluetooth, the QR code to pair the phone app, and Bluetooth pairing requests from phones.</span><span lang="fr">Choisir LibreHU Launcher comme écran d'accueil. Son assistant passe par : l'accès aux notifications (lecture en cours), le root pour toutes les applis LibreHU d'un coup, le Bluetooth, le QR code pour associer l'appli téléphone, et les demandes d'association Bluetooth des téléphones.</span></p>
+
+<h3 id="root">Root</h3>
+<p><span lang="en">Supported root managers: KernelSU Next (with the LibreHU kernel), KernelSU, Magisk, APatch, SuperSU. "Root for all LibreHU apps" asks each app in turn so every prompt arrives at once; each one only runs <code>su -c id</code>. Grant with "remember". KernelSU grants from its manager without a popup: LibreHU rechecks a refusal after 30 s.</span><span lang="fr">Gestionnaires de root pris en charge : KernelSU Next (avec le noyau LibreHU), KernelSU, Magisk, APatch, SuperSU. « Root pour toutes les applis LibreHU » interroge chaque appli à tour de rôle pour que toutes les demandes arrivent ensemble ; chacune ne lance que <code>su -c id</code>. Accorder avec « se souvenir ». KernelSU accorde depuis son gestionnaire sans fenêtre : LibreHU revérifie un refus au bout de 30 s.</span></p>
+
+<h2 id="service">LibreHU service</h2>
+<p><span lang="en">The core: it replaces Jancar's ivi-services and talks to the MCU, the audio chip, the CAN box and the OBD adapter. Its settings look like Android Auto: eight sections on the left (Home, Vehicle, Audio, Bluetooth, Android Auto, Display, System, Advanced) with their pages as chips. Every setting is also reachable from the phone app.</span><span lang="fr">Le cœur : il remplace ivi-services de Jancar et parle à la MCU, à la puce audio, au boîtier CAN et à l'adaptateur OBD. Ses réglages ressemblent à Android Auto : huit rubriques à gauche (Accueil, Véhicule, Audio, Bluetooth, Android Auto, Écran, Système, Avancé) avec leurs pages en pastilles. Chaque réglage est aussi accessible depuis l'appli téléphone.</span></p>
+
+<h3 id="svc-link"><span lang="en">MCU link</span><span lang="fr">Liaison MCU</span></h3>
+<p><span lang="en">Home shows the link: <code>RUNNING</code>, the MCU version (<code>JCST_AC8257_8T7-…</code>) and live traffic (ignition <code>00 01</code>, version <code>0A</code>, clock <code>09</code>). "MCU unreachable — open /dev/ttyS1" means another program holds the port (ivi-services) or the app lacks root. Advanced → MCU picks the protocol profile (Jancar JAC_V1 built in; others importable as JSON) and restarts the link. Advanced → MCU tools: state, commands, raw frames, traffic log.</span><span lang="fr">L'accueil montre la liaison : <code>RUNNING</code>, la version de la MCU (<code>JCST_AC8257_8T7-…</code>) et le trafic en direct (contact <code>00 01</code>, version <code>0A</code>, heure <code>09</code>). « MCU injoignable — open /dev/ttyS1 » veut dire qu'un autre programme tient le port (ivi-services) ou que l'appli n'a pas le root. Avancé → MCU choisit le profil de protocole (Jancar JAC_V1 intégré ; d'autres importables en JSON) et relance la liaison. Avancé → Outils MCU : état, commandes, trames brutes, journal du trafic.</span></p>
+
+<h3 id="svc-audio">Audio</h3>
+<ul>
+  <li><span lang="en"><strong>Sound processor ROHM BD37534</strong>: volume, mute, bass / middle / treble (0..20, 10 = flat), loudness (0..15), balance and fader, subwoofer and its level (−5..+7 dB), external amplifier (REM output).</span><span lang="fr"><strong>Processeur de son ROHM BD37534</strong> : volume, sourdine, graves / médiums / aigus (0..20, 10 = neutre), loudness (0..15), balance et fader, caisson et son niveau (−5..+7 dB), ampli externe (sortie REM).</span></li>
+  <li><span lang="en"><strong>Source</strong>: Android or the AUX jack (input 0, +5 dB); during AUX, Android's sound is mixed on top.</span><span lang="fr"><strong>Source</strong> : Android ou la prise AUX (entrée 0, +5 dB) ; pendant l'AUX, le son d'Android est mélangé par-dessus.</span></li>
+  <li><span lang="en"><strong>Microphone</strong>: hardware gain 1 / 2 / 3 and echo cancellation (ECNR), reapplied at each start without Jancar's settings app.</span><span lang="fr"><strong>Micro</strong> : gain matériel 1 / 2 / 3 et annulation d'écho (ECNR), réappliqués à chaque démarrage sans l'appli réglages de Jancar.</span></li>
+  <li><span lang="en"><strong>Volume panel</strong> drawn over the apps (style, edge, size, opacity, duration) and an optional <strong>sound menu</strong> on the volume keys listing every volume.</span><span lang="fr"><strong>Panneau de volume</strong> dessiné par-dessus les applis (style, bord, taille, opacité, durée) et un <strong>menu son</strong> en option sur les touches de volume, avec tous les volumes.</span></li>
+  <li><span lang="en"><strong>Audio diagnostics</strong>: VU meters, test tone per speaker (1 kHz, 50 Hz subwoofer), Android stream volumes, active players.</span><span lang="fr"><strong>Diagnostic audio</strong> : vu-mètres, son de test par haut-parleur (1 kHz, 50 Hz caisson), volumes des flux Android, lecteurs actifs.</span></li>
+</ul>
+
+<h3 id="svc-vehicle"><span lang="en">Vehicle and CAN</span><span lang="fr">Véhicule et CAN</span></h3>
+<ul>
+  <li><span lang="en"><strong>Car name</strong>: Bluetooth name, Android device name, network host name, Wi-Fi hotspot and Wi-Fi Direct name (root for the network ones, applied at next start).</span><span lang="fr"><strong>Nom de la voiture</strong> : nom Bluetooth, nom d'appareil Android, nom d'hôte réseau, point d'accès Wi-Fi et nom Wi-Fi Direct (root pour le réseau, pris en compte au prochain démarrage).</span></li>
+  <li><span lang="en"><strong>Vehicle sheet</strong>: make, model, year, colour, plate, energy, driver side; shared with LibreHU apps (SOS, Android Auto, CarPlay).</span><span lang="fr"><strong>Fiche du véhicule</strong> : marque, modèle, année, couleur, plaque, énergie, côté conducteur ; partagée avec les applis LibreHU (SOS, Android Auto, CarPlay).</span></li>
+  <li><span lang="en"><strong>Inputs</strong>: ignition, handbrake and lights from the MCU; reverse and turn signals from SoC GPIOs (active low, each one invertible or disabled).</span><span lang="fr"><strong>Entrées</strong> : contact, frein à main et feux par la MCU ; marche arrière et clignotants par des GPIO du SoC (actifs bas, chacun inversable ou désactivable).</span></li>
+  <li><span lang="en"><strong>CAN box</strong> (Hiworld): messages rebuilt and shown live, changed bytes highlighted, text export; <strong>car profiles</strong> decode them (Renault Clio 3 LNP002 built in: ignition, lights, reverse, handbrake, steering wheel key and angle, doors, outside temperature, parking radar). Steering wheel keys from the CAN box run any action, like the front panel keys.</span><span lang="fr"><strong>Boîtier CAN</strong> (Hiworld) : messages reconstitués et affichés en direct, octets modifiés en couleur, export texte ; des <strong>profils de voiture</strong> les décodent (Renault Clio 3 LNP002 intégré : contact, feux, marche arrière, frein à main, touche et angle du volant, portes, température extérieure, radar de recul). Les touches du volant venant du boîtier lancent n'importe quelle action, comme les touches de façade.</span></li>
+  <li><span lang="en"><strong>New car</strong>: choose <code>hiworld-generic</code>, capture while using each control, spot the changing bytes, write a profile (format in the <a href="developers.html#can">developer reference</a>) and import it.</span><span lang="fr"><strong>Nouvelle voiture</strong> : choisir <code>hiworld-generic</code>, capturer en actionnant chaque commande, repérer les octets qui changent, écrire un profil (format dans la <a href="developers.html#can">référence développeurs</a>) et l'importer.</span></li>
+</ul>
+
+<h3 id="svc-reverse"><span lang="en">Rear view camera</span><span lang="fr">Caméra de recul</span></h3>
+<p><span lang="en">On reverse gear (MCU / GPIO 2), two modes:</span><span lang="fr">À la marche arrière (MCU / GPIO 2), deux modes :</span></p>
+<ul>
+  <li><span lang="en"><strong>LibreHU view</strong> (default): Camera2 in a window over everything, drawn in a SurfaceView with GLES 2. Camera choice by role (CVBS, AHD, front, 360…) or automatic; mirror, flip, rotation, zoom, offset, fill. Perspective guide lines (red / orange / yellow / green), trajectory from the steering angle of the CAN box, parking radar with beeps getting faster, engage sound, music lowered or paused, motion and "approach" detection (experimental), up to three extra cameras (one at a time on touch, side by side or picture in picture), preview in a quarter of the screen to set it up.</span><span lang="fr"><strong>Vue LibreHU</strong> (par défaut) : Camera2 dans une fenêtre par-dessus tout, dessinée dans une SurfaceView en GLES 2. Choix de la caméra par rôle (CVBS, AHD, avant, 360…) ou automatique ; miroir, retournement, rotation, zoom, décalage, remplissage. Lignes de guidage en perspective (rouge / orange / jaune / vert), trajectoire selon l'angle du volant venant du boîtier CAN, radar de recul avec bips de plus en plus rapides, son à l'engagement, musique baissée ou en pause, détection de mouvement et d'« approche » (expérimentale), jusqu'à trois caméras en plus (une à la fois au toucher, côte à côte ou incrustées), aperçu dans un quart d'écran pour régler.</span></li>
+  <li><span lang="en"><strong>App</strong>: opens the chosen camera app (stock <code>com.jancar.hd2cam</code> or <code>com.baony.avm360</code>), closes it on exit.</span><span lang="fr"><strong>Appli</strong> : ouvre l'appli caméra choisie (<code>com.jancar.hd2cam</code> ou <code>com.baony.avm360</code> d'origine), la ferme à la sortie.</span></li>
+  <li><span lang="en"><strong>Camera format</strong> (CVBS PAL / NTSC, AHD 720p / 1080p, 25 / 30 fps) is written to the metazone like Jancar does; it stays on the unit (not in the phone app).</span><span lang="fr"><strong>Format de la caméra</strong> (CVBS PAL / NTSC, AHD 720p / 1080p, 25 / 30 i/s) écrit dans la metazone comme le fait Jancar ; il reste sur l'autoradio (pas dans l'appli téléphone).</span></li>
+  <li><span lang="en"><strong>Widget</strong>: live camera on LibreHU Launcher (full rate), a few pictures per second elsewhere; a touch opens or closes the full view.</span><span lang="fr"><strong>Widget</strong> : caméra en direct sur LibreHU Launcher (pleine cadence), quelques images par seconde ailleurs ; un toucher ouvre ou ferme la vue plein écran.</span></li>
+</ul>
+
+<h3 id="svc-video"><span lang="en">Video inputs</span><span lang="fr">Entrées vidéo</span></h3>
+<p><span lang="en"><strong>CVBS IN 1 / 2</strong> without Jancar's AV app: the video switch of the CVBS decoder (GPIO 167 / 165) then camera 3 full screen; video only with the handbrake on; a test of the four positions tells which RCA jack is which. <strong>VIDEO OUT</strong> goes through Jancar's USB display app (MacroSilicon chip).</span><span lang="fr"><strong>CVBS IN 1 / 2</strong> sans l'appli AV de Jancar : commutateur vidéo du décodeur CVBS (GPIO 167 / 165) puis caméra 3 en plein écran ; vidéo seulement frein à main serré ; un test des quatre positions dit quelle prise RCA est où. <strong>VIDEO OUT</strong> passe par l'appli d'affichage USB de Jancar (puce MacroSilicon).</span></p>
+
+<h3 id="svc-obd">OBD</h3>
+<ul>
+  <li><span lang="en"><strong>ELM327 adapter</strong> over Bluetooth (SPP) or USB (FTDI, CH340, PL2303, CP210x). Engine values (SAE J1979 mode 01), fault codes (read, clear with confirmation).</span><span lang="fr"><strong>Adaptateur ELM327</strong> en Bluetooth (SPP) ou USB (FTDI, CH340, PL2303, CP210x). Valeurs moteur (SAE J1979 mode 01), codes défaut (lecture, effacement avec confirmation).</span></li>
+  <li><span lang="en"><strong>Car battery</strong> from the socket voltage: charge estimated engine off (12.6 V = 100 %, 11.7 V = 0 %), charging / not charging / overvoltage engine running; alarms with thresholds, sound and a ±0.5 V correction.</span><span lang="fr"><strong>Batterie de la voiture</strong> d'après la tension de la prise : charge estimée moteur arrêté (12,6 V = 100 %, 11,7 V = 0 %), en charge / pas de charge / surtension moteur tournant ; alarmes avec seuils, son et correction de ±0,5 V.</span></li>
+  <li><span lang="en"><strong>Manufacturer values</strong> (Renault and others) from your own ddt4all files, read-only: only read requests (services 21 and 22) are ever sent; CAN ECUs only.</span><span lang="fr"><strong>Valeurs constructeur</strong> (Renault et autres) depuis vos propres fichiers ddt4all, en lecture seule : seules des requêtes de lecture (services 21 et 22) sont envoyées ; calculateurs CAN seulement.</span></li>
+  <li><span lang="en"><strong>Widgets</strong>: OBD (4 values), analog gauges, digital cluster; <strong>simulated engine sound</strong> following the RPM (off by default).</span><span lang="fr"><strong>Widgets</strong> : OBD (4 valeurs), compteurs analogiques, combiné numérique ; <strong>son moteur simulé</strong> qui suit le régime (désactivé par défaut).</span></li>
+</ul>
+
+<h3 id="svc-bt">Bluetooth</h3>
+<p><span lang="en">Replaces <code>ivi-btservice</code>: calls (HFP client), music (A2DP sink + AVRCP), phone book and call log (PBAP), pairing, reconnection of the last phone, ringtone. For iPhones, the CarPlay app reports name, model, iOS, battery (cycles, temperature, capacity); plugging an iPhone in can turn Bluetooth on and pair it.</span><span lang="fr">Remplace <code>ivi-btservice</code> : appels (HFP client), musique (A2DP sink + AVRCP), répertoire et journal (PBAP), appairage, reconnexion du dernier téléphone, sonnerie. Pour l'iPhone, l'appli CarPlay donne nom, modèle, iOS, batterie (cycles, température, capacité) ; brancher un iPhone peut allumer le Bluetooth et l'appairer.</span></p>
+
+<h3 id="svc-power"><span lang="en">Ignition and standby</span><span lang="fr">Contact et veille</span></h3>
+<p><span lang="en">The ignition line drops while the starter turns: LibreHU waits a delay (3 s by default, 0..10 s) before cutting screen, sound and amplifier. Then:</span><span lang="fr">Le + après-contact chute pendant que le démarreur tourne : LibreHU attend un délai (3 s par défaut, 0..10 s) avant de couper écran, son et ampli. Ensuite :</span></p>
+<div class="table"><table>
+<thead><tr><th>Mode</th><th><span lang="en">What happens</span><span lang="fr">Ce qui se passe</span></th></tr></thead>
+<tbody>
+<tr><td><span lang="en">Screen off (default)</span><span lang="fr">Écran éteint (défaut)</span></td><td><span lang="en">The MCU powers the SoC off by itself 15 s later; cold start at next ignition.</span><span lang="fr">La MCU coupe le SoC d'elle-même 15 s plus tard ; démarrage à froid au contact suivant.</span></td></tr>
+<tr><td><span lang="en">Standby</span><span lang="fr">Veille</span></td><td><span lang="en">Media paused (resumed on wake), home screen, airplane mode and GPS off (root), <code>sync</code>, MCU standby timer <code>F1 n</code> (7 h to 14 days), screen off. On wake: PC_READY again, screen on, radios back, playback resumed 4 s later.</span><span lang="fr">Médias en pause (repris au réveil), écran d'accueil, mode avion et GPS coupés (root), <code>sync</code>, minuterie de veille de la MCU <code>F1 n</code> (7 h à 14 jours), écran éteint. Au réveil : PC_READY renvoyé, écran rallumé, radios rétablies, lecture reprise 4 s plus tard.</span></td></tr>
+<tr><td><span lang="en">Shutdown</span><span lang="fr">Extinction</span></td><td><span lang="en">Media paused, <code>sync</code>, <code>F1 0</code>: the MCU cuts the SoC.</span><span lang="fr">Médias en pause, <code>sync</code>, <code>F1 0</code> : la MCU coupe le SoC.</span></td></tr>
+</tbody></table></div>
+<p><span lang="en"><strong>Safe shutdown</strong> (mute, pause, <code>sync</code>, "you can turn the ignition off") and <strong>Reset SoC</strong> through the MCU (works even when Android hangs) are in System → Watchdog.</span><span lang="fr"><strong>Arrêt sécurisé</strong> (sourdine, pause, <code>sync</code>, « vous pouvez couper le contact ») et <strong>redémarrage du SoC</strong> par la MCU (marche même quand Android est bloqué) sont dans Système → Watchdog.</span></p>
+
+<h3 id="svc-touch"><span lang="en">Touch panel</span><span lang="fr">Dalle tactile</span></h3>
+<ul>
+  <li><span lang="en"><strong>Calibration</strong> (root): 5 targets, least squares, maximum error shown, then a 20 s trial that goes back by itself unless you keep it. "Start from a neutral matrix" when the current one is too wrong to reach the corners. Can also write Jancar's <code>pointercal.xml</code>.</span><span lang="fr"><strong>Calibration</strong> (root) : 5 cibles, moindres carrés, erreur maximale affichée, puis un essai de 20 s qui revient seul en arrière si on ne garde pas. « Partir d'une matrice neutre » quand l'actuelle est trop fausse pour atteindre les coins. Peut aussi écrire le <code>pointercal.xml</code> de Jancar.</span></li>
+  <li><span lang="en"><strong>Front panel keys</strong>: the printed buttons around the screen are touch areas outside the display. Learn each one with a 2 s press, then give it a short press action and a long press action (or repeat while held).</span><span lang="fr"><strong>Touches de façade</strong> : les boutons sérigraphiés autour de l'écran sont des zones tactiles hors de l'affichage. Les apprendre par un appui de 2 s, puis leur donner une action d'appui court et d'appui long (ou répétition tant qu'on appuie).</span></li>
+</ul>
+
+<h3 id="svc-display"><span lang="en">Display and lights</span><span lang="fr">Écran et lumières</span></h3>
+<p><span lang="en">Android dark mode and brightness follow the headlights (day / night levels); on-screen warning lights (lights, reverse, handbrake, turn signals; off by default); button backlight: the two PWM outputs of the MCU (5..100 %), one level lights off and one lights on.</span><span lang="fr">Mode sombre d'Android et luminosité selon les feux (niveaux jour / nuit) ; voyants à l'écran (feux, marche arrière, frein à main, clignotants ; désactivés par défaut) ; rétroéclairage des boutons : les deux sorties PWM de la MCU (5..100 %), un niveau feux éteints et un feux allumés.</span></p>
+
+<h3 id="svc-tweaks">Tweaks</h3>
+<ul>
+  <li><span lang="en"><strong>Kernel</strong> (root): per CPU cluster governor and min / max frequency; GPU kept at a MediaTek operating point or automatic; eMMC I/O scheduler and read-ahead; swappiness; TCP congestion control; temperatures. Applied at once and, if asked, at each start, with a 90 s guard against a boot loop; factory values restorable.</span><span lang="fr"><strong>Noyau</strong> (root) : par groupe de cœurs, gouverneur et fréquences min / max ; GPU gardé sur un palier MediaTek ou automatique ; ordonnanceur d'E/S et lecture anticipée de l'eMMC ; swappiness ; contrôle de congestion TCP ; températures. Appliqués tout de suite et, si demandé, à chaque démarrage, avec une garde de 90 s contre une boucle de redémarrage ; valeurs d'usine restaurables.</span></li>
+  <li><span lang="en"><strong>CPU boost on touch</strong> (off by default): every cluster's minimum frequency jumps to its maximum while a finger is on the screen, back 1.5 s after the last touch.</span><span lang="fr"><strong>Accélérer le processeur au toucher</strong> (désactivé par défaut) : la fréquence minimale de chaque groupe de cœurs passe à sa maximale tant qu'un doigt touche l'écran, et revient 1,5 s après le dernier toucher.</span></li>
+  <li><span lang="en"><strong>Native compilation</strong> of the LibreHU apps and <strong>Zygote preload</strong> switch (root module).</span><span lang="fr"><strong>Compilation native</strong> des applis LibreHU et interrupteur de <strong>préchargement Zygote</strong> (module root).</span></li>
+</ul>
+
+<h3 id="svc-backup"><span lang="en">Backup and migration</span><span lang="fr">Sauvegarde et migration</span></h3>
+<p><span lang="en">Settings of every installed LibreHU app (and ViPER4Android, Open Headunit, CarPlay, MCU Toolkit) into a <code>.tar</code> in <code>Download/LibreHU</code>: preferences, files, databases. Restoring refuses archives with links or <code>..</code> paths.</span><span lang="fr">Réglages de toutes les applis LibreHU installées (et ViPER4Android, Open Headunit, CarPlay, MCU Toolkit) dans une archive <code>.tar</code> de <code>Download/LibreHU</code> : préférences, fichiers, bases de données. La restauration refuse les archives avec des liens ou des chemins <code>..</code>.</span></p>
+
+<h2 id="launcher">LibreHU Launcher</h2>
+<ul>
+  <li><span lang="en"><strong>Dashboard</strong>: rail of pinned apps on the left (long press in the drawer to pin), big widget slot, now playing card (any MediaSession), second widget slot; several pages. Optional widget size and layout editing (width, height, move between slots and pages) and right-hand drive (mirrored).</span><span lang="fr"><strong>Tableau de bord</strong> : rail d'applis épinglées à gauche (appui long dans le tiroir pour épingler), grand emplacement de widget, carte de lecture en cours (n'importe quelle MediaSession), second emplacement ; plusieurs pages. En option : taille et disposition des widgets (largeur, hauteur, déplacement entre emplacements et pages) et conduite à droite (miroir).</span></li>
+  <li><span lang="en"><strong>Styles</strong>: modern, or retro car stereo display whose colours come from the accent colour (any RGB); normal or segment display font (LibreHU Seg14, from DSEG14), followed by every LibreHU app and their widgets.</span><span lang="fr"><strong>Styles</strong> : moderne, ou afficheur d'autoradio rétro dont les couleurs viennent de la couleur d'accent (n'importe quelle couleur RGB) ; police normale ou à segments (LibreHU Seg14, tirée de DSEG14), suivie par toutes les applis LibreHU et leurs widgets.</span></li>
+  <li><span lang="en"><strong>Wallpapers</strong>: picture, looping video, aurora, stars, waves, vaporwave sunset, retro dot-matrix scenes (dolphins, analyser, cassette, night road, rally, deep space with hyperspace jumps, demo mode), music spectrum. "GPU acceleration" (off by default) draws them with OpenGL ES 2.</span><span lang="fr"><strong>Fonds d'écran</strong> : image, vidéo en boucle, aurore, étoiles, vagues, coucher de soleil vaporwave, scènes rétro en matrice de points (dauphins, analyseur, cassette, route de nuit, rallye, espace avec sauts en hyperespace, mode démo), spectre de la musique. « Accélération GPU » (désactivée par défaut) les dessine en OpenGL ES 2.</span></li>
+  <li><span lang="en"><strong>Standby clock</strong> (digital or analog, date, car battery, up to 6 OBD values, what is playing, small drift against burn-in) and <strong>lock screen</strong>, both in the retro style when chosen.</span><span lang="fr"><strong>Horloge de veille</strong> (numérique ou analogique, date, batterie de la voiture, jusqu'à 6 valeurs OBD, lecture en cours, léger déplacement contre le marquage) et <strong>écran de verrouillage</strong>, tous deux en style rétro s'il est choisi.</span></li>
+  <li><span lang="en"><strong>Tyres (TPMS)</strong>: USB TPMS receiver read directly, dashboard card, detail screen, pairing, swap, thresholds, alert notification, widget.</span><span lang="fr"><strong>Pneus (TPMS)</strong> : récepteur TPMS USB lu directement, carte du tableau de bord, écran détaillé, appairage, permutation, seuils, notification d'alerte, widget.</span></li>
+  <li><span lang="en"><strong>Driving</strong>: weather and speed limit warning only (in France, speed camera warnings are illegal and not provided). <strong>SOS</strong>: emergency call screen behind a signature permission.</span><span lang="fr"><strong>Conduite</strong> : météo et alerte de limite de vitesse seulement (en France, les avertisseurs de radars sont interdits et ne sont pas fournis). <strong>SOS</strong> : écran d'appel d'urgence derrière une permission de signature.</span></li>
+  <li><span lang="en"><strong>Android Auto</strong>: session card, next turn of the navigation (with Open Headunit LibreHU), and optionally the live picture on the dashboard (experimental).</span><span lang="fr"><strong>Android Auto</strong> : carte de session, prochaine manœuvre de la navigation (avec Open Headunit LibreHU) et, en option, l'image en direct sur le tableau de bord (expérimental).</span></li>
+</ul>
+
+<h2 id="bridge"><span lang="en">Phone app (LibreHU Bridge)</span><span lang="fr">Appli téléphone (LibreHU Bridge)</span></h2>
+<ol class="steps">
+  <li><span lang="en"><strong>Install</strong>: <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">Android 8.0+ APK</a>, or the <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">unsigned iPhone .ipa</a> (iOS 16+) signed by yourself with AltStore or Sideloadly (every 7 days with a free Apple ID).</span><span lang="fr"><strong>Installer</strong> : <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">APK Android 8.0+</a>, ou le <a href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">.ipa iPhone non signé</a> (iOS 16+) à signer soi-même avec AltStore ou Sideloadly (tous les 7 jours avec un identifiant Apple gratuit).</span></li>
+  <li><span lang="en"><strong>Pair</strong>: QR code from the launcher's assistant or LibreHU service → Bluetooth → Phone → LibreHU phone app → Pair a phone (single-use token, 5 minutes); or, phone already paired in Bluetooth, choose the head unit and accept on its screen.</span><span lang="fr"><strong>Associer</strong> : QR code de l'assistant du launcher ou de LibreHU service → Bluetooth → Téléphone → Appli téléphone LibreHU → Associer un téléphone (jeton à usage unique, 5 minutes) ; ou, téléphone déjà appairé en Bluetooth, choisir l'autoradio et accepter sur son écran.</span></li>
+  <li><span lang="en"><strong>Use</strong>: Wi-Fi when both are on the same network (phone or head unit hotspot), else Bluetooth (Android only). Five tabs: Home (battery, GPS status without position, temperatures, system), Settings (every page of the head unit and the apps, with search), Apps (open an app on the unit), Files, Tools (reboot normal / recovery / fastboot, logs, advanced Android settings).</span><span lang="fr"><strong>Utiliser</strong> : Wi-Fi quand les deux sont sur le même réseau (point d'accès du téléphone ou de l'autoradio), sinon Bluetooth (Android seulement). Cinq onglets : Accueil (batterie, état du GPS sans la position, températures, système), Réglages (toutes les pages de l'autoradio et des applis, avec recherche), Applis (ouvrir une appli sur l'autoradio), Fichiers, Outils (redémarrer normal / recovery / fastboot, journaux, réglages Android avancés).</span></li>
+  <li><span lang="en"><strong>Android Auto</strong> (Android phone): battery, speed, RPM, temperatures and quick settings. Car App Library apps appear only when installed by a trusted store: reinstall as Google Play (<code>adb install -r -i com.android.vending</code>, or the in-app button with root on the phone).</span><span lang="fr"><strong>Android Auto</strong> (téléphone Android) : batterie, vitesse, régime, températures et réglages rapides. Une appli Car App Library n'apparaît que si elle vient d'un store de confiance : la réinstaller comme Google Play (<code>adb install -r -i com.android.vending</code>, ou le bouton de l'appli avec root sur le téléphone).</span></li>
+</ol>
+<p class="note info"><span lang="en">The link is end-to-end encrypted (ECDH P-256, ECDSA, HKDF-SHA256, AES-256-GCM) and the head unit lists and can forget paired phones. Secrets (GitHub token, MFi token, hotspot password) never go through it.</span><span lang="fr">La liaison est chiffrée de bout en bout (ECDH P-256, ECDSA, HKDF-SHA256, AES-256-GCM) et l'autoradio liste et peut oublier les téléphones associés. Les secrets (jeton GitHub, jeton MFi, mot de passe du point d'accès) n'y passent jamais.</span></p>
+
+<h2 id="apps"><span lang="en">Other apps</span><span lang="fr">Autres applis</span></h2>
+<h3>LibreHU FM</h3>
+<p><span lang="en">FM radio on the internal MediaTek chip (MT6631 combo, <code>/dev/fm</code>): stations, seek, scan, RDS, station logos, widget; asks LibreHU service for the antenna power (GPIO 110 + MCU <code>43</code>) while it plays.</span><span lang="fr">Radio FM sur la puce MediaTek interne (combo MT6631, <code>/dev/fm</code>) : stations, recherche, balayage, RDS, logos des stations, widget ; demande à LibreHU service l'alimentation de l'antenne (GPIO 110 + MCU <code>43</code>) pendant la lecture.</span></p>
+<h3>LibreHU Dialer</h3>
+<p><span lang="en">Bluetooth phone made for the car: keypad, recents, contacts, favourites, incoming call window and floating bubble, widgets.</span><span lang="fr">Téléphone Bluetooth pensé pour la voiture : clavier, récents, contacts, favoris, fenêtre d'appel entrant et bulle flottante, widgets.</span></p>
+<h3>LibreHU Widgets</h3>
+<p><span lang="en">Several home screen widgets in one APK: warning lights (handbrake, lights, ignition, reverse, turn signals, MCU link, external amp), info (trip time…), with a setup app; retro style and segment font followed.</span><span lang="fr">Plusieurs widgets d'écran d'accueil dans un APK : voyants (frein à main, feux, contact, marche arrière, clignotants, liaison MCU, ampli externe), infos (temps de trajet…), avec une appli de réglage ; style rétro et police à segments suivis.</span></p>
+<h3>LibreHU BtnRemap</h3>
+<p><span lang="en">Every steering wheel or CAN box button, short and long press: open an app, next source in your list or EasySource's, play / pause, next / previous, volume, mute, home, back, navigation, voice assistant, phone… Buttons add themselves when pressed (learning).</span><span lang="fr">Chaque bouton du volant ou du boîtier CAN, appui court et long : ouvrir une appli, source suivante de votre liste ou d'EasySource, lecture / pause, suivant / précédent, volume, sourdine, accueil, retour, navigation, assistant vocal, téléphone… Les boutons s'ajoutent d'eux-mêmes quand on les appuie (apprentissage).</span></p>
+<h3>LibreHU EasySource</h3>
+<p><span lang="en">Full screen source picker for the MODE / SRC key: each press shows the next source (FM, Bluetooth music, AUX, music apps), which starts after a few seconds or at once with OK.</span><span lang="fr">Sélecteur de sources plein écran pour la touche MODE / SRC : chaque appui montre la source suivante (FM, musique Bluetooth, AUX, applis de musique), qui démarre après quelques secondes ou tout de suite avec OK.</span></p>
+<h3>LibreHU Disc</h3>
+<p><span lang="en">USB optical drive: audio CD (with MusicBrainz names), data CD / DVD, unprotected DVD video, ripping (format, safe mode, retries, tags). Needs root (the drive node <code>/dev/block/sr0</code> is root only) and the LibreHU kernel's CD/DVD drivers. Protected commercial DVDs (CSS) are not supported.</span><span lang="fr">Lecteur optique USB : CD audio (noms par MusicBrainz), CD / DVD de données, DVD vidéo non protégés, extraction (format, mode sûr, essais, tags). Demande le root (le nœud du lecteur <code>/dev/block/sr0</code> est réservé à root) et les pilotes CD/DVD du noyau LibreHU. Les DVD du commerce protégés (CSS) ne sont pas pris en charge.</span></p>
+<h3>ViPER4Android LibreHU</h3>
+<p><span lang="en">Material 3 ViPER4Android with the ViPERFX_RE engine (driver zip in LibreHU Apps → Zips), started early at boot by the service so effects apply from the first song; every effect settable from the phone app.</span><span lang="fr">ViPER4Android Material 3 avec le moteur ViPERFX_RE (zip du pilote dans LibreHU Apps → Zips), démarré tôt au démarrage par le service pour que les effets s'appliquent dès le premier morceau ; chaque effet réglable depuis l'appli téléphone.</span></p>
+<h3>LibreHU Helper</h3>
+<p><span lang="en">Read-only diagnostics for porting: zip report (system, partitions dump options, proprietary APKs, tty / I²C / USB scan, MFi chip, MCU, CAN box protocol), with anonymisation. Run it on another head unit and attach the report to an issue.</span><span lang="fr">Diagnostic en lecture seule pour le portage : rapport zip (système, options de dump des partitions, APK propriétaires, scan tty / I²C / USB, puce MFi, MCU, protocole du boîtier CAN), avec anonymisation. Le lancer sur un autre autoradio et joindre le rapport à une issue.</span></p>
+
+<h2 id="projection">Android Auto · CarPlay</h2>
+<ul>
+  <li><span lang="en"><strong>Android Auto</strong>: Open Headunit LibreHU (<code>org.librehu.headunit</code>), USB or wireless. LibreHU service drives it: session state, day / night from the headlights, car data and sensors sent to the phone, steering wheel keys (voice assistant included), back to the projection after reversing, low-latency video. All its settings are in LibreHU service → Android Auto.</span><span lang="fr"><strong>Android Auto</strong> : Open Headunit LibreHU (<code>org.librehu.headunit</code>), USB ou sans fil. LibreHU service le pilote : état de la session, jour / nuit selon les phares, données et capteurs de la voiture envoyés au téléphone, touches du volant (assistant vocal compris), retour à la projection après le recul, vidéo basse latence. Tous ses réglages sont dans LibreHU service → Android Auto.</span></li>
+  <li><span lang="en"><strong>CarPlay</strong>: xcertplay LibreHU (<code>org.librehu.carplay</code>) with the unit's own MFi authentication chip (found by itself on I²C) or a CH341 adapter; wired and wireless (its own hotspot). Night mode from the headlights, vehicle identity from the service.</span><span lang="fr"><strong>CarPlay</strong> : xcertplay LibreHU (<code>org.librehu.carplay</code>) avec la puce d'authentification MFi de l'autoradio (trouvée seule sur l'I²C) ou un adaptateur CH341 ; filaire et sans fil (son propre point d'accès). Mode nuit selon les phares, identité du véhicule venant du service.</span></li>
+</ul>
+
+<h2 id="system"><span lang="en">TWRP, kernel, zips</span><span lang="fr">TWRP, noyau, zips</span></h2>
+<p><span lang="en">All system pieces are in LibreHU Apps → Zips (also <a href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips">on GitHub</a>). Each one is checked (size, SHA-256), backs up the current partition to <code>/sdcard/LibreHU/backup</code>, then is written and read back.</span><span lang="fr">Toutes les pièces système sont dans LibreHU Apps → Zips (aussi <a href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips">sur GitHub</a>). Chacune est vérifiée (taille, SHA-256), sauvegarde la partition actuelle dans <code>/sdcard/LibreHU/backup</code>, puis est écrite et relue.</span></p>
+<div class="table"><table>
+<thead><tr><th>Zip</th><th><span lang="en">What it does</span><span lang="fr">Rôle</span></th></tr></thead>
+<tbody>
+<tr><td><code>twrp-ujc201</code> / <code>-beta</code></td><td><span lang="en">TWRP recovery for the UJC201: touch and front keys, landscape, ADB / MTP, USB stick, MCU state in the status bar, steering wheel and Hiworld CAN box keys (beta). Signed with the stock recovery's AVB footer, so Android still boots.</span><span lang="fr">Recovery TWRP de l'UJC201 : tactile et touches de façade, paysage, ADB / MTP, clé USB, état de la MCU dans la barre d'état, touches du volant et du boîtier CAN Hiworld (bêta). Signé avec le pied AVB du recovery d'origine, donc Android démarre toujours.</span></td></tr>
+<tr><td><code>kernel-librehu</code> / <code>-bootmenu</code></td><td><span lang="en">LibreHU kernel in <code>boot</code> (with KernelSU Next), optionally with a TWRP / Android / Fastboot boot menu. vbmeta is never touched.</span><span lang="fr">Noyau LibreHU dans <code>boot</code> (avec KernelSU Next), en option avec un menu de démarrage TWRP / Android / Fastboot. vbmeta n'est jamais touché.</span></td></tr>
+<tr><td><code>kernel-connectivity</code></td><td><span lang="en">Same kernel with the Wi-Fi / BT / GPS / FM drivers built in (testing).</span><span lang="fr">Même noyau avec les pilotes Wi-Fi / BT / GPS / FM intégrés (en test).</span></td></tr>
+<tr><td><code>viper4android-re</code></td><td><span lang="en">ViPERFX_RE audio driver for ViPER4Android.</span><span lang="fr">Pilote audio ViPERFX_RE pour ViPER4Android.</span></td></tr>
+<tr><td><code>usb-net</code></td><td><span lang="en">USB Ethernet drivers (Realtek, RNDIS, iPhone, LAN78xx, SMSC…).</span><span lang="fr">Pilotes Ethernet USB (Realtek, RNDIS, iPhone, LAN78xx, SMSC…).</span></td></tr>
+<tr><td><code>no-deep-buffer</code></td><td><span lang="en">Audio tweak (deep buffer off), with its restore zip.</span><span lang="fr">Réglage audio (deep buffer coupé), avec son zip de retour.</span></td></tr>
+<tr><td><code>supersu-remove</code></td><td><span lang="en">Removes the stock SuperSU, with its restore zip.</span><span lang="fr">Retire le SuperSU d'origine, avec son zip de retour.</span></td></tr>
+</tbody></table></div>
+<p><span lang="en">Manual TWRP install:</span><span lang="fr">Installation manuelle de TWRP :</span></p>
+<pre><code>adb reboot bootloader
+fastboot flash recovery twrp_ujc201.img
+fastboot oem reboot-recovery</code></pre>
+<p class="note"><span lang="en">Flash the post-processed <code>twrp_ujc201.img</code> from the releases, never a raw <code>recovery.img</code> from a build: without the stock AVB footer Android bootloops. <code>fastboot boot</code> does not work on this unit. LibreHU never disables dm-verity or rewrites vbmeta.</span><span lang="fr">Flasher le <code>twrp_ujc201.img</code> post-traité des releases, jamais un <code>recovery.img</code> brut d'une build : sans le pied AVB d'origine, Android boucle au démarrage. <code>fastboot boot</code> ne marche pas sur cet autoradio. LibreHU ne désactive jamais dm-verity et ne réécrit jamais vbmeta.</span></p>
+
+<h2 id="trouble"><span lang="en">Troubleshooting</span><span lang="fr">Dépannage</span></h2>
+<div class="table"><table>
+<thead><tr><th><span lang="en">Symptom</span><span lang="fr">Symptôme</span></th><th><span lang="en">Cause and fix</span><span lang="fr">Cause et solution</span></th></tr></thead>
+<tbody>
+<tr><td><span lang="en">"MCU unreachable"</span><span lang="fr">« MCU injoignable »</span></td><td><span lang="en">ivi-services still holds <code>/dev/ttyS1</code> (disable it) or root refused.</span><span lang="fr">ivi-services tient encore <code>/dev/ttyS1</code> (le désactiver) ou root refusé.</span></td></tr>
+<tr><td><span lang="en">Update refused by Android</span><span lang="fr">Mise à jour refusée par Android</span></td><td><span lang="en">Different signing key (old debug build): uninstall once. Or a lower versionCode: LibreHU Apps offers to uninstall first.</span><span lang="fr">Clé de signature différente (ancienne build debug) : désinstaller une fois. Ou versionCode plus petit : LibreHU Apps propose de désinstaller d'abord.</span></td></tr>
+<tr><td><span lang="en">The head unit powers off again right after waking from standby</span><span lang="fr">L'autoradio se recoupe juste après le réveil de veille</span></td><td><span lang="en">The MCU waits for PC_READY (<code>1F 01</code>) for 10 s after waking the SoC: LibreHU service (or ivi-services) must be running and holding the link.</span><span lang="fr">La MCU attend PC_READY (<code>1F 01</code>) 10 s après avoir réveillé le SoC : LibreHU service (ou ivi-services) doit tourner et tenir la liaison.</span></td></tr>
+<tr><td><span lang="en">Screen goes off when starting the engine</span><span lang="fr">Écran coupé au démarrage du moteur</span></td><td><span lang="en">Raise the ignition off delay (System → Standby).</span><span lang="fr">Augmenter le délai avant coupure (Système → Veille).</span></td></tr>
+<tr><td><span lang="en">Touch is offset</span><span lang="fr">Tactile décalé</span></td><td><span lang="en">Calibrate in Display → Touch panel ("start from a neutral matrix" if needed).</span><span lang="fr">Calibrer dans Écran → Dalle tactile (« partir d'une matrice neutre » si besoin).</span></td></tr>
+<tr><td><span lang="en">Android hangs</span><span lang="fr">Android bloqué</span></td><td><span lang="en">Reset SoC from the phone app or the service: the MCU power cycles the SoC.</span><span lang="fr">Redémarrage du SoC depuis l'appli téléphone ou le service : la MCU coupe et rallume le SoC.</span></td></tr>
+<tr><td><span lang="en">Need logs</span><span lang="fr">Besoin de journaux</span></td><td><span lang="en">Phone app → Tools → Logs (LibreHU, full logcat, kernel), or LibreHU Helper's report; attach to a GitHub issue.</span><span lang="fr">Appli téléphone → Outils → Journaux (LibreHU, logcat complet, noyau), ou le rapport de LibreHU Helper ; joindre à une issue GitHub.</span></td></tr>
+</tbody></table></div>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="docs.html">Docs</a> · <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="assets/lang.js"></script>
+</body>
+</html>
+

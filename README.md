@@ -3,10 +3,27 @@
 LibreHU website, published by GitHub Pages at <https://librehu.github.io>.
 Site de LibreHU, publié par GitHub Pages sur <https://librehu.github.io>.
 
-- `index.html`: features, downloads (latest build of each app and edition), install steps, compatibility, FAQ.
-- `headunits.html`: Android head unit platforms (chip, CPU, architecture, real Android version and the one
-  manufacturers display), with sources.
-- `assets/`: stylesheet (light / dark from the system), `lang.js` (EN / FR buttons), favicon, screenshots.
+| Page | Content |
+|---|---|
+| `index.html` | features, downloads (latest build of each app and edition), install, compatibility, roadmap (custom kernel, LineageOS, other platforms), Discord, FAQ |
+| `docs.html` | user documentation of every app |
+| `tutorials.html` | step-by-step tutorials |
+| `developers.html` | technical reference: hardware, MCU and CAN protocols, service API, Bridge protocol, build, CI, kernel, TWRP, LineageOS, porting |
+| `screenshots/` | gallery: one page per app |
+| `headunits.html` | Android head unit chips, real and displayed Android versions, sources |
+
+## Sources and build
+
+The pages are written in `src/` and expanded by `tools/build.py` (Python 3, no dependency) into the HTML files at the
+root, which are committed (GitHub Pages serves them as is):
+
+```
+python3 tools/gallery.py   # src/screenshots/*.html from assets/shots/<app>/*.png and tools/shots.json
+python3 tools/build.py     # src/**/*.html -> *.html
+```
+
+Shorthand in `src/` (see `tools/build.py`): `<t>English<fr>Français</t>` for inline text, `<p bi>English<fr>Français</p>`
+for any element, `{{head:…}}`, `{{bar:<page>}}`, `{{foot}}` for the shared head, top bar and footer.
 
 ## Languages / Langues
 
@@ -14,12 +31,14 @@ Both languages are in each page (`lang="en"` and `lang="fr"` elements); CSS show
 before drawing: the saved choice (`localStorage`), else the browser's first French or English language
 (`navigator.languages`), else English. Without JavaScript the page shows English.
 
-Les deux langues sont dans chaque page ; un script dans `<head>` choisit avant l'affichage : le choix enregistré,
-sinon la première langue française ou anglaise du navigateur, sinon l'anglais.
+## Screenshots
 
-## Editing / Modifier
+`assets/shots/<app>/` holds the PNGs of the **Screenshots** workflow of
+[LibreHU-OTA-app](https://github.com/LibreHU/LibreHU-OTA-app/tree/main/screenshots) (Android 9 / 11 emulator,
+1280 × 720, 160 dpi, French UI, published APKs). Titles and order: `tools/shots.json`.
 
-Plain HTML and CSS, no build step: edit, commit, push; GitHub Pages publishes the default branch. Every text goes in
-twice (EN then FR). Download links point to the rolling `latest-<branch>` releases of each repository.
+## Discord
 
-HTML et CSS simples, sans compilation. Chaque texte est écrit deux fois (EN puis FR).
+The top bar links to the official server (<https://discord.gg/aP4JZMavxB>); the home page shows its member and online
+counts, read from Discord's public invite API in the browser. The server's own widget is disabled on Discord's side:
+enabling it (Server settings → Widget) would allow an embedded member list.

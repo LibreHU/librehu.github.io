@@ -6,7 +6,7 @@
 <title>LibreHU – new software for Android head units</title>
 <meta name="title-en" content="LibreHU – new software for Android head units">
 <meta name="title-fr" content="LibreHU – de nouveaux logiciels pour autoradios Android">
-<meta name="description" content="LibreHU replaces the software of Jancar / Autochips AC8257 (UJC201) Android head units: service, launcher, radio, phone, Android Auto, CarPlay, TWRP and kernel.">
+<meta name="description" content="LibreHU replaces the software of Jancar / Autochips AC8257 (UJC201) Android head units: service, launcher, radio, phone, Android Auto, CarPlay, TWRP, a custom kernel, and LineageOS in preparation.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>
   // Language before drawing: saved choice, else the browser's first French or English language, else English.
@@ -31,21 +31,25 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
-    <nav aria-label="Sections">
-      <a href="#features"><span lang="en">Features</span><span lang="fr">Fonctions</span></a>
-      <a href="#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
-      <a href="#install"><span lang="en">Install</span><span lang="fr">Installer</span></a>
-      <a href="#compat"><span lang="en">Compatibility</span><span lang="fr">Compatibilité</span></a>
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="screenshots/index.html"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
       <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
-      <a href="#faq">FAQ</a>
+      <a href="index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
     </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
     <div class="lang" role="group" aria-label="Language / Langue">
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
       <button type="button" data-lang="fr" aria-pressed="false">FR</button>
     </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
 </header>
+
 
 <main>
 <div class="hero">
@@ -56,7 +60,9 @@
     <p class="lead" lang="fr">LibreHU remplace, morceau par morceau, les logiciels d'origine des autoradios Jancar / Autochips AC8257 (UJC201) : un service qui parle à la MCU, à la puce audio et au boîtier CAN, un launcher pensé pour la voiture, radio, téléphone, Android Auto, CarPlay, une appli téléphone pour tout régler, TWRP et un noyau recompilé. Tout le code source est public sur GitHub.</p>
     <div class="actions">
       <a class="btn" href="#install"><span lang="en">Get started</span><span lang="fr">Commencer</span></a>
+      <a class="btn ghost" href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
       <a class="btn ghost" href="https://github.com/LibreHU"><span lang="en">Source code on GitHub</span><span lang="fr">Code source sur GitHub</span></a>
+      <a class="btn discord" href="https://discord.gg/aP4JZMavxB" rel="noopener">Discord</a>
     </div>
     <div class="shots">
       <figure><img src="assets/img/launcher-home.png" width="1280" height="720" alt="LibreHU Launcher dashboard"><figcaption><span lang="en">Launcher: dashboard</span><span lang="fr">Launcher : tableau de bord</span></figcaption></figure>
@@ -94,9 +100,9 @@
       <div class="card"><span class="tag" lang="en">Updates</span><span class="tag" lang="fr">Mises à jour</span><h3>LibreHU Apps</h3>
         <p lang="en">Installs and updates every app from GitHub, checks the SHA-256 and the signing key, works offline from a USB stick, flashes zips (TWRP, kernel, mods).</p>
         <p lang="fr">Installe et met à jour toutes les applis depuis GitHub, vérifie le SHA-256 et la clé de signature, fonctionne hors ligne depuis une clé USB, flashe les zips (TWRP, noyau, mods).</p></div>
-      <div class="card"><span class="tag" lang="en">System</span><span class="tag" lang="fr">Système</span><h3 lang="en">TWRP and kernel</h3><h3 lang="fr">TWRP et noyau</h3>
-        <p lang="en">TWRP recovery for the UJC201 (steering wheel and CAN box keys), a kernel rebuilt from MediaTek sources with root (KernelSU Next) and an optional boot menu.</p>
-        <p lang="fr">Recovery TWRP pour l'UJC201 (touches au volant et du boîtier CAN), noyau recompilé depuis les sources MediaTek avec root (KernelSU Next) et menu de démarrage en option.</p></div>
+      <div class="card"><span class="tag" lang="en">System</span><span class="tag" lang="fr">Système</span><h3 lang="en">Custom kernel and TWRP</h3><h3 lang="fr">Noyau modifié et TWRP</h3>
+        <p lang="en">A kernel rebuilt from the Autochips GPL sources (Linux 4.9.117) with root (KernelSU Next), CPU up to 2.3 GHz at boot (2.6 GHz possible), GPU 730 MHz, USB CD/DVD and Ethernet drivers, rebuilt camera and touch drivers, optional boot menu. TWRP recovery with steering wheel and CAN box keys.</p>
+        <p lang="fr">Un noyau recompilé depuis les sources GPL d'Autochips (Linux 4.9.117) avec root (KernelSU Next), CPU jusqu'à 2,3 GHz au démarrage (2,6 GHz possibles), GPU à 730 MHz, pilotes CD/DVD et Ethernet USB, pilotes caméra et tactile reconstruits, menu de démarrage en option. Recovery TWRP avec les touches du volant et du boîtier CAN.</p></div>
       <div class="card"><span class="tag" lang="en">Porting</span><span class="tag" lang="fr">Portage</span><h3>LibreHU Helper</h3>
         <p lang="en">Read-only diagnostic app that gathers everything needed to port LibreHU to another head unit, MCU or CAN box into one zip report.</p>
         <p lang="fr">Appli de diagnostic en lecture seule : rassemble dans un rapport zip tout ce qu'il faut pour porter LibreHU sur un autre autoradio, une autre MCU ou un autre boîtier CAN.</p></div>
@@ -210,8 +216,8 @@
   <div class="wrap">
     <h2 lang="en">Compatibility</h2>
     <h2 lang="fr">Compatibilité</h2>
-    <p class="sub" lang="en">Developed and tested on the <strong>Jancar UJC201</strong> (Autochips AC8257, 8× Cortex-A53, real Android 9 shown as "12"), sold under several brands, in a Renault Clio 3 with a Hiworld CAN box. Installable is not the same as working: most features need this hardware.</p>
-    <p class="sub" lang="fr">Développé et testé sur le <strong>Jancar UJC201</strong> (Autochips AC8257, 8× Cortex-A53, vrai Android 9 affiché « 12 »), vendu sous plusieurs marques, dans une Renault Clio 3 avec boîtier CAN Hiworld. Installable ne veut pas dire fonctionnel : la plupart des fonctions demandent ce matériel.</p>
+    <p class="sub" lang="en">Developed and tested on the <strong>Jancar UJC201</strong> (Autochips AC8257, 4× Cortex-A53, PowerVR GE8300, real Android 9 shown as "12"), sold under several brands, in a Renault Clio 3 with a Hiworld CAN box. Installable is not the same as working: most features need this hardware.</p>
+    <p class="sub" lang="fr">Développé et testé sur le <strong>Jancar UJC201</strong> (Autochips AC8257, 4× Cortex-A53, PowerVR GE8300, vrai Android 9 affiché « 12 »), vendu sous plusieurs marques, dans une Renault Clio 3 avec boîtier CAN Hiworld. Installable ne veut pas dire fonctionnel : la plupart des fonctions demandent ce matériel.</p>
     <div class="table">
       <table>
         <thead><tr>
@@ -237,6 +243,44 @@
   </div>
 </section>
 
+<section id="roadmap">
+  <div class="wrap">
+    <h2 lang="en">Roadmap</h2>
+    <h2 lang="fr">Feuille de route</h2>
+    <p class="sub" lang="en">Where the project is going. Dates are not promised: things ship when they work on the unit.</p>
+    <p class="sub" lang="fr">Où va le projet. Pas de dates promises : chaque pièce sort quand elle marche sur l'autoradio.</p>
+    <div class="grid">
+      <div class="card"><span class="status done"><span lang="en">available</span><span lang="fr">disponible</span></span><h3 lang="en">Apps and service</h3><h3 lang="fr">Applis et service</h3>
+        <p lang="en">Every app above, replacing Jancar's ivi-services on the stock Android 9 ROM; settings from the phone.</p>
+        <p lang="fr">Toutes les applis ci-dessus, à la place d'ivi-services de Jancar sur la ROM Android 9 d'origine ; réglages depuis le téléphone.</p></div>
+      <div class="card"><span class="status done"><span lang="en">available, in testing</span><span lang="fr">disponible, en test</span></span><h3 lang="en">Custom kernel</h3><h3 lang="fr">Noyau modifié</h3>
+        <p lang="en">Boots the stock ROM from <code>boot</code> at parity with the stock kernel (Wi-Fi, BT, GPS, FM, audio, touch, MCU, cameras). Still to test: standby, AHD camera, IR remote, fast reverse at boot. A variant with the connectivity drivers built in is in testing.</p>
+        <p lang="fr">Démarre la ROM d'origine depuis <code>boot</code> à parité avec le noyau d'origine (Wi-Fi, BT, GPS, FM, audio, tactile, MCU, caméras). Reste à tester : veille, caméra AHD, télécommande IR, recul rapide au démarrage. Une variante avec les pilotes de connectivité intégrés est en test.</p></div>
+      <div class="card"><span class="status wip"><span lang="en">in preparation</span><span lang="fr">en préparation</span></span><h3 lang="en">LineageOS ROMs</h3><h3 lang="fr">ROM LineageOS</h3>
+        <p lang="en">A real ROM, not a GSI: LineageOS 16.0 (Android 9) for the UJC201, with the LibreHU apps built in and precompiled, on the kernel above. Later LineageOS versions are planned once it runs. Proprietary vendor files are extracted from your own unit, never published.</p>
+        <p lang="fr">Une vraie ROM, pas une GSI : LineageOS 16.0 (Android 9) pour l'UJC201, avec les applis LibreHU intégrées et précompilées, sur le noyau ci-dessus. Des versions plus récentes de LineageOS sont prévues une fois celle-ci fonctionnelle. Les fichiers vendor propriétaires sont extraits de votre propre autoradio, jamais publiés.</p></div>
+      <div class="card"><span class="status plan"><span lang="en">planned</span><span lang="fr">prévu</span></span><h3 lang="en">Other platforms</h3><h3 lang="fr">Autres plateformes</h3>
+        <p lang="en">Once mature, LibreHU will be adapted to other head units. The groundwork is there: MCU protocols and car CAN decoding are JSON profiles, the generic edition runs on any Android 9+ device, and LibreHU Helper collects what a port needs. <a href="developers.html#porting">Porting notes</a> · <a href="headunits.html">head unit chips</a>.</p>
+        <p lang="fr">Une fois mûr, LibreHU sera adapté à d'autres autoradios. Les bases sont là : les protocoles MCU et le décodage CAN des voitures sont des profils JSON, l'édition générique tourne sur tout appareil Android 9 ou plus, et LibreHU Helper rassemble ce qu'il faut pour un portage. <a href="developers.html#porting">Notes de portage</a> · <a href="headunits.html">puces d'autoradios</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="wrap">
+    <div class="community">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+      <div class="txt">
+        <h3 lang="en">Join the LibreHU Discord</h3><h3 lang="fr">Rejoindre le Discord de LibreHU</h3>
+        <p lang="en">The project's official server: help, tests on your unit, ideas, news.</p>
+        <p lang="fr">Le serveur officiel du projet : aide, tests sur votre autoradio, idées, nouveautés.</p>
+        <p data-discord-counts hidden><span class="count" data-discord="members"></span> <span lang="en">members</span><span lang="fr">membres</span> · <span class="count" data-discord="online"></span> <span lang="en">online</span><span lang="fr">en ligne</span></p>
+      </div>
+      <a class="btn discord" href="https://discord.gg/aP4JZMavxB" rel="noopener"><span lang="en">Join</span><span lang="fr">Rejoindre</span></a>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap">
     <h2>FAQ</h2>
@@ -259,14 +303,16 @@
 </section>
 </main>
 
+
 <footer>
   <div class="wrap">
     <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
     <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
-    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a></span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="docs.html">Docs</a> · <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
   </div>
 </footer>
 
 <script src="assets/lang.js"></script>
 </body>
 </html>
+

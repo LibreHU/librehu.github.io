@@ -1,0 +1,533 @@
+{
+ "apps": {
+  "launcher": [
+   "LibreHU Launcher",
+   "LibreHU Launcher",
+   "Dashboard home screen, settings, retro styles, wallpapers, standby clock, lock screen.",
+   "Écran d'accueil tableau de bord, réglages, styles rétro, fonds, horloge de veille, verrouillage."
+  ],
+  "service": [
+   "LibreHU service",
+   "LibreHU service",
+   "Every section and page of the core service.",
+   "Chaque rubrique et chaque page du service central."
+  ],
+  "bridge": [
+   "LibreHU Bridge (phone)",
+   "LibreHU Bridge (téléphone)",
+   "The phone app before pairing.",
+   "L'appli téléphone avant l'association."
+  ],
+  "ota": [
+   "LibreHU Apps",
+   "LibreHU Apps",
+   "Installer and updater: apps, versions, zips, downloads, settings.",
+   "Installation et mises à jour : applis, versions, zips, téléchargements, réglages."
+  ],
+  "fm": [
+   "LibreHU FM",
+   "LibreHU FM",
+   "FM radio, stations and settings.",
+   "Radio FM, stations et réglages."
+  ],
+  "dialer": [
+   "LibreHU Dialer",
+   "LibreHU Dialer",
+   "Bluetooth phone: favourites, recents, contacts, keypad, settings.",
+   "Téléphone Bluetooth : favoris, récents, contacts, clavier, réglages."
+  ],
+  "widgets": [
+   "LibreHU Widgets",
+   "LibreHU Widgets",
+   "Settings of the warning lights and info widgets.",
+   "Réglages des widgets voyants et infos."
+  ],
+  "btnremap": [
+   "LibreHU BtnRemap",
+   "LibreHU BtnRemap",
+   "Steering wheel buttons and key test mode.",
+   "Boutons du volant et mode test des touches."
+  ],
+  "easysource": [
+   "LibreHU EasySource",
+   "LibreHU EasySource",
+   "Sources and the full screen picker.",
+   "Sources et sélecteur plein écran."
+  ],
+  "disc": [
+   "LibreHU Disc",
+   "LibreHU Disc",
+   "CD / DVD player and ripping settings.",
+   "Lecteur CD / DVD et réglages d'extraction."
+  ],
+  "viper": [
+   "ViPER4Android LibreHU",
+   "ViPER4Android LibreHU",
+   "Sound effects.",
+   "Effets sonores."
+  ],
+  "headunit": [
+   "Android Auto (Open Headunit LibreHU)",
+   "Android Auto (Open Headunit LibreHU)",
+   "Android Auto receiver.",
+   "Récepteur Android Auto."
+  ],
+  "carplay": [
+   "CarPlay (xcertplay LibreHU)",
+   "CarPlay (xcertplay LibreHU)",
+   "CarPlay receiver.",
+   "Récepteur CarPlay."
+  ],
+  "helper": [
+   "LibreHU Helper",
+   "LibreHU Helper",
+   "Diagnostics for porting.",
+   "Diagnostic pour le portage."
+  ],
+  "mcu": [
+   "MCU Toolkit (legacy)",
+   "MCU Toolkit (legacy)",
+   "Old MCU diagnostic app.",
+   "Ancienne appli de diagnostic MCU."
+  ]
+ },
+ "names": {
+  "home": [
+   "Home",
+   "Accueil"
+  ],
+  "vehicle": [
+   "Vehicle",
+   "Véhicule"
+  ],
+  "reverse": [
+   "Rear view camera",
+   "Caméra de recul"
+  ],
+  "video": [
+   "Video inputs",
+   "Entrées vidéo"
+  ],
+  "obd": [
+   "OBD",
+   "OBD"
+  ],
+  "can": [
+   "CAN box",
+   "Boîtier CAN"
+  ],
+  "audio": [
+   "Audio",
+   "Audio"
+  ],
+  "bluetooth": [
+   "Bluetooth",
+   "Bluetooth"
+  ],
+  "phone": [
+   "Phone",
+   "Téléphone"
+  ],
+  "android-auto": [
+   "Android Auto",
+   "Android Auto"
+  ],
+  "carplay": [
+   "CarPlay",
+   "CarPlay"
+  ],
+  "display": [
+   "Display",
+   "Affichage"
+  ],
+  "touch": [
+   "Touch panel",
+   "Dalle tactile"
+  ],
+  "lights": [
+   "Lights",
+   "Lumières"
+  ],
+  "system": [
+   "System",
+   "Système"
+  ],
+  "gps": [
+   "GPS and time",
+   "GPS et heure"
+  ],
+  "network": [
+   "Network",
+   "Réseau"
+  ],
+  "tweaks": [
+   "Tweaks",
+   "Tweaks"
+  ],
+  "advanced": [
+   "MCU",
+   "MCU"
+  ],
+  "mcu-tools": [
+   "MCU tools",
+   "Outils MCU"
+  ],
+  "audio-diag": [
+   "Audio diagnostics",
+   "Diag audio"
+  ],
+  "atc": [
+   "Autochips",
+   "Autochips"
+  ],
+  "diag": [
+   "Diagnostic",
+   "Diagnostic"
+  ],
+  "onboarding": [
+   "First start assistant",
+   "Assistant de premier démarrage"
+  ],
+  "drawer": [
+   "All apps",
+   "Toutes les applis"
+  ],
+  "power": [
+   "Power menu",
+   "Menu marche / arrêt"
+  ],
+  "settings-look": [
+   "Settings: customisation",
+   "Réglages : personnalisation"
+  ],
+  "settings-standby": [
+   "Settings: standby clock",
+   "Réglages : horloge de veille"
+  ],
+  "settings-lock": [
+   "Settings: lock screen",
+   "Réglages : verrouillage"
+  ],
+  "settings-driving": [
+   "Settings: driving",
+   "Réglages : conduite"
+  ],
+  "settings-region": [
+   "Settings: language and time",
+   "Réglages : langue et heure"
+  ],
+  "settings-general": [
+   "Settings: general",
+   "Réglages : général"
+  ],
+  "standby": [
+   "Standby clock",
+   "Horloge de veille"
+  ],
+  "lock": [
+   "Lock screen",
+   "Écran de verrouillage"
+  ],
+  "settings-retro": [
+   "Retro display style",
+   "Style afficheur rétro"
+  ],
+  "home-retro-dolphins": [
+   "Retro: dolphins",
+   "Rétro : dauphins"
+  ],
+  "standby-retro": [
+   "Standby clock, retro",
+   "Horloge de veille, rétro"
+  ],
+  "lock-retro": [
+   "Lock screen, retro",
+   "Verrouillage, rétro"
+  ],
+  "home-retro-space": [
+   "Retro: deep space",
+   "Rétro : espace"
+  ],
+  "home-retro-cassette": [
+   "Retro: cassette",
+   "Rétro : cassette"
+  ],
+  "home-vaporwave": [
+   "Vaporwave wallpaper",
+   "Fond vaporwave"
+  ],
+  "home-aurora": [
+   "Aurora wallpaper",
+   "Fond aurore"
+  ],
+  "tpms": [
+   "Tyres (TPMS)",
+   "Pneus (TPMS)"
+  ],
+  "favorites": [
+   "Favourites",
+   "Favoris"
+  ],
+  "recents": [
+   "Recents",
+   "Récents"
+  ],
+  "contacts": [
+   "Contacts",
+   "Contacts"
+  ],
+  "keypad": [
+   "Keypad",
+   "Clavier"
+  ],
+  "settings": [
+   "Settings",
+   "Réglages"
+  ],
+  "main": [
+   "Main screen",
+   "Écran principal"
+  ],
+  "stations": [
+   "Stations",
+   "Stations"
+  ],
+  "test": [
+   "Key test mode",
+   "Mode test des touches"
+  ],
+  "switcher": [
+   "Source picker",
+   "Sélecteur de sources"
+  ],
+  "apps": [
+   "Apps",
+   "Applis"
+  ],
+  "details": [
+   "App details",
+   "Fiche d'une appli"
+  ],
+  "versions": [
+   "Versions",
+   "Versions"
+  ],
+  "logs": [
+   "Changes",
+   "Changements"
+  ],
+  "updates": [
+   "Updates",
+   "Mises à jour"
+  ],
+  "zips": [
+   "Zips",
+   "Zips"
+  ],
+  "downloads": [
+   "Downloads",
+   "Téléchargements"
+  ],
+  "commands": [
+   "Commands",
+   "Commandes"
+  ],
+  "console": [
+   "Console",
+   "Console"
+  ],
+  "simulation": [
+   "Simulation",
+   "Simulation"
+  ],
+  "report": [
+   "Report",
+   "Rapport"
+  ],
+  "compat": [
+   "Compatibility",
+   "Compatibilité"
+  ],
+  "hardware": [
+   "Hardware",
+   "Matériel"
+  ],
+  "apks": [
+   "Manufacturer APKs",
+   "APK du fabricant"
+  ],
+  "dump": [
+   "Full dump",
+   "Full dump"
+  ],
+  "guides": [
+   "Guides",
+   "Tutos"
+  ],
+  "pair": [
+   "Pair a head unit",
+   "Associer un autoradio"
+  ],
+  "setup": [
+   "Quick setup",
+   "Configuration rapide"
+  ],
+  "welcome": [
+   "First start assistant",
+   "Assistant de premier démarrage"
+  ],
+  "drawer-retro": [
+   "All apps, retro",
+   "Toutes les applis, rétro"
+  ],
+  "home-retro-analyzer": [
+   "Retro: spectrum analyser",
+   "Rétro : analyseur de spectre"
+  ],
+  "home-retro-road": [
+   "Retro: night road",
+   "Rétro : route de nuit"
+  ],
+  "home-retro-rally": [
+   "Retro: old school rally",
+   "Rétro : rallye old school"
+  ],
+  "home-stars": [
+   "Stars wallpaper",
+   "Fond étoiles"
+  ],
+  "home-waves": [
+   "Waves wallpaper",
+   "Fond vagues"
+  ]
+ },
+ "order": {
+  "launcher": [
+   "onboarding",
+   "home",
+   "drawer",
+   "power",
+   "settings-look",
+   "settings-standby",
+   "settings-lock",
+   "settings-driving",
+   "settings-region",
+   "settings-general",
+   "standby",
+   "lock",
+   "settings-retro",
+   "home-retro-dolphins",
+   "drawer-retro",
+   "standby-retro",
+   "lock-retro",
+   "home-retro-space",
+   "home-retro-cassette",
+   "home-retro-analyzer",
+   "home-retro-road",
+   "home-retro-rally",
+   "home-vaporwave",
+   "home-aurora",
+   "home-stars",
+   "home-waves",
+   "tpms"
+  ],
+  "service": [
+   "home",
+   "vehicle",
+   "reverse",
+   "video",
+   "obd",
+   "can",
+   "audio",
+   "bluetooth",
+   "phone",
+   "android-auto",
+   "carplay",
+   "display",
+   "touch",
+   "lights",
+   "system",
+   "gps",
+   "network",
+   "tweaks",
+   "advanced",
+   "mcu-tools",
+   "audio-diag",
+   "atc",
+   "diag"
+  ],
+  "dialer": [
+   "favorites",
+   "recents",
+   "contacts",
+   "keypad",
+   "settings"
+  ],
+  "fm": [
+   "main",
+   "stations",
+   "settings"
+  ],
+  "widgets": [
+   "main"
+  ],
+  "btnremap": [
+   "main",
+   "test"
+  ],
+  "easysource": [
+   "settings"
+  ],
+  "ota": [
+   "setup",
+   "apps",
+   "details",
+   "versions",
+   "logs",
+   "updates",
+   "zips",
+   "downloads",
+   "settings"
+  ],
+  "viper": [
+   "main"
+  ],
+  "mcu": [
+   "main",
+   "commands",
+   "console",
+   "simulation"
+  ],
+  "helper": [
+   "report",
+   "compat",
+   "hardware",
+   "apks",
+   "dump",
+   "guides"
+  ],
+  "disc": [
+   "main",
+   "settings"
+  ],
+  "bridge": [
+   "main"
+  ],
+  "headunit": [
+   "welcome",
+   "setup",
+   "main"
+  ],
+  "carplay": [
+   "main"
+  ]
+ },
+ "intro": [
+  "Every LibreHU app, screen by screen. Taken automatically on an Android 9 emulator at the head unit's resolution (1280 × 720, 160 dpi), in French, from the published APKs.",
+  "Chaque appli LibreHU, écran par écran. Prises automatiquement sur un émulateur Android 9 à la résolution de l'autoradio (1280 × 720, 160 dpi), en français, à partir des APK publiés."
+ ],
+ "note": [
+  "Emulator without the head unit: car, MCU and sensor values are empty. Screenshots are refreshed by the Screenshots workflow of LibreHU-OTA-app.",
+  "Émulateur sans autoradio : les valeurs de la voiture, de la MCU et des capteurs sont vides. Les captures sont refaites par le workflow Screenshots de LibreHU-OTA-app."
+ ]
+}

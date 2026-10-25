@@ -9,6 +9,7 @@
 <meta name="description" content="Android head unit platforms: chip, CPU, architecture, real Android version and the version manufacturers display.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
   (function () {
     var l = null;
     try { l = localStorage.getItem("lang"); } catch (e) {}
@@ -30,21 +31,25 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
-    <nav aria-label="Sections">
-      <a href="./#features"><span lang="en">Features</span><span lang="fr">Fonctions</span></a>
-      <a href="./#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
-      <a href="./#install"><span lang="en">Install</span><span lang="fr">Installer</span></a>
-      <a href="./#compat"><span lang="en">Compatibility</span><span lang="fr">Compatibilité</span></a>
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="screenshots/index.html"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
       <a href="headunits.html" aria-current="page"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
-      <a href="./#faq">FAQ</a>
+      <a href="index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
     </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
     <div class="lang" role="group" aria-label="Language / Langue">
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
       <button type="button" data-lang="fr" aria-pressed="false">FR</button>
     </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
 </header>
+
 
 <main>
 <div class="hero">
@@ -137,7 +142,7 @@
           <tr><td><strong>Rockchip PX5</strong> (RK3368)</td><td>8× Cortex-A53*</td><td class="nowrap">ARM 64</td><td><span lang="en">6.0.1 stock; 8, 9, 10; 11 community</span><span lang="fr">6.0.1 d'usine ; 8, 9, 10 ; 11 communauté</span></td><td>—</td><td>MCU MTCD / MTCE / MTCH / HCT</td></tr>
           <tr><td><strong>Rockchip PX30</strong></td><td>4× Cortex-A35*</td><td class="nowrap">ARM 64</td><td><strong>9 / 10</strong> <span class="muted" lang="en">(no 11+ on MTCx)</span><span class="muted" lang="fr">(pas de 11+ sur MTCx)</span></td><td class="warn">11, 12</td><td>MTCx / HCTx, Erisin</td></tr>
           <tr><td><strong>Rockchip PX6</strong> (RK3399)</td><td>2× Cortex-A72 + 4× Cortex-A53</td><td class="nowrap">ARM 64</td><td><span lang="en">9 stock; 10, 11 by ROM</span><span lang="fr">9 d'usine ; 10, 11 par ROM</span></td><td>—</td><td>Dasaita</td></tr>
-          <tr><td><strong>Autochips AC8257 / AC8259</strong></td><td>8× Cortex-A53</td><td class="nowrap">ARM 64</td><td><strong>9</strong> (API 28)</td><td class="bad">10, 10.1, 12</td><td><strong>Jancar UJC201</strong> <span class="muted" lang="en">(LibreHU's unit: real 9, shows 12)</span><span class="muted" lang="fr">(l'autoradio de LibreHU : vrai 9, affiche 12)</span>, YT5760</td></tr>
+          <tr><td><strong>Autochips AC8257 / AC8259</strong></td><td>4× Cortex-A53 <span class="muted"><span lang="en">(AC8257, measured)</span><span lang="fr">(AC8257, mesuré)</span></span></td><td class="nowrap">ARM 64</td><td><strong>9</strong> (API 28)</td><td class="bad">10, 10.1, 12</td><td><strong>Jancar UJC201</strong> <span class="muted" lang="en">(LibreHU's unit: real 9, shows 12)</span><span class="muted" lang="fr">(l'autoradio de LibreHU : vrai 9, affiche 12)</span>, YT5760</td></tr>
           <tr><td><strong>Allwinner T507 / T5</strong></td><td>4× Cortex-A53*</td><td class="nowrap">ARM 64</td><td>10 / 11</td><td class="muted" lang="en">no fake found</td><td class="muted" lang="fr">pas de faux trouvé</td><td>mercury_demo2</td></tr>
           <tr><td><strong>Unisoc UIS8581A</strong> (SC9863A)</td><td>8× Cortex-A55, 1.6 GHz</td><td class="nowrap">ARM 64</td><td><strong>10</strong> (API 29) <span class="muted" lang="en">; one report of real 12</span><span class="muted" lang="fr">; un cas en vrai 12</span></td><td class="bad">11 – 15</td><td>Topway TS18, FYT, MCU ZA001</td></tr>
           <tr><td><strong>Unisoc UIS7862 / 7862S</strong> (UMS512)</td><td>2× Cortex-A75 + 6× Cortex-A55, 12 nm</td><td class="nowrap">ARM 64</td><td><strong>10</strong> (API 29)</td><td class="bad">11, 12, 13</td><td>FYT, Topway TS10, Teyes CC3 / CC3 2K <span class="muted" lang="en">(Android 10 stated by Teyes)</span><span class="muted" lang="fr">(Android 10 annoncé par Teyes)</span>, Hizpo S3, Joying</td></tr>
@@ -191,14 +196,16 @@
 </section>
 </main>
 
+
 <footer>
   <div class="wrap">
-    <span lang="en">Corrections welcome: <a href="https://github.com/LibreHU/librehu.github.io/issues">open an issue</a> with your unit's chip and API level.</span>
-    <span lang="fr">Corrections bienvenues : <a href="https://github.com/LibreHU/librehu.github.io/issues">ouvrez une issue</a> avec la puce et le niveau d'API de votre autoradio.</span>
-    <span><a href="./">LibreHU</a> · <a href="https://github.com/LibreHU">GitHub</a></span>
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="docs.html">Docs</a> · <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
   </div>
 </footer>
 
 <script src="assets/lang.js"></script>
 </body>
 </html>
+

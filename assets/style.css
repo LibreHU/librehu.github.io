@@ -95,7 +95,6 @@ img { max-width: 100%; height: auto; }
 .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; }
 .lang button { border: 0; background: transparent; color: var(--text-dim); font: inherit; font-size: 13px; font-weight: 600; padding: 4px 10px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); }
-@media (max-width: 760px) { .bar nav { display: none; } .lang { margin-left: auto; } }
 
 /* Hero */
 .hero { padding: 64px 0 40px; }
@@ -153,3 +152,87 @@ details p { color: var(--text-dim); margin: 8px 0 0; }
 
 footer { padding: 32px 0 48px; color: var(--text-dim); font-size: 14px; border-top: 1px solid var(--line); }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+/* Long pages (docs, developers): contents on the left, text on the right. */
+.doc { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 40px; padding-top: 32px; padding-bottom: 48px; }
+.toc { position: sticky; top: 76px; align-self: start; max-height: calc(100vh - 92px); overflow-y: auto; font-size: 14px; }
+.toc details { padding: 0; border: 0; background: transparent; margin: 0; }
+.toc summary { font-weight: 700; padding: 4px 0 8px; list-style: none; }
+.toc summary::-webkit-details-marker { display: none; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0; }
+.toc a { display: block; padding: 3px 10px; border-left: 2px solid var(--line); color: var(--text-dim); text-decoration: none; }
+.toc a:hover { color: var(--text); border-left-color: var(--accent); }
+.toc ol ol a { padding-left: 22px; font-size: 13px; }
+.doc article { min-width: 0; }
+.doc article > h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 0 0 12px; letter-spacing: -.02em; }
+.doc article > p.lead { font-size: 18px; color: var(--text-dim); margin: 0 0 24px; }
+.doc article h2 { font-size: 26px; margin: 48px 0 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+.doc article h3 { font-size: 19px; margin: 28px 0 8px; }
+.doc article h4 { font-size: 16px; margin: 20px 0 6px; }
+.doc article p, .doc article li { max-width: 820px; }
+.doc article ul, .doc article ol:not(.steps) { padding-left: 22px; }
+.doc article .table { margin: 12px 0 18px; }
+.doc article table { font-size: 14px; }
+.doc article td code, .doc article th code { white-space: nowrap; }
+pre { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; overflow-x: auto; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; margin: 12px 0 18px; }
+pre code { background: none; padding: 0; font-size: inherit; }
+.diagram { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; overflow-x: auto; margin: 12px 0 18px; }
+.diagram svg { display: block; min-width: 720px; width: 100%; height: auto; }
+.status { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 8px; }
+.status.done { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
+.status.wip { background: color-mix(in srgb, var(--warn) 22%, transparent); color: var(--warn); }
+.status.plan { background: var(--surface-2); color: var(--text-dim); }
+@media (max-width: 900px) {
+  .doc { grid-template-columns: 1fr; gap: 16px; }
+  .toc { position: static; max-height: none; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+  .toc summary { cursor: pointer; padding: 2px 0; }
+  .toc details:not([open]) ol { display: none; }
+}
+
+/* Discord link, mobile menu, screen-reader text */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.discord-link { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: #5865F2; flex: none; }
+.discord-link:hover { background: var(--surface-2); }
+.menu { display: none; border: 0; background: transparent; color: var(--text); width: 40px; height: 40px; border-radius: 10px; padding: 8px; cursor: pointer; flex: none; }
+.menu:hover { background: var(--surface-2); }
+@media (max-width: 960px) {
+  .bar .wrap { gap: 8px; }
+  .bar nav {
+    display: none; position: absolute; left: 0; right: 0; top: 60px; margin: 0;
+    flex-direction: column; gap: 2px; padding: 8px 16px 16px; overflow: visible;
+    background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  }
+  .bar nav.open { display: flex; }
+  .bar nav a { padding: 10px 12px; border-radius: 10px; font-size: 16px; }
+  .discord-link { margin-left: auto; }
+  .lang { margin-left: 0; }
+  .menu { display: block; }
+}
+.community { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.community svg { width: 56px; height: 56px; color: #5865F2; flex: none; }
+.community .txt { flex: 1 1 260px; min-width: 0; }
+.community h3 { margin: 0 0 4px; }
+.community p { margin: 0; color: var(--text-dim); }
+.community .count { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
+.btn.discord { background: #5865F2; border-color: #5865F2; color: #fff; }
+/* Small screens: tighter hero and tables */
+@media (max-width: 600px) {
+  .hero { padding: 36px 0 24px; }
+  section { padding: 36px 0; }
+  th, td { padding: 8px 10px; }
+  .doc article h2 { font-size: 22px; }
+  .card { padding: 14px; }
+}
+
+/* Screenshot gallery */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 16px; }
+.gallery figure { margin: 0; }
+.gallery img, .shot-card img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #000; }
+.gallery figcaption { font-size: 14px; color: var(--text-dim); margin-top: 6px; }
+.shot-card { display: block; text-decoration: none; color: inherit; }
+.shot-card h3 { margin: 12px 0 4px; }
+.shot-card:hover { border-color: var(--accent); }
+/* Long identifiers (fingerprints, URIs) wrap in running text instead of widening the page. */
+.doc article p code, .doc article li code, .doc article h2 code, .doc article h3 code { overflow-wrap: anywhere; }
+.doc article p, .doc article li { overflow-wrap: break-word; }

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LibreHU – new software for Android head units</title>
+<meta name="title-en" content="LibreHU – new software for Android head units">
+<meta name="title-fr" content="LibreHU – de nouveaux logiciels pour autoradios Android">
+<meta name="description" content="LibreHU replaces the software of Jancar / Autochips AC8257 (UJC201) Android head units: service, launcher, radio, phone, Android Auto, CarPlay, TWRP and kernel.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav aria-label="Sections">
+      <a href="#features"><span lang="en">Features</span><span lang="fr">Fonctions</span></a>
+      <a href="#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="#install"><span lang="en">Install</span><span lang="fr">Installer</span></a>
+      <a href="#compat"><span lang="en">Compatibility</span><span lang="fr">Compatibilité</span></a>
+      <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <h1 lang="en">New software for your Android head unit</h1>
+    <h1 lang="fr">De nouveaux logiciels pour votre autoradio Android</h1>
+    <p class="lead" lang="en">LibreHU replaces the stock software of Jancar / Autochips AC8257 (UJC201) head units, piece by piece: a service that talks to the MCU, audio chip and CAN box, a car launcher, radio, phone, Android Auto, CarPlay, a phone app to set everything up, TWRP and a kernel built from source. All the source code is public on GitHub.</p>
+    <p class="lead" lang="fr">LibreHU remplace, morceau par morceau, les logiciels d'origine des autoradios Jancar / Autochips AC8257 (UJC201) : un service qui parle à la MCU, à la puce audio et au boîtier CAN, un launcher pensé pour la voiture, radio, téléphone, Android Auto, CarPlay, une appli téléphone pour tout régler, TWRP et un noyau recompilé. Tout le code source est public sur GitHub.</p>
+    <div class="actions">
+      <a class="btn" href="#install"><span lang="en">Get started</span><span lang="fr">Commencer</span></a>
+      <a class="btn ghost" href="https://github.com/LibreHU"><span lang="en">Source code on GitHub</span><span lang="fr">Code source sur GitHub</span></a>
+    </div>
+    <div class="shots">
+      <figure><img src="assets/img/launcher-home.png" width="1280" height="720" alt="LibreHU Launcher dashboard"><figcaption><span lang="en">Launcher: dashboard</span><span lang="fr">Launcher : tableau de bord</span></figcaption></figure>
+      <figure><img src="assets/img/launcher-drawer.png" width="1280" height="720" alt="LibreHU Launcher app drawer" loading="lazy"><figcaption><span lang="en">Launcher: all apps</span><span lang="fr">Launcher : toutes les applis</span></figcaption></figure>
+      <figure><img src="assets/img/service-vehicle.png" width="1280" height="720" alt="LibreHU service vehicle settings" loading="lazy"><figcaption><span lang="en">Service: vehicle settings</span><span lang="fr">Service : réglages du véhicule</span></figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2 lang="en">What is in it</h2>
+    <h2 lang="fr">Ce qu'il y a dedans</h2>
+    <p class="sub" lang="en">Each app is its own GitHub repository, built and signed by its CI. They share one signing key, one look (light / dark, accent colour, retro styles) and talk to each other.</p>
+    <p class="sub" lang="fr">Chaque appli a son dépôt GitHub, compilé et signé par sa CI. Elles partagent la même clé de signature, le même style (clair / sombre, couleur d'accent, styles rétro) et communiquent entre elles.</p>
+    <div class="grid">
+      <div class="card"><span class="tag" lang="en">Core</span><span class="tag" lang="fr">Cœur</span><h3>LibreHU service</h3>
+        <p lang="en">Replaces Jancar's ivi-services: MCU (JAC_V1 profile), BD37534 audio chip, Hiworld CAN box, OBD (USB / Bluetooth), standby, touch panel, rear view camera with guide lines and parking radar, Bluetooth, kernel tweaks.</p>
+        <p lang="fr">Remplace ivi-services de Jancar : MCU (profil JAC_V1), puce audio BD37534, boîtier CAN Hiworld, OBD (USB / Bluetooth), veille, dalle tactile, caméra de recul avec lignes de guidage et radars, Bluetooth, réglages du noyau.</p></div>
+      <div class="card"><span class="tag">Launcher</span><h3>LibreHU Launcher</h3>
+        <p lang="en">Car dashboard home screen: widgets, now playing, Android Auto card, tyre pressure (USB TPMS), standby clock, lock screen, retro car-stereo styles with a segment display font and animated wallpapers (optionally on the GPU).</p>
+        <p lang="fr">Écran d'accueil façon tableau de bord : widgets, lecture en cours, carte Android Auto, pression des pneus (TPMS USB), horloge de veille, écran de verrouillage, styles d'autoradio rétro avec police à segments et fonds animés (sur le GPU au choix).</p></div>
+      <div class="card"><span class="tag" lang="en">Phone</span><span class="tag" lang="fr">Téléphone</span><h3>LibreHU Bridge</h3>
+        <p lang="en">Android and iPhone app: every setting of the head unit and of each LibreHU app, battery, OBD, GPS status, files, logs, reboot. End-to-end encrypted link over Wi-Fi or Bluetooth. Android Auto screen on Android.</p>
+        <p lang="fr">Appli Android et iPhone : tous les réglages de l'autoradio et de chaque appli LibreHU, batterie, OBD, état du GPS, fichiers, journaux, redémarrage. Liaison chiffrée de bout en bout en Wi-Fi ou Bluetooth. Écran Android Auto sur Android.</p></div>
+      <div class="card"><span class="tag" lang="en">Media</span><span class="tag" lang="fr">Médias</span><h3 lang="en">Radio, Disc, ViPER4Android</h3><h3 lang="fr">Radio, Disc, ViPER4Android</h3>
+        <p lang="en">FM radio on the MediaTek FM chip; audio CD, data discs and unprotected DVD video from a USB optical drive; ViPER4Android sound effects adapted to the head unit.</p>
+        <p lang="fr">Radio FM sur la puce FM MediaTek ; CD audio, disques de données et DVD vidéo non protégés depuis un lecteur optique USB ; effets sonores ViPER4Android adaptés à l'autoradio.</p></div>
+      <div class="card"><span class="tag" lang="en">Projection</span><span class="tag" lang="fr">Projection</span><h3>Android Auto · CarPlay</h3>
+        <p lang="en">Forks of Open Headunit (Android Auto) and xcertplay (CarPlay, with the unit's MFi chip) tied to the service and the launcher: steering wheel keys, day / night from the headlights, next turn on the dashboard.</p>
+        <p lang="fr">Forks d'Open Headunit (Android Auto) et de xcertplay (CarPlay, avec la puce MFi de l'autoradio) reliés au service et au launcher : touches au volant, jour / nuit selon les phares, prochaine manœuvre sur le tableau de bord.</p></div>
+      <div class="card"><span class="tag" lang="en">Everyday</span><span class="tag" lang="fr">Au quotidien</span><h3 lang="en">Phone, widgets, keys, sources</h3><h3 lang="fr">Téléphone, widgets, touches, sources</h3>
+        <p lang="en">Bluetooth dialer, home screen widgets (warning lights, OBD, battery…), steering wheel key remapping (short and long press), source switcher for the MODE / SRC key.</p>
+        <p lang="fr">Téléphone Bluetooth, widgets d'écran d'accueil (voyants, OBD, batterie…), commandes au volant réglables (appui court et long), sélecteur de sources pour la touche MODE / SRC.</p></div>
+      <div class="card"><span class="tag" lang="en">Updates</span><span class="tag" lang="fr">Mises à jour</span><h3>LibreHU Apps</h3>
+        <p lang="en">Installs and updates every app from GitHub, checks the SHA-256 and the signing key, works offline from a USB stick, flashes zips (TWRP, kernel, mods).</p>
+        <p lang="fr">Installe et met à jour toutes les applis depuis GitHub, vérifie le SHA-256 et la clé de signature, fonctionne hors ligne depuis une clé USB, flashe les zips (TWRP, noyau, mods).</p></div>
+      <div class="card"><span class="tag" lang="en">System</span><span class="tag" lang="fr">Système</span><h3 lang="en">TWRP and kernel</h3><h3 lang="fr">TWRP et noyau</h3>
+        <p lang="en">TWRP recovery for the UJC201 (steering wheel and CAN box keys), a kernel rebuilt from MediaTek sources with root (KernelSU Next) and an optional boot menu.</p>
+        <p lang="fr">Recovery TWRP pour l'UJC201 (touches au volant et du boîtier CAN), noyau recompilé depuis les sources MediaTek avec root (KernelSU Next) et menu de démarrage en option.</p></div>
+      <div class="card"><span class="tag" lang="en">Porting</span><span class="tag" lang="fr">Portage</span><h3>LibreHU Helper</h3>
+        <p lang="en">Read-only diagnostic app that gathers everything needed to port LibreHU to another head unit, MCU or CAN box into one zip report.</p>
+        <p lang="fr">Appli de diagnostic en lecture seule : rassemble dans un rapport zip tout ce qu'il faut pour porter LibreHU sur un autre autoradio, une autre MCU ou un autre boîtier CAN.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <h2 lang="en">Download</h2>
+    <h2 lang="fr">Télécharger</h2>
+    <p class="sub" lang="en">Easiest: install <strong>LibreHU Apps</strong> only, it installs the others for your edition. Every link below is the latest build of its branch, signed with the LibreHU key.</p>
+    <p class="sub" lang="fr">Le plus simple : installer seulement <strong>LibreHU Apps</strong>, qui installe les autres pour votre édition. Chaque lien ci-dessous est la dernière build de sa branche, signée avec la clé LibreHU.</p>
+    <div class="table">
+      <table>
+        <thead><tr>
+          <th lang="en">App</th><th lang="fr">Appli</th>
+          <th lang="en">What it does</th><th lang="fr">Rôle</th>
+          <th lang="en">Download (APK)</th><th lang="fr">Télécharger (APK)</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><strong>LibreHU Apps</strong></td>
+            <td><span lang="en">Installer and updater (start here)</span><span lang="fr">Installation et mises à jour (commencer ici)</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk">APK</a></div></td></tr>
+          <tr><td><strong>LibreHU service</strong></td>
+            <td><span lang="en">MCU, audio, CAN, OBD, camera, standby</span><span lang="fr">MCU, audio, CAN, OBD, caméra, veille</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk">APK</a></div></td></tr>
+          <tr><td><strong>LibreHU Launcher</strong></td>
+            <td><span lang="en">Home screen</span><span lang="fr">Écran d'accueil</span></td>
+            <td><div class="dl">
+              <a class="btn small" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk">LibreHU service</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk">ivi</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU FM</strong></td>
+            <td><span lang="en">FM radio + widget</span><span lang="fr">Radio FM + widget</span></td>
+            <td><div class="dl">
+              <a class="btn small" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk">LibreHU service</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-ivi/LibreHU-FM-ivi.apk">ivi</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-main/LibreHU-FM-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU Dialer</strong></td>
+            <td><span lang="en">Bluetooth phone</span><span lang="fr">Téléphone Bluetooth</span></td>
+            <td><div class="dl">
+              <a class="btn small" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk">LibreHU service</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-ivi/LibreHU-Dialer-ivi.apk">ivi</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-main/LibreHU-Dialer-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU Widgets</strong></td>
+            <td><span lang="en">Warning lights, OBD, battery widgets</span><span lang="fr">Widgets voyants, OBD, batterie</span></td>
+            <td><div class="dl">
+              <a class="btn small" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk">LibreHU service</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-ivi/LibreHU-Widgets-ivi.apk">ivi</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-main/LibreHU-Widgets-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU BtnRemap</strong></td>
+            <td><span lang="en">Steering wheel keys</span><span lang="fr">Commandes au volant</span></td>
+            <td><div class="dl">
+              <a class="btn small" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk">LibreHU service</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-ivi/LibreHU-BtnRemap-ivi.apk">ivi</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-main/LibreHU-BtnRemap-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU EasySource</strong></td>
+            <td><span lang="en">Source switcher (MODE / SRC key)</span><span lang="fr">Sélecteur de sources (touche MODE / SRC)</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-EasySource-app/releases/download/latest-main/LibreHU-EasySource-main.apk">APK</a></div></td></tr>
+          <tr><td><strong>LibreHU Disc</strong></td>
+            <td><span lang="en">CD / DVD from a USB drive</span><span lang="fr">CD / DVD depuis un lecteur USB</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-disc-app/releases/download/latest-main/LibreHU-Disc-main.apk">APK</a></div></td></tr>
+          <tr><td><strong>ViPER4Android LibreHU</strong></td>
+            <td><span lang="en">Sound effects</span><span lang="fr">Effets sonores</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk">APK</a></div></td></tr>
+          <tr><td><strong>Android Auto</strong> <span class="muted">(Open Headunit LibreHU)</span></td>
+            <td><span lang="en">Android Auto receiver</span><span lang="fr">Récepteur Android Auto</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk">APK</a></div></td></tr>
+          <tr><td><strong>CarPlay</strong> <span class="muted">(xcertplay LibreHU)</span></td>
+            <td><span lang="en">CarPlay receiver (MFi chip)</span><span lang="fr">Récepteur CarPlay (puce MFi)</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk">APK</a></div></td></tr>
+          <tr><td><strong>LibreHU Helper</strong></td>
+            <td><span lang="en">Diagnostics for porting</span><span lang="fr">Diagnostic pour le portage</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk">APK</a></div></td></tr>
+          <tr><td><strong>LibreHU Bridge</strong> <span class="muted" lang="en">(phone)</span><span class="muted" lang="fr">(téléphone)</span></td>
+            <td><span lang="en">Set up the head unit from your phone</span><span lang="fr">Régler l'autoradio depuis le téléphone</span></td>
+            <td><div class="dl">
+              <a class="btn small" href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">Android</a>
+              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">iPhone (.ipa)</a></div></td></tr>
+          <tr><td><strong>MCU Toolkit</strong> <span class="muted">(legacy)</span></td>
+            <td><span lang="en">Old MCU diagnostic app</span><span lang="fr">Ancienne appli de diagnostic MCU</span></td>
+            <td><div class="dl"><a class="btn small ghost" href="https://github.com/LibreHU/MCU-tools-app/releases/download/latest-main/MCU-Toolkit-main.apk">APK</a></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note info" lang="en"><strong>Editions.</strong> <em>LibreHU service</em>: with LibreHU service, which replaces Jancar's ivi-services (recommended). <em>ivi</em>: on the stock Jancar ROM, with ivi-services. <em>generic</em>: any Android 9+ device, without head unit integration. TWRP, kernel and mods: <a href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips">flashable zips</a> (also listed in LibreHU Apps → Zips).</p>
+    <p class="note info" lang="fr"><strong>Éditions.</strong> <em>LibreHU service</em> : avec LibreHU service, qui remplace ivi-services de Jancar (recommandée). <em>ivi</em> : sur la ROM Jancar d'origine, avec ivi-services. <em>générique</em> : tout appareil Android 9 ou plus, sans intégration à l'autoradio. TWRP, noyau et mods : <a href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips">zips flashables</a> (aussi dans LibreHU Apps → Zips).</p>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2 lang="en">Install</h2>
+    <h2 lang="fr">Installer</h2>
+    <p class="sub" lang="en">Nothing here changes the system partitions by itself: apps install like any APK, and anything written to boot or recovery is a step you choose, with a backup first.</p>
+    <p class="sub" lang="fr">Rien ici ne modifie les partitions système tout seul : les applis s'installent comme n'importe quel APK, et tout ce qui touche boot ou recovery est une étape que vous choisissez, avec sauvegarde avant.</p>
+    <ol class="steps">
+      <li><span lang="en"><strong>Check your unit.</strong> Settings → About should show an AC8257 board (<code>ac8257_demo</code>). The displayed Android version is often fake: read the real one (API level) with AIDA64 or CPU-Z, see <a href="headunits.html">head units</a>.</span><span lang="fr"><strong>Vérifier l'autoradio.</strong> Paramètres → À propos doit montrer une carte AC8257 (<code>ac8257_demo</code>). La version d'Android affichée est souvent fausse : lire la vraie (niveau d'API) avec AIDA64 ou CPU-Z, voir <a href="headunits.html">autoradios</a>.</span></li>
+      <li><span lang="en"><strong>Install LibreHU Apps.</strong> Download its APK on a USB stick (or directly on the unit) and open it with a file manager. Allow installs from this source when Android asks.</span><span lang="fr"><strong>Installer LibreHU Apps.</strong> Télécharger son APK sur une clé USB (ou directement sur l'autoradio) et l'ouvrir avec un gestionnaire de fichiers. Autoriser l'installation depuis cette source quand Android le demande.</span></li>
+      <li><span lang="en"><strong>Quick setup.</strong> At first launch, pick the edition (LibreHU service, ivi or generic) and, if the unit is rooted, allow silent installs. The apps of the edition are ticked: install them in one go.</span><span lang="fr"><strong>Configuration rapide.</strong> Au premier lancement, choisir l'édition (LibreHU service, ivi ou générique) et, si l'autoradio est rooté, autoriser les installations silencieuses. Les applis de l'édition sont cochées : les installer d'un coup.</span></li>
+      <li><span lang="en"><strong>Set LibreHU Launcher as home</strong> and follow its setup assistant (permissions, Bluetooth, QR code to pair the phone app).</span><span lang="fr"><strong>Choisir LibreHU Launcher comme écran d'accueil</strong> et suivre son assistant (autorisations, Bluetooth, QR code pour associer l'appli téléphone).</span></li>
+      <li><span lang="en"><strong>Optional: root, TWRP, kernel.</strong> From LibreHU Apps → Zips. Each zip backs up the current partition to <code>/sdcard/LibreHU/backup</code> first. Read each zip's warning before flashing.</span><span lang="fr"><strong>En option : root, TWRP, noyau.</strong> Depuis LibreHU Apps → Zips. Chaque zip sauvegarde d'abord la partition actuelle dans <code>/sdcard/LibreHU/backup</code>. Lire l'avertissement de chaque zip avant de flasher.</span></li>
+    </ol>
+    <p class="note" lang="en"><strong>Verified boot.</strong> LibreHU never disables dm-verity or rewrites vbmeta for you. If a change of yours needs it, that is a manual decision, made knowingly, on your own unit.</p>
+    <p class="note" lang="fr"><strong>Démarrage vérifié.</strong> LibreHU ne désactive jamais dm-verity et ne réécrit jamais vbmeta à votre place. Si une modification de votre part l'exige, c'est une décision manuelle, prise en connaissance de cause, sur votre propre autoradio.</p>
+  </div>
+</section>
+
+<section id="compat">
+  <div class="wrap">
+    <h2 lang="en">Compatibility</h2>
+    <h2 lang="fr">Compatibilité</h2>
+    <p class="sub" lang="en">Developed and tested on the <strong>Jancar UJC201</strong> (Autochips AC8257, 8× Cortex-A53, real Android 9 shown as "12"), sold under several brands, in a Renault Clio 3 with a Hiworld CAN box. Installable is not the same as working: most features need this hardware.</p>
+    <p class="sub" lang="fr">Développé et testé sur le <strong>Jancar UJC201</strong> (Autochips AC8257, 8× Cortex-A53, vrai Android 9 affiché « 12 »), vendu sous plusieurs marques, dans une Renault Clio 3 avec boîtier CAN Hiworld. Installable ne veut pas dire fonctionnel : la plupart des fonctions demandent ce matériel.</p>
+    <div class="table">
+      <table>
+        <thead><tr>
+          <th lang="en">App</th><th lang="fr">Appli</th>
+          <th lang="en">Minimum Android</th><th lang="fr">Android minimum</th>
+          <th lang="en">CPU architecture</th><th lang="fr">Architecture</th>
+          <th lang="en">Needs</th><th lang="fr">Demande</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Launcher, Apps, Dialer, Widgets, BtnRemap, EasySource</td><td class="nowrap">9 (API 28)</td><td lang="en">any</td><td lang="fr">toutes</td><td><span lang="en">LibreHU service or ivi-services for car data (generic edition: none)</span><span lang="fr">LibreHU service ou ivi-services pour les données de la voiture (édition générique : rien)</span></td></tr>
+          <tr><td>ViPER4Android, CarPlay</td><td class="nowrap">9 (API 28)</td><td lang="en">any</td><td lang="fr">toutes</td><td><span lang="en">ViPER: root and its ViPERFX_RE audio module; CarPlay: the unit's MFi chip (or a CH341 adapter)</span><span lang="fr">ViPER : root et son module audio ViPERFX_RE ; CarPlay : la puce MFi de l'autoradio (ou un adaptateur CH341)</span></td></tr>
+          <tr><td>LibreHU service</td><td class="nowrap">9 (API 28)</td><td>arm64</td><td><span lang="en">AC8257 hardware (MCU, GPIO, audio chip), root</span><span lang="fr">matériel AC8257 (MCU, GPIO, puce audio), root</span></td></tr>
+          <tr><td>LibreHU Disc</td><td class="nowrap">9 (API 28)</td><td>arm64</td><td><span lang="en">USB optical drive, root</span><span lang="fr">lecteur optique USB, root</span></td></tr>
+          <tr><td>LibreHU FM</td><td class="nowrap">9 (API 28)</td><td>armv7 <span class="muted" lang="en">(runs on arm64)</span><span class="muted" lang="fr">(tourne sur arm64)</span></td><td><span lang="en">MediaTek FM chip (<code>/dev/fm</code>)</span><span lang="fr">puce FM MediaTek (<code>/dev/fm</code>)</span></td></tr>
+          <tr><td>LibreHU Helper</td><td class="nowrap">9 (API 28)</td><td>arm64, armv7, x86, x86_64</td><td><span lang="en">nothing (read-only)</span><span lang="fr">rien (lecture seule)</span></td></tr>
+          <tr><td>Android Auto (Open Headunit)</td><td class="nowrap">4.1 (API 16)</td><td>arm64, armv7, x86, x86_64</td><td>—</td></tr>
+          <tr><td lang="en">LibreHU Bridge (phone)</td><td lang="fr">LibreHU Bridge (téléphone)</td><td class="nowrap">Android 8.0 · iOS 16</td><td lang="en">any</td><td lang="fr">toutes</td><td><span lang="en">iPhone: sideload the .ipa (AltStore, Sideloadly), Wi-Fi only</span><span lang="fr">iPhone : installer le .ipa soi-même (AltStore, Sideloadly), Wi-Fi seulement</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note info" lang="en">Other head unit? See the <a href="headunits.html">head unit list</a> (chip, architecture, real and faked Android version) and run <strong>LibreHU Helper</strong>: its report is what porting needs.</p>
+    <p class="note info" lang="fr">Un autre autoradio ? Voir la <a href="headunits.html">liste des autoradios</a> (puce, architecture, vraie et fausse version d'Android) et lancer <strong>LibreHU Helper</strong> : son rapport est ce qu'il faut pour un portage.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <details><summary lang="en">Is it a custom ROM?</summary><summary lang="fr">Est-ce une ROM ?</summary>
+      <p lang="en">Not a GSI and not a full ROM image: LibreHU replaces the software of the stock Android 9 ROM piece by piece (apps, service, recovery, kernel), each one installable and removable on its own.</p>
+      <p lang="fr">Ni une GSI ni une image de ROM complète : LibreHU remplace les logiciels de la ROM Android 9 d'origine morceau par morceau (applis, service, recovery, noyau), chacun installable et désinstallable séparément.</p></details>
+    <details><summary lang="en">Android refuses to update an app: why?</summary><summary lang="fr">Android refuse de mettre à jour une appli : pourquoi ?</summary>
+      <p lang="en">Android only updates an app signed with the same key. All LibreHU apps share one public key; an old build signed with another key (the phone app's debug builds before October 2026) has to be uninstalled once.</p>
+      <p lang="fr">Android ne met à jour qu'une appli signée avec la même clé. Toutes les applis LibreHU partagent une même clé publique ; une ancienne build signée avec une autre clé (builds debug de l'appli téléphone d'avant octobre 2026) doit être désinstallée une fois.</p></details>
+    <details><summary lang="en">My unit says Android 12 / 13. Will it work?</summary><summary lang="fr">Mon autoradio affiche Android 12 / 13. Est-ce que ça marchera ?</summary>
+      <p lang="en">Probably a fake number: manufacturers change the displayed version, not the API level. The apps need real Android 9 (API 28) or later; check with AIDA64 or CPU-Z and see the <a href="headunits.html">head unit list</a>.</p>
+      <p lang="fr">Probablement un faux numéro : les fabricants changent la version affichée, pas le niveau d'API. Les applis demandent un vrai Android 9 (API 28) ou plus ; vérifier avec AIDA64 ou CPU-Z et voir la <a href="headunits.html">liste des autoradios</a>.</p></details>
+    <details><summary lang="en">Is the iPhone app on the App Store?</summary><summary lang="fr">L'appli iPhone est-elle sur l'App Store ?</summary>
+      <p lang="en">No. The CI publishes an unsigned .ipa that you sign yourself with AltStore or Sideloadly (every 7 days with a free Apple ID). It works over Wi-Fi only: iOS reserves Bluetooth serial links to MFi accessories.</p>
+      <p lang="fr">Non. La CI publie un .ipa non signé à signer soi-même avec AltStore ou Sideloadly (tous les 7 jours avec un identifiant Apple gratuit). Il marche en Wi-Fi seulement : iOS réserve les liaisons série Bluetooth aux accessoires MFi.</p></details>
+    <details><summary lang="en">Where do I report a bug?</summary><summary lang="fr">Où signaler un bug ?</summary>
+      <p lang="en">In the issues of the app's repository on <a href="https://github.com/LibreHU">GitHub</a>, with the logs from LibreHU Bridge → Tools → Logs or from LibreHU Helper.</p>
+      <p lang="fr">Dans les issues du dépôt de l'appli sur <a href="https://github.com/LibreHU">GitHub</a>, avec les journaux de LibreHU Bridge → Outils → Journaux ou de LibreHU Helper.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a></span>
+  </div>
+</footer>
+
+<script src="assets/lang.js"></script>
+</body>
+</html>

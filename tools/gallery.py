@@ -3,7 +3,8 @@
 
 Images come from the Screenshots workflow of LibreHU-OTA-app (Android 9 emulator, 1280x720, 160 dpi, French UI):
 copy each app's PNGs to assets/shots/<app>/, then run this script and tools/build.py.
-Titles: tools/shots.json ({"apps": {id: [en name, fr name, en blurb, fr blurb]}, "names": {png name: [en, fr]}}).
+Titles: tools/shots.json ({"apps": {id: [en name, fr name, en blurb, fr blurb]}, "names": {png name: [en, fr]},
+"order": {id: [names]}, "skip": {id: [names left out: duplicates, failed taps]}}).
 """
 
 import html
@@ -48,8 +49,9 @@ def main() -> None:
     cards = []
     for app in apps:
         en_name, fr_name, en_blurb, fr_blurb = META["apps"][app]
-        names = order(app, [p.stem for p in (SHOTS / app).glob("*.png")])
-        cover = names[0]
+        skip = META.get("skip", {}).get(app, [])
+        names = order(app, [p.stem for p in (SHOTS / app).glob("*.png") if p.stem not in skip])
+        cover = next((c for c in ("home", "main", "apps", "report", "favorites", "settings") if c in names), names[0])
         cards.append(
             f'<a class="card shot-card" href="{app}.html"><img src="../assets/shots/{app}/{cover}.png" width="1280" height="720" '
             f'loading="lazy" alt="{html.escape(en_name)}"><h3>{t(en_name, fr_name)}</h3><p>{t(en_blurb, fr_blurb)} '

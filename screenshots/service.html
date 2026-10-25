@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LibreHU service screenshots – LibreHU</title>
+<meta name="title-en" content="LibreHU service screenshots – LibreHU">
+<meta name="title-fr" content="Captures LibreHU service – LibreHU">
+<meta name="description" content="Screenshots of LibreHU service, LibreHU.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="../index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="../docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="../tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="../developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="../screenshots/index.html" aria-current="page"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="../headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="../index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+<main>
+<div class="hero"><div class="wrap">
+  <p><a href="index.html">← <span lang="en">All screenshots</span><span lang="fr">Toutes les captures</span></a></p>
+  <h1><span lang="en">LibreHU service</span><span lang="fr">LibreHU service</span></h1>
+  <p class="lead"><span lang="en">Every section and page of the core service.</span><span lang="fr">Chaque rubrique et chaque page du service central.</span></p>
+</div></div>
+<section><div class="wrap">
+<div class="gallery">
+<figure id="home"><a href="../assets/shots/service/home.png"><img src="../assets/shots/service/home.png" width="1280" height="720" loading="lazy" alt="Home"></a><figcaption><span lang="en">Home</span><span lang="fr">Accueil</span></figcaption></figure>
+<figure id="home-2"><a href="../assets/shots/service/home-2.png"><img src="../assets/shots/service/home-2.png" width="1280" height="720" loading="lazy" alt="Home (2)"></a><figcaption><span lang="en">Home (2)</span><span lang="fr">Accueil (2)</span></figcaption></figure>
+<figure id="vehicle"><a href="../assets/shots/service/vehicle.png"><img src="../assets/shots/service/vehicle.png" width="1280" height="720" loading="lazy" alt="Vehicle"></a><figcaption><span lang="en">Vehicle</span><span lang="fr">Véhicule</span></figcaption></figure>
+<figure id="vehicle-2"><a href="../assets/shots/service/vehicle-2.png"><img src="../assets/shots/service/vehicle-2.png" width="1280" height="720" loading="lazy" alt="Vehicle (2)"></a><figcaption><span lang="en">Vehicle (2)</span><span lang="fr">Véhicule (2)</span></figcaption></figure>
+<figure id="vehicle-3"><a href="../assets/shots/service/vehicle-3.png"><img src="../assets/shots/service/vehicle-3.png" width="1280" height="720" loading="lazy" alt="Vehicle (3)"></a><figcaption><span lang="en">Vehicle (3)</span><span lang="fr">Véhicule (3)</span></figcaption></figure>
+<figure id="reverse"><a href="../assets/shots/service/reverse.png"><img src="../assets/shots/service/reverse.png" width="1280" height="720" loading="lazy" alt="Rear view camera"></a><figcaption><span lang="en">Rear view camera</span><span lang="fr">Caméra de recul</span></figcaption></figure>
+<figure id="reverse-2"><a href="../assets/shots/service/reverse-2.png"><img src="../assets/shots/service/reverse-2.png" width="1280" height="720" loading="lazy" alt="Rear view camera (2)"></a><figcaption><span lang="en">Rear view camera (2)</span><span lang="fr">Caméra de recul (2)</span></figcaption></figure>
+<figure id="reverse-3"><a href="../assets/shots/service/reverse-3.png"><img src="../assets/shots/service/reverse-3.png" width="1280" height="720" loading="lazy" alt="Rear view camera (3)"></a><figcaption><span lang="en">Rear view camera (3)</span><span lang="fr">Caméra de recul (3)</span></figcaption></figure>
+<figure id="reverse-4"><a href="../assets/shots/service/reverse-4.png"><img src="../assets/shots/service/reverse-4.png" width="1280" height="720" loading="lazy" alt="Rear view camera (4)"></a><figcaption><span lang="en">Rear view camera (4)</span><span lang="fr">Caméra de recul (4)</span></figcaption></figure>
+<figure id="video"><a href="../assets/shots/service/video.png"><img src="../assets/shots/service/video.png" width="1280" height="720" loading="lazy" alt="Video inputs"></a><figcaption><span lang="en">Video inputs</span><span lang="fr">Entrées vidéo</span></figcaption></figure>
+<figure id="video-2"><a href="../assets/shots/service/video-2.png"><img src="../assets/shots/service/video-2.png" width="1280" height="720" loading="lazy" alt="Video inputs (2)"></a><figcaption><span lang="en">Video inputs (2)</span><span lang="fr">Entrées vidéo (2)</span></figcaption></figure>
+<figure id="obd"><a href="../assets/shots/service/obd.png"><img src="../assets/shots/service/obd.png" width="1280" height="720" loading="lazy" alt="OBD"></a><figcaption><span lang="en">OBD</span><span lang="fr">OBD</span></figcaption></figure>
+<figure id="obd-2"><a href="../assets/shots/service/obd-2.png"><img src="../assets/shots/service/obd-2.png" width="1280" height="720" loading="lazy" alt="OBD (2)"></a><figcaption><span lang="en">OBD (2)</span><span lang="fr">OBD (2)</span></figcaption></figure>
+<figure id="obd-3"><a href="../assets/shots/service/obd-3.png"><img src="../assets/shots/service/obd-3.png" width="1280" height="720" loading="lazy" alt="OBD (3)"></a><figcaption><span lang="en">OBD (3)</span><span lang="fr">OBD (3)</span></figcaption></figure>
+<figure id="obd-4"><a href="../assets/shots/service/obd-4.png"><img src="../assets/shots/service/obd-4.png" width="1280" height="720" loading="lazy" alt="OBD (4)"></a><figcaption><span lang="en">OBD (4)</span><span lang="fr">OBD (4)</span></figcaption></figure>
+<figure id="can"><a href="../assets/shots/service/can.png"><img src="../assets/shots/service/can.png" width="1280" height="720" loading="lazy" alt="CAN box"></a><figcaption><span lang="en">CAN box</span><span lang="fr">Boîtier CAN</span></figcaption></figure>
+<figure id="can-2"><a href="../assets/shots/service/can-2.png"><img src="../assets/shots/service/can-2.png" width="1280" height="720" loading="lazy" alt="CAN box (2)"></a><figcaption><span lang="en">CAN box (2)</span><span lang="fr">Boîtier CAN (2)</span></figcaption></figure>
+<figure id="audio"><a href="../assets/shots/service/audio.png"><img src="../assets/shots/service/audio.png" width="1280" height="720" loading="lazy" alt="Audio"></a><figcaption><span lang="en">Audio</span><span lang="fr">Audio</span></figcaption></figure>
+<figure id="audio-2"><a href="../assets/shots/service/audio-2.png"><img src="../assets/shots/service/audio-2.png" width="1280" height="720" loading="lazy" alt="Audio (2)"></a><figcaption><span lang="en">Audio (2)</span><span lang="fr">Audio (2)</span></figcaption></figure>
+<figure id="audio-3"><a href="../assets/shots/service/audio-3.png"><img src="../assets/shots/service/audio-3.png" width="1280" height="720" loading="lazy" alt="Audio (3)"></a><figcaption><span lang="en">Audio (3)</span><span lang="fr">Audio (3)</span></figcaption></figure>
+<figure id="audio-4"><a href="../assets/shots/service/audio-4.png"><img src="../assets/shots/service/audio-4.png" width="1280" height="720" loading="lazy" alt="Audio (4)"></a><figcaption><span lang="en">Audio (4)</span><span lang="fr">Audio (4)</span></figcaption></figure>
+<figure id="bluetooth"><a href="../assets/shots/service/bluetooth.png"><img src="../assets/shots/service/bluetooth.png" width="1280" height="720" loading="lazy" alt="Bluetooth"></a><figcaption><span lang="en">Bluetooth</span><span lang="fr">Bluetooth</span></figcaption></figure>
+<figure id="bluetooth-2"><a href="../assets/shots/service/bluetooth-2.png"><img src="../assets/shots/service/bluetooth-2.png" width="1280" height="720" loading="lazy" alt="Bluetooth (2)"></a><figcaption><span lang="en">Bluetooth (2)</span><span lang="fr">Bluetooth (2)</span></figcaption></figure>
+<figure id="phone"><a href="../assets/shots/service/phone.png"><img src="../assets/shots/service/phone.png" width="1280" height="720" loading="lazy" alt="Phone"></a><figcaption><span lang="en">Phone</span><span lang="fr">Téléphone</span></figcaption></figure>
+<figure id="phone-2"><a href="../assets/shots/service/phone-2.png"><img src="../assets/shots/service/phone-2.png" width="1280" height="720" loading="lazy" alt="Phone (2)"></a><figcaption><span lang="en">Phone (2)</span><span lang="fr">Téléphone (2)</span></figcaption></figure>
+<figure id="android-auto"><a href="../assets/shots/service/android-auto.png"><img src="../assets/shots/service/android-auto.png" width="1280" height="720" loading="lazy" alt="Android Auto"></a><figcaption><span lang="en">Android Auto</span><span lang="fr">Android Auto</span></figcaption></figure>
+<figure id="android-auto-2"><a href="../assets/shots/service/android-auto-2.png"><img src="../assets/shots/service/android-auto-2.png" width="1280" height="720" loading="lazy" alt="Android Auto (2)"></a><figcaption><span lang="en">Android Auto (2)</span><span lang="fr">Android Auto (2)</span></figcaption></figure>
+<figure id="android-auto-3"><a href="../assets/shots/service/android-auto-3.png"><img src="../assets/shots/service/android-auto-3.png" width="1280" height="720" loading="lazy" alt="Android Auto (3)"></a><figcaption><span lang="en">Android Auto (3)</span><span lang="fr">Android Auto (3)</span></figcaption></figure>
+<figure id="carplay"><a href="../assets/shots/service/carplay.png"><img src="../assets/shots/service/carplay.png" width="1280" height="720" loading="lazy" alt="CarPlay"></a><figcaption><span lang="en">CarPlay</span><span lang="fr">CarPlay</span></figcaption></figure>
+<figure id="carplay-2"><a href="../assets/shots/service/carplay-2.png"><img src="../assets/shots/service/carplay-2.png" width="1280" height="720" loading="lazy" alt="CarPlay (2)"></a><figcaption><span lang="en">CarPlay (2)</span><span lang="fr">CarPlay (2)</span></figcaption></figure>
+<figure id="display"><a href="../assets/shots/service/display.png"><img src="../assets/shots/service/display.png" width="1280" height="720" loading="lazy" alt="Display"></a><figcaption><span lang="en">Display</span><span lang="fr">Affichage</span></figcaption></figure>
+<figure id="display-2"><a href="../assets/shots/service/display-2.png"><img src="../assets/shots/service/display-2.png" width="1280" height="720" loading="lazy" alt="Display (2)"></a><figcaption><span lang="en">Display (2)</span><span lang="fr">Affichage (2)</span></figcaption></figure>
+<figure id="touch"><a href="../assets/shots/service/touch.png"><img src="../assets/shots/service/touch.png" width="1280" height="720" loading="lazy" alt="Touch panel"></a><figcaption><span lang="en">Touch panel</span><span lang="fr">Dalle tactile</span></figcaption></figure>
+<figure id="touch-2"><a href="../assets/shots/service/touch-2.png"><img src="../assets/shots/service/touch-2.png" width="1280" height="720" loading="lazy" alt="Touch panel (2)"></a><figcaption><span lang="en">Touch panel (2)</span><span lang="fr">Dalle tactile (2)</span></figcaption></figure>
+<figure id="lights"><a href="../assets/shots/service/lights.png"><img src="../assets/shots/service/lights.png" width="1280" height="720" loading="lazy" alt="Lights"></a><figcaption><span lang="en">Lights</span><span lang="fr">Lumières</span></figcaption></figure>
+<figure id="lights-2"><a href="../assets/shots/service/lights-2.png"><img src="../assets/shots/service/lights-2.png" width="1280" height="720" loading="lazy" alt="Lights (2)"></a><figcaption><span lang="en">Lights (2)</span><span lang="fr">Lumières (2)</span></figcaption></figure>
+<figure id="system"><a href="../assets/shots/service/system.png"><img src="../assets/shots/service/system.png" width="1280" height="720" loading="lazy" alt="System"></a><figcaption><span lang="en">System</span><span lang="fr">Système</span></figcaption></figure>
+<figure id="system-2"><a href="../assets/shots/service/system-2.png"><img src="../assets/shots/service/system-2.png" width="1280" height="720" loading="lazy" alt="System (2)"></a><figcaption><span lang="en">System (2)</span><span lang="fr">Système (2)</span></figcaption></figure>
+<figure id="system-3"><a href="../assets/shots/service/system-3.png"><img src="../assets/shots/service/system-3.png" width="1280" height="720" loading="lazy" alt="System (3)"></a><figcaption><span lang="en">System (3)</span><span lang="fr">Système (3)</span></figcaption></figure>
+<figure id="gps"><a href="../assets/shots/service/gps.png"><img src="../assets/shots/service/gps.png" width="1280" height="720" loading="lazy" alt="GPS and time"></a><figcaption><span lang="en">GPS and time</span><span lang="fr">GPS et heure</span></figcaption></figure>
+<figure id="network"><a href="../assets/shots/service/network.png"><img src="../assets/shots/service/network.png" width="1280" height="720" loading="lazy" alt="Network"></a><figcaption><span lang="en">Network</span><span lang="fr">Réseau</span></figcaption></figure>
+<figure id="network-2"><a href="../assets/shots/service/network-2.png"><img src="../assets/shots/service/network-2.png" width="1280" height="720" loading="lazy" alt="Network (2)"></a><figcaption><span lang="en">Network (2)</span><span lang="fr">Réseau (2)</span></figcaption></figure>
+<figure id="tweaks"><a href="../assets/shots/service/tweaks.png"><img src="../assets/shots/service/tweaks.png" width="1280" height="720" loading="lazy" alt="Tweaks"></a><figcaption><span lang="en">Tweaks</span><span lang="fr">Tweaks</span></figcaption></figure>
+<figure id="tweaks-2"><a href="../assets/shots/service/tweaks-2.png"><img src="../assets/shots/service/tweaks-2.png" width="1280" height="720" loading="lazy" alt="Tweaks (2)"></a><figcaption><span lang="en">Tweaks (2)</span><span lang="fr">Tweaks (2)</span></figcaption></figure>
+<figure id="tweaks-3"><a href="../assets/shots/service/tweaks-3.png"><img src="../assets/shots/service/tweaks-3.png" width="1280" height="720" loading="lazy" alt="Tweaks (3)"></a><figcaption><span lang="en">Tweaks (3)</span><span lang="fr">Tweaks (3)</span></figcaption></figure>
+<figure id="tweaks-4"><a href="../assets/shots/service/tweaks-4.png"><img src="../assets/shots/service/tweaks-4.png" width="1280" height="720" loading="lazy" alt="Tweaks (4)"></a><figcaption><span lang="en">Tweaks (4)</span><span lang="fr">Tweaks (4)</span></figcaption></figure>
+<figure id="advanced"><a href="../assets/shots/service/advanced.png"><img src="../assets/shots/service/advanced.png" width="1280" height="720" loading="lazy" alt="MCU"></a><figcaption><span lang="en">MCU</span><span lang="fr">MCU</span></figcaption></figure>
+<figure id="advanced-2"><a href="../assets/shots/service/advanced-2.png"><img src="../assets/shots/service/advanced-2.png" width="1280" height="720" loading="lazy" alt="MCU (2)"></a><figcaption><span lang="en">MCU (2)</span><span lang="fr">MCU (2)</span></figcaption></figure>
+<figure id="mcu-tools"><a href="../assets/shots/service/mcu-tools.png"><img src="../assets/shots/service/mcu-tools.png" width="1280" height="720" loading="lazy" alt="MCU tools"></a><figcaption><span lang="en">MCU tools</span><span lang="fr">Outils MCU</span></figcaption></figure>
+<figure id="mcu-tools-2"><a href="../assets/shots/service/mcu-tools-2.png"><img src="../assets/shots/service/mcu-tools-2.png" width="1280" height="720" loading="lazy" alt="MCU tools (2)"></a><figcaption><span lang="en">MCU tools (2)</span><span lang="fr">Outils MCU (2)</span></figcaption></figure>
+<figure id="audio-diag"><a href="../assets/shots/service/audio-diag.png"><img src="../assets/shots/service/audio-diag.png" width="1280" height="720" loading="lazy" alt="Audio diagnostics"></a><figcaption><span lang="en">Audio diagnostics</span><span lang="fr">Diag audio</span></figcaption></figure>
+<figure id="audio-diag-2"><a href="../assets/shots/service/audio-diag-2.png"><img src="../assets/shots/service/audio-diag-2.png" width="1280" height="720" loading="lazy" alt="Audio diagnostics (2)"></a><figcaption><span lang="en">Audio diagnostics (2)</span><span lang="fr">Diag audio (2)</span></figcaption></figure>
+<figure id="atc"><a href="../assets/shots/service/atc.png"><img src="../assets/shots/service/atc.png" width="1280" height="720" loading="lazy" alt="Autochips"></a><figcaption><span lang="en">Autochips</span><span lang="fr">Autochips</span></figcaption></figure>
+<figure id="atc-2"><a href="../assets/shots/service/atc-2.png"><img src="../assets/shots/service/atc-2.png" width="1280" height="720" loading="lazy" alt="Autochips (2)"></a><figcaption><span lang="en">Autochips (2)</span><span lang="fr">Autochips (2)</span></figcaption></figure>
+<figure id="diag"><a href="../assets/shots/service/diag.png"><img src="../assets/shots/service/diag.png" width="1280" height="720" loading="lazy" alt="Diagnostic"></a><figcaption><span lang="en">Diagnostic</span><span lang="fr">Diagnostic</span></figcaption></figure>
+<figure id="diag-2"><a href="../assets/shots/service/diag-2.png"><img src="../assets/shots/service/diag-2.png" width="1280" height="720" loading="lazy" alt="Diagnostic (2)"></a><figcaption><span lang="en">Diagnostic (2)</span><span lang="fr">Diagnostic (2)</span></figcaption></figure>
+</div>
+<p class="note info"><span lang="en">Emulator without the head unit: car, MCU and sensor values are empty. Screenshots are refreshed by the Screenshots workflow of LibreHU-OTA-app.</span><span lang="fr">Émulateur sans autoradio : les valeurs de la voiture, de la MCU et des capteurs sont vides. Les captures sont refaites par le workflow Screenshots de LibreHU-OTA-app.</span></p>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="../docs.html">Docs</a> · <a href="../tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="../developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="../assets/lang.js"></script>
+</body>
+</html>
+

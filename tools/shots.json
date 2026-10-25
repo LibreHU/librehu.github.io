@@ -233,8 +233,8 @@
    "Style afficheur rétro"
   ],
   "home-retro-dolphins": [
-   "Retro: dolphins",
-   "Rétro : dauphins"
+   "Home, retro display style",
+   "Accueil, style afficheur rétro"
   ],
   "standby-retro": [
    "Standby clock, retro",
@@ -369,8 +369,8 @@
    "Associer un autoradio"
   ],
   "setup": [
-   "Quick setup",
-   "Configuration rapide"
+   "Setup",
+   "Configuration"
   ],
   "welcome": [
    "First start assistant",
@@ -523,11 +523,33 @@
   ]
  },
  "intro": [
-  "Every LibreHU app, screen by screen. Taken automatically on an Android 9 emulator at the head unit's resolution (1280 × 720, 160 dpi), in French, from the published APKs.",
-  "Chaque appli LibreHU, écran par écran. Prises automatiquement sur un émulateur Android 9 à la résolution de l'autoradio (1280 × 720, 160 dpi), en français, à partir des APK publiés."
+  "Every LibreHU app, screen by screen. Taken automatically from the published APKs on an emulator at the head unit's resolution (1280 × 720, 160 dpi), in French: Android 9 like the head unit, Android 11 for the apps whose native code is ARM only (service, FM, Disc).",
+  "Chaque appli LibreHU, écran par écran. Prises automatiquement à partir des APK publiés sur un émulateur à la résolution de l'autoradio (1280 × 720, 160 dpi), en français : Android 9 comme l'autoradio, Android 11 pour les applis dont le code natif est ARM seulement (service, FM, Disc)."
  ],
  "note": [
   "Emulator without the head unit: car, MCU and sensor values are empty. Screenshots are refreshed by the Screenshots workflow of LibreHU-OTA-app.",
   "Émulateur sans autoradio : les valeurs de la voiture, de la MCU et des capteurs sont vides. Les captures sont refaites par le workflow Screenshots de LibreHU-OTA-app."
- ]
+ ],
+ "skip": {
+  "launcher": [
+   "home-retro-space",
+   "home-retro-cassette",
+   "home-retro-analyzer",
+   "home-retro-road",
+   "home-retro-rally",
+   "home-vaporwave",
+   "home-stars",
+   "home-waves"
+  ],
+  "headunit": [
+   "setup-3",
+   "setup-4"
+  ],
+  "helper": [
+   "dump-2"
+  ],
+  "disc": [
+   "settings-3"
+  ]
+ }
 }

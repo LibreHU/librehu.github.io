@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LibreHU Apps screenshots – LibreHU</title>
+<meta name="title-en" content="LibreHU Apps screenshots – LibreHU">
+<meta name="title-fr" content="Captures LibreHU Apps – LibreHU">
+<meta name="description" content="Screenshots of LibreHU Apps, LibreHU.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="../index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="../docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="../tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="../developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="../screenshots/index.html" aria-current="page"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="../headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="../index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+<main>
+<div class="hero"><div class="wrap">
+  <p><a href="index.html">← <span lang="en">All screenshots</span><span lang="fr">Toutes les captures</span></a></p>
+  <h1><span lang="en">LibreHU Apps</span><span lang="fr">LibreHU Apps</span></h1>
+  <p class="lead"><span lang="en">Installer and updater: apps, versions, zips, downloads, settings.</span><span lang="fr">Installation et mises à jour : applis, versions, zips, téléchargements, réglages.</span></p>
+</div></div>
+<section><div class="wrap">
+<div class="gallery">
+<figure id="setup"><a href="../assets/shots/ota/setup.png"><img src="../assets/shots/ota/setup.png" width="1280" height="720" loading="lazy" alt="Setup"></a><figcaption><span lang="en">Setup</span><span lang="fr">Configuration</span></figcaption></figure>
+<figure id="apps"><a href="../assets/shots/ota/apps.png"><img src="../assets/shots/ota/apps.png" width="1280" height="720" loading="lazy" alt="Apps"></a><figcaption><span lang="en">Apps</span><span lang="fr">Applis</span></figcaption></figure>
+<figure id="details"><a href="../assets/shots/ota/details.png"><img src="../assets/shots/ota/details.png" width="1280" height="720" loading="lazy" alt="App details"></a><figcaption><span lang="en">App details</span><span lang="fr">Fiche d&#x27;une appli</span></figcaption></figure>
+<figure id="versions"><a href="../assets/shots/ota/versions.png"><img src="../assets/shots/ota/versions.png" width="1280" height="720" loading="lazy" alt="Versions"></a><figcaption><span lang="en">Versions</span><span lang="fr">Versions</span></figcaption></figure>
+<figure id="logs"><a href="../assets/shots/ota/logs.png"><img src="../assets/shots/ota/logs.png" width="1280" height="720" loading="lazy" alt="Changes"></a><figcaption><span lang="en">Changes</span><span lang="fr">Changements</span></figcaption></figure>
+<figure id="updates"><a href="../assets/shots/ota/updates.png"><img src="../assets/shots/ota/updates.png" width="1280" height="720" loading="lazy" alt="Updates"></a><figcaption><span lang="en">Updates</span><span lang="fr">Mises à jour</span></figcaption></figure>
+<figure id="zips"><a href="../assets/shots/ota/zips.png"><img src="../assets/shots/ota/zips.png" width="1280" height="720" loading="lazy" alt="Zips"></a><figcaption><span lang="en">Zips</span><span lang="fr">Zips</span></figcaption></figure>
+<figure id="downloads"><a href="../assets/shots/ota/downloads.png"><img src="../assets/shots/ota/downloads.png" width="1280" height="720" loading="lazy" alt="Downloads"></a><figcaption><span lang="en">Downloads</span><span lang="fr">Téléchargements</span></figcaption></figure>
+<figure id="settings"><a href="../assets/shots/ota/settings.png"><img src="../assets/shots/ota/settings.png" width="1280" height="720" loading="lazy" alt="Settings"></a><figcaption><span lang="en">Settings</span><span lang="fr">Réglages</span></figcaption></figure>
+<figure id="settings-2"><a href="../assets/shots/ota/settings-2.png"><img src="../assets/shots/ota/settings-2.png" width="1280" height="720" loading="lazy" alt="Settings (2)"></a><figcaption><span lang="en">Settings (2)</span><span lang="fr">Réglages (2)</span></figcaption></figure>
+<figure id="settings-3"><a href="../assets/shots/ota/settings-3.png"><img src="../assets/shots/ota/settings-3.png" width="1280" height="720" loading="lazy" alt="Settings (3)"></a><figcaption><span lang="en">Settings (3)</span><span lang="fr">Réglages (3)</span></figcaption></figure>
+</div>
+<p class="note info"><span lang="en">Emulator without the head unit: car, MCU and sensor values are empty. Screenshots are refreshed by the Screenshots workflow of LibreHU-OTA-app.</span><span lang="fr">Émulateur sans autoradio : les valeurs de la voiture, de la MCU et des capteurs sont vides. Les captures sont refaites par le workflow Screenshots de LibreHU-OTA-app.</span></p>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="../docs.html">Docs</a> · <a href="../tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="../developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="../assets/lang.js"></script>
+</body>
+</html>
+

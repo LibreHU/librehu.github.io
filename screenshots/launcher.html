@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LibreHU Launcher screenshots – LibreHU</title>
+<meta name="title-en" content="LibreHU Launcher screenshots – LibreHU">
+<meta name="title-fr" content="Captures LibreHU Launcher – LibreHU">
+<meta name="description" content="Screenshots of LibreHU Launcher, LibreHU.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><img src="../assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="../index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="../docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="../tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="../developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="../screenshots/index.html" aria-current="page"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="../headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="../index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+<main>
+<div class="hero"><div class="wrap">
+  <p><a href="index.html">← <span lang="en">All screenshots</span><span lang="fr">Toutes les captures</span></a></p>
+  <h1><span lang="en">LibreHU Launcher</span><span lang="fr">LibreHU Launcher</span></h1>
+  <p class="lead"><span lang="en">Dashboard home screen, settings, retro styles, wallpapers, standby clock, lock screen.</span><span lang="fr">Écran d&#x27;accueil tableau de bord, réglages, styles rétro, fonds, horloge de veille, verrouillage.</span></p>
+</div></div>
+<section><div class="wrap">
+<div class="gallery">
+<figure id="onboarding"><a href="../assets/shots/launcher/onboarding.png"><img src="../assets/shots/launcher/onboarding.png" width="1280" height="720" loading="lazy" alt="First start assistant"></a><figcaption><span lang="en">First start assistant</span><span lang="fr">Assistant de premier démarrage</span></figcaption></figure>
+<figure id="home"><a href="../assets/shots/launcher/home.png"><img src="../assets/shots/launcher/home.png" width="1280" height="720" loading="lazy" alt="Home"></a><figcaption><span lang="en">Home</span><span lang="fr">Accueil</span></figcaption></figure>
+<figure id="drawer"><a href="../assets/shots/launcher/drawer.png"><img src="../assets/shots/launcher/drawer.png" width="1280" height="720" loading="lazy" alt="All apps"></a><figcaption><span lang="en">All apps</span><span lang="fr">Toutes les applis</span></figcaption></figure>
+<figure id="power"><a href="../assets/shots/launcher/power.png"><img src="../assets/shots/launcher/power.png" width="1280" height="720" loading="lazy" alt="Power menu"></a><figcaption><span lang="en">Power menu</span><span lang="fr">Menu marche / arrêt</span></figcaption></figure>
+<figure id="settings-look"><a href="../assets/shots/launcher/settings-look.png"><img src="../assets/shots/launcher/settings-look.png" width="1280" height="720" loading="lazy" alt="Settings: customisation"></a><figcaption><span lang="en">Settings: customisation</span><span lang="fr">Réglages : personnalisation</span></figcaption></figure>
+<figure id="settings-look-2"><a href="../assets/shots/launcher/settings-look-2.png"><img src="../assets/shots/launcher/settings-look-2.png" width="1280" height="720" loading="lazy" alt="Settings: customisation (2)"></a><figcaption><span lang="en">Settings: customisation (2)</span><span lang="fr">Réglages : personnalisation (2)</span></figcaption></figure>
+<figure id="settings-look-3"><a href="../assets/shots/launcher/settings-look-3.png"><img src="../assets/shots/launcher/settings-look-3.png" width="1280" height="720" loading="lazy" alt="Settings: customisation (3)"></a><figcaption><span lang="en">Settings: customisation (3)</span><span lang="fr">Réglages : personnalisation (3)</span></figcaption></figure>
+<figure id="settings-look-4"><a href="../assets/shots/launcher/settings-look-4.png"><img src="../assets/shots/launcher/settings-look-4.png" width="1280" height="720" loading="lazy" alt="Settings: customisation (4)"></a><figcaption><span lang="en">Settings: customisation (4)</span><span lang="fr">Réglages : personnalisation (4)</span></figcaption></figure>
+<figure id="settings-standby"><a href="../assets/shots/launcher/settings-standby.png"><img src="../assets/shots/launcher/settings-standby.png" width="1280" height="720" loading="lazy" alt="Settings: standby clock"></a><figcaption><span lang="en">Settings: standby clock</span><span lang="fr">Réglages : horloge de veille</span></figcaption></figure>
+<figure id="settings-standby-2"><a href="../assets/shots/launcher/settings-standby-2.png"><img src="../assets/shots/launcher/settings-standby-2.png" width="1280" height="720" loading="lazy" alt="Settings: standby clock (2)"></a><figcaption><span lang="en">Settings: standby clock (2)</span><span lang="fr">Réglages : horloge de veille (2)</span></figcaption></figure>
+<figure id="settings-lock"><a href="../assets/shots/launcher/settings-lock.png"><img src="../assets/shots/launcher/settings-lock.png" width="1280" height="720" loading="lazy" alt="Settings: lock screen"></a><figcaption><span lang="en">Settings: lock screen</span><span lang="fr">Réglages : verrouillage</span></figcaption></figure>
+<figure id="settings-lock-2"><a href="../assets/shots/launcher/settings-lock-2.png"><img src="../assets/shots/launcher/settings-lock-2.png" width="1280" height="720" loading="lazy" alt="Settings: lock screen (2)"></a><figcaption><span lang="en">Settings: lock screen (2)</span><span lang="fr">Réglages : verrouillage (2)</span></figcaption></figure>
+<figure id="settings-driving"><a href="../assets/shots/launcher/settings-driving.png"><img src="../assets/shots/launcher/settings-driving.png" width="1280" height="720" loading="lazy" alt="Settings: driving"></a><figcaption><span lang="en">Settings: driving</span><span lang="fr">Réglages : conduite</span></figcaption></figure>
+<figure id="settings-driving-2"><a href="../assets/shots/launcher/settings-driving-2.png"><img src="../assets/shots/launcher/settings-driving-2.png" width="1280" height="720" loading="lazy" alt="Settings: driving (2)"></a><figcaption><span lang="en">Settings: driving (2)</span><span lang="fr">Réglages : conduite (2)</span></figcaption></figure>
+<figure id="settings-region"><a href="../assets/shots/launcher/settings-region.png"><img src="../assets/shots/launcher/settings-region.png" width="1280" height="720" loading="lazy" alt="Settings: language and time"></a><figcaption><span lang="en">Settings: language and time</span><span lang="fr">Réglages : langue et heure</span></figcaption></figure>
+<figure id="settings-region-2"><a href="../assets/shots/launcher/settings-region-2.png"><img src="../assets/shots/launcher/settings-region-2.png" width="1280" height="720" loading="lazy" alt="Settings: language and time (2)"></a><figcaption><span lang="en">Settings: language and time (2)</span><span lang="fr">Réglages : langue et heure (2)</span></figcaption></figure>
+<figure id="settings-general"><a href="../assets/shots/launcher/settings-general.png"><img src="../assets/shots/launcher/settings-general.png" width="1280" height="720" loading="lazy" alt="Settings: general"></a><figcaption><span lang="en">Settings: general</span><span lang="fr">Réglages : général</span></figcaption></figure>
+<figure id="settings-general-2"><a href="../assets/shots/launcher/settings-general-2.png"><img src="../assets/shots/launcher/settings-general-2.png" width="1280" height="720" loading="lazy" alt="Settings: general (2)"></a><figcaption><span lang="en">Settings: general (2)</span><span lang="fr">Réglages : général (2)</span></figcaption></figure>
+<figure id="standby"><a href="../assets/shots/launcher/standby.png"><img src="../assets/shots/launcher/standby.png" width="1280" height="720" loading="lazy" alt="Standby clock"></a><figcaption><span lang="en">Standby clock</span><span lang="fr">Horloge de veille</span></figcaption></figure>
+<figure id="lock"><a href="../assets/shots/launcher/lock.png"><img src="../assets/shots/launcher/lock.png" width="1280" height="720" loading="lazy" alt="Lock screen"></a><figcaption><span lang="en">Lock screen</span><span lang="fr">Écran de verrouillage</span></figcaption></figure>
+<figure id="settings-retro"><a href="../assets/shots/launcher/settings-retro.png"><img src="../assets/shots/launcher/settings-retro.png" width="1280" height="720" loading="lazy" alt="Retro display style"></a><figcaption><span lang="en">Retro display style</span><span lang="fr">Style afficheur rétro</span></figcaption></figure>
+<figure id="home-retro-dolphins"><a href="../assets/shots/launcher/home-retro-dolphins.png"><img src="../assets/shots/launcher/home-retro-dolphins.png" width="1280" height="720" loading="lazy" alt="Home, retro display style"></a><figcaption><span lang="en">Home, retro display style</span><span lang="fr">Accueil, style afficheur rétro</span></figcaption></figure>
+<figure id="drawer-retro"><a href="../assets/shots/launcher/drawer-retro.png"><img src="../assets/shots/launcher/drawer-retro.png" width="1280" height="720" loading="lazy" alt="All apps, retro"></a><figcaption><span lang="en">All apps, retro</span><span lang="fr">Toutes les applis, rétro</span></figcaption></figure>
+<figure id="standby-retro"><a href="../assets/shots/launcher/standby-retro.png"><img src="../assets/shots/launcher/standby-retro.png" width="1280" height="720" loading="lazy" alt="Standby clock, retro"></a><figcaption><span lang="en">Standby clock, retro</span><span lang="fr">Horloge de veille, rétro</span></figcaption></figure>
+<figure id="lock-retro"><a href="../assets/shots/launcher/lock-retro.png"><img src="../assets/shots/launcher/lock-retro.png" width="1280" height="720" loading="lazy" alt="Lock screen, retro"></a><figcaption><span lang="en">Lock screen, retro</span><span lang="fr">Verrouillage, rétro</span></figcaption></figure>
+<figure id="home-aurora"><a href="../assets/shots/launcher/home-aurora.png"><img src="../assets/shots/launcher/home-aurora.png" width="1280" height="720" loading="lazy" alt="Aurora wallpaper"></a><figcaption><span lang="en">Aurora wallpaper</span><span lang="fr">Fond aurore</span></figcaption></figure>
+<figure id="tpms"><a href="../assets/shots/launcher/tpms.png"><img src="../assets/shots/launcher/tpms.png" width="1280" height="720" loading="lazy" alt="Tyres (TPMS)"></a><figcaption><span lang="en">Tyres (TPMS)</span><span lang="fr">Pneus (TPMS)</span></figcaption></figure>
+</div>
+<p class="note info"><span lang="en">Emulator without the head unit: car, MCU and sensor values are empty. Screenshots are refreshed by the Screenshots workflow of LibreHU-OTA-app.</span><span lang="fr">Émulateur sans autoradio : les valeurs de la voiture, de la MCU et des capteurs sont vides. Les captures sont refaites par le workflow Screenshots de LibreHU-OTA-app.</span></p>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="../docs.html">Docs</a> · <a href="../tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="../developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="../assets/lang.js"></script>
+</body>
+</html>
+

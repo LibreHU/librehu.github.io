@@ -1,0 +1,734 @@
+{
+ "apps": {
+  "launcher": [
+   {
+    "file": "launcher/onboarding.png",
+    "en": "First start assistant",
+    "fr": "Assistant de premier démarrage"
+   },
+   {
+    "file": "launcher/home.png",
+    "en": "Home",
+    "fr": "Accueil"
+   },
+   {
+    "file": "launcher/drawer.png",
+    "en": "All apps",
+    "fr": "Toutes les applis"
+   },
+   {
+    "file": "launcher/power.png",
+    "en": "Power menu",
+    "fr": "Menu marche / arrêt"
+   },
+   {
+    "file": "launcher/settings-look.png",
+    "en": "Settings: customisation",
+    "fr": "Réglages : personnalisation"
+   },
+   {
+    "file": "launcher/settings-look-2.png",
+    "en": "Settings: customisation (2)",
+    "fr": "Réglages : personnalisation (2)"
+   },
+   {
+    "file": "launcher/settings-look-3.png",
+    "en": "Settings: customisation (3)",
+    "fr": "Réglages : personnalisation (3)"
+   },
+   {
+    "file": "launcher/settings-look-4.png",
+    "en": "Settings: customisation (4)",
+    "fr": "Réglages : personnalisation (4)"
+   },
+   {
+    "file": "launcher/settings-standby.png",
+    "en": "Settings: standby clock",
+    "fr": "Réglages : horloge de veille"
+   },
+   {
+    "file": "launcher/settings-standby-2.png",
+    "en": "Settings: standby clock (2)",
+    "fr": "Réglages : horloge de veille (2)"
+   },
+   {
+    "file": "launcher/settings-lock.png",
+    "en": "Settings: lock screen",
+    "fr": "Réglages : verrouillage"
+   },
+   {
+    "file": "launcher/settings-lock-2.png",
+    "en": "Settings: lock screen (2)",
+    "fr": "Réglages : verrouillage (2)"
+   },
+   {
+    "file": "launcher/settings-driving.png",
+    "en": "Settings: driving",
+    "fr": "Réglages : conduite"
+   },
+   {
+    "file": "launcher/settings-driving-2.png",
+    "en": "Settings: driving (2)",
+    "fr": "Réglages : conduite (2)"
+   },
+   {
+    "file": "launcher/settings-region.png",
+    "en": "Settings: language and time",
+    "fr": "Réglages : langue et heure"
+   },
+   {
+    "file": "launcher/settings-region-2.png",
+    "en": "Settings: language and time (2)",
+    "fr": "Réglages : langue et heure (2)"
+   },
+   {
+    "file": "launcher/settings-general.png",
+    "en": "Settings: general",
+    "fr": "Réglages : général"
+   },
+   {
+    "file": "launcher/settings-general-2.png",
+    "en": "Settings: general (2)",
+    "fr": "Réglages : général (2)"
+   },
+   {
+    "file": "launcher/standby.png",
+    "en": "Standby clock",
+    "fr": "Horloge de veille"
+   },
+   {
+    "file": "launcher/lock.png",
+    "en": "Lock screen",
+    "fr": "Écran de verrouillage"
+   },
+   {
+    "file": "launcher/settings-retro.png",
+    "en": "Retro display style",
+    "fr": "Style afficheur rétro"
+   },
+   {
+    "file": "launcher/home-retro-dolphins.png",
+    "en": "Home, retro display style",
+    "fr": "Accueil, style afficheur rétro"
+   },
+   {
+    "file": "launcher/drawer-retro.png",
+    "en": "All apps, retro",
+    "fr": "Toutes les applis, rétro"
+   },
+   {
+    "file": "launcher/standby-retro.png",
+    "en": "Standby clock, retro",
+    "fr": "Horloge de veille, rétro"
+   },
+   {
+    "file": "launcher/lock-retro.png",
+    "en": "Lock screen, retro",
+    "fr": "Verrouillage, rétro"
+   },
+   {
+    "file": "launcher/home-aurora.png",
+    "en": "Aurora wallpaper",
+    "fr": "Fond aurore"
+   },
+   {
+    "file": "launcher/tpms.png",
+    "en": "Tyres (TPMS)",
+    "fr": "Pneus (TPMS)"
+   }
+  ],
+  "service": [
+   {
+    "file": "service/home.png",
+    "en": "Home",
+    "fr": "Accueil"
+   },
+   {
+    "file": "service/home-2.png",
+    "en": "Home (2)",
+    "fr": "Accueil (2)"
+   },
+   {
+    "file": "service/vehicle.png",
+    "en": "Vehicle",
+    "fr": "Véhicule"
+   },
+   {
+    "file": "service/vehicle-2.png",
+    "en": "Vehicle (2)",
+    "fr": "Véhicule (2)"
+   },
+   {
+    "file": "service/vehicle-3.png",
+    "en": "Vehicle (3)",
+    "fr": "Véhicule (3)"
+   },
+   {
+    "file": "service/reverse.png",
+    "en": "Rear view camera",
+    "fr": "Caméra de recul"
+   },
+   {
+    "file": "service/reverse-2.png",
+    "en": "Rear view camera (2)",
+    "fr": "Caméra de recul (2)"
+   },
+   {
+    "file": "service/reverse-3.png",
+    "en": "Rear view camera (3)",
+    "fr": "Caméra de recul (3)"
+   },
+   {
+    "file": "service/reverse-4.png",
+    "en": "Rear view camera (4)",
+    "fr": "Caméra de recul (4)"
+   },
+   {
+    "file": "service/video.png",
+    "en": "Video inputs",
+    "fr": "Entrées vidéo"
+   },
+   {
+    "file": "service/video-2.png",
+    "en": "Video inputs (2)",
+    "fr": "Entrées vidéo (2)"
+   },
+   {
+    "file": "service/obd.png",
+    "en": "OBD",
+    "fr": "OBD"
+   },
+   {
+    "file": "service/obd-2.png",
+    "en": "OBD (2)",
+    "fr": "OBD (2)"
+   },
+   {
+    "file": "service/obd-3.png",
+    "en": "OBD (3)",
+    "fr": "OBD (3)"
+   },
+   {
+    "file": "service/obd-4.png",
+    "en": "OBD (4)",
+    "fr": "OBD (4)"
+   },
+   {
+    "file": "service/can.png",
+    "en": "CAN box",
+    "fr": "Boîtier CAN"
+   },
+   {
+    "file": "service/can-2.png",
+    "en": "CAN box (2)",
+    "fr": "Boîtier CAN (2)"
+   },
+   {
+    "file": "service/audio.png",
+    "en": "Audio",
+    "fr": "Audio"
+   },
+   {
+    "file": "service/audio-2.png",
+    "en": "Audio (2)",
+    "fr": "Audio (2)"
+   },
+   {
+    "file": "service/audio-3.png",
+    "en": "Audio (3)",
+    "fr": "Audio (3)"
+   },
+   {
+    "file": "service/audio-4.png",
+    "en": "Audio (4)",
+    "fr": "Audio (4)"
+   },
+   {
+    "file": "service/bluetooth.png",
+    "en": "Bluetooth",
+    "fr": "Bluetooth"
+   },
+   {
+    "file": "service/bluetooth-2.png",
+    "en": "Bluetooth (2)",
+    "fr": "Bluetooth (2)"
+   },
+   {
+    "file": "service/phone.png",
+    "en": "Phone",
+    "fr": "Téléphone"
+   },
+   {
+    "file": "service/phone-2.png",
+    "en": "Phone (2)",
+    "fr": "Téléphone (2)"
+   },
+   {
+    "file": "service/android-auto.png",
+    "en": "Android Auto",
+    "fr": "Android Auto"
+   },
+   {
+    "file": "service/android-auto-2.png",
+    "en": "Android Auto (2)",
+    "fr": "Android Auto (2)"
+   },
+   {
+    "file": "service/android-auto-3.png",
+    "en": "Android Auto (3)",
+    "fr": "Android Auto (3)"
+   },
+   {
+    "file": "service/carplay.png",
+    "en": "CarPlay",
+    "fr": "CarPlay"
+   },
+   {
+    "file": "service/carplay-2.png",
+    "en": "CarPlay (2)",
+    "fr": "CarPlay (2)"
+   },
+   {
+    "file": "service/display.png",
+    "en": "Display",
+    "fr": "Affichage"
+   },
+   {
+    "file": "service/display-2.png",
+    "en": "Display (2)",
+    "fr": "Affichage (2)"
+   },
+   {
+    "file": "service/touch.png",
+    "en": "Touch panel",
+    "fr": "Dalle tactile"
+   },
+   {
+    "file": "service/touch-2.png",
+    "en": "Touch panel (2)",
+    "fr": "Dalle tactile (2)"
+   },
+   {
+    "file": "service/lights.png",
+    "en": "Lights",
+    "fr": "Lumières"
+   },
+   {
+    "file": "service/lights-2.png",
+    "en": "Lights (2)",
+    "fr": "Lumières (2)"
+   },
+   {
+    "file": "service/system.png",
+    "en": "System",
+    "fr": "Système"
+   },
+   {
+    "file": "service/system-2.png",
+    "en": "System (2)",
+    "fr": "Système (2)"
+   },
+   {
+    "file": "service/system-3.png",
+    "en": "System (3)",
+    "fr": "Système (3)"
+   },
+   {
+    "file": "service/gps.png",
+    "en": "GPS and time",
+    "fr": "GPS et heure"
+   },
+   {
+    "file": "service/network.png",
+    "en": "Network",
+    "fr": "Réseau"
+   },
+   {
+    "file": "service/network-2.png",
+    "en": "Network (2)",
+    "fr": "Réseau (2)"
+   },
+   {
+    "file": "service/tweaks.png",
+    "en": "Tweaks",
+    "fr": "Tweaks"
+   },
+   {
+    "file": "service/tweaks-2.png",
+    "en": "Tweaks (2)",
+    "fr": "Tweaks (2)"
+   },
+   {
+    "file": "service/tweaks-3.png",
+    "en": "Tweaks (3)",
+    "fr": "Tweaks (3)"
+   },
+   {
+    "file": "service/tweaks-4.png",
+    "en": "Tweaks (4)",
+    "fr": "Tweaks (4)"
+   },
+   {
+    "file": "service/advanced.png",
+    "en": "MCU",
+    "fr": "MCU"
+   },
+   {
+    "file": "service/advanced-2.png",
+    "en": "MCU (2)",
+    "fr": "MCU (2)"
+   },
+   {
+    "file": "service/mcu-tools.png",
+    "en": "MCU tools",
+    "fr": "Outils MCU"
+   },
+   {
+    "file": "service/mcu-tools-2.png",
+    "en": "MCU tools (2)",
+    "fr": "Outils MCU (2)"
+   },
+   {
+    "file": "service/audio-diag.png",
+    "en": "Audio diagnostics",
+    "fr": "Diag audio"
+   },
+   {
+    "file": "service/audio-diag-2.png",
+    "en": "Audio diagnostics (2)",
+    "fr": "Diag audio (2)"
+   },
+   {
+    "file": "service/atc.png",
+    "en": "Autochips",
+    "fr": "Autochips"
+   },
+   {
+    "file": "service/atc-2.png",
+    "en": "Autochips (2)",
+    "fr": "Autochips (2)"
+   },
+   {
+    "file": "service/diag.png",
+    "en": "Diagnostic",
+    "fr": "Diagnostic"
+   },
+   {
+    "file": "service/diag-2.png",
+    "en": "Diagnostic (2)",
+    "fr": "Diagnostic (2)"
+   }
+  ],
+  "bridge": [
+   {
+    "file": "bridge/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "bridge/main-2.png",
+    "en": "Main screen (2)",
+    "fr": "Écran principal (2)"
+   }
+  ],
+  "ota": [
+   {
+    "file": "ota/setup.png",
+    "en": "Setup",
+    "fr": "Configuration"
+   },
+   {
+    "file": "ota/apps.png",
+    "en": "Apps",
+    "fr": "Applis"
+   },
+   {
+    "file": "ota/details.png",
+    "en": "App details",
+    "fr": "Fiche d'une appli"
+   },
+   {
+    "file": "ota/versions.png",
+    "en": "Versions",
+    "fr": "Versions"
+   },
+   {
+    "file": "ota/logs.png",
+    "en": "Changes",
+    "fr": "Changements"
+   },
+   {
+    "file": "ota/updates.png",
+    "en": "Updates",
+    "fr": "Mises à jour"
+   },
+   {
+    "file": "ota/zips.png",
+    "en": "Zips",
+    "fr": "Zips"
+   },
+   {
+    "file": "ota/downloads.png",
+    "en": "Downloads",
+    "fr": "Téléchargements"
+   },
+   {
+    "file": "ota/settings.png",
+    "en": "Settings",
+    "fr": "Réglages"
+   },
+   {
+    "file": "ota/settings-2.png",
+    "en": "Settings (2)",
+    "fr": "Réglages (2)"
+   },
+   {
+    "file": "ota/settings-3.png",
+    "en": "Settings (3)",
+    "fr": "Réglages (3)"
+   }
+  ],
+  "fm": [
+   {
+    "file": "fm/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "fm/stations.png",
+    "en": "Stations",
+    "fr": "Stations"
+   },
+   {
+    "file": "fm/settings.png",
+    "en": "Settings",
+    "fr": "Réglages"
+   },
+   {
+    "file": "fm/settings-2.png",
+    "en": "Settings (2)",
+    "fr": "Réglages (2)"
+   },
+   {
+    "file": "fm/settings-3.png",
+    "en": "Settings (3)",
+    "fr": "Réglages (3)"
+   }
+  ],
+  "dialer": [
+   {
+    "file": "dialer/favorites.png",
+    "en": "Favourites",
+    "fr": "Favoris"
+   },
+   {
+    "file": "dialer/recents.png",
+    "en": "Recents",
+    "fr": "Récents"
+   },
+   {
+    "file": "dialer/contacts.png",
+    "en": "Contacts",
+    "fr": "Contacts"
+   },
+   {
+    "file": "dialer/keypad.png",
+    "en": "Keypad",
+    "fr": "Clavier"
+   },
+   {
+    "file": "dialer/settings.png",
+    "en": "Settings",
+    "fr": "Réglages"
+   },
+   {
+    "file": "dialer/settings-2.png",
+    "en": "Settings (2)",
+    "fr": "Réglages (2)"
+   }
+  ],
+  "widgets": [
+   {
+    "file": "widgets/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "widgets/main-2.png",
+    "en": "Main screen (2)",
+    "fr": "Écran principal (2)"
+   },
+   {
+    "file": "widgets/main-3.png",
+    "en": "Main screen (3)",
+    "fr": "Écran principal (3)"
+   }
+  ],
+  "btnremap": [
+   {
+    "file": "btnremap/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "btnremap/main-2.png",
+    "en": "Main screen (2)",
+    "fr": "Écran principal (2)"
+   },
+   {
+    "file": "btnremap/test.png",
+    "en": "Key test mode",
+    "fr": "Mode test des touches"
+   }
+  ],
+  "easysource": [
+   {
+    "file": "easysource/settings.png",
+    "en": "Settings",
+    "fr": "Réglages"
+   },
+   {
+    "file": "easysource/settings-2.png",
+    "en": "Settings (2)",
+    "fr": "Réglages (2)"
+   }
+  ],
+  "disc": [
+   {
+    "file": "disc/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "disc/settings.png",
+    "en": "Settings",
+    "fr": "Réglages"
+   },
+   {
+    "file": "disc/settings-2.png",
+    "en": "Settings (2)",
+    "fr": "Réglages (2)"
+   }
+  ],
+  "viper": [
+   {
+    "file": "viper/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "viper/main-2.png",
+    "en": "Main screen (2)",
+    "fr": "Écran principal (2)"
+   },
+   {
+    "file": "viper/main-3.png",
+    "en": "Main screen (3)",
+    "fr": "Écran principal (3)"
+   },
+   {
+    "file": "viper/main-4.png",
+    "en": "Main screen (4)",
+    "fr": "Écran principal (4)"
+   }
+  ],
+  "headunit": [
+   {
+    "file": "headunit/welcome.png",
+    "en": "First start assistant",
+    "fr": "Assistant de premier démarrage"
+   },
+   {
+    "file": "headunit/setup-2.png",
+    "en": "Setup (2)",
+    "fr": "Configuration (2)"
+   },
+   {
+    "file": "headunit/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   }
+  ],
+  "carplay": [
+   {
+    "file": "carplay/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   }
+  ],
+  "helper": [
+   {
+    "file": "helper/report.png",
+    "en": "Report",
+    "fr": "Rapport"
+   },
+   {
+    "file": "helper/report-2.png",
+    "en": "Report (2)",
+    "fr": "Rapport (2)"
+   },
+   {
+    "file": "helper/compat.png",
+    "en": "Compatibility",
+    "fr": "Compatibilité"
+   },
+   {
+    "file": "helper/compat-2.png",
+    "en": "Compatibility (2)",
+    "fr": "Compatibilité (2)"
+   },
+   {
+    "file": "helper/hardware.png",
+    "en": "Hardware",
+    "fr": "Matériel"
+   },
+   {
+    "file": "helper/hardware-2.png",
+    "en": "Hardware (2)",
+    "fr": "Matériel (2)"
+   },
+   {
+    "file": "helper/apks.png",
+    "en": "Manufacturer APKs",
+    "fr": "APK du fabricant"
+   },
+   {
+    "file": "helper/dump.png",
+    "en": "Full dump",
+    "fr": "Full dump"
+   },
+   {
+    "file": "helper/guides.png",
+    "en": "Guides",
+    "fr": "Tutos"
+   },
+   {
+    "file": "helper/guides-2.png",
+    "en": "Guides (2)",
+    "fr": "Tutos (2)"
+   }
+  ],
+  "mcu": [
+   {
+    "file": "mcu/main.png",
+    "en": "Main screen",
+    "fr": "Écran principal"
+   },
+   {
+    "file": "mcu/commands.png",
+    "en": "Commands",
+    "fr": "Commandes"
+   },
+   {
+    "file": "mcu/console.png",
+    "en": "Console",
+    "fr": "Console"
+   },
+   {
+    "file": "mcu/simulation.png",
+    "en": "Simulation",
+    "fr": "Simulation"
+   }
+  ]
+ }
+}

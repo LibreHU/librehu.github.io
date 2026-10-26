@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Screenshot gallery: src/screenshots/index.html and one src/screenshots/<app>.html per folder of assets/shots/.
+"""Screenshot gallery: src/screenshots/index.html and one src/screenshots/<app>.html per folder of assets/shots/, and
+assets/shots/index.json (screenshots and captions of each app, read by LibreHU Apps).
 
 Images come from the Screenshots workflow of LibreHU-OTA-app (Android 9 emulator, 1280x720, 160 dpi, French UI):
 copy each app's PNGs to assets/shots/<app>/, then run this script and tools/build.py.
@@ -47,10 +48,12 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     apps = [a for a in META["apps"] if (SHOTS / a).is_dir() and any((SHOTS / a).glob("*.png"))]
     cards = []
+    manifest = {}
     for app in apps:
         en_name, fr_name, en_blurb, fr_blurb = META["apps"][app]
         skip = META.get("skip", {}).get(app, [])
         names = order(app, [p.stem for p in (SHOTS / app).glob("*.png") if p.stem not in skip])
+        manifest[app] = [{"file": f"{app}/{n}.png", "en": caption(n)[0], "fr": caption(n)[1]} for n in names]
         cover = next((c for c in ("home", "main", "apps", "report", "favorites", "settings") if c in names), names[0])
         cards.append(
             f'<a class="card shot-card" href="{app}.html"><img src="../assets/shots/{app}/{cover}.png" width="1280" height="720" '
@@ -103,6 +106,8 @@ def main() -> None:
 """,
         encoding="utf-8",
     )
+    # For LibreHU Apps (details of an app): screenshots in gallery order, with their captions
+    (SHOTS / "index.json").write_text(json.dumps({"apps": manifest}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("gallery:", ", ".join(apps))
 
 

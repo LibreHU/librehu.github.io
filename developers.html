@@ -429,6 +429,7 @@ git clone -b LibreHU-main https://github.com/LibreHU/android_kernel_autochips_ac
 git clone --depth 1 -b lineage-17.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 ../gcc49
 mkdir -p ../clang &amp;&amp; curl -fL https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-9.0.0_r61/clang-4691093.tar.gz | tar xz -C ../clang
 export PATH="$HOME/ac8257-host:$PWD/../clang/bin:$PWD/../gcc49/bin:$PATH" LD_LIBRARY_PATH="$HOME/ac8257-host"
+export KBUILD_BUILD_USER=dokt KBUILD_BUILD_HOST=librehu   # <span lang="en">"Linux version ... (dokt@librehu)", like the CI</span><span lang="fr">« Linux version ... (dokt@librehu) », comme la CI</span>
 
 M='O=out ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- CC=clang CLANG_TRIPLE=aarch64-linux-gnu-'
 M="$M ATC_DISABLE_BATTERY_CHARGER=yes ATC_FASTDISP_VERSION=2.0 python=python"

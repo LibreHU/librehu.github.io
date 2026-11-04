@@ -90,7 +90,7 @@ img { max-width: 100%; height: auto; }
 .brand svg { width: 28px; height: 28px; }
 .bar nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
 .bar nav::-webkit-scrollbar { display: none; }
-.bar nav a { color: var(--text-dim); text-decoration: none; padding: 6px 10px; border-radius: 999px; white-space: nowrap; font-size: 15px; }
+.bar nav a { color: var(--text-dim); text-decoration: none; padding: 6px 8px; border-radius: 999px; white-space: nowrap; font-size: 15px; }
 .bar nav a:hover, .bar nav a[aria-current="page"] { color: var(--text); background: var(--surface-2); }
 .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; }
 .lang button { border: 0; background: transparent; color: var(--text-dim); font: inherit; font-size: 13px; font-weight: 600; padding: 4px 10px; cursor: pointer; }
@@ -207,7 +207,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
 .liberapay-link:hover { background: var(--surface-2); }
 .menu { display: none; border: 0; background: transparent; color: var(--text); width: 40px; height: 40px; border-radius: 10px; padding: 8px; cursor: pointer; flex: none; }
 .menu:hover { background: var(--surface-2); }
-@media (max-width: 960px) {
+@media (max-width: 1119px) {
   .bar .wrap { gap: 8px; }
   .bar nav {
     display: none; position: absolute; left: 0; right: 0; top: 60px; margin: 0;
@@ -251,3 +251,32 @@ pre code { background: none; padding: 0; font-size: inherit; }
 /* Long identifiers (fingerprints, URIs) wrap in running text instead of widening the page. */
 .doc article p code, .doc article li code, .doc article h2 code, .doc article h3 code { overflow-wrap: anywhere; }
 .doc article p, .doc article li { overflow-wrap: break-word; }
+
+/* Versions in the download tables (read from GitHub every hour), zips by category. */
+.ver { display: block; font-size: 12px; font-weight: 400; color: var(--text-dim); text-decoration: none; margin-top: 2px; font-variant-numeric: tabular-nums; }
+a.ver:hover { color: var(--accent); text-decoration: underline; }
+#download h3 { margin-top: 32px; }
+table.zips tr.cat th { padding-top: 18px; font-size: 13px; letter-spacing: .02em; color: var(--text-dim); background: none; }
+.btn small { font-weight: 400; opacity: .75; margin-left: 2px; }
+
+/* Changelog: filter, months, days, one line a change. */
+.log-filter { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
+.log-filter select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text); max-width: 100%; }
+.log details.month { border-top: 1px solid var(--line); }
+.log details.month > summary { cursor: pointer; font-weight: 700; font-size: 18px; padding: 14px 0; }
+.log .count { color: var(--text-dim); font-weight: 400; font-size: 14px; margin-left: 4px; }
+.log h3.day { font-size: 13px; font-weight: 600; color: var(--text-dim); margin: 14px 0 4px; }
+.log ul { list-style: none; margin: 0 0 8px; padding: 0; }
+.log li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.log li:last-child { border-bottom: 0; }
+.log .tag { flex: none; width: 8.5em; overflow: hidden; text-overflow: ellipsis; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-dim); white-space: nowrap; text-align: center; }
+.log a.m { color: var(--text); text-decoration: none; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.log a.m:hover { text-decoration: underline; }
+.log .br { flex: none; color: var(--text-dim); font-size: 12px; }
+.log li.rel .tag { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
+.log li.rel a.m { color: var(--ok); }
+@media (max-width: 600px) {
+  .log li { flex-wrap: wrap; gap: 4px 8px; }
+  .log .tag { width: auto; }
+  .log a.m { flex-basis: 100%; }
+}

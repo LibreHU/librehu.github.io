@@ -1,0 +1,78 @@
+{
+  "_": "What the site shows on top of what LibreHU Apps reads (tools/releases.py, tools/build.py). An app of catalog.json missing here is still shown, with its catalog name and description; hidden ones are left out.",
+  "catalog": "https://raw.githubusercontent.com/LibreHU/LibreHU-OTA-app/main/catalog.json",
+  "zips": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/index.json",
+  "apps": {
+    "ota": {"order": 0, "name": "LibreHU Apps", "en": "Installer and updater (start here)", "fr": "Installation et mises à jour (commencer ici)"},
+    "service": {"order": 1, "en": "MCU, audio, CAN, OBD, camera, standby", "fr": "MCU, audio, CAN, OBD, caméra, veille"},
+    "launcher": {"order": 2, "en": "Home screen", "fr": "Écran d'accueil"},
+    "fm": {"order": 3, "en": "FM and internet radio + widget", "fr": "Radio FM et internet + widget"},
+    "dialer": {"order": 4, "name": "LibreHU Dialer", "en": "Bluetooth phone", "fr": "Téléphone Bluetooth"},
+    "widgets": {"order": 5, "en": "Warning lights, OBD, battery widgets", "fr": "Widgets voyants, OBD, batterie"},
+    "btnremap": {"order": 6, "name": "LibreHU BtnRemap", "en": "Steering wheel keys", "fr": "Commandes au volant"},
+    "easysource": {"order": 7, "en": "Source switcher (MODE / SRC key)", "fr": "Sélecteur de sources (touche MODE / SRC)"},
+    "disc": {"order": 8, "en": "CD / DVD from a USB drive", "fr": "CD / DVD depuis un lecteur USB"},
+    "viper": {"order": 9, "en": "Sound effects", "fr": "Effets sonores"},
+    "headunit": {"order": 10, "name": "Android Auto", "note": "Open Headunit LibreHU", "en": "Android Auto receiver", "fr": "Récepteur Android Auto"},
+    "carplay": {"order": 11, "name": "CarPlay", "note": "xcertplay LibreHU", "en": "CarPlay receiver (MFi chip)", "fr": "Récepteur CarPlay (puce MFi)"},
+    "helper": {"order": 12, "en": "Diagnostics for porting", "fr": "Diagnostic pour le portage"},
+    "bridge": {"order": 13, "note_en": "phone", "note_fr": "téléphone", "en": "Set up the head unit from your phone", "fr": "Régler l'autoradio depuis le téléphone"},
+    "mcutools": {"order": 99, "note": "legacy", "ghost": true, "en": "Old MCU diagnostic app", "fr": "Ancienne appli de diagnostic MCU"},
+    "kernelsu-next": {"hidden": true}
+  },
+  "extra": [
+    {"id": "bridge", "name": "LibreHU Bridge", "repo": "LibreHU/LibreHU-bridge-app", "branches": ["main", "ios"],
+     "files": [
+       {"tag": "latest-main", "file": "release.txt", "branch": "main", "label": "Android"},
+       {"tag": "latest-ios", "file": "release-ios.txt", "branch": "ios", "label": "iPhone (.ipa)"}
+     ]}
+  ],
+  "editions": {
+    "librehu-service": {"en": "LibreHU service", "fr": "LibreHU service"},
+    "ivi": {"en": "ivi", "fr": "ivi"},
+    "main": {"en": "generic", "fr": "générique"}
+  },
+  "system": [
+    {"id": "kernel", "en": "Kernel", "fr": "Noyau", "repo": "LibreHU/android_kernel_autochips_ac8257_4.9",
+     "branches": ["stable-4.9.337", "LibreHU-main", "connectivity-builtin"], "since": "2026-09-01T00:00:00Z",
+     "_author_since": "linux-stable fixes applied in 10/2026 keep their author date (2023 at the latest): left out, only LibreHU's commits are listed",
+     "author_since": "2026-09-01T00:00:00Z"},
+    {"id": "twrp", "en": "TWRP", "fr": "TWRP", "repo": "LibreHU/android_device_alps_ac8257_demo",
+     "branches": ["ccr-eca2d7b0-vz26un", "twrp"], "since": "2026-09-01T00:00:00Z", "releases": "twrp-build-"},
+    {"id": "zips", "en": "Zips", "fr": "Zips", "repo": "LibreHU/LibreHU-flashablesZips", "branches": ["main"]}
+  ],
+  "zip_groups": {
+    "twrp": {"en": "TWRP UJC201", "fr": "TWRP UJC201"},
+    "linux-stable-4.9.337": {"order": 0, "en": "Kernel 4.9.337 (stable)", "fr": "Noyau 4.9.337 (stable)"},
+    "kernel-librehu": {"order": 1, "en": "LibreHU kernel 4.9.117", "fr": "Noyau LibreHU 4.9.117"},
+    "kernel-connectivity": {"order": 2, "en": "LibreHU kernel 4.9.117, connectivity built in (experimental)", "fr": "Noyau LibreHU 4.9.117, connectivité intégrée (expérimental)"},
+    "back-4.9.117": {"order": 3, "en": "Back to kernel 4.9.117", "fr": "Retour au noyau 4.9.117"},
+    "usb-net": {"order": 4, "en": "USB Ethernet drivers", "fr": "Pilotes Ethernet USB"},
+    "viper4android-re": {"en": "ViPER4Android driver (ViPERFX_RE)", "fr": "Pilote ViPER4Android (ViPERFX_RE)"},
+    "no-deep-buffer": {"en": "Audio: deep buffer off", "fr": "Audio : deep buffer coupé"},
+    "supersu": {"en": "SuperSU", "fr": "SuperSU"},
+    "gapps": {"en": "Google Apps", "fr": "Google Apps"},
+    "quickboot": {"en": "QuickBoot standby whitelist", "fr": "Liste blanche de la veille QuickBoot"},
+    "jancar-settings": {"en": "Jancar settings provider", "fr": "Fournisseur des réglages Jancar"}
+  },
+  "zip_variants": {
+    "twrp-ujc201": {"en": "stable", "fr": "stable"},
+    "twrp-ujc201-beta": {"en": "beta", "fr": "bêta"},
+    "kernel-stable-4.9.337": {"en": "kernel + modules", "fr": "noyau + modules"},
+    "conn-modules-stable-4.9.337": {"en": "modules only", "fr": "modules seuls"},
+    "kernel-librehu": {"en": "kernel", "fr": "noyau"},
+    "kernel-librehu-bootmenu": {"en": "with boot menu", "fr": "avec menu de démarrage"},
+    "kernel-connectivity": {"en": "kernel", "fr": "noyau"},
+    "kernel-connectivity-bootmenu": {"en": "with boot menu", "fr": "avec menu de démarrage"},
+    "conn-modules-stable-restore": {"en": "from the backup", "fr": "depuis la sauvegarde"},
+    "conn-modules-stock-4.9.117": {"en": "stock modules", "fr": "modules stock"},
+    "supersu-remove": {"en": "remove", "fr": "retirer"},
+    "supersu-restore": {"en": "put back", "fr": "remettre"},
+    "gapps-remove": {"en": "remove", "fr": "retirer"},
+    "gapps-restore": {"en": "put back", "fr": "remettre"},
+    "qb-whitelist": {"en": "keep LibreHU apps", "fr": "garder les applis LibreHU"},
+    "qb-whitelist-restore": {"en": "original list", "fr": "liste d'origine"},
+    "jancar-settings-provider": {"en": "install", "fr": "installer"},
+    "jancar-settings-provider-restore": {"en": "remove", "fr": "retirer"}
+  }
+}

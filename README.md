@@ -11,6 +11,7 @@ Site de LibreHU, publié par GitHub Pages sur <https://librehu.github.io>.
 | `developers.html` | technical reference: hardware, MCU and CAN protocols, service API, Bridge protocol, build, CI, kernel, TWRP, LineageOS, porting |
 | `screenshots/` | gallery: one page per app |
 | `headunits.html` | Android head unit chips, real and displayed Android versions, sources |
+| `changelog.html` | every change of the apps, kernel, TWRP and zips (commits, versions published), generated |
 
 ## Sources and build
 
@@ -24,6 +25,25 @@ python3 tools/build.py     # src/**/*.html -> *.html
 
 Shorthand in `src/` (see `tools/build.py`): `<t>English<fr>Français</t>` for inline text, `<p bi>English<fr>Français</p>`
 for any element, `{{head:…}}`, `{{bar:<page>}}`, `{{foot}}` for the shared head, top bar and footer.
+
+## Versions and changelog, updated every hour / Versions et nouveautés, mises à jour toutes les heures
+
+The download tables of `index.html` and `changelog.html` come from what **LibreHU Apps** reads, so publishing an app,
+a kernel or a zip updates the site with nothing to do by hand:
+
+- `tools/releases.py` reads `catalog.json` of LibreHU-OTA-app (the apps and their branches), the `release.txt` of each
+  `latest-<branch>` release (version, date, APK), `index.json` of the `zips` release of LibreHU-flashablesZips
+  (TWRP, kernels, mods), the `twrp-build-<n>` releases and the commits of every repository (GitHub API). It writes
+  `data/releases.json` (published now) and `data/changelog.json` (kept from run to run: commits seen, each version
+  published since 04/11/2026). Commits left out: merges, documentation pushes (`[skip ci]`), and in the kernel the
+  linux-stable fixes (author date before 09/2026).
+- `tools/build.py` fills `{{apps}}`, `{{zips}}` and `{{changelog}}` from them; `tools/site.json` adds what the site
+  shows on top (English / French roles, order, editions, short names of the zips). An app added to the catalog appears
+  with its catalog name until it gets a line there.
+- `.github/workflows/releases.yml` runs both every hour (and on a push of `src/`, `tools/`), then commits the pages
+  if something changed. GitHub may delay scheduled runs and disables them after 60 days without activity in the
+  repository ([docs](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)):
+  *Actions → Releases → Run workflow* starts one by hand.
 
 ## Languages / Langues
 

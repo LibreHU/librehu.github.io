@@ -1,0 +1,55 @@
+name: Releases
+
+# Every hour the site reads what LibreHU Apps reads (catalog.json, release.txt of each latest-<branch>, index.json of
+# the zips), the commits of every repository and the TWRP builds (tools/releases.py), rebuilds its pages
+# (tools/build.py: download tables, changelog.html) and commits them when something changed. Nothing to do by hand
+# when an app, a kernel or a zip is published.
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["src/**", "tools/**", ".github/workflows/releases.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: releases
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Releases and commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/releases.py
+
+      - name: Pages
+        run: python3 tools/build.py > /dev/null
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -q -m "Site: versions and changelog read from the releases"
+          # Someone pushed meanwhile: their commit first, this run's data on top, pages rebuilt.
+          cp -r data "$RUNNER_TEMP/data"
+          for i in 1 2 3; do
+            git push -q origin HEAD:main && exit 0
+            sleep $((i * 5))
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp "$RUNNER_TEMP"/data/* data/ && python3 tools/build.py > /dev/null
+            git add -A
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Site: versions and changelog read from the releases"
+          done
+          exit 1

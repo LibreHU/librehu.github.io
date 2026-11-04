@@ -7,10 +7,15 @@ Shorthand in the sources, expanded into the two languages the pages carry (CSS s
     (any tag: h1-h4, p, li, td, th, summary, figcaption…; one element, so ids and table columns stay single;
     the tag must not contain itself)
   {{head:<en title>|<fr title>|<description>}}, {{bar:<page>}}, {{foot}}: shared head, top bar, footer.
+  {{apps}}, {{zips}}, {{changelog}}: download tables and changelog, from data/releases.json and data/changelog.json
+    (written by tools/releases.py from what LibreHU Apps reads) and tools/site.json.
 
 Run from the repository root: python3 tools/build.py   (writes <name>.html next to index.html)
 """
 
+import datetime
+import html
+import json
 import pathlib
 import re
 import sys
@@ -50,6 +55,7 @@ HEAD = """<!doctype html>
 
 NAV = [
     ("index.html#download", "Download", "Télécharger"),
+    ("changelog.html", "Changelog", "Nouveautés"),
     ("docs.html", "Docs", "Docs"),
     ("tutorials.html", "Tutorials", "Tutos"),
     ("developers.html", "Developers", "Développeurs"),
@@ -132,13 +138,242 @@ def expand(text: str, page: str) -> str:
     return text
 
 
+# ---- Generated from the releases (tools/releases.py) -------------------------------------------------------------
+
+WEB = "https://github.com"
+MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+             "November", "December"]
+MONTHS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre",
+             "novembre", "décembre"]
+DAYS_EN = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+DAYS_FR = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+
+
+def load(path: pathlib.Path):
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
+def esc(text) -> str:
+    return html.escape(str(text), quote=True)
+
+
+def both(en: str, fr: str) -> str:
+    return en if en == fr else f'<span lang="en">{en}</span><span lang="fr">{fr}</span>'
+
+
+def short_date(iso: str) -> str:
+    """2026-11-04T… -> 2026-11-04 / 04/11/2026."""
+    if len(iso) < 10:
+        return ""
+    y, m, d = iso[:10].split("-")
+    return both(f"{y}-{m}-{d}", f"{d}/{m}/{y}")
+
+
+def app_version(b: dict) -> str:
+    """Version as people read it: 1.4.2, 4.0.0-beta1, else v<versionCode> (the CI's commit count)."""
+    name = b.get("versionName", "")
+    if b.get("branch") and name.endswith("-" + b["branch"]):
+        name = name[: -len(b["branch"]) - 1]
+    name = re.sub(r"-\d+-g[0-9a-f]{6,}$", "", name)
+    if re.match(r"^\d+(\.\d+)+", name):
+        return name
+    return f"v{b.get('versionCode', 0)}"
+
+
+def zip_version(v: str) -> str:
+    """r146-97311f83a -> r146; plain counters (1, 2…) and commit names are not shown."""
+    v = re.sub(r"^(r\d+)-[0-9a-f]+$", r"\1", v or "")
+    return v if re.match(r"^[rvb]\d", v) else ""
+
+
+def apps_rows(rel: dict, conf: dict) -> str:
+    def order(a):
+        return conf["apps"].get(a["id"], {}).get("order", 90), a["name"].lower()
+
+    rows = []
+    for a in sorted(rel["apps"], key=order):
+        c = conf["apps"].get(a["id"], {})
+        name = esc(c.get("name", a["name"]))
+        if c.get("note"):
+            name += f' <span class="muted">({esc(c["note"])})</span>'
+        elif c.get("note_en"):
+            name += f' <span class="muted" lang="en">({esc(c["note_en"])})</span><span class="muted" lang="fr">({esc(c["note_fr"])})</span>'
+        role = both(esc(c["en"]), esc(c["fr"])) if "en" in c else esc(a.get("description", ""))
+        builds = a.get("builds") or []
+        if a.get("tagged") or not builds:
+            buttons = [f'<a class="btn small ghost" href="{WEB}/{esc(a["repo"])}/releases">Releases</a>']
+        else:
+            buttons = []
+            for i, b in enumerate(builds):
+                if b.get("label"):
+                    label = esc(b["label"])
+                elif len(builds) > 1:
+                    e = conf["editions"].get(b["branch"])
+                    label = both(esc(e["en"]), esc(e["fr"])) if e else esc(b["branch"])
+                else:
+                    label = "APK"
+                ghost = " ghost" if i or c.get("ghost") else ""
+                buttons.append(f'<a class="btn small{ghost}" href="{esc(b["url"])}">{label}</a>')
+        ver = ""
+        if builds:
+            b = builds[0]
+            when = short_date(b.get("date", ""))
+            ver = (f'<a class="ver" href="changelog.html#{esc(a["id"])}">{esc(app_version(b))}'
+                   + (f" · {when}" if when else "") + "</a>")
+        rows.append(f'<tr><td><strong>{name}</strong>{ver}</td>\n            <td>{role}</td>\n'
+                    f'            <td><div class="dl">{" ".join(buttons)}</div></td></tr>')
+    return "\n          ".join(rows)
+
+
+def zips_rows(rel: dict, conf: dict) -> str:
+    index = rel["zips"]
+    every = {z["id"]: z for z in index["zips"]}
+    shown = [z for z in index["zips"] if not z.get("hidden")]
+    groups = {}
+    for z in shown:
+        groups.setdefault(z.get("group") or z["id"], []).append(z)
+    rows = []
+    for cat in index["categories"]:
+        subs = [s["id"] for s in cat.get("subcategories", [])]
+        members = [(k, v) for k, v in groups.items() if v[0].get("category") == cat["id"]]
+        if not members:
+            continue
+        members.sort(key=lambda kv: (conf["zip_groups"].get(kv[0], {}).get("order", 50),
+                                     subs.index(kv[1][0]["subcategory"]) if kv[1][0].get("subcategory") in subs else 99,
+                                     min(z.get("order", 999) for z in kv[1]), kv[0]))
+        rows.append(f'<tr class="cat"><th colspan="2">{both(esc(cat["name"]), esc(cat.get("name_fr", cat["name"])))}</th></tr>')
+        for key, items in members:
+            g = conf["zip_groups"].get(key)
+            title = both(esc(g["en"]), esc(g["fr"])) if g else esc(items[0].get("group_name") or items[0]["name"])
+            ids = {z["id"] for z in items}
+            buttons = []
+            for i, z in enumerate(sorted(items, key=lambda z: z.get("order", 999))):
+                v = conf["zip_variants"].get(z["id"])
+                label = both(esc(v["en"]), esc(v["fr"])) if v else (esc(z["variant"]) if z.get("variant") else "zip")
+                version = zip_version(z.get("version", ""))
+                tail = f" <small>{esc(version)}</small>" if version else ""
+                buttons.append(f'<a class="btn small{" ghost" if i else ""}" href="{esc(z["url"])}">{label}{tail}</a>')
+                r = every.get(z.get("restore", ""))
+                if r and r.get("hidden") and r["id"] not in ids:
+                    buttons.append(f'<a class="btn small ghost" href="{esc(r["url"])}">{both("undo", "retour")}</a>')
+            rows.append(f'<tr><td><strong>{title}</strong></td><td><div class="dl">{" ".join(buttons)}</div></td></tr>')
+    return "\n          ".join(rows)
+
+
+def tag(name: str) -> str:
+    """Name in a changelog line: without LibreHU (service, Launcher, Apps…)."""
+    return re.sub(r"\s+", " ", re.sub(r"\bLibreHU\b", "", name)).strip() or name
+
+
+def components(rel: dict, conf: dict) -> dict:
+    """Component id -> (English, French) name, in the order of the filter."""
+    out = {}
+    for a in sorted(rel["apps"], key=lambda a: (conf["apps"].get(a["id"], {}).get("order", 90), a["name"].lower())):
+        n = conf["apps"].get(a["id"], {}).get("name", a["name"])
+        out[a["id"]] = (n, n)
+    for s in conf["system"]:
+        out[s["id"]] = (s["en"], s["fr"])
+    return out
+
+
+def changelog(rel: dict, log: dict, conf: dict) -> str:
+    names = components(rel, conf)
+    branches = {a["id"]: a["branches"] for a in rel["apps"]}
+    branches.update({s["id"]: s.get("branches", []) for s in conf["system"]})
+    entries = [e for e in log["entries"] if not e.get("quiet") and e.get("c") in names]
+    present = {e["c"] for e in entries}
+
+    def option(lang):
+        opts = [f'<option value="">{"Everything" if lang == "en" else "Tout"}</option>']
+        groups = (("Apps", "Applis", [c for c in names if c in branches and c not in {s["id"] for s in conf["system"]}]),
+                  ("System", "Système", [s["id"] for s in conf["system"]]))
+        for en, fr, ids in groups:
+            items = "".join(f'<option value="{esc(c)}">{esc(names[c][0 if lang == "en" else 1])}</option>'
+                            for c in ids if c in present)
+            if items:
+                opts.append(f'<optgroup label="{en if lang == "en" else fr}">{items}</optgroup>')
+        return "".join(opts)
+
+    out = ['<div class="log-filter">',
+           f'  <label lang="en" for="log-en">Show</label><select lang="en" id="log-en">{option("en")}</select>',
+           f'  <label lang="fr" for="log-fr">Afficher</label><select lang="fr" id="log-fr">{option("fr")}</select>',
+           '</div>', '<div class="log">']
+    month = day = None
+    first = True
+    for e in entries:
+        d = e["d"][:10]
+        if d[:7] != month:
+            if day:
+                out.append("</ul></div>")
+            if month:
+                out.append("</details>")
+            month, day = d[:7], None
+            y, m = int(d[:4]), int(d[5:7])
+            count = sum(1 for x in entries if x["d"][:7] == month)
+            out.append(f'<details class="month"{" open" if first else ""}><summary>'
+                       f'{both(f"{MONTHS_EN[m - 1]} {y}", f"{MONTHS_FR[m - 1]} {y}")} <span class="count">{count}</span></summary>')
+            first = False
+        if d != day:
+            if day:
+                out.append("</ul></div>")
+            day = d
+            w = datetime.date(int(d[:4]), int(d[5:7]), int(d[8:10])).weekday()
+            dd, mm = int(d[8:10]), int(d[5:7])
+            out.append(f'<div class="day-block"><h3 class="day">{both(f"{DAYS_EN[w]}, {MONTHS_EN[mm - 1]} {dd}", f"{DAYS_FR[w]} {dd} {MONTHS_FR[mm - 1]}")}</h3><ul>')
+        en, fr = names[e["c"]]
+        label = f'<span class="tag" title="{esc(en)}">{both(esc(tag(en)), esc(tag(fr)))}</span>'
+        if e["k"] == "release":
+            v = esc(e.get("v", ""))
+            if e["c"] == "twrp":
+                what = both("stable, in LibreHU Apps", "stable, dans LibreHU Apps") if e.get("stable") else both("beta build", "build bêta")
+                text = f'<strong>{v}</strong> {what}'
+            elif e.get("g"):
+                g = conf["zip_groups"].get(e["g"])
+                n = both(esc(g["en"]), esc(g["fr"])) if g else esc(e.get("n", ""))
+                text = f'<strong>{n} {esc(zip_version(e.get("v", "")) or v)}</strong> {both("in LibreHU Apps", "dans LibreHU Apps")}'
+            else:
+                text = f'<strong>v{v}</strong> {both("in LibreHU Apps", "dans LibreHU Apps")}'
+            out.append(f'<li class="rel" data-c="{esc(e["c"])}">{label}<a class="m" href="{esc(e.get("u", ""))}">{text}</a></li>')
+        else:
+            own = branches.get(e["c"], [])
+            dev = "main" if "main" in own else (own[0] if own else "")
+            br = ""
+            if len(own) > 1 and dev not in e.get("b", []):
+                br = f' <span class="br">({esc(", ".join(e["b"]))})</span>'
+            out.append(f'<li data-c="{esc(e["c"])}">{label}<a class="m" href="{esc(e.get("u", ""))}" title="{esc(e["m"])}">'
+                       f'{esc(e["m"])}</a>{br}</li>')
+    if day:
+        out.append("</ul></div>")
+    if month:
+        out.append("</details>")
+    out.append("</div>")
+    return "\n".join(out)
+
+
+def generated(text: str) -> str:
+    """{{apps}}, {{zips}}, {{changelog}} filled from data/ (left as a link to GitHub when it is missing)."""
+    if not any(k in text for k in ("{{apps}}", "{{zips}}", "{{changelog}}")):
+        return text
+    conf = load(ROOT / "tools" / "site.json")
+    rel = load(ROOT / "data" / "releases.json")
+    log = load(ROOT / "data" / "changelog.json")
+    if rel is None:
+        missing = f'<tr><td colspan="3"><a href="{WEB}/LibreHU">GitHub</a></td></tr>'
+        return text.replace("{{apps}}", missing).replace("{{zips}}", missing).replace("{{changelog}}", missing)
+    text = text.replace("{{apps}}", apps_rows(rel, conf)).replace("{{zips}}", zips_rows(rel, conf))
+    if "{{changelog}}" in text:
+        text = text.replace("{{changelog}}", changelog(rel, log or {"entries": []}, conf))
+    return text
+
+
 def main() -> None:
     src = ROOT / "src"
     for path in sorted(src.rglob("*.html")):
         page = path.relative_to(src).as_posix()
         out = ROOT / page
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(expand(path.read_text(encoding="utf-8"), page), encoding="utf-8")
+        # The generated parts go in after the shorthand is expanded: commit messages are text, never markup.
+        out.write_text(generated(expand(path.read_text(encoding="utf-8"), page)), encoding="utf-8")
         print("built", page)
 
 

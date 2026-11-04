@@ -34,6 +34,7 @@
     <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
     <nav id="nav" aria-label="Sections">
       <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="changelog.html"><span lang="en">Changelog</span><span lang="fr">Nouveautés</span></a>
       <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
       <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
       <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
@@ -115,8 +116,8 @@
   <div class="wrap">
     <h2 lang="en">Download</h2>
     <h2 lang="fr">Télécharger</h2>
-    <p class="sub" lang="en">Easiest: install <strong>LibreHU Apps</strong> only, it installs the others for your edition. Every link below is the latest build of its branch, signed with the LibreHU key.</p>
-    <p class="sub" lang="fr">Le plus simple : installer seulement <strong>LibreHU Apps</strong>, qui installe les autres pour votre édition. Chaque lien ci-dessous est la dernière build de sa branche, signée avec la clé LibreHU.</p>
+    <p class="sub" lang="en">Easiest: install <strong>LibreHU Apps</strong> only, it installs the others for your edition. Every link below is the latest build of its branch, signed with the LibreHU key; versions are read from GitHub every hour, what changed is in the <a href="changelog.html">changelog</a>.</p>
+    <p class="sub" lang="fr">Le plus simple : installer seulement <strong>LibreHU Apps</strong>, qui installe les autres pour votre édition. Chaque lien ci-dessous est la dernière build de sa branche, signée avec la clé LibreHU ; les versions sont relues sur GitHub toutes les heures, ce qui a changé est dans les <a href="changelog.html">nouveautés</a>.</p>
     <div class="table">
       <table>
         <thead><tr>
@@ -125,96 +126,81 @@
           <th lang="en">Download (APK)</th><th lang="fr">Télécharger (APK)</th>
         </tr></thead>
         <tbody>
-          <tr><td><strong>LibreHU Apps</strong></td>
+          <tr><td><strong>LibreHU Apps</strong><a class="ver" href="changelog.html#ota">v59 · <span lang="en">2026-11-02</span><span lang="fr">02/11/2026</span></a></td>
             <td><span lang="en">Installer and updater (start here)</span><span lang="fr">Installation et mises à jour (commencer ici)</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk">APK</a></div></td></tr>
-          <tr><td><strong>LibreHU service</strong></td>
+          <tr><td><strong>LibreHU service</strong><a class="ver" href="changelog.html#service">v148 · <span lang="en">2026-11-04</span><span lang="fr">04/11/2026</span></a></td>
             <td><span lang="en">MCU, audio, CAN, OBD, camera, standby</span><span lang="fr">MCU, audio, CAN, OBD, caméra, veille</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk">APK</a></div></td></tr>
-          <tr><td><strong>LibreHU Launcher</strong></td>
-            <td><span lang="en">Home screen</span><span lang="fr">Écran d'accueil</span></td>
-            <td><div class="dl">
-              <a class="btn small" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk">LibreHU service</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk">ivi</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
-          <tr><td><strong>LibreHU FM</strong></td>
+          <tr><td><strong>LibreHU Launcher</strong><a class="ver" href="changelog.html#launcher">v177 · <span lang="en">2026-11-03</span><span lang="fr">03/11/2026</span></a></td>
+            <td><span lang="en">Home screen</span><span lang="fr">Écran d&#x27;accueil</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk">LibreHU service</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk">ivi</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU FM</strong><a class="ver" href="changelog.html#fm">v108 · <span lang="en">2026-11-03</span><span lang="fr">03/11/2026</span></a></td>
             <td><span lang="en">FM and internet radio + widget</span><span lang="fr">Radio FM et internet + widget</span></td>
-            <td><div class="dl">
-              <a class="btn small" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk">LibreHU service</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-ivi/LibreHU-FM-ivi.apk">ivi</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-main/LibreHU-FM-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
-          <tr><td><strong>LibreHU Dialer</strong></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk">LibreHU service</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-ivi/LibreHU-FM-ivi.apk">ivi</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-main/LibreHU-FM-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU Dialer</strong><a class="ver" href="changelog.html#dialer">v104 · <span lang="en">2026-10-28</span><span lang="fr">28/10/2026</span></a></td>
             <td><span lang="en">Bluetooth phone</span><span lang="fr">Téléphone Bluetooth</span></td>
-            <td><div class="dl">
-              <a class="btn small" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk">LibreHU service</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-ivi/LibreHU-Dialer-ivi.apk">ivi</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-main/LibreHU-Dialer-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
-          <tr><td><strong>LibreHU Widgets</strong></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk">LibreHU service</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-ivi/LibreHU-Dialer-ivi.apk">ivi</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-main/LibreHU-Dialer-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU Widgets</strong><a class="ver" href="changelog.html#widgets">v51 · <span lang="en">2026-10-28</span><span lang="fr">28/10/2026</span></a></td>
             <td><span lang="en">Warning lights, OBD, battery widgets</span><span lang="fr">Widgets voyants, OBD, batterie</span></td>
-            <td><div class="dl">
-              <a class="btn small" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk">LibreHU service</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-ivi/LibreHU-Widgets-ivi.apk">ivi</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-main/LibreHU-Widgets-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
-          <tr><td><strong>LibreHU BtnRemap</strong></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk">LibreHU service</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-ivi/LibreHU-Widgets-ivi.apk">ivi</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-main/LibreHU-Widgets-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU BtnRemap</strong><a class="ver" href="changelog.html#btnremap">v56 · <span lang="en">2026-10-28</span><span lang="fr">28/10/2026</span></a></td>
             <td><span lang="en">Steering wheel keys</span><span lang="fr">Commandes au volant</span></td>
-            <td><div class="dl">
-              <a class="btn small" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk">LibreHU service</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-ivi/LibreHU-BtnRemap-ivi.apk">ivi</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-main/LibreHU-BtnRemap-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
-          <tr><td><strong>LibreHU EasySource</strong></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk">LibreHU service</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-ivi/LibreHU-BtnRemap-ivi.apk">ivi</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-main/LibreHU-BtnRemap-main.apk"><span lang="en">generic</span><span lang="fr">générique</span></a></div></td></tr>
+          <tr><td><strong>LibreHU EasySource</strong><a class="ver" href="changelog.html#easysource">v19 · <span lang="en">2026-10-28</span><span lang="fr">28/10/2026</span></a></td>
             <td><span lang="en">Source switcher (MODE / SRC key)</span><span lang="fr">Sélecteur de sources (touche MODE / SRC)</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-EasySource-app/releases/download/latest-main/LibreHU-EasySource-main.apk">APK</a></div></td></tr>
-          <tr><td><strong>LibreHU Disc</strong></td>
+          <tr><td><strong>LibreHU Disc</strong><a class="ver" href="changelog.html#disc">v21 · <span lang="en">2026-11-02</span><span lang="fr">02/11/2026</span></a></td>
             <td><span lang="en">CD / DVD from a USB drive</span><span lang="fr">CD / DVD depuis un lecteur USB</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-disc-app/releases/download/latest-main/LibreHU-Disc-main.apk">APK</a></div></td></tr>
-          <tr><td><strong>ViPER4Android LibreHU</strong></td>
+          <tr><td><strong>ViPER4Android LibreHU</strong><a class="ver" href="changelog.html#viper">v286 · <span lang="en">2026-11-02</span><span lang="fr">02/11/2026</span></a></td>
             <td><span lang="en">Sound effects</span><span lang="fr">Effets sonores</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk">APK</a></div></td></tr>
-          <tr><td><strong>Android Auto</strong> <span class="muted">(Open Headunit LibreHU)</span></td>
+          <tr><td><strong>Android Auto <span class="muted">(Open Headunit LibreHU)</span></strong><a class="ver" href="changelog.html#headunit">4.0.0-beta1 · <span lang="en">2026-11-02</span><span lang="fr">02/11/2026</span></a></td>
             <td><span lang="en">Android Auto receiver</span><span lang="fr">Récepteur Android Auto</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk">APK</a></div></td></tr>
-          <tr><td><strong>CarPlay</strong> <span class="muted">(xcertplay LibreHU)</span></td>
+          <tr><td><strong>CarPlay <span class="muted">(xcertplay LibreHU)</span></strong><a class="ver" href="changelog.html#carplay">1.4.2 · <span lang="en">2026-10-28</span><span lang="fr">28/10/2026</span></a></td>
             <td><span lang="en">CarPlay receiver (MFi chip)</span><span lang="fr">Récepteur CarPlay (puce MFi)</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk">APK</a></div></td></tr>
-          <tr><td><strong>LibreHU Helper</strong></td>
+          <tr><td><strong>LibreHU Helper</strong><a class="ver" href="changelog.html#helper">v7 · <span lang="en">2026-10-24</span><span lang="fr">24/10/2026</span></a></td>
             <td><span lang="en">Diagnostics for porting</span><span lang="fr">Diagnostic pour le portage</span></td>
             <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk">APK</a></div></td></tr>
-          <tr><td><strong>LibreHU Bridge</strong> <span class="muted" lang="en">(phone)</span><span class="muted" lang="fr">(téléphone)</span></td>
-            <td><span lang="en">Set up the head unit from your phone</span><span lang="fr">Régler l'autoradio depuis le téléphone</span></td>
-            <td><div class="dl">
-              <a class="btn small" href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">Android</a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">iPhone (.ipa)</a></div></td></tr>
-          <tr><td><strong>MCU Toolkit</strong> <span class="muted">(legacy)</span></td>
+          <tr><td><strong>LibreHU Bridge <span class="muted" lang="en">(phone)</span><span class="muted" lang="fr">(téléphone)</span></strong><a class="ver" href="changelog.html#bridge">v16 · <span lang="en">2026-11-03</span><span lang="fr">03/11/2026</span></a></td>
+            <td><span lang="en">Set up the head unit from your phone</span><span lang="fr">Régler l&#x27;autoradio depuis le téléphone</span></td>
+            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk">Android</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa">iPhone (.ipa)</a></div></td></tr>
+          <tr><td><strong>MCU Toolkit <span class="muted">(legacy)</span></strong><a class="ver" href="changelog.html#mcutools">1.0.0 · <span lang="en">2026-10-14</span><span lang="fr">14/10/2026</span></a></td>
             <td><span lang="en">Old MCU diagnostic app</span><span lang="fr">Ancienne appli de diagnostic MCU</span></td>
             <td><div class="dl"><a class="btn small ghost" href="https://github.com/LibreHU/MCU-tools-app/releases/download/latest-main/MCU-Toolkit-main.apk">APK</a></div></td></tr>
         </tbody>
       </table>
     </div>
-    <h3 lang="en">System: TWRP and kernel</h3>
-    <h3 lang="fr">Système : TWRP et noyau</h3>
-    <p class="sub" lang="en">Flashable zips (from TWRP, or LibreHU Apps → Zips, which checks them and installs them for you). Each one backs up the partition it replaces to <code>/sdcard/LibreHU/backup</code> first; read its warning before flashing.</p>
-    <p class="sub" lang="fr">Zips flashables (depuis TWRP, ou LibreHU Apps → Zips, qui les vérifie et les installe pour vous). Chacun sauvegarde d'abord la partition qu'il remplace dans <code>/sdcard/LibreHU/backup</code> ; lire son avertissement avant de flasher.</p>
+    <h3 lang="en">System: TWRP, kernels and zips</h3>
+    <h3 lang="fr">Système : TWRP, noyaux et zips</h3>
+    <p class="sub" lang="en">Flashable zips (from TWRP, or LibreHU Apps → Zips, which checks them and installs them for you). Each one backs up the partition it replaces to <code>/sdcard/LibreHU/backup</code> first; read its warning before flashing. What each one does: <a href="docs.html#system">Docs</a>.</p>
+    <p class="sub" lang="fr">Zips flashables (depuis TWRP, ou LibreHU Apps → Zips, qui les vérifie et les installe pour vous). Chacun sauvegarde d'abord la partition qu'il remplace dans <code>/sdcard/LibreHU/backup</code> ; lire son avertissement avant de flasher. Le rôle de chacun : <a href="docs.html#system">Docs</a>.</p>
     <div class="table">
-      <table>
+      <table class="zips">
         <thead><tr>
-          <th lang="en">Piece</th><th lang="fr">Élément</th>
-          <th lang="en">What it is</th><th lang="fr">Ce que c'est</th>
+          <th lang="en">Zip</th><th lang="fr">Zip</th>
           <th lang="en">Download</th><th lang="fr">Télécharger</th>
         </tr></thead>
         <tbody>
-          <tr><td><strong>TWRP UJC201</strong></td>
-            <td><span lang="en">Recovery: touch and front keys, landscape, ADB / MTP, USB stick, MCU state. <strong>Beta</strong>: steering wheel keys, CAN box keys included (it answers the box like LibreHU service)</span><span lang="fr">Recovery : tactile et touches de façade, paysage, ADB / MTP, clé USB, état de la MCU. <strong>Bêta</strong> : touches au volant, celles du boîtier CAN comprises (il répond au boîtier comme LibreHU service)</span></td>
-            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201.zip"><span lang="en">stable</span><span lang="fr">stable</span></a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip"><span lang="en">beta</span><span lang="fr">bêta</span></a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/android_device_alps_ac8257_demo/releases"><span lang="en">.img</span><span lang="fr">.img</span></a></div></td></tr>
-          <tr><td><strong><span lang="en">Kernel</span><span lang="fr">Noyau</span> 4.9.337</strong></td>
-            <td><span lang="en"><strong>Stable</strong>: LibreHU kernel with every linux-stable fix up to 4.9.337 (the last 4.9), real standby, overclock up to 2.6 GHz, TWRP / Android / Fastboot boot menu, with its Wi-Fi / BT / GPS / FM modules</span><span lang="fr"><strong>Stable</strong> : noyau LibreHU avec tous les correctifs linux-stable jusqu'à 4.9.337 (la dernière 4.9), vraie veille, overclock jusqu'à 2,6 GHz, menu de démarrage TWRP / Android / Fastboot, avec ses modules Wi-Fi / BT / GPS / FM</span></td>
-            <td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip"><span lang="en">kernel</span><span lang="fr">noyau</span></a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip"><span lang="en">modules only</span><span lang="fr">modules seuls</span></a>
-              <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-restore.zip"><span lang="en">back to stock</span><span lang="fr">retour d'origine</span></a></div></td></tr>
-          <tr><td><strong><span lang="en">Other zips</span><span lang="fr">Autres zips</span></strong></td>
-            <td><span lang="en">Experimental kernels (connectivity built in), USB Ethernet, ViPER4Android driver, QuickBoot whitelist, Google Apps removal, SuperSU removal…</span><span lang="fr">Noyaux expérimentaux (connectivité intégrée), Ethernet USB, pilote ViPER4Android, liste blanche QuickBoot, retrait des Google Apps, retrait de SuperSU…</span></td>
-            <td><div class="dl"><a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips"><span lang="en">all zips</span><span lang="fr">tous les zips</span></a></div></td></tr>
+          <tr class="cat"><th colspan="2">Recovery</th></tr>
+          <tr><td><strong>TWRP UJC201</strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201.zip">stable <small>v8</small></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip"><span lang="en">beta</span><span lang="fr">bêta</span> <small>b13</small></a></div></td></tr>
+          <tr class="cat"><th colspan="2"><span lang="en">Kernel</span><span lang="fr">Noyau</span></th></tr>
+          <tr><td><strong><span lang="en">Kernel 4.9.337 (stable)</span><span lang="fr">Noyau 4.9.337 (stable)</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip"><span lang="en">kernel + modules</span><span lang="fr">noyau + modules</span> <small>r146</small></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip"><span lang="en">modules only</span><span lang="fr">modules seuls</span> <small>r146</small></a></div></td></tr>
+          <tr><td><strong><span lang="en">LibreHU kernel 4.9.117</span><span lang="fr">Noyau LibreHU 4.9.117</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-librehu.zip"><span lang="en">kernel</span><span lang="fr">noyau</span> <small>r105</small></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-librehu-bootmenu.zip"><span lang="en">with boot menu</span><span lang="fr">avec menu de démarrage</span> <small>r105</small></a></div></td></tr>
+          <tr><td><strong><span lang="en">LibreHU kernel 4.9.117, connectivity built in (experimental)</span><span lang="fr">Noyau LibreHU 4.9.117, connectivité intégrée (expérimental)</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-connectivity.zip"><span lang="en">kernel</span><span lang="fr">noyau</span> <small>r106</small></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-connectivity-bootmenu.zip"><span lang="en">with boot menu</span><span lang="fr">avec menu de démarrage</span> <small>r106</small></a></div></td></tr>
+          <tr><td><strong><span lang="en">Back to kernel 4.9.117</span><span lang="fr">Retour au noyau 4.9.117</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-restore.zip"><span lang="en">from the backup</span><span lang="fr">depuis la sauvegarde</span></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stock-4.9.117.zip"><span lang="en">stock modules</span><span lang="fr">modules stock</span></a></div></td></tr>
+          <tr><td><strong><span lang="en">USB Ethernet drivers</span><span lang="fr">Pilotes Ethernet USB</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net.zip">zip</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net-restore.zip"><span lang="en">undo</span><span lang="fr">retour</span></a></div></td></tr>
+          <tr class="cat"><th colspan="2"><span lang="en">Drivers</span><span lang="fr">Pilotes</span></th></tr>
+          <tr><td><strong><span lang="en">ViPER4Android driver (ViPERFX_RE)</span><span lang="fr">Pilote ViPER4Android (ViPERFX_RE)</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re.zip">zip <small>v2.1.1</small></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re-restore.zip"><span lang="en">undo</span><span lang="fr">retour</span></a></div></td></tr>
+          <tr class="cat"><th colspan="2"><span lang="en">Tweaks</span><span lang="fr">Réglages</span></th></tr>
+          <tr><td><strong><span lang="en">Audio: deep buffer off</span><span lang="fr">Audio : deep buffer coupé</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/no-deep-buffer.zip">zip</a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/no-deep-buffer-restore.zip"><span lang="en">undo</span><span lang="fr">retour</span></a></div></td></tr>
+          <tr><td><strong>SuperSU</strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-remove.zip"><span lang="en">remove</span><span lang="fr">retirer</span></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-restore.zip"><span lang="en">put back</span><span lang="fr">remettre</span></a></div></td></tr>
+          <tr><td><strong>Google Apps</strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/gapps-remove.zip"><span lang="en">remove</span><span lang="fr">retirer</span></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/gapps-restore.zip"><span lang="en">put back</span><span lang="fr">remettre</span></a></div></td></tr>
+          <tr><td><strong><span lang="en">QuickBoot standby whitelist</span><span lang="fr">Liste blanche de la veille QuickBoot</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/qb-whitelist.zip"><span lang="en">keep LibreHU apps</span><span lang="fr">garder les applis LibreHU</span></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/qb-whitelist-restore.zip"><span lang="en">original list</span><span lang="fr">liste d&#x27;origine</span></a></div></td></tr>
+          <tr><td><strong><span lang="en">Jancar settings provider</span><span lang="fr">Fournisseur des réglages Jancar</span></strong></td><td><div class="dl"><a class="btn small" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip"><span lang="en">install</span><span lang="fr">installer</span></a> <a class="btn small ghost" href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider-restore.zip"><span lang="en">remove</span><span lang="fr">retirer</span></a></div></td></tr>
         </tbody>
       </table>
     </div>

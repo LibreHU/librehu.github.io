@@ -1,0 +1,985 @@
+{
+ "apps": [
+  {
+   "id": "service",
+   "name": "LibreHU service",
+   "repo": "LibreHU/LibreHU-service",
+   "branches": [
+    "main"
+   ],
+   "description": "MCU, audio, Bluetooth, OBD",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
+     "versionCode": 148,
+     "versionName": "c1b2815-main",
+     "date": "2026-11-04T12:56:27Z",
+     "size": 5348145,
+     "commit": "c1b2815c2d2d2b2b869b50bebb7d9196c00bab41",
+     "summary": "CAN batch 1: built-in Hiworld profiles for Hyundai / Kia (HYP001, 152 cars), Toyota / Lexus ES (TYP001, 142) and Honda / Acura (HDP004, 79), each car with the car type its box needs; no car type is sent before the car is chosen."
+    }
+   ]
+  },
+  {
+   "id": "launcher",
+   "name": "LibreHU Launcher",
+   "repo": "LibreHU/LibreHU-Launcher-App",
+   "branches": [
+    "librehu-service",
+    "ivi",
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "librehu-service",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk",
+     "versionCode": 177,
+     "versionName": "8e071ce-librehu-service",
+     "date": "2026-11-03T17:33:49Z",
+     "size": 4665988,
+     "commit": "8e071cec80dfa8058c6dee07dc05804ea14b8ffe",
+     "summary": "Merge main into librehu-service"
+    },
+    {
+     "branch": "ivi",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk",
+     "versionCode": 179,
+     "versionName": "8e76c68-ivi",
+     "date": "2026-11-03T17:32:21Z",
+     "size": 4665968,
+     "commit": "8e76c684fbb9dd19c536c5f9cd1399dc7da1dfef",
+     "summary": "Merge main into ivi"
+    },
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk",
+     "versionCode": 95,
+     "versionName": "41e818f-main",
+     "date": "2026-11-03T17:33:28Z",
+     "size": 4649584,
+     "commit": "41e818f8fe10d7b49991b6498e264e65c15e70bb",
+     "summary": "TPMS on / off switch at the top of the Tyres screen and in the phone app page: off, no USB adapter is opened, no Bluetooth sensor scanned, the alarms and their sound stop and the dashboard card is hidden (\"on the dashboard\" only shows or hides the card)."
+    }
+   ]
+  },
+  {
+   "id": "dialer",
+   "name": "LibreHU Téléphone",
+   "repo": "LibreHU/LibreHU-dialer-app",
+   "branches": [
+    "librehu-service",
+    "ivi",
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "librehu-service",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk",
+     "versionCode": 104,
+     "versionName": "34f36f8-librehu-service",
+     "date": "2026-10-28T12:38:55Z",
+     "size": 3457804,
+     "commit": "34f36f890b312ab4af4c8307ea66f3009c3f22a3",
+     "summary": "Merge main into librehu-service"
+    },
+    {
+     "branch": "ivi",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-ivi/LibreHU-Dialer-ivi.apk",
+     "versionCode": 170,
+     "versionName": "132dc55-ivi",
+     "date": "2026-10-28T12:37:51Z",
+     "size": 3440420,
+     "commit": "132dc5564f09dad863ee25797a6a7dd52283f7a3",
+     "summary": "Merge main into ivi"
+    },
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-main/LibreHU-Dialer-main.apk",
+     "versionCode": 79,
+     "versionName": "aff16c2-main",
+     "date": "2026-10-28T12:33:23Z",
+     "size": 3439908,
+     "commit": "aff16c227bfbad070dd41f780e44d40fc3d3b0ff",
+     "summary": "Dialogs and settings screens follow the launcher's style"
+    }
+   ]
+  },
+  {
+   "id": "fm",
+   "name": "LibreHU FM",
+   "repo": "LibreHU/LibreHU-FM-app",
+   "branches": [
+    "librehu-service",
+    "ivi",
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "librehu-service",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk",
+     "versionCode": 108,
+     "versionName": "3c9f5cd-librehu-service",
+     "date": "2026-11-03T01:33:27Z",
+     "size": 5262797,
+     "commit": "3c9f5cdae3e942782b6ced5d688f68211418a46a",
+     "summary": "Merge main into librehu-service"
+    },
+    {
+     "branch": "ivi",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-ivi/LibreHU-FM-ivi.apk",
+     "versionCode": 108,
+     "versionName": "3597d71-ivi",
+     "date": "2026-11-03T01:33:01Z",
+     "size": 5262777,
+     "commit": "3597d71b857cb70650ba35f6d057e5f99632a981",
+     "summary": "Merge main into ivi"
+    },
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-main/LibreHU-FM-main.apk",
+     "versionCode": 60,
+     "versionName": "32c67bb-main",
+     "date": "2026-11-03T01:32:45Z",
+     "size": 5262745,
+     "commit": "32c67bbf6935b44c193cc03b8848d9f54bffdd5e",
+     "summary": "Credits in the README: code taken (DABplay+ by jvspier, AOSP FM JNI, redsea by Oona Räisänen), APIs and data (Radio Browser by segler-alex, RDS / RBDS / DAB standards, MediaTek driver, LibreHU-service and ivi-services), libraries, fonts and sounds, Google's touch size guide, Reo Au In's tests; redsea's licence (MIT, not ISC: comments fixed) kept in third_party."
+    }
+   ]
+  },
+  {
+   "id": "widgets",
+   "name": "LibreHU Widgets",
+   "repo": "LibreHU/LibreHU-widget-app",
+   "branches": [
+    "librehu-service",
+    "ivi",
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "librehu-service",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk",
+     "versionCode": 51,
+     "versionName": "614d74d-librehu-service",
+     "date": "2026-10-28T12:38:47Z",
+     "size": 2750372,
+     "commit": "614d74d184a03816300f6ee2677ad57785634f98",
+     "summary": "Merge main into librehu-service"
+    },
+    {
+     "branch": "ivi",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-ivi/LibreHU-Widgets-ivi.apk",
+     "versionCode": 50,
+     "versionName": "bd9a0a0-ivi",
+     "date": "2026-10-28T12:37:45Z",
+     "size": 2750360,
+     "commit": "bd9a0a02e848c60b1af90d0d7cbea409ca06f132",
+     "summary": "Merge main into ivi"
+    },
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-main/LibreHU-Widgets-main.apk",
+     "versionCode": 26,
+     "versionName": "c274fd5-main",
+     "date": "2026-10-28T12:32:40Z",
+     "size": 2750328,
+     "commit": "c274fd54865e2f9e46f9af3ff6550d441cefbd75",
+     "summary": "Dialogs and settings screens follow the launcher's style"
+    }
+   ]
+  },
+  {
+   "id": "btnremap",
+   "name": "LibreHU Touches",
+   "repo": "LibreHU/LibreHU-BtnRemap-app",
+   "branches": [
+    "librehu-service",
+    "ivi",
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "librehu-service",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk",
+     "versionCode": 56,
+     "versionName": "52a27b5-librehu-service",
+     "date": "2026-10-28T12:38:54Z",
+     "size": 3310812,
+     "commit": "52a27b5454a29b3bda5f5603a0ebd2023ca24ee8",
+     "summary": "Merge main into librehu-service"
+    },
+    {
+     "branch": "ivi",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-ivi/LibreHU-BtnRemap-ivi.apk",
+     "versionCode": 54,
+     "versionName": "a9b0dc5-ivi",
+     "date": "2026-10-28T12:38:38Z",
+     "size": 3310920,
+     "commit": "a9b0dc5895fa419fbe23b160406a7df21da24292",
+     "summary": "Merge main into ivi"
+    },
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-main/LibreHU-BtnRemap-main.apk",
+     "versionCode": 29,
+     "versionName": "44dab60-main",
+     "date": "2026-10-28T12:32:41Z",
+     "size": 3310808,
+     "commit": "44dab60bbb02b3cb677a9eac77439a471eb12d2c",
+     "summary": "Dialogs and settings screens follow the launcher's style"
+    }
+   ]
+  },
+  {
+   "id": "easysource",
+   "name": "LibreHU EasySource",
+   "repo": "LibreHU/LibreHU-EasySource-app",
+   "branches": [
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-EasySource-app/releases/download/latest-main/LibreHU-EasySource-main.apk",
+     "versionCode": 19,
+     "versionName": "46a71c3-main",
+     "date": "2026-10-28T12:32:46Z",
+     "size": 2874980,
+     "commit": "46a71c37c901c55fc0bcaf85df7342772525f320",
+     "summary": "Dialogs and settings screens follow the launcher's style"
+    }
+   ]
+  },
+  {
+   "id": "disc",
+   "name": "LibreHU Disc",
+   "repo": "LibreHU/LibreHU-disc-app",
+   "branches": [
+    "main"
+   ],
+   "description": "CD / DVD USB",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-disc-app/releases/download/latest-main/LibreHU-Disc-main.apk",
+     "versionCode": 21,
+     "versionName": "94bd3d1-main",
+     "date": "2026-11-02T11:24:50Z",
+     "size": 2996821,
+     "commit": "94bd3d192ceca67362b0a743d82372c57eca889b",
+     "summary": "Root: every su call through Su, for the old su of AOSP some Jancar ROMs ship"
+    }
+   ]
+  },
+  {
+   "id": "viper",
+   "name": "ViPER4Android LibreHU",
+   "repo": "LibreHU/LibreHU-ViPER4Android-app",
+   "branches": [
+    "librehu-service"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "librehu-service",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk",
+     "versionCode": 286,
+     "versionName": "52d00fe-librehu-service",
+     "date": "2026-11-02T11:28:36Z",
+     "size": 4625116,
+     "commit": "52d00feb3e8e97f8f3234e1f56c3a0420f051f3a",
+     "summary": "LibreHU fork: root through Su and RootShell, for the old su of AOSP some Jancar ROMs ship"
+    }
+   ]
+  },
+  {
+   "id": "mcutools",
+   "name": "MCU Toolkit",
+   "repo": "LibreHU/MCU-tools-app",
+   "branches": [
+    "main"
+   ],
+   "description": "Diagnostic MCU",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/MCU-tools-app/releases/download/latest-main/MCU-Toolkit-main.apk",
+     "versionCode": 22,
+     "versionName": "1.0.0-12-gb18e7f8",
+     "date": "2026-10-14T02:16:55Z",
+     "size": 61990,
+     "commit": "b18e7f82d373ddc0b34e6c4c9abf15884640d1ca",
+     "summary": "Root receiver: Runnable instead of a lambda"
+    }
+   ]
+  },
+  {
+   "id": "helper",
+   "name": "LibreHU Helper",
+   "repo": "LibreHU/LibreHU-helper-app",
+   "branches": [
+    "main"
+   ],
+   "description": "Diagnostic et portage",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
+     "versionCode": 7,
+     "versionName": "c8a02f8-main",
+     "date": "2026-10-24T19:58:01Z",
+     "size": 2268101,
+     "commit": "c8a02f8195294e4036d3d0c312da1a5f71ca6122",
+     "summary": "Every setting of the app for LibreHU's phone app: <package>.bridge provider (bridge/BridgeKit.kt: pages, items, signature permission checked in call()), same labels and stores as its screens"
+    }
+   ]
+  },
+  {
+   "id": "headunit",
+   "name": "Android Auto (Open Headunit LibreHU)",
+   "repo": "LibreHU/LibreHU-open-headunit-app",
+   "branches": [
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk",
+     "versionCode": 2769,
+     "versionName": "4.0.0-beta1-main",
+     "date": "2026-11-02T11:26:54Z",
+     "size": 19535739,
+     "commit": "521ff4dc49092d36c0ffc8be3e513d9fe4555f54",
+     "summary": "LibreHU fork: root request through Su, for the old su of AOSP some Jancar ROMs ship"
+    }
+   ]
+  },
+  {
+   "id": "carplay",
+   "name": "CarPlay (xcertplay LibreHU)",
+   "repo": "LibreHU/LibreHU-xcertplay-app",
+   "branches": [
+    "master"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "master",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk",
+     "versionCode": 1557,
+     "versionName": "1.4.2-master",
+     "date": "2026-10-28T09:30:38Z",
+     "size": 6877220,
+     "commit": "0fc22c900f4ecd6ac5c144fe34020da8f510f791",
+     "summary": "LibreHU fork: follow LibreHU Launcher's Modularer Infotainment-Baukasten and LHU-Link styles"
+    }
+   ]
+  },
+  {
+   "id": "ota",
+   "name": "LibreHU Apps (OTA)",
+   "repo": "LibreHU/LibreHU-OTA-app",
+   "branches": [
+    "main"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": null,
+     "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
+     "versionCode": 59,
+     "versionName": "17e0e6f-main",
+     "date": "2026-11-02T11:21:44Z",
+     "size": 3925252,
+     "commit": "17e0e6f64a81f897f80389608c8fb2cf8352ae4e",
+     "summary": "Root: every su call through Su, for the old su of AOSP some Jancar ROMs ship"
+    }
+   ]
+  },
+  {
+   "id": "bridge",
+   "name": "LibreHU Bridge",
+   "repo": "LibreHU/LibreHU-bridge-app",
+   "branches": [
+    "main",
+    "ios"
+   ],
+   "description": "",
+   "tagged": false,
+   "builds": [
+    {
+     "branch": "main",
+     "label": "Android",
+     "url": "https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk",
+     "versionCode": 16,
+     "versionName": "156d5c3-main",
+     "date": "2026-11-03T22:34:49Z",
+     "size": 1911308,
+     "commit": "156d5c385bac3d0eb2f4b9ea5731bc470a734bb7",
+     "summary": "Home screen: app updates, the installed version and a check of GitHub for a newer one, then the APK (Android) or ipa (iPhone) to download, on Android and iOS."
+    },
+    {
+     "branch": "ios",
+     "label": "iPhone (.ipa)",
+     "url": "https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa",
+     "versionCode": 16,
+     "versionName": "1.0.16-main",
+     "date": "",
+     "size": 0,
+     "commit": "156d5c3",
+     "summary": "Home screen: app updates, the installed version and a check of GitHub for a newer one, then the APK (Android) or ipa (iPhone) to download, on Android and iOS."
+    }
+   ]
+  }
+ ],
+ "zips": {
+  "categories": [
+   {
+    "id": "recovery",
+    "name": "Recovery",
+    "name_fr": "Recovery",
+    "description_fr": "TWRP et outils de recovery",
+    "subcategories": [
+     {
+      "id": "twrp",
+      "name": "TWRP",
+      "name_fr": "TWRP"
+     }
+    ]
+   },
+   {
+    "id": "kernel",
+    "name": "Kernel",
+    "name_fr": "Noyau",
+    "description_fr": "Noyaux et modules",
+    "subcategories": [
+     {
+      "id": "main",
+      "name": "LibreHU kernel 4.9.117",
+      "name_fr": "Noyau LibreHU 4.9.117",
+      "description_fr": "Le noyau testé sur l'unité, avec les modules d'origine."
+     },
+     {
+      "id": "stable",
+      "name": "linux-stable kernel 4.9.337",
+      "name_fr": "Noyau linux-stable 4.9.337",
+      "description_fr": "Correctifs officiels linux-stable jusqu'à 4.9.337 : noyau + modules, ou modules seuls. dm-verity doit être désactivé."
+     },
+     {
+      "id": "back",
+      "name": "Back to 4.9.117",
+      "name_fr": "Retour au noyau 4.9.117",
+      "description_fr": "Modules d'origine pour revenir au noyau GPL ou stock."
+     },
+     {
+      "id": "extra",
+      "name": "Extra drivers",
+      "name_fr": "Pilotes supplémentaires"
+     }
+    ]
+   },
+   {
+    "id": "drivers",
+    "name": "Drivers",
+    "name_fr": "Pilotes",
+    "description_fr": "Pilotes audio, vidéo, matériel",
+    "subcategories": [
+     {
+      "id": "audio",
+      "name": "Audio",
+      "name_fr": "Audio"
+     }
+    ]
+   },
+   {
+    "id": "tweaks",
+    "name": "Tweaks",
+    "name_fr": "Réglages",
+    "description_fr": "Modifications de configuration du système",
+    "subcategories": [
+     {
+      "id": "audio",
+      "name": "Audio",
+      "name_fr": "Audio"
+     },
+     {
+      "id": "root",
+      "name": "Root",
+      "name_fr": "Root"
+     },
+     {
+      "id": "gapps",
+      "name": "Google Apps",
+      "name_fr": "Google Apps",
+      "description_fr": "Retirer ou remettre les Google Apps (OpenGApps) de la ROM stock."
+     },
+     {
+      "id": "standby",
+      "name": "Standby (QuickBoot)",
+      "name_fr": "Veille (QuickBoot)",
+      "description_fr": "Veille Autochips QuickBoot : applis LibreHU non arrêtées à l'extinction de l'écran."
+     },
+     {
+      "id": "jancar",
+      "name": "Without Jancar apps",
+      "name_fr": "Sans les applis Jancar",
+      "description_fr": "Remplacer ce qui manque quand on retire les applis de Jancar."
+     }
+    ]
+   },
+   {
+    "id": "updates",
+    "name": "Updates",
+    "name_fr": "Mises à jour",
+    "description_fr": "Mises à jour du système, des applis système, du firmware",
+    "subcategories": []
+   }
+  ],
+  "zips": [
+   {
+    "id": "viper4android-re",
+    "name": "ViPER4Android RE : pilote (sans Magisk)",
+    "category": "drivers",
+    "subcategory": "audio",
+    "version": "v2.1.1",
+    "order": 100,
+    "restore": "viper4android-re-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re.zip",
+    "size": 613338
+   },
+   {
+    "id": "viper4android-re-restore",
+    "name": "ViPER4Android RE : retrait du pilote",
+    "category": "drivers",
+    "subcategory": "audio",
+    "version": "1",
+    "order": 101,
+    "hidden": true,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re-restore.zip",
+    "size": 3280
+   },
+   {
+    "id": "conn-modules-stable-4.9.337",
+    "name": "Modules Wi-Fi / BT / GPS / FM du noyau linux-stable 4.9.337 (seuls)",
+    "category": "kernel",
+    "subcategory": "stable",
+    "group": "linux-stable-4.9.337",
+    "group_name": "Noyau linux-stable 4.9.337",
+    "variant": "Modules seuls (noyau déjà flashé)",
+    "version": "r146-97311f83a",
+    "order": 1327,
+    "restore": "conn-modules-stable-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip",
+    "size": 2320721
+   },
+   {
+    "id": "conn-modules-stable-restore",
+    "name": "Modules Wi-Fi / BT / GPS / FM d'origine (retour au noyau 4.9.117 GPL ou stock)",
+    "category": "kernel",
+    "subcategory": "back",
+    "group": "back-4.9.117",
+    "group_name": "Retour au noyau 4.9.117 (GPL ou stock)",
+    "variant": "Depuis la sauvegarde faite sur l'autoradio",
+    "version": "2",
+    "order": 300,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-restore.zip",
+    "size": 3813
+   },
+   {
+    "id": "conn-modules-stock-4.9.117",
+    "name": "Modules Wi-Fi / BT / GPS / FM d'origine (stock 4.9.117)",
+    "category": "kernel",
+    "subcategory": "back",
+    "group": "back-4.9.117",
+    "group_name": "Retour au noyau 4.9.117 (GPL ou stock)",
+    "variant": "Modules stock (même sans sauvegarde)",
+    "version": "4.9.117-stock",
+    "order": 301,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stock-4.9.117.zip",
+    "size": 1462859
+   },
+   {
+    "id": "kernel-connectivity",
+    "name": "Noyau LibreHU, connectivité intégrée (expérimental)",
+    "category": "kernel",
+    "subcategory": "main",
+    "group": "kernel-connectivity",
+    "group_name": "Noyau LibreHU, connectivité intégrée (expérimental)",
+    "variant": "Sans menu de démarrage",
+    "version": "r106-652a80d00",
+    "order": 110,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-connectivity.zip",
+    "size": 10059278
+   },
+   {
+    "id": "kernel-connectivity-bootmenu",
+    "name": "Noyau LibreHU, connectivité intégrée + menu de démarrage (expérimental)",
+    "category": "kernel",
+    "subcategory": "main",
+    "group": "kernel-connectivity",
+    "group_name": "Noyau LibreHU, connectivité intégrée (expérimental)",
+    "variant": "Avec menu de démarrage (TWRP / Android / Fastboot)",
+    "version": "r106-652a80d00",
+    "order": 111,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-connectivity-bootmenu.zip",
+    "size": 10124340
+   },
+   {
+    "id": "kernel-librehu",
+    "name": "Noyau LibreHU (branche LibreHU-main)",
+    "category": "kernel",
+    "subcategory": "main",
+    "group": "kernel-librehu",
+    "group_name": "Noyau LibreHU (LibreHU-main, 4.9.117)",
+    "variant": "Sans menu de démarrage",
+    "version": "r105-aab700159",
+    "order": 100,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-librehu.zip",
+    "size": 9913041
+   },
+   {
+    "id": "kernel-librehu-bootmenu",
+    "name": "Noyau LibreHU + menu de démarrage (LibreHU-main)",
+    "category": "kernel",
+    "subcategory": "main",
+    "group": "kernel-librehu",
+    "group_name": "Noyau LibreHU (LibreHU-main, 4.9.117)",
+    "variant": "Avec menu de démarrage (TWRP / Android / Fastboot)",
+    "version": "r105-aab700159",
+    "order": 101,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-librehu-bootmenu.zip",
+    "size": 9962089
+   },
+   {
+    "id": "kernel-stable-4.9.337",
+    "name": "Noyau LibreHU linux-stable 4.9.337 + modules Wi-Fi / BT / GPS / FM",
+    "category": "kernel",
+    "subcategory": "stable",
+    "group": "linux-stable-4.9.337",
+    "group_name": "Noyau linux-stable 4.9.337",
+    "variant": "Noyau + modules (avec menu de démarrage)",
+    "version": "r146-97311f83a",
+    "order": 1326,
+    "restore": "conn-modules-stable-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip",
+    "size": 11890723
+   },
+   {
+    "id": "usb-net",
+    "name": "Ethernet USB et partage de connexion USB",
+    "category": "kernel",
+    "subcategory": "extra",
+    "version": "3",
+    "order": 400,
+    "restore": "usb-net-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net.zip",
+    "size": 196437
+   },
+   {
+    "id": "usb-net-restore",
+    "name": "Ethernet USB : retrait des pilotes",
+    "category": "kernel",
+    "subcategory": "extra",
+    "version": "1",
+    "order": 401,
+    "hidden": true,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net-restore.zip",
+    "size": 3180
+   },
+   {
+    "id": "twrp-ujc201",
+    "name": "TWRP UJC201 (dernière version)",
+    "category": "recovery",
+    "subcategory": "twrp",
+    "group": "twrp",
+    "group_name": "TWRP UJC201",
+    "variant": "Dernière version stable",
+    "version": "v8",
+    "order": 100,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201.zip",
+    "size": 29653896
+   },
+   {
+    "id": "twrp-ujc201-beta",
+    "name": "TWRP UJC201 bêta (touches au volant)",
+    "category": "recovery",
+    "subcategory": "twrp",
+    "group": "twrp",
+    "group_name": "TWRP UJC201",
+    "variant": "Bêta (touches au volant)",
+    "version": "b13",
+    "order": 101,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip",
+    "size": 29669256
+   },
+   {
+    "id": "gapps-remove",
+    "name": "Supprimer les Google Apps",
+    "category": "tweaks",
+    "subcategory": "gapps",
+    "group": "gapps",
+    "group_name": "Google Apps",
+    "variant": "Supprimer les Google Apps",
+    "version": "1",
+    "order": 300,
+    "restore": "gapps-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/gapps-remove.zip",
+    "size": 6636
+   },
+   {
+    "id": "gapps-restore",
+    "name": "Remettre les Google Apps (sauvegarde)",
+    "category": "tweaks",
+    "subcategory": "gapps",
+    "group": "gapps",
+    "group_name": "Google Apps",
+    "variant": "Remettre les Google Apps (sauvegarde)",
+    "version": "1",
+    "order": 301,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/gapps-restore.zip",
+    "size": 3818
+   },
+   {
+    "id": "jancar-settings-provider",
+    "name": "Réglages Jancar remplacés (SystemUI sans com.jancar.settings)",
+    "category": "tweaks",
+    "subcategory": "jancar",
+    "group": "jancar-settings",
+    "group_name": "Réglages Jancar remplacés",
+    "variant": "Installer le fournisseur LibreHU",
+    "version": "809733f-main",
+    "order": 500,
+    "restore": "jancar-settings-provider-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
+    "size": 22718
+   },
+   {
+    "id": "jancar-settings-provider-restore",
+    "name": "Fournisseur de réglages LibreHU retiré",
+    "category": "tweaks",
+    "subcategory": "jancar",
+    "group": "jancar-settings",
+    "group_name": "Réglages Jancar remplacés",
+    "variant": "Retirer le fournisseur LibreHU",
+    "version": "1",
+    "order": 501,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider-restore.zip",
+    "size": 3229
+   },
+   {
+    "id": "no-deep-buffer",
+    "name": "Sortie audio deep_buffer retirée (musique muette)",
+    "category": "tweaks",
+    "subcategory": "audio",
+    "version": "1",
+    "order": 100,
+    "restore": "no-deep-buffer-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/no-deep-buffer.zip",
+    "size": 3780
+   },
+   {
+    "id": "no-deep-buffer-restore",
+    "name": "Sortie audio deep_buffer remise",
+    "category": "tweaks",
+    "subcategory": "audio",
+    "version": "1",
+    "order": 101,
+    "hidden": true,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/no-deep-buffer-restore.zip",
+    "size": 3113
+   },
+   {
+    "id": "qb-whitelist",
+    "name": "Applis LibreHU gardées en veille (QuickBoot)",
+    "category": "tweaks",
+    "subcategory": "standby",
+    "group": "quickboot",
+    "group_name": "Veille QuickBoot",
+    "variant": "Garder les applis LibreHU",
+    "version": "1",
+    "order": 400,
+    "restore": "qb-whitelist-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/qb-whitelist.zip",
+    "size": 4573
+   },
+   {
+    "id": "qb-whitelist-restore",
+    "name": "Liste blanche QuickBoot d'origine",
+    "category": "tweaks",
+    "subcategory": "standby",
+    "group": "quickboot",
+    "group_name": "Veille QuickBoot",
+    "variant": "Liste d'origine",
+    "version": "1",
+    "order": 401,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/qb-whitelist-restore.zip",
+    "size": 3297
+   },
+   {
+    "id": "supersu-remove",
+    "name": "Supprimer SuperSU (root par KernelSU Next)",
+    "category": "tweaks",
+    "subcategory": "root",
+    "group": "supersu",
+    "group_name": "SuperSU",
+    "variant": "Supprimer SuperSU (root par KernelSU Next)",
+    "version": "1",
+    "order": 200,
+    "restore": "supersu-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-remove.zip",
+    "size": 5132
+   },
+   {
+    "id": "supersu-restore",
+    "name": "Installer SuperSU (sauvegarde)",
+    "category": "tweaks",
+    "subcategory": "root",
+    "group": "supersu",
+    "group_name": "SuperSU",
+    "variant": "Réinstaller SuperSU (sauvegarde)",
+    "version": "1",
+    "order": 201,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-restore.zip",
+    "size": 3811
+   }
+  ]
+ },
+ "twrp": [
+  {
+   "component": "twrp",
+   "tag": "twrp-build-13",
+   "version": "b13",
+   "stable": false,
+   "date": "2026-11-04T02:55:01Z",
+   "commit": "0829149db1184b9af5c46fa82e9ec809742a2492",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-13"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-12",
+   "version": "b12",
+   "stable": false,
+   "date": "2026-10-24T02:07:17Z",
+   "commit": "3c5b078c2b8a7ea7f93800faa399069fc4cd77dd",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-12"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-10",
+   "version": "b10",
+   "stable": false,
+   "date": "2026-10-21T04:32:04Z",
+   "commit": "twrp",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-10"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-9",
+   "version": "b9",
+   "stable": false,
+   "date": "2026-10-19T19:19:22Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-9"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-8",
+   "version": "v8",
+   "stable": true,
+   "date": "2026-10-12T18:54:07Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-8"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-7",
+   "version": "b7",
+   "stable": false,
+   "date": "2026-10-12T08:45:28Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-7"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-5",
+   "version": "v5",
+   "stable": true,
+   "date": "2026-10-12T06:29:47Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-5"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-4",
+   "version": "v4",
+   "stable": true,
+   "date": "2026-10-02T01:23:47Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-4"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-3",
+   "version": "b3",
+   "stable": false,
+   "date": "2026-10-01T10:40:45Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-3"
+  },
+  {
+   "component": "twrp",
+   "tag": "twrp-build-1",
+   "version": "b1",
+   "stable": false,
+   "date": "2026-09-29T09:54:47Z",
+   "commit": "main",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-1"
+  }
+ ]
+}

@@ -183,6 +183,13 @@ pre code { background: none; padding: 0; font-size: inherit; }
 .status.done { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
 .status.wip { background: color-mix(in srgb, var(--warn) 22%, transparent); color: var(--warn); }
 .status.plan { background: var(--surface-2); color: var(--text-dim); }
+/* Progress bars of the roadmap (CAN compatibility). */
+.progress { margin: 12px 0 4px; }
+.progress .label { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--text-dim); margin-bottom: 5px; }
+.progress .label strong { color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.progress .bar { height: 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; }
+.progress .bar > span { display: block; height: 100%; border-radius: 999px; background: var(--accent); }
+.progress .bar.ok > span { background: var(--ok); }
 @media (max-width: 900px) {
   .doc { grid-template-columns: 1fr; gap: 16px; }
   .toc { position: static; max-height: none; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; }

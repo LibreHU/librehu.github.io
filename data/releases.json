@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 148,
-     "versionName": "c1b2815-main",
-     "date": "2026-11-04T12:56:27Z",
-     "size": 5348145,
-     "commit": "c1b2815c2d2d2b2b869b50bebb7d9196c00bab41",
-     "summary": "CAN batch 1: built-in Hiworld profiles for Hyundai / Kia (HYP001, 152 cars), Toyota / Lexus ES (TYP001, 142) and Honda / Acura (HDP004, 79), each car with the car type its box needs; no car type is sent before the car is chosen."
+     "versionCode": 156,
+     "versionName": "22bea03-main",
+     "date": "2026-11-04T18:13:29Z",
+     "size": 5365913,
+     "commit": "22bea03678707af87ed97ae2e7cd24e2eb7b665d",
+     "summary": "CAN: the dialogue card and the export count the requests the box answered (it hears the head unit), since some boxes never acknowledge"
     }
    ]
   },
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "809733f-main",
+    "version": "7c84776-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22718
+    "size": 22721
    },
    {
     "id": "jancar-settings-provider-restore",

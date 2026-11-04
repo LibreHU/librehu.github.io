@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-02T04:01:05Z",
   "LibreHU/LibreHU-helper-app@main": "2026-10-25T12:25:29Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-04T13:35:23Z",
+  "LibreHU/LibreHU-service@main": "2026-11-04T18:09:16Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-10-28T12:34:39Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-10-28T12:34:39Z",
   "LibreHU/LibreHU-widget-app@main": "2026-10-28T12:31:01Z",
@@ -36,6 +36,13 @@
   "events"
  ],
  "entries": [
+{"c":"zips","d":"2026-11-04T20:28:38Z","g":"jancar-settings","id":"zip:jancar-settings:7c84776-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"7c84776-main"},
+{"c":"service","d":"2026-11-04T18:13:29Z","id":"app:service:main:156","k":"release","n":"22bea03-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":156},
+{"a":"2026-11-04T18:09:16Z","b":["main"],"c":"service","d":"2026-11-04T18:09:16Z","k":"commit","m":"CAN: the dialogue card and the export count the requests the box answered (it hears the head unit), since some boxes never acknowledge","s":"22bea03678707af87ed97ae2e7cd24e2eb7b665d","u":"https://github.com/LibreHU/LibreHU-service/commit/22bea03678707af87ed97ae2e7cd24e2eb7b665d"},
+{"a":"2026-11-04T15:12:40Z","b":["main"],"c":"service","d":"2026-11-04T15:12:40Z","k":"commit","m":"CAN Clio 3 (LNP002): asks the box for its version (Hiworld request 0x6A [5, 1, F0]) every 30 s, to see whether the box hears the head unit","s":"7c847765eddfd751485ce706a7037782ceee646a","u":"https://github.com/LibreHU/LibreHU-service/commit/7c847765eddfd751485ce706a7037782ceee646a"},
+{"a":"2026-11-04T14:57:44Z","b":["main"],"c":"service","d":"2026-11-04T14:57:44Z","k":"commit","m":"CAN: the box dialogue keeps running when the same profile is set again (it restarted several times a minute)","s":"18a05484015361f3e93848d42f3fd3e6e1f0b836","u":"https://github.com/LibreHU/LibreHU-service/commit/18a05484015361f3e93848d42f3fd3e6e1f0b836"},
+{"a":"2026-11-04T14:51:28Z","b":["main"],"c":"service","d":"2026-11-04T14:51:28Z","k":"commit","m":"CAN Clio 3 (LNP002): the head unit also sends its audio source (0xE1, AUX) and Bluetooth state (0xCD) to the box, as Hiworld's app does","s":"2a0328d5dfe2c912733ba39b4b2ed094862d76ea","u":"https://github.com/LibreHU/LibreHU-service/commit/2a0328d5dfe2c912733ba39b4b2ed094862d76ea"},
+{"a":"2026-11-04T14:37:33Z","b":["main"],"c":"service","d":"2026-11-04T14:37:33Z","k":"commit","m":"CAN: the export shows what the head unit sends to the box (→ lines, dialogue status in the header), and the box speed is sent again 5 s after the start","s":"ecaa0b25f3566bb8b1ce47a3c0658b3d61f6832a","u":"https://github.com/LibreHU/LibreHU-service/commit/ecaa0b25f3566bb8b1ce47a3c0658b3d61f6832a"},
 {"c":"zips","d":"2026-11-04T13:14:48Z","g":"viper4android-re","id":"zip:viper4android-re:v2.1.1","k":"release","n":"ViPER4Android RE : pilote (sans Magisk)","quiet":true,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re.zip","v":"v2.1.1"},
 {"c":"kernel","d":"2026-11-04T13:14:48Z","g":"usb-net","id":"zip:usb-net:3","k":"release","n":"Ethernet USB et partage de connexion USB","quiet":true,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net.zip","v":"3"},
 {"c":"zips","d":"2026-11-04T13:14:48Z","g":"supersu","id":"zip:supersu:1","k":"release","n":"SuperSU","quiet":true,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-remove.zip","v":"1"},

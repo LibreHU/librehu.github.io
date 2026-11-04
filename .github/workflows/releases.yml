@@ -40,6 +40,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          # Only the read positions moved (a documentation push somewhere): nothing to publish, they are kept next time.
+          if git diff --cached --quiet -- . ':(exclude)data/changelog.json' && ! git diff --cached -- data/changelog.json | grep -q '^[-+]{'; then
+            echo "only read positions moved"; exit 0
+          fi
           git commit -q -m "Site: versions and changelog read from the releases"
           # Someone pushed meanwhile: their commit first, this run's data on top, pages rebuilt.
           cp -r data "$RUNNER_TEMP/data"

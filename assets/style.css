@@ -280,3 +280,10 @@ table.zips tr.cat th { padding-top: 18px; font-size: 13px; letter-spacing: .02em
   .log .tag { width: auto; }
   .log a.m { flex-basis: 100%; }
 }
+
+/* Cars decoded with a CAN box (docs.html#can-cars). */
+table.cars tr.cat th { padding-top: 18px; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--text); background: none; white-space: normal; }
+table.cars .what { display: block; font-weight: 400; font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+table.cars td.since { white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.cars td.since small { white-space: normal; color: var(--text-dim); }
+table.cars .ok { color: var(--ok); font-weight: 700; }

@@ -37,7 +37,10 @@ a kernel or a zip updates the site with nothing to do by hand:
   `data/releases.json` (published now) and `data/changelog.json` (kept from run to run: commits seen, each version
   published since 04/11/2026). Commits left out: merges, documentation pushes (`[skip ci]`), and in the kernel the
   linux-stable fixes (author date before 09/2026).
-- `tools/build.py` fills `{{apps}}`, `{{zips}}` and `{{changelog}}` from them; `tools/site.json` adds what the site
+- The same run reads the built-in car profiles of LibreHU service at its published commit into `data/can.json`
+  (protocol, messages decoded, cars, the first service version of each car, kept from run to run; seeds in
+  `tools/site.json` → `can` for the cars older than the table): the table of `docs.html#can-cars`.
+- `tools/build.py` fills `{{apps}}`, `{{zips}}`, `{{changelog}}` and `{{can_cars}}` from them; `tools/site.json` adds what the site
   shows on top (English / French roles, order, editions, short names of the zips). An app added to the catalog appears
   with its catalog name until it gets a line there.
 - `.github/workflows/releases.yml` runs both every hour (and on a push of `src/`, `tools/`), then commits the pages

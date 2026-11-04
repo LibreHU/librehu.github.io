@@ -350,10 +350,82 @@ def changelog(rel: dict, log: dict, conf: dict) -> str:
     return "\n".join(out)
 
 
+def car_display(name: str, c: dict):
+    """(brand, model) shown for a car of a profile ("Renault Clio3 2005-2014, all trims" -> Renault, Clio 3); None
+    for the catalogue's placeholders."""
+    head = name.split(", ")[0]
+    two = next((b for b in c.get("two_word_brands", []) if head.startswith(b + " ")), None)
+    brand = two or head.split(" ")[0]
+    rest = head[len(brand):].strip()
+    m = re.match(r"^(.*?)(?:\s+(\d{2,4}(?:[-~]\S*)?))?$", rest)
+    model = m.group(1) if m else rest
+    shown = c["models"].get(f"{brand}|{model}", "")
+    if shown is None:
+        return None
+    if shown:
+        if "|" in shown:
+            brand, shown = shown.split("|", 1)
+        return brand, shown
+    words = []
+    for w in model.replace("_", " ").split():
+        if w.isalpha() and (w.islower() or (w.isupper() and len(w) > 3)):
+            w = w[:1].upper() + w[1:].lower()
+        words.append(w)
+    return brand, " ".join(words) or model
+
+
+def can_table(can: dict, conf: dict) -> str:
+    c = conf["can"]
+    tried = set(c.get("tried", []))
+    rows, total, makes = [], 0, set()
+    for p in sorted(can["profiles"], key=lambda p: (min([x["since"] for x in p["cars"]] or [0]), p["id"])):
+        proto = re.search(r"\(([^()]+)\)\s*$", p["name"])
+        proto = proto.group(1) if proto else p.get("box", "")
+        dec = [c["messages"][m] for m in p["messages"] if m in c["messages"]]
+        what = both(esc(", ".join(x[0] for x in dec)), esc(", ".join(x[1] for x in dec))) if dec else ""
+        rows.append(f'<tr class="cat"><th colspan="3">{esc(proto)}' + (f' <span class="what">{what}</span>' if what else "") + "</th></tr>")
+        brands = {}
+        total += len(p["cars"])
+        for car in p["cars"]:
+            shown = car_display(car["name"], c)
+            if not shown:
+                continue
+            brand, model = shown
+            m = brands.setdefault(brand, {}).setdefault(model, {"since": car["since"], "tried": False})
+            m["since"] = min(m["since"], car["since"])
+            m["tried"] = m["tried"] or f'{p["id"]}|{car["name"]}' in tried
+        for brand in sorted(brands, key=str.lower):
+            makes.add(brand)
+            models = brands[brand]
+            counts = {}
+            for v in models.values():
+                counts[v["since"]] = counts.get(v["since"], 0) + 1
+            base = max(counts, key=lambda k: (counts[k], k))
+            names = ", ".join(esc(n) + (' <span class="ok" title="tried on a car / essayée sur une voiture">✓</span>' if v["tried"] else "")
+                              for n, v in sorted(models.items(), key=lambda kv: kv[0].lower()))
+            other = [(n, v["since"]) for n, v in sorted(models.items(), key=lambda kv: kv[0].lower()) if v["since"] != base]
+            since = f"v{base}"
+            if other:
+                since += "<br><small>" + "; ".join(both(f"{esc(n)}: v{s}", f"{esc(n)} : v{s}") for n, s in other) + "</small>"
+            rows.append(f'<tr><td><strong>{esc(brand)}</strong></td><td>{names}</td><td class="since">{since}</td></tr>')
+    head = ('<p class="sub">' + both(f"{total} cars (years and trims apart) of {len(makes)} makes in {len(can['profiles'])} built-in profiles, LibreHU service v{can['service']}.",
+                                     f"{total} voitures (années et finitions à part) de {len(makes)} marques dans {len(can['profiles'])} profils intégrés, LibreHU service v{can['service']}.") + "</p>")
+    table = ('<div class="table"><table class="cars"><thead><tr>'
+             '<th lang="en">Make</th><th lang="fr">Marque</th><th lang="en">Models</th><th lang="fr">Modèles</th>'
+             '<th lang="en">Since (service)</th><th lang="fr">Depuis (service)</th></tr></thead><tbody>\n'
+             + "\n".join(rows) + "\n</tbody></table></div>")
+    return head + "\n" + table
+
+
 def generated(text: str) -> str:
     """{{apps}}, {{zips}}, {{changelog}} filled from data/ (left as a link to GitHub when it is missing)."""
-    if not any(k in text for k in ("{{apps}}", "{{zips}}", "{{changelog}}")):
+    if not any(k in text for k in ("{{apps}}", "{{zips}}", "{{changelog}}", "{{can_cars}}")):
         return text
+    if "{{can_cars}}" in text:
+        can = load(ROOT / "data" / "can.json")
+        conf = load(ROOT / "tools" / "site.json")
+        text = text.replace("{{can_cars}}", can_table(can, conf) if can else
+                            f'<p><a href="{WEB}/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md">docs/can-vehicles.md</a></p>')
     conf = load(ROOT / "tools" / "site.json")
     rel = load(ROOT / "data" / "releases.json")
     log = load(ROOT / "data" / "changelog.json")

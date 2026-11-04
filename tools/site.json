@@ -5,76 +5,426 @@
   "_since": "Start of LibreHU: older commits (a fork's origin, history imported with the code) are not in the changelog; a GitHub fork lists only the commits its origin does not have.",
   "since": "2026-09-01T00:00:00Z",
   "apps": {
-    "ota": {"order": 0, "name": "LibreHU Apps", "en": "Installer and updater (start here)", "fr": "Installation et mises à jour (commencer ici)"},
-    "service": {"order": 1, "en": "MCU, audio, CAN, OBD, camera, standby", "fr": "MCU, audio, CAN, OBD, caméra, veille"},
-    "launcher": {"order": 2, "en": "Home screen", "fr": "Écran d'accueil"},
-    "fm": {"order": 3, "en": "FM and internet radio + widget", "fr": "Radio FM et internet + widget"},
-    "dialer": {"order": 4, "name": "LibreHU Dialer", "en": "Bluetooth phone", "fr": "Téléphone Bluetooth"},
-    "widgets": {"order": 5, "en": "Warning lights, OBD, battery widgets", "fr": "Widgets voyants, OBD, batterie"},
-    "btnremap": {"order": 6, "name": "LibreHU BtnRemap", "en": "Steering wheel keys", "fr": "Commandes au volant"},
-    "easysource": {"order": 7, "en": "Source switcher (MODE / SRC key)", "fr": "Sélecteur de sources (touche MODE / SRC)"},
-    "disc": {"order": 8, "en": "CD / DVD from a USB drive", "fr": "CD / DVD depuis un lecteur USB"},
-    "viper": {"order": 9, "en": "Sound effects", "fr": "Effets sonores"},
-    "headunit": {"order": 10, "name": "Android Auto", "note": "Open Headunit LibreHU", "en": "Android Auto receiver", "fr": "Récepteur Android Auto"},
-    "carplay": {"order": 11, "name": "CarPlay", "note": "xcertplay LibreHU", "en": "CarPlay receiver (MFi chip)", "fr": "Récepteur CarPlay (puce MFi)"},
-    "helper": {"order": 12, "en": "Diagnostics for porting", "fr": "Diagnostic pour le portage"},
-    "bridge": {"order": 13, "note_en": "phone", "note_fr": "téléphone", "en": "Set up the head unit from your phone", "fr": "Régler l'autoradio depuis le téléphone"},
-    "mcutools": {"order": 99, "note": "legacy", "ghost": true, "en": "Old MCU diagnostic app", "fr": "Ancienne appli de diagnostic MCU"},
-    "kernelsu-next": {"hidden": true}
+    "ota": {
+      "order": 0,
+      "name": "LibreHU Apps",
+      "en": "Installer and updater (start here)",
+      "fr": "Installation et mises à jour (commencer ici)"
+    },
+    "service": {
+      "order": 1,
+      "en": "MCU, audio, CAN, OBD, camera, standby",
+      "fr": "MCU, audio, CAN, OBD, caméra, veille"
+    },
+    "launcher": {
+      "order": 2,
+      "en": "Home screen",
+      "fr": "Écran d'accueil"
+    },
+    "fm": {
+      "order": 3,
+      "en": "FM and internet radio + widget",
+      "fr": "Radio FM et internet + widget"
+    },
+    "dialer": {
+      "order": 4,
+      "name": "LibreHU Dialer",
+      "en": "Bluetooth phone",
+      "fr": "Téléphone Bluetooth"
+    },
+    "widgets": {
+      "order": 5,
+      "en": "Warning lights, OBD, battery widgets",
+      "fr": "Widgets voyants, OBD, batterie"
+    },
+    "btnremap": {
+      "order": 6,
+      "name": "LibreHU BtnRemap",
+      "en": "Steering wheel keys",
+      "fr": "Commandes au volant"
+    },
+    "easysource": {
+      "order": 7,
+      "en": "Source switcher (MODE / SRC key)",
+      "fr": "Sélecteur de sources (touche MODE / SRC)"
+    },
+    "disc": {
+      "order": 8,
+      "en": "CD / DVD from a USB drive",
+      "fr": "CD / DVD depuis un lecteur USB"
+    },
+    "viper": {
+      "order": 9,
+      "en": "Sound effects",
+      "fr": "Effets sonores"
+    },
+    "headunit": {
+      "order": 10,
+      "name": "Android Auto",
+      "note": "Open Headunit LibreHU",
+      "en": "Android Auto receiver",
+      "fr": "Récepteur Android Auto"
+    },
+    "carplay": {
+      "order": 11,
+      "name": "CarPlay",
+      "note": "xcertplay LibreHU",
+      "en": "CarPlay receiver (MFi chip)",
+      "fr": "Récepteur CarPlay (puce MFi)"
+    },
+    "helper": {
+      "order": 12,
+      "en": "Diagnostics for porting",
+      "fr": "Diagnostic pour le portage"
+    },
+    "bridge": {
+      "order": 13,
+      "note_en": "phone",
+      "note_fr": "téléphone",
+      "en": "Set up the head unit from your phone",
+      "fr": "Régler l'autoradio depuis le téléphone"
+    },
+    "mcutools": {
+      "order": 99,
+      "note": "legacy",
+      "ghost": true,
+      "en": "Old MCU diagnostic app",
+      "fr": "Ancienne appli de diagnostic MCU"
+    },
+    "kernelsu-next": {
+      "hidden": true
+    }
   },
   "extra": [
-    {"id": "bridge", "name": "LibreHU Bridge", "repo": "LibreHU/LibreHU-bridge-app", "branches": ["main", "ios"],
-     "files": [
-       {"tag": "latest-main", "file": "release.txt", "branch": "main", "label": "Android"},
-       {"tag": "latest-ios", "file": "release-ios.txt", "branch": "ios", "label": "iPhone (.ipa)"}
-     ]}
+    {
+      "id": "bridge",
+      "name": "LibreHU Bridge",
+      "repo": "LibreHU/LibreHU-bridge-app",
+      "branches": [
+        "main",
+        "ios"
+      ],
+      "files": [
+        {
+          "tag": "latest-main",
+          "file": "release.txt",
+          "branch": "main",
+          "label": "Android"
+        },
+        {
+          "tag": "latest-ios",
+          "file": "release-ios.txt",
+          "branch": "ios",
+          "label": "iPhone (.ipa)"
+        }
+      ]
+    }
   ],
   "editions": {
-    "librehu-service": {"en": "LibreHU service", "fr": "LibreHU service"},
-    "ivi": {"en": "ivi", "fr": "ivi"},
-    "main": {"en": "generic", "fr": "générique"}
+    "librehu-service": {
+      "en": "LibreHU service",
+      "fr": "LibreHU service"
+    },
+    "ivi": {
+      "en": "ivi",
+      "fr": "ivi"
+    },
+    "main": {
+      "en": "generic",
+      "fr": "générique"
+    }
   },
   "system": [
-    {"id": "kernel", "en": "Kernel", "fr": "Noyau", "repo": "LibreHU/android_kernel_autochips_ac8257_4.9",
-     "branches": ["stable-4.9.337", "LibreHU-main", "connectivity-builtin"], "since": "2026-09-01T00:00:00Z",
-     "_author_since": "linux-stable fixes applied in 10/2026 keep their author date (2023 at the latest): left out, only LibreHU's commits are listed",
-     "author_since": "2026-09-01T00:00:00Z"},
-    {"id": "twrp", "en": "TWRP", "fr": "TWRP", "repo": "LibreHU/android_device_alps_ac8257_demo",
-     "branches": ["ccr-eca2d7b0-vz26un", "twrp"], "since": "2026-09-01T00:00:00Z", "releases": "twrp-build-"},
-    {"id": "zips", "en": "Zips", "fr": "Zips", "repo": "LibreHU/LibreHU-flashablesZips", "branches": ["main"]}
+    {
+      "id": "kernel",
+      "en": "Kernel",
+      "fr": "Noyau",
+      "repo": "LibreHU/android_kernel_autochips_ac8257_4.9",
+      "branches": [
+        "stable-4.9.337",
+        "LibreHU-main",
+        "connectivity-builtin"
+      ],
+      "since": "2026-09-01T00:00:00Z",
+      "_author_since": "linux-stable fixes applied in 10/2026 keep their author date (2023 at the latest): left out, only LibreHU's commits are listed",
+      "author_since": "2026-09-01T00:00:00Z"
+    },
+    {
+      "id": "twrp",
+      "en": "TWRP",
+      "fr": "TWRP",
+      "repo": "LibreHU/android_device_alps_ac8257_demo",
+      "branches": [
+        "ccr-eca2d7b0-vz26un",
+        "twrp"
+      ],
+      "since": "2026-09-01T00:00:00Z",
+      "releases": "twrp-build-"
+    },
+    {
+      "id": "zips",
+      "en": "Zips",
+      "fr": "Zips",
+      "repo": "LibreHU/LibreHU-flashablesZips",
+      "branches": [
+        "main"
+      ]
+    }
   ],
   "zip_groups": {
-    "twrp": {"en": "TWRP UJC201", "fr": "TWRP UJC201"},
-    "linux-stable-4.9.337": {"order": 0, "en": "Kernel 4.9.337 (stable)", "fr": "Noyau 4.9.337 (stable)"},
-    "kernel-librehu": {"order": 1, "en": "LibreHU kernel 4.9.117", "fr": "Noyau LibreHU 4.9.117"},
-    "kernel-connectivity": {"order": 2, "en": "LibreHU kernel 4.9.117, connectivity built in (experimental)", "fr": "Noyau LibreHU 4.9.117, connectivité intégrée (expérimental)"},
-    "back-4.9.117": {"order": 3, "en": "Back to kernel 4.9.117", "fr": "Retour au noyau 4.9.117"},
-    "usb-net": {"order": 4, "en": "USB Ethernet drivers", "fr": "Pilotes Ethernet USB"},
-    "viper4android-re": {"en": "ViPER4Android driver (ViPERFX_RE)", "fr": "Pilote ViPER4Android (ViPERFX_RE)"},
-    "no-deep-buffer": {"en": "Audio: deep buffer off", "fr": "Audio : deep buffer coupé"},
-    "supersu": {"en": "SuperSU", "fr": "SuperSU"},
-    "gapps": {"en": "Google Apps", "fr": "Google Apps"},
-    "quickboot": {"en": "QuickBoot standby whitelist", "fr": "Liste blanche de la veille QuickBoot"},
-    "jancar-settings": {"en": "Jancar settings provider", "fr": "Fournisseur des réglages Jancar"}
+    "twrp": {
+      "en": "TWRP UJC201",
+      "fr": "TWRP UJC201"
+    },
+    "linux-stable-4.9.337": {
+      "order": 0,
+      "en": "Kernel 4.9.337 (stable)",
+      "fr": "Noyau 4.9.337 (stable)"
+    },
+    "kernel-librehu": {
+      "order": 1,
+      "en": "LibreHU kernel 4.9.117",
+      "fr": "Noyau LibreHU 4.9.117"
+    },
+    "kernel-connectivity": {
+      "order": 2,
+      "en": "LibreHU kernel 4.9.117, connectivity built in (experimental)",
+      "fr": "Noyau LibreHU 4.9.117, connectivité intégrée (expérimental)"
+    },
+    "back-4.9.117": {
+      "order": 3,
+      "en": "Back to kernel 4.9.117",
+      "fr": "Retour au noyau 4.9.117"
+    },
+    "usb-net": {
+      "order": 4,
+      "en": "USB Ethernet drivers",
+      "fr": "Pilotes Ethernet USB"
+    },
+    "viper4android-re": {
+      "en": "ViPER4Android driver (ViPERFX_RE)",
+      "fr": "Pilote ViPER4Android (ViPERFX_RE)"
+    },
+    "no-deep-buffer": {
+      "en": "Audio: deep buffer off",
+      "fr": "Audio : deep buffer coupé"
+    },
+    "supersu": {
+      "en": "SuperSU",
+      "fr": "SuperSU"
+    },
+    "gapps": {
+      "en": "Google Apps",
+      "fr": "Google Apps"
+    },
+    "quickboot": {
+      "en": "QuickBoot standby whitelist",
+      "fr": "Liste blanche de la veille QuickBoot"
+    },
+    "jancar-settings": {
+      "en": "Jancar settings provider",
+      "fr": "Fournisseur des réglages Jancar"
+    }
   },
   "zip_variants": {
-    "twrp-ujc201": {"en": "stable", "fr": "stable"},
-    "twrp-ujc201-beta": {"en": "beta", "fr": "bêta"},
-    "kernel-stable-4.9.337": {"en": "kernel + modules", "fr": "noyau + modules"},
-    "conn-modules-stable-4.9.337": {"en": "modules only", "fr": "modules seuls"},
-    "kernel-librehu": {"en": "kernel", "fr": "noyau"},
-    "kernel-librehu-bootmenu": {"en": "with boot menu", "fr": "avec menu de démarrage"},
-    "kernel-connectivity": {"en": "kernel", "fr": "noyau"},
-    "kernel-connectivity-bootmenu": {"en": "with boot menu", "fr": "avec menu de démarrage"},
-    "conn-modules-stable-restore": {"en": "from the backup", "fr": "depuis la sauvegarde"},
-    "conn-modules-stock-4.9.117": {"en": "stock modules", "fr": "modules stock"},
-    "supersu-remove": {"en": "remove", "fr": "retirer"},
-    "supersu-restore": {"en": "put back", "fr": "remettre"},
-    "gapps-remove": {"en": "remove", "fr": "retirer"},
-    "gapps-restore": {"en": "put back", "fr": "remettre"},
-    "qb-whitelist": {"en": "keep LibreHU apps", "fr": "garder les applis LibreHU"},
-    "qb-whitelist-restore": {"en": "original list", "fr": "liste d'origine"},
-    "jancar-settings-provider": {"en": "install", "fr": "installer"},
-    "jancar-settings-provider-restore": {"en": "remove", "fr": "retirer"}
+    "twrp-ujc201": {
+      "en": "stable",
+      "fr": "stable"
+    },
+    "twrp-ujc201-beta": {
+      "en": "beta",
+      "fr": "bêta"
+    },
+    "kernel-stable-4.9.337": {
+      "en": "kernel + modules",
+      "fr": "noyau + modules"
+    },
+    "conn-modules-stable-4.9.337": {
+      "en": "modules only",
+      "fr": "modules seuls"
+    },
+    "kernel-librehu": {
+      "en": "kernel",
+      "fr": "noyau"
+    },
+    "kernel-librehu-bootmenu": {
+      "en": "with boot menu",
+      "fr": "avec menu de démarrage"
+    },
+    "kernel-connectivity": {
+      "en": "kernel",
+      "fr": "noyau"
+    },
+    "kernel-connectivity-bootmenu": {
+      "en": "with boot menu",
+      "fr": "avec menu de démarrage"
+    },
+    "conn-modules-stable-restore": {
+      "en": "from the backup",
+      "fr": "depuis la sauvegarde"
+    },
+    "conn-modules-stock-4.9.117": {
+      "en": "stock modules",
+      "fr": "modules stock"
+    },
+    "supersu-remove": {
+      "en": "remove",
+      "fr": "retirer"
+    },
+    "supersu-restore": {
+      "en": "put back",
+      "fr": "remettre"
+    },
+    "gapps-remove": {
+      "en": "remove",
+      "fr": "retirer"
+    },
+    "gapps-restore": {
+      "en": "put back",
+      "fr": "remettre"
+    },
+    "qb-whitelist": {
+      "en": "keep LibreHU apps",
+      "fr": "garder les applis LibreHU"
+    },
+    "qb-whitelist-restore": {
+      "en": "original list",
+      "fr": "liste d'origine"
+    },
+    "jancar-settings-provider": {
+      "en": "install",
+      "fr": "installer"
+    },
+    "jancar-settings-provider-restore": {
+      "en": "remove",
+      "fr": "retirer"
+    }
+  },
+  "can": {
+    "_": "Cars decoded with a CAN box (docs.html#can-cars): the built-in profiles of LibreHU service at its published commit; each car's first service version is kept in data/can.json (seeds below for the cars that came before this table).",
+    "app": "service",
+    "repo": "LibreHU/LibreHU-service",
+    "path": "core/src/main/resources/org/librehu/core/can/vehicles",
+    "since": {
+      "renault-clio3-hiworld": 147,
+      "renault-clio3-hiworld|Renault Clio3 2005-2014, all trims": 23,
+      "hyundai-kia-hiworld": 148,
+      "toyota-hiworld": 148,
+      "honda-hiworld": 148
+    },
+    "tried": [
+      "renault-clio3-hiworld|Renault Clio3 2005-2014, all trims"
+    ],
+    "messages": {
+      "State": [
+        "steering wheel keys and angle, ignition, lights, reverse",
+        "touches et angle du volant, contact, feux, marche arrière"
+      ],
+      "Doors": [
+        "doors",
+        "portes"
+      ],
+      "Trip computer": [
+        "trip computer",
+        "ordinateur de bord"
+      ],
+      "Front panel key": [
+        "front panel keys",
+        "touches de façade"
+      ],
+      "Knob": [
+        "knob",
+        "molette"
+      ],
+      "Climate": [
+        "climate",
+        "climatisation"
+      ],
+      "Car info": [
+        "engine speed, speed, mileage",
+        "régime, vitesse, kilométrage"
+      ],
+      "Parking radar": [
+        "parking radar",
+        "radar de recul"
+      ],
+      "Side radar": [
+        "side radar",
+        "radar latéral"
+      ],
+      "Tyre pressure": [
+        "tyre pressure",
+        "pression des pneus"
+      ],
+      "Park assist": [
+        "park assist",
+        "aide au stationnement"
+      ],
+      "Vehicle settings": [
+        "vehicle settings",
+        "réglages du véhicule"
+      ]
+    },
+    "models": {
+      "Renault|Clio3": "Clio 3",
+      "Renault|Clio4": "Clio 4",
+      "Renault|clio5": "Clio 5",
+      "Renault|megane": "Mégane",
+      "Renault|Megane2": "Mégane 2",
+      "Renault|Megane3": "Mégane 3",
+      "Renault|megane 4": "Mégane 4",
+      "Renault|Scenic_II": "Scénic II",
+      "Renault|Scenic_III": "Scénic III",
+      "Renault|Scenic_IV": "Scénic IV",
+      "Renault|Traffic_II": "Trafic II",
+      "Renault|Traffic_III": "Trafic III",
+      "Renault|Kiger_I": "Kiger",
+      "Renault|brilliancerenaultgoldencupview": null,
+      "Renault|None": null,
+      "Renault Samsung|None": null,
+      "Renault Samsung|qm3": "QM3",
+      "Renault Samsung|qm5": "QM5",
+      "Renault Samsung|sm3": "SM3",
+      "Renault Samsung|sm5": "SM5",
+      "Renault Samsung|sm6": "SM6",
+      "Renault Samsung|sm7": "SM7",
+      "Renault Samsung|xm3": "XM3",
+      "Toyota|ES": "Lexus|ES",
+      "Toyota|ES 9": "Lexus|ES",
+      "Toyota|None": null,
+      "Toyota|SharpRelease": null,
+      "Toyota|Alpha": "Alphard",
+      "Toyota|GeRuiWeiYa": "Granvia",
+      "Toyota|fenglanda": "Frontlander",
+      "Toyota|izoa": "IZOA",
+      "Toyota|WILLANDER": "Wildlander",
+      "Toyota|PRO_ACE_CITY": "Proace City",
+      "Toyota|HIACE": "HiAce",
+      "Toyota|chr": "C-HR",
+      "Toyota|rav4": "RAV4",
+      "Toyota|Landcruiser": "Land Cruiser",
+      "Honda|Acura": "Acura|2016-2021",
+      "Honda|crv": "CR-V",
+      "Honda|Hrv": "HR-V",
+      "Honda|urv": "UR-V",
+      "Honda|xrv": "XR-V",
+      "Honda|Zrv": "ZR-V",
+      "Honda|MNV": "M-NV",
+      "Honda|STEP WGN": "Step WGN",
+      "Hyundai|None": null,
+      "Hyundai|New zealand": null,
+      "Hyundai|santafe": "Santa Fe",
+      "Hyundai|sonata9": "Sonata 9",
+      "Hyundai|IONIQ": "Ioniq",
+      "Kia|Carnes": "Carens",
+      "Kia|k5": "K5",
+      "Kia|k7": "K7",
+      "Kia|k9": "K9",
+      "Kia|kx5": "KX5",
+      "Kia|kx7": "KX7"
+    },
+    "two_word_brands": [
+      "Renault Samsung"
+    ]
   }
 }

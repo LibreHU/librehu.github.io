@@ -160,6 +160,35 @@ def twrp_builds() -> list:
     return sorted(out, key=lambda b: b["date"], reverse=True)
 
 
+def can_profiles(releases: dict, old: dict):
+    """Built-in car profiles of LibreHU service at its published commit (docs.html#can-cars): protocol, messages
+    decoded, cars; the first service version of each car is kept from run to run."""
+    c = SITE.get("can")
+    app = next((a for a in releases["apps"] if c and a["id"] == c["app"]), None)
+    if not app or not app["builds"]:
+        return old
+    b = app["builds"][0]
+    commit, vc = b.get("commit") or "main", b["versionCode"]
+    listing = json.loads(get(f"{API}/repos/{c['repo']}/contents/{c['path']}?ref={commit}", api=True) or "[]")
+    since = dict((old or {}).get("since", {}))
+    profiles = []
+    for f in sorted(listing, key=lambda f: f["name"]):
+        if f.get("type") != "file" or not f["name"].endswith(".json"):
+            continue
+        d = json.loads(get(f"https://raw.githubusercontent.com/{c['repo']}/{commit}/{c['path']}/{f['name']}"))
+        pid = d.get("id") or f["name"][:-5]
+        names = [v["name"] for v in d.get("variants", [])] or [d.get("name", pid).split(" (")[0]]
+        cars = []
+        for n in names:
+            key = f"{pid}|{n}"
+            if key not in since:
+                since[key] = c["since"].get(key) or c["since"].get(pid) or vc
+            cars.append({"name": n, "since": since[key]})
+        profiles.append({"id": pid, "name": d.get("name", pid), "box": d.get("box", ""),
+                         "messages": [m.get("name", k) for k, m in d.get("messages", {}).items()], "cars": cars})
+    return {"service": vc, "commit": commit, "profiles": profiles, "since": dict(sorted(since.items()))}
+
+
 def iso(t: str) -> dt.datetime:
     return dt.datetime.fromisoformat(t.replace("Z", "+00:00"))
 
@@ -323,6 +352,14 @@ def main() -> None:
             except Exception as e:  # noqa: BLE001 (one repository refused or rate limited: its commits wait for the next run)
                 print(f"warning: commits of {repo}@{branch}: {e}")
     events(state, entries, releases)
+    can_path = DATA / "can.json"
+    can_old = json.loads(can_path.read_text(encoding="utf-8")) if can_path.exists() else None
+    try:
+        can = can_profiles(releases, can_old)
+        if can:
+            can_path.write_text(json.dumps(can, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    except Exception as e:  # noqa: BLE001 (the table keeps the last profiles read)
+        print(f"warning: CAN profiles: {e}")
     entries = merge_copies(entries)
     ordered = sorted(entries.values(), key=lambda e: (e["d"], e.get("s") or e["id"]), reverse=True)[:MAX_ENTRIES]
     (DATA / "releases.json").write_text(json.dumps(releases, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

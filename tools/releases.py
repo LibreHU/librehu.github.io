@@ -164,8 +164,27 @@ def iso(t: str) -> dt.datetime:
     return dt.datetime.fromisoformat(t.replace("Z", "+00:00"))
 
 
-def commits(state: dict, entries: dict, component: str, repo: str, branch: str, since: str = "", author_since: str = ""):
-    """Commits of [branch] of [repo] into [entries] (by sha); merges, documentation pushes and older work left out."""
+def add(entries: dict, component: str, branch: str, c: dict, author_since: str) -> None:
+    """Commit [c] of the API into [entries]; merges, documentation pushes and older work left out."""
+    info = c.get("commit", {})
+    msg = info.get("message", "")
+    title = msg.split("\n", 1)[0].strip()
+    if len(c.get("parents") or []) > 1 or title.startswith("Merge ") or any(s in msg for s in SKIP):
+        return
+    author = (info.get("author") or {}).get("date", "")
+    if author_since and author < author_since:
+        return
+    e = entries.get(c["sha"])
+    if e:
+        if branch not in e["b"]:
+            e["b"] = sorted(e["b"] + [branch])
+        return
+    entries[c["sha"]] = {"k": "commit", "c": component, "s": c["sha"], "d": (info.get("committer") or {}).get("date", ""),
+                         "a": author, "m": title[:400], "b": [branch], "u": c.get("html_url", "")}
+
+
+def commits(state: dict, entries: dict, component: str, repo: str, branch: str, since: str, author_since: str):
+    """Commits of [branch] of [repo] since the last run (3 days again), at most since [since]."""
     key = f"{repo}@{branch}"
     cursor = state["cursors"].get(key)
     start = since
@@ -182,27 +201,40 @@ def commits(state: dict, entries: dict, component: str, repo: str, branch: str, 
             break
         items = json.loads(text)
         for c in items:
-            info = c.get("commit", {})
-            date = (info.get("committer") or {}).get("date", "")
-            newest = max(newest, date)
-            msg = info.get("message", "")
-            title = msg.split("\n", 1)[0].strip()
-            if len(c.get("parents") or []) > 1 or title.startswith("Merge ") or any(s in msg for s in SKIP):
-                continue
-            if author_since and (info.get("author") or {}).get("date", "") < author_since:
-                continue
-            e = entries.get(c["sha"])
-            if e:
-                if branch not in e["b"]:
-                    e["b"] = sorted(e["b"] + [branch])
-                continue
-            entries[c["sha"]] = {"k": "commit", "c": component, "s": c["sha"], "d": date,
-                                 "a": (info.get("author") or {}).get("date", ""), "m": title[:400], "b": [branch],
-                                 "u": c.get("html_url", "")}
+            newest = max(newest, (c.get("commit", {}).get("committer") or {}).get("date", ""))
+            add(entries, component, branch, c, author_since)
         if len(items) < 100:
             break
     if newest:
         state["cursors"][key] = newest
+
+
+def upstream(repo: str):
+    """owner:branch of the repository [repo] is a GitHub fork of (its commits are not LibreHU's), else None."""
+    text = get(f"{API}/repos/{repo}", api=True)
+    info = json.loads(text) if text else {}
+    parent = info.get("parent") or {}
+    if not info.get("fork") or not parent.get("owner"):
+        return None
+    return f"{parent['owner']['login']}:{parent.get('default_branch') or 'main'}"
+
+
+def ahead(entries: dict, component: str, repo: str, base: str, branch: str, author_since: str) -> set:
+    """Commits of [branch] that the fork's origin [base] does not have: LibreHU's own work. Their shas."""
+    shas = set()
+    for page in range(1, 31):
+        q = (f"{API}/repos/{repo}/compare/{urllib.parse.quote(base, safe=':')}..."
+             f"{urllib.parse.quote(branch, safe='')}?per_page=100&page={page}")
+        text = get(q, api=True)
+        if text is None:
+            raise RuntimeError(f"no comparison {base}...{branch}")
+        items = json.loads(text).get("commits", [])
+        for c in items:
+            shas.add(c["sha"])
+            add(entries, component, branch, c, author_since)
+        if len(items) < 100:
+            break
+    return shas
 
 
 def merge_copies(entries: dict) -> dict:
@@ -262,13 +294,34 @@ def main() -> None:
     old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     state = {"cursors": old.get("cursors", {}), "seeded": old.get("seeded", [])}
     entries = {e.get("s") or e["id"]: e for e in old.get("entries", [])}
-    repos = [(a["id"], a["repo"], b, "", "") for a in releases["apps"] for b in a["branches"] if b != "ios"]
-    repos += [(s["id"], s["repo"], b, s.get("since", ""), s.get("author_since", "")) for s in SITE["system"] for b in s.get("branches", [])]
-    for component, repo, branch, since, author_since in repos:
+    start = SITE.get("since", "")
+    repos = [(a["id"], a["repo"], [b for b in a["branches"] if b != "ios"], start, start) for a in releases["apps"]]
+    repos += [(s["id"], s["repo"], s.get("branches", []), s.get("since", start), s.get("author_since", start)) for s in SITE["system"]]
+    for component, repo, branches, since, author_since in repos:
+        # Work older than LibreHU (a fork's origin, history imported with the code) is not listed.
+        for k in [k for k, e in entries.items() if e["k"] == "commit" and e["c"] == component and (e.get("a") or e["d"]) < author_since]:
+            del entries[k]
         try:
-            commits(state, entries, component, repo, branch, since, author_since)
-        except Exception as e:  # noqa: BLE001 (one repository refused or rate limited: its commits wait for the next run)
-            print(f"warning: commits of {repo}@{branch}: {e}")
+            base = upstream(repo)
+        except Exception as e:  # noqa: BLE001
+            print(f"warning: {repo}: {e}")
+            continue
+        if base:
+            # A fork: only the commits its origin does not have, all read again at each run (a few hundred at most).
+            try:
+                own = set()
+                for branch in branches:
+                    own |= ahead(entries, component, repo, base, branch, author_since)
+                for k in [k for k, e in entries.items() if e["k"] == "commit" and e["c"] == component and e["s"] not in own]:
+                    del entries[k]
+                continue
+            except Exception as e:  # noqa: BLE001 (origin gone or renamed: its whole history, after the start date)
+                print(f"warning: {repo} against {base}: {e}")
+        for branch in branches:
+            try:
+                commits(state, entries, component, repo, branch, since, author_since)
+            except Exception as e:  # noqa: BLE001 (one repository refused or rate limited: its commits wait for the next run)
+                print(f"warning: commits of {repo}@{branch}: {e}")
     events(state, entries, releases)
     entries = merge_copies(entries)
     ordered = sorted(entries.values(), key=lambda e: (e["d"], e.get("s") or e["id"]), reverse=True)[:MAX_ENTRIES]

@@ -2,6 +2,8 @@
   "_": "What the site shows on top of what LibreHU Apps reads (tools/releases.py, tools/build.py). An app of catalog.json missing here is still shown, with its catalog name and description; hidden ones are left out.",
   "catalog": "https://raw.githubusercontent.com/LibreHU/LibreHU-OTA-app/main/catalog.json",
   "zips": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/index.json",
+  "_since": "Start of LibreHU: older commits (a fork's origin, history imported with the code) are not in the changelog; a GitHub fork lists only the commits its origin does not have.",
+  "since": "2026-09-01T00:00:00Z",
   "apps": {
     "ota": {"order": 0, "name": "LibreHU Apps", "en": "Installer and updater (start here)", "fr": "Installation et mises à jour (commencer ici)"},
     "service": {"order": 1, "en": "MCU, audio, CAN, OBD, camera, standby", "fr": "MCU, audio, CAN, OBD, caméra, veille"},

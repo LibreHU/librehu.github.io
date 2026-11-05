@@ -411,6 +411,18 @@
       "Lights and reverse": [
         "lights, reverse, handbrake",
         "feux, marche arrière, frein à main"
+      ],
+      "Trip 1": [
+        "trip computer",
+        "ordinateur de bord"
+      ],
+      "Trip 2": [
+        "trip computer",
+        "ordinateur de bord"
+      ],
+      "Parking radar (shown)": [
+        "parking radar",
+        "radar de recul"
       ]
     },
     "models": {
@@ -502,7 +514,36 @@
       "Volkswagen|leon": "Seat|León",
       "Volkswagen|pq": null,
       "Volkswagen|golf_6": "Golf",
-      "Volkswagen|LingYu": "Lingyu"
+      "Volkswagen|LingYu": "Lingyu",
+      "Citroën|": null,
+      "DS|": null,
+      "Peugeot|": null,
+      "Citroën|c3": "C3",
+      "Citroën|c3xr": "C3-XR",
+      "Citroën|c4": "C4",
+      "Citroën|c4l": "C4 L",
+      "Citroën|c4_quatre": "C4 Quatre",
+      "Citroën|c_quatre": "C-Quatre",
+      "Citroën|c5": "C5",
+      "Citroën|c5_aircorss": "C5 Aircross",
+      "Citroën|ds3": "DS 3",
+      "Citroën|ds4": "DS 4",
+      "Citroën|ds5": "DS 5",
+      "Citroën|ds6": "DS 6",
+      "Citroën|Elysee": "C-Élysée",
+      "Citroën|triumph": "C-Triomphe",
+      "DS|ds5": "DS 5",
+      "DS|ds5ls": "DS 5LS",
+      "DS|ds6": "DS 6",
+      "Peugeot|308s": "308 S",
+      "Peugeot|308sw": "308 SW",
+      "Peugeot|408CC": "408 CC",
+      "Peugeot|408sw": "408 SW",
+      "Peugeot|508L": "508 L",
+      "Peugeot|MPV_Tepee": "Partner Tepee",
+      "Peugeot|Tepee": "Partner Tepee",
+      "Peugeot|rcz": "RCZ",
+      "Peugeot|boxer": "Boxer"
     },
     "two_word_brands": [
       "Renault Samsung"

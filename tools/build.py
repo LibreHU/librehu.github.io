@@ -357,7 +357,7 @@ def car_display(name: str, c: dict):
     two = next((b for b in c.get("two_word_brands", []) if head.startswith(b + " ")), None)
     brand = two or head.split(" ")[0]
     rest = head[len(brand):].strip()
-    m = re.match(r"^(.*?)(?:\s+(\d{2,4}(?:[-~]\S*)?))?$", rest)
+    m = re.match(r"^(.*?)(?:\s+(\d{2,4}(?:[-~]\S*)?)(?:\s*\(.*\))?)?$", rest)
     model = m.group(1) if m else rest
     shown = c["models"].get(f"{brand}|{model}", "")
     if shown is None:

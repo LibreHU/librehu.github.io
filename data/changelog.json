@@ -36,6 +36,7 @@
   "events"
  ],
  "entries": [
+{"c":"zips","d":"2026-11-05T23:42:56Z","g":"jancar-settings","id":"zip:jancar-settings:ab79134-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"ab79134-main"},
 {"c":"zips","d":"2026-11-05T18:08:25Z","g":"jancar-settings","id":"zip:jancar-settings:dea459d-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"dea459d-main"},
 {"c":"service","d":"2026-11-05T16:54:40Z","id":"app:service:main:177","k":"release","n":"ab79134-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":177},
 {"c":"ota","d":"2026-11-05T16:53:48Z","id":"app:ota:main:62","k":"release","n":"74cfa2c-main","u":"https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk","v":62},

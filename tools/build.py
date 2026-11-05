@@ -57,6 +57,7 @@ NAV = [
     ("index.html#download", "Download", "Télécharger"),
     ("changelog.html", "Changelog", "Nouveautés"),
     ("docs.html", "Docs", "Docs"),
+    ("engine.html", "Engine", "Moteur"),
     ("tutorials.html", "Tutorials", "Tutos"),
     ("developers.html", "Developers", "Développeurs"),
     ("screenshots/index.html", "Screenshots", "Captures"),

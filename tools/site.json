@@ -341,8 +341,8 @@
         "climatisation"
       ],
       "Car info": [
-        "engine speed, speed, mileage",
-        "régime, vitesse, kilométrage"
+        "doors, consumption, fuel, battery, warnings",
+        "portes, consommation, carburant, batterie, alertes"
       ],
       "Parking radar": [
         "parking radar",
@@ -363,6 +363,14 @@
       "Vehicle settings": [
         "vehicle settings",
         "réglages du véhicule"
+      ],
+      "Engine": [
+        "coolant and oil temperature, engine speed",
+        "température d'eau et d'huile, régime moteur"
+      ],
+      "Turn signals": [
+        "turn signals",
+        "clignotants"
       ]
     },
     "models": {
@@ -421,7 +429,17 @@
       "Kia|k7": "K7",
       "Kia|k9": "K9",
       "Kia|kx5": "KX5",
-      "Kia|kx7": "KX7"
+      "Kia|kx7": "KX7",
+      "Volkswagen|t_cross": "T-Cross",
+      "Volkswagen|troc": "T-Roc",
+      "Volkswagen|tiguan_l_gte": "Tiguan L GTE",
+      "Volkswagen|passat_gte": "Passat GTE",
+      "Volkswagen|tiguan_l": "Tiguan L",
+      "Volkswagen|golf_sportsvan": "Golf Sportsvan",
+      "Volkswagen|TREK": "Trek",
+      "Skoda|kodiak": "Kodiaq",
+      "Skoda|kodiak_gt": "Kodiaq GT",
+      "Skoda|superb_supai": "Superb"
     },
     "two_word_brands": [
       "Renault Samsung"

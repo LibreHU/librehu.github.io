@@ -383,6 +383,26 @@
       "Climate and doors": [
         "outside temperature, doors",
         "température extérieure, portes"
+      ],
+      "Wheel key": [
+        "steering wheel keys",
+        "touches du volant"
+      ],
+      "Doors and lights": [
+        "doors, lights, reverse, handbrake",
+        "portes, feux, marche arrière, frein à main"
+      ],
+      "Outside temperature": [
+        "outside temperature",
+        "température extérieure"
+      ],
+      "Steering": [
+        "steering angle",
+        "angle du volant"
+      ],
+      "Front radar": [
+        "front radar",
+        "radar avant"
       ]
     },
     "models": {
@@ -462,7 +482,16 @@
       "Mercedes-Benz|r_class": "R-Class",
       "Mercedes-Benz|sl300": "SL",
       "Skoda|superb_haorui": "Superb",
-      "Volkswagen|cc": "CC"
+      "Volkswagen|cc": "CC",
+      "Skoda|": null,
+      "Volkswagen|": null,
+      "Volkswagen|passatb8": "Passat B8",
+      "Volkswagen|teramont_x": "Teramont X",
+      "Volkswagen|touran_l": "Touran L",
+      "Volkswagen|golf_7_ev": "e-Golf",
+      "Volkswagen|t6": "T6",
+      "Volkswagen|Scala": "Skoda|Scala",
+      "Volkswagen|leon": "Seat|León"
     },
     "two_word_brands": [
       "Renault Samsung"

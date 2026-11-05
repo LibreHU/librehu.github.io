@@ -381,7 +381,7 @@ def can_table(can: dict, conf: dict) -> str:
     for p in sorted(can["profiles"], key=lambda p: (min([x["since"] for x in p["cars"]] or [0]), p["id"])):
         proto = re.search(r"\(([^()]+)\)\s*$", p["name"])
         proto = proto.group(1) if proto else p.get("box", "")
-        dec = [c["messages"][m] for m in p["messages"] if m in c["messages"]]
+        dec = [c["messages"][m] for m in dict.fromkeys(p["messages"]) if m in c["messages"]]
         what = both(esc(", ".join(x[0] for x in dec)), esc(", ".join(x[1] for x in dec))) if dec else ""
         rows.append(f'<tr class="cat"><th colspan="3">{esc(proto)}' + (f' <span class="what">{what}</span>' if what else "") + "</th></tr>")
         brands = {}

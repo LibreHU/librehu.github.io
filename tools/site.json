@@ -371,6 +371,18 @@
       "Turn signals": [
         "turn signals",
         "clignotants"
+      ],
+      "Driving": [
+        "engine speed, speed, mileage",
+        "régime, vitesse, kilométrage"
+      ],
+      "Lights": [
+        "lights",
+        "feux"
+      ],
+      "Climate and doors": [
+        "outside temperature, doors",
+        "température extérieure, portes"
       ]
     },
     "models": {
@@ -439,7 +451,18 @@
       "Volkswagen|TREK": "Trek",
       "Skoda|kodiak": "Kodiaq",
       "Skoda|kodiak_gt": "Kodiaq GT",
-      "Skoda|superb_supai": "Superb"
+      "Skoda|superb_supai": "Superb",
+      "Mercedes-Benz|": null,
+      "Mercedes-Benz|b200": "B-Class",
+      "Mercedes-Benz|benzB": "B-Class",
+      "Mercedes-Benz|benzA": "A-Class",
+      "Mercedes-Benz|benzGL": "GL-Class",
+      "Mercedes-Benz|benzML": "M-Class",
+      "Mercedes-Benz|r320": "R-Class",
+      "Mercedes-Benz|r_class": "R-Class",
+      "Mercedes-Benz|sl300": "SL",
+      "Skoda|superb_haorui": "Superb",
+      "Volkswagen|cc": "CC"
     },
     "two_word_brands": [
       "Renault Samsung"

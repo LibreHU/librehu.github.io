@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 158,
-     "versionName": "995cf3c-main",
-     "date": "2026-11-05T06:10:41Z",
-     "size": 5367520,
-     "commit": "995cf3cecf8212777eef8a152bdd7d862c397b9e",
-     "summary": "CAN batch 2a: built-in Hiworld VWP004 profile for Volkswagen / Skoda MQB (38 cars), with engine data (coolant, oil, engine speed)"
+     "versionCode": 169,
+     "versionName": "dea459d-main",
+     "date": "2026-11-05T07:23:06Z",
+     "size": 5424671,
+     "commit": "dea459d9a6bef60f12e900aff09c7191aa2f8bcd",
+     "summary": "Car data engine 2.5.0: Semantic Versioning of the engine and \"engine\" requirement in profiles (too new = refused clearly), CAN box and OBD-II adapter values merged by role (box first, OBD fills in), OBD PIDs mapped to VSS roles"
     }
    ]
   },
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "22bea03-main",
+    "version": "3d94d81-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22721
+    "size": 22718
    },
    {
     "id": "jancar-settings-provider-restore",

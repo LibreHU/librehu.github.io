@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 156,
-     "versionName": "22bea03-main",
-     "date": "2026-11-04T18:13:29Z",
-     "size": 5365913,
-     "commit": "22bea03678707af87ed97ae2e7cd24e2eb7b665d",
-     "summary": "CAN: the dialogue card and the export count the requests the box answered (it hears the head unit), since some boxes never acknowledge"
+     "versionCode": 158,
+     "versionName": "995cf3c-main",
+     "date": "2026-11-05T06:10:41Z",
+     "size": 5367520,
+     "commit": "995cf3cecf8212777eef8a152bdd7d862c397b9e",
+     "summary": "CAN batch 2a: built-in Hiworld VWP004 profile for Volkswagen / Skoda MQB (38 cars), with engine data (coolant, oil, engine speed)"
     }
    ]
   },

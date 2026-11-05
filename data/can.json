@@ -1,6 +1,6 @@
 {
- "service": 156,
- "commit": "22bea03678707af87ed97ae2e7cd24e2eb7b665d",
+ "service": 158,
+ "commit": "995cf3cecf8212777eef8a152bdd7d862c397b9e",
  "profiles": [
   {
    "id": "honda-hiworld",
@@ -1931,6 +1931,173 @@
      "since": 148
     }
    ]
+  },
+  {
+   "id": "vw-mqb-hiworld",
+   "name": "Volkswagen, Skoda (Hiworld VWP004, MQB)",
+   "box": "hiworld",
+   "messages": [
+    "State",
+    "Car info",
+    "Engine",
+    "Turn signals",
+    "Parking radar",
+    "Box version"
+   ],
+   "cars": [
+    {
+     "name": "Skoda kamiq 2018-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda KAROQ 2018-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda kodiak 2017-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda kodiak_gt 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda octavia 2013-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda octavia 2014-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda superb_supai 2013-2015, all trims",
+     "since": 158
+    },
+    {
+     "name": "Skoda superb_supai 2016-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen bora 2013-2015, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen bora 2016-2018, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen bora 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen Cross_Lavida 2013-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen golf 2013-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen golf_sportsvan 2016-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen Grand_Lavida 2013-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen jetta 2011-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen lamando 2015-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen lavida 2018-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen magotan 2016-2019, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen passat 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen passat_gte 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen phideon 2016-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen sagitar 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen Santana 2013-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen Scirocco 2008-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen t_cross 2019-2022, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen tayron 2018-now, medium low",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen Teramont 2017, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen Teramont 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen teramont_x 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen tharu 2018-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen tiguan_l 2017-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen tiguan_l_gte 2019-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen touran 2010-2014, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen touran 2016-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen TREK 2017-now, all trims",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen troc 2018-now, high trim",
+     "since": 158
+    },
+    {
+     "name": "Volkswagen troc 2018-now, medium low",
+     "since": 158
+    }
+   ]
   }
  ],
  "since": {
@@ -2385,6 +2552,44 @@
   "toyota-hiworld|Toyota venza 2022, all trims": 148,
   "toyota-hiworld|Toyota venza 2022~Present, all trims": 148,
   "toyota-hiworld|Toyota vios 2022, all trims": 148,
-  "toyota-hiworld|Toyota vios 2023~Presnt, all trims": 148
+  "toyota-hiworld|Toyota vios 2023~Presnt, all trims": 148,
+  "vw-mqb-hiworld|Skoda KAROQ 2018-now, all trims": 158,
+  "vw-mqb-hiworld|Skoda kamiq 2018-now, all trims": 158,
+  "vw-mqb-hiworld|Skoda kodiak 2017-now, all trims": 158,
+  "vw-mqb-hiworld|Skoda kodiak_gt 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Skoda octavia 2013-now, all trims": 158,
+  "vw-mqb-hiworld|Skoda octavia 2014-now, all trims": 158,
+  "vw-mqb-hiworld|Skoda superb_supai 2013-2015, all trims": 158,
+  "vw-mqb-hiworld|Skoda superb_supai 2016-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen Cross_Lavida 2013-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen Grand_Lavida 2013-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen Santana 2013-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen Scirocco 2008-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen TREK 2017-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen Teramont 2017, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen Teramont 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen bora 2013-2015, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen bora 2016-2018, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen bora 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen golf 2013-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen golf_sportsvan 2016-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen jetta 2011-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen lamando 2015-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen lavida 2018-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen magotan 2016-2019, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen passat 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen passat_gte 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen phideon 2016-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen sagitar 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen t_cross 2019-2022, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen tayron 2018-now, medium low": 158,
+  "vw-mqb-hiworld|Volkswagen teramont_x 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen tharu 2018-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen tiguan_l 2017-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen tiguan_l_gte 2019-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen touran 2010-2014, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen touran 2016-now, all trims": 158,
+  "vw-mqb-hiworld|Volkswagen troc 2018-now, high trim": 158,
+  "vw-mqb-hiworld|Volkswagen troc 2018-now, medium low": 158
  }
 }

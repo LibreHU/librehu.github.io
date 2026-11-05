@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-02T04:01:05Z",
   "LibreHU/LibreHU-helper-app@main": "2026-10-25T12:25:29Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-04T20:48:50Z",
+  "LibreHU/LibreHU-service@main": "2026-11-05T06:05:56Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-10-28T12:34:39Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-10-28T12:34:39Z",
   "LibreHU/LibreHU-widget-app@main": "2026-10-28T12:31:01Z",
@@ -36,6 +36,8 @@
   "events"
  ],
  "entries": [
+{"c":"service","d":"2026-11-05T06:10:41Z","id":"app:service:main:158","k":"release","n":"995cf3c-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":158},
+{"a":"2026-11-05T06:05:56Z","b":["main"],"c":"service","d":"2026-11-05T06:05:56Z","k":"commit","m":"CAN batch 2a: built-in Hiworld VWP004 profile for Volkswagen / Skoda MQB (38 cars), with engine data (coolant, oil, engine speed)","s":"995cf3cecf8212777eef8a152bdd7d862c397b9e","u":"https://github.com/LibreHU/LibreHU-service/commit/995cf3cecf8212777eef8a152bdd7d862c397b9e"},
 {"c":"zips","d":"2026-11-05T01:30:41Z","g":"jancar-settings","id":"zip:jancar-settings:22bea03-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"22bea03-main"},
 {"c":"zips","d":"2026-11-04T20:28:38Z","g":"jancar-settings","id":"zip:jancar-settings:7c84776-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"7c84776-main"},
 {"c":"service","d":"2026-11-04T18:13:29Z","id":"app:service:main:156","k":"release","n":"22bea03-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":156},

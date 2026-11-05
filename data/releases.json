@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 169,
-     "versionName": "dea459d-main",
-     "date": "2026-11-05T07:23:06Z",
-     "size": 5424671,
-     "commit": "dea459d9a6bef60f12e900aff09c7191aa2f8bcd",
-     "summary": "Car data engine 2.5.0: Semantic Versioning of the engine and \"engine\" requirement in profiles (too new = refused clearly), CAN box and OBD-II adapter values merged by role (box first, OBD fills in), OBD PIDs mapped to VSS roles"
+     "versionCode": 177,
+     "versionName": "ab79134-main",
+     "date": "2026-11-05T16:54:40Z",
+     "size": 5450648,
+     "commit": "ab79134c74bd5de2491a95c8e5a777ecfb7af6ee",
+     "summary": "Car packs: the service keeps the SHA-256 of each installed pack and reports it to LibreHU Apps (QUERY_CAR_PACKS \"sha256\")"
     }
    ]
   },
@@ -433,12 +433,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
-     "versionCode": 59,
-     "versionName": "17e0e6f-main",
-     "date": "2026-11-02T11:21:44Z",
-     "size": 3925252,
-     "commit": "17e0e6f64a81f897f80389608c8fb2cf8352ae4e",
-     "summary": "Root: every su call through Su, for the old su of AOSP some Jancar ROMs ship"
+     "versionCode": 62,
+     "versionName": "74cfa2c-main",
+     "date": "2026-11-05T16:53:48Z",
+     "size": 3948176,
+     "commit": "74cfa2c3691e7b5b1735a473e71b1e0fd9ca4dab",
+     "summary": "Cars tab: the SHA-256 of installed packs comes from LibreHU service v177"
     }
    ]
   },
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "3d94d81-main",
+    "version": "dea459d-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22718
+    "size": 22712
    },
    {
     "id": "jancar-settings-provider-restore",

@@ -1,6 +1,6 @@
 {
- "service": 169,
- "commit": "dea459d9a6bef60f12e900aff09c7191aa2f8bcd",
+ "service": 177,
+ "commit": "ab79134c74bd5de2491a95c8e5a777ecfb7af6ee",
  "profiles": [
   {
    "id": "honda-hiworld",
@@ -951,6 +951,486 @@
     {
      "name": "Kia Stonic 2017-2020, all trims",
      "since": 148
+    }
+   ]
+  },
+  {
+   "id": "psa-raise-keep",
+   "name": "Peugeot, Citroën (Raise PSA, original screen kept)",
+   "box": "raise-fd",
+   "messages": [
+    "Wheel key",
+    "Steering",
+    "Outside temperature",
+    "Doors and lights",
+    "Trip computer",
+    "Trip 1",
+    "Trip 2",
+    "Parking radar"
+   ],
+   "cars": [
+    {
+     "name": "Citroën berlingo 2009-2015, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5 2010-now, keep original small screen",
+     "since": 177
+    },
+    {
+     "name": "Citroën c_quatre 2012-now, keep original small screen",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original small screen kept, high trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original small screen kept, low trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original small screen kept, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 308sw 2010-2013, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408CC 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408sw 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot MPV_Tepee 2015, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot Tepee 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original small screen kept, high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original small screen kept, low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original small screen kept, medium trim",
+     "since": 177
+    }
+   ]
+  },
+  {
+   "id": "psa-raise",
+   "name": "Peugeot, Citroën, DS (Raise PSA)",
+   "box": "raise-fd",
+   "messages": [
+    "Wheel key",
+    "Steering",
+    "Outside temperature",
+    "Doors and lights",
+    "Trip computer",
+    "Trip 1",
+    "Trip 2",
+    "Parking radar",
+    "Parking radar (shown)",
+    "Box version"
+   ],
+   "cars": [
+    {
+     "name": "Citroën berlingo 2021, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3 2014-2023, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3 2014-2023, remove air",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3 2021-2023, keep air panel",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3 2021-2023, remove air panel",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3xr 2014-2019, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3xr 2014-2019, customized version",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3xr 2014-2019, has hvac",
+     "since": 177
+    },
+    {
+     "name": "Citroën c3xr 2014-2019, no hvac",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4 2015-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4 2020-2023 (export), high trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4 2020-2023 (export), low trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4 2020-2023 (export), medium trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4_quatre 2015-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4l 2010-2012, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4l 2013-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4l 2014-now, keep air panel",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4l 2014-now, remove air panel",
+     "since": 177
+    },
+    {
+     "name": "Citroën c4l 2019-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5 2010-2012, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5 2013-2016, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5_aircorss 2017-2022, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5_aircorss 2017-2022, ev",
+     "since": 177
+    },
+    {
+     "name": "Citroën c_quatre 2012-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën ds3 2009-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën ds4 2012-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën ds5 2011-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën ds6 2018-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën Elysee 2013-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën ES600 2022, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën ES600 2022, keep air panel",
+     "since": 177
+    },
+    {
+     "name": "Citroën ES600 2022, remove air panel",
+     "since": 177
+    },
+    {
+     "name": "Citroën Jumpy 2015-2024, high trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën Jumpy 2015-2024, low trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën Jumpy 2015-2024, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën triumph 2006-2010, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën Xsara 2004-2005, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, climate panel removed, high trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, climate panel removed, low trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, climate panel removed, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, compatible",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original screen removed, high trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original screen removed, low trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original screen removed, medium trim",
+     "since": 177
+    },
+    {
+     "name": "DS ds5 2013-2018, high trim",
+     "since": 177
+    },
+    {
+     "name": "DS ds5 2013-2018, low trim",
+     "since": 177
+    },
+    {
+     "name": "DS ds5ls 2014-2016, high trim",
+     "since": 177
+    },
+    {
+     "name": "DS ds5ls 2014-2016, medium low",
+     "since": 177
+    },
+    {
+     "name": "DS ds6 2014-2017, all trims",
+     "since": 177
+    },
+    {
+     "name": "DS, other compatible models, compatible",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 2008 2014-2020, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 2008 2014-2021 (Turkey), all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 206 2006, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 207 2006-2015, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 208 2014-2021, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 3008 2013-now (original small screen kept), high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 3008 2013-now (original small screen kept), low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 3008 2013-now (original small screen kept), medium trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 3008 2013-now, high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 3008 2013-now, low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 3008 2013-now, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 301 2014-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 307 2004-2007, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 307 2007-2013, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 308 2012-2015, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 308 2012-2015, keep original small screen",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 308 2016-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 308s 2015-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 4008 2016-2019, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 4008 2017-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 4008 2021 (hybrid), all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 407 2004-2010, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 407 2004-2010, cd",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408 2010-2013 (original small screen kept), all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408 2010-2013, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408 2014-2018 (climate panel removed), all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408 2014-2018, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 5008 2017-2019, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 5008 2020-2023 (Turkey), all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 5008 2022, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 508 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 508L 2019-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 607 2005-2012, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot boxer 2016-now, high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot boxer 2016-now, low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot boxer 2016-now, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot rcz 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot Rifter 2019-2021, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot Traveller 2016-2022, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot Traveller 2024, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, climate panel removed, high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, climate panel removed, low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, climate panel removed, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original screen removed, high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original screen removed, low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original screen removed, medium trim",
+     "since": 177
     }
    ]
   },
@@ -2948,6 +3428,117 @@
   "hyundai-kia-hiworld|Kia sportage 2018-2021, low trim": 148,
   "hyundai-kia-hiworld|Kia sportage 2018-2023, high trim": 148,
   "hyundai-kia-hiworld|Kia sportage 2021-2024, all trims": 148,
+  "psa-raise-keep|Citroën berlingo 2009-2015, all trims": 177,
+  "psa-raise-keep|Citroën c5 2010-now, keep original small screen": 177,
+  "psa-raise-keep|Citroën c_quatre 2012-now, keep original small screen": 177,
+  "psa-raise-keep|Citroën, other compatible models, original small screen kept, high trim": 177,
+  "psa-raise-keep|Citroën, other compatible models, original small screen kept, low trim": 177,
+  "psa-raise-keep|Citroën, other compatible models, original small screen kept, medium trim": 177,
+  "psa-raise-keep|Peugeot 308sw 2010-2013, all trims": 177,
+  "psa-raise-keep|Peugeot 408CC 2010-now, all trims": 177,
+  "psa-raise-keep|Peugeot 408sw 2010-now, all trims": 177,
+  "psa-raise-keep|Peugeot MPV_Tepee 2015, all trims": 177,
+  "psa-raise-keep|Peugeot Tepee 2010-now, all trims": 177,
+  "psa-raise-keep|Peugeot, other compatible models, original small screen kept, high trim": 177,
+  "psa-raise-keep|Peugeot, other compatible models, original small screen kept, low trim": 177,
+  "psa-raise-keep|Peugeot, other compatible models, original small screen kept, medium trim": 177,
+  "psa-raise|Citroën ES600 2022, all trims": 177,
+  "psa-raise|Citroën ES600 2022, keep air panel": 177,
+  "psa-raise|Citroën ES600 2022, remove air panel": 177,
+  "psa-raise|Citroën Elysee 2013-2018, all trims": 177,
+  "psa-raise|Citroën Jumpy 2015-2024, high trim": 177,
+  "psa-raise|Citroën Jumpy 2015-2024, low trim": 177,
+  "psa-raise|Citroën Jumpy 2015-2024, medium trim": 177,
+  "psa-raise|Citroën Xsara 2004-2005, all trims": 177,
+  "psa-raise|Citroën berlingo 2021, all trims": 177,
+  "psa-raise|Citroën c3 2014-2023, all trims": 177,
+  "psa-raise|Citroën c3 2014-2023, remove air": 177,
+  "psa-raise|Citroën c3 2021-2023, keep air panel": 177,
+  "psa-raise|Citroën c3 2021-2023, remove air panel": 177,
+  "psa-raise|Citroën c3xr 2014-2019, all trims": 177,
+  "psa-raise|Citroën c3xr 2014-2019, customized version": 177,
+  "psa-raise|Citroën c3xr 2014-2019, has hvac": 177,
+  "psa-raise|Citroën c3xr 2014-2019, no hvac": 177,
+  "psa-raise|Citroën c4 2015-now, all trims": 177,
+  "psa-raise|Citroën c4 2020-2023 (export), high trim": 177,
+  "psa-raise|Citroën c4 2020-2023 (export), low trim": 177,
+  "psa-raise|Citroën c4 2020-2023 (export), medium trim": 177,
+  "psa-raise|Citroën c4_quatre 2015-2018, all trims": 177,
+  "psa-raise|Citroën c4l 2010-2012, all trims": 177,
+  "psa-raise|Citroën c4l 2013-2018, all trims": 177,
+  "psa-raise|Citroën c4l 2014-now, keep air panel": 177,
+  "psa-raise|Citroën c4l 2014-now, remove air panel": 177,
+  "psa-raise|Citroën c4l 2019-now, all trims": 177,
+  "psa-raise|Citroën c5 2010-2012, all trims": 177,
+  "psa-raise|Citroën c5 2010-now, all trims": 177,
+  "psa-raise|Citroën c5 2013-2016, all trims": 177,
+  "psa-raise|Citroën c5_aircorss 2017-2022, all trims": 177,
+  "psa-raise|Citroën c5_aircorss 2017-2022, ev": 177,
+  "psa-raise|Citroën c_quatre 2012-now, all trims": 177,
+  "psa-raise|Citroën ds3 2009-now, all trims": 177,
+  "psa-raise|Citroën ds4 2012-now, all trims": 177,
+  "psa-raise|Citroën ds5 2011-now, all trims": 177,
+  "psa-raise|Citroën ds6 2018-now, all trims": 177,
+  "psa-raise|Citroën triumph 2006-2010, all trims": 177,
+  "psa-raise|Citroën, other compatible models, climate panel removed, high trim": 177,
+  "psa-raise|Citroën, other compatible models, climate panel removed, low trim": 177,
+  "psa-raise|Citroën, other compatible models, climate panel removed, medium trim": 177,
+  "psa-raise|Citroën, other compatible models, compatible": 177,
+  "psa-raise|Citroën, other compatible models, original screen removed, high trim": 177,
+  "psa-raise|Citroën, other compatible models, original screen removed, low trim": 177,
+  "psa-raise|Citroën, other compatible models, original screen removed, medium trim": 177,
+  "psa-raise|DS ds5 2013-2018, high trim": 177,
+  "psa-raise|DS ds5 2013-2018, low trim": 177,
+  "psa-raise|DS ds5ls 2014-2016, high trim": 177,
+  "psa-raise|DS ds5ls 2014-2016, medium low": 177,
+  "psa-raise|DS ds6 2014-2017, all trims": 177,
+  "psa-raise|DS, other compatible models, compatible": 177,
+  "psa-raise|Peugeot 2008 2014-2020, all trims": 177,
+  "psa-raise|Peugeot 2008 2014-2021 (Turkey), all trims": 177,
+  "psa-raise|Peugeot 206 2006, all trims": 177,
+  "psa-raise|Peugeot 207 2006-2015, all trims": 177,
+  "psa-raise|Peugeot 208 2014-2021, all trims": 177,
+  "psa-raise|Peugeot 3008 2013-now (original small screen kept), high trim": 177,
+  "psa-raise|Peugeot 3008 2013-now (original small screen kept), low trim": 177,
+  "psa-raise|Peugeot 3008 2013-now (original small screen kept), medium trim": 177,
+  "psa-raise|Peugeot 3008 2013-now, high trim": 177,
+  "psa-raise|Peugeot 3008 2013-now, low trim": 177,
+  "psa-raise|Peugeot 3008 2013-now, medium trim": 177,
+  "psa-raise|Peugeot 301 2014-2018, all trims": 177,
+  "psa-raise|Peugeot 307 2004-2007, all trims": 177,
+  "psa-raise|Peugeot 307 2007-2013, all trims": 177,
+  "psa-raise|Peugeot 308 2012-2015, all trims": 177,
+  "psa-raise|Peugeot 308 2012-2015, keep original small screen": 177,
+  "psa-raise|Peugeot 308 2016-2018, all trims": 177,
+  "psa-raise|Peugeot 308s 2015-2018, all trims": 177,
+  "psa-raise|Peugeot 4008 2016-2019, all trims": 177,
+  "psa-raise|Peugeot 4008 2017-now, all trims": 177,
+  "psa-raise|Peugeot 4008 2021 (hybrid), all trims": 177,
+  "psa-raise|Peugeot 407 2004-2010, all trims": 177,
+  "psa-raise|Peugeot 407 2004-2010, cd": 177,
+  "psa-raise|Peugeot 408 2010-2013 (original small screen kept), all trims": 177,
+  "psa-raise|Peugeot 408 2010-2013, all trims": 177,
+  "psa-raise|Peugeot 408 2014-2018 (climate panel removed), all trims": 177,
+  "psa-raise|Peugeot 408 2014-2018, all trims": 177,
+  "psa-raise|Peugeot 5008 2017-2019, all trims": 177,
+  "psa-raise|Peugeot 5008 2020-2023 (Turkey), all trims": 177,
+  "psa-raise|Peugeot 5008 2022, all trims": 177,
+  "psa-raise|Peugeot 508 2010-now, all trims": 177,
+  "psa-raise|Peugeot 508L 2019-now, all trims": 177,
+  "psa-raise|Peugeot 607 2005-2012, all trims": 177,
+  "psa-raise|Peugeot Rifter 2019-2021, all trims": 177,
+  "psa-raise|Peugeot Traveller 2016-2022, all trims": 177,
+  "psa-raise|Peugeot Traveller 2024, all trims": 177,
+  "psa-raise|Peugeot boxer 2016-now, high trim": 177,
+  "psa-raise|Peugeot boxer 2016-now, low trim": 177,
+  "psa-raise|Peugeot boxer 2016-now, medium trim": 177,
+  "psa-raise|Peugeot rcz 2010-now, all trims": 177,
+  "psa-raise|Peugeot, other compatible models, climate panel removed, high trim": 177,
+  "psa-raise|Peugeot, other compatible models, climate panel removed, low trim": 177,
+  "psa-raise|Peugeot, other compatible models, climate panel removed, medium trim": 177,
+  "psa-raise|Peugeot, other compatible models, original screen removed, high trim": 177,
+  "psa-raise|Peugeot, other compatible models, original screen removed, low trim": 177,
+  "psa-raise|Peugeot, other compatible models, original screen removed, medium trim": 177,
   "renault-clio3-hiworld|LADA priora 2012-now, all trims": 147,
   "renault-clio3-hiworld|LADA vesta 2015-2022, high trim": 147,
   "renault-clio3-hiworld|LADA vesta 2015-2022, low trim": 147,

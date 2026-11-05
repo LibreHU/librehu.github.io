@@ -1,0 +1,129 @@
+{{head:Car engine – LibreHU|Moteur voiture – LibreHU|How LibreHU reads a car: CAN boxes and OBD-II adapters, car profiles, common names (COVESA VSS), engine versions and how to port a car.}}
+{{bar:engine.html}}
+
+<main class="wrap doc">
+<aside class="toc">
+  <details open>
+    <summary><t>Contents<fr>Sommaire</t></summary>
+    <ol>
+      <li><a href="#what"><t>In short<fr>En bref</t></a></li>
+      <li><a href="#layers"><t>Layers<fr>Couches</t></a></li>
+      <li><a href="#sources"><t>Sources<fr>Sources</t></a></li>
+      <li><a href="#profiles"><t>Car profiles<fr>Fiches de voiture</t></a></li>
+      <li><a href="#roles"><t>Common names<fr>Noms communs</t></a></li>
+      <li><a href="#versions"><t>Versions<fr>Versions</t></a></li>
+      <li><a href="#updates"><t>Updates by make<fr>Mises à jour par marque</t></a></li>
+      <li><a href="#port"><t>Port a car<fr>Porter une voiture</t></a></li>
+      <li><a href="#robust"><t>Robustness<fr>Robustesse</t></a></li>
+    </ol>
+  </details>
+</aside>
+<article>
+<h1 bi>Car engine<fr>Moteur voiture</h1>
+<p class="lead" bi>What LibreHU knows of your car (keys, doors, speed, engine, climate, parking sensors) comes from one engine that knows no car: everything is in <strong>car profiles</strong>, small files read by the engine, like the code lists of a universal remote.<fr>Ce que LibreHU sait de votre voiture (touches, portes, vitesse, moteur, clim, radar) vient d'un seul moteur qui ne connaît aucune voiture : tout est dans des <strong>fiches de voiture</strong>, de petits fichiers lus par le moteur, comme les listes de codes d'une télécommande universelle.</p>
+
+<h2 id="what" bi>In short<fr>En bref</h2>
+<ul>
+  <li bi>Adding or fixing a car = changing its profile, not the app.<fr>Ajouter ou corriger une voiture = changer sa fiche, pas l'appli.</li>
+  <li bi>A CAN box and an OBD-II adapter can be plugged in at the same time: their values are merged.<fr>Un boîtier CAN et une sonde OBD-II peuvent être branchés en même temps : leurs valeurs sont réunies.</li>
+  <li bi>Industry standards instead of home-made ones: COVESA VSS for the names, SAE J1979 for OBD-II, Semantic Versioning, JSON Schema.<fr>Des standards de l'industrie plutôt que des inventions maison : COVESA VSS pour les noms, SAE J1979 pour l'OBD-II, Semantic Versioning, JSON Schema.</li>
+</ul>
+
+<h2 id="layers" bi>Layers<fr>Couches</h2>
+<p bi>Each layer can change without the others.<fr>Chaque couche peut changer sans les autres.</p>
+<div class="diagram">
+<svg viewBox="0 0 900 400" role="img" aria-label="Layers of the car engine" font-family="system-ui, sans-serif" font-size="14">
+  <defs><marker id="e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <g fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.4">
+    <rect x="20" y="10" width="860" height="56" rx="12"/>
+    <rect x="20" y="86" width="860" height="56" rx="12"/>
+    <rect x="20" y="162" width="860" height="56" rx="12"/>
+    <rect x="20" y="238" width="860" height="56" rx="12"/>
+    <rect x="20" y="314" width="860" height="56" rx="12"/>
+  </g>
+  <g fill="currentColor">
+    <text lang="en" x="40" y="44" font-weight="700">1. Bytes in</text><text lang="fr" x="40" y="44" font-weight="700">1. Arrivée</text>
+    <text lang="en" x="230" y="44">Jancar MCU · serial port · USB · Bluetooth</text><text lang="fr" x="230" y="44">MCU Jancar · port série · USB · Bluetooth</text>
+    <text lang="en" x="40" y="120" font-weight="700">2. Reading</text><text lang="fr" x="40" y="120" font-weight="700">2. Lecture</text>
+    <text lang="en" x="230" y="120">CAN boxes (Hiworld, Raise…, framing in the profile) · OBD-II (ELM327)</text><text lang="fr" x="230" y="120">Boîtiers CAN (Hiworld, Raise…, trame dans la fiche) · OBD-II (ELM327)</text>
+    <text lang="en" x="40" y="196" font-weight="700">3. Profiles</text><text lang="fr" x="40" y="196" font-weight="700">3. Fiches</text>
+    <text lang="en" x="230" y="196">one JSON per car protocol, packs by make</text><text lang="fr" x="230" y="196">un JSON par protocole de voiture, paquets par marque</text>
+    <text lang="en" x="40" y="272" font-weight="700">4. Car data</text><text lang="fr" x="40" y="272" font-weight="700">4. Données</text>
+    <text lang="en" x="230" y="272">one value per common name (VSS), box first, OBD fills in</text><text lang="fr" x="230" y="272">une valeur par nom commun (VSS), boîtier d'abord, OBD complète</text>
+    <text lang="en" x="40" y="348" font-weight="700">5. Uses</text><text lang="fr" x="40" y="348" font-weight="700">5. Usages</text>
+    <text lang="en" x="230" y="348">reverse camera · steering wheel keys · widgets · other apps</text><text lang="fr" x="230" y="348">caméra de recul · touches du volant · widgets · autres applis</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.4" marker-end="url(#e)">
+    <line x1="860" y1="66" x2="860" y2="86"/><line x1="860" y1="142" x2="860" y2="162"/><line x1="860" y1="218" x2="860" y2="238"/><line x1="860" y1="294" x2="860" y2="314"/>
+  </g>
+</svg>
+</div>
+
+<h2 id="sources" bi>Sources<fr>Sources</h2>
+<div class="table"><table>
+<thead><tr><th lang="en">Source</th><th lang="fr">Source</th><th lang="en">What it gives</th><th lang="fr">Ce qu'elle donne</th><th lang="en">Status</th><th lang="fr">État</th></tr></thead>
+<tbody>
+<tr><td bi>CAN box (Hiworld, Raise / Oudi…)<fr>Boîtier CAN (Hiworld, Raise / Oudi…)</td><td bi>keys, doors, lights, steering angle, radar, climate, trip computer, depending on the car<fr>touches, portes, feux, angle du volant, radar, clim, ordinateur de bord, selon la voiture</td><td bi>through the Jancar MCU; a new box maker can be described in the profile<fr>par le MCU Jancar ; un nouveau fabricant de boîtier se décrit dans la fiche</td></tr>
+<tr><td bi>OBD-II adapter (ELM327, USB or Bluetooth)<fr>Sonde OBD-II (ELM327, USB ou Bluetooth)</td><td bi>engine speed, coolant, oil, fuel, load, battery… (SAE J1979), any car since 2001 (petrol) / 2004 (diesel) in Europe<fr>régime, eau, huile, carburant, charge, batterie… (SAE J1979), toute voiture depuis 2001 (essence) / 2004 (diesel) en Europe</td><td bi>OBD tab of LibreHU service<fr>onglet OBD de LibreHU service</td></tr>
+<tr><td bi>Both together<fr>Les deux ensemble</td><td bi>for a value both give, the box first; the adapter fills in the rest<fr>pour une valeur donnée par les deux, le boîtier d'abord ; la sonde complète le reste</td><td bi>service v169<fr>service v169</td></tr>
+<tr><td bi>Other head units: serial port, USB-serial or Bluetooth CAN box<fr>Autres autoradios : boîtier sur port série, USB-série ou Bluetooth</td><td bi>same profiles<fr>mêmes fiches</td><td bi>in preparation<fr>en préparation</td></tr>
+</tbody></table></div>
+
+<h2 id="profiles" bi>Car profiles<fr>Fiches de voiture</h2>
+<p bi>A profile is a JSON file: which box, how to answer it, where each value is in its messages. Format 2 adds what the decoders of Hiworld's app need:<fr>Une fiche est un fichier JSON : quel boîtier, comment lui répondre, où est chaque valeur dans ses messages. Le format 2 ajoute ce dont les décodeurs de l'appli de Hiworld ont besoin :</p>
+<ul>
+  <li bi><strong>common names</strong> for every value, <strong>multiplexed messages</strong>, conditions, invalid values, labels in each language;<fr><strong>noms communs</strong> pour chaque valeur, <strong>messages multiplexés</strong>, conditions, valeurs invalides, libellés par langue ;</li>
+  <li bi><strong>formulas</strong> (<code>D4 == 0 ? -D5 : D4</code>), a profile <strong>extending</strong> another, per-car patches;<fr><strong>formules</strong> (<code>D4 == 0 ? -D5 : D4</code>), une fiche qui en <strong>complète</strong> une autre, retouches par voiture ;</li>
+  <li bi>the box's <strong>framing</strong>, messages <strong>built</strong> from the head unit's state (the clock…), <strong>commands</strong>, several <strong>key sources</strong> and knobs;<fr>la <strong>trame</strong> du boîtier, des messages <strong>construits</strong> depuis l'état de l'autoradio (l'horloge…), des <strong>commandes</strong>, plusieurs <strong>sources de touches</strong> et molettes ;</li>
+  <li bi><strong>self-tests</strong> in each profile, checked on every build.<fr>des <strong>auto-tests</strong> dans chaque fiche, vérifiés à chaque compilation.</li>
+</ul>
+<p bi>Full format: <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md">docs/can-vehicles.md</a>; JSON Schema for editors: <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicle.schema.json">can-vehicle.schema.json</a>. Cars decoded today: <a href="docs.html#can-cars">list</a>.<fr>Format complet : <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md">docs/can-vehicles.md</a> ; schéma JSON pour les éditeurs : <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicle.schema.json">can-vehicle.schema.json</a>. Voitures décodées aujourd'hui : <a href="docs.html#can-cars">liste</a>.</p>
+
+<h2 id="roles" bi>Common names<fr>Noms communs</h2>
+<p bi>Every value has a common name, whatever the car and the source, aligned on the <a href="https://github.com/COVESA/vehicle_signal_specification">COVESA Vehicle Signal Specification</a> 4.2 (unit and sign included). 105 names; a few:<fr>Chaque valeur a un nom commun, quelles que soient la voiture et la source, aligné sur la <a href="https://github.com/COVESA/vehicle_signal_specification">COVESA Vehicle Signal Specification</a> 4.2 (unité et sens compris). 105 noms ; quelques-uns :</p>
+<div class="table"><table>
+<thead><tr><th lang="en">Name</th><th lang="fr">Nom</th><th>VSS</th></tr></thead>
+<tbody>
+<tr><td><code>vehicle.speed</code></td><td><code>Vehicle.Speed</code></td></tr>
+<tr><td><code>engine.rpm</code></td><td><code>Vehicle.Powertrain.CombustionEngine.Speed</code></td></tr>
+<tr><td><code>door.front_left</code></td><td><code>Vehicle.Cabin.Door.Row1.DriverSide.IsOpen</code></td></tr>
+<tr><td><code>steering.angle</code></td><td><code>Vehicle.Chassis.SteeringWheel.Angle</code></td></tr>
+<tr><td><code>radar.rear.left</code></td><td bi>— (LibreHU: proximity in %)<fr>— (LibreHU : proximité en %)</td></tr>
+</tbody></table></div>
+
+<h2 id="versions" bi>Versions<fr>Versions</h2>
+<p bi>The engine follows <a href="https://semver.org/">Semantic Versioning</a>: a profile says the engine it needs (<code>"engine": "&gt;=2.1"</code>); an older service refuses it with a clear message instead of reading it half, and every earlier format stays readable.<fr>Le moteur suit le <a href="https://semver.org/">Semantic Versioning</a> : une fiche dit le moteur qu'elle demande (<code>"engine": "&gt;=2.1"</code>) ; un service plus ancien la refuse avec un message clair au lieu de la lire à moitié, et tous les anciens formats restent lisibles.</p>
+<div class="table"><table>
+<thead><tr><th lang="en">Engine</th><th lang="fr">Moteur</th><th lang="en">Brought</th><th lang="fr">Apport</th><th>Service</th></tr></thead>
+<tbody>
+<tr><td>1.0</td><td bi>first profiles<fr>premières fiches</td><td>v17</td></tr>
+<tr><td>2.0</td><td bi>common names, multiplexed messages, self-tests<fr>noms communs, messages multiplexés, auto-tests</td><td>v163</td></tr>
+<tr><td>2.1</td><td bi>formulas, extends, per-car patches<fr>formules, extends, retouches par voiture</td><td>v164</td></tr>
+<tr><td>2.2</td><td bi>framing in the profile<fr>trame dans la fiche</td><td>v165</td></tr>
+<tr><td>2.3</td><td bi>built messages, commands<fr>messages construits, commandes</td><td>v166</td></tr>
+<tr><td>2.4</td><td bi>key sources, knobs<fr>sources de touches, molettes</td><td>v167</td></tr>
+<tr><td>2.5</td><td bi>engine requirement, CAN box + OBD together<fr>moteur demandé, boîtier CAN + OBD ensemble</td><td>v169</td></tr>
+</tbody></table></div>
+
+<h2 id="updates" bi>Updates by make<fr>Mises à jour par marque</h2>
+<p class="note" bi><span class="status wip">in preparation</span> Profiles will be published by make in their own repository and offered by LibreHU Apps like the apps: fixing a Renault updates the Renault pack only, not the service nor the other makes. Packs need a given engine version; LibreHU Apps only offers those your service can read. The built-in profiles stay as a fallback.<fr><span class="status wip">en préparation</span> Les fiches seront publiées par marque dans leur propre dépôt et proposées par LibreHU Apps comme les applis : corriger une Renault met à jour le paquet Renault seulement, ni le service ni les autres marques. Un paquet demande une version du moteur ; LibreHU Apps ne propose que ceux que votre service sait lire. Les fiches intégrées restent en secours.</p>
+
+<h2 id="port" bi>Port a car<fr>Porter une voiture</h2>
+<ol class="steps">
+  <li bi><strong>Capture</strong>: CAN tab, raw profile of your box, export while using each control (keys, doors, lights…).<fr><strong>Capturer</strong> : onglet CAN, fiche brute de votre boîtier, export en actionnant chaque commande (touches, portes, feux…).</li>
+  <li bi><strong>Find</strong> the bytes that change (shown in orange) and what they mean.<fr><strong>Repérer</strong> les octets qui changent (en orange) et ce qu'ils veulent dire.</li>
+  <li bi><strong>Write</strong> the profile from the template, with a common name for each value.<fr><strong>Écrire</strong> la fiche à partir du modèle, avec un nom commun pour chaque valeur.</li>
+  <li bi><strong>Test</strong>: add self-tests (a message and the values it must give), import the profile in the CAN tab.<fr><strong>Tester</strong> : ajouter des auto-tests (un message et les valeurs qu'il doit donner), importer la fiche dans l'onglet CAN.</li>
+  <li bi><strong>Share</strong> it so that it reaches everyone (the profiles repository and its template are coming).<fr><strong>La partager</strong> pour qu'elle serve à tous (le dépôt des fiches et son modèle arrivent).</li>
+</ol>
+
+<h2 id="robust" bi>Robustness<fr>Robustesse</h2>
+<ul>
+  <li bi>Formulas are computed, never run as code, and limited in length.<fr>Les formules sont calculées, jamais exécutées comme du code, et limitées en longueur.</li>
+  <li bi>A profile is checked when it is read (unknown name, bad formula, too new engine: refused with the reason).<fr>Une fiche est vérifiée à la lecture (nom inconnu, formule fausse, moteur trop récent : refusée avec la raison).</li>
+  <li bi>Messages to the box are spaced (500 ms at least for repeated ones); a knob gives 10 steps at most per message.<fr>Les messages au boîtier sont espacés (500 ms au moins pour ceux qui se répètent) ; une molette donne 10 crans au plus par message.</li>
+  <li bi>One source stopping leaves the others' values.<fr>Une source qui s'arrête laisse les valeurs des autres.</li>
+</ul>
+</article>
+</main>
+{{foot}}

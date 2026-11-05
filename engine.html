@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car engine – LibreHU</title>
+<meta name="title-en" content="Car engine – LibreHU">
+<meta name="title-fr" content="Moteur voiture – LibreHU">
+<meta name="description" content="How LibreHU reads a car: CAN boxes and OBD-II adapters, car profiles, common names (COVESA VSS), engine versions and how to port a car.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Language before drawing: saved choice, else the browser's first French or English language, else English.
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem("lang"); } catch (e) {}
+    if (l !== "fr" && l !== "en") {
+      l = "en";
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).toLowerCase().slice(0, 2);
+        if (c === "fr" || c === "en") { l = c; break; }
+      }
+    }
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.lang = l;
+  })();
+</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="changelog.html"><span lang="en">Changelog</span><span lang="fr">Nouveautés</span></a>
+      <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
+      <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a>
+      <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a>
+      <a href="screenshots/index.html"><span lang="en">Screenshots</span><span lang="fr">Captures</span></a>
+      <a href="headunits.html"><span lang="en">Head units</span><span lang="fr">Autoradios</span></a>
+      <a href="index.html#roadmap"><span lang="en">Roadmap</span><span lang="fr">Feuille de route</span></a>
+    </nav>
+    <a class="liberapay-link" href="https://liberapay.com/DokT/donate" rel="noopener" title="Liberapay"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M2.32 0A2.321 2.321 0 0 0 0 2.32v19.36A2.321 2.321 0 0 0 2.32 24h19.36A2.32 2.32 0 0 0 24 21.68V2.32A2.32 2.32 0 0 0 21.68 0zm9.208 3.98l-2.27 9.405a2.953 2.953 0 0 0-.073.539.853.853 0 0 0 .09.432.7.7 0 0 0 .334.302c.157.077.378.126.661.147l-.49 2.008c-.772 0-1.38-.1-1.82-.3-.441-.203-.757-.477-.947-.826a2.391 2.391 0 0 1-.278-1.2c.005-.452.068-.933.188-1.445l2.074-8.67zm3.9 3.888c.61 0 1.135.092 1.576.277.44.185.802.438 1.085.76.283.32.493.696.629 1.126.136.43.204.89.204 1.379v.001c0 .794-.13 1.52-.392 2.179a5.16 5.16 0 0 1-1.086 1.706 4.84 4.84 0 0 1-1.665 1.118c-.648.267-1.353.4-2.114.4-.37 0-.74-.033-1.11-.098l-.735 2.956H9.403l2.71-11.298c.435-.13.934-.248 1.494-.351a10.045 10.045 0 0 1 1.821-.155zm-.31 2.041a4.67 4.67 0 0 0-.98.098l-1.143 4.752c.185.044.413.065.685.065.425 0 .812-.079 1.16-.237a2.556 2.556 0 0 0 .89-.661c.244-.283.435-.623.571-1.02a4.03 4.03 0 0 0 .204-1.315c0-.468-.104-.865-.31-1.192-.207-.326-.566-.49-1.077-.49z"/></svg><span class="sr"><span lang="en">Donate (Liberapay)</span><span lang="fr">Faire un don (Liberapay)</span></span></a>
+    <a class="discord-link" href="https://discord.gg/aP4JZMavxB" rel="noopener" title="Discord"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span class="sr">Discord</span></a>
+    <div class="lang" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false"><span class="sr">Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap doc">
+<aside class="toc">
+  <details open>
+    <summary><span lang="en">Contents</span><span lang="fr">Sommaire</span></summary>
+    <ol>
+      <li><a href="#what"><span lang="en">In short</span><span lang="fr">En bref</span></a></li>
+      <li><a href="#layers"><span lang="en">Layers</span><span lang="fr">Couches</span></a></li>
+      <li><a href="#sources"><span lang="en">Sources</span><span lang="fr">Sources</span></a></li>
+      <li><a href="#profiles"><span lang="en">Car profiles</span><span lang="fr">Fiches de voiture</span></a></li>
+      <li><a href="#roles"><span lang="en">Common names</span><span lang="fr">Noms communs</span></a></li>
+      <li><a href="#versions"><span lang="en">Versions</span><span lang="fr">Versions</span></a></li>
+      <li><a href="#updates"><span lang="en">Updates by make</span><span lang="fr">Mises à jour par marque</span></a></li>
+      <li><a href="#port"><span lang="en">Port a car</span><span lang="fr">Porter une voiture</span></a></li>
+      <li><a href="#robust"><span lang="en">Robustness</span><span lang="fr">Robustesse</span></a></li>
+    </ol>
+  </details>
+</aside>
+<article>
+<h1><span lang="en">Car engine</span><span lang="fr">Moteur voiture</span></h1>
+<p class="lead"><span lang="en">What LibreHU knows of your car (keys, doors, speed, engine, climate, parking sensors) comes from one engine that knows no car: everything is in <strong>car profiles</strong>, small files read by the engine, like the code lists of a universal remote.</span><span lang="fr">Ce que LibreHU sait de votre voiture (touches, portes, vitesse, moteur, clim, radar) vient d'un seul moteur qui ne connaît aucune voiture : tout est dans des <strong>fiches de voiture</strong>, de petits fichiers lus par le moteur, comme les listes de codes d'une télécommande universelle.</span></p>
+
+<h2 id="what"><span lang="en">In short</span><span lang="fr">En bref</span></h2>
+<ul>
+  <li><span lang="en">Adding or fixing a car = changing its profile, not the app.</span><span lang="fr">Ajouter ou corriger une voiture = changer sa fiche, pas l'appli.</span></li>
+  <li><span lang="en">A CAN box and an OBD-II adapter can be plugged in at the same time: their values are merged.</span><span lang="fr">Un boîtier CAN et une sonde OBD-II peuvent être branchés en même temps : leurs valeurs sont réunies.</span></li>
+  <li><span lang="en">Industry standards instead of home-made ones: COVESA VSS for the names, SAE J1979 for OBD-II, Semantic Versioning, JSON Schema.</span><span lang="fr">Des standards de l'industrie plutôt que des inventions maison : COVESA VSS pour les noms, SAE J1979 pour l'OBD-II, Semantic Versioning, JSON Schema.</span></li>
+</ul>
+
+<h2 id="layers"><span lang="en">Layers</span><span lang="fr">Couches</span></h2>
+<p><span lang="en">Each layer can change without the others.</span><span lang="fr">Chaque couche peut changer sans les autres.</span></p>
+<div class="diagram">
+<svg viewBox="0 0 900 400" role="img" aria-label="Layers of the car engine" font-family="system-ui, sans-serif" font-size="14">
+  <defs><marker id="e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <g fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.4">
+    <rect x="20" y="10" width="860" height="56" rx="12"/>
+    <rect x="20" y="86" width="860" height="56" rx="12"/>
+    <rect x="20" y="162" width="860" height="56" rx="12"/>
+    <rect x="20" y="238" width="860" height="56" rx="12"/>
+    <rect x="20" y="314" width="860" height="56" rx="12"/>
+  </g>
+  <g fill="currentColor">
+    <text lang="en" x="40" y="44" font-weight="700">1. Bytes in</text><text lang="fr" x="40" y="44" font-weight="700">1. Arrivée</text>
+    <text lang="en" x="230" y="44">Jancar MCU · serial port · USB · Bluetooth</text><text lang="fr" x="230" y="44">MCU Jancar · port série · USB · Bluetooth</text>
+    <text lang="en" x="40" y="120" font-weight="700">2. Reading</text><text lang="fr" x="40" y="120" font-weight="700">2. Lecture</text>
+    <text lang="en" x="230" y="120">CAN boxes (Hiworld, Raise…, framing in the profile) · OBD-II (ELM327)</text><text lang="fr" x="230" y="120">Boîtiers CAN (Hiworld, Raise…, trame dans la fiche) · OBD-II (ELM327)</text>
+    <text lang="en" x="40" y="196" font-weight="700">3. Profiles</text><text lang="fr" x="40" y="196" font-weight="700">3. Fiches</text>
+    <text lang="en" x="230" y="196">one JSON per car protocol, packs by make</text><text lang="fr" x="230" y="196">un JSON par protocole de voiture, paquets par marque</text>
+    <text lang="en" x="40" y="272" font-weight="700">4. Car data</text><text lang="fr" x="40" y="272" font-weight="700">4. Données</text>
+    <text lang="en" x="230" y="272">one value per common name (VSS), box first, OBD fills in</text><text lang="fr" x="230" y="272">une valeur par nom commun (VSS), boîtier d'abord, OBD complète</text>
+    <text lang="en" x="40" y="348" font-weight="700">5. Uses</text><text lang="fr" x="40" y="348" font-weight="700">5. Usages</text>
+    <text lang="en" x="230" y="348">reverse camera · steering wheel keys · widgets · other apps</text><text lang="fr" x="230" y="348">caméra de recul · touches du volant · widgets · autres applis</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.4" marker-end="url(#e)">
+    <line x1="860" y1="66" x2="860" y2="86"/><line x1="860" y1="142" x2="860" y2="162"/><line x1="860" y1="218" x2="860" y2="238"/><line x1="860" y1="294" x2="860" y2="314"/>
+  </g>
+</svg>
+</div>
+
+<h2 id="sources"><span lang="en">Sources</span><span lang="fr">Sources</span></h2>
+<div class="table"><table>
+<thead><tr><th lang="en">Source</th><th lang="fr">Source</th><th lang="en">What it gives</th><th lang="fr">Ce qu'elle donne</th><th lang="en">Status</th><th lang="fr">État</th></tr></thead>
+<tbody>
+<tr><td><span lang="en">CAN box (Hiworld, Raise / Oudi…)</span><span lang="fr">Boîtier CAN (Hiworld, Raise / Oudi…)</span></td><td><span lang="en">keys, doors, lights, steering angle, radar, climate, trip computer, depending on the car</span><span lang="fr">touches, portes, feux, angle du volant, radar, clim, ordinateur de bord, selon la voiture</span></td><td><span lang="en">through the Jancar MCU; a new box maker can be described in the profile</span><span lang="fr">par le MCU Jancar ; un nouveau fabricant de boîtier se décrit dans la fiche</span></td></tr>
+<tr><td><span lang="en">OBD-II adapter (ELM327, USB or Bluetooth)</span><span lang="fr">Sonde OBD-II (ELM327, USB ou Bluetooth)</span></td><td><span lang="en">engine speed, coolant, oil, fuel, load, battery… (SAE J1979), any car since 2001 (petrol) / 2004 (diesel) in Europe</span><span lang="fr">régime, eau, huile, carburant, charge, batterie… (SAE J1979), toute voiture depuis 2001 (essence) / 2004 (diesel) en Europe</span></td><td><span lang="en">OBD tab of LibreHU service</span><span lang="fr">onglet OBD de LibreHU service</span></td></tr>
+<tr><td><span lang="en">Both together</span><span lang="fr">Les deux ensemble</span></td><td><span lang="en">for a value both give, the box first; the adapter fills in the rest</span><span lang="fr">pour une valeur donnée par les deux, le boîtier d'abord ; la sonde complète le reste</span></td><td><span lang="en">service v169</span><span lang="fr">service v169</span></td></tr>
+<tr><td><span lang="en">Other head units: serial port, USB-serial or Bluetooth CAN box</span><span lang="fr">Autres autoradios : boîtier sur port série, USB-série ou Bluetooth</span></td><td><span lang="en">same profiles</span><span lang="fr">mêmes fiches</span></td><td><span lang="en">in preparation</span><span lang="fr">en préparation</span></td></tr>
+</tbody></table></div>
+
+<h2 id="profiles"><span lang="en">Car profiles</span><span lang="fr">Fiches de voiture</span></h2>
+<p><span lang="en">A profile is a JSON file: which box, how to answer it, where each value is in its messages. Format 2 adds what the decoders of Hiworld's app need:</span><span lang="fr">Une fiche est un fichier JSON : quel boîtier, comment lui répondre, où est chaque valeur dans ses messages. Le format 2 ajoute ce dont les décodeurs de l'appli de Hiworld ont besoin :</span></p>
+<ul>
+  <li><span lang="en"><strong>common names</strong> for every value, <strong>multiplexed messages</strong>, conditions, invalid values, labels in each language;</span><span lang="fr"><strong>noms communs</strong> pour chaque valeur, <strong>messages multiplexés</strong>, conditions, valeurs invalides, libellés par langue ;</span></li>
+  <li><span lang="en"><strong>formulas</strong> (<code>D4 == 0 ? -D5 : D4</code>), a profile <strong>extending</strong> another, per-car patches;</span><span lang="fr"><strong>formules</strong> (<code>D4 == 0 ? -D5 : D4</code>), une fiche qui en <strong>complète</strong> une autre, retouches par voiture ;</span></li>
+  <li><span lang="en">the box's <strong>framing</strong>, messages <strong>built</strong> from the head unit's state (the clock…), <strong>commands</strong>, several <strong>key sources</strong> and knobs;</span><span lang="fr">la <strong>trame</strong> du boîtier, des messages <strong>construits</strong> depuis l'état de l'autoradio (l'horloge…), des <strong>commandes</strong>, plusieurs <strong>sources de touches</strong> et molettes ;</span></li>
+  <li><span lang="en"><strong>self-tests</strong> in each profile, checked on every build.</span><span lang="fr">des <strong>auto-tests</strong> dans chaque fiche, vérifiés à chaque compilation.</span></li>
+</ul>
+<p><span lang="en">Full format: <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md">docs/can-vehicles.md</a>; JSON Schema for editors: <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicle.schema.json">can-vehicle.schema.json</a>. Cars decoded today: <a href="docs.html#can-cars">list</a>.</span><span lang="fr">Format complet : <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md">docs/can-vehicles.md</a> ; schéma JSON pour les éditeurs : <a href="https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicle.schema.json">can-vehicle.schema.json</a>. Voitures décodées aujourd'hui : <a href="docs.html#can-cars">liste</a>.</span></p>
+
+<h2 id="roles"><span lang="en">Common names</span><span lang="fr">Noms communs</span></h2>
+<p><span lang="en">Every value has a common name, whatever the car and the source, aligned on the <a href="https://github.com/COVESA/vehicle_signal_specification">COVESA Vehicle Signal Specification</a> 4.2 (unit and sign included). 105 names; a few:</span><span lang="fr">Chaque valeur a un nom commun, quelles que soient la voiture et la source, aligné sur la <a href="https://github.com/COVESA/vehicle_signal_specification">COVESA Vehicle Signal Specification</a> 4.2 (unité et sens compris). 105 noms ; quelques-uns :</span></p>
+<div class="table"><table>
+<thead><tr><th lang="en">Name</th><th lang="fr">Nom</th><th>VSS</th></tr></thead>
+<tbody>
+<tr><td><code>vehicle.speed</code></td><td><code>Vehicle.Speed</code></td></tr>
+<tr><td><code>engine.rpm</code></td><td><code>Vehicle.Powertrain.CombustionEngine.Speed</code></td></tr>
+<tr><td><code>door.front_left</code></td><td><code>Vehicle.Cabin.Door.Row1.DriverSide.IsOpen</code></td></tr>
+<tr><td><code>steering.angle</code></td><td><code>Vehicle.Chassis.SteeringWheel.Angle</code></td></tr>
+<tr><td><code>radar.rear.left</code></td><td><span lang="en">— (LibreHU: proximity in %)</span><span lang="fr">— (LibreHU : proximité en %)</span></td></tr>
+</tbody></table></div>
+
+<h2 id="versions"><span lang="en">Versions</span><span lang="fr">Versions</span></h2>
+<p><span lang="en">The engine follows <a href="https://semver.org/">Semantic Versioning</a>: a profile says the engine it needs (<code>"engine": "&gt;=2.1"</code>); an older service refuses it with a clear message instead of reading it half, and every earlier format stays readable.</span><span lang="fr">Le moteur suit le <a href="https://semver.org/">Semantic Versioning</a> : une fiche dit le moteur qu'elle demande (<code>"engine": "&gt;=2.1"</code>) ; un service plus ancien la refuse avec un message clair au lieu de la lire à moitié, et tous les anciens formats restent lisibles.</span></p>
+<div class="table"><table>
+<thead><tr><th lang="en">Engine</th><th lang="fr">Moteur</th><th lang="en">Brought</th><th lang="fr">Apport</th><th>Service</th></tr></thead>
+<tbody>
+<tr><td>1.0</td><td><span lang="en">first profiles</span><span lang="fr">premières fiches</span></td><td>v17</td></tr>
+<tr><td>2.0</td><td><span lang="en">common names, multiplexed messages, self-tests</span><span lang="fr">noms communs, messages multiplexés, auto-tests</span></td><td>v163</td></tr>
+<tr><td>2.1</td><td><span lang="en">formulas, extends, per-car patches</span><span lang="fr">formules, extends, retouches par voiture</span></td><td>v164</td></tr>
+<tr><td>2.2</td><td><span lang="en">framing in the profile</span><span lang="fr">trame dans la fiche</span></td><td>v165</td></tr>
+<tr><td>2.3</td><td><span lang="en">built messages, commands</span><span lang="fr">messages construits, commandes</span></td><td>v166</td></tr>
+<tr><td>2.4</td><td><span lang="en">key sources, knobs</span><span lang="fr">sources de touches, molettes</span></td><td>v167</td></tr>
+<tr><td>2.5</td><td><span lang="en">engine requirement, CAN box + OBD together</span><span lang="fr">moteur demandé, boîtier CAN + OBD ensemble</span></td><td>v169</td></tr>
+</tbody></table></div>
+
+<h2 id="updates"><span lang="en">Updates by make</span><span lang="fr">Mises à jour par marque</span></h2>
+<p class="note"><span lang="en"><span class="status wip">in preparation</span> Profiles will be published by make in their own repository and offered by LibreHU Apps like the apps: fixing a Renault updates the Renault pack only, not the service nor the other makes. Packs need a given engine version; LibreHU Apps only offers those your service can read. The built-in profiles stay as a fallback.</span><span lang="fr"><span class="status wip">en préparation</span> Les fiches seront publiées par marque dans leur propre dépôt et proposées par LibreHU Apps comme les applis : corriger une Renault met à jour le paquet Renault seulement, ni le service ni les autres marques. Un paquet demande une version du moteur ; LibreHU Apps ne propose que ceux que votre service sait lire. Les fiches intégrées restent en secours.</span></p>
+
+<h2 id="port"><span lang="en">Port a car</span><span lang="fr">Porter une voiture</span></h2>
+<ol class="steps">
+  <li><span lang="en"><strong>Capture</strong>: CAN tab, raw profile of your box, export while using each control (keys, doors, lights…).</span><span lang="fr"><strong>Capturer</strong> : onglet CAN, fiche brute de votre boîtier, export en actionnant chaque commande (touches, portes, feux…).</span></li>
+  <li><span lang="en"><strong>Find</strong> the bytes that change (shown in orange) and what they mean.</span><span lang="fr"><strong>Repérer</strong> les octets qui changent (en orange) et ce qu'ils veulent dire.</span></li>
+  <li><span lang="en"><strong>Write</strong> the profile from the template, with a common name for each value.</span><span lang="fr"><strong>Écrire</strong> la fiche à partir du modèle, avec un nom commun pour chaque valeur.</span></li>
+  <li><span lang="en"><strong>Test</strong>: add self-tests (a message and the values it must give), import the profile in the CAN tab.</span><span lang="fr"><strong>Tester</strong> : ajouter des auto-tests (un message et les valeurs qu'il doit donner), importer la fiche dans l'onglet CAN.</span></li>
+  <li><span lang="en"><strong>Share</strong> it so that it reaches everyone (the profiles repository and its template are coming).</span><span lang="fr"><strong>La partager</strong> pour qu'elle serve à tous (le dépôt des fiches et son modèle arrivent).</span></li>
+</ol>
+
+<h2 id="robust"><span lang="en">Robustness</span><span lang="fr">Robustesse</span></h2>
+<ul>
+  <li><span lang="en">Formulas are computed, never run as code, and limited in length.</span><span lang="fr">Les formules sont calculées, jamais exécutées comme du code, et limitées en longueur.</span></li>
+  <li><span lang="en">A profile is checked when it is read (unknown name, bad formula, too new engine: refused with the reason).</span><span lang="fr">Une fiche est vérifiée à la lecture (nom inconnu, formule fausse, moteur trop récent : refusée avec la raison).</span></li>
+  <li><span lang="en">Messages to the box are spaced (500 ms at least for repeated ones); a knob gives 10 steps at most per message.</span><span lang="fr">Les messages au boîtier sont espacés (500 ms au moins pour ceux qui se répètent) ; une molette donne 10 crans au plus par message.</span></li>
+  <li><span lang="en">One source stopping leaves the others' values.</span><span lang="fr">Une source qui s'arrête laisse les valeurs des autres.</span></li>
+</ul>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
+    <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="https://discord.gg/aP4JZMavxB">Discord</a> · <a href="https://liberapay.com/DokT/donate"><span lang="en">Donate</span><span lang="fr">Faire un don</span></a> · <a href="docs.html">Docs</a> · <a href="tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+  </div>
+</footer>
+
+<script src="assets/lang.js"></script>
+</body>
+</html>
+

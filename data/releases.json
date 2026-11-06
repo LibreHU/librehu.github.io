@@ -191,12 +191,12 @@
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-ivi/LibreHU-Widgets-ivi.apk",
-     "versionCode": 50,
-     "versionName": "bd9a0a0-ivi",
-     "date": "2026-10-28T12:37:45Z",
-     "size": 2750360,
-     "commit": "bd9a0a02e848c60b1af90d0d7cbea409ca06f132",
-     "summary": "Merge main into ivi"
+     "versionCode": 56,
+     "versionName": "25b14a1-ivi",
+     "date": "2026-11-06T21:44:42Z",
+     "size": 2943796,
+     "commit": "25b14a15b5da07c10fc16cefa58d8ab994557904",
+     "summary": "Merge main into ivi (Infos screen)"
     },
     {
      "branch": "main",

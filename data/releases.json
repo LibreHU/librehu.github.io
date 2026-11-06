@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 177,
-     "versionName": "ab79134-main",
-     "date": "2026-11-05T16:54:40Z",
-     "size": 5450648,
-     "commit": "ab79134c74bd5de2491a95c8e5a777ecfb7af6ee",
-     "summary": "Car packs: the service keeps the SHA-256 of each installed pack and reports it to LibreHU Apps (QUERY_CAR_PACKS \"sha256\")"
+     "versionCode": 181,
+     "versionName": "eb019a9-main",
+     "date": "2026-11-06T18:20:12Z",
+     "size": 5515096,
+     "commit": "eb019a93907ad5ed183629093dbcee53b9bdeaab",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -61,12 +61,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk",
-     "versionCode": 95,
-     "versionName": "41e818f-main",
-     "date": "2026-11-03T17:33:28Z",
-     "size": 4649584,
-     "commit": "41e818f8fe10d7b49991b6498e264e65c15e70bb",
-     "summary": "TPMS on / off switch at the top of the Tyres screen and in the phone app page: off, no USB adapter is opened, no Bluetooth sensor scanned, the alarms and their sound stop and the dashboard card is hidden (\"on the dashboard\" only shows or hides the card)."
+     "versionCode": 98,
+     "versionName": "e458696-main",
+     "date": "2026-11-06T18:18:22Z",
+     "size": 4696308,
+     "commit": "e4586966e0771a80cf26d1b742dc3766464805b4",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -108,12 +108,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-main/LibreHU-Dialer-main.apk",
-     "versionCode": 79,
-     "versionName": "aff16c2-main",
-     "date": "2026-10-28T12:33:23Z",
-     "size": 3439908,
-     "commit": "aff16c227bfbad070dd41f780e44d40fc3d3b0ff",
-     "summary": "Dialogs and settings screens follow the launcher's style"
+     "versionCode": 82,
+     "versionName": "e7377e7-main",
+     "date": "2026-11-06T18:19:36Z",
+     "size": 3485844,
+     "commit": "e7377e74a6a214a085252b68aa6caf621f243b3f",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -155,12 +155,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-main/LibreHU-FM-main.apk",
-     "versionCode": 60,
-     "versionName": "32c67bb-main",
-     "date": "2026-11-03T01:32:45Z",
-     "size": 5262745,
-     "commit": "32c67bbf6935b44c193cc03b8848d9f54bffdd5e",
-     "summary": "Credits in the README: code taken (DABplay+ by jvspier, AOSP FM JNI, redsea by Oona Räisänen), APIs and data (Radio Browser by segler-alex, RDS / RBDS / DAB standards, MediaTek driver, LibreHU-service and ivi-services), libraries, fonts and sounds, Google's touch size guide, Reo Au In's tests; redsea's licence (MIT, not ISC: comments fixed) kept in third_party."
+     "versionCode": 63,
+     "versionName": "7ac7d95-main",
+     "date": "2026-11-06T18:19:31Z",
+     "size": 5310265,
+     "commit": "7ac7d95315b9e26f3bd127d73696716f5159b0a7",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -202,12 +202,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-main/LibreHU-Widgets-main.apk",
-     "versionCode": 26,
-     "versionName": "c274fd5-main",
-     "date": "2026-10-28T12:32:40Z",
-     "size": 2750328,
-     "commit": "c274fd54865e2f9e46f9af3ff6550d441cefbd75",
-     "summary": "Dialogs and settings screens follow the launcher's style"
+     "versionCode": 29,
+     "versionName": "34e94db-main",
+     "date": "2026-11-06T18:18:26Z",
+     "size": 2943764,
+     "commit": "34e94dbcd3f95048df21d95fc854f6c2f6309755",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -249,12 +249,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-main/LibreHU-BtnRemap-main.apk",
-     "versionCode": 29,
-     "versionName": "44dab60-main",
-     "date": "2026-10-28T12:32:41Z",
-     "size": 3310808,
-     "commit": "44dab60bbb02b3cb677a9eac77439a471eb12d2c",
-     "summary": "Dialogs and settings screens follow the launcher's style"
+     "versionCode": 32,
+     "versionName": "75055e4-main",
+     "date": "2026-11-06T18:19:14Z",
+     "size": 3340332,
+     "commit": "75055e41a67084572414b472c28ca49b9bf54686",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -272,12 +272,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-EasySource-app/releases/download/latest-main/LibreHU-EasySource-main.apk",
-     "versionCode": 19,
-     "versionName": "46a71c3-main",
-     "date": "2026-10-28T12:32:46Z",
-     "size": 2874980,
-     "commit": "46a71c37c901c55fc0bcaf85df7342772525f320",
-     "summary": "Dialogs and settings screens follow the launcher's style"
+     "versionCode": 22,
+     "versionName": "597cdc4-main",
+     "date": "2026-11-06T18:18:22Z",
+     "size": 2920920,
+     "commit": "597cdc4b831c42fc0403e836ad6b76ead0acb503",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -295,12 +295,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-disc-app/releases/download/latest-main/LibreHU-Disc-main.apk",
-     "versionCode": 21,
-     "versionName": "94bd3d1-main",
-     "date": "2026-11-02T11:24:50Z",
-     "size": 2996821,
-     "commit": "94bd3d192ceca67362b0a743d82372c57eca889b",
-     "summary": "Root: every su call through Su, for the old su of AOSP some Jancar ROMs ship"
+     "versionCode": 24,
+     "versionName": "ea05eb9-main",
+     "date": "2026-11-06T18:18:05Z",
+     "size": 3059181,
+     "commit": "ea05eb9964fab5189b4ca9911e373e26b15ab43c",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -364,12 +364,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
-     "versionCode": 7,
-     "versionName": "c8a02f8-main",
-     "date": "2026-10-24T19:58:01Z",
-     "size": 2268101,
-     "commit": "c8a02f8195294e4036d3d0c312da1a5f71ca6122",
-     "summary": "Every setting of the app for LibreHU's phone app: <package>.bridge provider (bridge/BridgeKit.kt: pages, items, signature permission checked in call()), same labels and stores as its screens"
+     "versionCode": 12,
+     "versionName": "8a18351-main",
+     "date": "2026-11-06T18:19:21Z",
+     "size": 2322653,
+     "commit": "8a1835144ff842bd5ab8c28c01dedd82fe8ab5bf",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -433,12 +433,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
-     "versionCode": 62,
-     "versionName": "74cfa2c-main",
-     "date": "2026-11-05T16:53:48Z",
-     "size": 3948176,
-     "commit": "74cfa2c3691e7b5b1735a473e71b1e0fd9ca4dab",
-     "summary": "Cars tab: the SHA-256 of installed packs comes from LibreHU service v177"
+     "versionCode": 65,
+     "versionName": "023a968-main",
+     "date": "2026-11-06T18:18:03Z",
+     "size": 3994092,
+     "commit": "023a96825609fc2cef56316d6e836f2961846454",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     }
    ]
   },
@@ -457,12 +457,12 @@
      "branch": "main",
      "label": "Android",
      "url": "https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk",
-     "versionCode": 16,
-     "versionName": "156d5c3-main",
-     "date": "2026-11-03T22:34:49Z",
-     "size": 1911308,
-     "commit": "156d5c385bac3d0eb2f4b9ea5731bc470a734bb7",
-     "summary": "Home screen: app updates, the installed version and a check of GitHub for a newer one, then the APK (Android) or ipa (iPhone) to download, on Android and iOS."
+     "versionCode": 19,
+     "versionName": "7624697-main",
+     "date": "2026-11-06T18:18:18Z",
+     "size": 1934800,
+     "commit": "76246974d9ef7f752f17881397989b066e28b736",
+     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
     },
     {
      "branch": "ios",

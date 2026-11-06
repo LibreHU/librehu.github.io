@@ -36,6 +36,11 @@
   "events"
  ],
  "entries": [
+{"c":"fm","d":"2026-11-06T21:46:42Z","id":"app:fm:librehu-service:114","k":"release","n":"6df9bf4-librehu-service","u":"https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk","v":114},
+{"c":"launcher","d":"2026-11-06T21:46:11Z","id":"app:launcher:librehu-service:183","k":"release","n":"1413400-librehu-service","u":"https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk","v":183},
+{"c":"btnremap","d":"2026-11-06T21:45:38Z","id":"app:btnremap:librehu-service:62","k":"release","n":"a348f38-librehu-service","u":"https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk","v":62},
+{"c":"widgets","d":"2026-11-06T21:45:10Z","id":"app:widgets:librehu-service:57","k":"release","n":"b3d7ff0-librehu-service","u":"https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk","v":57},
+{"c":"dialer","d":"2026-11-06T21:45:08Z","id":"app:dialer:librehu-service:110","k":"release","n":"1cb2cd3-librehu-service","u":"https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk","v":110},
 {"c":"service","d":"2026-11-06T18:20:12Z","id":"app:service:main:181","k":"release","n":"eb019a9-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":181},
 {"c":"helper","d":"2026-11-06T18:19:21Z","id":"app:helper:main:12","k":"release","n":"8a18351-main","u":"https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk","v":12},
 {"c":"easysource","d":"2026-11-06T18:18:22Z","id":"app:easysource:main:22","k":"release","n":"597cdc4-main","u":"https://github.com/LibreHU/LibreHU-EasySource-app/releases/download/latest-main/LibreHU-EasySource-main.apk","v":22},

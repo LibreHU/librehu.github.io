@@ -39,23 +39,23 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk",
-     "versionCode": 177,
-     "versionName": "8e071ce-librehu-service",
-     "date": "2026-11-03T17:33:49Z",
-     "size": 4665988,
-     "commit": "8e071cec80dfa8058c6dee07dc05804ea14b8ffe",
-     "summary": "Merge main into librehu-service"
+     "versionCode": 183,
+     "versionName": "1413400-librehu-service",
+     "date": "2026-11-06T21:46:11Z",
+     "size": 4696324,
+     "commit": "1413400f3b8b8bc0206b71c114d5642417458e42",
+     "summary": "Merge main into librehu-service (Infos screen)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk",
-     "versionCode": 179,
-     "versionName": "8e76c68-ivi",
-     "date": "2026-11-03T17:32:21Z",
-     "size": 4665968,
-     "commit": "8e76c684fbb9dd19c536c5f9cd1399dc7da1dfef",
-     "summary": "Merge main into ivi"
+     "versionCode": 185,
+     "versionName": "7634a5d-ivi",
+     "date": "2026-11-06T21:46:07Z",
+     "size": 4696304,
+     "commit": "7634a5dc943acacf661539ce1847153e8bbafcf8",
+     "summary": "Merge main into ivi (Infos screen)"
     },
     {
      "branch": "main",
@@ -86,23 +86,23 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk",
-     "versionCode": 104,
-     "versionName": "34f36f8-librehu-service",
-     "date": "2026-10-28T12:38:55Z",
-     "size": 3457804,
-     "commit": "34f36f890b312ab4af4c8307ea66f3009c3f22a3",
-     "summary": "Merge main into librehu-service"
+     "versionCode": 110,
+     "versionName": "1cb2cd3-librehu-service",
+     "date": "2026-11-06T21:45:08Z",
+     "size": 3503740,
+     "commit": "1cb2cd354d66ad24b640ed1e0af59c96de9246ab",
+     "summary": "Merge main into librehu-service (Infos screen)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-ivi/LibreHU-Dialer-ivi.apk",
-     "versionCode": 170,
-     "versionName": "132dc55-ivi",
-     "date": "2026-10-28T12:37:51Z",
-     "size": 3440420,
-     "commit": "132dc5564f09dad863ee25797a6a7dd52283f7a3",
-     "summary": "Merge main into ivi"
+     "versionCode": 176,
+     "versionName": "e6f2e46-ivi",
+     "date": "2026-11-06T21:45:35Z",
+     "size": 3486364,
+     "commit": "e6f2e465e587f32a62f60368ffa7562fa024f154",
+     "summary": "Merge main into ivi (Infos screen)"
     },
     {
      "branch": "main",
@@ -133,23 +133,23 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk",
-     "versionCode": 108,
-     "versionName": "3c9f5cd-librehu-service",
-     "date": "2026-11-03T01:33:27Z",
-     "size": 5262797,
-     "commit": "3c9f5cdae3e942782b6ced5d688f68211418a46a",
-     "summary": "Merge main into librehu-service"
+     "versionCode": 114,
+     "versionName": "6df9bf4-librehu-service",
+     "date": "2026-11-06T21:46:42Z",
+     "size": 5310317,
+     "commit": "6df9bf4bec0eb278b4457992ab079536b51aa3ef",
+     "summary": "Merge main into librehu-service (Infos screen)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-ivi/LibreHU-FM-ivi.apk",
-     "versionCode": 108,
-     "versionName": "3597d71-ivi",
-     "date": "2026-11-03T01:33:01Z",
-     "size": 5262777,
-     "commit": "3597d71b857cb70650ba35f6d057e5f99632a981",
-     "summary": "Merge main into ivi"
+     "versionCode": 114,
+     "versionName": "0275e86-ivi",
+     "date": "2026-11-06T21:45:39Z",
+     "size": 5310297,
+     "commit": "0275e86741c5102e0565140da37fd15c9d401471",
+     "summary": "Merge main into ivi (Infos screen)"
     },
     {
      "branch": "main",
@@ -180,12 +180,12 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk",
-     "versionCode": 51,
-     "versionName": "614d74d-librehu-service",
-     "date": "2026-10-28T12:38:47Z",
-     "size": 2750372,
-     "commit": "614d74d184a03816300f6ee2677ad57785634f98",
-     "summary": "Merge main into librehu-service"
+     "versionCode": 57,
+     "versionName": "b3d7ff0-librehu-service",
+     "date": "2026-11-06T21:45:10Z",
+     "size": 2943808,
+     "commit": "b3d7ff08adfc5ed17a2352c8f6af052348deea36",
+     "summary": "Merge main into librehu-service (Infos screen)"
     },
     {
      "branch": "ivi",
@@ -227,23 +227,23 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk",
-     "versionCode": 56,
-     "versionName": "52a27b5-librehu-service",
-     "date": "2026-10-28T12:38:54Z",
-     "size": 3310812,
-     "commit": "52a27b5454a29b3bda5f5603a0ebd2023ca24ee8",
-     "summary": "Merge main into librehu-service"
+     "versionCode": 62,
+     "versionName": "a348f38-librehu-service",
+     "date": "2026-11-06T21:45:38Z",
+     "size": 3356720,
+     "commit": "a348f38600be398af742c21e127e3aa59c4307b1",
+     "summary": "Merge main into librehu-service (Infos screen)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-ivi/LibreHU-BtnRemap-ivi.apk",
-     "versionCode": 54,
-     "versionName": "a9b0dc5-ivi",
-     "date": "2026-10-28T12:38:38Z",
-     "size": 3310920,
-     "commit": "a9b0dc5895fa419fbe23b160406a7df21da24292",
-     "summary": "Merge main into ivi"
+     "versionCode": 60,
+     "versionName": "23f6a5b-ivi",
+     "date": "2026-11-06T21:44:46Z",
+     "size": 3356828,
+     "commit": "23f6a5be14fe2a297d5dd822fb523fd34290be4f",
+     "summary": "Merge main into ivi (Infos screen)"
     },
     {
      "branch": "main",

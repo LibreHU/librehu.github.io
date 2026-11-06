@@ -101,7 +101,7 @@ def foot(up: str) -> str:
   <div class="wrap">
     <span lang="en">LibreHU — independent project, not affiliated with Jancar, Autochips, Google or Apple.</span>
     <span lang="fr">LibreHU — projet indépendant, sans lien avec Jancar, Autochips, Google ou Apple.</span>
-    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="{DISCORD}">Discord</a> · <a href="{LIBERAPAY}"><span lang="en">Donate</span><span lang="fr">Faire un don</span></a> · <a href="{up}docs.html">Docs</a> · <a href="{up}tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="{up}developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
+    <span><a href="https://github.com/LibreHU">GitHub</a> · <a href="{DISCORD}">Discord</a> · <a href="mailto:librehu@proton.me">Contact</a> · <a href="{LIBERAPAY}"><span lang="en">Donate</span><span lang="fr">Faire un don</span></a> · <a href="{up}docs.html">Docs</a> · <a href="{up}tutorials.html"><span lang="en">Tutorials</span><span lang="fr">Tutos</span></a> · <a href="{up}developers.html"><span lang="en">Developers</span><span lang="fr">Développeurs</span></a></span>
   </div>
 </footer>
 

@@ -26,16 +26,17 @@
   "LibreHU/LibreHU-widget-app@main": "2026-11-06T18:15:24Z",
   "LibreHU/LibreHU-xcertplay-app@master": "2026-10-28T09:26:02Z",
   "LibreHU/MCU-tools-app@main": "2026-11-06T17:55:03Z",
-  "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-04T02:19:26Z",
+  "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-06T17:57:01Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-06T17:26:28Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-01T16:18:52Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-06T17:26:28Z"
+  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-06T22:41:18Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"a":"2026-11-06T22:41:18Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-06T22:41:18Z","k":"commit","m":"thermal: no battery thermal zone on a head unit (mtktsbattery read a fixed -127 C shown as a sensor); mtk_ts_battery.zone=1 brings it back, /proc/driver/thermal/tzbattery stays for the vendor thermal_manager","s":"9a970ae5d749f4d60c1b2618e3275aef701fce56","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/9a970ae5d749f4d60c1b2618e3275aef701fce56"},
 {"c":"fm","d":"2026-11-06T21:46:42Z","id":"app:fm:librehu-service:114","k":"release","n":"6df9bf4-librehu-service","u":"https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk","v":114},
 {"c":"launcher","d":"2026-11-06T21:46:11Z","id":"app:launcher:librehu-service:183","k":"release","n":"1413400-librehu-service","u":"https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk","v":183},
 {"c":"btnremap","d":"2026-11-06T21:45:38Z","id":"app:btnremap:librehu-service:62","k":"release","n":"a348f38-librehu-service","u":"https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk","v":62},

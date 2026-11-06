@@ -71,3 +71,18 @@ enabling it (Server settings → Widget) would allow an embedded member list.
 The top bar (Liberapay icon), the home page (« Support the project » card, `#donate`) and the footer link to
 <https://liberapay.com/DokT/donate>; the card shows the patron count as a Shields.io badge. No third-party script is
 loaded (Liberapay's own widgets need JavaScript from liberapay.com). Logo: `assets/liberapay.svg` (Simple Icons, CC0).
+
+## Licence
+
+Copyright (C) 2026 les contributeurs de LibreHU.
+
+Le code du site (`tools/`, `assets/*.js`, `assets/*.css`) est sous **GNU AGPL v3 ou ultérieure** (`AGPL-3.0-or-later`, fichier [`LICENSE`](LICENSE)), avec les
+[termes additionnels](LICENSE-ADDITIONAL-TERMS.md) de son article 7 : garder la mention « Basé sur LibreHU –
+https://github.com/LibreHU » et marquer une version modifiée comme telle. Qui distribue une version modifiée, ou la
+fait utiliser à distance, doit en donner le code source complet sous la même licence.
+
+Les **textes et images** du site (`src/`, pages générées, `assets/img/`, `assets/shots/`, `screenshots/`, `data/`)
+sont sous **CC BY-SA 4.0** ([`LICENSES/CC-BY-SA-4.0.txt`](LICENSES/CC-BY-SA-4.0.txt)) : citer LibreHU
+(https://librehu.github.io) et partager une version modifiée sous la même licence. Les logos de Discord et de
+Liberapay (`assets/discord.svg`, `assets/liberapay.svg`) restent à leurs titulaires.
+

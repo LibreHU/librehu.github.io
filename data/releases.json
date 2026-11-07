@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 181,
-     "versionName": "eb019a9-main",
-     "date": "2026-11-06T18:20:12Z",
-     "size": 5515096,
-     "commit": "eb019a93907ad5ed183629093dbcee53b9bdeaab",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 183,
+     "versionName": "f689ba9-main",
+     "date": "2026-11-06T23:05:21Z",
+     "size": 5519028,
+     "commit": "f689ba985e28352de829dfbd3b46626e8d48c6cc",
+     "summary": "TWRP reads the chosen profile's CAN box whatever its family: ujc201_can.conf now carries the framing (Hiworld 5A A5 / AA 55, Raise 2E, Raise FD and profile framings), the acknowledgement, the box speed and the TWRP action of each named key; TWRP card in the CAN tab (what is sent, write again)"
     }
    ]
   },
@@ -612,7 +612,7 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Modules seuls (noyau déjà flashé)",
-    "version": "r146-97311f83a",
+    "version": "r147-9a970ae5d",
     "order": 1327,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip",
@@ -704,11 +704,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Noyau + modules (avec menu de démarrage)",
-    "version": "r146-97311f83a",
+    "version": "r147-9a970ae5d",
     "order": 1326,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip",
-    "size": 11890723
+    "size": 11890877
    },
    {
     "id": "usb-net",
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "ab79134-main",
+    "version": "f689ba9-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22726
+    "size": 22715
    },
    {
     "id": "jancar-settings-provider-restore",
@@ -891,6 +891,15 @@
   ]
  },
  "twrp": [
+  {
+   "component": "twrp",
+   "tag": "twrp-build-14",
+   "version": "b14",
+   "stable": false,
+   "date": "2026-11-07T00:35:56Z",
+   "commit": "ca1ac544fbac28d4a425156d869df29baec9f61f",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-14"
+  },
   {
    "component": "twrp",
    "tag": "twrp-build-13",

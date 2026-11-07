@@ -740,10 +740,10 @@
     "group": "twrp",
     "group_name": "TWRP UJC201",
     "variant": "Dernière version stable",
-    "version": "v8",
+    "version": "v14",
     "order": 100,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201.zip",
-    "size": 29653896
+    "size": 29671425
    },
    {
     "id": "twrp-ujc201-beta",
@@ -753,10 +753,10 @@
     "group": "twrp",
     "group_name": "TWRP UJC201",
     "variant": "Bêta (touches au volant)",
-    "version": "b13",
+    "version": "b14",
     "order": 101,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip",
-    "size": 29669256
+    "size": 29671447
    },
    {
     "id": "gapps-remove",

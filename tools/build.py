@@ -419,34 +419,46 @@ def can_table(can: dict, conf: dict) -> str:
 
 
 def can_bars(can: dict) -> str:
-    """The home page's CAN bars, from the packs' coverage (LibreHU-car-profiles dist/index.json, via data/can.json):
-    box link and car decoded over the models of the stock app's catalogue."""
+    """The home page's CAN bars, from the packs' coverage (LibreHU-car-profiles dist/index.json, via data/can.json), over
+    the car models of the stock app's catalogue: box link, decoded (by the car's own decoder or by the one of its protocol
+    document), tried on a car. Built after the shorthand expansion: plain spans per language."""
     c = (can or {}).get("coverage")
     if not c or not c.get("models"):
         return ""
+    total = c["models"]
 
     def pct(n: int) -> tuple:
-        v = 100 * n / c["models"]
-        t = f"{v:.1f}" if 99 <= v < 100 else f"{v:.0f}"
+        v = 100 * n / total
+        t = f"{v:.1f}" if (v < 1 or 99 <= v < 100) else f"{v:.0f}"
         return v, t + "%", t.replace(".", ",") + " %"
 
     def num(n: int) -> tuple:
         return f"{n:,}", f"{n:,}".replace(",", " ")
 
+    own, doc = c.get("own", c.get("decoded", 0)), c.get("same_protocol", 0)
+    tried = c.get("tried") or []
+    rows = (
+        (c.get("box_link", 0), "Link with the box", "Liaison avec le boîtier", "ok"),
+        (own + doc, "Car decoded", "Voiture décodée", ""),
+        (len(tried), "Tried on a car", "Essayée sur une voiture", ""),
+    )
     out = []
-    for key, en, fr, ok in (("box_link", "Link with the box", "Liaison avec le boîtier", True), ("decoded", "Car decoded", "Voiture décodée", False)):
-        v, ten, tfr = pct(c.get(key, 0))
-        out.append(f'<div class="progress"><div class="label"><t>{en}<fr>{fr}</t><strong><t>{ten}<fr>{tfr}</t></strong></div>'
-                   f'<div class="bar{" ok" if ok else ""}"><span style="width: {v:.1f}%"></span></div></div>')
-    m, cars, prof, gen = num(c["models"]), num(c.get("cars", 0)), num(c.get("profiles", 0)), num(c.get("generated", 0))
-    g = num(c.get("guessed", 0))
+    for n, en, fr, cls in rows:
+        v, ten, tfr = pct(n)
+        bar = f"bar {cls}".strip()
+        out.append(f'<div class="progress"><div class="label">{both(en, fr)}<strong>{both(ten, tfr)}</strong></div>'
+                   f'<div class="{bar}"><span style="width: {v:.1f}%"></span></div></div>')
+    m, o, d = num(total), num(own), num(doc)
+    cars, prof, gen = num(c.get("cars", 0)), num(c.get("profiles", 0)), num(c.get("generated", 0))
     src = esc(c.get("source", "").split(" (")[0])
-    ge = f"; {g[0]} models guessed (no decoder in the stock app: the one of the same make and box)" if c.get("guessed") else ""
-    gf = f" ; {g[1]} modèles supposés (pas de décodeur dans l'appli d'origine : celui de la même marque et du même boîtier)" if c.get("guessed") else ""
-    out.append(f'<p class="muted" lang="en">Of the {m[0]} car models of Hiworld\'s catalogue ({src}): {cars[0]} cars in {prof[0]} profiles, '
-               f'{gen[0]} of them generated and never tried on a car{ge}. <a href="docs.html#can-cars">Which cars?</a> <a href="engine.html">How it works</a></p>')
-    out.append(f'<p class="muted" lang="fr">Sur les {m[1]} modèles de voitures du catalogue Hiworld ({src}) : {cars[1]} voitures dans {prof[1]} profils, '
-               f'dont {gen[1]} générés et jamais essayés sur une voiture{gf}. <a href="docs.html#can-cars">Quelles voitures ?</a> <a href="engine.html">Comment ça marche</a></p>')
+    t = esc(", ".join(tried)) or "-"
+    out.append(f'<p class="muted" lang="en">Of the {m[0]} car models of Hiworld\'s catalogue ({src}): {o[0]} decoded by the car\'s own '
+               f'decoder, {d[0]} by the decoder of their box maker\'s protocol document; tried on a car: {t}. {cars[0]} cars in '
+               f'{prof[0]} profiles, {gen[0]} generated. <a href="docs.html#can-cars">Which cars?</a> <a href="engine.html">How it works</a></p>')
+    out.append(f'<p class="muted" lang="fr">Sur les {m[1]} modèles de voitures du catalogue Hiworld ({src}) : {o[1]} décodés par le '
+               f'décodeur de la voiture, {d[1]} par celui du document de protocole de leur boîtier ; essayés sur une voiture : {t}. '
+               f'{cars[1]} voitures dans {prof[1]} profils, dont {gen[1]} générés. <a href="docs.html#can-cars">Quelles voitures ?</a> '
+               f'<a href="engine.html">Comment ça marche</a></p>')
     return "\n        ".join(out)
 
 
@@ -458,7 +470,7 @@ def generated(text: str) -> str:
         can = load(ROOT / "data" / "can.json")
         text = text.replace("{{can_bars}}", can_bars(can))
         c = (can or {}).get("coverage") or {}
-        for k in ("profiles", "cars", "generated", "guessed", "models"):
+        for k in ("profiles", "cars", "generated", "guessed", "same_protocol", "own", "models"):
             n = c.get(k, 0)
             text = text.replace("{{can_n_" + k + "_en}}", f"{n:,}").replace("{{can_n_" + k + "_fr}}", f"{n:,}".replace(",", " "))
     if "{{can_cars}}" in text:

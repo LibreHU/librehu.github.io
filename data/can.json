@@ -5,11 +5,15 @@
   "source": "Car Info 1.0.3991 (com.can.activity)",
   "models": 1785,
   "box_link": 1785,
-  "decoded": 1785,
-  "guessed": 95,
+  "own": 1690,
+  "same_protocol": 95,
+  "guessed": 0,
+  "tried": [
+   "Clio 3"
+  ],
   "profiles": 521,
   "generated": 511,
-  "cars": 6413
+  "cars": 6415
  },
  "profiles": [
   {

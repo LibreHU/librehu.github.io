@@ -171,7 +171,7 @@ adb shell pm enable com.jancar.services</code></pre>
 </ul>
 <h4 id="can-cars"><span lang="en">Cars decoded with a CAN box</span><span lang="fr">Voitures décodées avec un boîtier CAN</span></h4>
 <p><span lang="en">The car profiles published by <a href="https://github.com/LibreHU/LibreHU-car-profiles">LibreHU-car-profiles</a>, read from its packs by make (this table follows each new batch by itself); none is built into the service since v184. Install your make's pack in LibreHU service → CAN → <em>Car profiles to download</em> (or LibreHU Apps → Cars), then choose your car in CAN → <em>Car</em>: its box needs its car type. Since = service version when the car was first published.</span><span lang="fr">Les profils de voiture publiés par <a href="https://github.com/LibreHU/LibreHU-car-profiles">LibreHU-car-profiles</a>, relus dans ses paquets par marque (ce tableau suit seul chaque nouveau lot) ; aucun n'est intégré au service depuis la v184. Installer le paquet de sa marque dans LibreHU service → CAN → <em>Profils voiture à télécharger</em> (ou LibreHU Apps → Voitures), puis choisir sa voiture dans CAN → <em>Voiture</em> : son boîtier a besoin de son type de voiture. Depuis = version du service quand la voiture a été publiée.</span></p>
-<p class="sub"><span lang="en">6073 cars (years and trims apart) of 115 makes in 513 profiles published by LibreHU-car-profiles (packs by make, downloaded by the service's CAN tab or LibreHU Apps), LibreHU service v189.</span><span lang="fr">6073 voitures (années et finitions à part) de 115 marques dans 513 profils publiés par LibreHU-car-profiles (paquets par marque, téléchargés par l'onglet CAN du service ou LibreHU Apps), LibreHU service v189.</span></p>
+<p class="sub"><span lang="en">6115 cars (years and trims apart) of 115 makes in 520 profiles published by LibreHU-car-profiles (packs by make, downloaded by the service's CAN tab or LibreHU Apps), LibreHU service v190.</span><span lang="fr">6115 voitures (années et finitions à part) de 115 marques dans 520 profils publiés par LibreHU-car-profiles (paquets par marque, téléchargés par l'onglet CAN du service ou LibreHU Apps), LibreHU service v190.</span></p>
 <div class="table"><table class="cars"><thead><tr><th lang="en">Make</th><th lang="fr">Marque</th><th lang="en">Models</th><th lang="fr">Modèles</th><th lang="en">Since (service)</th><th lang="fr">Depuis (service)</th></tr></thead><tbody>
 <tr class="cat"><th colspan="3">Hiworld LNP002 <span class="what"><span lang="en">steering wheel keys and angle, ignition, lights, reverse, doors, trip computer, front panel keys, knob, climate, parking radar, side radar, tyre pressure, park assist, vehicle settings</span><span lang="fr">touches et angle du volant, contact, feux, marche arrière, portes, ordinateur de bord, touches de façade, molette, climatisation, radar de recul, radar latéral, pression des pneus, aide au stationnement, réglages du véhicule</span></span></th></tr>
 <tr><td><strong>LADA</strong></td><td>Priora, Vesta</td><td class="since">v147</td></tr>
@@ -1306,6 +1306,20 @@ adb shell pm enable com.jancar.services</code></pre>
 <tr><td><strong>Zotye</strong></td><td>T700</td><td class="since">v189</td></tr>
 <tr class="cat"><th colspan="3">ReZotyeTProtocol <span class="what"><span lang="en">steering wheel keys</span><span lang="fr">touches du volant</span></span></th></tr>
 <tr><td><strong>Zotye</strong></td><td>E200, Junma S70, SR7, sr7, SR9, sr9, T300, T500, T600, X5, X7</td><td class="since">v189</td></tr>
+<tr class="cat"><th colspan="3">SpAudiProtocol</th></tr>
+<tr><td><strong>Audi</strong></td><td>A3, A4, TT, 兼容 兼容</td><td class="since">v190</td></tr>
+<tr class="cat"><th colspan="3">ReBentengProtocolX80</th></tr>
+<tr><td><strong>Besturn</strong></td><td>ModelX80</td><td class="since">v190</td></tr>
+<tr class="cat"><th colspan="3">CytBydF3Protocol</th></tr>
+<tr><td><strong>BYD</strong></td><td>F3, ModelSuRui</td><td class="since">v190</td></tr>
+<tr class="cat"><th colspan="3">CytBydS6LowProtocol</th></tr>
+<tr><td><strong>BYD</strong></td><td>S6</td><td class="since">v190</td></tr>
+<tr class="cat"><th colspan="3">CytAirFordProtocol</th></tr>
+<tr><td><strong>Ford</strong></td><td>f150 All, Mondeo All, Mustang All</td><td class="since">v190</td></tr>
+<tr class="cat"><th colspan="3">CytFordProtocol</th></tr>
+<tr><td><strong>Ford</strong></td><td>f150 All, Mondeo, Mustang</td><td class="since">v190</td></tr>
+<tr class="cat"><th colspan="3">ReMazdaProtocol <span class="what"><span lang="en">steering wheel keys</span><span lang="fr">touches du volant</span></span></th></tr>
+<tr><td><strong>Mazda</strong></td><td>cx9, Mazda cx5, Mazda cx7, mazda3, mazda3 Oversea, mazda3 Xingpin, mazda5, mazda6, mazda6 Ruiyi, rx8, rx8 20012011</td><td class="since">v190</td></tr>
 </tbody></table></div>
 <p class="note"><span lang="en"><span class="ok">✓</span> tried on a car. The others are decoded as Hiworld's own app does, not tried yet: captures and feedback welcome. A Hiworld box sends the steering wheel keys only with service v144 or later (dialogue with the box). Duster, Logan, Sandero, Lodgy and Jogger are also sold as Dacia.</span><span lang="fr"><span class="ok">✓</span> essayée sur une voiture. Les autres sont décodées comme le fait l'appli de Hiworld, pas encore essayées : captures et retours bienvenus. Un boîtier Hiworld n'envoie les touches du volant qu'avec le service v144 ou plus (dialogue avec le boîtier). Duster, Logan, Sandero, Lodgy et Jogger sont aussi vendues sous la marque Dacia.</span></p>
 

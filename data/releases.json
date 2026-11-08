@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 189,
-     "versionName": "051a4e7-main",
-     "date": "2026-11-08T02:32:43Z",
-     "size": 5533273,
-     "commit": "051a4e7db32256288b74b1512fcfad138d087eba",
-     "summary": "Car data sources together: one owner per port (CAN box, OBD adapter), USB never taken by force, combined values broadcast"
+     "versionCode": 190,
+     "versionName": "cf4ef4f-main",
+     "date": "2026-11-08T11:32:27Z",
+     "size": 5549657,
+     "commit": "cf4ef4fb7096a77d2677e92d5858e71a91810344",
+     "summary": "Car data engine 2.7: framings without CMD, LEN, head or checksum, with a tail, and the head unit's own framing (« out »), for CYT's BYD and Ford boxes, Simple's Audi box and the Besturn X80"
     }
    ]
   },
@@ -364,12 +364,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
-     "versionCode": 12,
-     "versionName": "8a18351-main",
-     "date": "2026-11-06T18:19:21Z",
-     "size": 2322653,
-     "commit": "8a1835144ff842bd5ab8c28c01dedd82fe8ab5bf",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 14,
+     "versionName": "ceb1568-main",
+     "date": "2026-11-08T11:11:46Z",
+     "size": 2330529,
+     "commit": "ceb156884c61bfc3bda8d4a132cb07f4ed852de5",
+     "summary": "Report on Android 9: no more crash at the start of the export (anonymisation pattern refused by Android 9's regex engine), and errors shown instead of a crash, the app's last crash kept for the next report"
     }
    ]
   },

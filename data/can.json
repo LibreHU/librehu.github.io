@@ -1,5 +1,5 @@
 {
- "service": 189,
+ "service": 190,
  "source": "LibreHU/LibreHU-car-profiles",
  "profiles": [
   {
@@ -283,6 +283,45 @@
     {
      "name": "Audi 兼容 兼容, all trims",
      "since": 189
+    }
+   ]
+  },
+  {
+   "id": "audi-spaudi",
+   "name": "Audi (SpAudiProtocol)",
+   "box": "simple-aa55-len",
+   "pack": "audi",
+   "messages": [
+    "Message 0x06"
+   ],
+   "cars": [
+    {
+     "name": "Audi A3 2003-2013, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi A3 2008-2012-1, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi A4 2002-2008, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi A4 2004-2009-1, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi TT 2006-2014, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi TT 2008-2015-1, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi 兼容 兼容, all trims",
+     "since": 190
     }
    ]
   },
@@ -1691,6 +1730,22 @@
    ]
   },
   {
+   "id": "besturn-rebentengx80",
+   "name": "Besturn (ReBentengProtocolX80)",
+   "box": "raise-fd",
+   "pack": "besturn",
+   "messages": [
+    "Message 0x10",
+    "Message 0x32"
+   ],
+   "cars": [
+    {
+     "name": "Besturn ModelX80 2013-2016, all trims",
+     "since": 190
+    }
+   ]
+  },
+  {
    "id": "bisu-oudibisuprotok",
    "name": "Bisu (OudiBisuProtok)",
    "box": "raise",
@@ -2994,6 +3049,29 @@
    ]
   },
   {
+   "id": "byd-cytbydf3",
+   "name": "BYD (CytBydF3Protocol)",
+   "box": "cyt-55-fixed",
+   "pack": "byd",
+   "messages": [
+    "Message 0x55"
+   ],
+   "cars": [
+    {
+     "name": "BYD F3 2016-NOW, all trims",
+     "since": 190
+    },
+    {
+     "name": "BYD ModelSuRui 2015-2018, high trim",
+     "since": 190
+    },
+    {
+     "name": "BYD ModelSuRui 2015-2018, low trim",
+     "since": 190
+    }
+   ]
+  },
+  {
    "id": "byd-cytbydf6",
    "name": "BYD (CytBydF6Protocol)",
    "box": "raise",
@@ -3014,6 +3092,21 @@
     {
      "name": "BYD ModelG6 2011-2013, all trims",
      "since": 189
+    }
+   ]
+  },
+  {
+   "id": "byd-cytbyds6low",
+   "name": "BYD (CytBydS6LowProtocol)",
+   "box": "cyt-55-fixed",
+   "pack": "byd",
+   "messages": [
+    "Message 0x55"
+   ],
+   "cars": [
+    {
+     "name": "BYD S6 2011-2014, low trim",
+     "since": 190
     }
    ]
   },
@@ -8879,6 +8972,96 @@
     {
      "name": "Ford taurus 2015~2017, low trim",
      "since": 189
+    }
+   ]
+  },
+  {
+   "id": "ford-cytairford",
+   "name": "Ford (CytAirFordProtocol)",
+   "box": "cyt-55",
+   "pack": "ford",
+   "messages": [
+    "Message 0x55"
+   ],
+   "cars": [
+    {
+     "name": "Ford f150 all, cfg auto doul",
+     "since": 190
+    },
+    {
+     "name": "Ford f150 all, cfg single manual",
+     "since": 190
+    },
+    {
+     "name": "Ford f150 all, cfg threee zone",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo all, cfg auto doul",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo all, cfg single manual",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo all, cfg threee zone",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang all, cfg auto doul",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang all, cfg single manual",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang all, cfg threee zone",
+     "since": 190
+    }
+   ]
+  },
+  {
+   "id": "ford-cytford",
+   "name": "Ford (CytFordProtocol)",
+   "box": "cyt-55",
+   "pack": "ford",
+   "messages": [
+    "Message 0x55"
+   ],
+   "cars": [
+    {
+     "name": "Ford f150 all, cfg hight",
+     "since": 190
+    },
+    {
+     "name": "Ford f150 all, low trim",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo 2007~2012, high trim",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo 2007~2012, low trim",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo 2013~2018, high trim",
+     "since": 190
+    },
+    {
+     "name": "Ford mondeo 2013~2018, low trim",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang 2014~now, cfg hight",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang 2014~now, low trim",
+     "since": 190
     }
    ]
   },
@@ -18755,6 +18938,73 @@
     {
      "name": "Mazda mazda6 2004-2010, all trims",
      "since": 189
+    }
+   ]
+  },
+  {
+   "id": "mazda-remazda",
+   "name": "Mazda (ReMazdaProtocol)",
+   "box": "raise-fd",
+   "pack": "mazda",
+   "messages": [
+    "Message 0x21",
+    "Message 0x27",
+    "Message 0x32",
+    "Message 0x40",
+    "Wheel key"
+   ],
+   "cars": [
+    {
+     "name": "Mazda cx9 2012, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda cx5 2013, high trim",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda cx7 2014-now, high trim",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda cx7 2014-now, low trim",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda3 2006-2012, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda3 2008-2013, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda3 oversea 2005, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda3 xingpin 2011-2015, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda5 2008-2013, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda6 2004-2010, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda mazda6 ruiyi 2009-2015, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda rx8 20012011, all trims",
+     "since": 190
+    },
+    {
+     "name": "Mazda rx8 2008~至今, all trims",
+     "since": 190
     }
    ]
   },
@@ -31408,6 +31658,13 @@
   "audi-spaudi2|Audi A3 2008-2012-2, all trims": 189,
   "audi-spaudi2|Audi A4 2004-2009-2, all trims": 189,
   "audi-spaudi2|Audi TT 2008-2015-2, all trims": 189,
+  "audi-spaudi|Audi A3 2003-2013, all trims": 190,
+  "audi-spaudi|Audi A3 2008-2012-1, all trims": 190,
+  "audi-spaudi|Audi A4 2002-2008, all trims": 190,
+  "audi-spaudi|Audi A4 2004-2009-1, all trims": 190,
+  "audi-spaudi|Audi TT 2006-2014, all trims": 190,
+  "audi-spaudi|Audi TT 2008-2015-1, all trims": 190,
+  "audi-spaudi|Audi 兼容 兼容, all trims": 190,
   "baojun-bnrbaojunprotol|Baojun Baojun560 MODELYEAR-2015-NOW, all trims": 189,
   "baojun-bnrbaojunprotol|Baojun Baojun730 MODELYEAR-2014-2015, all trims": 189,
   "baojun-hdbaojun|Baojun Baojun510 MODELYEAR-2017-NOW, high trim": 189,
@@ -31632,6 +31889,7 @@
   "besturn-rebenteng09b50|Besturn ModelB50 2013-2015, all trims": 189,
   "besturn-rebenteng09b50|Besturn ModelB70 2013, all trims": 189,
   "besturn-rebenteng14b70|Besturn ModelB70 2014, all trims": 189,
+  "besturn-rebentengx80|Besturn ModelX80 2013-2016, all trims": 190,
   "besturn-rebenteng|Besturn ModelB30 2016, low trim": 189,
   "besturn-rebenteng|Besturn ModelB50 2009-2012, CFG ALL SMALL BOX": 189,
   "besturn-rebenteng|Besturn ModelB50 2009-2012, CFG ONLY AC BOARD": 189,
@@ -31886,8 +32144,12 @@
   "buick-oudigm|Buick verano 2016-now, low trim": 189,
   "buick-oudigm|Buick verano 2016-now, medium-high trim": 189,
   "buick-oudigm|Buick 兼容 兼容, all trims": 189,
+  "byd-cytbydf3|BYD F3 2016-NOW, all trims": 190,
+  "byd-cytbydf3|BYD ModelSuRui 2015-2018, high trim": 190,
+  "byd-cytbydf3|BYD ModelSuRui 2015-2018, low trim": 190,
   "byd-cytbydf6|BYD ModelF6 2008-2011, all trims": 189,
   "byd-cytbydf6|BYD ModelG6 2011-2013, all trims": 189,
+  "byd-cytbyds6low|BYD S6 2011-2014, low trim": 190,
   "byd-dgbydf6|BYD ModelF6 2008-2011, all trims": 189,
   "byd-dgbydg6|BYD ModelG6 2011-2013, all trims": 189,
   "byd-dgbydm6|BYD ModelM6 2010-2015, all trims": 189,
@@ -33093,6 +33355,23 @@
   "ford-bsjford|Ford taurus 2015~2017, cfg m": 189,
   "ford-bsjford|Ford taurus 2015~2017, high trim": 189,
   "ford-bsjford|Ford taurus 2015~2017, low trim": 189,
+  "ford-cytairford|Ford f150 all, cfg auto doul": 190,
+  "ford-cytairford|Ford f150 all, cfg single manual": 190,
+  "ford-cytairford|Ford f150 all, cfg threee zone": 190,
+  "ford-cytairford|Ford mondeo all, cfg auto doul": 190,
+  "ford-cytairford|Ford mondeo all, cfg single manual": 190,
+  "ford-cytairford|Ford mondeo all, cfg threee zone": 190,
+  "ford-cytairford|Ford mustang all, cfg auto doul": 190,
+  "ford-cytairford|Ford mustang all, cfg single manual": 190,
+  "ford-cytairford|Ford mustang all, cfg threee zone": 190,
+  "ford-cytford|Ford f150 all, cfg hight": 190,
+  "ford-cytford|Ford f150 all, low trim": 190,
+  "ford-cytford|Ford mondeo 2007~2012, high trim": 190,
+  "ford-cytford|Ford mondeo 2007~2012, low trim": 190,
+  "ford-cytford|Ford mondeo 2013~2018, high trim": 190,
+  "ford-cytford|Ford mondeo 2013~2018, low trim": 190,
+  "ford-cytford|Ford mustang 2014~now, cfg hight": 190,
+  "ford-cytford|Ford mustang 2014~now, low trim": 190,
   "ford-dogenzs|Ford mondeozs 2012, all trims": 189,
   "ford-dogen|Ford focus 2005-2011, cfg m": 189,
   "ford-dogen|Ford focus 2005-2011, high trim": 189,
@@ -34958,6 +35237,19 @@
   "mazda-remazda2|Mazda mazda3 2020, all trims": 189,
   "mazda-remazda2|Mazda mazda3 axela 2014-now, all trims": 189,
   "mazda-remazda2|Mazda mazda6 atenza 2014-now, all trims": 189,
+  "mazda-remazda|Mazda cx9 2012, all trims": 190,
+  "mazda-remazda|Mazda mazda cx5 2013, high trim": 190,
+  "mazda-remazda|Mazda mazda cx7 2014-now, high trim": 190,
+  "mazda-remazda|Mazda mazda cx7 2014-now, low trim": 190,
+  "mazda-remazda|Mazda mazda3 2006-2012, all trims": 190,
+  "mazda-remazda|Mazda mazda3 2008-2013, all trims": 190,
+  "mazda-remazda|Mazda mazda3 oversea 2005, all trims": 190,
+  "mazda-remazda|Mazda mazda3 xingpin 2011-2015, all trims": 190,
+  "mazda-remazda|Mazda mazda5 2008-2013, all trims": 190,
+  "mazda-remazda|Mazda mazda6 2004-2010, all trims": 190,
+  "mazda-remazda|Mazda mazda6 ruiyi 2009-2015, all trims": 190,
+  "mazda-remazda|Mazda rx8 20012011, all trims": 190,
+  "mazda-remazda|Mazda rx8 2008~至今, all trims": 190,
   "mazda-sp14mzd3cdprotok|Mazda mazda3 2014, save cd": 189,
   "mazda-sp14mzd3cdprotok|Mazda mazda3 axela 2014-now, save cd": 189,
   "mazda-spmazdabt50protok|Mazda bt50 20122017, all trims": 189,

@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-06T17:55:03Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-08T11:41:04Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-08T11:29:19Z",
+  "LibreHU/LibreHU-service@main": "2026-11-08T11:46:47Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-06T21:42:45Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-06T21:42:45Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-06T18:15:24Z",
@@ -36,6 +36,7 @@
   "events"
  ],
  "entries": [
+{"c":"helper","d":"2026-11-08T11:42:38Z","id":"app:helper:main:15","k":"release","n":"5d55278-main","u":"https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk","v":15},
 {"a":"2026-11-08T11:40:24Z","b":["main"],"c":"helper","d":"2026-11-08T11:40:24Z","k":"commit","m":"Report without root: the kernel log left out instead of running dmesg, which Android's seccomp filter kills as an app (SIGSYS, a tombstone at each report, seen on the Android 9 emulator); report test: taps only on a node that stopped moving","s":"5d5527896bf3a4bb10d1549e8228e067130780bb","u":"https://github.com/LibreHU/LibreHU-helper-app/commit/5d5527896bf3a4bb10d1549e8228e067130780bb"},
 {"c":"service","d":"2026-11-08T11:32:27Z","id":"app:service:main:190","k":"release","n":"cf4ef4f-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":190},
 {"a":"2026-11-08T11:29:19Z","b":["main"],"c":"service","d":"2026-11-08T11:29:19Z","k":"commit","m":"Car data engine 2.7: framings without CMD, LEN, head or checksum, with a tail, and the head unit's own framing (« out »), for CYT's BYD and Ford boxes, Simple's Audi box and the Besturn X80","s":"cf4ef4fb7096a77d2677e92d5858e71a91810344","u":"https://github.com/LibreHU/LibreHU-service/commit/cf4ef4fb7096a77d2677e92d5858e71a91810344"},

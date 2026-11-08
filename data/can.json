@@ -41,8 +41,8 @@
    "box": "hiworld-aa55",
    "pack": "audi",
    "messages": [
-    "Message 0x31",
-    "Wheel key"
+    "Message 0x01",
+    "Message 0x31"
    ],
    "cars": [
     {
@@ -113,6 +113,8 @@
     "Message 0x03",
     "Message 0x04",
     "Message 0x08",
+    "Message 0x7D",
+    "Message 0x7E",
     "Wheel key"
    ],
    "cars": [
@@ -331,6 +333,7 @@
    "box": "raise",
    "pack": "audi",
    "messages": [
+    "Message 0x16",
     "Message 0x24",
     "Message 0x26",
     "Wheel key"
@@ -356,6 +359,7 @@
    "box": "raise",
    "pack": "baojun",
    "messages": [
+    "Message 0x25",
     "Message 0x28",
     "Message 0x30",
     "Wheel key"
@@ -598,6 +602,7 @@
    "messages": [
     "Message 0x24",
     "Message 0x27",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -724,6 +729,7 @@
     "Message 0x24",
     "Message 0x27",
     "Message 0x29",
+    "Message 0x35",
     "Message 0x38",
     "Wheel key"
    ],
@@ -749,6 +755,7 @@
    "pack": "benz",
    "messages": [
     "Message 0x03",
+    "Message 0x1B",
     "Message 0x24",
     "Message 0x26",
     "Message 0x65",
@@ -771,8 +778,8 @@
    "box": "hiworld-aa55",
    "pack": "benz",
    "messages": [
-    "Message 0x73",
-    "Wheel key"
+    "Message 0x72",
+    "Message 0x73"
    ],
    "cars": [
     {
@@ -868,6 +875,7 @@
    "box": "hiworld-aa55",
    "pack": "benz",
    "messages": [
+    "Message 0x13",
     "Message 0x73",
     "Wheel key"
    ],
@@ -1126,6 +1134,7 @@
    "box": "raise",
    "pack": "benz",
    "messages": [
+    "Message 0x06",
     "Message 0x21",
     "Message 0x24",
     "Wheel key"
@@ -1425,6 +1434,7 @@
     "Message 0x02",
     "Message 0x05",
     "Message 0x06",
+    "Message 0x0A",
     "Wheel key"
    ],
    "cars": [
@@ -1821,6 +1831,7 @@
    "pack": "bj",
    "messages": [
     "Message 0x12",
+    "Message 0x18",
     "Message 0x31",
     "Message 0x32",
     "Message 0x41",
@@ -2131,7 +2142,7 @@
    "box": "hiworld-aa55",
    "pack": "bmw",
    "messages": [
-    "Wheel key"
+    "Message 0x81"
    ],
    "cars": [
     {
@@ -2146,8 +2157,8 @@
    "box": "hiworld-aa55",
    "pack": "bmw",
    "messages": [
-    "Message 0x12",
-    "Wheel key"
+    "Message 0x11",
+    "Message 0x12"
    ],
    "cars": [
     {
@@ -2163,6 +2174,7 @@
    "pack": "bmw",
    "messages": [
     "Message 0x24",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -2218,6 +2230,7 @@
    "box": "raise",
    "pack": "bmw",
    "messages": [
+    "Message 0x21",
     "Wheel key"
    ],
    "cars": [
@@ -2238,7 +2251,9 @@
    "pack": "bmw",
    "messages": [
     "Message 0x10",
+    "Message 0x11",
     "Message 0x12",
+    "Message 0x41",
     "Message 0x49",
     "Wheel key"
    ],
@@ -2260,6 +2275,7 @@
    "pack": "bmw",
    "messages": [
     "Message 0x08",
+    "Message 0x16",
     "Wheel key"
    ],
    "cars": [
@@ -2295,6 +2311,7 @@
    "box": "raise",
    "pack": "bmw",
    "messages": [
+    "Message 0x26",
     "Wheel key"
    ],
    "cars": [
@@ -2476,6 +2493,8 @@
    "pack": "buick",
    "messages": [
     "Message 0x03",
+    "Message 0x13",
+    "Message 0x1B",
     "Message 0x24",
     "Message 0x26",
     "Message 0x65",
@@ -2680,6 +2699,8 @@
    "messages": [
     "Message 0x04",
     "Message 0x0A",
+    "Message 0x0B",
+    "Message 0x0C",
     "Wheel key"
    ],
    "cars": [
@@ -3149,6 +3170,7 @@
    "box": "raise",
    "pack": "byd",
    "messages": [
+    "Message 0x1B",
     "Message 0x24",
     "Message 0x26",
     "Message 0x65",
@@ -3263,6 +3285,7 @@
     "Message 0x24",
     "Message 0x28",
     "Message 0x29",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -3404,6 +3427,7 @@
    "messages": [
     "Message 0x1E",
     "Message 0x24",
+    "Message 0x26",
     "Message 0x28",
     "Wheel key"
    ],
@@ -3697,6 +3721,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x41"
    ],
    "cars": [
@@ -3769,8 +3794,10 @@
     "Message 0x21",
     "Message 0x22",
     "Message 0x23",
+    "Message 0x24",
     "Message 0x29",
     "Message 0x3A",
+    "Message 0x50",
     "Wheel key"
    ],
    "cars": [
@@ -3793,6 +3820,7 @@
     "Message 0x21",
     "Message 0x28",
     "Message 0x29",
+    "Message 0x66",
     "Wheel key"
    ],
    "cars": [
@@ -4207,6 +4235,9 @@
     "Message 0x1F",
     "Message 0x23",
     "Message 0x24",
+    "Message 0x25",
+    "Message 0x68",
+    "Message 0x6A",
     "Wheel key"
    ],
    "cars": [
@@ -4263,7 +4294,8 @@
    "pack": "chery",
    "messages": [
     "Message 0x11",
-    "Message 0x12"
+    "Message 0x12",
+    "Message 0x32"
    ],
    "cars": [
     {
@@ -4524,6 +4556,7 @@
    "messages": [
     "Message 0x03",
     "Message 0x05",
+    "Message 0x06",
     "Message 0x0A",
     "Wheel key"
    ],
@@ -4671,8 +4704,10 @@
    "pack": "chevrolet",
    "messages": [
     "Message 0x03",
+    "Message 0x1B",
     "Message 0x24",
     "Message 0x26",
+    "Message 0x32",
     "Message 0x33",
     "Message 0x65",
     "Wheel key"
@@ -5514,8 +5549,10 @@
    "pack": "chevrolet",
    "messages": [
     "Message 0x03",
+    "Message 0x13",
     "Message 0x24",
     "Message 0x26",
+    "Message 0x45",
     "Wheel key"
    ],
    "cars": [
@@ -6579,7 +6616,10 @@
     "Message 0x07",
     "Message 0x24",
     "Message 0x26",
+    "Message 0x31",
+    "Message 0x32",
     "Message 0x33",
+    "Message 0x45",
     "Wheel key"
    ],
    "cars": [
@@ -6894,6 +6934,7 @@
     "Message 0x01",
     "Message 0x03",
     "Message 0x06",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -6914,6 +6955,7 @@
    "pack": "cnhtc",
    "messages": [
     "Message 0x24",
+    "Message 0x46",
     "Wheel key"
    ],
    "cars": [
@@ -6955,6 +6997,7 @@
    "messages": [
     "Message 0x21",
     "Message 0x24",
+    "Message 0x25",
     "Message 0x29",
     "Wheel key"
    ],
@@ -6971,7 +7014,8 @@
    "box": "hiworld",
    "pack": "dffd",
    "messages": [
-    "Message 0x31"
+    "Message 0x31",
+    "Message 0x32"
    ],
    "cars": [
     {
@@ -7021,6 +7065,7 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
+    "Message 0x18",
     "Message 0x31",
     "Message 0x41"
    ],
@@ -7164,6 +7209,7 @@
     "Message 0x24",
     "Message 0x28",
     "Message 0x30",
+    "Message 0x67",
     "Wheel key"
    ],
    "cars": [
@@ -7182,6 +7228,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x13",
+    "Message 0x18",
     "Message 0x31",
     "Message 0x32",
     "Message 0x41"
@@ -7264,6 +7311,7 @@
     "Message 0x28",
     "Message 0x30",
     "Message 0x36",
+    "Message 0x67",
     "Wheel key"
    ],
    "cars": [
@@ -7476,6 +7524,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x31",
+    "Message 0x34",
     "Message 0x41"
    ],
    "cars": [
@@ -7656,6 +7705,7 @@
    "messages": [
     "Message 0x03",
     "Message 0x05",
+    "Message 0x06",
     "Message 0x0A",
     "Wheel key"
    ],
@@ -7716,6 +7766,7 @@
    "messages": [
     "Message 0x03",
     "Message 0x05",
+    "Message 0x06",
     "Message 0x09",
     "Message 0x0A",
     "Message 0x15",
@@ -7759,6 +7810,7 @@
    "box": "raise",
    "pack": "fiat",
    "messages": [
+    "Message 0x1B",
     "Message 0x24",
     "Message 0x26",
     "Message 0x65",
@@ -8276,7 +8328,9 @@
    "box": "raise",
    "pack": "fiat",
    "messages": [
+    "Message 0x01",
     "Message 0x06",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -8886,6 +8940,7 @@
     "Message 0x03",
     "Message 0x04",
     "Message 0x05",
+    "Message 0x06",
     "Wheel key"
    ],
    "cars": [
@@ -9292,6 +9347,7 @@
    "messages": [
     "Message 0x11",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x34",
     "Message 0x41",
     "Message 0x42"
@@ -9661,6 +9717,7 @@
    "box": "hiworld-aa55",
    "pack": "ford",
    "messages": [
+    "Message 0x72",
     "Message 0x73",
     "Wheel key"
    ],
@@ -9833,6 +9890,7 @@
     "Message 0x28",
     "Message 0x29",
     "Message 0x38",
+    "Message 0x42",
     "Wheel key"
    ],
    "cars": [
@@ -9852,6 +9910,7 @@
     "Message 0x28",
     "Message 0x29",
     "Message 0x38",
+    "Message 0x42",
     "Wheel key"
    ],
    "cars": [
@@ -10599,6 +10658,7 @@
    "box": "raise",
    "pack": "ford",
    "messages": [
+    "Message 0x16",
     "Message 0x24",
     "Message 0x26",
     "Message 0x29",
@@ -10807,6 +10867,7 @@
    "box": "raise",
    "pack": "ford",
    "messages": [
+    "Message 0x16",
     "Message 0x21",
     "Message 0x24",
     "Message 0x26",
@@ -10855,6 +10916,7 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
+    "Message 0x1A",
     "Message 0x31"
    ],
    "cars": [
@@ -11036,6 +11098,7 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
+    "Message 0x18",
     "Message 0x1A",
     "Message 0x31",
     "Message 0x41"
@@ -11269,6 +11332,7 @@
    "box": "raise",
    "pack": "geely",
    "messages": [
+    "Message 0x22",
     "Message 0x23",
     "Message 0x24",
     "Message 0x30",
@@ -11537,6 +11601,7 @@
    "pack": "gmc",
    "messages": [
     "Message 0x16",
+    "Message 0x24",
     "Message 0x29",
     "Wheel key"
    ],
@@ -11797,6 +11862,8 @@
    "messages": [
     "Message 0x23",
     "Message 0x28",
+    "Message 0x68",
+    "Message 0x6A",
     "Wheel key"
    ],
    "cars": [
@@ -12031,6 +12098,8 @@
     "Message 0x06",
     "Message 0x13",
     "Message 0x67",
+    "Message 0x68",
+    "Message 0x6A",
     "Wheel key"
    ],
    "cars": [
@@ -12458,6 +12527,7 @@
    "pack": "haval",
    "messages": [
     "Message 0x23",
+    "Message 0x24",
     "Message 0x28",
     "Wheel key"
    ],
@@ -12962,6 +13032,7 @@
    "pack": "honda",
    "messages": [
     "Message 0x02",
+    "Message 0x0E",
     "Message 0x0F",
     "Message 0x11",
     "Wheel key"
@@ -13498,7 +13569,8 @@
    "pack": "honda",
    "messages": [
     "Message 0x01",
-    "Message 0x60"
+    "Message 0x60",
+    "Message 0x61"
    ],
    "cars": [
     {
@@ -13568,6 +13640,7 @@
     "Message 0x21",
     "Message 0x24",
     "Message 0x29",
+    "Message 0xD1",
     "Wheel key"
    ],
    "cars": [
@@ -14175,6 +14248,7 @@
     "Message 0x21",
     "Message 0x24",
     "Message 0x29",
+    "Message 0xD1",
     "Wheel key"
    ],
    "cars": [
@@ -14373,6 +14447,7 @@
    "pack": "honda",
    "messages": [
     "Message 0x02",
+    "Message 0x0E",
     "Message 0x0F",
     "Message 0x11",
     "Wheel key"
@@ -14533,6 +14608,7 @@
    "box": "raise",
    "pack": "hyundai-kia",
    "messages": [
+    "Message 0x1B",
     "Message 0x21",
     "Message 0x24",
     "Message 0x27",
@@ -16142,6 +16218,7 @@
    "pack": "isuzu",
    "messages": [
     "Message 0x11",
+    "Message 0x18",
     "Message 0x41"
    ],
    "cars": [
@@ -16322,7 +16399,9 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
+    "Message 0x1A",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x41",
     "Message 0x48"
    ],
@@ -16500,7 +16579,8 @@
    "pack": "jac",
    "messages": [
     "Message 0x24",
-    "Message 0x28"
+    "Message 0x28",
+    "Message 0x7D"
    ],
    "cars": [
     {
@@ -16648,6 +16728,7 @@
     "Message 0x01",
     "Message 0x03",
     "Message 0x06",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -16667,9 +16748,12 @@
    "box": "raise",
    "pack": "jeep",
    "messages": [
+    "Message 0x03",
     "Message 0x05",
     "Message 0x06",
     "Message 0x0A",
+    "Message 0x12",
+    "Message 0x14",
     "Wheel key"
    ],
    "cars": [
@@ -16723,6 +16807,7 @@
    "pack": "jeep",
    "messages": [
     "Message 0x12",
+    "Message 0x32",
     "Message 0x72"
    ],
    "cars": [
@@ -16752,7 +16837,8 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
-    "Message 0x31"
+    "Message 0x31",
+    "Message 0x32"
    ],
    "cars": [
     {
@@ -16905,7 +16991,8 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
-    "Message 0x31"
+    "Message 0x31",
+    "Message 0x32"
    ],
    "cars": [
     {
@@ -17031,6 +17118,7 @@
    "messages": [
     "Message 0x03",
     "Message 0x05",
+    "Message 0x06",
     "Message 0x09",
     "Message 0x0A",
     "Message 0x15",
@@ -17395,6 +17483,7 @@
     "Message 0x27",
     "Message 0x28",
     "Message 0x29",
+    "Message 0x41",
     "Wheel key"
    ],
    "cars": [
@@ -17418,6 +17507,8 @@
     "Message 0x24",
     "Message 0x28",
     "Message 0x29",
+    "Message 0x41",
+    "Message 0x48",
     "Wheel key"
    ],
    "cars": [
@@ -17598,6 +17689,7 @@
    "messages": [
     "Message 0x24",
     "Message 0x28",
+    "Message 0x7D",
     "Wheel key"
    ],
    "cars": [
@@ -17688,6 +17780,7 @@
     "Message 0x22",
     "Message 0x23",
     "Message 0x28",
+    "Message 0x7D",
     "Wheel key"
    ],
    "cars": [
@@ -17821,9 +17914,9 @@
    "box": "hiworld",
    "pack": "kawei",
    "messages": [
+    "Message 0x11",
     "Message 0x31",
-    "Message 0x41",
-    "Wheel key"
+    "Message 0x41"
    ],
    "cars": [
     {
@@ -18323,6 +18416,7 @@
     "Message 0x23",
     "Message 0x29",
     "Message 0x3A",
+    "Message 0x50",
     "Wheel key"
    ],
    "cars": [
@@ -18587,6 +18681,7 @@
     "Message 0x28",
     "Message 0x29",
     "Message 0x52",
+    "Message 0x60",
     "Wheel key"
    ],
    "cars": [
@@ -18617,6 +18712,7 @@
     "Message 0x01",
     "Message 0x03",
     "Message 0x06",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -18636,6 +18732,7 @@
    "box": "raise",
    "pack": "maxus",
    "messages": [
+    "Message 0x22",
     "Message 0x23",
     "Message 0x24",
     "Message 0x25",
@@ -18775,6 +18872,7 @@
    "pack": "mazda",
    "messages": [
     "Message 0x02",
+    "Message 0x68",
     "Wheel key"
    ],
    "cars": [
@@ -18890,6 +18988,7 @@
    "messages": [
     "Message 0x10",
     "Message 0x32",
+    "Message 0x45",
     "Wheel key"
    ],
    "cars": [
@@ -19088,6 +19187,7 @@
    "box": "raise",
    "pack": "mazda",
    "messages": [
+    "Message 0x16",
     "Message 0x24",
     "Message 0x29",
     "Wheel key"
@@ -19317,7 +19417,8 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
-    "Message 0x31"
+    "Message 0x31",
+    "Message 0x36"
    ],
    "cars": [
     {
@@ -19337,7 +19438,9 @@
    "pack": "mg",
    "messages": [
     "Message 0x12",
+    "Message 0x13",
     "Message 0x31",
+    "Message 0x32",
     "Wheel key"
    ],
    "cars": [
@@ -19435,6 +19538,7 @@
    "box": "raise",
    "pack": "mg",
    "messages": [
+    "Message 0x11",
     "Message 0x21",
     "Message 0x24",
     "Message 0x27",
@@ -19990,6 +20094,8 @@
    "pack": "nissan",
    "messages": [
     "Message 0x04",
+    "Message 0x05",
+    "Message 0x0B",
     "Message 0x14",
     "Wheel key"
    ],
@@ -20007,7 +20113,11 @@
    "pack": "nissan",
    "messages": [
     "Message 0x24",
+    "Message 0x52",
     "Message 0x55",
+    "Message 0x68",
+    "Message 0x6A",
+    "Message 0x6B",
     "Message 0x6E",
     "Wheel key"
    ],
@@ -20032,6 +20142,7 @@
     "Message 0x24",
     "Message 0x28",
     "Message 0x29",
+    "Message 0x65",
     "Wheel key"
    ],
    "cars": [
@@ -20057,6 +20168,7 @@
    "messages": [
     "Message 0x04",
     "Message 0x05",
+    "Message 0x06",
     "Message 0x0B",
     "Wheel key"
    ],
@@ -20108,6 +20220,10 @@
     "Message 0x02",
     "Message 0x24",
     "Message 0x29",
+    "Message 0x52",
+    "Message 0x68",
+    "Message 0x6A",
+    "Message 0x6B",
     "Wheel key"
    ],
    "cars": [
@@ -20154,7 +20270,9 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
+    "Message 0x16",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x48"
    ],
    "cars": [
@@ -20520,6 +20638,7 @@
    "pack": "nissan",
    "messages": [
     "Message 0x12",
+    "Message 0x13",
     "Message 0x1A",
     "Message 0x31",
     "Message 0x41",
@@ -20594,8 +20713,10 @@
    "box": "raise",
    "pack": "nissan",
    "messages": [
+    "Message 0x24",
     "Message 0x27",
     "Message 0x29",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -20618,6 +20739,7 @@
     "Message 0x24",
     "Message 0x27",
     "Message 0x29",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -20654,6 +20776,7 @@
    "messages": [
     "Message 0x24",
     "Message 0x27",
+    "Message 0x35",
     "Message 0x36",
     "Wheel key"
    ],
@@ -20712,6 +20835,7 @@
     "Message 0x21",
     "Message 0x22",
     "Message 0x23",
+    "Message 0x27",
     "Message 0x28",
     "Message 0x40",
     "Wheel key"
@@ -20736,7 +20860,10 @@
     "Message 0x21",
     "Message 0x24",
     "Message 0x29",
+    "Message 0x68",
+    "Message 0x6A",
     "Message 0x70",
+    "Message 0x71",
     "Wheel key"
    ],
    "cars": [
@@ -20755,6 +20882,7 @@
     "Message 0x21",
     "Message 0x22",
     "Message 0x23",
+    "Message 0x27",
     "Message 0x28",
     "Message 0x40",
     "Wheel key"
@@ -20820,7 +20948,9 @@
    "box": "raise",
    "pack": "nissan",
    "messages": [
+    "Message 0x11",
     "Message 0x21",
+    "Message 0x27",
     "Message 0x28",
     "Message 0x29",
     "Message 0x68",
@@ -21335,6 +21465,7 @@
     "Message 0x22",
     "Message 0x23",
     "Message 0x28",
+    "Message 0x50",
     "Wheel key"
    ],
    "cars": [
@@ -21726,6 +21857,7 @@
    "box": "raise",
    "pack": "opel",
    "messages": [
+    "Message 0x16",
     "Message 0x24",
     "Wheel key"
    ],
@@ -21765,6 +21897,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x41",
     "Message 0x48"
    ],
@@ -21815,6 +21948,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x41",
     "Message 0x48"
    ],
@@ -21901,6 +22035,7 @@
    "pack": "perodua",
    "messages": [
     "Message 0x11",
+    "Message 0x18",
     "Message 0x41"
    ],
    "cars": [
@@ -23193,6 +23328,8 @@
    "pack": "qoros",
    "messages": [
     "Message 0x24",
+    "Message 0x71",
+    "Message 0xD1",
     "Message 0xD2",
     "Wheel key"
    ],
@@ -23224,6 +23361,7 @@
     "Message 0x21",
     "Message 0x29",
     "Message 0x3A",
+    "Message 0x3C",
     "Wheel key"
    ],
    "cars": [
@@ -24425,6 +24563,7 @@
    "pack": "renault",
    "messages": [
     "Message 0x21",
+    "Message 0x24",
     "Message 0x27",
     "Message 0x29",
     "Wheel key"
@@ -24657,6 +24796,7 @@
     "Message 0x21",
     "Message 0x24",
     "Message 0x27",
+    "Message 0x28",
     "Message 0x29",
     "Wheel key"
    ],
@@ -24707,6 +24847,7 @@
    "messages": [
     "Message 0x21",
     "Message 0x24",
+    "Message 0x67",
     "Wheel key"
    ],
    "cars": [
@@ -24803,10 +24944,11 @@
    "box": "hiworld",
    "pack": "roewe",
    "messages": [
+    "Message 0x11",
     "Message 0x12",
     "Message 0x31",
-    "Message 0x41",
-    "Wheel key"
+    "Message 0x32",
+    "Message 0x41"
    ],
    "cars": [
     {
@@ -24852,6 +24994,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x41",
     "Message 0x48"
    ],
@@ -24959,6 +25102,7 @@
     "Message 0x03",
     "Message 0x04",
     "Message 0x0A",
+    "Message 0x0B",
     "Message 0x0C",
     "Wheel key"
    ],
@@ -25068,6 +25212,7 @@
     "Message 0x11",
     "Message 0x12",
     "Message 0x31",
+    "Message 0x32",
     "Message 0x41",
     "Message 0x48"
    ],
@@ -25159,6 +25304,7 @@
    "messages": [
     "Message 0x24",
     "Message 0x28",
+    "Message 0x7D",
     "Wheel key"
    ],
    "cars": [
@@ -25204,6 +25350,8 @@
    "messages": [
     "Message 0x24",
     "Message 0x25",
+    "Message 0x28",
+    "Message 0x60",
     "Wheel key"
    ],
    "cars": [
@@ -25301,6 +25449,8 @@
    "messages": [
     "Message 0x24",
     "Message 0x25",
+    "Message 0x33",
+    "Message 0x41",
     "Wheel key"
    ],
    "cars": [
@@ -25456,6 +25606,7 @@
    "messages": [
     "Message 0x24",
     "Message 0x28",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -25604,6 +25755,7 @@
    "messages": [
     "Message 0x11",
     "Message 0x12",
+    "Message 0x13",
     "Message 0x41",
     "Message 0x48"
    ],
@@ -25636,6 +25788,7 @@
    "box": "raise",
    "pack": "suzuki",
    "messages": [
+    "Message 0x24",
     "Message 0x26",
     "Wheel key"
    ],
@@ -25698,6 +25851,7 @@
     "Message 0x01",
     "Message 0x03",
     "Message 0x06",
+    "Message 0x35",
     "Wheel key"
    ],
    "cars": [
@@ -25740,6 +25894,7 @@
    "pack": "swm",
    "messages": [
     "Message 0x03",
+    "Message 0x04",
     "Message 0x06",
     "Wheel key"
    ],
@@ -26068,6 +26223,7 @@
    "pack": "toyota",
    "messages": [
     "Message 0x1A",
+    "Message 0x1B",
     "Message 0x24",
     "Message 0x28",
     "Wheel key"
@@ -26122,6 +26278,7 @@
    "pack": "toyota",
    "messages": [
     "Message 0x1A",
+    "Message 0x1B",
     "Message 0x1E",
     "Message 0x24",
     "Message 0x28",
@@ -26252,6 +26409,7 @@
    "box": "hiworld",
    "pack": "toyota",
    "messages": [
+    "Message 0x1A",
     "Message 0x31",
     "Message 0x82",
     "Wheel key"
@@ -26877,7 +27035,9 @@
     "Message 0x1D",
     "Message 0x1E",
     "Message 0x24",
+    "Message 0x35",
     "Message 0x55",
+    "Message 0x56",
     "Wheel key"
    ],
    "cars": [
@@ -26913,9 +27073,11 @@
    "box": "raise",
    "pack": "toyota",
    "messages": [
+    "Message 0x16",
     "Message 0x1E",
     "Message 0x24",
     "Message 0x28",
+    "Message 0x50",
     "Wheel key"
    ],
    "cars": [
@@ -27030,6 +27192,7 @@
     "Message 0x1E",
     "Message 0x24",
     "Message 0x28",
+    "Message 0x2A",
     "Wheel key"
    ],
    "cars": [
@@ -28376,6 +28539,7 @@
    "box": "hiworld",
    "pack": "toyota",
    "messages": [
+    "Message 0x16",
     "Message 0x24",
     "Message 0x25",
     "Wheel key"
@@ -28420,6 +28584,8 @@
     "Message 0x23",
     "Message 0x24",
     "Message 0x28",
+    "Message 0xFD",
+    "Message 0xFE",
     "Wheel key"
    ],
    "cars": [
@@ -28536,7 +28702,11 @@
    "pack": "trumpchi",
    "messages": [
     "Message 0x10",
+    "Message 0x24",
     "Message 0x33",
+    "Message 0x67",
+    "Message 0x68",
+    "Message 0x6A",
     "Wheel key"
    ],
    "cars": [
@@ -28622,9 +28792,12 @@
    "box": "hiworld",
    "pack": "trumpchi",
    "messages": [
+    "Message 0x11",
     "Message 0x12",
+    "Message 0x18",
     "Message 0x31",
-    "Wheel key"
+    "Message 0x32",
+    "Message 0x3E"
    ],
    "cars": [
     {
@@ -29647,6 +29820,7 @@
    "box": "raise",
    "pack": "volkswagen",
    "messages": [
+    "Message 0x16",
     "Message 0x21",
     "Message 0x24",
     "Message 0x26",
@@ -30120,6 +30294,8 @@
     "Message 0x25",
     "Message 0x28",
     "Message 0x30",
+    "Message 0x7D",
+    "Message 0x7E",
     "Wheel key"
    ],
    "cars": [
@@ -30172,6 +30348,8 @@
     "Message 0x21",
     "Message 0x24",
     "Message 0x66",
+    "Message 0x67",
+    "Message 0x68",
     "Message 0x6B",
     "Wheel key"
    ],
@@ -31049,10 +31227,10 @@
    "box": "hiworld",
    "pack": "weichai",
    "messages": [
+    "Message 0x11",
     "Message 0x1A",
     "Message 0x31",
-    "Message 0x41",
-    "Wheel key"
+    "Message 0x41"
    ],
    "cars": [
     {
@@ -31086,6 +31264,7 @@
     "Message 0x23",
     "Message 0x26",
     "Message 0x28",
+    "Message 0x40",
     "Wheel key"
    ],
    "cars": [
@@ -31121,6 +31300,7 @@
    "pack": "weiwang",
    "messages": [
     "Message 0x12",
+    "Message 0x1A",
     "Message 0x31",
     "Wheel key"
    ],
@@ -31246,7 +31426,9 @@
    "box": "raise",
    "pack": "yema",
    "messages": [
+    "Message 0x10",
     "Message 0x15",
+    "Message 0x19",
     "Wheel key"
    ],
    "cars": [
@@ -31480,6 +31662,7 @@
     "Message 0x24",
     "Message 0x28",
     "Message 0x29",
+    "Message 0x41",
     "Wheel key"
    ],
    "cars": [

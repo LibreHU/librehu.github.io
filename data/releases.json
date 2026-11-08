@@ -364,12 +364,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
-     "versionCode": 14,
-     "versionName": "ceb1568-main",
-     "date": "2026-11-08T11:11:46Z",
-     "size": 2330529,
-     "commit": "ceb156884c61bfc3bda8d4a132cb07f4ed852de5",
-     "summary": "Report on Android 9: no more crash at the start of the export (anonymisation pattern refused by Android 9's regex engine), and errors shown instead of a crash, the app's last crash kept for the next report"
+     "versionCode": 15,
+     "versionName": "5d55278-main",
+     "date": "2026-11-08T11:42:38Z",
+     "size": 2330617,
+     "commit": "5d5527896bf3a4bb10d1549e8228e067130780bb",
+     "summary": "Report without root: the kernel log left out instead of running dmesg, which Android's seccomp filter kills as an app (SIGSYS, a tombstone at each report, seen on the Android 9 emulator); report test: taps only on a node that stopped moving"
     }
    ]
   },

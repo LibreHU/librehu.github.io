@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-06T17:55:03Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-08T13:40:50Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-08T16:19:17Z",
+  "LibreHU/LibreHU-service@main": "2026-11-08T17:07:13Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-06T21:42:45Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-06T21:42:45Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-06T18:15:24Z",
@@ -36,6 +36,8 @@
   "events"
  ],
  "entries": [
+{"c":"service","d":"2026-11-08T17:01:51Z","id":"app:service:main:194","k":"release","n":"8a08be8-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":194},
+{"a":"2026-11-08T16:57:42Z","b":["main"],"c":"service","d":"2026-11-08T16:57:42Z","k":"commit","m":"KSW MCU built in (ksw-px6) and car data engine 2.8: heartbeat, named commands, frames copied to the CAN engine, keys by event value","s":"8a08be844175dd9fe6faf535bf72e19724f03174","u":"https://github.com/LibreHU/LibreHU-service/commit/8a08be844175dd9fe6faf535bf72e19724f03174"},
 {"c":"zips","d":"2026-11-08T16:03:41Z","g":"jancar-settings","id":"zip:jancar-settings:cf4ef4f-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"cf4ef4f-main"},
 {"c":"headunit","d":"2026-11-08T13:45:59Z","id":"app:headunit:main:2772","k":"release","n":"4.0.0-beta1-main","u":"https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk","v":2772},
 {"c":"helper","d":"2026-11-08T13:43:05Z","id":"app:helper:main:18","k":"release","n":"ee33170-main","u":"https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk","v":18},

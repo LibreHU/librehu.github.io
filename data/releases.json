@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 190,
-     "versionName": "cf4ef4f-main",
-     "date": "2026-11-08T11:32:27Z",
-     "size": 5549657,
-     "commit": "cf4ef4fb7096a77d2677e92d5858e71a91810344",
-     "summary": "Car data engine 2.7: framings without CMD, LEN, head or checksum, with a tail, and the head unit's own framing (« out »), for CYT's BYD and Ford boxes, Simple's Audi box and the Besturn X80"
+     "versionCode": 194,
+     "versionName": "8a08be8-main",
+     "date": "2026-11-08T17:01:51Z",
+     "size": 5550973,
+     "commit": "8a08be844175dd9fe6faf535bf72e19724f03174",
+     "summary": "KSW MCU built in (ksw-px6) and car data engine 2.8: heartbeat, named commands, frames copied to the CAN engine, keys by event value"
     }
    ]
   },

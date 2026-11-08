@@ -1,5 +1,5 @@
 {
- "service": 190,
+ "service": 194,
  "source": "LibreHU/LibreHU-car-profiles",
  "coverage": {
   "source": "Car Info 1.0.3991 (com.can.activity)",
@@ -11,9 +11,9 @@
   "tried": [
    "Clio 3"
   ],
-  "profiles": 521,
+  "profiles": 522,
   "generated": 511,
-  "cars": 6415
+  "cars": 6416
  },
  "profiles": [
   {
@@ -2258,6 +2258,21 @@
     {
      "name": "BMW MINI 2012-NOW, all trims",
      "since": 189
+    }
+   ]
+  },
+  {
+   "id": "bmw-ksw-cic",
+   "name": "BMW with a KSW screen (CIC)",
+   "box": "ksw-mcu",
+   "pack": "bmw",
+   "messages": [
+    "KSW car data"
+   ],
+   "cars": [
+    {
+     "name": "BMW F1x 2011-2012, CIC 8.8 / 10.25 in (KSW screen)",
+     "since": 194
     }
    ]
   },
@@ -33414,6 +33429,7 @@
   "bmw-hdbmw|BMW BMWNBT nbt-88, all trims": 189,
   "bmw-hdbmw|BMW BMWX1 2009-2015, all trims": 189,
   "bmw-hdbmw|BMW 兼容 兼容, all trims": 189,
+  "bmw-ksw-cic|BMW F1x 2011-2012, CIC 8.8 / 10.25 in (KSW screen)": 194,
   "bmw-lzbmwe46|BMW BMW3 1998-2006, high trim": 189,
   "bmw-lzbmwe46|BMW BMW3 1998-2006, low trim": 189,
   "bmw-lzbmwe46|BMW BMW5 1996-2003, high trim": 189,

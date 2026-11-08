@@ -364,12 +364,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
-     "versionCode": 15,
-     "versionName": "5d55278-main",
-     "date": "2026-11-08T11:42:38Z",
-     "size": 2330617,
-     "commit": "5d5527896bf3a4bb10d1549e8228e067130780bb",
-     "summary": "Report without root: the kernel log left out instead of running dmesg, which Android's seccomp filter kills as an app (SIGSYS, a tombstone at each report, seen on the Android 9 emulator); report test: taps only on a node that stopped moving"
+     "versionCode": 18,
+     "versionName": "ee33170-main",
+     "date": "2026-11-08T13:43:05Z",
+     "size": 2330625,
+     "commit": "ee331708e721a2809647edfc88f04025d3a589d2",
+     "summary": "Redactor: the exact cause in the comment (« [: » then « :] », refused by ICU on every Android from 4.1 to 15, checked on emulators)"
     }
    ]
   },
@@ -387,12 +387,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk",
-     "versionCode": 2769,
+     "versionCode": 2772,
      "versionName": "4.0.0-beta1-main",
-     "date": "2026-11-02T11:26:54Z",
-     "size": 19535739,
-     "commit": "521ff4dc49092d36c0ffc8be3e513d9fe4555f54",
-     "summary": "LibreHU fork: root request through Su, for the old su of AOSP some Jancar ROMs ship"
+     "date": "2026-11-08T13:45:59Z",
+     "size": 19535738,
+     "commit": "11b00767e0c6d7342fcc781645f16f2c4e8f117c",
+     "summary": "LibreHU fork: MacAddressPolicy's pattern back to upstream's, which every Android passes (the regex check found the suspicion wrong), the check kept"
     }
    ]
   },
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "051a4e7-main",
+    "version": "cf4ef4f-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22716
+    "size": 22717
    },
    {
     "id": "jancar-settings-provider-restore",

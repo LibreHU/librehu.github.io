@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 185,
-     "versionName": "be3f0fa-main",
-     "date": "2026-11-08T01:27:30Z",
-     "size": 5524569,
-     "commit": "be3f0faf260366d94faf81aabfb48a7d41c4d728",
-     "summary": "CAN tests: a profile extending a published car reads it from the test copies; extends drops the parent's box_type"
+     "versionCode": 189,
+     "versionName": "051a4e7-main",
+     "date": "2026-11-08T02:32:43Z",
+     "size": 5533273,
+     "commit": "051a4e7db32256288b74b1512fcfad138d087eba",
+     "summary": "Car data sources together: one owner per port (CAN box, OBD adapter), USB never taken by force, combined values broadcast"
     }
    ]
   },
@@ -39,34 +39,34 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk",
-     "versionCode": 183,
-     "versionName": "1413400-librehu-service",
-     "date": "2026-11-06T21:46:11Z",
-     "size": 4696324,
-     "commit": "1413400f3b8b8bc0206b71c114d5642417458e42",
-     "summary": "Merge main into librehu-service (Infos screen)"
+     "versionCode": 185,
+     "versionName": "38383f5-librehu-service",
+     "date": "2026-11-08T02:31:09Z",
+     "size": 4696372,
+     "commit": "38383f5b548ca3a2de91df7397b307dd2c586af2",
+     "summary": "Merge main into librehu-service (car speed combined from the CAN box and the OBD adapter)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk",
-     "versionCode": 185,
-     "versionName": "7634a5d-ivi",
-     "date": "2026-11-06T21:46:07Z",
-     "size": 4696304,
-     "commit": "7634a5dc943acacf661539ce1847153e8bbafcf8",
-     "summary": "Merge main into ivi (Infos screen)"
+     "versionCode": 187,
+     "versionName": "7e4336f-ivi",
+     "date": "2026-11-08T02:31:51Z",
+     "size": 4696352,
+     "commit": "7e4336f7567624ba8b69baf77878894d73e4b3a4",
+     "summary": "Merge main into ivi (car speed combined from the CAN box and the OBD adapter)"
     },
     {
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk",
-     "versionCode": 98,
-     "versionName": "e458696-main",
-     "date": "2026-11-06T18:18:22Z",
-     "size": 4696308,
-     "commit": "e4586966e0771a80cf26d1b742dc3766464805b4",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 99,
+     "versionName": "640ef36-main",
+     "date": "2026-11-08T02:30:54Z",
+     "size": 4696352,
+     "commit": "640ef368027c36788a8fd18ccd24c58d3f71df67",
+     "summary": "Speed: the car's speed combined from the CAN box and the OBD adapter (LibreHU-service CAR_DATA), not the OBD adapter's alone"
     }
    ]
   },
@@ -433,12 +433,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
-     "versionCode": 65,
-     "versionName": "023a968-main",
-     "date": "2026-11-06T18:18:03Z",
-     "size": 3994092,
-     "commit": "023a96825609fc2cef56316d6e836f2961846454",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 66,
+     "versionName": "7f1f150-main",
+     "date": "2026-11-08T02:24:31Z",
+     "size": 3994736,
+     "commit": "7f1f15045f0d2708a5538e39c8983f79d3747268",
+     "summary": "Cars tab: the CAN box types' pack (\"boxes\") shows how many box types it brings instead of \"0 cars\""
     }
    ]
   },

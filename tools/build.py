@@ -439,20 +439,28 @@ def can_bars(can: dict) -> str:
         out.append(f'<div class="progress"><div class="label"><t>{en}<fr>{fr}</t><strong><t>{ten}<fr>{tfr}</t></strong></div>'
                    f'<div class="bar{" ok" if ok else ""}"><span style="width: {v:.1f}%"></span></div></div>')
     m, cars, prof, gen = num(c["models"]), num(c.get("cars", 0)), num(c.get("profiles", 0)), num(c.get("generated", 0))
+    g = num(c.get("guessed", 0))
     src = esc(c.get("source", "").split(" (")[0])
-    out.append(f'<p class="muted" lang="en">Of the {m[0]} models of Hiworld\'s catalogue ({src}): {cars[0]} cars in {prof[0]} profiles, '
-               f'{gen[0]} of them generated and never tried on a car. <a href="docs.html#can-cars">Which cars?</a> <a href="engine.html">How it works</a></p>')
-    out.append(f'<p class="muted" lang="fr">Sur les {m[1]} modèles du catalogue Hiworld ({src}) : {cars[1]} voitures dans {prof[1]} profils, '
-               f'dont {gen[1]} générés et jamais essayés sur une voiture. <a href="docs.html#can-cars">Quelles voitures ?</a> <a href="engine.html">Comment ça marche</a></p>')
+    ge = f"; {g[0]} models guessed (no decoder in the stock app: the one of the same make and box)" if c.get("guessed") else ""
+    gf = f" ; {g[1]} modèles supposés (pas de décodeur dans l'appli d'origine : celui de la même marque et du même boîtier)" if c.get("guessed") else ""
+    out.append(f'<p class="muted" lang="en">Of the {m[0]} car models of Hiworld\'s catalogue ({src}): {cars[0]} cars in {prof[0]} profiles, '
+               f'{gen[0]} of them generated and never tried on a car{ge}. <a href="docs.html#can-cars">Which cars?</a> <a href="engine.html">How it works</a></p>')
+    out.append(f'<p class="muted" lang="fr">Sur les {m[1]} modèles de voitures du catalogue Hiworld ({src}) : {cars[1]} voitures dans {prof[1]} profils, '
+               f'dont {gen[1]} générés et jamais essayés sur une voiture{gf}. <a href="docs.html#can-cars">Quelles voitures ?</a> <a href="engine.html">Comment ça marche</a></p>')
     return "\n        ".join(out)
 
 
 def generated(text: str) -> str:
     """{{apps}}, {{zips}}, {{changelog}} filled from data/ (left as a link to GitHub when it is missing)."""
-    if not any(k in text for k in ("{{apps}}", "{{zips}}", "{{changelog}}", "{{can_cars}}", "{{can_bars}}")):
+    if not any(k in text for k in ("{{apps}}", "{{zips}}", "{{changelog}}", "{{can_cars}}", "{{can_bars}}", "{{can_n_")):
         return text
-    if "{{can_bars}}" in text:
-        text = text.replace("{{can_bars}}", can_bars(load(ROOT / "data" / "can.json")))
+    if "{{can_bars}}" in text or "{{can_n_" in text:
+        can = load(ROOT / "data" / "can.json")
+        text = text.replace("{{can_bars}}", can_bars(can))
+        c = (can or {}).get("coverage") or {}
+        for k in ("profiles", "cars", "generated", "guessed", "models"):
+            n = c.get(k, 0)
+            text = text.replace("{{can_n_" + k + "_en}}", f"{n:,}").replace("{{can_n_" + k + "_fr}}", f"{n:,}".replace(",", " "))
     if "{{can_cars}}" in text:
         can = load(ROOT / "data" / "can.json")
         conf = load(ROOT / "tools" / "site.json")

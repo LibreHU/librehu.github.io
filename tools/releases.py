@@ -191,7 +191,8 @@ def can_profiles(releases: dict, old: dict):
             profiles.append({"id": pid, "name": d.get("name", pid), "box": d.get("box", ""), "pack": pack["id"],
                              "messages": [m.get("name", k) for k, m in d.get("messages", {}).items()], "cars": cars})
     profiles.sort(key=lambda p: p["id"])
-    return {"service": vc, "source": c["repo"], "profiles": profiles, "since": dict(sorted(since.items()))}
+    return {"service": vc, "source": c["repo"], "coverage": index.get("coverage") or (old or {}).get("coverage"), "profiles": profiles,
+            "since": dict(sorted(since.items()))}
 
 
 def iso(t: str) -> dt.datetime:

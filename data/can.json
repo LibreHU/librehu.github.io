@@ -1,6 +1,15 @@
 {
  "service": 190,
  "source": "LibreHU/LibreHU-car-profiles",
+ "coverage": {
+  "source": "Car Info 1.0.3991 (com.can.activity)",
+  "models": 1797,
+  "box_link": 1792,
+  "decoded": 1689,
+  "profiles": 520,
+  "generated": 510,
+  "cars": 6115
+ },
  "profiles": [
   {
    "id": "acura-oudiacura",

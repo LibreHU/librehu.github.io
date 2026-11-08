@@ -318,12 +318,12 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk",
-     "versionCode": 286,
-     "versionName": "52d00fe-librehu-service",
-     "date": "2026-11-02T11:28:36Z",
+     "versionCode": 294,
+     "versionName": "2511669-librehu-service",
+     "date": "2026-11-08T20:05:09Z",
      "size": 4625116,
-     "commit": "52d00feb3e8e97f8f3234e1f56c3a0420f051f3a",
-     "summary": "LibreHU fork: root through Su and RootShell, for the old su of AOSP some Jancar ROMs ship"
+     "commit": "2511669f67446b6f72a92e41c82316b29585bbff",
+     "summary": "Merge branch 'main' into librehu-service"
     }
    ]
   },
@@ -387,12 +387,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk",
-     "versionCode": 2772,
-     "versionName": "4.0.0-beta1-main",
-     "date": "2026-11-08T13:45:59Z",
-     "size": 19535738,
-     "commit": "11b00767e0c6d7342fcc781645f16f2c4e8f117c",
-     "summary": "LibreHU fork: MacAddressPolicy's pattern back to upstream's, which every Android passes (the regex check found the suspicion wrong), the check kept"
+     "versionCode": 2906,
+     "versionName": "4.0.0-beta2-main",
+     "date": "2026-11-08T21:04:39Z",
+     "size": 21458473,
+     "commit": "2ff7c6c40a17baee8bd1022715d1d80f5658e386",
+     "summary": "LibreHU fork: AapPresentationTest's night overlay test (upstream, new) mocks aapControl like the fork's other tests"
     }
    ]
   },
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "cf4ef4f-main",
+    "version": "8a08be8-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22717
+    "size": 22711
    },
    {
     "id": "jancar-settings-provider-restore",

@@ -161,32 +161,37 @@ def twrp_builds() -> list:
 
 
 def can_profiles(releases: dict, old: dict):
-    """Built-in car profiles of LibreHU service at its published commit (docs.html#can-cars): protocol, messages
-    decoded, cars; the first service version of each car is kept from run to run."""
+    """Car profiles published by LibreHU-car-profiles (docs.html#can-cars), read from its packs (dist/index.json and
+    one pack per make; the box types' pack decodes nothing and is left out): protocol, messages decoded, cars. No car
+    is built into LibreHU service since its versionCode 184. The service version of the first run that saw each car
+    is kept from run to run ("since")."""
     c = SITE.get("can")
     app = next((a for a in releases["apps"] if c and a["id"] == c["app"]), None)
     if not app or not app["builds"]:
         return old
-    b = app["builds"][0]
-    commit, vc = b.get("commit") or "main", b["versionCode"]
-    listing = json.loads(get(f"{API}/repos/{c['repo']}/contents/{c['path']}?ref={commit}", api=True) or "[]")
+    vc = app["builds"][0]["versionCode"]
+    base = f"https://raw.githubusercontent.com/{c['repo']}/main/{c['path']}"
+    index = json.loads(get(f"{base}/index.json"))
     since = dict((old or {}).get("since", {}))
     profiles = []
-    for f in sorted(listing, key=lambda f: f["name"]):
-        if f.get("type") != "file" or not f["name"].endswith(".json"):
+    for pack in index.get("packs", []):
+        if pack["id"] in c.get("skip_packs", []):
             continue
-        d = json.loads(get(f"https://raw.githubusercontent.com/{c['repo']}/{commit}/{c['path']}/{f['name']}"))
-        pid = d.get("id") or f["name"][:-5]
-        names = [v["name"] for v in d.get("variants", [])] or [d.get("name", pid).split(" (")[0]]
-        cars = []
-        for n in names:
-            key = f"{pid}|{n}"
-            if key not in since:
-                since[key] = c["since"].get(key) or c["since"].get(pid) or vc
-            cars.append({"name": n, "since": since[key]})
-        profiles.append({"id": pid, "name": d.get("name", pid), "box": d.get("box", ""),
-                         "messages": [m.get("name", k) for k, m in d.get("messages", {}).items()], "cars": cars})
-    return {"service": vc, "commit": commit, "profiles": profiles, "since": dict(sorted(since.items()))}
+        for d in json.loads(get(f"{base}/{pack['file']}")).get("profiles", []):
+            pid = d.get("id")
+            if not pid or "box_type" in d:
+                continue
+            names = [v["name"] for v in d.get("variants", [])] or [d.get("name", pid).split(" (")[0]]
+            cars = []
+            for n in names:
+                key = f"{pid}|{n}"
+                if key not in since:
+                    since[key] = c["since"].get(key) or c["since"].get(pid) or vc
+                cars.append({"name": n, "since": since[key]})
+            profiles.append({"id": pid, "name": d.get("name", pid), "box": d.get("box", ""), "pack": pack["id"],
+                             "messages": [m.get("name", k) for k, m in d.get("messages", {}).items()], "cars": cars})
+    profiles.sort(key=lambda p: p["id"])
+    return {"service": vc, "source": c["repo"], "profiles": profiles, "since": dict(sorted(since.items()))}
 
 
 def iso(t: str) -> dt.datetime:

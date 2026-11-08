@@ -409,8 +409,8 @@ def can_table(can: dict, conf: dict) -> str:
             if other:
                 since += "<br><small>" + "; ".join(both(f"{esc(n)}: v{s}", f"{esc(n)} : v{s}") for n, s in other) + "</small>"
             rows.append(f'<tr><td><strong>{esc(brand)}</strong></td><td>{names}</td><td class="since">{since}</td></tr>')
-    head = ('<p class="sub">' + both(f"{total} cars (years and trims apart) of {len(makes)} makes in {len(can['profiles'])} built-in profiles, LibreHU service v{can['service']}.",
-                                     f"{total} voitures (années et finitions à part) de {len(makes)} marques dans {len(can['profiles'])} profils intégrés, LibreHU service v{can['service']}.") + "</p>")
+    head = ('<p class="sub">' + both(f"{total} cars (years and trims apart) of {len(makes)} makes in {len(can['profiles'])} profiles published by LibreHU-car-profiles (packs by make, downloaded by the service's CAN tab or LibreHU Apps), LibreHU service v{can['service']}.",
+                                     f"{total} voitures (années et finitions à part) de {len(makes)} marques dans {len(can['profiles'])} profils publiés par LibreHU-car-profiles (paquets par marque, téléchargés par l'onglet CAN du service ou LibreHU Apps), LibreHU service v{can['service']}.") + "</p>")
     table = ('<div class="table"><table class="cars"><thead><tr>'
              '<th lang="en">Make</th><th lang="fr">Marque</th><th lang="en">Models</th><th lang="fr">Modèles</th>'
              '<th lang="en">Since (service)</th><th lang="fr">Depuis (service)</th></tr></thead><tbody>\n'

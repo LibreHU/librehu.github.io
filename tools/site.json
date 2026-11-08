@@ -301,10 +301,11 @@
     }
   },
   "can": {
-    "_": "Cars decoded with a CAN box (docs.html#can-cars): the built-in profiles of LibreHU service at its published commit; each car's first service version is kept in data/can.json (seeds below for the cars that came before this table).",
+    "_": "Cars decoded with a CAN box (docs.html#can-cars): the car profiles published by LibreHU-car-profiles (its packs, dist/), none built into LibreHU service since versionCode 184; each car's first service version is kept in data/can.json (seeds below for the cars that came before this table).",
     "app": "service",
-    "repo": "LibreHU/LibreHU-service",
-    "path": "core/src/main/resources/org/librehu/core/can/vehicles",
+    "repo": "LibreHU/LibreHU-car-profiles",
+    "path": "dist",
+    "skip_packs": ["boxes"],
     "since": {
       "renault-clio3-hiworld": 147,
       "renault-clio3-hiworld|Renault Clio3 2005-2014, all trims": 23,

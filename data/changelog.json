@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-06T17:55:03Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-06T18:15:24Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-06T23:00:26Z",
+  "LibreHU/LibreHU-service@main": "2026-11-08T01:29:48Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-06T21:42:45Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-06T21:42:45Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-06T18:15:24Z",
@@ -36,6 +36,9 @@
   "events"
  ],
  "entries": [
+{"c":"service","d":"2026-11-08T01:27:30Z","id":"app:service:main:185","k":"release","n":"be3f0fa-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":185},
+{"a":"2026-11-08T01:22:40Z","b":["main"],"c":"service","d":"2026-11-08T01:22:40Z","k":"commit","m":"CAN tests: a profile extending a published car reads it from the test copies; extends drops the parent's box_type","s":"be3f0faf260366d94faf81aabfb48a7d41c4d728","u":"https://github.com/LibreHU/LibreHU-service/commit/be3f0faf260366d94faf81aabfb48a7d41c4d728"},
+{"a":"2026-11-08T01:19:58Z","b":["main"],"c":"service","d":"2026-11-08T01:19:58Z","k":"commit","m":"CAN: no car profile built in any more, one generic profile per box type; box types as data (engine 2.6.0); packs downloaded by the service itself","s":"5868e85e5b55ba32544f2b57b057af77c9118dbb","u":"https://github.com/LibreHU/LibreHU-service/commit/5868e85e5b55ba32544f2b57b057af77c9118dbb"},
 {"c":"kernel","d":"2026-11-07T00:59:07Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r147-9a970ae5d","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r147-9a970ae5d"},
 {"c":"zips","d":"2026-11-07T00:59:07Z","g":"jancar-settings","id":"zip:jancar-settings:f689ba9-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"f689ba9-main"},
 {"c":"twrp","d":"2026-11-07T00:35:56Z","id":"twrp:twrp-build-14","k":"release","stable":true,"u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-14","v":"v14"},

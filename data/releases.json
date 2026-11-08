@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 183,
-     "versionName": "f689ba9-main",
-     "date": "2026-11-06T23:05:21Z",
-     "size": 5519028,
-     "commit": "f689ba985e28352de829dfbd3b46626e8d48c6cc",
-     "summary": "TWRP reads the chosen profile's CAN box whatever its family: ujc201_can.conf now carries the framing (Hiworld 5A A5 / AA 55, Raise 2E, Raise FD and profile framings), the acknowledgement, the box speed and the TWRP action of each named key; TWRP card in the CAN tab (what is sent, write again)"
+     "versionCode": 185,
+     "versionName": "be3f0fa-main",
+     "date": "2026-11-08T01:27:30Z",
+     "size": 5524569,
+     "commit": "be3f0faf260366d94faf81aabfb48a7d41c4d728",
+     "summary": "CAN tests: a profile extending a published car reads it from the test copies; extends drops the parent's box_type"
     }
    ]
   },

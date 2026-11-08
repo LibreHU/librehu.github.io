@@ -1,11 +1,12 @@
 {
- "service": 183,
- "commit": "f689ba985e28352de829dfbd3b46626e8d48c6cc",
+ "service": 185,
+ "source": "LibreHU/LibreHU-car-profiles",
  "profiles": [
   {
    "id": "honda-hiworld",
    "name": "Honda, Acura (Hiworld HDP004)",
    "box": "hiworld",
+   "pack": "honda",
    "messages": [
     "State",
     "Doors",
@@ -335,6 +336,7 @@
    "id": "hyundai-kia-hiworld",
    "name": "Hyundai, Kia (Hiworld HYP001)",
    "box": "hiworld",
+   "pack": "hyundai-kia",
    "messages": [
     "State",
     "Doors",
@@ -955,82 +957,10 @@
    ]
   },
   {
-   "id": "psa-raise-keep",
-   "name": "Peugeot, Citroën (Raise PSA, original screen kept)",
-   "box": "raise-fd",
-   "messages": [
-    "Wheel key",
-    "Steering",
-    "Outside temperature",
-    "Doors and lights",
-    "Trip computer",
-    "Trip 1",
-    "Trip 2",
-    "Parking radar"
-   ],
-   "cars": [
-    {
-     "name": "Citroën berlingo 2009-2015, all trims",
-     "since": 177
-    },
-    {
-     "name": "Citroën c5 2010-now, keep original small screen",
-     "since": 177
-    },
-    {
-     "name": "Citroën c_quatre 2012-now, keep original small screen",
-     "since": 177
-    },
-    {
-     "name": "Citroën, other compatible models, original small screen kept, high trim",
-     "since": 177
-    },
-    {
-     "name": "Citroën, other compatible models, original small screen kept, low trim",
-     "since": 177
-    },
-    {
-     "name": "Citroën, other compatible models, original small screen kept, medium trim",
-     "since": 177
-    },
-    {
-     "name": "Peugeot 308sw 2010-2013, all trims",
-     "since": 177
-    },
-    {
-     "name": "Peugeot 408CC 2010-now, all trims",
-     "since": 177
-    },
-    {
-     "name": "Peugeot 408sw 2010-now, all trims",
-     "since": 177
-    },
-    {
-     "name": "Peugeot MPV_Tepee 2015, all trims",
-     "since": 177
-    },
-    {
-     "name": "Peugeot Tepee 2010-now, all trims",
-     "since": 177
-    },
-    {
-     "name": "Peugeot, other compatible models, original small screen kept, high trim",
-     "since": 177
-    },
-    {
-     "name": "Peugeot, other compatible models, original small screen kept, low trim",
-     "since": 177
-    },
-    {
-     "name": "Peugeot, other compatible models, original small screen kept, medium trim",
-     "since": 177
-    }
-   ]
-  },
-  {
    "id": "psa-raise",
    "name": "Peugeot, Citroën, DS (Raise PSA)",
    "box": "raise-fd",
+   "pack": "psa",
    "messages": [
     "Wheel key",
     "Steering",
@@ -1435,9 +1365,84 @@
    ]
   },
   {
+   "id": "psa-raise-keep",
+   "name": "Peugeot, Citroën (Raise PSA, original screen kept)",
+   "box": "raise-fd",
+   "pack": "psa",
+   "messages": [
+    "Wheel key",
+    "Steering",
+    "Outside temperature",
+    "Doors and lights",
+    "Trip computer",
+    "Trip 1",
+    "Trip 2",
+    "Parking radar"
+   ],
+   "cars": [
+    {
+     "name": "Citroën berlingo 2009-2015, all trims",
+     "since": 177
+    },
+    {
+     "name": "Citroën c5 2010-now, keep original small screen",
+     "since": 177
+    },
+    {
+     "name": "Citroën c_quatre 2012-now, keep original small screen",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original small screen kept, high trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original small screen kept, low trim",
+     "since": 177
+    },
+    {
+     "name": "Citroën, other compatible models, original small screen kept, medium trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 308sw 2010-2013, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408CC 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot 408sw 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot MPV_Tepee 2015, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot Tepee 2010-now, all trims",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original small screen kept, high trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original small screen kept, low trim",
+     "since": 177
+    },
+    {
+     "name": "Peugeot, other compatible models, original small screen kept, medium trim",
+     "since": 177
+    }
+   ]
+  },
+  {
    "id": "renault-clio3-hiworld",
    "name": "Renault, Dacia, LADA, Samsung, Nissan, Mercedes (Hiworld LNP002)",
    "box": "hiworld",
+   "pack": "renault",
    "messages": [
     "State",
     "Doors",
@@ -1836,6 +1841,7 @@
    "id": "toyota-hiworld",
    "name": "Toyota, Lexus ES (Hiworld TYP001)",
    "box": "hiworld",
+   "pack": "toyota",
    "messages": [
     "State",
     "Parking radar",
@@ -2416,6 +2422,7 @@
    "id": "vw-mqb-hiworld",
    "name": "Volkswagen, Skoda (Hiworld VWP004, MQB)",
    "box": "hiworld",
+   "pack": "volkswagen",
    "messages": [
     "State",
     "Car info",
@@ -2547,6 +2554,7 @@
    "id": "vw-mqb-raise",
    "name": "Volkswagen, Skoda (Raise / Oudi, MQB)",
    "box": "raise",
+   "pack": "volkswagen",
    "messages": [
     "Wheel key",
     "Doors and lights",
@@ -2809,6 +2817,7 @@
    "id": "vw-pq-hiworld",
    "name": "Volkswagen, Skoda, older Mercedes (Hiworld VWP003, PQ)",
    "box": "hiworld",
+   "pack": "volkswagen",
    "messages": [
     "State",
     "Climate and doors",
@@ -2993,6 +3002,7 @@
    "id": "vw-pq-raise",
    "name": "Volkswagen, Skoda (Raise / Oudi, PQ)",
    "box": "raise",
+   "pack": "volkswagen",
    "messages": [
     "Wheel key",
     "Speed",

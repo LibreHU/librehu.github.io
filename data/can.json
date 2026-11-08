@@ -3,12 +3,13 @@
  "source": "LibreHU/LibreHU-car-profiles",
  "coverage": {
   "source": "Car Info 1.0.3991 (com.can.activity)",
-  "models": 1797,
-  "box_link": 1792,
-  "decoded": 1689,
-  "profiles": 520,
-  "generated": 510,
-  "cars": 6115
+  "models": 1785,
+  "box_link": 1785,
+  "decoded": 1785,
+  "guessed": 95,
+  "profiles": 521,
+  "generated": 511,
+  "cars": 6413
  },
  "profiles": [
   {
@@ -294,6 +295,18 @@
     {
      "name": "Audi 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Audi AudiS3 2004~2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Audi AudiS4 2002~2008, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Audi AudiS4 2018~2024, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -332,6 +345,10 @@
     },
     {
      "name": "Audi 兼容 兼容, all trims",
+     "since": 190
+    },
+    {
+     "name": "Audi A6 2024, all trims (guessed)",
      "since": 190
     }
    ]
@@ -726,6 +743,18 @@
     {
      "name": "Mercedes-Benz ntg5.0 960*540, all trims",
      "since": 189
+    },
+    {
+     "name": "Audi Audi2G All-480-240, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Mercedes-Benz ntg5.5 1920*720, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Mercedes-Benz ntg6.0 1920*720, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -1575,6 +1604,10 @@
     {
      "name": "Besturn ModelB50 2013-2015, all trims",
      "since": 189
+    },
+    {
+     "name": "Besturn ModelB70 2011-2013, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -1702,6 +1735,10 @@
     {
      "name": "Besturn 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Besturn ModelB70 20062010, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -1858,6 +1895,14 @@
     {
      "name": "BAIC 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "BAIC 兼容 兼容, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BAIC Dynasty M7 2022-2025, low trim (guessed)",
+     "since": 190
     }
    ]
   },
@@ -1984,6 +2029,26 @@
     {
      "name": "Changhe 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "BAIC Huansu magic speed s2 20142016, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BAIC Huansu magic speed s3 20142016, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BAIC Huansu magic speed s5 2014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BAIC Weiwang weiwang m20 2014-2016, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BAIC Weiwang weiwang m30 20152016, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -2085,6 +2150,10 @@
     {
      "name": "BAIC BJEV 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "BAIC BJEV ex360 2018, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -2469,6 +2538,70 @@
     {
      "name": "BMW 兼容 Compatible, Compatible",
      "since": 189
+    },
+    {
+     "name": "BMW BMW3 2005-2012, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW3 2009-2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW3 2013-2017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW3 2005-2008, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW1 2007-2011, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW1 2011-2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW1 2013-2017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMWX1 2005-2012, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMWX1 2010-2015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMWX1 2016-2018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW5 2004-2009, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW5 2009-2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMW5 2013-2017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMWX5 2010-2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMWX5 2014-2015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "BMW BMWX5 2008-2009, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -4703,6 +4836,26 @@
     {
      "name": "Sinogold junxing 2023, all trims",
      "since": 189
+    },
+    {
+     "name": "Chery tiger 2016~now, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chery 3x e 2018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chery 3x plus 2021, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chery Tiggo4 2021, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chery DR F35 2021, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -6612,6 +6765,86 @@
     {
      "name": "Opel 兼容 Compatible, Compatible",
      "since": 189
+    },
+    {
+     "name": "Buick gl8 2017-2022, medium-high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Buick gl8 es 2017-2018, high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Buick gl8 es 2017-2018, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Buick velite 6 2020-2022, medium-high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Cadillac escalade 2005-2008, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Cadillac kaired 2011, cfg alll (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chevrolet Avalanch 2007-2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chevrolet Tahoe 2010~2023, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Chevrolet Tahoe 2010~2023, medium-high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel mokka 2013-2016, cfg external horn (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel mokka 2021-2024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel astra 2004-2010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel astra 2004-2010, cfg havenothost (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel zafira 2006-2010, cfg havehost (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel zafira 2006-2010, cfg havenothost (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel corsa 2006-2010, cfg havenothost (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel corsa 2023-2024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel crossland x 2021-2024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel corsa f 2019-2024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel tigra 2004-2009, cfg havenothost (guessed)",
+     "since": 190
     }
    ]
   },
@@ -6931,6 +7164,54 @@
     {
      "name": "Opel mokka 2012-2016, low trim",
      "since": 189
+    },
+    {
+     "name": "Buick Envision 102015, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Cadillac srx 20072009, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Cadillac escalade 20072014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Cadillac DTS 20062010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hummer H2 20082009, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel astra j 20102015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel mokka x 20162019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel corsa e 20152019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel adam 20132019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel Karl 20152020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel Combo 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel astra k 20162019, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -7206,6 +7487,10 @@
     {
      "name": "Dongfeng Fengguang fg580 2021, cfg supreme",
      "since": 189
+    },
+    {
+     "name": "Dongfeng Fengguang 560 2021, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -8786,6 +9071,14 @@
     {
      "name": "Fiat toro 2019, medium trim",
      "since": 189
+    },
+    {
+     "name": "Alfa Romeo mito 2008-2018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Alfa Romeo giulia 2015-now, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -9717,6 +10010,30 @@
     {
      "name": "Mazda bt50 2012~2015, all trims",
      "since": 189
+    },
+    {
+     "name": "Ford ecosport 2013-2017, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford ecosport 2013-2017, cfg m (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford ecosport 2013-2017, high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford ecosport 2018-now, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford ecosport 2018-now, cfg m (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford ecosport 2018-now, high trim (guessed)",
+     "since": 190
     }
    ]
   },
@@ -10589,6 +10906,26 @@
     {
      "name": "Mazda bt50 2012, all trims",
      "since": 189
+    },
+    {
+     "name": "Ford F350 2004-2008, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford F350 2008, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford bronco 2022, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford E350 2009-2012, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford E350 2012, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -10745,6 +11082,106 @@
     {
      "name": "Ford taurus 2013-2018, all trims",
      "since": 189
+    },
+    {
+     "name": "Ford taurus 2018-now, autoair (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford taurus 2018-now, maualair (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford taurus 2018-now, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford taurus 20092012, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford edge 20072010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang 2015-2020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang 20052009, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford mustang 20092014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford smax 20072014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford explorer 20062010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Escape 20132019, all (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Expedition 20072014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford puma 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Galaxy 20102015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Focus 3 20122018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Transit Courier 102015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Tourneo Connect 102015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Tourneo Custom 20152017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Tourneo Custom 20182020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford B-MAX 20132017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Grand C-MAX 20112019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Feista 20092012, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Ford Focus 4 20192020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Lincoln Navigator 20072014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Lincoln MKX 20072015, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -11096,6 +11533,30 @@
     {
      "name": "Geely 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Geely x50 2022, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely x50 2022, high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely x70 2022, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely x70 2022, high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely s70 2024, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely s70 2024, high trim (guessed)",
+     "since": 190
     }
    ]
   },
@@ -11580,6 +12041,22 @@
     {
      "name": "Geely yuanjing x1 2017, all trims",
      "since": 189
+    },
+    {
+     "name": "Geely bo yue pro 2020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely GL hybrid 2019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely LeiDaRD6 2025, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Geely yuan jing 2016-2017, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -11702,6 +12179,10 @@
     {
      "name": "Haval 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Great Wall C30 2016, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -12376,6 +12857,14 @@
     {
      "name": "Haval 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Haval haval h6 couple 2018, 红标(低配) (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval haval h6 keep host keep host, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -12827,6 +13316,50 @@
     {
      "name": "Haval haval m6 2017~2018, all trims",
      "since": 189
+    },
+    {
+     "name": "Haval haval h2 2014-2018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval haval h2 2014-2018, cfg only ac (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval haval h9 2015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval haval h9 2016-2019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval haval h9 2020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval h6 2013-2017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval h6 2013-2017, cfg only ac (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval m6 2017-2018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval m6 2017-2018, cfg only ac (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval h4 2018-2020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Haval h4 2005-2009, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -13085,6 +13618,14 @@
     {
      "name": "Honda civic 2004~2016, cfg manual air conditioning version",
      "since": 189
+    },
+    {
+     "name": "Honda accord 2003-2007, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda accord 2003-2007, medium-high trim (guessed)",
+     "since": 190
     }
    ]
   },
@@ -13540,6 +14081,38 @@
     {
      "name": "Honda Zrv 2022~Present, all trims",
      "since": 148
+    },
+    {
+     "name": "Honda accord 2015-2016, medium-low trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2015-2016, high trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2003-2007, all trims (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2018, all trims (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2022, all trims (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2022~Presnet, all trims (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2013~2017, all trims (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Honda accord 2018~2021, all trims (guessed)",
+     "since": 148
     }
    ]
   },
@@ -13568,6 +14141,14 @@
     {
      "name": "Honda 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Honda civic 2006~2011, high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda civic 2006~2011, low trim (guessed)",
+     "since": 190
     }
    ]
   },
@@ -14209,6 +14790,22 @@
     {
      "name": "Honda 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Honda accord 2003-2007, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda accord 2003-2007, medium-high trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda crv 2006-2011, cfg-low (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda crv 2006-2011, cfg-hig (guessed)",
+     "since": 190
     }
    ]
   },
@@ -14372,6 +14969,34 @@
     {
      "name": "Honda xrv 2015-now, all trims",
      "since": 189
+    },
+    {
+     "name": "Honda Avancier 20172019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda Elysion 20162019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda urv 20172019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda Hrv 20152020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda Jazz 20142019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda BR-V 20162020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Honda WR-V 20172020, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -15424,6 +16049,38 @@
     {
      "name": "Kia Stonic 2017-2020, all trims",
      "since": 148
+    },
+    {
+     "name": "Hyundai tucson 2015-NOW, medium-low trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai tucson 2015-NOW, high trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai ix35 2010-2015, high trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai sonata 2010-2015, all trims (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai lingdong 2016-now, high trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai ix45 2015-2017, medium-low trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai ix45 2015-2017, high trim (guessed)",
+     "since": 148
+    },
+    {
+     "name": "Hyundai santafe 20062012, all trims (guessed)",
+     "since": 148
     }
    ]
   },
@@ -16179,6 +16836,42 @@
     {
      "name": "Kia sportage2 2016, low trim",
      "since": 189
+    },
+    {
+     "name": "Hyundai ix45 2019-NOW, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai ix45 2019-NOW, medium trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Creta 20212024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Genesis G80 2017, cfg overseas (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Sonata9 hev 20182019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai grandeur hg300 2015, cfg overseas (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai grandeur 20112015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai i20 20192023, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Kia k7 20102012, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -16323,6 +17016,26 @@
     {
      "name": "Isuzu 铃拓 2020, cfg-all",
      "since": 189
+    },
+    {
+     "name": "Isuzu 瑞迈 2019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Isuzu D-MAX 102020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Isuzu 庆铃-达咖 2018, cfg-all (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Isuzu mu-X牧游侠 2022-2024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Isuzu MU-X 102021, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -16582,6 +17295,21 @@
    ]
   },
   {
+   "id": "jac-odjacshailing",
+   "name": "JAC (OdJacShaiLingProtocol)",
+   "box": "raise",
+   "pack": "jac",
+   "messages": [
+    "Message 0x40"
+   ],
+   "cars": [
+    {
+     "name": "JAC 江淮帅铃 all, call a11",
+     "since": 190
+    }
+   ]
+  },
+  {
    "id": "jac-odjacsurpass",
    "name": "JAC (OdJacSurpassProtocol)",
    "box": "raise",
@@ -16686,6 +17414,14 @@
     {
      "name": "JAC sehol x6 2022, all trims",
      "since": 189
+    },
+    {
+     "name": "JAC XINGRUI compatible, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "JAC ruifeng compatible, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -17425,6 +18161,26 @@
     {
      "name": "Jeep wrangler 2018-2023, all trims",
      "since": 189
+    },
+    {
+     "name": "Chrysler 300c 20062007, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Dodge RAMBLER 2006-2009, low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Dodge RAMBLER 2006-2009, medium trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Jeep Comander PHEV 2010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Jeep ram 2015, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -17608,6 +18364,86 @@
     {
      "name": "Jeep wrangler 2014, all trims",
      "since": 189
+    },
+    {
+     "name": "Dodge Journey 20092010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Dodge Durango 20112013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Dodge Durango 20142019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Dodge Dakota 20102011, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Dodge Ram Truck 20102012, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Linea 20122018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Punto 20122018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Bravo 20072014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Strada 102020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Uno 20152020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Mobi 20172019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Cronos 102018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat ducato 20102020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat ducato 102021, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Linea Classic 20072012, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Fiat Aegea HB 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Jeep Liberty 20082013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Jeep Wrangler JK 20072017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Jeep Wrangler JL 20182023, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Jeep Gladiator JT 102020, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -17914,6 +18750,10 @@
     {
      "name": "JMC yz ev3 2019, all trims",
      "since": 189
+    },
+    {
+     "name": "JMC BaoDian 2025, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -18105,6 +18945,46 @@
     {
      "name": "Kia sportage 20172020, all trims",
      "since": 189
+    },
+    {
+     "name": "Hyundai mistra 20142020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai sonata 20152019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Veloster 20122018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai ix25 102020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Tucson 20152024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Creta 102020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai Sonata YF 20102014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai SantaFe Sport 20192020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Hyundai SantaFe XL 20192020, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Kia kx7 20172020, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -19187,6 +20067,14 @@
     {
      "name": "Mazda mazda6 atenza 2014-now, all trims",
      "since": 189
+    },
+    {
+     "name": "Mazda mazda8 20112015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Mazda Mazda MX5 20162019, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -19686,6 +20574,14 @@
     {
      "name": "Roewe rx8 2019, all trims",
      "since": 189
+    },
+    {
+     "name": "MG mg3 2017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Roewe 360 plus 2018, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -21786,6 +22682,18 @@
     {
      "name": "Opel 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Opel combo 2023, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel corsaf 2023, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Opel grandland 2023, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -22382,6 +23290,14 @@
     {
      "name": "Peugeot 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Peugeot 308 2012-2015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot 308s 2015-2018, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -22667,6 +23583,50 @@
     {
      "name": "Peugeot partner 2015, all trims",
      "since": 189
+    },
+    {
+     "name": "Citroën Elysee 20132019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën berlingo 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën C3L 102010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën Jumper 20102018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot 307 20022005, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot Rifter 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot 407 20042010, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot Tepee 102015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot boxer 20102018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot partner 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Peugeot Expert 102015, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -23230,6 +24190,62 @@
     {
      "name": "Peugeot, other compatible models, original screen removed, medium trim",
      "since": 177
+    },
+    {
+     "name": "Citroën c quatre 20152018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën c3 20092016, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën c3 20022008, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën c3 2025, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën C elysee 20162018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën berlingo 2008201803, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën berlingo 2017202103, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën Jumper 20152024, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën C2 20092013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën C4 Cactus 20142021, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën C4 Sprcetourer 20172018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Citroën RCZ 20112014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "DS ds4 20122015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "DS ds3 20112015, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -23852,6 +24868,10 @@
     },
     {
      "name": "Renault Twingo_III 2014-now, all trims",
+     "since": 147
+    },
+    {
+     "name": "Renault Samsung sm7 20042011, all trims (guessed)",
      "since": 147
     }
    ]
@@ -24562,6 +25582,18 @@
     {
      "name": "VinFast Vinfast 20192021, all trims",
      "since": 189
+    },
+    {
+     "name": "Lada vesta 2023, cfg add speakers (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Lada vesta cng 2021, cfg add speakers (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Renault Samsung QM6 20162024, cfg add speakers (guessed)",
+     "since": 190
     }
    ]
   },
@@ -24793,6 +25825,26 @@
     {
      "name": "Renault sandero 20172020, all trims",
      "since": 189
+    },
+    {
+     "name": "Lada vesta 102018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Lada XRAY 102018, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Renault clio5 1, cfg low auto air (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Renault clio5 1, cfg manual air (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Renault clio5 1, cfg middle high auto air (guessed)",
+     "since": 190
     }
    ]
   },
@@ -25099,6 +26151,10 @@
     {
      "name": "Roewe zs 2019, all trims",
      "since": 189
+    },
+    {
+     "name": "MG hs 2019, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -25302,6 +26358,10 @@
     {
      "name": "Changhe changhe 2016, all trims",
      "since": 189
+    },
+    {
+     "name": "BAIC Senova shenbao zhixing 2018-2019, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -25564,6 +26624,50 @@
     {
      "name": "SsangYong diweila 2015, all trims",
      "since": 189
+    },
+    {
+     "name": "SsangYong Korando 2013, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Korando 20112019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Korando 20192022, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Korando Turismo 20102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Tivoli 2015~Present, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Tivoli Air 2016~Present, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Actyon 20052011, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Kyron 20052011, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Rexton G4 20172021, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Rexton Sports 2018~Present, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "SsangYong Rodius 20042018, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -25848,6 +26952,14 @@
     {
      "name": "Suzuki 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Suzuki S-Cross 102022, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Suzuki Grand Vitara 102022, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -27031,6 +28143,10 @@
     },
     {
      "name": "Toyota Yaris Cross 2023-present, all trims",
+     "since": 148
+    },
+    {
+     "name": "Toyota sienna 2021, all trims (guessed)",
      "since": 148
     }
    ]
@@ -28539,6 +29655,30 @@
     {
      "name": "Toyota venza 20092015, all trims",
      "since": 189
+    },
+    {
+     "name": "Toyota camry 20072011, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Toyota rav4 20192021, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Toyota rav4 20082015, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Toyota rav4 102019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Toyota highlander 20082014, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Toyota highlander 102020, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -28701,6 +29841,14 @@
     {
      "name": "Toyota reiz 2013-now, all trims",
      "since": 189
+    },
+    {
+     "name": "Toyota Tundra 2016, medium-low trim (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Toyota Tundra 2016, high trim (guessed)",
+     "since": 190
     }
    ]
   },
@@ -29056,6 +30204,18 @@
     {
      "name": "GAC Trumpchi 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "GAC Trumpchi Alon 2022, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "GAC Trumpchi Alon 2025, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "GAC Trumpchi GM8 2021, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -29232,6 +30392,10 @@
     {
      "name": "GAC Trumpchi taxi 2020, all trims",
      "since": 189
+    },
+    {
+     "name": "GAC Trumpchi GA3S 2013-2014, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -29402,6 +30566,10 @@
     {
      "name": "Venucia T70 2020, all trims",
      "since": 189
+    },
+    {
+     "name": "Venucia ModelM50V 2017, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -29520,6 +30688,10 @@
     {
      "name": "Volkswagen troc 2018-now, medium-low trim",
      "since": 189
+    },
+    {
+     "name": "Skoda octavia 2014~至今, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -30827,6 +31999,26 @@
     {
      "name": "Volkswagen, other compatible models",
      "since": 169
+    },
+    {
+     "name": "Volkswagen passat 2019-2023, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Volkswagen LingYu 2005-2011, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Volkswagen polo 2019-2023, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Volkswagen passat 2011-2017, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Volkswagen passat 2013-2017, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -31227,6 +32419,14 @@
     {
      "name": "Volkswagen TREK 2017-now, all trims",
      "since": 169
+    },
+    {
+     "name": "Skoda Spaceback 2014-2019, all trims (guessed)",
+     "since": 190
+    },
+    {
+     "name": "Skoda superb haorui 2009-2013, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -31659,6 +32859,10 @@
     {
      "name": "Zotye 兼容 兼容, all trims",
      "since": 189
+    },
+    {
+     "name": "Zotye T600 2017-2020, all trims (guessed)",
+     "since": 190
     }
    ]
   },
@@ -31842,6 +33046,9 @@
   "audi-reaudi|Audi AudiQ5L 2018-2021, all trims": 189,
   "audi-reaudi|Audi AudiR8 2012, all trims": 189,
   "audi-reaudi|Audi AudiRS3 2017~2020, all trims": 189,
+  "audi-reaudi|Audi AudiS3 2004~2013, all trims (guessed)": 190,
+  "audi-reaudi|Audi AudiS4 2002~2008, all trims (guessed)": 190,
+  "audi-reaudi|Audi AudiS4 2018~2024, all trims (guessed)": 190,
   "audi-reaudi|Audi Q3 2013-2018, all trims": 189,
   "audi-reaudi|Audi Q5 2010-2018, all trims": 189,
   "audi-reaudi|Audi TT 2006-2014, all trims": 189,
@@ -31854,6 +33061,7 @@
   "audi-spaudi|Audi A3 2008-2012-1, all trims": 190,
   "audi-spaudi|Audi A4 2002-2008, all trims": 190,
   "audi-spaudi|Audi A4 2004-2009-1, all trims": 190,
+  "audi-spaudi|Audi A6 2024, all trims (guessed)": 190,
   "audi-spaudi|Audi TT 2006-2014, all trims": 190,
   "audi-spaudi|Audi TT 2008-2015-1, all trims": 190,
   "audi-spaudi|Audi 兼容 兼容, all trims": 190,
@@ -31909,6 +33117,7 @@
   "bba-lzbba|Audi A4LQ5 2009~2016, cfg high 400*240": 189,
   "bba-lzbba|Audi A4LQ5 2009~2016, cfg high 800*480": 189,
   "bba-lzbba|Audi A4LQ5 2009~2016, cfg low 400*240": 189,
+  "bba-lzbba|Audi Audi2G All-480-240, all trims (guessed)": 190,
   "bba-lzbba|Audi AudiQ3 2009~2016, cfg high 400*240": 189,
   "bba-lzbba|BMW ccc 1, all trims": 189,
   "bba-lzbba|BMW ccc 2, all trims": 189,
@@ -31931,6 +33140,8 @@
   "bba-lzbba|Mercedes-Benz ntg4.5 800*480, all trims": 189,
   "bba-lzbba|Mercedes-Benz ntg5.0 800*480, all trims": 189,
   "bba-lzbba|Mercedes-Benz ntg5.0 960*540, all trims": 189,
+  "bba-lzbba|Mercedes-Benz ntg5.5 1920*720, all trims (guessed)": 190,
+  "bba-lzbba|Mercedes-Benz ntg6.0 1920*720, all trims (guessed)": 190,
   "bentley-lzbentley|Bentley bentley 2019, high trim": 189,
   "bentley-lzbentley|Bentley bentley 2019, low trim": 189,
   "bentley-lzbentley|Bentley 兼容 兼容, all trims": 189,
@@ -32074,6 +33285,7 @@
   "besturn-hdbenteng17x80|Besturn ModelX80 2017-NOW, medium-low trim": 189,
   "besturn-hdbentengb50|Besturn ModelB50 2009-2012, all trims": 189,
   "besturn-hdbentengb50|Besturn ModelB50 2013-2015, all trims": 189,
+  "besturn-hdbentengb50|Besturn ModelB70 2011-2013, all trims (guessed)": 190,
   "besturn-hdbentengb90|Besturn ModelB90 2012-now, all trims": 189,
   "besturn-hdbentengx40|Besturn ModelX40 2017-NOW, all trims": 189,
   "besturn-hdbentengx40|Besturn 兼容 兼容, all trims": 189,
@@ -32091,6 +33303,7 @@
   "besturn-rebenteng|Besturn ModelB50 2016-2017, all trims": 189,
   "besturn-rebenteng|Besturn ModelB50 20162019, all trims": 189,
   "besturn-rebenteng|Besturn ModelB50 2018-NOW, all trims": 189,
+  "besturn-rebenteng|Besturn ModelB70 20062010, all trims (guessed)": 190,
   "besturn-rebenteng|Besturn ModelB90 2012-now, all trims": 189,
   "besturn-rebenteng|Besturn ModelJunpaiA50 2018-NOW, all trims": 189,
   "besturn-rebenteng|Besturn ModelJunpaiCX65 2018-NOW, all trims": 189,
@@ -32111,21 +33324,28 @@
   "bisu-raisebisu|Bisu T5 2020, high": 189,
   "bisu-raisebisu|Bisu T5 2020, medium-low trim": 189,
   "bisu-raisebisu|Bisu 兼容 兼容, all trims": 189,
+  "bj-hdsaicbj20|BAIC Dynasty M7 2022-2025, low trim (guessed)": 190,
   "bj-hdsaicbj20|BAIC bj20 2016, all trims": 189,
   "bj-hdsaicbj20|BAIC bj20 2018, all trims": 189,
   "bj-hdsaicbj20|BAIC 兼容 兼容, all trims": 189,
+  "bj-hdsaicbj20|BAIC 兼容 兼容, all trims (guessed)": 190,
   "bj-odbj30|BAIC bj80 2021, all trims": 189,
   "bj-odbj80|BAIC bj80 2014~2021, all trims": 189,
   "bj-odbj80|BAIC bj90 all, all trims": 189,
   "bj-rebaicd50|BAIC Senova shenbao d50 2018, cfg supreme": 189,
   "bj-rebaicd50|BAIC X3 2020, all trims": 189,
   "bj-rebaic|BAIC Huansu magic speed 2018, all trims": 189,
+  "bj-rebaic|BAIC Huansu magic speed s2 20142016, all trims (guessed)": 190,
+  "bj-rebaic|BAIC Huansu magic speed s3 20142016, all trims (guessed)": 190,
+  "bj-rebaic|BAIC Huansu magic speed s5 2014, all trims (guessed)": 190,
   "bj-rebaic|BAIC Huansu 兼容 兼容, all trims": 189,
   "bj-rebaic|BAIC Senova shenbao d60 2014-至今, all trims": 189,
   "bj-rebaic|BAIC Senova shenbao x25 2016-至今, all trims": 189,
   "bj-rebaic|BAIC Senova shenbao x35 2016, all trims": 189,
   "bj-rebaic|BAIC Senova shenbao x55 2016-至今, all trims": 189,
   "bj-rebaic|BAIC Senova 兼容 兼容, all trims": 189,
+  "bj-rebaic|BAIC Weiwang weiwang m20 2014-2016, all trims (guessed)": 190,
+  "bj-rebaic|BAIC Weiwang weiwang m30 20152016, all trims (guessed)": 190,
   "bj-rebaic|BAIC Weiwang weiwang m50 2017, all trims": 189,
   "bj-rebaic|BAIC Weiwang 兼容 兼容, all trims": 189,
   "bj-rebaic|BAIC bj20 2016, all trims": 189,
@@ -32148,6 +33368,7 @@
   "bjev-rebaicev|BAIC BJEV ec5 2019, all trims": 189,
   "bjev-rebaicev|BAIC BJEV eu5 2018, all trims": 189,
   "bjev-rebaicev|BAIC BJEV eu5 2020, all trims": 189,
+  "bjev-rebaicev|BAIC BJEV ex360 2018, all trims (guessed)": 190,
   "bjev-rebaicev|BAIC BJEV 兼容 兼容, all trims": 189,
   "bmw-hdbmw02|BMW BMW3 2012, KEEP HOST": 189,
   "bmw-hdbmw03|BMW MINI 2012-NOW, all trims": 189,
@@ -32188,10 +33409,20 @@
   "bmw-odbmwnbt|BMW BMW5 2010-2017, all trims": 189,
   "bmw-odbmwnbt|BMW BMWX3 2009-2017, all trims": 189,
   "bmw-odbmwnbt|BMW BMWX5 2013-2018, all trims": 189,
+  "bmw-rebmw|BMW BMW1 2007-2011, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW1 2011-2013, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW1 2013-2017, all trims (guessed)": 190,
   "bmw-rebmw|BMW BMW3 1998-2006, all trims": 189,
+  "bmw-rebmw|BMW BMW3 2005-2008, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW3 2005-2012, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW3 2009-2013, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW3 2013-2017, all trims (guessed)": 190,
   "bmw-rebmw|BMW BMW318i 2005-2012, all trims": 189,
   "bmw-rebmw|BMW BMW320i 2005-2012, all trims": 189,
   "bmw-rebmw|BMW BMW5 1995-2003, all trims": 189,
+  "bmw-rebmw|BMW BMW5 2004-2009, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW5 2009-2013, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMW5 2013-2017, all trims (guessed)": 190,
   "bmw-rebmw|BMW BMWCCC ccc, all trims": 189,
   "bmw-rebmw|BMW BMWCIC cic-65, all trims": 189,
   "bmw-rebmw|BMW BMWE39 e39, high trim": 189,
@@ -32200,11 +33431,17 @@
   "bmw-rebmw|BMW BMWE53 e53, low trim": 189,
   "bmw-rebmw|BMW BMWE81 2007-2011, all trims": 189,
   "bmw-rebmw|BMW BMWNBT nbt-65, all trims": 189,
+  "bmw-rebmw|BMW BMWX1 2005-2012, low trim (guessed)": 190,
+  "bmw-rebmw|BMW BMWX1 2010-2015, all trims (guessed)": 190,
   "bmw-rebmw|BMW BMWX1 2012-2015, low trim": 189,
+  "bmw-rebmw|BMW BMWX1 2016-2018, all trims (guessed)": 190,
   "bmw-rebmw|BMW BMWX3 2006-2010, all trims": 189,
   "bmw-rebmw|BMW BMWX3 2011-2013, all trims": 189,
   "bmw-rebmw|BMW BMWX3 2013-2016, all trims": 189,
   "bmw-rebmw|BMW BMWX5 1999-2006, all trims": 189,
+  "bmw-rebmw|BMW BMWX5 2008-2009, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMWX5 2010-2013, all trims (guessed)": 190,
+  "bmw-rebmw|BMW BMWX5 2014-2015, all trims (guessed)": 190,
   "bmw-rebmw|BMW 兼容 Compatible, Compatible": 189,
   "bmw-spbmw|BMW BMW3 1998-2005, all trims": 189,
   "bmw-spbmw|BMW BMW3 20092012, all trims": 189,
@@ -32585,6 +33822,10 @@
   "chery-odkaiyixuanjie|Chery kaiyiXuanjiePro 2024, all trims": 189,
   "chery-odmaserati|Chery Ghibli 2014~2016, all trims": 189,
   "chery-odmaserati|Chery Quattroporte 2013~2015, all trims": 189,
+  "chery-rechery|Chery 3x e 2018, all trims (guessed)": 190,
+  "chery-rechery|Chery 3x plus 2021, all trims (guessed)": 190,
+  "chery-rechery|Chery DR F35 2021, all trims (guessed)": 190,
+  "chery-rechery|Chery Tiggo4 2021, all trims (guessed)": 190,
   "chery-rechery|Chery arizet 2014-2015, low trim": 189,
   "chery-rechery|Chery arizet 2016, all trims": 189,
   "chery-rechery|Chery arizet 2016-2017, all trims": 189,
@@ -32602,6 +33843,7 @@
   "chery-rechery|Chery tiger 2014-2016, all trims": 189,
   "chery-rechery|Chery tiger 2015, all trims": 189,
   "chery-rechery|Chery tiger 2016, all trims": 189,
+  "chery-rechery|Chery tiger 2016~now, all trims (guessed)": 190,
   "chery-rechery|Chery tiger 2017-2018, all trims": 189,
   "chery-rechery|Chery tiger 2018, all trims": 189,
   "chery-rechery|Chery tiger 2019, all trims": 189,
@@ -32856,12 +34098,15 @@
   "chevrolet-regm|Buick gl8 2010-2016, medium-high trim": 189,
   "chevrolet-regm|Buick gl8 2015-luxury, all trims": 189,
   "chevrolet-regm|Buick gl8 2017-2018, all trims": 189,
+  "chevrolet-regm|Buick gl8 2017-2022, medium-high trim (guessed)": 190,
   "chevrolet-regm|Buick gl8 2020, low trim": 189,
   "chevrolet-regm|Buick gl8 2020, medium-high trim": 189,
   "chevrolet-regm|Buick gl8 25s 2017-now, all trims": 189,
   "chevrolet-regm|Buick gl8 avenir 2017, all trims": 189,
   "chevrolet-regm|Buick gl8 avenir 2020, all trims": 189,
+  "chevrolet-regm|Buick gl8 es 2017-2018, high trim (guessed)": 190,
   "chevrolet-regm|Buick gl8 es 2017-2018, low trim": 189,
+  "chevrolet-regm|Buick gl8 es 2017-2018, low trim (guessed)": 190,
   "chevrolet-regm|Buick gl8 es 2017-2018, medium-high trim": 189,
   "chevrolet-regm|Buick lacrosse 2005-2008, low trim": 189,
   "chevrolet-regm|Buick lacrosse 2006-2008, all trims": 189,
@@ -32893,6 +34138,7 @@
   "chevrolet-regm|Buick regal 2022, all trims": 189,
   "chevrolet-regm|Buick regal 2022-2023, all trims": 189,
   "chevrolet-regm|Buick velite 6 2019-2024, all trims": 189,
+  "chevrolet-regm|Buick velite 6 2020-2022, medium-high trim (guessed)": 190,
   "chevrolet-regm|Buick velite 6 2022, all trims": 189,
   "chevrolet-regm|Buick verano 2015-2019, all trims": 189,
   "chevrolet-regm|Buick verano 2015-2020, high trim": 189,
@@ -32904,7 +34150,10 @@
   "chevrolet-regm|Buick verano 2022, low trim": 189,
   "chevrolet-regm|Buick verano gs 2016-2019, all trims": 189,
   "chevrolet-regm|Buick 兼容 兼容, all trims": 189,
+  "chevrolet-regm|Cadillac escalade 2005-2008, all trims (guessed)": 190,
   "chevrolet-regm|Cadillac escalade 2011~至今, all trims": 189,
+  "chevrolet-regm|Cadillac kaired 2011, cfg alll (guessed)": 190,
+  "chevrolet-regm|Chevrolet Avalanch 2007-2013, all trims (guessed)": 190,
   "chevrolet-regm|Chevrolet Camaro 2010-2012, low trim": 189,
   "chevrolet-regm|Chevrolet Camaro 2010-2012, medium-high trim": 189,
   "chevrolet-regm|Chevrolet Camaro 2013, all trims": 189,
@@ -32949,6 +34198,8 @@
   "chevrolet-regm|Chevrolet Tahoe 2010~2013, all trims": 189,
   "chevrolet-regm|Chevrolet Tahoe 2010~2018, low trim": 189,
   "chevrolet-regm|Chevrolet Tahoe 2010~2018, medium-high trim": 189,
+  "chevrolet-regm|Chevrolet Tahoe 2010~2023, low trim (guessed)": 190,
+  "chevrolet-regm|Chevrolet Tahoe 2010~2023, medium-high trim (guessed)": 190,
   "chevrolet-regm|Chevrolet Tahoe 2019~2023, low trim": 189,
   "chevrolet-regm|Chevrolet Tahoe 2019~2023, medium-high trim": 189,
   "chevrolet-regm|Chevrolet Traverse 2017, all trims": 189,
@@ -33045,6 +34296,8 @@
   "chevrolet-regm|Opel antara 2008-2013, cfg havenothost": 189,
   "chevrolet-regm|Opel antara 2011, cfg keep car host": 189,
   "chevrolet-regm|Opel antara 2011, cfg no car host": 189,
+  "chevrolet-regm|Opel astra 2004-2010, all trims (guessed)": 190,
+  "chevrolet-regm|Opel astra 2004-2010, cfg havenothost (guessed)": 190,
   "chevrolet-regm|Opel astra 2006, cfg havehost": 189,
   "chevrolet-regm|Opel astra 2006, cfg havenothost": 189,
   "chevrolet-regm|Opel astra j 2009-2015, all trims": 189,
@@ -33054,9 +34307,13 @@
   "chevrolet-regm|Opel astra j 2011-2017, low trim": 189,
   "chevrolet-regm|Opel astra k 2015-2020, cfg external horn": 189,
   "chevrolet-regm|Opel astra k 2020, all trims": 189,
+  "chevrolet-regm|Opel corsa 2006-2010, cfg havenothost (guessed)": 190,
+  "chevrolet-regm|Opel corsa 2023-2024, all trims (guessed)": 190,
   "chevrolet-regm|Opel corsa d 2011, cfg havehost": 189,
   "chevrolet-regm|Opel corsa d 2011, cfg havenothost": 189,
   "chevrolet-regm|Opel corsa e 2017-2019, all trims": 189,
+  "chevrolet-regm|Opel corsa f 2019-2024, all trims (guessed)": 190,
+  "chevrolet-regm|Opel crossland x 2021-2024, all trims (guessed)": 190,
   "chevrolet-regm|Opel insignia 2011-2012, high trim": 189,
   "chevrolet-regm|Opel insignia 2011-2012, low trim": 189,
   "chevrolet-regm|Opel insignia 2011-2020, cfg external horn": 189,
@@ -33066,11 +34323,17 @@
   "chevrolet-regm|Opel meriva 2009-2016, cfg external horn": 189,
   "chevrolet-regm|Opel meriva 2011, all trims": 189,
   "chevrolet-regm|Opel mokka 2013-2016, all trims": 189,
+  "chevrolet-regm|Opel mokka 2013-2016, cfg external horn (guessed)": 190,
+  "chevrolet-regm|Opel mokka 2021-2024, all trims (guessed)": 190,
+  "chevrolet-regm|Opel tigra 2004-2009, cfg havenothost (guessed)": 190,
   "chevrolet-regm|Opel vectra 2002-2008, cfg havenothost": 189,
   "chevrolet-regm|Opel vectra 2005, all trims": 189,
+  "chevrolet-regm|Opel zafira 2006-2010, cfg havehost (guessed)": 190,
+  "chevrolet-regm|Opel zafira 2006-2010, cfg havenothost (guessed)": 190,
   "chevrolet-regm|Opel zafira 2008, cfg havehost": 189,
   "chevrolet-regm|Opel zafira 2008, cfg havenothost": 189,
   "chevrolet-regm|Opel 兼容 Compatible, Compatible": 189,
+  "chevrolet-spgmprotok|Buick Envision 102015, low trim (guessed)": 190,
   "chevrolet-spgmprotok|Buick encore 20122016, high trim": 189,
   "chevrolet-spgmprotok|Buick encore 20122016, low trim": 189,
   "chevrolet-spgmprotok|Buick excelle gt 2010-2015, high trim": 189,
@@ -33091,6 +34354,9 @@
   "chevrolet-spgmprotok|Buick verano 2016-2019, low trim": 189,
   "chevrolet-spgmprotok|Buick verano gs 2016-2019, high trim": 189,
   "chevrolet-spgmprotok|Buick verano gs 2016-2019, low trim": 189,
+  "chevrolet-spgmprotok|Cadillac DTS 20062010, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Cadillac escalade 20072014, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Cadillac srx 20072009, all trims (guessed)": 190,
   "chevrolet-spgmprotok|Chevrolet Camaro 102016, all trims": 189,
   "chevrolet-spgmprotok|Chevrolet Camaro 2010, cfg manual": 189,
   "chevrolet-spgmprotok|Chevrolet Cavalier 20152020, all trims": 189,
@@ -33137,8 +34403,15 @@
   "chevrolet-spgmprotok|Chevrolet s10 20152020, all trims": 189,
   "chevrolet-spgmprotok|Chevrolet tracker 20172020, all trims": 189,
   "chevrolet-spgmprotok|Chevrolet trailblazer 20122018, all trims": 189,
+  "chevrolet-spgmprotok|Hummer H2 20082009, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Opel Combo 102019, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Opel Karl 20152020, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Opel adam 20132019, all trims (guessed)": 190,
   "chevrolet-spgmprotok|Opel astra 2016, high trim": 189,
   "chevrolet-spgmprotok|Opel astra 2016, low trim": 189,
+  "chevrolet-spgmprotok|Opel astra j 20102015, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Opel astra k 20162019, all trims (guessed)": 190,
+  "chevrolet-spgmprotok|Opel corsa e 20152019, all trims (guessed)": 190,
   "chevrolet-spgmprotok|Opel insignia 20092013, all trims": 189,
   "chevrolet-spgmprotok|Opel insignia 2013-now, high trim": 189,
   "chevrolet-spgmprotok|Opel insignia 2013-now, low trim": 189,
@@ -33146,6 +34419,7 @@
   "chevrolet-spgmprotok|Opel insignia 20172019, all trims": 189,
   "chevrolet-spgmprotok|Opel mokka 2012-2016, high trim": 189,
   "chevrolet-spgmprotok|Opel mokka 2012-2016, low trim": 189,
+  "chevrolet-spgmprotok|Opel mokka x 20162019, all trims (guessed)": 190,
   "chrysler-lzchrysler|Chrysler 300c 2018-2020, all trims": 189,
   "chrysler-lzchrysler|Chrysler Compatible Compatible, all trims": 189,
   "cnhtc-odcnhtc|Sinotruk howo 2015-2023, all trims": 189,
@@ -33173,6 +34447,7 @@
   "dffg-redf580protol|Dongfeng Fengguang 360 2015-now, all trims": 189,
   "dffg-redf580protol|Dongfeng Fengguang 370 2016-now, all trims": 189,
   "dffg-redf580protol|Dongfeng Fengguang 500 2021, cfg ctv": 189,
+  "dffg-redf580protol|Dongfeng Fengguang 560 2021, all trims (guessed)": 190,
   "dffg-redf580protol|Dongfeng Fengguang 580Pro 2020, all trims": 189,
   "dffg-redf580protol|Dongfeng Fengguang E3 2019, cfg evr": 189,
   "dffg-redf580protol|Dongfeng Fengguang S560 2018-now, all trims": 189,
@@ -33416,9 +34691,11 @@
   "fiat-refiat|Alfa Romeo compatible compatible, high trim": 189,
   "fiat-refiat|Alfa Romeo compatible compatible, low trim": 189,
   "fiat-refiat|Alfa Romeo compatible compatible, medium trim": 189,
+  "fiat-refiat|Alfa Romeo giulia 2015-now, all trims (guessed)": 190,
   "fiat-refiat|Alfa Romeo giulietta 2010-now, all trims": 189,
   "fiat-refiat|Alfa Romeo giulietta 2014-now, all trims": 189,
   "fiat-refiat|Alfa Romeo giulietta 2016, all trims": 189,
+  "fiat-refiat|Alfa Romeo mito 2008-2018, all trims (guessed)": 190,
   "fiat-refiat|Fiat 500 20092024, all trims": 189,
   "fiat-refiat|Fiat 500c 2009, high trim": 189,
   "fiat-refiat|Fiat 500c 2009, low trim": 189,
@@ -33642,6 +34919,12 @@
   "ford-hdford|Ford Kuga 2017~2018, low trim": 189,
   "ford-hdford|Ford Raptor 2018-now, all trims": 189,
   "ford-hdford|Ford compatible compatible, Compatible": 189,
+  "ford-hdford|Ford ecosport 2013-2017, cfg m (guessed)": 190,
+  "ford-hdford|Ford ecosport 2013-2017, high trim (guessed)": 190,
+  "ford-hdford|Ford ecosport 2013-2017, low trim (guessed)": 190,
+  "ford-hdford|Ford ecosport 2018-now, cfg m (guessed)": 190,
+  "ford-hdford|Ford ecosport 2018-now, high trim (guessed)": 190,
+  "ford-hdford|Ford ecosport 2018-now, low trim (guessed)": 190,
   "ford-hdford|Ford edge 15-18, cfg m": 189,
   "ford-hdford|Ford edge 15-18, high trim": 189,
   "ford-hdford|Ford edge 15-18, low trim": 189,
@@ -33719,6 +35002,8 @@
   "ford-oudinewtransit|Ford New Transit 2023, all trims": 189,
   "ford-ouditransit|Ford transit 2021, all trims": 189,
   "ford-reford|Ford BaoDian 2025, all trims": 189,
+  "ford-reford|Ford E350 2009-2012, all trims (guessed)": 190,
+  "ford-reford|Ford E350 2012, all trims (guessed)": 190,
   "ford-reford|Ford Escape 20092012, all trims": 189,
   "ford-reford|Ford Escape 2010, all trims": 189,
   "ford-reford|Ford Escape 2014, all trims": 189,
@@ -33734,6 +35019,8 @@
   "ford-reford|Ford F150 2014-2018, all trims": 189,
   "ford-reford|Ford F150 2019, all trims": 189,
   "ford-reford|Ford F250 2014, all trims": 189,
+  "ford-reford|Ford F350 2004-2008, all trims (guessed)": 190,
+  "ford-reford|Ford F350 2008, all trims (guessed)": 190,
   "ford-reford|Ford Fiesta 2009-2012, all trims": 189,
   "ford-reford|Ford Fiesta 2013-2014, all trims": 189,
   "ford-reford|Ford Flex 20092018, all trims": 189,
@@ -33749,6 +35036,7 @@
   "ford-reford|Ford Kuga 2019-now, high trim": 189,
   "ford-reford|Ford Kuga 2019-now, low trim": 189,
   "ford-reford|Ford Kuga 2020-2024, all trims": 189,
+  "ford-reford|Ford bronco 2022, all trims (guessed)": 190,
   "ford-reford|Ford ecosport 2013-2017, all trims": 189,
   "ford-reford|Ford ecosport 2013-2017, cfg m": 189,
   "ford-reford|Ford ecosport 2013-2017, high trim": 189,
@@ -33880,24 +35168,49 @@
   "ford-reford|Lincoln Navigator 2017, all trims": 189,
   "ford-reford|Lincoln continental 2017, all trims": 189,
   "ford-reford|Mazda bt50 2012, all trims": 189,
+  "ford-spedgeprotoknew|Ford B-MAX 20132017, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Escape 20132019, all (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Expedition 20072014, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford Expedition 2015-2017, all trims": 189,
   "ford-spedgeprotoknew|Ford Expedition 2018-2020, all trims": 189,
+  "ford-spedgeprotoknew|Ford Feista 20092012, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Focus 3 20122018, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Focus 4 20192020, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford Fusion 20092012, all trims": 189,
   "ford-spedgeprotoknew|Ford Fusion 2013-2017, all trims": 189,
   "ford-spedgeprotoknew|Ford Fusion 20142020, all trims": 189,
+  "ford-spedgeprotoknew|Ford Galaxy 20102015, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Grand C-MAX 20112019, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Tourneo Connect 102015, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Tourneo Custom 20152017, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Tourneo Custom 20182020, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford Transit Courier 102015, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford edge 15-18, all trims": 189,
+  "ford-spedgeprotoknew|Ford edge 20072010, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford edge 2011~2014, all trims": 189,
   "ford-spedgeprotoknew|Ford everest 2016-2020, all trims": 189,
   "ford-spedgeprotoknew|Ford everest 20162020, all trims": 189,
+  "ford-spedgeprotoknew|Ford explorer 20062010, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford explorer 2011-2015, all trims": 189,
   "ford-spedgeprotoknew|Ford explorer 2013, all trims": 189,
   "ford-spedgeprotoknew|Ford f150 2013-2014, all trims": 189,
   "ford-spedgeprotoknew|Ford f150 2015-2017, all trims": 189,
   "ford-spedgeprotoknew|Ford f150 2018-2020, all trims": 189,
   "ford-spedgeprotoknew|Ford mondeo 2014-2017, all trims": 189,
+  "ford-spedgeprotoknew|Ford mustang 20052009, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford mustang 20092014, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford mustang 2015-2020, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford puma 102019, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford ranger 20122015, all trims": 189,
   "ford-spedgeprotoknew|Ford ranger 2016-2020, all trims": 189,
+  "ford-spedgeprotoknew|Ford smax 20072014, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford taurus 20092012, all trims (guessed)": 190,
   "ford-spedgeprotoknew|Ford taurus 2013-2018, all trims": 189,
+  "ford-spedgeprotoknew|Ford taurus 2018-now, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Ford taurus 2018-now, autoair (guessed)": 190,
+  "ford-spedgeprotoknew|Ford taurus 2018-now, maualair (guessed)": 190,
+  "ford-spedgeprotoknew|Lincoln MKX 20072015, all trims (guessed)": 190,
+  "ford-spedgeprotoknew|Lincoln Navigator 20072014, all trims (guessed)": 190,
   "ford-spedgeprotok|Ford Expedition 2015, autoair": 189,
   "ford-spedgeprotok|Ford Expedition 2015, maualair": 189,
   "ford-spedgeprotok|Ford edge 13, autoair": 189,
@@ -33966,6 +35279,12 @@
   "geely-hdgeelygsboyue|Geely bo yue 2016-2020, all trims": 189,
   "geely-hdgeelygsboyue|Geely bo yue 2020, all trims": 189,
   "geely-hdgeelygsboyue|Geely emperor 2022, all trims": 189,
+  "geely-hdgeelygsboyue|Geely s70 2024, high trim (guessed)": 190,
+  "geely-hdgeelygsboyue|Geely s70 2024, low trim (guessed)": 190,
+  "geely-hdgeelygsboyue|Geely x50 2022, high trim (guessed)": 190,
+  "geely-hdgeelygsboyue|Geely x50 2022, low trim (guessed)": 190,
+  "geely-hdgeelygsboyue|Geely x70 2022, high trim (guessed)": 190,
+  "geely-hdgeelygsboyue|Geely x70 2022, low trim (guessed)": 190,
   "geely-hdgeelygsboyue|Geely 兼容 兼容, all trims": 189,
   "geely-hdgeely|Geely yuan jing 2015-2017, all trims": 189,
   "geely-hdgeely|Geely yuan jing 2016-2017, all trims": 189,
@@ -34019,6 +35338,7 @@
   "geely-regeelycommon|Geely GL 2019, all trims": 189,
   "geely-regeelycommon|Geely GL 2019, cfg mix": 189,
   "geely-regeelycommon|Geely GL 2020, all trims": 189,
+  "geely-regeelycommon|Geely GL hybrid 2019, all trims (guessed)": 190,
   "geely-regeelycommon|Geely GS 2016~2017, all trims": 189,
   "geely-regeelycommon|Geely GS 2018, all trims": 189,
   "geely-regeelycommon|Geely GS 2019, all trims": 189,
@@ -34029,6 +35349,7 @@
   "geely-regeelycommon|Geely JiaJi 2021, all trims": 189,
   "geely-regeelycommon|Geely LeiDaRD5 2025, all trims": 189,
   "geely-regeelycommon|Geely LeiDaRD6 2024, all trims": 189,
+  "geely-regeelycommon|Geely LeiDaRD6 2025, all trims (guessed)": 190,
   "geely-regeelycommon|Geely PREFACE 2022, all trims": 189,
   "geely-regeelycommon|Geely YuanJingX3Pro 2021, all trims": 189,
   "geely-regeelycommon|Geely bin yue 2019, all trims": 189,
@@ -34041,6 +35362,7 @@
   "geely-regeelycommon|Geely bo yue 2018, all trims": 189,
   "geely-regeelycommon|Geely bo yue 2020, cfg pro": 189,
   "geely-regeelycommon|Geely bo yue pro 2020, all trims": 189,
+  "geely-regeelycommon|Geely bo yue pro 2020, all trims (guessed)": 190,
   "geely-regeelycommon|Geely ec7 2014-2016(Auto AC), all trims": 189,
   "geely-regeelycommon|Geely emgrand ev 2022, all trims": 189,
   "geely-regeelycommon|Geely emperor 2014-2018, all trims": 189,
@@ -34055,6 +35377,7 @@
   "geely-regeelycommon|Geely panda 2025, all trims": 189,
   "geely-regeelycommon|Geely persona 2015, all trims": 189,
   "geely-regeelycommon|Geely s70 2024, all trims": 189,
+  "geely-regeelycommon|Geely yuan jing 2016-2017, all trims (guessed)": 190,
   "geely-regeelycommon|Geely yuan jing 2017, all trims": 189,
   "geely-regeelycommon|Geely yuan jing 2018-2020, all trims": 189,
   "geely-regeelycommon|Geely yuanjing S1 2018, all trims": 189,
@@ -34081,6 +35404,7 @@
   "gpatton-oudigpatton|George Patton chariot 2018, all trims": 189,
   "greatwall-odgreatwallc30|Great Wall C30 2015, all trims": 189,
   "greatwall-odgreatwallc30|Great Wall C30 2016, all trims": 189,
+  "greatwall-odgreatwallc30|Great Wall C30 2016, all trims (guessed)": 190,
   "greatwall-odgreatwallc30|Great Wall 兼容 兼容, all trims": 189,
   "greatwall-odgreatwallc30|Haval haval h1 2016, all trims": 189,
   "greatwall-odgreatwallc30|Haval haval h1 2017, all trims": 189,
@@ -34182,8 +35506,10 @@
   "haval-hdhavalccp002|Haval haval h6 couple 2017, ccp002 cfg low": 189,
   "haval-hdhavalccp002|Haval haval h6 couple 2018, ccp002 cfg high": 189,
   "haval-hdhavalccp002|Haval haval h6 couple 2018, ccp002 cfg low": 189,
+  "haval-hdhavalccp002|Haval haval h6 couple 2018, 红标(低配) (guessed)": 190,
   "haval-hdhavalccp002|Haval haval h6 couple 2019, 低配": 189,
   "haval-hdhavalccp002|Haval haval h6 couple 2019, 高配": 189,
+  "haval-hdhavalccp002|Haval haval h6 keep host keep host, all trims (guessed)": 190,
   "haval-hdhavalccp002|Haval haval h6 sport 2013-2017, 低配": 189,
   "haval-hdhavalccp002|Haval haval h6 sport 2013-2017, 高配": 189,
   "haval-hdhavalccp002|Haval haval h6 sport 2018, 低配": 189,
@@ -34237,9 +35563,15 @@
   "haval-rehavalh2|Haval haval h2 2018, 蓝标(顶配)": 189,
   "haval-rehavalh2|Haval 兼容 兼容, all trims": 189,
   "haval-rehavalh6couplesportpro|Haval connon 2019, all trims": 189,
+  "haval-rehavalh6couplesportpro|Haval h4 2005-2009, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval h4 2018-2020, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval h6 2013-2017, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval h6 2013-2017, cfg only ac (guessed)": 190,
   "haval-rehavalh6couplesportpro|Haval haval F7 2019, all trims": 189,
   "haval-rehavalh6couplesportpro|Haval haval F7 2019, cfg hi": 189,
   "haval-rehavalh6couplesportpro|Haval haval F7 2020, all trims": 189,
+  "haval-rehavalh6couplesportpro|Haval haval h2 2014-2018, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval haval h2 2014-2018, cfg only ac (guessed)": 190,
   "haval-rehavalh6couplesportpro|Haval haval h4 2018-2019, high cfg": 189,
   "haval-rehavalh6couplesportpro|Haval haval h4 2018-2019, low cfg": 189,
   "haval-rehavalh6couplesportpro|Haval haval h4 2020, high cfg": 189,
@@ -34279,7 +35611,12 @@
   "haval-rehavalh6couplesportpro|Haval haval h7 2017-2019, low trim": 189,
   "haval-rehavalh6couplesportpro|Haval haval h7 2018, all trims": 189,
   "haval-rehavalh6couplesportpro|Haval haval h7l 2017, all cfg": 189,
+  "haval-rehavalh6couplesportpro|Haval haval h9 2015, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval haval h9 2016-2019, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval haval h9 2020, all trims (guessed)": 190,
   "haval-rehavalh6couplesportpro|Haval haval m6 2017~2018, all trims": 189,
+  "haval-rehavalh6couplesportpro|Haval m6 2017-2018, all trims (guessed)": 190,
+  "haval-rehavalh6couplesportpro|Haval m6 2017-2018, cfg only ac (guessed)": 190,
   "haval-rehavalh9|Great Wall 兼容 兼容, all trims": 189,
   "haval-rehavalh9|Haval haval h8 2015-2017, all trims": 189,
   "haval-rehavalh9|Haval haval h9 2015-2017, high trim": 189,
@@ -34313,6 +35650,8 @@
   "honda-bnrodyssey|Honda odyssey 2009-2014, all trims": 189,
   "honda-bsjhonda|Honda accord 2008-2012, all trims": 189,
   "honda-bsjhonda|Honda spirior 2009, all trims": 189,
+  "honda-dogenaccord|Honda accord 2003-2007, low trim (guessed)": 190,
+  "honda-dogenaccord|Honda accord 2003-2007, medium-high trim (guessed)": 190,
   "honda-dogenaccord|Honda accord 2013-2014, all trims": 189,
   "honda-dogenaccord|Honda accord 2018, all trims": 189,
   "honda-dogenaccord|Honda civic 2004~2016, all trims": 189,
@@ -34356,10 +35695,18 @@
   "honda-hiworld|Honda STEP WGN 2017-2021, all trims": 148,
   "honda-hiworld|Honda STEP WGN 2022~Present, all trims": 148,
   "honda-hiworld|Honda Zrv 2022~Present, all trims": 148,
+  "honda-hiworld|Honda accord 2003-2007, all trims (guessed)": 148,
   "honda-hiworld|Honda accord 2013~2017, all trims": 148,
+  "honda-hiworld|Honda accord 2013~2017, all trims (guessed)": 148,
+  "honda-hiworld|Honda accord 2015-2016, high trim (guessed)": 148,
+  "honda-hiworld|Honda accord 2015-2016, medium-low trim (guessed)": 148,
+  "honda-hiworld|Honda accord 2018, all trims (guessed)": 148,
   "honda-hiworld|Honda accord 2018~2021, all trims": 148,
+  "honda-hiworld|Honda accord 2018~2021, all trims (guessed)": 148,
   "honda-hiworld|Honda accord 2022, all trims": 148,
+  "honda-hiworld|Honda accord 2022, all trims (guessed)": 148,
   "honda-hiworld|Honda accord 2022~Presnet, all trims": 148,
+  "honda-hiworld|Honda accord 2022~Presnet, all trims (guessed)": 148,
   "honda-hiworld|Honda breeze 2018-2022, all trims": 148,
   "honda-hiworld|Honda breeze 2023~2024, all trims": 148,
   "honda-hiworld|Honda city 2015~Present, all trims": 148,
@@ -34407,6 +35754,8 @@
   "honda-hiworld|Honda xrv 2014-now, all trims": 148,
   "honda-hiworld|Honda xrv 2023, all trims": 148,
   "honda-lzhondaaccord|Honda accord 2008-2013, all trims": 189,
+  "honda-lzhonda|Honda civic 2006~2011, high trim (guessed)": 190,
+  "honda-lzhonda|Honda civic 2006~2011, low trim (guessed)": 190,
   "honda-lzhonda|Honda spirior 2009, all trims": 189,
   "honda-lzhonda|Honda spirior 2015-2017, all trims": 189,
   "honda-lzhonda|Honda 兼容 兼容, all trims": 189,
@@ -34450,6 +35799,8 @@
   "honda-rehonda|Honda Zrv 2022, medium-low trim": 189,
   "honda-rehonda|Honda accord 2003-2007, high trim": 189,
   "honda-rehonda|Honda accord 2003-2007, low trim": 189,
+  "honda-rehonda|Honda accord 2003-2007, low trim (guessed)": 190,
+  "honda-rehonda|Honda accord 2003-2007, medium-high trim (guessed)": 190,
   "honda-rehonda|Honda accord 2008-2012, all trims": 189,
   "honda-rehonda|Honda accord 2008-2012, high trim": 189,
   "honda-rehonda|Honda accord 2013-2014, high trim": 189,
@@ -34496,6 +35847,8 @@
   "honda-rehonda|Honda crosstour 13, all trims": 189,
   "honda-rehonda|Honda crosstour 16, all trims": 189,
   "honda-rehonda|Honda crosstour 20112012, all trims": 189,
+  "honda-rehonda|Honda crv 2006-2011, cfg-hig (guessed)": 190,
+  "honda-rehonda|Honda crv 2006-2011, cfg-low (guessed)": 190,
   "honda-rehonda|Honda crv 20092011, all trims": 189,
   "honda-rehonda|Honda crv 2010, high trim": 189,
   "honda-rehonda|Honda crv 2012-2014, all trims": 189,
@@ -34559,6 +35912,12 @@
   "honda-sp12civic|Honda civic 2011, all trims": 189,
   "honda-sp12civic|Honda civic 2012-2013, cfg euro": 189,
   "honda-sp12civic|Honda civic 2014-2015, low trim": 189,
+  "honda-sphondada|Honda Avancier 20172019, all trims (guessed)": 190,
+  "honda-sphondada|Honda BR-V 20162020, all trims (guessed)": 190,
+  "honda-sphondada|Honda Elysion 20162019, all trims (guessed)": 190,
+  "honda-sphondada|Honda Hrv 20152020, all trims (guessed)": 190,
+  "honda-sphondada|Honda Jazz 20142019, all trims (guessed)": 190,
+  "honda-sphondada|Honda WR-V 20172020, all trims (guessed)": 190,
   "honda-sphondada|Honda accord 2018, all trims": 189,
   "honda-sphondada|Honda city 2014, all trims": 189,
   "honda-sphondada|Honda city 20142019, all trims": 189,
@@ -34583,6 +35942,7 @@
   "honda-sphondada|Honda odyssey 2015-now, cfg top": 189,
   "honda-sphondada|Honda odyssey 2015-now, high trim": 189,
   "honda-sphondada|Honda odyssey 2015-now, medium-low trim": 189,
+  "honda-sphondada|Honda urv 20172019, all trims (guessed)": 190,
   "honda-sphondada|Honda vezel 2015-2017, low trim": 189,
   "honda-sphondada|Honda vezel 2015-2017, medium-high trim": 189,
   "honda-sphondada|Honda vezel 2018-now, all trims": 189,
@@ -34690,6 +36050,7 @@
   "hyundai-kia-hiworld|Hyundai i40 2011-2017, all trims": 148,
   "hyundai-kia-hiworld|Hyundai ix35 2010-2011, high trim": 148,
   "hyundai-kia-hiworld|Hyundai ix35 2010-2011, medium low": 148,
+  "hyundai-kia-hiworld|Hyundai ix35 2010-2015, high trim (guessed)": 148,
   "hyundai-kia-hiworld|Hyundai ix35 2012-2015, high trim": 148,
   "hyundai-kia-hiworld|Hyundai ix35 2012-2015, medium low": 148,
   "hyundai-kia-hiworld|Hyundai ix35 2018-now, all trims": 148,
@@ -34698,6 +36059,8 @@
   "hyundai-kia-hiworld|Hyundai ix45 2012-2022, low trim": 148,
   "hyundai-kia-hiworld|Hyundai ix45 2013-2015, high trim": 148,
   "hyundai-kia-hiworld|Hyundai ix45 2013-2015, medium low": 148,
+  "hyundai-kia-hiworld|Hyundai ix45 2015-2017, high trim (guessed)": 148,
+  "hyundai-kia-hiworld|Hyundai ix45 2015-2017, medium-low trim (guessed)": 148,
   "hyundai-kia-hiworld|Hyundai ix45 2016-2018, high trim": 148,
   "hyundai-kia-hiworld|Hyundai ix45 2016-2018, medium low": 148,
   "hyundai-kia-hiworld|Hyundai ix45 2019-now, high trim": 148,
@@ -34705,10 +36068,12 @@
   "hyundai-kia-hiworld|Hyundai ix45 2019-now, medium": 148,
   "hyundai-kia-hiworld|Hyundai lingdong 2015-2020, all trims": 148,
   "hyundai-kia-hiworld|Hyundai lingdong 2016-2018, all trims": 148,
+  "hyundai-kia-hiworld|Hyundai lingdong 2016-now, high trim (guessed)": 148,
   "hyundai-kia-hiworld|Hyundai mistra 2013-2015, all trims": 148,
   "hyundai-kia-hiworld|Hyundai mistra 2013-2020, all trims": 148,
   "hyundai-kia-hiworld|Hyundai mistra 2016-2017, all trims": 148,
   "hyundai-kia-hiworld|Hyundai mistra 2020-Present, all trims": 148,
+  "hyundai-kia-hiworld|Hyundai santafe 20062012, all trims (guessed)": 148,
   "hyundai-kia-hiworld|Hyundai santafe 2007-now, all trims": 148,
   "hyundai-kia-hiworld|Hyundai santafe 2012-2022, high trim": 148,
   "hyundai-kia-hiworld|Hyundai santafe 2012-2022, low trim": 148,
@@ -34717,6 +36082,7 @@
   "hyundai-kia-hiworld|Hyundai santafe 2021, all trims": 148,
   "hyundai-kia-hiworld|Hyundai sonata 2009-2014, all trims": 148,
   "hyundai-kia-hiworld|Hyundai sonata 2010-2015, all trims": 148,
+  "hyundai-kia-hiworld|Hyundai sonata 2010-2015, all trims (guessed)": 148,
   "hyundai-kia-hiworld|Hyundai sonata 2014-2019, high trim": 148,
   "hyundai-kia-hiworld|Hyundai sonata 2014-2019, low trim": 148,
   "hyundai-kia-hiworld|Hyundai sonata 2014-2019, medium": 148,
@@ -34732,6 +36098,8 @@
   "hyundai-kia-hiworld|Hyundai sonata9 2018, high trim": 148,
   "hyundai-kia-hiworld|Hyundai sonata9 2018, low trim": 148,
   "hyundai-kia-hiworld|Hyundai sonata9 2018, medium": 148,
+  "hyundai-kia-hiworld|Hyundai tucson 2015-NOW, high trim (guessed)": 148,
+  "hyundai-kia-hiworld|Hyundai tucson 2015-NOW, medium-low trim (guessed)": 148,
   "hyundai-kia-hiworld|Hyundai veracruz 2006-2013, all trims": 148,
   "hyundai-kia-hiworld|Hyundai veracruz 2007, all trims": 148,
   "hyundai-kia-hiworld|Kia Bongo III 2004~Present, all trims": 148,
@@ -34836,6 +36204,7 @@
   "hyundai-odkorea|Kia sportage 2018-2019, all trims": 189,
   "hyundai-odkorea|Kia 兼容 兼容, all trims": 189,
   "hyundai-rekorea|Hyundai Avante 2010-2016, all trims": 189,
+  "hyundai-rekorea|Hyundai Creta 20212024, all trims (guessed)": 190,
   "hyundai-rekorea|Hyundai Elantra 2021, all trims": 189,
   "hyundai-rekorea|Hyundai Genesis 2010, all trims": 189,
   "hyundai-rekorea|Hyundai Genesis 2013, all trims": 189,
@@ -34843,12 +36212,14 @@
   "hyundai-rekorea|Hyundai Genesis 20142016, all trims": 189,
   "hyundai-rekorea|Hyundai Genesis Coupe 2009, all trims": 189,
   "hyundai-rekorea|Hyundai Genesis Coupe 2012, all trims": 189,
+  "hyundai-rekorea|Hyundai Genesis G80 2017, cfg overseas (guessed)": 190,
   "hyundai-rekorea|Hyundai Grandeur 2011-2015, all trims": 189,
   "hyundai-rekorea|Hyundai Grandeur 2022, cfg import": 189,
   "hyundai-rekorea|Hyundai Grandeur 2022, low trim": 189,
   "hyundai-rekorea|Hyundai H-1 2022, all trims": 189,
   "hyundai-rekorea|Hyundai Kona 2017, cfg overseas": 189,
   "hyundai-rekorea|Hyundai Lafesta 2018-NOW, all trims": 189,
+  "hyundai-rekorea|Hyundai Sonata9 hev 20182019, all trims (guessed)": 190,
   "hyundai-rekorea|Hyundai Staria 2023, all trims": 189,
   "hyundai-rekorea|Hyundai Staria 2023, cfg overseas": 189,
   "hyundai-rekorea|Hyundai Tucson 2013-2016, all trims": 189,
@@ -34862,8 +36233,11 @@
   "hyundai-rekorea|Hyundai encino 2018-NOW, all trims": 189,
   "hyundai-rekorea|Hyundai encino 2020, all trims": 189,
   "hyundai-rekorea|Hyundai genesis g330 2014, all trims": 189,
+  "hyundai-rekorea|Hyundai grandeur 20112015, all trims (guessed)": 190,
   "hyundai-rekorea|Hyundai grandeur hg240 2012, all trims": 189,
+  "hyundai-rekorea|Hyundai grandeur hg300 2015, cfg overseas (guessed)": 190,
   "hyundai-rekorea|Hyundai hb20s 2023, low trim": 189,
+  "hyundai-rekorea|Hyundai i20 20192023, all trims (guessed)": 190,
   "hyundai-rekorea|Hyundai i30 2015, all trims": 189,
   "hyundai-rekorea|Hyundai i40 2012-2015, all trims": 189,
   "hyundai-rekorea|Hyundai ix25 2017, all trims": 189,
@@ -34884,6 +36258,8 @@
   "hyundai-rekorea|Hyundai ix45 2016-2018, high trim": 189,
   "hyundai-rekorea|Hyundai ix45 2016-2018, medium-low trim": 189,
   "hyundai-rekorea|Hyundai ix45 2019-NOW, high trim": 189,
+  "hyundai-rekorea|Hyundai ix45 2019-NOW, low trim (guessed)": 190,
+  "hyundai-rekorea|Hyundai ix45 2019-NOW, medium trim (guessed)": 190,
   "hyundai-rekorea|Hyundai langdong 2012-2016, all trims": 189,
   "hyundai-rekorea|Hyundai lawrence 2010, all trims": 189,
   "hyundai-rekorea|Hyundai lingdong 2016-2018, all trims": 189,
@@ -34952,6 +36328,7 @@
   "hyundai-rekorea|Kia k5 2016-2018, all trims": 189,
   "hyundai-rekorea|Kia k5 2019, all trims": 189,
   "hyundai-rekorea|Kia k5 2019-hybrid, all trims": 189,
+  "hyundai-rekorea|Kia k7 20102012, all trims (guessed)": 190,
   "hyundai-rekorea|Kia k7 2016, all trims": 189,
   "hyundai-rekorea|Kia kx cross 2017, all trims": 189,
   "hyundai-rekorea|Kia kx3 2019, all trims": 189,
@@ -34983,14 +36360,19 @@
   "isuzu-odlsuzuprotol|Isuzu 庆铃-达咖 2021, cfg-all": 189,
   "isuzu-odlsuzuprotol|Isuzu 瑞迈 2017, all trims": 189,
   "isuzu-odlsuzuprotol|Isuzu 铃拓 2020, cfg-all": 189,
+  "isuzu-raiseisuzuprotol|Isuzu D-MAX 102020, all trims (guessed)": 190,
   "isuzu-raiseisuzuprotol|Isuzu D-MAX 2017, all trims": 189,
   "isuzu-raiseisuzuprotol|Isuzu D-MAX 2021-2024, all trims": 189,
+  "isuzu-raiseisuzuprotol|Isuzu MU-X 102021, all trims (guessed)": 190,
   "isuzu-raiseisuzuprotol|Isuzu mu-X牧游侠 2018-2020, cfg-all": 189,
   "isuzu-raiseisuzuprotol|Isuzu mu-X牧游侠 2021-2024, all trims": 189,
+  "isuzu-raiseisuzuprotol|Isuzu mu-X牧游侠 2022-2024, all trims (guessed)": 190,
   "isuzu-raiseisuzuprotol|Isuzu mu-X牧游侠 2024, all trims": 189,
   "isuzu-raiseisuzuprotol|Isuzu 庆铃 2018, cfg-all": 189,
+  "isuzu-raiseisuzuprotol|Isuzu 庆铃-达咖 2018, cfg-all (guessed)": 190,
   "isuzu-raiseisuzuprotol|Isuzu 庆铃-达咖 2021, cfg-all": 189,
   "isuzu-raiseisuzuprotol|Isuzu 瑞迈 2017, all trims": 189,
+  "isuzu-raiseisuzuprotol|Isuzu 瑞迈 2019, all trims (guessed)": 190,
   "isuzu-raiseisuzuprotol|Isuzu 铃拓 2020, cfg-all": 189,
   "iveco-hdiveco|Iveco iveco 2020, all trims": 189,
   "iveco-hdiveco|Iveco 兼容 兼容, all trims": 189,
@@ -35017,6 +36399,7 @@
   "jac-odjaciev7|JAC IEV7 2021, cfg not 360": 189,
   "jac-odjacruifengs7|JAC s7 all, cfg 360": 189,
   "jac-odjacruifengs7|JAC s7 all, cfg not 360": 189,
+  "jac-odjacshailing|JAC 江淮帅铃 all, call a11": 190,
   "jac-odjacsurpass|JAC LINGPAO L3 2024, all trims": 189,
   "jac-odjacsurpass|JAC sunray 2024, all trims": 189,
   "jac-odjacsurpass|JAC surpass 2023, all trims": 189,
@@ -35039,9 +36422,11 @@
   "jac-rejac|JAC S3 2013-2016, all trims": 189,
   "jac-rejac|JAC S3 2014-2017, all trims": 189,
   "jac-rejac|JAC S4 2019, all trims": 189,
+  "jac-rejac|JAC XINGRUI compatible, all trims (guessed)": 190,
   "jac-rejac|JAC ev04 2017, all trims": 189,
   "jac-rejac|JAC m5 2013-2018, all trims": 189,
   "jac-rejac|JAC ruifeng 2017-2018, all trims": 189,
+  "jac-rejac|JAC ruifeng compatible, all trims (guessed)": 190,
   "jac-rejac|JAC sehol x6 2022, all trims": 189,
   "jaguar-lzjaguarxf|Jaguar XF 2009, all trims": 189,
   "jaguar-lzjaguarxf|Jaguar XF 2013, all trims": 189,
@@ -35118,6 +36503,7 @@
   "jeep-odjeepchallenger|Jeep wrangler 2015-2017, high trim": 189,
   "jeep-odjeepchallenger|Jeep wrangler 2015-2017, low trim": 189,
   "jeep-odjeepchallenger|Jeep 兼容 兼容, all trims": 189,
+  "jeep-rejeep|Chrysler 300c 20062007, all trims (guessed)": 190,
   "jeep-rejeep|Chrysler 300c 2007-2011, low trim": 189,
   "jeep-rejeep|Chrysler 300c 2007-2011, medium trim": 189,
   "jeep-rejeep|Chrysler 300c 2012-2016, low trim": 189,
@@ -35137,6 +36523,8 @@
   "jeep-rejeep|Dodge RAM 20132022, all trims": 189,
   "jeep-rejeep|Dodge RAM 2015, low trim": 189,
   "jeep-rejeep|Dodge RAM 2015, medium trim": 189,
+  "jeep-rejeep|Dodge RAMBLER 2006-2009, low trim (guessed)": 190,
+  "jeep-rejeep|Dodge RAMBLER 2006-2009, medium trim (guessed)": 190,
   "jeep-rejeep|Fiat Fastback 2022, high trim": 189,
   "jeep-rejeep|Fiat Fastback 2022, low trim": 189,
   "jeep-rejeep|Fiat Fastback 2022, medium trim": 189,
@@ -35145,6 +36533,7 @@
   "jeep-rejeep|Jeep Charger 2015, medium trim": 189,
   "jeep-rejeep|Jeep Cherokee 2015-now, all trims": 189,
   "jeep-rejeep|Jeep Cherokee 2016-2018, all trims": 189,
+  "jeep-rejeep|Jeep Comander PHEV 2010, all trims (guessed)": 190,
   "jeep-rejeep|Jeep Commander 2018-2020, low trim": 189,
   "jeep-rejeep|Jeep Commander 2018-2020, medium trim": 189,
   "jeep-rejeep|Jeep Commander 2020(Hybrid), low trim": 189,
@@ -35182,6 +36571,7 @@
   "jeep-rejeep|Jeep cherokee 2023, medium trim": 189,
   "jeep-rejeep|Jeep compass 2017-2019, all trims": 189,
   "jeep-rejeep|Jeep grandcherokee 2014-2017, all trims": 189,
+  "jeep-rejeep|Jeep ram 2015, all trims (guessed)": 190,
   "jeep-rejeep|Jeep wrangler 2010-2013, low trim": 189,
   "jeep-rejeep|Jeep wrangler 2010-2013, medium trim": 189,
   "jeep-rejeep|Jeep wrangler 2014, low trim": 189,
@@ -35203,22 +36593,42 @@
   "jeep-spchrysler|Jeep wrangler 2010, all trims": 189,
   "jeep-spcompass|Jeep cherokee 2016-2017, low trim": 189,
   "jeep-spcompass|Jeep cherokee 2016-2017, medium-high trim": 189,
+  "jeep-spjeepprotokchss03|Dodge Dakota 20102011, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Dodge Durango 20112013, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Dodge Durango 20142019, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Dodge Journey 20092010, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Dodge KUBO 20062012, all trims": 189,
   "jeep-spjeepprotokchss03|Dodge Ram 1500 20142018, all trims": 189,
+  "jeep-spjeepprotokchss03|Dodge Ram Truck 20102012, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Fiat 500x 20152020, all trims": 189,
   "jeep-spjeepprotokchss03|Fiat Aegea 2016~2023, all trims": 189,
+  "jeep-spjeepprotokchss03|Fiat Aegea HB 102019, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Fiat Argo 2019, all trims": 189,
+  "jeep-spjeepprotokchss03|Fiat Bravo 20072014, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat Cronos 102018, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Fiat Doblo 2009~2015, all trims": 189,
   "jeep-spjeepprotokchss03|Fiat Doblo 20152019, all trims": 189,
   "jeep-spjeepprotokchss03|Fiat Fiorino 20162020, all trims": 189,
+  "jeep-spjeepprotokchss03|Fiat Linea 20122018, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat Linea Classic 20072012, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat Mobi 20172019, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat Punto 20122018, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat Strada 102020, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Fiat Tipo 2016-2019, all trims": 189,
+  "jeep-spjeepprotokchss03|Fiat Uno 20152020, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat ducato 102021, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Fiat ducato 20102020, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Fiat toro 2019, all trims": 189,
   "jeep-spjeepprotokchss03|Jeep Compass MODELYEAR-2017-NOW, high trim": 189,
   "jeep-spjeepprotokchss03|Jeep Compass MODELYEAR-2017-NOW, low trim": 189,
   "jeep-spjeepprotokchss03|Jeep Compass MODELYEAR-2017-NOW, medium trim": 189,
+  "jeep-spjeepprotokchss03|Jeep Gladiator JT 102020, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Jeep Liberty 20082013, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Jeep Wrangler 2018-NOW, high trim": 189,
   "jeep-spjeepprotokchss03|Jeep Wrangler 2018-NOW, low trim": 189,
   "jeep-spjeepprotokchss03|Jeep Wrangler 2018-NOW, medium-low trim": 189,
+  "jeep-spjeepprotokchss03|Jeep Wrangler JK 20072017, all trims (guessed)": 190,
+  "jeep-spjeepprotokchss03|Jeep Wrangler JL 20182023, all trims (guessed)": 190,
   "jeep-spjeepprotokchss03|Jeep cherokee 2016-2018, high trim": 189,
   "jeep-spjeepprotokchss03|Jeep cherokee 2016-2018, low trim": 189,
   "jeep-spjeepprotokchss03|Jeep cherokee 2016-2018, medium trim": 189,
@@ -35259,6 +36669,7 @@
   "jmc-oudinewenergy|JMC jl yi 2022, all trims": 189,
   "jmc-oudinewenergy|JMC yz ev3 2019, all trims": 189,
   "jmc-oudinewenergy|JMC 兼容 兼容, all trims": 189,
+  "jmc-raisejmcisuzuprotol|JMC BaoDian 2025, all trims (guessed)": 190,
   "jmc-raisejmcisuzuprotol|JMC Tdci 2018, all trims": 189,
   "jmc-raisejmcisuzuprotol|JMC jl e400 2018, all trims": 189,
   "jmc-raisejmcisuzuprotol|JMC jl yi 2022, all trims": 189,
@@ -35266,15 +36677,24 @@
   "jmc-raisejmcisuzuprotol|JMC yz ev3 2019, all trims": 189,
   "kawei-hdkawei|Kawei K150 20, all trims": 189,
   "kawei-hdkawei|Kawei 兼容 兼容, all trims": 189,
+  "kia-spkorea|Hyundai Creta 102020, all trims (guessed)": 190,
   "kia-spkorea|Hyundai Grandeur 20102017, all trims": 189,
   "kia-spkorea|Hyundai Grandeur 2011-2015, all trims": 189,
+  "kia-spkorea|Hyundai SantaFe Sport 20192020, all trims (guessed)": 190,
+  "kia-spkorea|Hyundai SantaFe XL 20192020, all trims (guessed)": 190,
+  "kia-spkorea|Hyundai Sonata YF 20102014, all trims (guessed)": 190,
+  "kia-spkorea|Hyundai Tucson 20152024, all trims (guessed)": 190,
+  "kia-spkorea|Hyundai Veloster 20122018, all trims (guessed)": 190,
+  "kia-spkorea|Hyundai ix25 102020, all trims (guessed)": 190,
   "kia-spkorea|Hyundai ix35 102010, all trims": 189,
   "kia-spkorea|Hyundai ix35 2010-2015, high trim": 189,
   "kia-spkorea|Hyundai ix35 2010-2015, medium-low trim": 189,
   "kia-spkorea|Hyundai ix45 2013-2015, high trim": 189,
   "kia-spkorea|Hyundai ix45 2013-2015, medium-low trim": 189,
+  "kia-spkorea|Hyundai mistra 20142020, all trims (guessed)": 190,
   "kia-spkorea|Hyundai sonata 2010-2015, all trims": 189,
   "kia-spkorea|Hyundai sonata 2015-2016, all trims": 189,
+  "kia-spkorea|Hyundai sonata 20152019, all trims (guessed)": 190,
   "kia-spkorea|Hyundai sonata8 sonata8, all trims": 189,
   "kia-spkorea|Hyundai sonata9 sonata8, all trims": 189,
   "kia-spkorea|Kia Borrego 201620191, all trims": 189,
@@ -35301,6 +36721,7 @@
   "kia-spkorea|Kia kx5 2016-NOW, all trims": 189,
   "kia-spkorea|Kia kx5 20172020, all trims": 189,
   "kia-spkorea|Kia kx7 2017, medium-low trim": 189,
+  "kia-spkorea|Kia kx7 20172020, all trims (guessed)": 190,
   "kia-spkorea|Kia sorento 20102020, all trims": 189,
   "kia-spkorea|Kia sorento 2015-NOW, all trims": 189,
   "kia-spkorea|Kia sportage 2016-2017, all trims": 189,
@@ -35414,6 +36835,7 @@
   "mazda-lzmazda|Mazda 兼容 兼容, all trims": 189,
   "mazda-oudibt50|Mazda bt50 2017~now, all trims": 189,
   "mazda-rcwmzdprotok|Mazda mazda6 2004-2010, all trims": 189,
+  "mazda-remazda2|Mazda Mazda MX5 20162019, all trims (guessed)": 190,
   "mazda-remazda2|Mazda cx 30 2020, all trims": 189,
   "mazda-remazda2|Mazda cx3 2015-至今, all trims": 189,
   "mazda-remazda2|Mazda cx3 201532, all trims": 189,
@@ -35429,6 +36851,7 @@
   "mazda-remazda2|Mazda mazda3 2020, all trims": 189,
   "mazda-remazda2|Mazda mazda3 axela 2014-now, all trims": 189,
   "mazda-remazda2|Mazda mazda6 atenza 2014-now, all trims": 189,
+  "mazda-remazda2|Mazda mazda8 20112015, all trims (guessed)": 190,
   "mazda-remazda|Mazda cx9 2012, all trims": 190,
   "mazda-remazda|Mazda mazda cx5 2013, high trim": 190,
   "mazda-remazda|Mazda mazda cx7 2014-now, high trim": 190,
@@ -35505,6 +36928,7 @@
   "mg-resaiccommon|MG hs 2019-2020, all trims": 189,
   "mg-resaiccommon|MG hs 2019-2020, high trim": 189,
   "mg-resaiccommon|MG hs 2023(台湾), all trims": 189,
+  "mg-resaiccommon|MG mg3 2017, all trims (guessed)": 190,
   "mg-resaiccommon|MG mg5 2021, all trims": 189,
   "mg-resaiccommon|MG mg5 2022, all trims": 189,
   "mg-resaiccommon|MG mg5 2025, all trims": 189,
@@ -35513,6 +36937,7 @@
   "mg-resaiccommon|MG zs 2017, all trims": 189,
   "mg-resaiccommon|MG zs 2017-2019, all trims": 189,
   "mg-resaiccommon|MG zs 2020, all trims": 189,
+  "mg-resaiccommon|Roewe 360 plus 2018, all trims (guessed)": 190,
   "mg-resaiccommon|Roewe RX5 Hybrid 2023, all trims": 189,
   "mg-resaiccommon|Roewe ei5 2018-now, medium trim": 189,
   "mg-resaiccommon|Roewe ei5 2018-now, medium-low trim": 189,
@@ -35929,9 +37354,12 @@
   "opel-hdopel|Opel astra 2004-2009, all trims": 189,
   "opel-hdopel|Opel astra 2004-2009, high trim": 189,
   "opel-hdopel|Opel astra 2004-2009, low trim": 189,
+  "opel-hdopel|Opel combo 2023, all trims (guessed)": 190,
   "opel-hdopel|Opel corsa 2006-2014, all trims": 189,
   "opel-hdopel|Opel corsa 2006-2014, high trim": 189,
   "opel-hdopel|Opel corsa 2006-2014, low trim": 189,
+  "opel-hdopel|Opel corsaf 2023, all trims (guessed)": 190,
+  "opel-hdopel|Opel grandland 2023, all trims (guessed)": 190,
   "opel-hdopel|Opel meriva 2003-2010, all trims": 189,
   "opel-hdopel|Opel meriva 2003-2010, high trim": 189,
   "opel-hdopel|Opel meriva 2003-2010, low trim": 189,
@@ -36033,8 +37461,10 @@
   "peugeot-hdpsa|Peugeot 301 2014-2018, all trims": 189,
   "peugeot-hdpsa|Peugeot 301 2019-now, all trims": 189,
   "peugeot-hdpsa|Peugeot 307 2007-2013, all trims": 189,
+  "peugeot-hdpsa|Peugeot 308 2012-2015, all trims (guessed)": 190,
   "peugeot-hdpsa|Peugeot 308 2016-2018, all trims": 189,
   "peugeot-hdpsa|Peugeot 308CC 2011, all trims": 189,
+  "peugeot-hdpsa|Peugeot 308s 2015-2018, all trims (guessed)": 190,
   "peugeot-hdpsa|Peugeot 4008 2016-2019, all trims": 189,
   "peugeot-hdpsa|Peugeot 407 2004-2012, all trims": 189,
   "peugeot-hdpsa|Peugeot 408 2010-2013, all trims": 189,
@@ -36055,6 +37485,10 @@
   "peugeot-lzpeugeot407|Peugeot 兼容 兼容, all trims": 189,
   "peugeot-spnew206protok|Peugeot 206 2016, all trims": 189,
   "peugeot-spold206protok|Peugeot 206 2006, all trims": 189,
+  "peugeot-sppsa|Citroën C3L 102010, all trims (guessed)": 190,
+  "peugeot-sppsa|Citroën Elysee 20132019, all trims (guessed)": 190,
+  "peugeot-sppsa|Citroën Jumper 20102018, all trims (guessed)": 190,
+  "peugeot-sppsa|Citroën berlingo 102019, all trims (guessed)": 190,
   "peugeot-sppsa|Citroën berlingo 2016, all trims": 189,
   "peugeot-sppsa|Citroën c quatre 2010-2016, all trims": 189,
   "peugeot-sppsa|Citroën c3xr 2014-2019, cfg has hvac": 189,
@@ -36093,12 +37527,14 @@
   "peugeot-sppsa|Peugeot 301 2012-2013, all trims": 189,
   "peugeot-sppsa|Peugeot 301 2014-2018, all trims": 189,
   "peugeot-sppsa|Peugeot 301 2019-now, all trims": 189,
+  "peugeot-sppsa|Peugeot 307 20022005, all trims (guessed)": 190,
   "peugeot-sppsa|Peugeot 307 2007-2013, all trims": 189,
   "peugeot-sppsa|Peugeot 308 2012-2015, all trims": 189,
   "peugeot-sppsa|Peugeot 308 2016-2018, all trims": 189,
   "peugeot-sppsa|Peugeot 308CC 2012, all trims": 189,
   "peugeot-sppsa|Peugeot 308s 2015-2018, all trims": 189,
   "peugeot-sppsa|Peugeot 4008 2016-2019, all trims": 189,
+  "peugeot-sppsa|Peugeot 407 20042010, all trims (guessed)": 190,
   "peugeot-sppsa|Peugeot 408 2010-2013, all trims": 189,
   "peugeot-sppsa|Peugeot 408 2014-2018, all trims": 189,
   "peugeot-sppsa|Peugeot 408 2019, all trims": 189,
@@ -36107,6 +37543,11 @@
   "peugeot-sppsa|Peugeot 508 2010-2014, low trim": 189,
   "peugeot-sppsa|Peugeot 508 2015-2016, high": 189,
   "peugeot-sppsa|Peugeot 508 2017, high": 189,
+  "peugeot-sppsa|Peugeot Expert 102015, all trims (guessed)": 190,
+  "peugeot-sppsa|Peugeot Rifter 102019, all trims (guessed)": 190,
+  "peugeot-sppsa|Peugeot Tepee 102015, all trims (guessed)": 190,
+  "peugeot-sppsa|Peugeot boxer 20102018, all trims (guessed)": 190,
+  "peugeot-sppsa|Peugeot partner 102019, all trims (guessed)": 190,
   "peugeot-sppsa|Peugeot partner 2015, all trims": 189,
   "phantom-hdsaics6|BAIC Huansu magic speed 2016-2019, all trims": 189,
   "phantom-hdsaics6|BAIC Huansu 兼容 兼容, all trims": 189,
@@ -36138,19 +37579,31 @@
   "psa-raise-keep|Peugeot, other compatible models, original small screen kept, high trim": 177,
   "psa-raise-keep|Peugeot, other compatible models, original small screen kept, low trim": 177,
   "psa-raise-keep|Peugeot, other compatible models, original small screen kept, medium trim": 177,
+  "psa-raise|Citroën C elysee 20162018, all trims (guessed)": 190,
+  "psa-raise|Citroën C2 20092013, all trims (guessed)": 190,
+  "psa-raise|Citroën C4 Cactus 20142021, all trims (guessed)": 190,
+  "psa-raise|Citroën C4 Sprcetourer 20172018, all trims (guessed)": 190,
   "psa-raise|Citroën ES600 2022, all trims": 177,
   "psa-raise|Citroën ES600 2022, keep air panel": 177,
   "psa-raise|Citroën ES600 2022, remove air panel": 177,
   "psa-raise|Citroën Elysee 2013-2018, all trims": 177,
+  "psa-raise|Citroën Jumper 20152024, all trims (guessed)": 190,
   "psa-raise|Citroën Jumpy 2015-2024, high trim": 177,
   "psa-raise|Citroën Jumpy 2015-2024, low trim": 177,
   "psa-raise|Citroën Jumpy 2015-2024, medium trim": 177,
+  "psa-raise|Citroën RCZ 20112014, all trims (guessed)": 190,
   "psa-raise|Citroën Xsara 2004-2005, all trims": 177,
+  "psa-raise|Citroën berlingo 2008201803, all trims (guessed)": 190,
+  "psa-raise|Citroën berlingo 2017202103, all trims (guessed)": 190,
   "psa-raise|Citroën berlingo 2021, all trims": 177,
+  "psa-raise|Citroën c quatre 20152018, all trims (guessed)": 190,
+  "psa-raise|Citroën c3 20022008, all trims (guessed)": 190,
+  "psa-raise|Citroën c3 20092016, all trims (guessed)": 190,
   "psa-raise|Citroën c3 2014-2023, all trims": 177,
   "psa-raise|Citroën c3 2014-2023, remove air": 177,
   "psa-raise|Citroën c3 2021-2023, keep air panel": 177,
   "psa-raise|Citroën c3 2021-2023, remove air panel": 177,
+  "psa-raise|Citroën c3 2025, all trims (guessed)": 190,
   "psa-raise|Citroën c3xr 2014-2019, all trims": 177,
   "psa-raise|Citroën c3xr 2014-2019, customized version": 177,
   "psa-raise|Citroën c3xr 2014-2019, has hvac": 177,
@@ -36183,6 +37636,8 @@
   "psa-raise|Citroën, other compatible models, original screen removed, high trim": 177,
   "psa-raise|Citroën, other compatible models, original screen removed, low trim": 177,
   "psa-raise|Citroën, other compatible models, original screen removed, medium trim": 177,
+  "psa-raise|DS ds3 20112015, all trims (guessed)": 190,
+  "psa-raise|DS ds4 20122015, all trims (guessed)": 190,
   "psa-raise|DS ds5 2013-2018, high trim": 177,
   "psa-raise|DS ds5 2013-2018, low trim": 177,
   "psa-raise|DS ds5ls 2014-2016, high trim": 177,
@@ -36294,6 +37749,7 @@
   "renault-clio3-hiworld|Renault Samsung sm6 2016~now, high trim": 147,
   "renault-clio3-hiworld|Renault Samsung sm6 2016~now, low trim": 147,
   "renault-clio3-hiworld|Renault Samsung sm6 2016~now, medium": 147,
+  "renault-clio3-hiworld|Renault Samsung sm7 20042011, all trims (guessed)": 147,
   "renault-clio3-hiworld|Renault Samsung sm7 2012-2019, all trims": 147,
   "renault-clio3-hiworld|Renault Samsung xm3 2009-Persent, all trims": 147,
   "renault-clio3-hiworld|Renault Sandero_II 2012-2020, all trims": 147,
@@ -36355,6 +37811,8 @@
   "renault-oudirenault|Renault kadjar 2016, all trims": 189,
   "renault-oudirenault|Renault koleos 2017, low trim": 189,
   "renault-oudirenault|Renault 兼容 兼容, all trims": 189,
+  "renault-rekoleos|Lada vesta 2023, cfg add speakers (guessed)": 190,
+  "renault-rekoleos|Lada vesta cng 2021, cfg add speakers (guessed)": 190,
   "renault-rekoleos|Renault Arkana 20122020, all trims": 189,
   "renault-rekoleos|Renault Arkana 2020, high trim": 189,
   "renault-rekoleos|Renault Arkana 2020, low trim": 189,
@@ -36394,6 +37852,7 @@
   "renault-rekoleos|Renault SM6 2018, high trim": 189,
   "renault-rekoleos|Renault SM6 2018, low trim": 189,
   "renault-rekoleos|Renault SM6 2018, medium trim": 189,
+  "renault-rekoleos|Renault Samsung QM6 20162024, cfg add speakers (guessed)": 190,
   "renault-rekoleos|Renault Samsung qm3 20132019, all trims": 189,
   "renault-rekoleos|Renault Samsung qm5 20142016, all trims": 189,
   "renault-rekoleos|Renault Samsung sm6 20162024, cfg add speakers": 189,
@@ -36529,6 +37988,8 @@
   "renault-xpkoleos|Dacia Sandero 3 102021, all trims": 189,
   "renault-xpkoleos|Dacia SanderoStepway 102021, all trims": 189,
   "renault-xpkoleos|Dacia SanderoStepway 20172020, all trims": 189,
+  "renault-xpkoleos|Lada XRAY 102018, all trims (guessed)": 190,
+  "renault-xpkoleos|Lada vesta 102018, all trims (guessed)": 190,
   "renault-xpkoleos|Renault Arkana 102021, all trims": 189,
   "renault-xpkoleos|Renault Arkana 20192020, all trims": 189,
   "renault-xpkoleos|Renault Captur 102021, all trims": 189,
@@ -36553,6 +38014,9 @@
   "renault-xpkoleos|Renault Taliant 102021, all trims": 189,
   "renault-xpkoleos|Renault Trafic 3 20192020, all trims": 189,
   "renault-xpkoleos|Renault Triber 102020, all trims": 189,
+  "renault-xpkoleos|Renault clio5 1, cfg low auto air (guessed)": 190,
+  "renault-xpkoleos|Renault clio5 1, cfg manual air (guessed)": 190,
+  "renault-xpkoleos|Renault clio5 1, cfg middle high auto air (guessed)": 190,
   "renault-xpkoleos|Renault clio5 102020, all trims": 189,
   "renault-xpkoleos|Renault dacia 1, all trims": 189,
   "renault-xpkoleos|Renault duster 1, all trims": 189,
@@ -36596,6 +38060,7 @@
   "roewe-hdsaicmg|Roewe 兼容 兼容, all trims": 189,
   "roewe-hdsap007saicall|MG RuiTeng 2015, cfg saf1": 189,
   "roewe-hdsap007saicall|MG RuiTeng 2017, cfg saf1": 189,
+  "roewe-hdsap007saicall|MG hs 2019, all trims (guessed)": 190,
   "roewe-hdsap007saicall|MG mg3 2020, cfg southeastAsia": 189,
   "roewe-hdsap007saicall|MG mg4 2022-2023, all trims": 189,
   "roewe-hdsap007saicall|MG mg5 2021-2023, all trims": 189,
@@ -36638,6 +38103,7 @@
   "senova-odsaic|BAIC Senova shenbao x35 2019-2021, cfg oversea": 189,
   "senova-odsaic|BAIC Senova shenbao x55 2016-至今, all trims": 189,
   "senova-odsaic|BAIC Senova shenbao x55 2018-2021, cfg oversea": 189,
+  "senova-odsaic|BAIC Senova shenbao zhixing 2018-2019, all trims (guessed)": 190,
   "senova-odsaic|BAIC Senova 兼容 兼容, all trims": 189,
   "senova-odsaic|BAIC Weiwang weiwang m50 2016, all trims": 189,
   "senova-odsaic|BAIC bj20 2016, all trims": 189,
@@ -36670,6 +38136,17 @@
   "southeast-resouastprotol|Soueast DX3 2016-now, all trims": 189,
   "southeast-resouastprotol|Soueast DX5 2019-now, all trims": 189,
   "southeast-resouastprotol|Soueast DX7 2015-now, all trims": 189,
+  "ssangyong-ssongyong|SsangYong Actyon 20052011, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Korando 20112019, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Korando 2013, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Korando 20192022, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Korando Turismo 20102019, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Kyron 20052011, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Rexton G4 20172021, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Rexton Sports 2018~Present, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Rodius 20042018, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Tivoli 2015~Present, all trims (guessed)": 190,
+  "ssangyong-ssongyong|SsangYong Tivoli Air 2016~Present, all trims (guessed)": 190,
   "ssangyong-ssongyong|SsangYong diweila 2015, all trims": 189,
   "subaru-hdsubarusrp001|Subaru forester 2023, 全系": 189,
   "subaru-lzsubarutribeca|Subaru tribeca 2006~2014, all trims": 189,
@@ -36704,6 +38181,8 @@
   "suzuki-resuzuki|Suzuki IGNIS 2016, all trims": 189,
   "suzuki-resuzuki|Suzuki Jimmy 2025, all trims": 189,
   "suzuki-resuzuki|Suzuki 兼容 兼容, all trims": 189,
+  "suzuki-spsuzuki|Suzuki Grand Vitara 102022, all trims (guessed)": 190,
+  "suzuki-spsuzuki|Suzuki S-Cross 102022, all trims (guessed)": 190,
   "suzuki-spsuzuki|Suzuki 兼容 兼容, all trims": 189,
   "swm-lzswmx7|SWM swmx7 2017, all trims": 189,
   "swm-lzswmx7|SWM 兼容 兼容, all trims": 189,
@@ -36933,6 +38412,7 @@
   "toyota-hiworld|Toyota sienna 2018-2020, all trims": 148,
   "toyota-hiworld|Toyota sienna 2020-now, all trims": 148,
   "toyota-hiworld|Toyota sienna 2021, all trims": 148,
+  "toyota-hiworld|Toyota sienna 2021, all trims (guessed)": 148,
   "toyota-hiworld|Toyota sienna 2021-2024, all trims": 148,
   "toyota-hiworld|Toyota venza 2022, all trims": 148,
   "toyota-hiworld|Toyota venza 2022~Present, all trims": 148,
@@ -37269,6 +38749,7 @@
   "toyota-sptoyota|Toyota Wildlander 102020, all trims": 189,
   "toyota-sptoyota|Toyota Yaris 2012, all trims": 189,
   "toyota-sptoyota|Toyota Yaris 2018, all trims": 189,
+  "toyota-sptoyota|Toyota camry 20072011, all trims (guessed)": 190,
   "toyota-sptoyota|Toyota camry 2012-2014, all trims": 189,
   "toyota-sptoyota|Toyota camry 2015-2017, all trims": 189,
   "toyota-sptoyota|Toyota camry 2018-now, all trims": 189,
@@ -37278,12 +38759,17 @@
   "toyota-sptoyota|Toyota corolla 20192021, all trims": 189,
   "toyota-sptoyota|Toyota cruiser 2003-2015, all trims": 189,
   "toyota-sptoyota|Toyota cruiser 2016, all trims": 189,
+  "toyota-sptoyota|Toyota highlander 102020, all trims (guessed)": 190,
+  "toyota-sptoyota|Toyota highlander 20082014, all trims (guessed)": 190,
   "toyota-sptoyota|Toyota highlander 2015-2017, all trims": 189,
   "toyota-sptoyota|Toyota levin 2014-2019, all trims": 189,
   "toyota-sptoyota|Toyota noah 2017, all trims": 189,
   "toyota-sptoyota|Toyota prado 2014-2017, all trims": 189,
   "toyota-sptoyota|Toyota prado 2018-now, all trims": 189,
+  "toyota-sptoyota|Toyota rav4 102019, all trims (guessed)": 190,
+  "toyota-sptoyota|Toyota rav4 20082015, all trims (guessed)": 190,
   "toyota-sptoyota|Toyota rav4 20142018, all trims": 189,
+  "toyota-sptoyota|Toyota rav4 20192021, all trims (guessed)": 190,
   "toyota-sptoyota|Toyota reiz 2013-now, all trims": 189,
   "toyota-sptoyota|Toyota sienna 20082016, all trims": 189,
   "toyota-sptoyota|Toyota sienna 2014, all trims": 189,
@@ -37292,6 +38778,8 @@
   "toyota-wytoyota|Toyota lexus IS250 2011-2017, all trims": 189,
   "toyota-xfytoyota|Toyota Fortuner 2016, all trims": 189,
   "toyota-xfytoyota|Toyota 兼容 兼容, all trims": 189,
+  "toyota-xinbastoyota|Toyota Tundra 2016, high trim (guessed)": 190,
+  "toyota-xinbastoyota|Toyota Tundra 2016, medium-low trim (guessed)": 190,
   "toyota-xinbastoyota|Toyota camry 2009, all trims": 189,
   "toyota-xinbastoyota|Toyota camry 2012-2014, all trims": 189,
   "toyota-xinbastoyota|Toyota camry 2015-2017, high trim": 189,
@@ -37357,6 +38845,8 @@
   "trumpchi-hdtrumpchi|GAC Trumpchi GS8 2017, all trims": 189,
   "trumpchi-hdtrumpchi|GAC Trumpchi gs4 2014-2017, all trims": 189,
   "trumpchi-hdtrumpchi|GAC Trumpchi 兼容 兼容, all trims": 189,
+  "trumpchi-odtrumpchi|GAC Trumpchi Alon 2022, all trims (guessed)": 190,
+  "trumpchi-odtrumpchi|GAC Trumpchi Alon 2025, all trims (guessed)": 190,
   "trumpchi-odtrumpchi|GAC Trumpchi GA3 2013-2014, all trims": 189,
   "trumpchi-odtrumpchi|GAC Trumpchi GA3S 2013-2014, all trims": 189,
   "trumpchi-odtrumpchi|GAC Trumpchi GA4 2018-now, all trims": 189,
@@ -37369,6 +38859,7 @@
   "trumpchi-odtrumpchi|GAC Trumpchi GM6 2019, all trims": 189,
   "trumpchi-odtrumpchi|GAC Trumpchi GM6 2020, all trims": 189,
   "trumpchi-odtrumpchi|GAC Trumpchi GM8 2020, all trims": 189,
+  "trumpchi-odtrumpchi|GAC Trumpchi GM8 2021, all trims (guessed)": 190,
   "trumpchi-odtrumpchi|GAC Trumpchi GS3 2017-now, all trims": 189,
   "trumpchi-odtrumpchi|GAC Trumpchi GS4 2015-2017, cfg mid": 189,
   "trumpchi-odtrumpchi|GAC Trumpchi GS4 2015-2017, cfg phev": 189,
@@ -37394,6 +38885,7 @@
   "trumpchi-retrumpchi|GAC Trumpchi AlonES 2023-2025, all trims": 189,
   "trumpchi-retrumpchi|GAC Trumpchi AlonES 2023-2025-right-steer, all trims": 189,
   "trumpchi-retrumpchi|GAC Trumpchi GA3 2013-2014, all trims": 189,
+  "trumpchi-retrumpchi|GAC Trumpchi GA3S 2013-2014, all trims (guessed)": 190,
   "trumpchi-retrumpchi|GAC Trumpchi GA4 2018-now, all trims": 189,
   "trumpchi-retrumpchi|GAC Trumpchi GA6 2014-2016, high trim": 189,
   "trumpchi-retrumpchi|GAC Trumpchi GA6 2014-2016, low trim": 189,
@@ -37445,6 +38937,7 @@
   "venucia-odqichenm50v|Venucia ModelT90 2017, all trims": 189,
   "venucia-odqichenm50v|Venucia T70 2015, all trims": 189,
   "venucia-reqichent70|Venucia ModelD60 2018-NOW, all trims": 189,
+  "venucia-reqichent70|Venucia ModelM50V 2017, all trims (guessed)": 190,
   "venucia-reqichent70|Venucia ModelT90 2017-NOW, all trims": 189,
   "venucia-reqichent70|Venucia ModelT90 2018, all trims": 189,
   "venucia-reqichent70|Venucia ModelT90 2020, all trims": 189,
@@ -37455,6 +38948,7 @@
   "volkswagen-autoaimqb|Skoda KAROQ 2018-now, all trims": 189,
   "volkswagen-autoaimqb|Skoda kodiak 2017-now, all trims": 189,
   "volkswagen-autoaimqb|Skoda kodiak gt 2019-now, all trims": 189,
+  "volkswagen-autoaimqb|Skoda octavia 2014~至今, all trims (guessed)": 190,
   "volkswagen-autoaimqb|Skoda superb supai 2016-now, all trims": 189,
   "volkswagen-autoaimqb|Volkswagen Teramont 2017, all trims": 189,
   "volkswagen-autoaimqb|Volkswagen Teramont 2019-now, all trims": 189,
@@ -37703,6 +39197,7 @@
   "vw-mqb-raise|Skoda, other compatible models": 169,
   "vw-mqb-raise|Volkswagen Amarok 2015-2023, all trims": 169,
   "vw-mqb-raise|Volkswagen Caravelle 2014-2018, all trims": 169,
+  "vw-mqb-raise|Volkswagen LingYu 2005-2011, all trims (guessed)": 190,
   "vw-mqb-raise|Volkswagen Scala 2020-2023, all trims": 169,
   "vw-mqb-raise|Volkswagen Sharan 2012-2018, all trims": 169,
   "vw-mqb-raise|Volkswagen Teramont 2017, all trims": 169,
@@ -37728,10 +39223,14 @@
   "vw-mqb-raise|Volkswagen leon 2017-2023, all trims": 169,
   "vw-mqb-raise|Volkswagen magotan 2016-2019, all trims": 169,
   "vw-mqb-raise|Volkswagen magotan 2017-2022, all trims": 169,
+  "vw-mqb-raise|Volkswagen passat 2011-2017, all trims (guessed)": 190,
+  "vw-mqb-raise|Volkswagen passat 2013-2017, all trims (guessed)": 190,
+  "vw-mqb-raise|Volkswagen passat 2019-2023, all trims (guessed)": 190,
   "vw-mqb-raise|Volkswagen passat 2019-now, all trims": 169,
   "vw-mqb-raise|Volkswagen passat_gte 2019-now, all trims": 169,
   "vw-mqb-raise|Volkswagen passatb8 2017, all trims": 169,
   "vw-mqb-raise|Volkswagen phideon 2021, all trims": 169,
+  "vw-mqb-raise|Volkswagen polo 2019-2023, all trims (guessed)": 190,
   "vw-mqb-raise|Volkswagen sagitar 2019-now, all trims": 169,
   "vw-mqb-raise|Volkswagen t6 2015-2024, all trims": 169,
   "vw-mqb-raise|Volkswagen t_cross 2019-2022, all trims": 169,
@@ -37795,9 +39294,11 @@
   "vw-pq-hiworld|Volkswagen tiguan 2010-2015, low trim": 169,
   "vw-pq-hiworld|Volkswagen touran 2010-2014, all trims": 169,
   "vw-pq-raise|Skoda Octavia 2008-2017, all trims": 169,
+  "vw-pq-raise|Skoda Spaceback 2014-2019, all trims (guessed)": 190,
   "vw-pq-raise|Skoda octavia 2002-2013, all trims": 169,
   "vw-pq-raise|Skoda octavia 2007-2014, all trims": 169,
   "vw-pq-raise|Skoda rapid 2012-now, all trims": 169,
+  "vw-pq-raise|Skoda superb haorui 2009-2013, all trims (guessed)": 190,
   "vw-pq-raise|Skoda superb_supai 2013-2015, all trims": 169,
   "vw-pq-raise|Skoda superb_supai 2015-2016, all trims": 169,
   "vw-pq-raise|Skoda yeti 2009-now, all trims": 169,
@@ -37894,6 +39395,7 @@
   "zotye-hdzotyet600|Zotye 兼容 兼容, all trims": 189,
   "zotye-hdzotyex5|Zotye X5 2016, all trims": 189,
   "zotye-lzzotyet600|Zotye T600 2017-2020, all trims": 189,
+  "zotye-lzzotyet600|Zotye T600 2017-2020, all trims (guessed)": 190,
   "zotye-lzzotyet600|Zotye 兼容 兼容, all trims": 189,
   "zotye-odzotyee200|Zotye E200 2019, all trims": 189,
   "zotye-odzotyet700|Zotye T700 2017-2018, all trims": 189,

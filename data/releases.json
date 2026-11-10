@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 194,
-     "versionName": "8a08be8-main",
-     "date": "2026-11-08T17:01:51Z",
-     "size": 5550973,
-     "commit": "8a08be844175dd9fe6faf535bf72e19724f03174",
-     "summary": "KSW MCU built in (ksw-px6) and car data engine 2.8: heartbeat, named commands, frames copied to the CAN engine, keys by event value"
+     "versionCode": 198,
+     "versionName": "634c747-main",
+     "date": "2026-11-10T17:05:11Z",
+     "size": 5570809,
+     "commit": "634c747170f0b2459bb0b8ea3b9513e08d4a412f",
+     "summary": "Everything that could still block the service, audited and fixed; its logs kept and read by LibreHU Helper (no root needed)"
     }
    ]
   },
@@ -364,12 +364,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
-     "versionCode": 18,
-     "versionName": "ee33170-main",
-     "date": "2026-11-08T13:43:05Z",
-     "size": 2330625,
-     "commit": "ee331708e721a2809647edfc88f04025d3a589d2",
-     "summary": "Redactor: the exact cause in the comment (« [: » then « :] », refused by ICU on every Android from 4.1 to 15, checked on emulators)"
+     "versionCode": 19,
+     "versionName": "e3cfcbe-main",
+     "date": "2026-11-10T17:04:26Z",
+     "size": 2335361,
+     "commit": "e3cfcbeaec66cd6fbb5d2beb5f8dd1721aec53b2",
+     "summary": "Report: section LibreHU-service (what the service says of itself without root, its threads seen from outside with root)"
     }
    ]
   },
@@ -793,11 +793,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "8a08be8-main",
+    "version": "634c747-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22711
+    "size": 22722
    },
    {
     "id": "jancar-settings-provider-restore",

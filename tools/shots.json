@@ -399,6 +399,18 @@
   "home-waves": [
    "Waves wallpaper",
    "Fond vagues"
+  ],
+  "cars": [
+   "Cars",
+   "Voitures"
+  ],
+  "cars-model": [
+   "Cars: a make, then a model",
+   "Voitures : une marque, puis un modèle"
+  ],
+  "cars-search": [
+   "Cars: search",
+   "Voitures : recherche"
   ]
  },
  "order": {
@@ -485,6 +497,9 @@
    "versions",
    "logs",
    "updates",
+   "cars",
+   "cars-model",
+   "cars-search",
    "zips",
    "downloads",
    "settings"

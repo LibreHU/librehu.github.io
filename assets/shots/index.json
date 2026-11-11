@@ -463,6 +463,21 @@
     "fr": "Mises à jour"
    },
    {
+    "file": "ota/cars.png",
+    "en": "Cars",
+    "fr": "Voitures"
+   },
+   {
+    "file": "ota/cars-model.png",
+    "en": "Cars: a make, then a model",
+    "fr": "Voitures : une marque, puis un modèle"
+   },
+   {
+    "file": "ota/cars-search.png",
+    "en": "Cars: search",
+    "fr": "Voitures : recherche"
+   },
+   {
     "file": "ota/zips.png",
     "en": "Zips",
     "fr": "Zips"

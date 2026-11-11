@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 198,
-     "versionName": "634c747-main",
-     "date": "2026-11-10T17:05:11Z",
-     "size": 5570809,
-     "commit": "634c747170f0b2459bb0b8ea3b9513e08d4a412f",
-     "summary": "Everything that could still block the service, audited and fixed; its logs kept and read by LibreHU Helper (no root needed)"
+     "versionCode": 203,
+     "versionName": "320d29d-main",
+     "date": "2026-11-11T21:34:31Z",
+     "size": 5628253,
+     "commit": "320d29d60d149690a4eeed901556260921cd8d9e",
+     "summary": "Internet over the cable: Android Auto phones only, relay copied atomically, phases in the service log; docs"
     }
    ]
   },
@@ -433,12 +433,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
-     "versionCode": 66,
-     "versionName": "7f1f150-main",
-     "date": "2026-11-08T02:24:31Z",
-     "size": 3994736,
-     "commit": "7f1f15045f0d2708a5538e39c8983f79d3747268",
-     "summary": "Cars tab: the CAN box types' pack (\"boxes\") shows how many box types it brings instead of \"0 cars\""
+     "versionCode": 67,
+     "versionName": "3feb16e-main",
+     "date": "2026-11-11T16:14:24Z",
+     "size": 4013828,
+     "commit": "3feb16e5fa728131ad94e278b8e154c7f8b6034e",
+     "summary": "Cars: a page of its own, with a search field and filters by make then by model, the list kept under them"
     }
    ]
   },
@@ -570,6 +570,12 @@
       "name": "Without Jancar apps",
       "name_fr": "Sans les applis Jancar",
       "description_fr": "Remplacer ce qui manque quand on retire les applis de Jancar."
+     },
+     {
+      "id": "network",
+      "name": "Network",
+      "name_fr": "Réseau",
+      "description_fr": "Internet par USB : partage de connexion d'un téléphone Android."
      }
     ]
    },
@@ -793,11 +799,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "634c747-main",
+    "version": "320d29d-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22722
+    "size": 22719
    },
    {
     "id": "jancar-settings-provider-restore",
@@ -887,6 +893,28 @@
     "order": 201,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-restore.zip",
     "size": 3811
+   },
+   {
+    "id": "usb-tethering",
+    "name": "Partage de connexion USB d'un téléphone Android",
+    "category": "tweaks",
+    "subcategory": "network",
+    "version": "2",
+    "order": 600,
+    "restore": "usb-tethering-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-tethering.zip",
+    "size": 7945
+   },
+   {
+    "id": "usb-tethering-restore",
+    "name": "Partage de connexion USB : retrait de la surcouche",
+    "category": "tweaks",
+    "subcategory": "network",
+    "version": "2",
+    "order": 601,
+    "hidden": true,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-tethering-restore.zip",
+    "size": 3160
    }
   ]
  },

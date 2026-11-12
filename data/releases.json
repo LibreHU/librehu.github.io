@@ -39,34 +39,34 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk",
-     "versionCode": 185,
-     "versionName": "38383f5-librehu-service",
-     "date": "2026-11-08T02:31:09Z",
-     "size": 4696372,
-     "commit": "38383f5b548ca3a2de91df7397b307dd2c586af2",
-     "summary": "Merge main into librehu-service (car speed combined from the CAN box and the OBD adapter)"
+     "versionCode": 187,
+     "versionName": "c01dbfb-librehu-service",
+     "date": "2026-11-12T15:29:16Z",
+     "size": 5577096,
+     "commit": "c01dbfbd384f989c489745e2cb12200969f876cd",
+     "summary": "Merge main into librehu-service (18 more languages)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-ivi/LibreHU-Launcher-ivi.apk",
-     "versionCode": 187,
-     "versionName": "7e4336f-ivi",
-     "date": "2026-11-08T02:31:51Z",
-     "size": 4696352,
-     "commit": "7e4336f7567624ba8b69baf77878894d73e4b3a4",
-     "summary": "Merge main into ivi (car speed combined from the CAN box and the OBD adapter)"
+     "versionCode": 189,
+     "versionName": "b7e5321-ivi",
+     "date": "2026-11-12T15:28:56Z",
+     "size": 5577072,
+     "commit": "b7e5321dc021014ae7fcf20b73e9c58a0e959a7f",
+     "summary": "Merge main into ivi (18 more languages)"
     },
     {
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-main/LibreHU-Launcher-main.apk",
-     "versionCode": 99,
-     "versionName": "640ef36-main",
-     "date": "2026-11-08T02:30:54Z",
-     "size": 4696352,
-     "commit": "640ef368027c36788a8fd18ccd24c58d3f71df67",
-     "summary": "Speed: the car's speed combined from the CAN box and the OBD adapter (LibreHU-service CAR_DATA), not the OBD adapter's alone"
+     "versionCode": 100,
+     "versionName": "3e9c610-main",
+     "date": "2026-11-12T15:29:34Z",
+     "size": 5577068,
+     "commit": "3e9c610e8e9341ba0aff18f6569bc0d938d7323d",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -318,12 +318,12 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk",
-     "versionCode": 296,
-     "versionName": "cf145f6-librehu-service",
-     "date": "2026-11-12T05:17:25Z",
-     "size": 4625916,
-     "commit": "cf145f6a3ccd5dff353f7d2a88075f49cddaac27",
-     "summary": "Merge branch 'main' into librehu-service"
+     "versionCode": 297,
+     "versionName": "367184f-librehu-service",
+     "date": "2026-11-12T14:33:58Z",
+     "size": 5348804,
+     "commit": "367184f88c2c16bd373107b535baeedfb67a3fe2",
+     "summary": "LibreHU: 18 more languages (those of Open Headunit) and the French help of the effects"
     }
    ]
   },

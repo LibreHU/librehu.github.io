@@ -7,9 +7,9 @@
   "LibreHU/LibreHU-FM-app@ivi": "2026-11-12T09:16:26Z",
   "LibreHU/LibreHU-FM-app@librehu-service": "2026-11-12T09:16:28Z",
   "LibreHU/LibreHU-FM-app@main": "2026-11-12T09:16:21Z",
-  "LibreHU/LibreHU-Launcher-App@ivi": "2026-11-08T02:28:31Z",
-  "LibreHU/LibreHU-Launcher-App@librehu-service": "2026-11-08T02:28:29Z",
-  "LibreHU/LibreHU-Launcher-App@main": "2026-11-08T02:28:17Z",
+  "LibreHU/LibreHU-Launcher-App@ivi": "2026-11-12T15:26:25Z",
+  "LibreHU/LibreHU-Launcher-App@librehu-service": "2026-11-12T15:26:28Z",
+  "LibreHU/LibreHU-Launcher-App@main": "2026-11-12T15:26:21Z",
   "LibreHU/LibreHU-OTA-app@main": "2026-11-12T09:57:02Z",
   "LibreHU/LibreHU-ViPER4Android-app@librehu-service": "2026-11-02T11:23:02Z",
   "LibreHU/LibreHU-bridge-app@main": "2026-11-12T08:42:01Z",
@@ -36,6 +36,10 @@
   "events"
  ],
  "entries": [
+{"c":"launcher","d":"2026-11-12T15:29:16Z","id":"app:launcher:librehu-service:187","k":"release","n":"c01dbfb-librehu-service","u":"https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk","v":187},
+{"a":"2026-11-12T15:26:21Z","b":["ivi","librehu-service","main"],"c":"launcher","d":"2026-11-12T15:26:21Z","k":"commit","m":"18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka","s":"3e9c610e8e9341ba0aff18f6569bc0d938d7323d","u":"https://github.com/LibreHU/LibreHU-Launcher-App/commit/3e9c610e8e9341ba0aff18f6569bc0d938d7323d"},
+{"c":"viper","d":"2026-11-12T14:33:58Z","id":"app:viper:librehu-service:297","k":"release","n":"367184f-librehu-service","u":"https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk","v":297},
+{"a":"2026-11-12T14:28:30Z","b":["librehu-service"],"c":"viper","d":"2026-11-12T14:28:30Z","k":"commit","m":"LibreHU: 18 more languages (those of Open Headunit) and the French help of the effects","s":"367184f88c2c16bd373107b535baeedfb67a3fe2","u":"https://github.com/LibreHU/LibreHU-ViPER4Android-app/commit/367184f88c2c16bd373107b535baeedfb67a3fe2"},
 {"c":"zips","d":"2026-11-12T12:55:29Z","g":"jancar-settings","id":"zip:jancar-settings:014ba5f-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"014ba5f-main"},
 {"c":"ota","d":"2026-11-12T09:59:51Z","id":"app:ota:main:70","k":"release","n":"08f724a-main","u":"https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk","v":70},
 {"a":"2026-11-12T09:57:02Z","b":["main"],"c":"ota","d":"2026-11-12T09:57:02Z","k":"commit","m":"18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka","s":"08f724aee2ae794f79834b877d62459dcce5e6c8","u":"https://github.com/LibreHU/LibreHU-OTA-app/commit/08f724aee2ae794f79834b877d62459dcce5e6c8"},

@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 203,
-     "versionName": "320d29d-main",
-     "date": "2026-11-11T21:34:31Z",
-     "size": 5628253,
-     "commit": "320d29d60d149690a4eeed901556260921cd8d9e",
-     "summary": "Internet over the cable: Android Auto phones only, relay copied atomically, phases in the service log; docs"
+     "versionCode": 205,
+     "versionName": "014ba5f-main",
+     "date": "2026-11-12T05:21:18Z",
+     "size": 5636989,
+     "commit": "014ba5f52d2b41faff00d4165eba6edbf821cede",
+     "summary": "Settings entries test: Audio page text, French \"Options avancées\", Bluetooth-less emulator, ViPER4Android entry"
     }
    ]
   },
@@ -86,34 +86,34 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-librehu-service/LibreHU-Dialer-librehu-service.apk",
-     "versionCode": 110,
-     "versionName": "1cb2cd3-librehu-service",
-     "date": "2026-11-06T21:45:08Z",
-     "size": 3503740,
-     "commit": "1cb2cd354d66ad24b640ed1e0af59c96de9246ab",
-     "summary": "Merge main into librehu-service (Infos screen)"
+     "versionCode": 112,
+     "versionName": "3a0aefa-librehu-service",
+     "date": "2026-11-12T08:32:50Z",
+     "size": 3620028,
+     "commit": "3a0aefa6c4fda7a0b695bd861ff17bab1ea984be",
+     "summary": "Merge main into librehu-service (18 more languages)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-ivi/LibreHU-Dialer-ivi.apk",
-     "versionCode": 176,
-     "versionName": "e6f2e46-ivi",
-     "date": "2026-11-06T21:45:35Z",
-     "size": 3486364,
-     "commit": "e6f2e465e587f32a62f60368ffa7562fa024f154",
-     "summary": "Merge main into ivi (Infos screen)"
+     "versionCode": 178,
+     "versionName": "94657ef-ivi",
+     "date": "2026-11-12T08:32:05Z",
+     "size": 3602656,
+     "commit": "94657ef82ae19fdec495f7b5b949d20bb7bb3d40",
+     "summary": "Merge main into ivi (18 more languages)"
     },
     {
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-dialer-app/releases/download/latest-main/LibreHU-Dialer-main.apk",
-     "versionCode": 82,
-     "versionName": "e7377e7-main",
-     "date": "2026-11-06T18:19:36Z",
-     "size": 3485844,
-     "commit": "e7377e74a6a214a085252b68aa6caf621f243b3f",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 83,
+     "versionName": "320f314-main",
+     "date": "2026-11-12T08:31:42Z",
+     "size": 3611284,
+     "commit": "320f314a75e7ec177e7527117c9c559c1205f702",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -133,34 +133,34 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-librehu-service/LibreHU-FM-librehu-service.apk",
-     "versionCode": 114,
-     "versionName": "6df9bf4-librehu-service",
-     "date": "2026-11-06T21:46:42Z",
-     "size": 5310317,
-     "commit": "6df9bf4bec0eb278b4457992ab079536b51aa3ef",
-     "summary": "Merge main into librehu-service (Infos screen)"
+     "versionCode": 116,
+     "versionName": "56868e6-librehu-service",
+     "date": "2026-11-12T09:20:02Z",
+     "size": 5600277,
+     "commit": "56868e698dfa417fe3258771671e75ba8c355a8d",
+     "summary": "Merge main into librehu-service (18 more languages)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-ivi/LibreHU-FM-ivi.apk",
-     "versionCode": 114,
-     "versionName": "0275e86-ivi",
-     "date": "2026-11-06T21:45:39Z",
-     "size": 5310297,
-     "commit": "0275e86741c5102e0565140da37fd15c9d401471",
-     "summary": "Merge main into ivi (Infos screen)"
+     "versionCode": 116,
+     "versionName": "436c744-ivi",
+     "date": "2026-11-12T09:19:36Z",
+     "size": 5600257,
+     "commit": "436c7447ce77547177b74de5ad71d5cd6f1a148a",
+     "summary": "Merge main into ivi (18 more languages)"
     },
     {
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-FM-app/releases/download/latest-main/LibreHU-FM-main.apk",
-     "versionCode": 63,
-     "versionName": "7ac7d95-main",
-     "date": "2026-11-06T18:19:31Z",
-     "size": 5310265,
-     "commit": "7ac7d95315b9e26f3bd127d73696716f5159b0a7",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 64,
+     "versionName": "4929109-main",
+     "date": "2026-11-12T09:19:57Z",
+     "size": 5600225,
+     "commit": "4929109f86cb9eeb8a8d04aa7aadd87fc19348c5",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -180,34 +180,34 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-librehu-service/LibreHU-Widgets-librehu-service.apk",
-     "versionCode": 57,
-     "versionName": "b3d7ff0-librehu-service",
-     "date": "2026-11-06T21:45:10Z",
-     "size": 2943808,
-     "commit": "b3d7ff08adfc5ed17a2352c8f6af052348deea36",
-     "summary": "Merge main into librehu-service (Infos screen)"
+     "versionCode": 59,
+     "versionName": "1120dfb-librehu-service",
+     "date": "2026-11-12T05:31:48Z",
+     "size": 3008576,
+     "commit": "1120dfb0bd5cdf8aa97293b843a96b25b2ff9b23",
+     "summary": "Merge main into librehu-service (18 more languages)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-ivi/LibreHU-Widgets-ivi.apk",
-     "versionCode": 56,
-     "versionName": "25b14a1-ivi",
-     "date": "2026-11-06T21:44:42Z",
-     "size": 2943796,
-     "commit": "25b14a15b5da07c10fc16cefa58d8ab994557904",
-     "summary": "Merge main into ivi (Infos screen)"
+     "versionCode": 58,
+     "versionName": "182a160-ivi",
+     "date": "2026-11-12T05:31:23Z",
+     "size": 3008564,
+     "commit": "182a160caba3c4fbe9cd3cf452705ee5eb8fcd2a",
+     "summary": "Merge main into ivi (18 more languages)"
     },
     {
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-widget-app/releases/download/latest-main/LibreHU-Widgets-main.apk",
-     "versionCode": 29,
-     "versionName": "34e94db-main",
-     "date": "2026-11-06T18:18:26Z",
-     "size": 2943764,
-     "commit": "34e94dbcd3f95048df21d95fc854f6c2f6309755",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 30,
+     "versionName": "c148e06-main",
+     "date": "2026-11-12T05:31:16Z",
+     "size": 3008528,
+     "commit": "c148e06da206c7b30ec9be75d4531c6f350fd2c5",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -227,34 +227,34 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-librehu-service/LibreHU-BtnRemap-librehu-service.apk",
-     "versionCode": 62,
-     "versionName": "a348f38-librehu-service",
-     "date": "2026-11-06T21:45:38Z",
-     "size": 3356720,
-     "commit": "a348f38600be398af742c21e127e3aa59c4307b1",
-     "summary": "Merge main into librehu-service (Infos screen)"
+     "versionCode": 64,
+     "versionName": "ace6ab7-librehu-service",
+     "date": "2026-11-12T05:35:18Z",
+     "size": 3444360,
+     "commit": "ace6ab7561d593d78fcd868ac77ddddb122e3f85",
+     "summary": "Merge main into librehu-service (18 more languages)"
     },
     {
      "branch": "ivi",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-ivi/LibreHU-BtnRemap-ivi.apk",
-     "versionCode": 60,
-     "versionName": "23f6a5b-ivi",
-     "date": "2026-11-06T21:44:46Z",
-     "size": 3356828,
-     "commit": "23f6a5be14fe2a297d5dd822fb523fd34290be4f",
-     "summary": "Merge main into ivi (Infos screen)"
+     "versionCode": 62,
+     "versionName": "c63ae6d-ivi",
+     "date": "2026-11-12T05:34:56Z",
+     "size": 3444472,
+     "commit": "c63ae6d98473467a6cce396246bc53ce39577cae",
+     "summary": "Merge main into ivi (18 more languages)"
     },
     {
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-BtnRemap-app/releases/download/latest-main/LibreHU-BtnRemap-main.apk",
-     "versionCode": 32,
-     "versionName": "75055e4-main",
-     "date": "2026-11-06T18:19:14Z",
-     "size": 3340332,
-     "commit": "75055e41a67084572414b472c28ca49b9bf54686",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 33,
+     "versionName": "7db6701-main",
+     "date": "2026-11-12T05:34:57Z",
+     "size": 3427976,
+     "commit": "7db670117ae1fd2bff7c02412ecc8003522ef759",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -272,12 +272,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-EasySource-app/releases/download/latest-main/LibreHU-EasySource-main.apk",
-     "versionCode": 22,
-     "versionName": "597cdc4-main",
-     "date": "2026-11-06T18:18:22Z",
-     "size": 2920920,
-     "commit": "597cdc4b831c42fc0403e836ad6b76ead0acb503",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 23,
+     "versionName": "31d0fd4-main",
+     "date": "2026-11-12T05:24:42Z",
+     "size": 2970324,
+     "commit": "31d0fd4ff2bc3cf51620efaec5322b3b95f0a9ed",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -295,12 +295,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-disc-app/releases/download/latest-main/LibreHU-Disc-main.apk",
-     "versionCode": 24,
-     "versionName": "ea05eb9-main",
-     "date": "2026-11-06T18:18:05Z",
-     "size": 3059181,
-     "commit": "ea05eb9964fab5189b4ca9911e373e26b15ab43c",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 26,
+     "versionName": "77fdaa6-main",
+     "date": "2026-11-12T08:27:11Z",
+     "size": 3165353,
+     "commit": "77fdaa66a068f5e55ac1862aa2672847b8a7daa6",
+     "summary": "Translations: the Back pill (string up) as Back, not Up"
     }
    ]
   },
@@ -318,11 +318,11 @@
      "branch": "librehu-service",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk",
-     "versionCode": 294,
-     "versionName": "2511669-librehu-service",
-     "date": "2026-11-08T20:05:09Z",
-     "size": 4625116,
-     "commit": "2511669f67446b6f72a92e41c82316b29585bbff",
+     "versionCode": 296,
+     "versionName": "cf145f6-librehu-service",
+     "date": "2026-11-12T05:17:25Z",
+     "size": 4625916,
+     "commit": "cf145f6a3ccd5dff353f7d2a88075f49cddaac27",
      "summary": "Merge branch 'main' into librehu-service"
     }
    ]
@@ -364,12 +364,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk",
-     "versionCode": 19,
-     "versionName": "e3cfcbe-main",
-     "date": "2026-11-10T17:04:26Z",
-     "size": 2335361,
-     "commit": "e3cfcbeaec66cd6fbb5d2beb5f8dd1721aec53b2",
-     "summary": "Report: section LibreHU-service (what the service says of itself without root, its threads seen from outside with root)"
+     "versionCode": 20,
+     "versionName": "4a89411-main",
+     "date": "2026-11-12T08:58:38Z",
+     "size": 2652941,
+     "commit": "4a89411af9e6d0e3c2f3390e27bac9f3c5d5cac9",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -410,12 +410,12 @@
      "branch": "master",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk",
-     "versionCode": 1557,
+     "versionCode": 1559,
      "versionName": "1.4.2-master",
-     "date": "2026-10-28T09:30:38Z",
-     "size": 6877220,
-     "commit": "0fc22c900f4ecd6ac5c144fe34020da8f510f791",
-     "summary": "LibreHU fork: follow LibreHU Launcher's Modularer Infotainment-Baukasten and LHU-Link styles"
+     "date": "2026-11-12T05:31:20Z",
+     "size": 6911764,
+     "commit": "4c9da71ed2b53d8f98e220b01b0f178cc795a357",
+     "summary": "18 more languages for the LibreHU strings: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -433,12 +433,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
-     "versionCode": 67,
-     "versionName": "3feb16e-main",
-     "date": "2026-11-11T16:14:24Z",
-     "size": 4013828,
-     "commit": "3feb16e5fa728131ad94e278b8e154c7f8b6034e",
-     "summary": "Cars: a page of its own, with a search field and filters by make then by model, the list kept under them"
+     "versionCode": 70,
+     "versionName": "08f724a-main",
+     "date": "2026-11-12T09:59:51Z",
+     "size": 4481376,
+     "commit": "08f724aee2ae794f79834b877d62459dcce5e6c8",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   },
@@ -457,23 +457,23 @@
      "branch": "main",
      "label": "Android",
      "url": "https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-main/LibreHU-Bridge-main.apk",
-     "versionCode": 19,
-     "versionName": "7624697-main",
-     "date": "2026-11-06T18:18:18Z",
-     "size": 1934800,
-     "commit": "76246974d9ef7f752f17881397989b066e28b736",
-     "summary": "Infos: version, « Based on LibreHU », the AGPL-3.0-or-later licence and its section 7 terms, source code, contact, and the projects the app uses with their licence texts (Appropriate Legal Notices, AGPL section 5 d)"
+     "versionCode": 20,
+     "versionName": "85e4743-main",
+     "date": "2026-11-12T08:44:41Z",
+     "size": 2117048,
+     "commit": "85e4743112668a4b990f1c69f0d49417f9e6ad26",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     },
     {
      "branch": "ios",
      "label": "iPhone (.ipa)",
      "url": "https://github.com/LibreHU/LibreHU-bridge-app/releases/download/latest-ios/LibreHU-iOS-main.ipa",
-     "versionCode": 16,
-     "versionName": "1.0.16-main",
+     "versionCode": 20,
+     "versionName": "1.0.20-main",
      "date": "",
      "size": 0,
-     "commit": "156d5c3",
-     "summary": "Home screen: app updates, the installed version and a check of GitHub for a newer one, then the APK (Android) or ipa (iPhone) to download, on Android and iOS."
+     "commit": "85e4743",
+     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
     }
    ]
   }
@@ -799,11 +799,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "320d29d-main",
+    "version": "014ba5f-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22719
+    "size": 22718
    },
    {
     "id": "jancar-settings-provider-restore",

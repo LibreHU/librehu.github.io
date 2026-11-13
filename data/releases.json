@@ -618,11 +618,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Modules seuls (noyau déjà flashé)",
-    "version": "r151-82d754720",
+    "version": "r153-f8336f938",
     "order": 1327,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip",
-    "size": 2321043
+    "size": 2321047
    },
    {
     "id": "conn-modules-stable-restore",
@@ -710,11 +710,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Noyau + modules (avec menu de démarrage)",
-    "version": "r151-82d754720",
+    "version": "r153-f8336f938",
     "order": 1326,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip",
-    "size": 11889998
+    "size": 11890188
    },
    {
     "id": "usb-net",

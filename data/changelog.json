@@ -36,6 +36,7 @@
   "events"
  ],
  "entries": [
+{"c":"kernel","d":"2026-11-13T23:41:39Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r153-f8336f938","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r153-f8336f938"},
 {"c":"zips","d":"2026-11-13T17:52:38Z","g":"jancar-settings","id":"zip:jancar-settings:2e14010-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"2e14010-main"},
 {"c":"service","d":"2026-11-13T16:23:58Z","id":"app:service:main:208","k":"release","n":"2e14010-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":208},
 {"a":"2026-11-13T16:20:07Z","b":["main"],"c":"service","d":"2026-11-13T16:20:07Z","k":"commit","m":"Touch keys: screen-off hint and docs follow the kernel (touch panel kept awake while the screen is off, reset when it comes back)","s":"2e1401067642b0b4c7c4722a77543dbd0ffd5249","u":"https://github.com/LibreHU/LibreHU-service/commit/2e1401067642b0b4c7c4722a77543dbd0ffd5249"},

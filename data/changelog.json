@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-11T17:37:47Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-12T08:56:09Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-12T05:14:07Z",
+  "LibreHU/LibreHU-service@main": "2026-11-13T07:46:16Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-12T05:29:27Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-12T05:29:29Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-12T05:29:25Z",
@@ -30,12 +30,19 @@
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-06T22:59:38Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-06T17:26:28Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-01T16:18:52Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-06T22:41:18Z"
+  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-13T07:40:02Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"c":"kernel","d":"2026-11-13T09:43:29Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r151-82d754720","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r151-82d754720"},
+{"c":"zips","d":"2026-11-13T09:43:29Z","g":"jancar-settings","id":"zip:jancar-settings:bb09712-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"bb09712-main"},
+{"c":"service","d":"2026-11-13T07:50:29Z","id":"app:service:main:206","k":"release","n":"bb09712-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":206},
+{"a":"2026-11-13T07:46:16Z","b":["main"],"c":"service","d":"2026-11-13T07:46:16Z","k":"commit","m":"Touch keys: Android's power button as zone actions (short press, held = Android's power menu); screen off, only a power key wakes the unit","s":"bb0971217a08118c9ccb81f44083850239917a9d","u":"https://github.com/LibreHU/LibreHU-service/commit/bb0971217a08118c9ccb81f44083850239917a9d"},
+{"a":"2026-11-13T07:40:02Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-13T07:40:02Z","k":"commit","m":"touch: the controller stays awake while the screen is off on the UJC201 (front panel power key can wake the unit)","s":"82d7547208b262436cf7fd4d1fe3486789b7aedf","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/82d7547208b262436cf7fd4d1fe3486789b7aedf"},
+{"a":"2026-11-13T07:31:36Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-13T07:31:36Z","k":"commit","m":"defconfig: no MCE IR keyboard decoder (Android saw a physical keyboard and hid the soft keyboard); README table: battery, IR, Wi-Fi chip id","s":"b04f94e35b9ac70e3a05b4e9d43162f6f9ac253a","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/b04f94e35b9ac70e3a05b4e9d43162f6f9ac253a"},
+{"a":"2026-11-13T07:26:39Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-13T07:26:39Z","k":"commit","m":"power: battery always full on mains for the UJC201 (no gauge in its device tree): Android showed 0-1 % under LineageOS","s":"196a7194e0a76c1617cb426d1f546ca41c119789","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/196a7194e0a76c1617cb426d1f546ca41c119789"},
 {"c":"launcher","d":"2026-11-12T15:29:16Z","id":"app:launcher:librehu-service:187","k":"release","n":"c01dbfb-librehu-service","u":"https://github.com/LibreHU/LibreHU-Launcher-App/releases/download/latest-librehu-service/LibreHU-Launcher-librehu-service.apk","v":187},
 {"a":"2026-11-12T15:26:21Z","b":["ivi","librehu-service","main"],"c":"launcher","d":"2026-11-12T15:26:21Z","k":"commit","m":"18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka","s":"3e9c610e8e9341ba0aff18f6569bc0d938d7323d","u":"https://github.com/LibreHU/LibreHU-Launcher-App/commit/3e9c610e8e9341ba0aff18f6569bc0d938d7323d"},
 {"c":"viper","d":"2026-11-12T14:33:58Z","id":"app:viper:librehu-service:297","k":"release","n":"367184f-librehu-service","u":"https://github.com/LibreHU/LibreHU-ViPER4Android-app/releases/download/latest-librehu-service/ViPER4Android-LibreHU-librehu-service.apk","v":297},
@@ -88,6 +95,7 @@
 {"a":"2026-11-10T17:01:43Z","b":["main"],"c":"helper","d":"2026-11-10T17:01:43Z","k":"commit","m":"Report: section LibreHU-service (what the service says of itself without root, its threads seen from outside with root)","s":"e3cfcbeaec66cd6fbb5d2beb5f8dd1721aec53b2","u":"https://github.com/LibreHU/LibreHU-helper-app/commit/e3cfcbeaec66cd6fbb5d2beb5f8dd1721aec53b2"},
 {"a":"2026-11-10T17:01:23Z","b":["main"],"c":"service","d":"2026-11-10T17:01:23Z","k":"commit","m":"Everything that could still block the service, audited and fixed; its logs kept and read by LibreHU Helper (no root needed)","s":"634c747170f0b2459bb0b8ea3b9513e08d4a412f","u":"https://github.com/LibreHU/LibreHU-service/commit/634c747170f0b2459bb0b8ea3b9513e08d4a412f"},
 {"a":"2026-11-10T16:28:45Z","b":["main"],"c":"service","d":"2026-11-10T16:28:45Z","k":"commit","m":"Service frozen while driving (v151 to v196): the CAN box link and monitor no longer call out under their locks, and a link watchdog restarts a stuck service","s":"6af371fefdc23053d8473f2c5675ecb5d61ccde4","u":"https://github.com/LibreHU/LibreHU-service/commit/6af371fefdc23053d8473f2c5675ecb5d61ccde4"},
+{"a":"2026-11-08T23:43:29Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-08T23:43:29Z","k":"commit","m":"Test: Wi-Fi chip id given by WMT detect before the consys module init (persist.vendor.connsys.chipid 0x0000, boot loop)","s":"3d07afe3a84ce6623acf425ea58f7557daba561f","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/3d07afe3a84ce6623acf425ea58f7557daba561f"},
 {"c":"zips","d":"2026-11-08T21:06:53Z","g":"jancar-settings","id":"zip:jancar-settings:8a08be8-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"8a08be8-main"},
 {"c":"headunit","d":"2026-11-08T21:04:39Z","id":"app:headunit:main:2906","k":"release","n":"4.0.0-beta2-main","u":"https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk","v":2906},
 {"a":"2026-11-08T20:59:03Z","b":["main"],"c":"headunit","d":"2026-11-08T20:59:03Z","k":"commit","m":"LibreHU fork: AapPresentationTest's night overlay test (upstream, new) mocks aapControl like the fork's other tests","s":"2ff7c6c40a17baee8bd1022715d1d80f5658e386","u":"https://github.com/LibreHU/LibreHU-open-headunit-app/commit/2ff7c6c40a17baee8bd1022715d1d80f5658e386"},

@@ -6,7 +6,7 @@
 <title>LibreHU – new software for Android head units</title>
 <meta name="title-en" content="LibreHU – new software for Android head units">
 <meta name="title-fr" content="LibreHU – de nouveaux logiciels pour autoradios Android">
-<meta name="description" content="LibreHU replaces the software of Jancar / Autochips AC8257 (UJC201) Android head units: service, launcher, radio, phone, Android Auto, CarPlay, TWRP, a custom kernel, and LineageOS in preparation.">
+<meta name="description" content="LibreHU replaces the software of Jancar / Autochips AC8257 (UJC201) Android head units: service, launcher, radio, phone, Android Auto, CarPlay, TWRP, a custom kernel, and LineageOS 16.0 (test builds).">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>
   // Language before drawing: saved choice, else the browser's first French or English language, else English.
@@ -34,6 +34,7 @@
     <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="28" height="28"> LibreHU</a>
     <nav id="nav" aria-label="Sections">
       <a href="index.html#download"><span lang="en">Download</span><span lang="fr">Télécharger</span></a>
+      <a href="lineageos.html"><span lang="en">LineageOS</span><span lang="fr">LineageOS</span></a>
       <a href="changelog.html"><span lang="en">Changelog</span><span lang="fr">Nouveautés</span></a>
       <a href="docs.html"><span lang="en">Docs</span><span lang="fr">Docs</span></a>
       <a href="engine.html"><span lang="en">Engine</span><span lang="fr">Moteur</span></a>
@@ -206,6 +207,8 @@
         </tbody>
       </table>
     </div>
+    <h3><span lang="en">ROM: LineageOS 16.0 (test builds)</span><span lang="fr">ROM : LineageOS 16.0 (builds de test)</span></h3>
+    <p class="sub"><span lang="en">A real ROM for the UJC201 (Android 9, LibreHU apps built in), published at every build. Downloads, vbmeta, installation with TWRP, updates and troubleshooting: <a href="lineageos.html"><strong>LineageOS page</strong></a>.</span><span lang="fr">Une vraie ROM pour l'UJC201 (Android 9, applis LibreHU intégrées), publiée à chaque build. Téléchargements, vbmeta, installation avec TWRP, mises à jour et dépannage : <a href="lineageos.html"><strong>page LineageOS</strong></a>.</span></p>
     <p class="note info" lang="en"><strong>Editions.</strong> <em>LibreHU service</em>: with LibreHU service, which replaces Jancar's ivi-services (recommended). <em>ivi</em>: on the stock Jancar ROM, with ivi-services. <em>generic</em>: any Android 9+ device, without head unit integration. TWRP, kernel and mods: <a href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips">flashable zips</a> (also listed in LibreHU Apps → Zips).</p>
     <p class="note info" lang="fr"><strong>Éditions.</strong> <em>LibreHU service</em> : avec LibreHU service, qui remplace ivi-services de Jancar (recommandée). <em>ivi</em> : sur la ROM Jancar d'origine, avec ivi-services. <em>générique</em> : tout appareil Android 9 ou plus, sans intégration à l'autoradio. TWRP, noyau et mods : <a href="https://github.com/LibreHU/LibreHU-flashablesZips/releases/tag/zips">zips flashables</a> (aussi dans LibreHU Apps → Zips).</p>
   </div>
@@ -282,9 +285,9 @@
         <div class="progress"><div class="label"><span lang="en">Tried on a car</span><span lang="fr">Essayée sur une voiture</span><strong><span lang="en">0.1%</span><span lang="fr">0,1 %</span></strong></div><div class="bar"><span style="width: 0.1%"></span></div></div>
         <p class="muted" lang="en">Of the 1,785 car models of Hiworld's catalogue (Car Info 1.0.3991): 1,690 decoded by the car's own decoder, 95 by the decoder of their box maker's protocol document; tried on a car: Clio 3. 6,416 cars in 522 profiles, 511 generated. <a href="docs.html#can-cars">Which cars?</a> <a href="engine.html">How it works</a></p>
         <p class="muted" lang="fr">Sur les 1 785 modèles de voitures du catalogue Hiworld (Car Info 1.0.3991) : 1 690 décodés par le décodeur de la voiture, 95 par celui du document de protocole de leur boîtier ; essayés sur une voiture : Clio 3. 6 416 voitures dans 522 profils, dont 511 générés. <a href="docs.html#can-cars">Quelles voitures ?</a> <a href="engine.html">Comment ça marche</a></p></div>
-      <div class="card"><span class="status wip"><span lang="en">in preparation</span><span lang="fr">en préparation</span></span><h3 lang="en">LineageOS ROMs</h3><h3 lang="fr">ROM LineageOS</h3>
-        <p lang="en">A real ROM, not a GSI: LineageOS 16.0 (Android 9) for the UJC201, with the LibreHU apps built in and precompiled, on the kernel above. First full build by the CI on 12/11/2026; first boot to be tried. Later LineageOS versions are planned once it runs. Proprietary vendor files are extracted from your own unit, never published.</p>
-        <p lang="fr">Une vraie ROM, pas une GSI : LineageOS 16.0 (Android 9) pour l'UJC201, avec les applis LibreHU intégrées et précompilées, sur le noyau ci-dessus. Premier build complet par la CI le 12/11/2026 ; premier démarrage à essayer. Des versions plus récentes de LineageOS sont prévues une fois celle-ci fonctionnelle. Les fichiers vendor propriétaires sont extraits de votre propre autoradio, jamais publiés.</p></div>
+      <div class="card"><span class="status wip"><span lang="en">test builds</span><span lang="fr">builds de test</span></span><h3 lang="en">LineageOS ROMs</h3><h3 lang="fr">ROM LineageOS</h3>
+        <p lang="en">A real ROM, not a GSI: LineageOS 16.0 (Android 9) for the UJC201, with the LibreHU apps built in and precompiled, on the kernel above. <strong>It boots</strong> since 12/11/2026: test builds published at every build, with updates through the LineageOS app; green hardware video, standby and touch wake-up still being fixed. Later LineageOS versions are planned once it is complete. The vendor partition stays the one of your unit, never published. <a href="lineageos.html">Download and install</a>.</p>
+        <p lang="fr">Une vraie ROM, pas une GSI : LineageOS 16.0 (Android 9) pour l'UJC201, avec les applis LibreHU intégrées et précompilées, sur le noyau ci-dessus. <strong>Elle démarre</strong> depuis le 12/11/2026 : builds de test publiés à chaque build, avec mises à jour par l'appli de LineageOS ; vidéo matérielle verte, veille et réveil du tactile encore en correction. Des versions plus récentes de LineageOS sont prévues une fois celle-ci complète. La partition vendor reste celle de votre autoradio, jamais publiée. <a href="lineageos.html">Télécharger et installer</a>.</p></div>
       <div class="card"><span class="status plan"><span lang="en">planned</span><span lang="fr">prévu</span></span><h3 lang="en">Other platforms</h3><h3 lang="fr">Autres plateformes</h3>
         <p lang="en">Once mature, LibreHU will be adapted to other head units. The groundwork is there: MCU protocols and car CAN decoding are JSON profiles, the generic edition runs on any Android 9+ device, and LibreHU Helper collects what a port needs. <a href="developers.html#porting">Porting notes</a> · <a href="headunits.html">head unit chips</a>.</p>
         <p lang="fr">Une fois mûr, LibreHU sera adapté à d'autres autoradios. Les bases sont là : les protocoles MCU et le décodage CAN des voitures sont des profils JSON, l'édition générique tourne sur tout appareil Android 9 ou plus, et LibreHU Helper rassemble ce qu'il faut pour un portage. <a href="developers.html#porting">Notes de portage</a> · <a href="headunits.html">puces d'autoradios</a>.</p></div>

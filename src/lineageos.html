@@ -1,0 +1,151 @@
+{{head:LineageOS 16.0 – LibreHU|LineageOS 16.0 – LibreHU|LineageOS 16.0 (Android 9) for the Jancar UJC201 head unit: test builds, downloads, vbmeta, installation with TWRP, updates, troubleshooting.}}
+{{bar:lineageos.html}}
+
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <h1 lang="en">LineageOS 16.0 for the UJC201</h1>
+    <h1 lang="fr">LineageOS 16.0 pour l'UJC201</h1>
+    <p class="lead" bi>A real ROM built from the LineageOS sources, not a GSI: Android 9 with the LibreHU apps built in, on the LibreHU kernel, with the vendor partition of your own unit (never published). <strong>Test builds</strong>: it boots since 12/11/2026, several things are still being fixed.<fr>Une vraie ROM construite depuis les sources de LineageOS, pas une GSI : Android 9 avec les applis LibreHU intégrées, sur le noyau LibreHU, avec la partition vendor de votre propre autoradio (jamais publiée). <strong>Builds de test</strong> : elle démarre depuis le 12/11/2026, plusieurs choses sont encore en cours de correction.</p>
+    <p class="actions"><a class="btn" href="#download"><t>Download<fr>Télécharger</t></a> <a class="btn" href="#install"><t>Install<fr>Installer</t></a></p>
+  </div>
+</div>
+
+<section id="contents">
+  <div class="wrap">
+    <nav class="toc" aria-label="Contents">
+      <a href="#status"><t>Status<fr>État</t></a> · <a href="#download"><t>Download<fr>Télécharger</t></a> · <a href="#before"><t>Before you start<fr>Avant de commencer</t></a> · <a href="#vbmeta">vbmeta</a> · <a href="#install"><t>Install<fr>Installer</t></a> · <a href="#firstboot"><t>First boot<fr>Premier démarrage</t></a> · <a href="#updates"><t>Updates<fr>Mises à jour</t></a> · <a href="#trouble"><t>Troubleshooting<fr>Dépannage</t></a> · <a href="#stock"><t>Back to stock<fr>Retour au stock</t></a> · <a href="#build"><t>Build it yourself<fr>La compiler soi-même</t></a>
+    </nav>
+  </div>
+</section>
+
+<section id="status">
+  <div class="wrap">
+    <h2 bi>Status<fr>État</h2>
+    <p class="sub" bi>Only for the <strong>Jancar UJC201</strong> (Autochips AC8257, product <code>ac8257_demo</code>, 1280 × 720 screen). Other AC8257 head units have another kernel, device tree or screen: do not install it on them.<fr>Uniquement pour le <strong>Jancar UJC201</strong> (Autochips AC8257, produit <code>ac8257_demo</code>, écran 1280 × 720). Les autres autoradios AC8257 ont un autre noyau, un autre device tree ou un autre écran : ne l'installez pas dessus.</p>
+    <div class="grid">
+      <div class="card"><span class="status done"><t>works<fr>marche</t></span><h3 bi>Tried on the unit<fr>Essayé sur l'autoradio</h3>
+        <p bi>Boot (boot menu, TWRP, Android), adb, MTP, USB host and device switch, microphone, MCU (LibreHU service), most LibreHU apps, performance (Geekbench). Feedback of 13/11/2026.<fr>Démarrage (menu de démarrage, TWRP, Android), adb, MTP, bascule USB hôte / périphérique, micro, MCU (LibreHU service), la plupart des applis LibreHU, performances (Geekbench). Retour du 13/11/2026.</p></div>
+      <div class="card"><span class="status wip"><t>to try<fr>à essayer</t></span><h3 bi>Fixed in the 13/11 builds<fr>Corrigé dans les builds du 13/11</h3>
+        <p bi>Landscape picture and touch, brightness the right way round, touch calibration at boot, Wi-Fi country from the language (scans of zero channel crashed the kernel), Ethernet over USB, root for LibreHU service out of the box, no lock screen, bigger status and navigation bars, Aurora Store and LibreHU Helper, updates through the LineageOS app.<fr>Image et tactile en paysage, luminosité dans le bon sens, calibration du tactile au démarrage, pays du Wi-Fi d'après la langue (les scans à zéro canal faisaient planter le noyau), Ethernet par USB, root de LibreHU service d'office, pas d'écran de verrouillage, barres d'état et de navigation plus grandes, Aurora Store et LibreHU Helper, mises à jour par l'appli de LineageOS.</p></div>
+      <div class="card"><span class="status plan"><t>known issues<fr>problèmes connus</t></span><h3 bi>Still open<fr>Encore ouverts</h3>
+        <p bi>Hardware-decoded video is green until the first standby (the ARM2 keeps two display layers: the vendor HAL refuses the hand-over under LineageOS, being investigated); YouTube 1080p stutters; car standby unreliable; touch may not wake up after the screen turns off; Autochips watermark service missing (log noise).<fr>La vidéo décodée par le matériel est verte jusqu'à la première veille (l'ARM2 garde deux couches de l'affichage : le HAL du vendor refuse la passation sous LineageOS, en cours d'analyse) ; YouTube 1080p saccade ; veille de la voiture peu fiable ; le tactile peut ne pas se réveiller après l'extinction de l'écran ; service watermark d'Autochips absent (bruit dans les journaux).</p></div>
+    </div>
+    <p class="note warn" bi><strong>Test builds, userdebug.</strong> adb answers without authorization and <code>adb root</code> is allowed: anyone who plugs into the USB port gets a root shell. SELinux is permissive while the port is brought up. The zips are signed with the AOSP test key, like the ROM.<fr><strong>Builds de test, userdebug.</strong> adb répond sans autorisation et <code>adb root</code> est permis : toute personne branchée sur le port USB obtient un shell root. SELinux est permissif pendant la mise au point. Les zips sont signés avec la clé de test d'AOSP, comme la ROM.</p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <h2 bi>Download<fr>Télécharger</h2>
+    <p class="sub" bi>Every build of the CI (branch <code>lineage-16.0</code> of the device tree) is published on GitHub; this table follows the latest one. The vendor partition is not in it: it stays the one of your unit.<fr>Chaque build de la CI (branche <code>lineage-16.0</code> de l'arbre de l'appareil) est publié sur GitHub ; ce tableau suit le dernier. La partition vendor n'y est pas : elle reste celle de votre autoradio.</p>
+    {{lineage}}
+    <p class="note" bi>Check the zip before flashing: its SHA256 is in <code>SHA256SUMS</code> (Windows: <code>certutil -hashfile file.zip SHA256</code>; Linux / macOS: <code>sha256sum file.zip</code>).<fr>Vérifiez le zip avant de le flasher : son SHA256 est dans <code>SHA256SUMS</code> (Windows : <code>certutil -hashfile fichier.zip SHA256</code> ; Linux / macOS : <code>sha256sum fichier.zip</code>).</p>
+  </div>
+</section>
+
+<section id="before">
+  <div class="wrap">
+    <h2 bi>Before you start<fr>Avant de commencer</h2>
+    <ol class="steps">
+      <li bi><strong>LibreHU TWRP</strong> installed and working: <a href="tutorials.html#t-twrp">tutorial</a>.<fr><strong>TWRP LibreHU</strong> installé et fonctionnel : <a href="tutorials.html#t-twrp">tuto</a>.</li>
+      <li bi><strong>Backups</strong>, kept off the unit (USB drive or PC): a TWRP backup of Boot, System Image and Vendor Image, your stock <code>vbmeta.img</code> (needed below), and ideally a full SP Flash Tool readback with <code>nvram</code>, <code>nvdata</code>, <code>protect1</code> / <code>protect2</code> (calibration and identifiers): <a href="tutorials.html#t-backup">tutorial</a>.<fr><strong>Sauvegardes</strong>, gardées hors de l'autoradio (clé USB ou PC) : une sauvegarde TWRP de Boot, System Image et Vendor Image, votre <code>vbmeta.img</code> d'origine (nécessaire plus bas), et idéalement une lecture complète avec SP Flash Tool, avec <code>nvram</code>, <code>nvdata</code>, <code>protect1</code> / <code>protect2</code> (calibration et identifiants) : <a href="tutorials.html#t-backup">tuto</a>.</li>
+      <li bi>A PC with <code>adb</code> and <code>fastboot</code> (Android platform-tools), a USB cable, a USB drive or microSD card, and a stable supply: engine running or the unit on a bench supply. A power cut during a flash can leave the unit unbootable.<fr>Un PC avec <code>adb</code> et <code>fastboot</code> (platform-tools d'Android), un câble USB, une clé USB ou une carte microSD, et une alimentation stable : moteur tournant ou autoradio sur alimentation d'établi. Une coupure pendant un flash peut empêcher l'autoradio de démarrer.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="vbmeta">
+  <div class="wrap">
+    <h2 bi>vbmeta: why and how<fr>vbmeta : pourquoi et comment</h2>
+    <p bi>Android Verified Boot: the <code>vbmeta</code> partition holds the hashes and keys of <code>boot</code>, <code>dtbo</code> and <code>vendor</code>, and a link to <code>system</code> signed with Jancar's key. The bootloader checks it at every boot. The LineageOS <code>system</code> is not signed by Jancar: with the stock vbmeta as it is, the bootloader refuses to start and <strong>the unit stays on the maker's logo</strong>.<fr>Le démarrage vérifié d'Android : la partition <code>vbmeta</code> contient les empreintes et les clés de <code>boot</code>, <code>dtbo</code> et <code>vendor</code>, et un lien vers <code>system</code> signé avec la clé de Jancar. Le bootloader la vérifie à chaque démarrage. Le <code>system</code> de LineageOS n'est pas signé par Jancar : avec le vbmeta d'origine tel quel, le bootloader refuse de démarrer et <strong>l'autoradio reste sur le logo du constructeur</strong>.</p>
+    <p bi>The fix is your own stock vbmeta with verification turned off: two flags of its header (byte 123), <code>1</code> = dm-verity off (<code>--disable-verity</code>), <code>2</code> = verification off (<code>--disable-verification</code>). LineageOS needs <strong>both</strong> (value 3). The stock ROM also starts with this vbmeta. The LibreHU zip never writes vbmeta: it checks the flags and stops without writing anything while verification is on.<fr>La solution est votre propre vbmeta d'origine avec la vérification coupée : deux drapeaux de son en-tête (octet 123), <code>1</code> = dm-verity coupé (<code>--disable-verity</code>), <code>2</code> = vérification coupée (<code>--disable-verification</code>). LineageOS a besoin des <strong>deux</strong> (valeur 3). Le stock démarre aussi avec ce vbmeta. Le zip LibreHU n'écrit jamais vbmeta : il vérifie les drapeaux et s'arrête sans rien écrire tant que la vérification est active.</p>
+    <h3 bi>With fastboot (usual way)<fr>Avec fastboot (méthode habituelle)</h3>
+    <pre><code>adb reboot bootloader
+fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
+fastboot reboot</code></pre>
+    <p class="sub" bi><code>vbmeta.img</code>: the one of your backup. From the boot menu, the Fastboot card also reboots into fastboot.<fr><code>vbmeta.img</code> : celui de votre sauvegarde. Depuis le menu de démarrage, la carte Fastboot redémarre aussi en fastboot.</p>
+    <h3 bi>Without fastboot: SP Flash Tool<fr>Sans fastboot : SP Flash Tool</h3>
+    <p bi>If the unit no longer reaches fastboot (stuck on the logo), write a copy of vbmeta with both flags set. Windows PowerShell, in the folder of your backup:<fr>Si l'autoradio n'atteint plus fastboot (bloqué sur le logo), écrivez une copie de vbmeta avec les deux drapeaux. PowerShell sous Windows, dans le dossier de votre sauvegarde :</p>
+    <pre><code>$b = [IO.File]::ReadAllBytes("$PWD\vbmeta.img")
+if ([Text.Encoding]::ASCII.GetString($b, 0, 4) -ne "AVB0") { throw "not a vbmeta" }
+$b[123] = $b[123] -bor 3
+[IO.File]::WriteAllBytes("$PWD\vbmeta-disabled.img", $b)</code></pre>
+    <p bi>Then SP Flash Tool: <em>Download</em> tab, your scatter file, mode <strong>Download Only</strong>, untick everything except <code>vbmeta</code>, point it to <code>vbmeta-disabled.img</code>, click Download and connect the unit switched off.<fr>Puis SP Flash Tool : onglet <em>Download</em>, votre fichier scatter, mode <strong>Download Only</strong>, tout décocher sauf <code>vbmeta</code>, le diriger vers <code>vbmeta-disabled.img</code>, cliquer sur Download et brancher l'autoradio éteint.</p>
+    <p class="note warn" bi><strong>Never</strong> use <em>Format All + Download</em> or <em>Firmware Upgrade</em>: they erase <code>nvram</code> / <code>nvdata</code> (calibration, MAC addresses, identifiers), which only a backup can bring back. <strong>Never format <code>/vendor</code></strong>: LineageOS runs on it (drivers, HALs, firmware). <strong>Never flash vbmeta without the two flags</strong> while LineageOS is installed: the unit would stay on the logo.<fr><strong>Jamais</strong> <em>Format All + Download</em> ni <em>Firmware Upgrade</em> : ils effacent <code>nvram</code> / <code>nvdata</code> (calibration, adresses MAC, identifiants), que seule une sauvegarde peut remettre. <strong>Ne formatez jamais <code>/vendor</code></strong> : LineageOS tourne dessus (pilotes, HAL, firmwares). <strong>Ne flashez jamais vbmeta sans les deux drapeaux</strong> tant que LineageOS est installé : l'autoradio resterait sur le logo.</p>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2 bi>Install<fr>Installer</h2>
+    <ol class="steps">
+      <li bi>Download the latest zip (<a href="#download">above</a>), check its SHA256 and copy it to a <strong>USB drive or microSD card</strong>, not to the internal storage: Format Data erases it.<fr>Téléchargez le dernier zip (<a href="#download">plus haut</a>), vérifiez son SHA256 et copiez-le sur une <strong>clé USB ou une carte microSD</strong>, pas dans la mémoire interne : Format Data l'efface.</li>
+      <li bi>Flash vbmeta with both flags (<a href="#vbmeta">vbmeta</a>), then <code>fastboot reboot</code>.<fr>Flashez vbmeta avec les deux drapeaux (<a href="#vbmeta">vbmeta</a>), puis <code>fastboot reboot</code>.</li>
+      <li bi>Boot menu → <strong>TWRP</strong> (or <code>fastboot oem reboot-recovery</code>).<fr>Menu de démarrage → <strong>TWRP</strong> (ou <code>fastboot oem reboot-recovery</code>).</li>
+      <li bi><strong>First install only</strong> (coming from the stock or another ROM): <em>Wipe → Format Data</em>, type <code>yes</code>. LineageOS cannot start on the stock <code>/data</code>.<fr><strong>Première installation seulement</strong> (en venant du stock ou d'une autre ROM) : <em>Wipe → Format Data</em>, tapez <code>yes</code>. LineageOS ne peut pas démarrer sur le <code>/data</code> du stock.</li>
+      <li bi><em>Install</em> → the zip on the USB drive or microSD → swipe. It writes <code>system</code> (read back and checked), <code>boot</code> and the kernel's Wi-Fi / Bluetooth / GPS / FM modules into <code>/vendor/lib/modules</code> (originals backed up in <code>/sdcard/LibreHU/backup</code>). It keeps the boot image type you have (with or without the boot menu); <code>bootmenu</code> or <code>plain</code> in the zip's name forces one.<fr><em>Install</em> → le zip de la clé USB ou de la microSD → glisser. Il écrit <code>system</code> (relu et vérifié), <code>boot</code> et les modules Wi-Fi / Bluetooth / GPS / FM du noyau dans <code>/vendor/lib/modules</code> (originaux sauvegardés dans <code>/sdcard/LibreHU/backup</code>). Il garde le type d'image de boot que vous avez (avec ou sans le menu de démarrage) ; <code>bootmenu</code> ou <code>plain</code> dans le nom du zip en impose un.</li>
+      <li bi><em>Reboot → System</em>. The first boot takes a few minutes. The boot menu (TWRP / Android / Fastboot) starts Android by itself after 3 seconds.<fr><em>Reboot → System</em>. Le premier démarrage prend quelques minutes. Le menu de démarrage (TWRP / Android / Fastboot) lance Android tout seul au bout de 3 secondes.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="firstboot">
+  <div class="wrap">
+    <h2 bi>First boot<fr>Premier démarrage</h2>
+    <ul>
+      <li bi>Choose <strong>LibreHU Launcher</strong> as the home screen, <em>Always</em> (Trebuchet stays as a fallback).<fr>Choisissez <strong>LibreHU Launcher</strong> comme écran d'accueil, <em>Toujours</em> (Trebuchet reste en secours).</li>
+      <li bi>Installed by themselves: the KernelSU Next manager, Aurora Store and LibreHU Helper (normal apps: they update themselves, and stay away once uninstalled).<fr>Installés tout seuls : le gestionnaire KernelSU Next, Aurora Store et LibreHU Helper (applis ordinaires : elles se mettent à jour seules, et ne reviennent pas une fois désinstallées).</li>
+      <li bi><strong>LibreHU service gets root</strong> from KernelSU without asking (calibration, touch keys, ARM2, settings). A choice you make later in the KernelSU manager, refusal included, is kept.<fr><strong>LibreHU service reçoit le root</strong> de KernelSU sans le demander (calibration, boutons tactiles, ARM2, réglages). Un choix fait ensuite dans le gestionnaire KernelSU, refus compris, est gardé.</li>
+      <li bi>The touch calibration of your panel is applied at every boot, from <code>/jancar/config/pointercal*.xml</code>.<fr>La calibration du tactile de votre dalle est appliquée à chaque démarrage, depuis <code>/jancar/config/pointercal*.xml</code>.</li>
+      <li bi>The Wi-Fi country comes from the language chosen in the setup (for instance French (France) → FR), from the next boot on; <code>CN</code> (as on the stock) until then.<fr>Le pays du Wi-Fi vient de la langue choisie à l'installation (par exemple français (France) → FR), à partir du démarrage suivant ; <code>CN</code> (comme le stock) jusque-là.</li>
+      <li bi>The panel is a 720 × 1280 portrait panel turned to landscape (90°). Upside down? <code>adb root</code>, <code>adb shell setprop persist.librehu.display_rotation 270</code>, <code>adb reboot</code>.<fr>La dalle est une dalle portrait 720 × 1280 tournée en paysage (90°). À l'envers ? <code>adb root</code>, <code>adb shell setprop persist.librehu.display_rotation 270</code>, <code>adb reboot</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="updates">
+  <div class="wrap">
+    <h2 bi>Updates<fr>Mises à jour</h2>
+    <p bi><em>Settings → System → Updates</em> (the LineageOS app): it reads the feed of the GitHub builds, downloads the next one, reboots into TWRP and installs it. Since the build of 13/11/2026; first tries in progress, tell us on Discord if it fails. By hand: flash the new zip from TWRP, <strong>without</strong> Format Data.<fr><em>Paramètres → Système → Mises à jour</em> (l'appli de LineageOS) : elle lit le flux des builds GitHub, télécharge le suivant, redémarre dans TWRP et l'installe. Depuis le build du 13/11/2026 ; premiers essais en cours, dites-le sur Discord si ça échoue. À la main : flashez le nouveau zip depuis TWRP, <strong>sans</strong> Format Data.</p>
+  </div>
+</section>
+
+<section id="trouble">
+  <div class="wrap">
+    <h2 bi>Troubleshooting<fr>Dépannage</h2>
+    <div class="table">
+      <table>
+        <thead><tr><th lang="en">Symptom</th><th lang="fr">Symptôme</th><th lang="en">What to do</th><th lang="fr">Que faire</th></tr></thead>
+        <tbody>
+          <tr><td bi>Stays on the maker's logo<fr>Reste sur le logo du constructeur</td><td bi>vbmeta still verifies: flash it with both flags (<a href="#vbmeta">fastboot or SP Flash Tool</a>).<fr>vbmeta vérifie encore : flashez-le avec les deux drapeaux (<a href="#vbmeta">fastboot ou SP Flash Tool</a>).</td></tr>
+          <tr><td bi>The zip stops on "vbmeta : verification active"<fr>Le zip s'arrête sur « vbmeta : verification active »</td><td bi>Same: vbmeta with both flags first, then the zip again. Nothing was written.<fr>Pareil : vbmeta avec les deux drapeaux d'abord, puis le zip à nouveau. Rien n'a été écrit.</td></tr>
+          <tr><td bi>Boot menu, then fastboot<fr>Menu de démarrage, puis fastboot</td><td bi>Android's init stopped. Without cutting the power: <code>fastboot oem reboot-recovery</code>, then in TWRP <code>adb pull /sys/fs/pstore</code> and send the log on Discord.<fr>L'init d'Android s'est arrêté. Sans couper le courant : <code>fastboot oem reboot-recovery</code>, puis dans TWRP <code>adb pull /sys/fs/pstore</code> et envoyez le journal sur Discord.</td></tr>
+          <tr><td bi>Touch outside the screen<fr>Tactile hors de l'écran</td><td bi>Panel without calibration: <code>adb logcat -s LibreHU-Touch</code> and <code>adb shell head -c 19 /proc/gt9xx_config</code> (panel id), to send.<fr>Dalle sans calibration : <code>adb logcat -s LibreHU-Touch</code> et <code>adb shell head -c 19 /proc/gt9xx_config</code> (identifiant de la dalle), à envoyer.</td></tr>
+          <tr><td bi>Green video (Android Auto, players)<fr>Vidéo verte (Android Auto, lecteurs)</td><td bi>Known issue (ARM2 hand-over). A standby (ignition off, then on) brings the picture back.<fr>Problème connu (passation de l'ARM2). Une veille (contact coupé puis remis) ramène l'image.</td></tr>
+          <tr><td bi>Black screen with the backlight on<fr>Écran noir rétroéclairé</td><td bi>After the screen turned off: known issue (touch wake-up); a USB mouse gets out of it. Installed before 13/11: <code>adb shell locksettings set-disabled true</code> removes the lock screen.<fr>Après une extinction de l'écran : problème connu (réveil du tactile) ; une souris USB permet d'en sortir. Installée avant le 13/11 : <code>adb shell locksettings set-disabled true</code> retire l'écran de verrouillage.</td></tr>
+          <tr><td bi>Wi-Fi network not found<fr>Réseau Wi-Fi introuvable</td><td bi>Country: choose your language and region in Settings, then reboot.<fr>Pays : choisissez votre langue et votre région dans les Paramètres, puis redémarrez.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" bi>Reports: <strong>LibreHU Helper</strong> (installed with the ROM) makes a full report. It contains your unit's serial number: share it privately.<fr>Rapports : <strong>LibreHU Helper</strong> (installé avec la ROM) fait un rapport complet. Il contient le numéro de série de votre autoradio : partagez-le en privé.</p>
+  </div>
+</section>
+
+<section id="stock">
+  <div class="wrap">
+    <h2 bi>Back to stock<fr>Retour au stock</h2>
+    <p bi>TWRP → <em>Restore</em> your backup (Boot, System Image, Vendor Image), then <em>Wipe → Format Data</em> and reboot. The vbmeta with both flags can stay: the stock starts with it. Without TWRP: your SP Flash Tool readback, <em>Download Only</em>, partitions one by one.<fr>TWRP → <em>Restore</em> de votre sauvegarde (Boot, System Image, Vendor Image), puis <em>Wipe → Format Data</em> et redémarrage. Le vbmeta aux deux drapeaux peut rester : le stock démarre avec. Sans TWRP : votre lecture SP Flash Tool, <em>Download Only</em>, partition par partition.</p>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <h2 bi>Build it yourself<fr>La compiler soi-même</h2>
+    <p bi>Device tree: branch <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/tree/lineage-16.0"><code>lineage-16.0</code></a>. Step-by-step guide, from a Proxmox LXC container or an Ubuntu PC: <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/blob/lineage-16.0/docs/BUILD.en.md">BUILD.en.md</a> (<a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/blob/lineage-16.0/docs/BUILD.md">français</a>), short version: <a href="tutorials.html#t-buildlineage">tutorial</a>; technical notes: <a href="developers.html">Developers</a>. Installation guide in the repository: <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/blob/lineage-16.0/docs/INSTALL.en.md">INSTALL.en.md</a>.<fr>Arbre de l'appareil : branche <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/tree/lineage-16.0"><code>lineage-16.0</code></a>. Guide pas à pas, depuis un conteneur LXC Proxmox ou un PC Ubuntu : <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/blob/lineage-16.0/docs/BUILD.md">BUILD.md</a> (<a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/blob/lineage-16.0/docs/BUILD.en.md">anglais</a>), version courte : <a href="tutorials.html#t-buildlineage">tuto</a> ; notes techniques : <a href="developers.html">Développeurs</a>. Guide d'installation dans le dépôt : <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/blob/lineage-16.0/docs/INSTALL.md">INSTALL.md</a>.</p>
+  </div>
+</section>
+</main>
+
+{{foot}}

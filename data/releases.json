@@ -1018,5 +1018,45 @@
    "commit": "main",
    "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-1"
   }
+ ],
+ "lineage": [
+  {
+   "tag": "lineage-16.0-20261113-0343-befe5a3",
+   "date": "2026-11-13T03:43:47Z",
+   "commit": "befe5a34f835803018bd4cfabc95e19fb4c033f4",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261113-0343-befe5a3",
+   "assets": [
+    {
+     "name": "boot-librehu-bootmenu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261113-0343-befe5a3/boot-librehu-bootmenu.img",
+     "size": 10485760
+    },
+    {
+     "name": "boot-librehu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261113-0343-befe5a3/boot-librehu.img",
+     "size": 10485760
+    },
+    {
+     "name": "build.prop",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261113-0343-befe5a3/build.prop",
+     "size": 2832
+    },
+    {
+     "name": "LibreHU-LineageOS-16.0-ac8257_demo-20261113-befe5a3.zip",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261113-0343-befe5a3/LibreHU-LineageOS-16.0-ac8257_demo-20261113-befe5a3.zip",
+     "size": 714028667
+    },
+    {
+     "name": "SHA256SUMS",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261113-0343-befe5a3/SHA256SUMS",
+     "size": 455
+    },
+    {
+     "name": "system.img.zst",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261113-0343-befe5a3/system.img.zst",
+     "size": 630604055
+    }
+   ]
+  }
  ]
 }

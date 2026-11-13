@@ -6,6 +6,7 @@ Site de LibreHU, publié par GitHub Pages sur <https://librehu.github.io>.
 | Page | Content |
 |---|---|
 | `index.html` | features, downloads (latest build of each app and edition), install, compatibility, roadmap (custom kernel, LineageOS, other platforms), Discord, FAQ |
+| `lineageos.html` | LineageOS 16.0 ROM: status, latest builds (from the GitHub releases of the device tree), vbmeta, installation with TWRP, updates, troubleshooting, back to stock |
 | `docs.html` | user documentation of every app |
 | `tutorials.html` | step-by-step tutorials |
 | `developers.html` | technical reference: hardware, MCU and CAN protocols, service API, Bridge protocol, build, CI, kernel, TWRP, LineageOS, porting |

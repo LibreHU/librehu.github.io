@@ -7,6 +7,7 @@ Shorthand in the sources, expanded into the two languages the pages carry (CSS s
     (any tag: h1-h4, p, li, td, th, summary, figcaption…; one element, so ids and table columns stay single;
     the tag must not contain itself)
   {{head:<en title>|<fr title>|<description>}}, {{bar:<page>}}, {{foot}}: shared head, top bar, footer.
+  {{lineage}}: the LineageOS builds (files of the latest, older ones), from data/releases.json ("lineage").
   {{apps}}, {{zips}}, {{changelog}}: download tables and changelog, from data/releases.json and data/changelog.json
     (written by tools/releases.py from what LibreHU Apps reads) and tools/site.json.
 
@@ -55,6 +56,7 @@ HEAD = """<!doctype html>
 
 NAV = [
     ("index.html#download", "Download", "Télécharger"),
+    ("lineageos.html", "LineageOS", "LineageOS"),
     ("changelog.html", "Changelog", "Nouveautés"),
     ("docs.html", "Docs", "Docs"),
     ("engine.html", "Engine", "Moteur"),
@@ -462,8 +464,53 @@ def can_bars(can: dict) -> str:
     return "\n        ".join(out)
 
 
+LINEAGE_RELEASES = f"{WEB}/LibreHU/android_device_alps_ac8257_demo/releases"
+
+
+def size_mb(n: int) -> str:
+    if n < 1e6:
+        return both(f"{max(1, round(n / 1e3))} KB", f"{max(1, round(n / 1e3))} Ko")
+    return both(f"{n / 1e6:,.0f} MB", f"{n / 1e6:,.0f} Mo".replace(",", " "))
+
+
+def lineage_block(rel) -> str:
+    """{{lineage}}: the latest LineageOS build (its files) and the older ones, from data/releases.json."""
+    builds = (rel or {}).get("lineage") or []
+    if not builds:
+        return f'<p><a href="{LINEAGE_RELEASES}">{both("Builds on GitHub", "Builds sur GitHub")}</a></p>'
+    b = builds[0]
+    what = {
+        ".zip": ("TWRP zip (system, boot, kernel modules): <strong>this is the one to install</strong>",
+                 "Zip TWRP (system, boot, modules du noyau) : <strong>c'est celui à installer</strong>"),
+        "system.img.zst": ("System image for fastboot (zstd: unpack before flashing)",
+                           "Image system pour fastboot (zstd : à décompresser avant de flasher)"),
+        "boot-librehu-bootmenu.img": ("Boot image with the boot menu (TWRP / Android / Fastboot)",
+                                      "Image de boot avec le menu de démarrage (TWRP / Android / Fastboot)"),
+        "boot-librehu.img": ("Boot image without the menu", "Image de boot sans le menu"),
+        "SHA256SUMS": ("Checksums of the files", "Empreintes des fichiers"),
+        "build.prop": ("Build properties", "Propriétés du build"),
+    }
+    rows = []
+    for a in b.get("assets", []):
+        name = a.get("name", "")
+        en, fr = next((v for k, v in what.items() if name == k or (k == ".zip" and name.endswith(".zip"))), ("", ""))
+        rows.append(f'<tr><td><a href="{esc(a.get("url", ""))}"><code>{esc(name)}</code></a></td>'
+                    f'<td>{size_mb(a.get("size", 0))}</td><td>{both(en, fr)}</td></tr>')
+    older = "".join(f'<li><a href="{esc(o.get("url", ""))}">{esc(o.get("tag", ""))}</a> · {short_date(o.get("date", ""))}</li>'
+                    for o in builds[1:])
+    head = both("File", "Fichier"), both("Size", "Taille"), both("What it is", "Ce que c'est")
+    return (f'<p class="sub">{both("Latest build:", "Dernier build :")} <a href="{esc(b.get("url", ""))}"><strong>{esc(b.get("tag", ""))}</strong></a>'
+            f' · {short_date(b.get("date", ""))} · {both("tree", "arbre")} <code>{esc(b.get("commit", "")[:7])}</code></p>'
+            f'<div class="table"><table><thead><tr><th>{head[0]}</th><th>{head[1]}</th><th>{head[2]}</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div>'
+            + (f'<details><summary>{both("Older builds", "Builds précédents")}</summary><ul>{older}</ul></details>' if older else "")
+            + f'<p class="sub"><a href="{LINEAGE_RELEASES}">{both("All the builds on GitHub", "Tous les builds sur GitHub")}</a></p>')
+
+
 def generated(text: str) -> str:
-    """{{apps}}, {{zips}}, {{changelog}} filled from data/ (left as a link to GitHub when it is missing)."""
+    """{{apps}}, {{zips}}, {{changelog}}, {{lineage}} filled from data/ (left as a link to GitHub when it is missing)."""
+    if "{{lineage}}" in text:
+        text = text.replace("{{lineage}}", lineage_block(load(ROOT / "data" / "releases.json")))
     if not any(k in text for k in ("{{apps}}", "{{zips}}", "{{changelog}}", "{{can_cars}}", "{{can_bars}}", "{{can_n_")):
         return text
     if "{{can_bars}}" in text or "{{can_n_" in text:

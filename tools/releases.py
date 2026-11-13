@@ -322,9 +322,33 @@ def events(state: dict, entries: dict, releases: dict):
         state["seeded"].append("events")
 
 
+LINEAGE_REPO = "LibreHU/android_device_alps_ac8257_demo"
+LINEAGE_PREFIX = "lineage-16.0-2"   # lineage-16.0-<date>-<commit>; lineage-16.0-ota (the Updater feed) is left out
+
+
+def lineage_builds() -> list:
+    """LineageOS 16.0 builds published by the CI of the device repository: their files (TWRP zip signed with the ROM's
+    key, system.img.zst, boot images, SHA256SUMS), newest first, the last 10."""
+    out = []
+    text = get(f"{API}/repos/{LINEAGE_REPO}/releases?per_page=100", api=True)
+    for r in json.loads(text) if text else []:
+        tag = r.get("tag_name", "")
+        if r.get("draft") or not tag.startswith(LINEAGE_PREFIX):
+            continue
+        out.append({
+            "tag": tag,
+            "date": r.get("published_at") or r.get("created_at") or "",
+            "commit": r.get("target_commitish", ""),
+            "url": r.get("html_url", ""),
+            "assets": [{"name": a.get("name", ""), "url": a.get("browser_download_url", ""), "size": a.get("size", 0)}
+                       for a in r.get("assets", [])],
+        })
+    return sorted(out, key=lambda b: b["date"], reverse=True)[:10]
+
+
 def main() -> None:
     DATA.mkdir(exist_ok=True)
-    releases = {"apps": apps(), "zips": zips(), "twrp": twrp_builds()}
+    releases = {"apps": apps(), "zips": zips(), "twrp": twrp_builds(), "lineage": lineage_builds()}
     path = DATA / "changelog.json"
     old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     state = {"cursors": old.get("cursors", {}), "seeded": old.get("seeded", [])}

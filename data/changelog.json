@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-11T17:37:47Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-12T08:56:09Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-13T07:46:16Z",
+  "LibreHU/LibreHU-service@main": "2026-11-13T16:20:07Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-12T05:29:27Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-12T05:29:29Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-12T05:29:25Z",
@@ -30,12 +30,18 @@
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-06T22:59:38Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-06T17:26:28Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-01T16:18:52Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-13T07:40:02Z"
+  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-13T16:19:31Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"c":"zips","d":"2026-11-13T17:52:38Z","g":"jancar-settings","id":"zip:jancar-settings:2e14010-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"2e14010-main"},
+{"c":"service","d":"2026-11-13T16:23:58Z","id":"app:service:main:208","k":"release","n":"2e14010-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":208},
+{"a":"2026-11-13T16:20:07Z","b":["main"],"c":"service","d":"2026-11-13T16:20:07Z","k":"commit","m":"Touch keys: screen-off hint and docs follow the kernel (touch panel kept awake while the screen is off, reset when it comes back)","s":"2e1401067642b0b4c7c4722a77543dbd0ffd5249","u":"https://github.com/LibreHU/LibreHU-service/commit/2e1401067642b0b4c7c4722a77543dbd0ffd5249"},
+{"a":"2026-11-13T16:19:31Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-13T16:19:31Z","k":"commit","m":"touch: kept awake while the screen is off again, now reset when the screen comes back (front panel power key can wake the locked unit)","s":"f8336f938f8b379efbababefaeab7c843c99275f","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/f8336f938f8b379efbababefaeab7c843c99275f"},
+{"a":"2026-11-13T16:14:12Z","b":["main"],"c":"service","d":"2026-11-13T16:14:12Z","k":"commit","m":"Touch keys: the screen-off hint and docs say the touch panel sleeps with the screen by default (kernel option mtk_tpd.sleep_on_blank=0 being tested)","s":"90d20f83b636e07bb7f74aaca84c513735a1a6dc","u":"https://github.com/LibreHU/LibreHU-service/commit/90d20f83b636e07bb7f74aaca84c513735a1a6dc"},
+{"a":"2026-11-13T16:13:01Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-13T16:13:01Z","k":"commit","m":"touch: back to the controller's sleep on blank by default (touch dead after the screen came back on the UJC201)","s":"83f4d4669a2b3d932e584dcc007a666591f443a0","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/83f4d4669a2b3d932e584dcc007a666591f443a0"},
 {"c":"kernel","d":"2026-11-13T09:43:29Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r151-82d754720","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r151-82d754720"},
 {"c":"zips","d":"2026-11-13T09:43:29Z","g":"jancar-settings","id":"zip:jancar-settings:bb09712-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"bb09712-main"},
 {"c":"service","d":"2026-11-13T07:50:29Z","id":"app:service:main:206","k":"release","n":"bb09712-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":206},

@@ -15,7 +15,7 @@
 <section id="contents">
   <div class="wrap">
     <nav class="toc" aria-label="Contents">
-      <a href="#status"><t>Status<fr>État</t></a> · <a href="#download"><t>Download<fr>Télécharger</t></a> · <a href="#before"><t>Before you start<fr>Avant de commencer</t></a> · <a href="#vbmeta">vbmeta</a> · <a href="#install"><t>Install<fr>Installer</t></a> · <a href="#firstboot"><t>First boot<fr>Premier démarrage</t></a> · <a href="#updates"><t>Updates<fr>Mises à jour</t></a> · <a href="#trouble"><t>Troubleshooting<fr>Dépannage</t></a> · <a href="#stock"><t>Back to stock<fr>Retour au stock</t></a> · <a href="#build"><t>Build it yourself<fr>La compiler soi-même</t></a>
+      <a href="#status"><t>Status<fr>État</t></a> · <a href="#download"><t>Download<fr>Télécharger</t></a> · <a href="#changes"><t>What's new<fr>Nouveautés</t></a> · <a href="#before"><t>Before you start<fr>Avant de commencer</t></a> · <a href="#vbmeta">vbmeta</a> · <a href="#install"><t>Install<fr>Installer</t></a> · <a href="#firstboot"><t>First boot<fr>Premier démarrage</t></a> · <a href="#updates"><t>Updates<fr>Mises à jour</t></a> · <a href="#trouble"><t>Troubleshooting<fr>Dépannage</t></a> · <a href="#stock"><t>Back to stock<fr>Retour au stock</t></a> · <a href="#build"><t>Build it yourself<fr>La compiler soi-même</t></a>
     </nav>
   </div>
 </section>
@@ -42,6 +42,49 @@
     <p class="sub" bi>Every build of the CI (branch <code>lineage-16.0</code> of the device tree) is published on GitHub; this table follows the latest one. The vendor partition is not in it: it stays the one of your unit.<fr>Chaque build de la CI (branche <code>lineage-16.0</code> de l'arbre de l'appareil) est publié sur GitHub ; ce tableau suit le dernier. La partition vendor n'y est pas : elle reste celle de votre autoradio.</p>
     {{lineage}}
     <p class="note" bi>Check the zip before flashing: its SHA256 is in <code>SHA256SUMS</code> (Windows: <code>certutil -hashfile file.zip SHA256</code>; Linux / macOS: <code>sha256sum file.zip</code>).<fr>Vérifiez le zip avant de le flasher : son SHA256 est dans <code>SHA256SUMS</code> (Windows : <code>certutil -hashfile fichier.zip SHA256</code> ; Linux / macOS : <code>sha256sum fichier.zip</code>).</p>
+  </div>
+</section>
+
+<section id="changes">
+  <div class="wrap">
+    <h2 bi>What's new<fr>Nouveautés</h2>
+    <p class="sub" bi>Each build in short, newest first; in bold what to try first. The Updates app opens this list from its menu (⋮ → <em>Show changelog</em>). Every commit: <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/commits/lineage-16.0">device tree</a>.<fr>Chaque build en bref, du plus récent au plus ancien ; en gras ce qu'il faut essayer d'abord. L'appli Mises à jour ouvre cette liste depuis son menu (⋮ → <em>Afficher l'historique des modifications</em>). Tous les commits : <a href="https://github.com/LibreHU/android_device_alps_ac8257_demo/commits/lineage-16.0">arbre de l'appareil</a>.</p>
+    <div class="changes">
+      <div class="card"><span class="tag"><t>next build<fr>prochain build</t></span><h3>14/11/2026</h3>
+        <ul>
+          <li bi><strong>Sound back</strong>: the amplifier stayed muted, LibreHU service could not open <code>/dev/gpios_ioctl</code> (found by Reo Au In).<fr><strong>Son revenu</strong> : l'ampli restait coupé, LibreHU service ne pouvait pas ouvrir <code>/dev/gpios_ioctl</code> (trouvé par Reo Au In).</li>
+          <li bi><strong>Bluetooth settings no longer crash</strong>: the Connected devices page needs Android's printing feature, which was not declared.<fr><strong>Les Paramètres Bluetooth ne plantent plus</strong> : la page Appareils connectés a besoin de la fonctionnalité d'impression d'Android, qui n'était pas déclarée.</li>
+          <li bi><strong>Wired Android Auto</strong> and USB devices in apps: USB host mode declared (no more "this head unit does not support USB host mode").<fr><strong>Android Auto filaire</strong> et appareils USB dans les applis : mode hôte USB déclaré (fini « cet autoradio ne prend pas en charge le mode hôte USB »).</li>
+          <li bi><strong>USB tethering of recent Android phones</strong> (RNDIS of class ef/04/01) recognised by the kernel and LibreHU service; IP settings (DHCP or static) of USB Ethernet adapters, Android and iPhone tethering in LibreHU service → Network.<fr><strong>Partage de connexion USB des téléphones Android récents</strong> (RNDIS de classe ef/04/01) reconnu par le noyau et LibreHU service ; réglages IP (DHCP ou fixe) des adaptateurs Ethernet USB et des partages Android et iPhone dans LibreHU service → Réseau.</li>
+          <li bi>360° camera kits: Autochips' watermark service and <code>atcavm_server</code> back (the vendor AVM HAL looks for them).<fr>Kits caméra 360° : service watermark et <code>atcavm_server</code> d'Autochips remis (le HAL AVM du vendor les cherche).</li>
+          <li bi>ViPER4Android driver installed or updated by the zip: no separate zip any more.<fr>Pilote de ViPER4Android installé ou mis à jour par le zip : plus de zip à part.</li>
+          <li bi>Multitouch declared (5 points): store apps that require it can be installed. Bluetooth auto-connect no longer loops after a failed connection; widgets no longer crash at boot; <code>/dev/di</code> and the I²C buses opened as on the stock.<fr>Multitouch déclaré (5 points) : les applis des stores qui l'exigent s'installent. La reconnexion Bluetooth automatique ne boucle plus après un échec ; les widgets ne plantent plus au démarrage ; <code>/dev/di</code> et les bus I²C ouverts comme sur le stock.</li>
+          <li bi>Known: a WPA3-only Wi-Fi network cannot be joined (WPA3 came with Android 10): set the router to WPA2/WPA3 mixed mode.<fr>Connu : un réseau Wi-Fi en WPA3 seul ne peut pas être rejoint (le WPA3 est arrivé avec Android 10) : régler la borne en mode mixte WPA2/WPA3.</li>
+        </ul></div>
+      <div class="card"><span class="tag"><code>845e87b</code></span><h3>13/11/2026</h3>
+        <ul>
+          <li bi><strong>Front panel power key</strong> (touch zone) wakes the locked unit; long press = Android's power menu (LibreHU service → Panel).<fr><strong>Touche power de la façade</strong> (zone tactile) : rallume l'autoradio verrouillé ; appui long = menu power d'Android (LibreHU service → Dalle).</li>
+          <li bi>Touch dead after a screen-off in <code>171f952</code>: fixed (kernel r153 resets the panel when the screen comes back).<fr>Tactile mort après une extinction de l'écran dans <code>171f952</code> : corrigé (le noyau r153 réinitialise la dalle au rallumage).</li>
+        </ul></div>
+      <div class="card"><span class="tag"><code>171f952</code></span><h3>13/11/2026</h3>
+        <ul>
+          <li bi><strong>Updates app</strong>: the install in TWRP works ("extraction du zip impossible" before).<fr><strong>Appli Mises à jour</strong> : l'installation dans TWRP marche (« extraction du zip impossible » avant).</li>
+          <li bi>LineageOS's AudioFX equalizer removed (it clashed with ViPER4Android); battery shown at 100 % (a head unit has no battery gauge: 0 % and low-battery warnings before); on-screen keyboard back (the kernel made up a physical "MCE IR" keyboard).<fr>Égaliseur AudioFX de LineageOS retiré (en conflit avec ViPER4Android) ; batterie affichée à 100 % (un autoradio n'a pas de jauge : 0 % et alertes de batterie faible avant) ; clavier virtuel revenu (le noyau inventait un clavier physique « MCE IR »).</li>
+        </ul></div>
+      <div class="card"><span class="tag"><code>96472d7</code></span><h3>13/11/2026</h3>
+        <ul>
+          <li bi><strong>Hardware video no longer green</strong> (YouTube, Android Auto, scrcpy): the vendor rear camera HAL opens <code>/dev/backcardrv</code> again and takes the display back from the ARM2 core.<fr><strong>Vidéo matérielle plus verte</strong> (YouTube, Android Auto, scrcpy) : le HAL caméra de recul du vendor ouvre de nouveau <code>/dev/backcardrv</code> et reprend l'affichage au cœur ARM2.</li>
+        </ul></div>
+      <div class="card"><span class="tag"><code>1ec65bc</code></span><h3>13/11/2026</h3>
+        <ul>
+          <li bi>Root granted at boot to every LibreHU app and ViPER4Android (KernelSU Next shows no prompt).<fr>Root accordé au démarrage à toutes les applis LibreHU et à ViPER4Android (KernelSU Next n'affiche pas de demande).</li>
+        </ul></div>
+      <div class="card"><span class="tag"><code>befe5a3</code></span><h3>13/11/2026</h3>
+        <ul>
+          <li bi>First published build. Wi-Fi country from the setup language (scans without a country crashed the kernel); USB Ethernet; no lock screen; bigger status and navigation bars.<fr>Premier build publié. Pays du Wi-Fi d'après la langue choisie (les scans sans pays faisaient planter le noyau) ; Ethernet USB ; pas d'écran de verrouillage ; barres d'état et de navigation plus grandes.</li>
+          <li bi>Aurora Store and LibreHU Helper installed at first boot; builds on GitHub, updates through the Updates app.<fr>Aurora Store et LibreHU Helper installés au premier démarrage ; builds sur GitHub, mises à jour par l'appli Mises à jour.</li>
+        </ul></div>
+    </div>
   </div>
 </section>
 
@@ -85,7 +128,7 @@ $b[123] = $b[123] -bor 3
       <li bi>Flash vbmeta with both flags (<a href="#vbmeta">vbmeta</a>), then <code>fastboot reboot</code>.<fr>Flashez vbmeta avec les deux drapeaux (<a href="#vbmeta">vbmeta</a>), puis <code>fastboot reboot</code>.</li>
       <li bi>Boot menu → <strong>TWRP</strong> (or <code>fastboot oem reboot-recovery</code>).<fr>Menu de démarrage → <strong>TWRP</strong> (ou <code>fastboot oem reboot-recovery</code>).</li>
       <li bi><strong>First install only</strong> (coming from the stock or another ROM): <em>Wipe → Format Data</em>, type <code>yes</code>. LineageOS cannot start on the stock <code>/data</code>.<fr><strong>Première installation seulement</strong> (en venant du stock ou d'une autre ROM) : <em>Wipe → Format Data</em>, tapez <code>yes</code>. LineageOS ne peut pas démarrer sur le <code>/data</code> du stock.</li>
-      <li bi><em>Install</em> → the zip on the USB drive or microSD → swipe. It writes <code>system</code> (read back and checked), <code>boot</code> and the kernel's Wi-Fi / Bluetooth / GPS / FM modules into <code>/vendor/lib/modules</code> (originals backed up in <code>/sdcard/LibreHU/backup</code>). It keeps the boot image type you have (with or without the boot menu); <code>bootmenu</code> or <code>plain</code> in the zip's name forces one.<fr><em>Install</em> → le zip de la clé USB ou de la microSD → glisser. Il écrit <code>system</code> (relu et vérifié), <code>boot</code> et les modules Wi-Fi / Bluetooth / GPS / FM du noyau dans <code>/vendor/lib/modules</code> (originaux sauvegardés dans <code>/sdcard/LibreHU/backup</code>). Il garde le type d'image de boot que vous avez (avec ou sans le menu de démarrage) ; <code>bootmenu</code> ou <code>plain</code> dans le nom du zip en impose un.</li>
+      <li bi><em>Install</em> → the zip on the USB drive or microSD → swipe. It writes <code>system</code> (read back and checked), <code>boot</code> and the kernel's Wi-Fi / Bluetooth / GPS / FM modules into <code>/vendor/lib/modules</code> (originals backed up in <code>/sdcard/LibreHU/backup</code>). It keeps the boot image type you have (with or without the boot menu); <code>bootmenu</code> or <code>plain</code> in the zip's name forces one. It also installs or updates the ViPER4Android driver in <code>/vendor</code> (unless <code>/sdcard/LibreHU/no-viper</code> exists, left by the <code>viper4android-re-restore</code> zip).<fr><em>Install</em> → le zip de la clé USB ou de la microSD → glisser. Il écrit <code>system</code> (relu et vérifié), <code>boot</code> et les modules Wi-Fi / Bluetooth / GPS / FM du noyau dans <code>/vendor/lib/modules</code> (originaux sauvegardés dans <code>/sdcard/LibreHU/backup</code>). Il garde le type d'image de boot que vous avez (avec ou sans le menu de démarrage) ; <code>bootmenu</code> ou <code>plain</code> dans le nom du zip en impose un. Il installe ou met à jour aussi le pilote de ViPER4Android dans <code>/vendor</code> (sauf si <code>/sdcard/LibreHU/no-viper</code> existe, laissé par le zip <code>viper4android-re-restore</code>).</li>
       <li bi><em>Reboot → System</em>. The first boot takes a few minutes. The boot menu (TWRP / Android / Fastboot) starts Android by itself after 3 seconds.<fr><em>Reboot → System</em>. Le premier démarrage prend quelques minutes. Le menu de démarrage (TWRP / Android / Fastboot) lance Android tout seul au bout de 3 secondes.</li>
     </ol>
   </div>
@@ -108,7 +151,7 @@ $b[123] = $b[123] -bor 3
 <section id="updates">
   <div class="wrap">
     <h2 bi>Updates<fr>Mises à jour</h2>
-    <p bi><em>Settings → System → Updates</em> (the LineageOS app): it reads the feed of the GitHub builds, downloads the next one, reboots into TWRP and installs it. Since the build of 13/11/2026; up to <code>96472d7</code> the install in TWRP failed ("extraction du zip impossible": the zip misread uncrypt's block map), fixed in the next build. By hand: flash the new zip from TWRP, <strong>without</strong> Format Data.<fr><em>Paramètres → Système → Mises à jour</em> (l'appli de LineageOS) : elle lit le flux des builds GitHub, télécharge le suivant, redémarre dans TWRP et l'installe. Depuis le build du 13/11/2026 ; jusqu'à <code>96472d7</code> l'installation dans TWRP échouait (« extraction du zip impossible » : le zip lisait mal le block map d'uncrypt), corrigé dans le build suivant. À la main : flashez le nouveau zip depuis TWRP, <strong>sans</strong> Format Data.</p>
+    <p bi><em>Settings → System → Updates</em> (the LineageOS app): it reads the feed of the GitHub builds, downloads the next one, reboots into TWRP and installs it. Since the build of 13/11/2026; up to <code>96472d7</code> the install in TWRP failed ("extraction du zip impossible": the zip misread uncrypt's block map), fixed in the next build. By hand: flash the new zip from TWRP, <strong>without</strong> Format Data. What each build changes: <a href="#changes">What's new</a>, also opened by the app's menu (⋮ → <em>Show changelog</em>) from the build of 14/11/2026 on (before, it led to a missing page of lineageos.org).<fr><em>Paramètres → Système → Mises à jour</em> (l'appli de LineageOS) : elle lit le flux des builds GitHub, télécharge le suivant, redémarre dans TWRP et l'installe. Depuis le build du 13/11/2026 ; jusqu'à <code>96472d7</code> l'installation dans TWRP échouait (« extraction du zip impossible » : le zip lisait mal le block map d'uncrypt), corrigé dans le build suivant. À la main : flashez le nouveau zip depuis TWRP, <strong>sans</strong> Format Data. Ce que change chaque build : <a href="#changes">Nouveautés</a>, ouvert aussi par le menu de l'appli (⋮ → <em>Afficher l'historique des modifications</em>) à partir du build du 14/11/2026 (avant, il menait à une page absente de lineageos.org).</p>
   </div>
 </section>
 

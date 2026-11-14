@@ -125,6 +125,11 @@ h3 { margin: 0 0 6px; font-size: 18px; }
 .card p { margin: 0; color: var(--text-dim); font-size: 15px; }
 .card .tag { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 1px 8px; margin-bottom: 8px; }
 
+/* ROM changelog (lineageos.html#changes): one card per build, newest first */
+.changes { display: grid; gap: 14px; max-width: 900px; }
+.changes ul { margin: 6px 0 0; padding-left: 20px; color: var(--text-dim); font-size: 15px; }
+.changes li + li { margin-top: 4px; }
+
 /* Tables */
 .table { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 table { border-collapse: collapse; width: 100%; font-size: 15px; }

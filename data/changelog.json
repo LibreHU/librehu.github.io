@@ -17,10 +17,10 @@
   "LibreHU/LibreHU-dialer-app@librehu-service": "2026-11-12T08:29:47Z",
   "LibreHU/LibreHU-dialer-app@main": "2026-11-12T08:29:39Z",
   "LibreHU/LibreHU-disc-app@main": "2026-11-14T01:39:39Z",
-  "LibreHU/LibreHU-flashablesZips@main": "2026-11-11T17:37:47Z",
+  "LibreHU/LibreHU-flashablesZips@main": "2026-11-14T09:52:16Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-12T08:56:09Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-14T06:32:48Z",
+  "LibreHU/LibreHU-service@main": "2026-11-14T12:22:22Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-12T05:29:27Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-12T05:29:29Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-12T05:29:25Z",
@@ -30,12 +30,23 @@
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-06T22:59:38Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-06T17:26:28Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-01T16:18:52Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-13T16:19:31Z"
+  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-14T09:01:31Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"c":"kernel","d":"2026-11-14T14:17:17Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r154-6eca94e9b","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r154-6eca94e9b"},
+{"c":"zips","d":"2026-11-14T14:17:17Z","g":"jancar-settings","id":"zip:jancar-settings:5b93edb-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"5b93edb-main"},
+{"c":"carplay","d":"2026-11-14T12:27:20Z","id":"app:carplay:master:1560","k":"release","n":"1.4.2-master","u":"https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk","v":1560},
+{"c":"service","d":"2026-11-14T12:26:26Z","id":"app:service:main:214","k":"release","n":"b1112ee-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":214},
+{"a":"2026-11-14T12:22:24Z","b":["master"],"c":"carplay","d":"2026-11-14T12:22:24Z","k":"commit","m":"LibreHU: car identity shown in the settings; Android phones skipped for wireless CarPlay","s":"0c9fdd912fb4ef78e02a7d591a7569d15005ea84","u":"https://github.com/LibreHU/LibreHU-xcertplay-app/commit/0c9fdd912fb4ef78e02a7d591a7569d15005ea84"},
+{"a":"2026-11-14T12:22:22Z","b":["main"],"c":"service","d":"2026-11-14T12:22:22Z","k":"commit","m":"Fix three crashes and the CarPlay reopening on a second iPhone plug-in","s":"b1112ee742e29c0368f4ba2f4f434cd757ad4fd2","u":"https://github.com/LibreHU/LibreHU-service/commit/b1112ee742e29c0368f4ba2f4f434cd757ad4fd2"},
+{"a":"2026-11-14T09:52:16Z","b":["main"],"c":"zips","d":"2026-11-14T09:52:16Z","k":"commit","m":"viper4android-re-restore v2: leaves /sdcard/LibreHU/no-viper so the LineageOS LibreHU zip stops putting the driver back; viper4android-re deletes it","s":"9681118d0fcd9115719709f92c69d4431e449a31","u":"https://github.com/LibreHU/LibreHU-flashablesZips/commit/9681118d0fcd9115719709f92c69d4431e449a31"},
+{"a":"2026-11-14T09:14:50Z","b":["main"],"c":"service","d":"2026-11-14T09:14:50Z","k":"commit","m":"Network screen: IP settings of the wired interfaces (DHCP or static)","s":"5b93edbce626d1011de89f33bad755edf4ab3ec4","u":"https://github.com/LibreHU/LibreHU-service/commit/5b93edbce626d1011de89f33bad755edf4ab3ec4"},
+{"a":"2026-11-14T09:02:53Z","b":["main"],"c":"service","d":"2026-11-14T09:02:53Z","k":"commit","m":"USB network scan: misc-class RNDIS (0xef/4/1) seen as an Android phone","s":"b3924c7b8affc4a72d2f1d90e53be9a6aef4d91d","u":"https://github.com/LibreHU/LibreHU-service/commit/b3924c7b8affc4a72d2f1d90e53be9a6aef4d91d"},
+{"a":"2026-11-14T09:01:31Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-14T09:01:31Z","k":"commit","m":"usbnet: RNDIS in the misc class (0xef/0x04/0x01), USB tethering of recent Android phones","s":"6eca94e9bfdd8f8c5e3c939b36f4b817bd5caa24","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/6eca94e9bfdd8f8c5e3c939b36f4b817bd5caa24"},
+{"a":"2026-11-14T07:23:36Z","b":["main"],"c":"service","d":"2026-11-14T07:23:36Z","k":"commit","m":"Bluetooth auto-connect: a failed attempt keeps the attempt count","s":"d0debebb23d94d5c05725d9ac3307151c17a7639","u":"https://github.com/LibreHU/LibreHU-service/commit/d0debebb23d94d5c05725d9ac3307151c17a7639"},
 {"c":"zips","d":"2026-11-14T06:43:10Z","g":"jancar-settings","id":"zip:jancar-settings:fedbf2c-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"fedbf2c-main"},
 {"c":"service","d":"2026-11-14T06:37:54Z","id":"app:service:main:210","k":"release","n":"5f56494-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":210},
 {"a":"2026-11-14T06:32:48Z","b":["main"],"c":"service","d":"2026-11-14T06:32:48Z","k":"commit","m":"Log failed GPIO writes; no widget update before the first unlock","s":"5f5649483e05154bb48565d5ece946df693ec996","u":"https://github.com/LibreHU/LibreHU-service/commit/5f5649483e05154bb48565d5ece946df693ec996"},

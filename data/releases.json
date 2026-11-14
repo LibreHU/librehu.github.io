@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 210,
-     "versionName": "5f56494-main",
-     "date": "2026-11-14T06:37:54Z",
-     "size": 5667997,
-     "commit": "5f5649483e05154bb48565d5ece946df693ec996",
-     "summary": "Log failed GPIO writes; no widget update before the first unlock"
+     "versionCode": 214,
+     "versionName": "b1112ee-main",
+     "date": "2026-11-14T12:26:26Z",
+     "size": 5708097,
+     "commit": "b1112ee742e29c0368f4ba2f4f434cd757ad4fd2",
+     "summary": "Fix three crashes and the CarPlay reopening on a second iPhone plug-in"
     }
    ]
   },
@@ -410,12 +410,12 @@
      "branch": "master",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk",
-     "versionCode": 1559,
+     "versionCode": 1560,
      "versionName": "1.4.2-master",
-     "date": "2026-11-12T05:31:20Z",
-     "size": 6911764,
-     "commit": "4c9da71ed2b53d8f98e220b01b0f178cc795a357",
-     "summary": "18 more languages for the LibreHU strings: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
+     "date": "2026-11-14T12:27:20Z",
+     "size": 6914680,
+     "commit": "0c9fdd912fb4ef78e02a7d591a7569d15005ea84",
+     "summary": "LibreHU: car identity shown in the settings; Android phones skipped for wireless CarPlay"
     }
    ]
   },
@@ -597,18 +597,18 @@
     "order": 100,
     "restore": "viper4android-re-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re.zip",
-    "size": 613338
+    "size": 613416
    },
    {
     "id": "viper4android-re-restore",
     "name": "ViPER4Android RE : retrait du pilote",
     "category": "drivers",
     "subcategory": "audio",
-    "version": "1",
+    "version": "2",
     "order": 101,
     "hidden": true,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re-restore.zip",
-    "size": 3280
+    "size": 3497
    },
    {
     "id": "conn-modules-stable-4.9.337",
@@ -618,11 +618,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Modules seuls (noyau déjà flashé)",
-    "version": "r153-f8336f938",
+    "version": "r154-6eca94e9b",
     "order": 1327,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip",
-    "size": 2321047
+    "size": 2321044
    },
    {
     "id": "conn-modules-stable-restore",
@@ -710,11 +710,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Noyau + modules (avec menu de démarrage)",
-    "version": "r153-f8336f938",
+    "version": "r154-6eca94e9b",
     "order": 1326,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip",
-    "size": 11890188
+    "size": 11889925
    },
    {
     "id": "usb-net",
@@ -799,11 +799,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "fedbf2c-main",
+    "version": "5b93edb-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22714
+    "size": 22719
    },
    {
     "id": "jancar-settings-provider-restore",
@@ -1020,6 +1020,44 @@
   }
  ],
  "lineage": [
+  {
+   "tag": "lineage-16.0-20261114-1058-fc917b8",
+   "date": "2026-11-14T10:58:27Z",
+   "commit": "fc917b8da3ff81dca64f461bbedf18f762321c44",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261114-1058-fc917b8",
+   "assets": [
+    {
+     "name": "boot-librehu-bootmenu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261114-1058-fc917b8/boot-librehu-bootmenu.img",
+     "size": 10485760
+    },
+    {
+     "name": "boot-librehu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261114-1058-fc917b8/boot-librehu.img",
+     "size": 10485760
+    },
+    {
+     "name": "build.prop",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261114-1058-fc917b8/build.prop",
+     "size": 2832
+    },
+    {
+     "name": "LibreHU-LineageOS-16.0-ac8257_demo-20261114-fc917b8.zip",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261114-1058-fc917b8/LibreHU-LineageOS-16.0-ac8257_demo-20261114-fc917b8.zip",
+     "size": 720751513
+    },
+    {
+     "name": "SHA256SUMS",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261114-1058-fc917b8/SHA256SUMS",
+     "size": 455
+    },
+    {
+     "name": "system.img.zst",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261114-1058-fc917b8/system.img.zst",
+     "size": 635704916
+    }
+   ]
+  },
   {
    "tag": "lineage-16.0-20261113-1737-845e87b",
    "date": "2026-11-13T17:38:28Z",

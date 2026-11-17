@@ -27,7 +27,7 @@
   "LibreHU/LibreHU-xcertplay-app@master": "2026-10-28T09:26:02Z",
   "LibreHU/MCU-tools-app@main": "2026-11-14T01:51:41Z",
   "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
-  "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-06T22:59:38Z",
+  "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-17T12:00:59Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-06T17:26:28Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-01T16:18:52Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-14T09:01:31Z"
@@ -36,6 +36,10 @@
   "events"
  ],
  "entries": [
+{"c":"twrp","d":"2026-11-17T11:33:19Z","id":"twrp:twrp-build-15","k":"release","stable":false,"u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-15","v":"b15"},
+{"a":"2026-11-17T11:12:08Z","b":["twrp"],"c":"twrp","d":"2026-11-17T11:12:08Z","k":"commit","m":"CI: rebuild the build.prop zips and replace their assets in twrp-build-4","s":"5942e5c63a94fd0f10e1644cddae0ad841d78ff2","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/5942e5c63a94fd0f10e1644cddae0ad841d78ff2"},
+{"a":"2026-11-17T11:03:39Z","b":["twrp"],"c":"twrp","d":"2026-11-17T11:03:39Z","k":"commit","m":"TWRP patch 6: restore / Install Image of a raw image of another size than the partition","s":"03610d850bec5d15eea8e4eadfc648f70257a132","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/03610d850bec5d15eea8e4eadfc648f70257a132"},
+{"a":"2026-11-17T10:55:45Z","b":["twrp"],"c":"twrp","d":"2026-11-17T10:55:45Z","k":"commit","m":"build.prop fix / restore zips: English TWRP messages","s":"48c2a43e26b81d8d5fb7accaa76c5debff83cc20","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/48c2a43e26b81d8d5fb7accaa76c5debff83cc20"},
 {"c":"ota","d":"2026-11-17T10:53:56Z","id":"app:ota:main:71","k":"release","n":"2024da0-main","u":"https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk","v":71},
 {"a":"2026-11-17T10:51:42Z","b":["main"],"c":"ota","d":"2026-11-17T10:51:42Z","k":"commit","m":"TWRP zips made by LibreHU Apps print English messages","s":"2024da023515753d09a6af41a2aedb30e87cb817","u":"https://github.com/LibreHU/LibreHU-OTA-app/commit/2024da023515753d09a6af41a2aedb30e87cb817"},
 {"a":"2026-11-17T10:51:39Z","b":["main"],"c":"zips","d":"2026-11-17T10:51:39Z","k":"commit","m":"Zip messages in English (TWRP output, aborts, updater-script stub, created qb_list.xml comment)","s":"c977c5f3376fc683cfd7739fee192479f265fc59","u":"https://github.com/LibreHU/LibreHU-flashablesZips/commit/c977c5f3376fc683cfd7739fee192479f265fc59"},

@@ -759,10 +759,10 @@
     "group": "twrp",
     "group_name": "TWRP UJC201",
     "variant": "Bêta (touches au volant)",
-    "version": "b14",
+    "version": "b15",
     "order": 101,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip",
-    "size": 29671437
+    "size": 29673176
    },
    {
     "id": "gapps-remove",
@@ -919,6 +919,15 @@
   ]
  },
  "twrp": [
+  {
+   "component": "twrp",
+   "tag": "twrp-build-15",
+   "version": "b15",
+   "stable": false,
+   "date": "2026-11-17T11:33:19Z",
+   "commit": "03610d850bec5d15eea8e4eadfc648f70257a132",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-15"
+  },
   {
    "component": "twrp",
    "tag": "twrp-build-14",

@@ -433,12 +433,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-OTA-app/releases/download/latest-main/LibreHU-OTA-main.apk",
-     "versionCode": 70,
-     "versionName": "08f724a-main",
-     "date": "2026-11-12T09:59:51Z",
+     "versionCode": 71,
+     "versionName": "2024da0-main",
+     "date": "2026-11-17T10:53:56Z",
      "size": 4481376,
-     "commit": "08f724aee2ae794f79834b877d62459dcce5e6c8",
-     "summary": "18 more languages: es, it, pt-PT, pt-BR, nl, cs, ro, ru, uk, tr, ko, zh-CN, zh-TW, vi, th, hi, id, ka"
+     "commit": "2024da023515753d09a6af41a2aedb30e87cb817",
+     "summary": "TWRP zips made by LibreHU Apps print English messages"
     }
    ]
   },
@@ -597,7 +597,7 @@
     "order": 100,
     "restore": "viper4android-re-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re.zip",
-    "size": 613416
+    "size": 613418
    },
    {
     "id": "viper4android-re-restore",
@@ -608,7 +608,7 @@
     "order": 101,
     "hidden": true,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/viper4android-re-restore.zip",
-    "size": 3497
+    "size": 3510
    },
    {
     "id": "conn-modules-stable-4.9.337",
@@ -622,7 +622,7 @@
     "order": 1327,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip",
-    "size": 2321044
+    "size": 2321087
    },
    {
     "id": "conn-modules-stable-restore",
@@ -635,7 +635,7 @@
     "version": "2",
     "order": 300,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-restore.zip",
-    "size": 3813
+    "size": 3824
    },
    {
     "id": "conn-modules-stock-4.9.117",
@@ -648,7 +648,7 @@
     "version": "4.9.117-stock",
     "order": 301,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stock-4.9.117.zip",
-    "size": 1462859
+    "size": 1462922
    },
    {
     "id": "kernel-connectivity",
@@ -661,7 +661,7 @@
     "version": "r106-652a80d00",
     "order": 110,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-connectivity.zip",
-    "size": 10059278
+    "size": 10059263
    },
    {
     "id": "kernel-connectivity-bootmenu",
@@ -674,7 +674,7 @@
     "version": "r106-652a80d00",
     "order": 111,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-connectivity-bootmenu.zip",
-    "size": 10124340
+    "size": 10124324
    },
    {
     "id": "kernel-librehu",
@@ -687,7 +687,7 @@
     "version": "r105-aab700159",
     "order": 100,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-librehu.zip",
-    "size": 9913041
+    "size": 9913026
    },
    {
     "id": "kernel-librehu-bootmenu",
@@ -700,7 +700,7 @@
     "version": "r105-aab700159",
     "order": 101,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-librehu-bootmenu.zip",
-    "size": 9962089
+    "size": 9962072
    },
    {
     "id": "kernel-stable-4.9.337",
@@ -714,7 +714,7 @@
     "order": 1326,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip",
-    "size": 11889925
+    "size": 11889953
    },
    {
     "id": "usb-net",
@@ -725,7 +725,7 @@
     "order": 400,
     "restore": "usb-net-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net.zip",
-    "size": 196437
+    "size": 196451
    },
    {
     "id": "usb-net-restore",
@@ -736,7 +736,7 @@
     "order": 401,
     "hidden": true,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-net-restore.zip",
-    "size": 3180
+    "size": 3174
    },
    {
     "id": "twrp-ujc201",
@@ -749,7 +749,7 @@
     "version": "v14",
     "order": 100,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201.zip",
-    "size": 29671425
+    "size": 29671421
    },
    {
     "id": "twrp-ujc201-beta",
@@ -762,7 +762,7 @@
     "version": "b14",
     "order": 101,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip",
-    "size": 29671447
+    "size": 29671437
    },
    {
     "id": "gapps-remove",
@@ -776,7 +776,7 @@
     "order": 300,
     "restore": "gapps-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/gapps-remove.zip",
-    "size": 6636
+    "size": 6658
    },
    {
     "id": "gapps-restore",
@@ -789,7 +789,7 @@
     "version": "1",
     "order": 301,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/gapps-restore.zip",
-    "size": 3818
+    "size": 3816
    },
    {
     "id": "jancar-settings-provider",
@@ -803,7 +803,7 @@
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22720
+    "size": 22737
    },
    {
     "id": "jancar-settings-provider-restore",
@@ -816,7 +816,7 @@
     "version": "1",
     "order": 501,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider-restore.zip",
-    "size": 3229
+    "size": 3233
    },
    {
     "id": "no-deep-buffer",
@@ -827,7 +827,7 @@
     "order": 100,
     "restore": "no-deep-buffer-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/no-deep-buffer.zip",
-    "size": 3780
+    "size": 3782
    },
    {
     "id": "no-deep-buffer-restore",
@@ -838,7 +838,7 @@
     "order": 101,
     "hidden": true,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/no-deep-buffer-restore.zip",
-    "size": 3113
+    "size": 3111
    },
    {
     "id": "qb-whitelist",
@@ -852,7 +852,7 @@
     "order": 400,
     "restore": "qb-whitelist-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/qb-whitelist.zip",
-    "size": 4573
+    "size": 4594
    },
    {
     "id": "qb-whitelist-restore",
@@ -865,7 +865,7 @@
     "version": "1",
     "order": 401,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/qb-whitelist-restore.zip",
-    "size": 3297
+    "size": 3281
    },
    {
     "id": "supersu-remove",
@@ -879,7 +879,7 @@
     "order": 200,
     "restore": "supersu-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-remove.zip",
-    "size": 5132
+    "size": 5191
    },
    {
     "id": "supersu-restore",
@@ -892,7 +892,7 @@
     "version": "1",
     "order": 201,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/supersu-restore.zip",
-    "size": 3811
+    "size": 3813
    },
    {
     "id": "usb-tethering",
@@ -903,7 +903,7 @@
     "order": 600,
     "restore": "usb-tethering-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-tethering.zip",
-    "size": 7945
+    "size": 7938
    },
    {
     "id": "usb-tethering-restore",
@@ -914,7 +914,7 @@
     "order": 601,
     "hidden": true,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/usb-tethering-restore.zip",
-    "size": 3160
+    "size": 3144
    }
   ]
  },

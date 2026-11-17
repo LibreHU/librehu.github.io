@@ -236,6 +236,23 @@ pre code { background: none; padding: 0; font-size: inherit; }
 .community.support svg { color: #1A171B; background: #F6C915; border-radius: 10px; }
 .btn.liberapay { background: #F6C915; border-color: #F6C915; color: #1A171B; }
 .community .badge { display: block; margin-top: 8px; height: 20px; width: auto; }
+.community p.thanks-link { margin-top: 8px; }
+/* Thanks page: contributor cards, as a user profile */
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.person { display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 16px; align-items: center; }
+.person .avatar { margin: 0; width: 96px; height: 96px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent); background: var(--accent-soft); }
+.person .avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.person .who h3 { margin: 0; font-size: 20px; }
+.person .handle { margin: 2px 0 6px; font-weight: 600; color: var(--accent); }
+.person .tags { margin: 0; font-size: 14px; color: var(--text-dim); }
+.person .done { grid-column: 1 / -1; margin: 16px 0 0; padding-left: 20px; }
+.person .done li { margin: 6px 0; }
+.person .credit { grid-column: 1 / -1; margin: 10px 0 0; font-size: 12px; text-align: right; }
+@media (max-width: 400px) {
+  .people { grid-template-columns: minmax(0, 1fr); }
+  .person { grid-template-columns: 72px minmax(0, 1fr); }
+  .person .avatar { width: 72px; height: 72px; }
+}
 /* Small screens: tighter hero and tables */
 @media (max-width: 600px) {
   .hero { padding: 36px 0 24px; }

@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-17T10:51:39Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-12T08:56:09Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-02T11:21:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-17T22:01:17Z",
+  "LibreHU/LibreHU-service@main": "2026-11-17T22:55:15Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-12T05:29:27Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-12T05:29:29Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-12T05:29:25Z",
@@ -30,12 +30,14 @@
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-17T12:00:59Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-17T22:35:50Z"
+  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-17T22:54:53Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"c":"kernel","d":"2026-11-17T22:59:11Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r204-a21603b61","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r204-a21603b61"},
+{"c":"zips","d":"2026-11-17T22:59:11Z","g":"jancar-settings","id":"zip:jancar-settings:89757b3-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"89757b3-main"},
 {"a":"2026-11-16T07:27:54Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-17T22:35:50Z","k":"commit","m":"wlan gen4m: initialize prAdapter in halWpdmaWriteCmd (4.19 ff9ddef97)","s":"a21603b612730c94727777472da048b3d4ef9ebd","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/a21603b612730c94727777472da048b3d4ef9ebd"},
 {"a":"2026-11-17T22:35:30Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-17T22:35:30Z","k":"commit","m":"wlan gen4m: stable MAC from the serial number (4.19 a0a111e1d)","s":"cfb042b55798d0e8450005d51fbbc0075e5f897e","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/cfb042b55798d0e8450005d51fbbc0075e5f897e"},
 {"a":"2026-11-17T22:12:13Z","b":["stable-4.9.337"],"c":"kernel","d":"2026-11-17T22:12:13Z","k":"commit","m":"kernelsu: su log fixes of the 4.19 kernel (1a4061b40)","s":"3324daaca9608cb54e2b3edd305ef424f1d6c0df","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/3324daaca9608cb54e2b3edd305ef424f1d6c0df"},

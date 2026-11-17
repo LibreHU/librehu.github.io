@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 214,
-     "versionName": "b1112ee-main",
-     "date": "2026-11-14T12:26:26Z",
-     "size": 5708097,
-     "commit": "b1112ee742e29c0368f4ba2f4f434cd757ad4fd2",
-     "summary": "Fix three crashes and the CarPlay reopening on a second iPhone plug-in"
+     "versionCode": 216,
+     "versionName": "89757b3-main",
+     "date": "2026-11-17T22:06:50Z",
+     "size": 5708101,
+     "commit": "89757b3f2458924fe9a6d2f6b78b372a38174b4d",
+     "summary": "Wait for root at start-up: touch buttons and ARM2 handover after a first boot"
     }
    ]
   },
@@ -1029,6 +1029,44 @@
   }
  ],
  "lineage": [
+  {
+   "tag": "lineage-16.0-20261117-2236-7466460",
+   "date": "2026-11-17T22:36:56Z",
+   "commit": "7466460df42e573ec969df2a80e077bb30a3c3f7",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261117-2236-7466460",
+   "assets": [
+    {
+     "name": "boot-librehu-bootmenu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/boot-librehu-bootmenu.img",
+     "size": 10485760
+    },
+    {
+     "name": "boot-librehu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/boot-librehu.img",
+     "size": 10485760
+    },
+    {
+     "name": "build.prop",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/build.prop",
+     "size": 2908
+    },
+    {
+     "name": "LibreHU-LineageOS-16.0-ac8257_demo-20261117-7466460.zip",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/LibreHU-LineageOS-16.0-ac8257_demo-20261117-7466460.zip",
+     "size": 721150909
+    },
+    {
+     "name": "SHA256SUMS",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/SHA256SUMS",
+     "size": 455
+    },
+    {
+     "name": "system.img.zst",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/system.img.zst",
+     "size": 635730516
+    }
+   ]
+  },
   {
    "tag": "lineage-16.0-20261115-0130-3e6c62f",
    "date": "2026-11-15T01:31:20Z",

@@ -27,18 +27,25 @@
   "LibreHU/LibreHU-xcertplay-app@master": "2026-11-15T00:50:31Z",
   "LibreHU/MCU-tools-app@main": "2026-11-14T01:51:41Z",
   "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-18T12:49:34Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-18T12:49:37Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-18T14:00:14Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-18T14:00:17Z",
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-17T12:00:59Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@experimental-4.19.325": "2026-11-18T12:35:20Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-18T11:49:32Z"
+  "LibreHU/android_kernel_autochips_ac8257_4.9@experimental-4.19.325": "2026-11-18T13:38:50Z",
+  "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-18T14:05:57Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"c":"kernel","d":"2026-11-18T14:16:37Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r210-8be59bd81","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r210-8be59bd81"},
+{"a":"2026-11-18T14:00:17Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-18T14:00:17Z","k":"commit","m":"Bluetooth: OPP on (file transfer)","s":"9167d506a25727a08236840c3bc39581ca09be76","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/9167d506a25727a08236840c3bc39581ca09be76"},
+{"a":"2026-11-18T14:00:14Z","b":["lineage-16.0"],"c":"lineage","d":"2026-11-18T14:00:14Z","k":"commit","m":"Bluetooth: OPP on (file transfer)","s":"a24a929cfeaa658e4d9b18c3b2b6fef9c1a56ee8","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/a24a929cfeaa658e4d9b18c3b2b6fef9c1a56ee8"},
+{"a":"2026-11-18T13:57:28Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-18T13:57:28Z","k":"commit","m":"Bluetooth: HID host on (remotes, keyboards, gamepads)","s":"0ef0961d8cdfa0075a856d157c871b166ca1c321","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/0ef0961d8cdfa0075a856d157c871b166ca1c321"},
+{"a":"2026-11-18T13:57:24Z","b":["lineage-16.0"],"c":"lineage","d":"2026-11-18T13:57:24Z","k":"commit","m":"Bluetooth: HID host on (remotes, keyboards, gamepads)","s":"8d5573f7c92fad74a7a7bd441e077b325469de7b","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/8d5573f7c92fad74a7a7bd441e077b325469de7b"},
+{"c":"lineage","d":"2026-11-18T13:53:30Z","id":"rom:lineage-16.0-20261118-1352-212fa90","k":"release","n":"LineageOS 16.0","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261118-1352-212fa90","v":"212fa90"},
+{"a":"2026-11-18T13:38:50Z","b":["experimental-4.19.325","stable-4.9.337"],"c":"kernel","d":"2026-11-18T13:38:50Z","k":"commit","m":"lcm, touch: keep the panel supply while the touch stays awake on blank (front panel power key)","s":"6c38581252a20bbd6fd857ab41fac94e1300cd17","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/6c38581252a20bbd6fd857ab41fac94e1300cd17"},
 {"a":"2026-11-18T12:49:37Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-18T12:49:37Z","k":"commit","m":"vold patch: give APFS volumes their container UUID (SystemUI crash)","s":"068a60c43e66be113168af06af9ed4293563bcb6","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/068a60c43e66be113168af06af9ed4293563bcb6"},
 {"a":"2026-11-18T12:49:34Z","b":["lineage-16.0"],"c":"lineage","d":"2026-11-18T12:49:34Z","k":"commit","m":"vold patch: give APFS volumes their container UUID (SystemUI crash)","s":"212fa90a345d4fc56238166fe4c338fd69719e37","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/212fa90a345d4fc56238166fe4c338fd69719e37"},
 {"a":"2026-11-18T12:35:20Z","b":["experimental-4.19.325"],"c":"kernel","d":"2026-11-18T12:35:20Z","k":"commit","m":"devfreq: helio-dvfsrc: run without devfreq when 4.19 refuses it (panic at every suspend)","s":"0f9aa2f466c02262ebcf9ef2710a803b75285b68","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/0f9aa2f466c02262ebcf9ef2710a803b75285b68"},

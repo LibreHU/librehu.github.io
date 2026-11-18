@@ -330,6 +330,9 @@ def changelog(rel: dict, log: dict, conf: dict) -> str:
             if e["c"] == "twrp":
                 what = both("stable, in LibreHU Apps", "stable, dans LibreHU Apps") if e.get("stable") else both("beta build", "build bêta")
                 text = f'<strong>{v}</strong> {what}'
+            elif e["c"] == "lineage":
+                text = (f'<strong>{esc(e.get("n", ""))} ({v})</strong> '
+                        f'{both("build published", "build publiée")}')
             elif e.get("g"):
                 g = conf["zip_groups"].get(e["g"])
                 n = both(esc(g["en"]), esc(g["fr"])) if g else esc(e.get("n", ""))

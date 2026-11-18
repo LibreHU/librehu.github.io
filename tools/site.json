@@ -142,6 +142,7 @@
       "repo": "LibreHU/android_kernel_autochips_ac8257_4.9",
       "branches": [
         "stable-4.9.337",
+        "experimental-4.19.325",
         "LibreHU-main",
         "connectivity-builtin"
       ],
@@ -160,6 +161,22 @@
       ],
       "since": "2026-09-01T00:00:00Z",
       "releases": "twrp-build-"
+    },
+    {
+      "id": "lineage",
+      "en": "LineageOS",
+      "fr": "LineageOS",
+      "_": "ROM branches of the device repository (their own history, apart from the twrp branch); each build published (lineage-<version>-<date>-<commit>) is an entry too",
+      "repo": "LibreHU/android_device_alps_ac8257_demo",
+      "branches": [
+        "lineage-16.0",
+        "lineage-17.1"
+      ],
+      "since": "2026-11-01T00:00:00Z",
+      "roms": [
+        "lineage-16.0-2",
+        "lineage-17.1-2"
+      ]
     },
     {
       "id": "zips",

@@ -313,6 +313,10 @@ def events(state: dict, entries: dict, releases: dict):
         # First run: only noted (the index does not say when each zip was published).
         entries[eid] = {"k": "release", "id": eid, "c": component, "d": now, "v": z.get("version", ""), "g": group,
                         "n": z.get("group_name") or z.get("name", ""), "u": z.get("url", ""), "quiet": first}
+    for r in releases.get("roms", []):
+        eid = f"rom:{r['tag']}"
+        entries[eid] = {"k": "release", "id": eid, "c": r["component"], "d": r["date"], "v": r["commit"],
+                        "n": r["name"], "u": r["url"]}
     for t in releases["twrp"]:
         eid = f"twrp:{t['tag']}"
         entries[eid] = {"k": "release", "id": eid, "c": t["component"], "d": t["date"], "v": t["version"],
@@ -346,9 +350,39 @@ def lineage_builds() -> list:
     return sorted(out, key=lambda b: b["date"], reverse=True)[:10]
 
 
+def rom_builds() -> list:
+    """ROM builds (lineage-<version>-<date>-<commit>) of the system components with "roms" prefixes, for the
+    changelog: one entry each, the OTA feeds (lineage-<version>-ota) left out."""
+    out = []
+    for s in SITE["system"]:
+        prefixes = tuple(s.get("roms", []))
+        if not prefixes:
+            continue
+        for page in range(1, 4):
+            text = get(f"{API}/repos/{s['repo']}/releases?per_page=100&page={page}", api=True)
+            items = json.loads(text) if text else []
+            for r in items:
+                tag = r.get("tag_name", "")
+                if r.get("draft") or not tag.startswith(prefixes):
+                    continue
+                # lineage-16.0-20261118-0931-84e8373 -> LineageOS 16.0, 84e8373
+                parts = tag.split("-")
+                out.append({
+                    "component": s["id"],
+                    "tag": tag,
+                    "name": f"{s['en']} {parts[1]}" if len(parts) > 1 else s["en"],
+                    "commit": parts[-1],
+                    "date": r.get("published_at") or r.get("created_at") or "",
+                    "url": r.get("html_url", ""),
+                })
+            if len(items) < 100:
+                break
+    return sorted(out, key=lambda b: b["date"], reverse=True)
+
+
 def main() -> None:
     DATA.mkdir(exist_ok=True)
-    releases = {"apps": apps(), "zips": zips(), "twrp": twrp_builds(), "lineage": lineage_builds()}
+    releases = {"apps": apps(), "zips": zips(), "twrp": twrp_builds(), "lineage": lineage_builds(), "roms": rom_builds()}
     path = DATA / "changelog.json"
     old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     state = {"cursors": old.get("cursors", {}), "seeded": old.get("seeded", [])}

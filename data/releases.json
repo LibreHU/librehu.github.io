@@ -521,6 +521,12 @@
       "id": "extra",
       "name": "Extra drivers",
       "name_fr": "Pilotes supplémentaires"
+     },
+     {
+      "id": "partition",
+      "name": "Boot partition",
+      "name_fr": "Partition boot",
+      "description_fr": "Taille de la partition boot (10 ou 32 Mio)."
      }
     ]
    },
@@ -534,6 +540,11 @@
       "id": "audio",
       "name": "Audio",
       "name_fr": "Audio"
+     },
+     {
+      "id": "wifi",
+      "name": "Wi-Fi",
+      "name_fr": "Wi-Fi"
      }
     ]
    },
@@ -611,6 +622,33 @@
     "size": 3510
    },
    {
+    "id": "boot32",
+    "name": "Partition boot agrandie à 32 Mio (Android 10 et plus)",
+    "category": "kernel",
+    "subcategory": "partition",
+    "group": "boot32",
+    "group_name": "Partition boot 32 Mio",
+    "variant": "Agrandir à 32 Mio",
+    "version": "20261119-2664859d",
+    "order": 300,
+    "restore": "boot32-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32.zip",
+    "size": 15873
+   },
+   {
+    "id": "boot32-restore",
+    "name": "Partition boot remise à 10 Mio",
+    "category": "kernel",
+    "subcategory": "partition",
+    "group": "boot32",
+    "group_name": "Partition boot 32 Mio",
+    "variant": "Revenir à 10 Mio",
+    "version": "20261119-03022478",
+    "order": 301,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32-restore.zip",
+    "size": 15836
+   },
+   {
     "id": "conn-modules-stable-4.9.337",
     "name": "Modules Wi-Fi / BT / GPS / FM du noyau linux-stable 4.9.337 (seuls)",
     "category": "kernel",
@@ -618,11 +656,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Modules seuls (noyau déjà flashé)",
-    "version": "r214-af9a16bab",
+    "version": "r220-41b92f6dd",
     "order": 1327,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip",
-    "size": 2322221
+    "size": 2322233
    },
    {
     "id": "conn-modules-stable-restore",
@@ -710,11 +748,11 @@
     "group": "linux-stable-4.9.337",
     "group_name": "Noyau linux-stable 4.9.337",
     "variant": "Noyau + modules (avec menu de démarrage)",
-    "version": "r214-af9a16bab",
+    "version": "r220-41b92f6dd",
     "order": 1326,
     "restore": "conn-modules-stable-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/kernel-stable-4.9.337.zip",
-    "size": 12084455
+    "size": 12099433
    },
    {
     "id": "usb-net",
@@ -746,10 +784,10 @@
     "group": "twrp",
     "group_name": "TWRP UJC201",
     "variant": "Dernière version stable",
-    "version": "v14",
+    "version": "v17",
     "order": 100,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201.zip",
-    "size": 29671421
+    "size": 29700477
    },
    {
     "id": "twrp-ujc201-beta",
@@ -759,10 +797,10 @@
     "group": "twrp",
     "group_name": "TWRP UJC201",
     "variant": "Bêta (touches au volant)",
-    "version": "b15",
+    "version": "b17",
     "order": 101,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip",
-    "size": 29673176
+    "size": 29700493
    },
    {
     "id": "gapps-remove",
@@ -919,6 +957,15 @@
   ]
  },
  "twrp": [
+  {
+   "component": "twrp",
+   "tag": "twrp-build-17",
+   "version": "v17",
+   "stable": true,
+   "date": "2026-11-19T07:45:08Z",
+   "commit": "e07a42ef53cd56aa39ecdbc086cfdee0c7071563",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-17"
+  },
   {
    "component": "twrp",
    "tag": "twrp-build-15",
@@ -1411,6 +1458,14 @@
   }
  ],
  "roms": [
+  {
+   "component": "lineage",
+   "tag": "lineage-17.1-20261119-1129-c81fa57",
+   "name": "LineageOS 17.1",
+   "commit": "c81fa57",
+   "date": "2026-11-19T11:30:50Z",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261119-1129-c81fa57"
+  },
   {
    "component": "lineage",
    "tag": "lineage-17.1-20261119-0023-693f93f",

@@ -27,8 +27,8 @@
   "LibreHU/LibreHU-xcertplay-app@master": "2026-11-15T00:50:31Z",
   "LibreHU/MCU-tools-app@main": "2026-11-14T01:51:41Z",
   "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-19T12:29:10Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-19T15:35:19Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-20T04:36:56Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-20T04:36:57Z",
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-19T07:04:16Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
@@ -39,6 +39,10 @@
   "events"
  ],
  "entries": [
+{"a":"2026-11-20T04:36:57Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-20T04:36:57Z","k":"commit","m":"ci: ccache 4 GiB (16.0) + 5 GiB (17.1), under the 10 GB Actions cache of the repository","s":"ae64541a07cee23039efe693fb1b3c7b80739f1f","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/ae64541a07cee23039efe693fb1b3c7b80739f1f"},
+{"a":"2026-11-20T04:36:56Z","b":["lineage-16.0"],"c":"lineage","d":"2026-11-20T04:36:56Z","k":"commit","m":"ci: ccache 4 GiB (16.0) + 5 GiB (17.1), under the 10 GB Actions cache of the repository","s":"3d182c700fe4f4d39933dd458f64f9dbd078d294","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/3d182c700fe4f4d39933dd458f64f9dbd078d294"},
+{"a":"2026-11-20T04:36:26Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-20T04:36:26Z","k":"commit","m":"ci: time budget, clean stop, faster and smaller builds [build]","s":"2d4292effc5f3cd3f38c3e8c2a4cc3be5b571af0","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/2d4292effc5f3cd3f38c3e8c2a4cc3be5b571af0"},
+{"a":"2026-11-20T04:36:22Z","b":["lineage-16.0"],"c":"lineage","d":"2026-11-20T04:36:22Z","k":"commit","m":"ci: time budget, clean stop, faster and smaller builds","s":"881f98545747c774b07a13843b82bb94fd24ffc3","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/881f98545747c774b07a13843b82bb94fd24ffc3"},
 {"a":"2026-11-19T15:35:19Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-19T15:35:19Z","k":"commit","m":"ci: WPA3 supplicant build removed","s":"e67890e84b1df5eaf051207503508d07b3bc6802","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/e67890e84b1df5eaf051207503508d07b3bc6802"},
 {"a":"2026-11-19T13:35:54Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-19T13:35:54Z","k":"commit","m":"Wi-Fi: include wifi/lib_driver_cmd_mt66xx in the build [build]","s":"d7c670286248fd7c006340db493d97f3474b2194","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/d7c670286248fd7c006340db493d97f3474b2194"},
 {"c":"kernel","d":"2026-11-19T13:29:15Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r220-41b92f6dd","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r220-41b92f6dd"},

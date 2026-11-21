@@ -28,7 +28,7 @@
   "LibreHU/MCU-tools-app@main": "2026-11-14T01:51:41Z",
   "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
   "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-20T19:44:46Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-21T01:19:42Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-21T11:06:35Z",
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-20T19:31:09Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
@@ -39,6 +39,9 @@
   "events"
  ],
  "entries": [
+{"a":"2026-11-21T11:06:35Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-21T11:06:35Z","k":"commit","m":"ci: WPA3 package ships the HAL 1.2 library stripped","s":"8027ca67947dbd7e9bab363f86c920978ec9a40c","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/8027ca67947dbd7e9bab363f86c920978ec9a40c"},
+{"a":"2026-11-21T11:02:57Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-21T11:02:57Z","k":"commit","m":"Wi-Fi: MediaTek private library built with CFI, as wpa_supplicant","s":"704a97e39b46c4d707f490b44bcc89a89c83bdbf","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/704a97e39b46c4d707f490b44bcc89a89c83bdbf"},
+{"c":"lineage","d":"2026-11-21T03:20:57Z","id":"rom:lineage-17.1-20261121-0145-4716bf9","k":"release","n":"LineageOS 17.1","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261121-0145-4716bf9","v":"4716bf9"},
 {"c":"zips","d":"2026-11-21T02:29:57Z","g":"wifi-wpa3","id":"zip:wifi-wpa3:20261121-b2150536","k":"release","n":"WPA3 (LineageOS 17.1)","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/wifi-wpa3.zip","v":"20261121-b2150536"},
 {"c":"zips","d":"2026-11-21T02:29:57Z","g":"wifi-wpa3","id":"zip:wifi-wpa3:20261121-9ba7782d","k":"release","n":"WPA3 (LineageOS 17.1)","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/wifi-wpa3-restore.zip","v":"20261121-9ba7782d"},
 {"a":"2026-11-21T01:19:42Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-21T01:19:42Z","k":"commit","m":"ci: WPA3 job builds the supplicant only (no hostapd in the Pie tree)","s":"4716bf955ee8615650faf81ba45ddfc173f31d2a","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/4716bf955ee8615650faf81ba45ddfc173f31d2a"},

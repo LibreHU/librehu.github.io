@@ -622,6 +622,33 @@
     "size": 3510
    },
    {
+    "id": "wifi-wpa3",
+    "name": "WPA3 pour LineageOS 17.1 (wpa_supplicant HAL 1.2)",
+    "category": "drivers",
+    "subcategory": "wifi",
+    "group": "wifi-wpa3",
+    "group_name": "WPA3 (LineageOS 17.1)",
+    "variant": "Installer",
+    "version": "20261121-b2150536",
+    "order": 400,
+    "restore": "wifi-wpa3-restore",
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/wifi-wpa3.zip",
+    "size": 4540199
+   },
+   {
+    "id": "wifi-wpa3-restore",
+    "name": "WPA3 retiré : wpa_supplicant d'origine",
+    "category": "drivers",
+    "subcategory": "wifi",
+    "group": "wifi-wpa3",
+    "group_name": "WPA3 (LineageOS 17.1)",
+    "variant": "Revenir au supplicant d'origine",
+    "version": "20261121-9ba7782d",
+    "order": 401,
+    "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/wifi-wpa3-restore.zip",
+    "size": 3337
+   },
+   {
     "id": "boot32",
     "name": "Partition boot agrandie à 32 Mio (Android 10 et plus)",
     "category": "kernel",

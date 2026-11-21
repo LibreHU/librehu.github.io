@@ -28,7 +28,7 @@
   "LibreHU/MCU-tools-app@main": "2026-11-14T01:51:41Z",
   "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
   "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-20T19:44:46Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-20T20:58:43Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-21T01:19:42Z",
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-20T19:31:09Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
@@ -39,6 +39,10 @@
   "events"
  ],
  "entries": [
+{"c":"zips","d":"2026-11-21T02:29:57Z","g":"wifi-wpa3","id":"zip:wifi-wpa3:20261121-b2150536","k":"release","n":"WPA3 (LineageOS 17.1)","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/wifi-wpa3.zip","v":"20261121-b2150536"},
+{"c":"zips","d":"2026-11-21T02:29:57Z","g":"wifi-wpa3","id":"zip:wifi-wpa3:20261121-9ba7782d","k":"release","n":"WPA3 (LineageOS 17.1)","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/wifi-wpa3-restore.zip","v":"20261121-9ba7782d"},
+{"a":"2026-11-21T01:19:42Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-21T01:19:42Z","k":"commit","m":"ci: WPA3 job builds the supplicant only (no hostapd in the Pie tree)","s":"4716bf955ee8615650faf81ba45ddfc173f31d2a","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/4716bf955ee8615650faf81ba45ddfc173f31d2a"},
+{"a":"2026-11-21T00:06:51Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-21T00:06:51Z","k":"commit","m":"ci: WPA3 supplicant built in the LineageOS 16.0 tree (VNDK 28)","s":"f49a8cbe0213e1e0a589582d1ae49267b57cc563","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/f49a8cbe0213e1e0a589582d1ae49267b57cc563"},
 {"c":"helper","d":"2026-11-20T21:07:18Z","id":"app:helper:main:21","k":"release","n":"ee9396c-main","u":"https://github.com/LibreHU/LibreHU-helper-app/releases/download/latest-main/LibreHU-Helper-main.apk","v":21},
 {"a":"2026-11-20T21:04:00Z","b":["main"],"c":"helper","d":"2026-11-20T21:04:00Z","k":"commit","m":"Report: readable device tree text (kernel/device-tree.txt)","s":"ee9396c315111fa712e7913a9b24f907a754c246","u":"https://github.com/LibreHU/LibreHU-helper-app/commit/ee9396c315111fa712e7913a9b24f907a754c246"},
 {"a":"2026-11-20T20:58:43Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-20T20:58:43Z","k":"commit","m":"Wi-Fi: WPA3 supplicant (HAL 1.2) back, for every Android 10+ ROM","s":"68f737ba380c326b3c29a30f055c8584798fbb8b","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/68f737ba380c326b3c29a30f055c8584798fbb8b"},

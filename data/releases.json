@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 222,
-     "versionName": "bb9d334-main",
-     "date": "2026-11-21T16:33:06Z",
-     "size": 5720273,
-     "commit": "bb9d33409812d9e69ec9f4a0cc6994bacbc81e02",
-     "summary": "Video: camera apps card names the USB camera and Jancar's role of each id"
+     "versionCode": 223,
+     "versionName": "58dd6a4-main",
+     "date": "2026-11-23T13:50:31Z",
+     "size": 5738861,
+     "commit": "58dd6a4e18672b2ff882e91c20481b72b8ad341c",
+     "summary": "Audio: board profiles from the kernel's board id, Android input gain setting"
     }
    ]
   },

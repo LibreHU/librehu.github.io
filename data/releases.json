@@ -387,12 +387,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk",
-     "versionCode": 2984,
+     "versionCode": 2985,
      "versionName": "4.1.0-beta1-main",
-     "date": "2026-11-23T23:31:16Z",
-     "size": 21750403,
-     "commit": "5c8ace735019fe1e0454758a0061c0ca1d14db48",
-     "summary": "LibreHU: phone notifications setting, summary under 80 characters"
+     "date": "2026-11-24T11:06:22Z",
+     "size": 21750416,
+     "commit": "9851ddb0b108719f20c78691c5891549f0c0d344",
+     "summary": "LibreHU: background location, for the Native AA Wi-Fi Direct group started at boot on Android 10"
     }
    ]
   },
@@ -410,12 +410,12 @@
      "branch": "master",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk",
-     "versionCode": 1564,
+     "versionCode": 1565,
      "versionName": "1.4.2-master",
-     "date": "2026-11-23T23:14:01Z",
-     "size": 6914724,
-     "commit": "4f39d793789851d489a3fb2dc8cbf492192c2ade",
-     "summary": "LibreHU: iPhone calls told to LibreHU-service for the front LED blink"
+     "date": "2026-11-24T11:05:41Z",
+     "size": 6914760,
+     "commit": "f61ddf83092cc3952488f0fb26a6be19b4e2f39a",
+     "summary": "LibreHU: background location, for the wireless CarPlay Wi-Fi group made without a screen on Android 10"
     }
    ]
   },
@@ -1507,6 +1507,14 @@
   }
  ],
  "roms": [
+  {
+   "component": "lineage",
+   "tag": "lineage-17.1-20261124-0057-009223b",
+   "name": "LineageOS 17.1",
+   "commit": "009223b",
+   "date": "2026-11-24T02:28:39Z",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261124-0057-009223b"
+  },
   {
    "component": "lineage",
    "tag": "lineage-16.0-20261124-0055-a5e9b22",

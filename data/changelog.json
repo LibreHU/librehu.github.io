@@ -27,8 +27,8 @@
   "LibreHU/LibreHU-xcertplay-app@master": "2026-11-15T00:50:31Z",
   "LibreHU/MCU-tools-app@main": "2026-11-14T01:51:41Z",
   "LibreHU/android_device_alps_ac8257_demo@ccr-eca2d7b0-vz26un": "2026-11-06T22:42:20Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-24T00:42:23Z",
-  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-24T00:42:36Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-16.0": "2026-11-24T11:04:58Z",
+  "LibreHU/android_device_alps_ac8257_demo@lineage-17.1": "2026-11-24T11:04:51Z",
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-20T19:31:09Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
@@ -39,6 +39,12 @@
   "events"
  ],
  "entries": [
+{"c":"headunit","d":"2026-11-24T11:06:22Z","id":"app:headunit:main:2985","k":"release","n":"4.1.0-beta1-main","u":"https://github.com/LibreHU/LibreHU-open-headunit-app/releases/download/latest-main/OpenHeadunit-LibreHU-main.apk","v":2985},
+{"c":"carplay","d":"2026-11-24T11:05:41Z","id":"app:carplay:master:1565","k":"release","n":"1.4.2-master","u":"https://github.com/LibreHU/LibreHU-xcertplay-app/releases/download/latest-master/CarPlay-LibreHU-master.apk","v":1565},
+{"a":"2026-11-24T11:04:51Z","b":["lineage-16.0","lineage-17.1"],"c":"lineage","d":"2026-11-24T11:04:51Z","k":"commit","m":"All permissions for the LibreHU apps by default, without any prompt","s":"bdd6fec59d57476a74bd6a999201982ede33b366","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/bdd6fec59d57476a74bd6a999201982ede33b366"},
+{"a":"2026-11-24T11:01:59Z","b":["master"],"c":"carplay","d":"2026-11-24T11:01:59Z","k":"commit","m":"LibreHU: background location, for the wireless CarPlay Wi-Fi group made without a screen on Android 10","s":"f61ddf83092cc3952488f0fb26a6be19b4e2f39a","u":"https://github.com/LibreHU/LibreHU-xcertplay-app/commit/f61ddf83092cc3952488f0fb26a6be19b4e2f39a"},
+{"a":"2026-11-24T11:01:54Z","b":["main"],"c":"headunit","d":"2026-11-24T11:01:54Z","k":"commit","m":"LibreHU: background location, for the Native AA Wi-Fi Direct group started at boot on Android 10","s":"9851ddb0b108719f20c78691c5891549f0c0d344","u":"https://github.com/LibreHU/LibreHU-open-headunit-app/commit/9851ddb0b108719f20c78691c5891549f0c0d344"},
+{"c":"lineage","d":"2026-11-24T02:28:39Z","id":"rom:lineage-17.1-20261124-0057-009223b","k":"release","n":"LineageOS 17.1","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261124-0057-009223b","v":"009223b"},
 {"c":"kernel","d":"2026-11-24T02:20:56Z","g":"linux-stable-4.9.337","id":"zip:linux-stable-4.9.337:r233-fab4d7d5c","k":"release","n":"Noyau linux-stable 4.9.337","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/conn-modules-stable-4.9.337.zip","v":"r233-fab4d7d5c"},
 {"c":"zips","d":"2026-11-24T02:20:56Z","g":"jancar-settings","id":"zip:jancar-settings:12df19b-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"12df19b-main"},
 {"c":"zips","d":"2026-11-24T02:20:56Z","g":"ecnr-webrtc","id":"zip:ecnr-webrtc:1.0-r3-4007023","k":"release","n":"Annulation d'écho et réduction de bruit WebRTC (appels)","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/ecnr-webrtc.zip","v":"1.0-r3-4007023"},

@@ -142,7 +142,7 @@
       "repo": "LibreHU/android_kernel_autochips_ac8257_4.9",
       "branches": [
         "stable-4.9.337",
-        "experimental-4.19.325",
+        "rc-4.19.325",
         "LibreHU-main",
         "connectivity-builtin"
       ],

@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 235,
-     "versionName": "2700d79-main",
-     "date": "2026-11-24T21:01:31Z",
-     "size": 5798373,
-     "commit": "2700d79ad5cf49f38e56bd3f72120e2cbde4c501",
-     "summary": "Bluetooth calls: Autochips call audio keys, as the stock Bluetooth app sends them"
+     "versionCode": 238,
+     "versionName": "d994af3-main",
+     "date": "2026-11-24T22:59:51Z",
+     "size": 5799449,
+     "commit": "d994af3e10d2dc049095707e891240fa4432b7cc",
+     "summary": "Phone app: pages of the service all covered (CI check), missing settings added"
     }
    ]
   },

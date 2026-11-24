@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-23T22:00:38Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-20T21:04:00Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-08T21:06:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-24T22:25:52Z",
+  "LibreHU/LibreHU-service@main": "2026-11-24T22:53:25Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-12T05:29:27Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-12T05:29:29Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-12T05:29:25Z",
@@ -32,13 +32,16 @@
   "LibreHU/android_device_alps_ac8257_demo@twrp": "2026-11-20T19:31:09Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@LibreHU-main": "2026-11-17T17:01:49Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@connectivity-builtin": "2026-11-17T17:01:54Z",
-  "LibreHU/android_kernel_autochips_ac8257_4.9@experimental-4.19.325": "2026-11-24T21:04:03Z",
+  "LibreHU/android_kernel_autochips_ac8257_4.9@experimental-4.19.325": "2026-11-24T22:27:47Z",
   "LibreHU/android_kernel_autochips_ac8257_4.9@stable-4.9.337": "2026-11-23T22:10:25Z"
  },
  "seeded": [
   "events"
  ],
  "entries": [
+{"c":"service","d":"2026-11-24T22:59:51Z","id":"app:service:main:238","k":"release","n":"d994af3-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":238},
+{"a":"2026-11-24T22:53:25Z","b":["main"],"c":"service","d":"2026-11-24T22:53:25Z","k":"commit","m":"Phone app: pages of the service all covered (CI check), missing settings added","s":"d994af3e10d2dc049095707e891240fa4432b7cc","u":"https://github.com/LibreHU/LibreHU-service/commit/d994af3e10d2dc049095707e891240fa4432b7cc"},
+{"a":"2026-11-24T22:27:47Z","b":["experimental-4.19.325"],"c":"kernel","d":"2026-11-24T22:27:47Z","k":"commit","m":"mm: LK's ZMC region as ordinary memory, as on 4.9 (no ZONE_MOVABLE)","s":"87235082d261612f3cc64c71020dff1ba06cfb17","u":"https://github.com/LibreHU/android_kernel_autochips_ac8257_4.9/commit/87235082d261612f3cc64c71020dff1ba06cfb17"},
 {"c":"zips","d":"2026-11-24T22:26:48Z","g":"jancar-settings","id":"zip:jancar-settings:2700d79-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"2700d79-main"},
 {"a":"2026-11-24T22:25:52Z","b":["main"],"c":"service","d":"2026-11-24T22:25:52Z","k":"commit","m":"CAN wheel keys: follow-ups to the repeat patch (engine 2.9.0)","s":"04306bb47c6bd71731b1cb65662b42e725889d6e","u":"https://github.com/LibreHU/LibreHU-service/commit/04306bb47c6bd71731b1cb65662b42e725889d6e"},
 {"a":"2026-11-24T21:19:31Z","b":["main"],"c":"service","d":"2026-11-24T22:20:08Z","k":"commit","m":"CAN: per-code wheel key repeat (Raise), \"Learn a button\" in the CAN tab","s":"63571665b3030ff841f920d599c6ef057d120c3e","u":"https://github.com/LibreHU/LibreHU-service/commit/63571665b3030ff841f920d599c6ef057d120c3e"},

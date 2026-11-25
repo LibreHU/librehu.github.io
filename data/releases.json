@@ -678,7 +678,7 @@
     "group": "boot32",
     "group_name": "Partition boot 32 Mio",
     "variant": "Agrandir à 32 Mio",
-    "version": "20261124-c9cd0fde",
+    "version": "20261125-15e64c16",
     "order": 300,
     "restore": "boot32-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32.zip",
@@ -692,7 +692,7 @@
     "group": "boot32",
     "group_name": "Partition boot 32 Mio",
     "variant": "Revenir à 10 Mio",
-    "version": "20261124-8959b687",
+    "version": "20261125-6491c384",
     "order": 301,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32-restore.zip",
     "size": 15829
@@ -1509,19 +1509,19 @@
  "roms": [
   {
    "component": "lineage",
+   "tag": "lineage-17.1-20261125-0841-d15b580",
+   "name": "LineageOS 17.1",
+   "commit": "d15b580",
+   "date": "2026-11-25T09:46:42Z",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261125-0841-d15b580"
+  },
+  {
+   "component": "lineage",
    "tag": "lineage-16.0-20261124-2348-25cc210",
    "name": "LineageOS 16.0",
    "commit": "25cc210",
    "date": "2026-11-25T01:46:17Z",
    "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261124-2348-25cc210"
-  },
-  {
-   "component": "lineage",
-   "tag": "lineage-17.1-20261124-2349-390e669",
-   "name": "LineageOS 17.1",
-   "commit": "390e669",
-   "date": "2026-11-25T01:22:50Z",
-   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261124-2349-390e669"
   },
   {
    "component": "lineage",

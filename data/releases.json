@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 238,
-     "versionName": "d994af3-main",
-     "date": "2026-11-24T22:59:51Z",
-     "size": 5799449,
-     "commit": "d994af3e10d2dc049095707e891240fa4432b7cc",
-     "summary": "Phone app: pages of the service all covered (CI check), missing settings added"
+     "versionCode": 240,
+     "versionName": "b9d3335-main",
+     "date": "2026-11-25T22:38:05Z",
+     "size": 5799453,
+     "commit": "b9d3335c274f698138c0fc9828e9ae573d5e226c",
+     "summary": "gitignore: hidlstub/build, like the other modules' build outputs"
     }
    ]
   },
@@ -678,11 +678,11 @@
     "group": "boot32",
     "group_name": "Partition boot 32 Mio",
     "variant": "Agrandir à 32 Mio",
-    "version": "20261125-15e64c16",
+    "version": "20261125-3649bf0e",
     "order": 300,
     "restore": "boot32-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32.zip",
-    "size": 15864
+    "size": 15865
    },
    {
     "id": "boot32-restore",
@@ -692,10 +692,10 @@
     "group": "boot32",
     "group_name": "Partition boot 32 Mio",
     "variant": "Revenir à 10 Mio",
-    "version": "20261125-6491c384",
+    "version": "20261125-37727ae9",
     "order": 301,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32-restore.zip",
-    "size": 15829
+    "size": 15828
    },
    {
     "id": "conn-modules-stable-4.9.337",
@@ -886,11 +886,11 @@
     "group": "jancar-settings",
     "group_name": "Réglages Jancar remplacés",
     "variant": "Installer le fournisseur LibreHU",
-    "version": "d994af3-main",
+    "version": "b9d3335-main",
     "order": 500,
     "restore": "jancar-settings-provider-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip",
-    "size": 22730
+    "size": 22735
    },
    {
     "id": "jancar-settings-provider-restore",

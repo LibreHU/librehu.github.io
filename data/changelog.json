@@ -40,6 +40,9 @@
   "events"
  ],
  "entries": [
+{"c":"kernel","d":"2026-11-26T20:16:00Z","g":"boot32","id":"zip:boot32:20261126-f984738a","k":"release","n":"Partition boot 32 Mio","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32-restore.zip","v":"20261126-f984738a"},
+{"c":"kernel","d":"2026-11-26T20:16:00Z","g":"boot32","id":"zip:boot32:20261126-c73393d9","k":"release","n":"Partition boot 32 Mio","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32.zip","v":"20261126-c73393d9"},
+{"c":"twrp","d":"2026-11-26T11:53:16Z","id":"twrp:twrp-build-18","k":"release","stable":false,"u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-18","v":"b18"},
 {"c":"lineage","d":"2026-11-26T11:09:06Z","id":"rom:lineage-17.1-20261126-0935-d283ea8","k":"release","n":"LineageOS 17.1","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261126-0935-d283ea8","v":"d283ea8"},
 {"c":"zips","d":"2026-11-26T11:04:35Z","g":"jancar-settings","id":"zip:jancar-settings:8830205-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"8830205-main"},
 {"c":"lineage","d":"2026-11-26T10:51:33Z","id":"rom:lineage-16.0-20261126-0900-78b20ae","k":"release","n":"LineageOS 16.0","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261126-0900-78b20ae","v":"78b20ae"},

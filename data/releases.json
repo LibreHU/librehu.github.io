@@ -678,11 +678,11 @@
     "group": "boot32",
     "group_name": "Partition boot 32 Mio",
     "variant": "Agrandir à 32 Mio",
-    "version": "20261125-3649bf0e",
+    "version": "20261126-c73393d9",
     "order": 300,
     "restore": "boot32-restore",
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32.zip",
-    "size": 15865
+    "size": 16411
    },
    {
     "id": "boot32-restore",
@@ -692,10 +692,10 @@
     "group": "boot32",
     "group_name": "Partition boot 32 Mio",
     "variant": "Revenir à 10 Mio",
-    "version": "20261125-37727ae9",
+    "version": "20261126-f984738a",
     "order": 301,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32-restore.zip",
-    "size": 15828
+    "size": 16392
    },
    {
     "id": "conn-modules-stable-4.9.337",
@@ -846,10 +846,10 @@
     "group": "twrp",
     "group_name": "TWRP UJC201",
     "variant": "Bêta (touches au volant)",
-    "version": "b17",
+    "version": "b18",
     "order": 101,
     "url": "https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/twrp-ujc201-beta.zip",
-    "size": 29700493
+    "size": 29701658
    },
    {
     "id": "gapps-remove",
@@ -1006,6 +1006,15 @@
   ]
  },
  "twrp": [
+  {
+   "component": "twrp",
+   "tag": "twrp-build-18",
+   "version": "b18",
+   "stable": false,
+   "date": "2026-11-26T11:53:16Z",
+   "commit": "b3c0afa70b4c191c2cb8ccb18028f1e3df49c043",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/twrp-build-18"
+  },
   {
    "component": "twrp",
    "tag": "twrp-build-17",

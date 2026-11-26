@@ -1509,6 +1509,14 @@
  "roms": [
   {
    "component": "lineage",
+   "tag": "lineage-17.1-20261126-0935-d283ea8",
+   "name": "LineageOS 17.1",
+   "commit": "d283ea8",
+   "date": "2026-11-26T11:09:06Z",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261126-0935-d283ea8"
+  },
+  {
+   "component": "lineage",
    "tag": "lineage-16.0-20261126-0900-78b20ae",
    "name": "LineageOS 16.0",
    "commit": "78b20ae",

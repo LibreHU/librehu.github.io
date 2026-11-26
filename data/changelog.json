@@ -40,6 +40,7 @@
   "events"
  ],
  "entries": [
+{"c":"lineage","d":"2026-11-26T11:09:06Z","id":"rom:lineage-17.1-20261126-0935-d283ea8","k":"release","n":"LineageOS 17.1","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261126-0935-d283ea8","v":"d283ea8"},
 {"c":"zips","d":"2026-11-26T11:04:35Z","g":"jancar-settings","id":"zip:jancar-settings:8830205-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"8830205-main"},
 {"c":"lineage","d":"2026-11-26T10:51:33Z","id":"rom:lineage-16.0-20261126-0900-78b20ae","k":"release","n":"LineageOS 16.0","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261126-0900-78b20ae","v":"78b20ae"},
 {"a":"2026-11-26T09:05:13Z","b":["lineage-17.1"],"c":"lineage","d":"2026-11-26T09:05:13Z","k":"commit","m":"ROM zip: Vulkan package installed, inert until a -vulkan kernel","s":"d283ea8d84f8c952031d21e03fc95bae553fd241","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/commit/d283ea8d84f8c952031d21e03fc95bae553fd241"},

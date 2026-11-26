@@ -14,12 +14,12 @@
      "branch": "main",
      "label": null,
      "url": "https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk",
-     "versionCode": 240,
-     "versionName": "b9d3335-main",
-     "date": "2026-11-25T22:38:05Z",
+     "versionCode": 241,
+     "versionName": "8830205-main",
+     "date": "2026-11-26T06:10:11Z",
      "size": 5799453,
-     "commit": "b9d3335c274f698138c0fc9828e9ae573d5e226c",
-     "summary": "gitignore: hidlstub/build, like the other modules' build outputs"
+     "commit": "8830205455086ac6308a7e2282a759a4716a0b10",
+     "summary": "Front LEDs: notification blink starts with \"off\" at night"
     }
    ]
   },
@@ -1126,6 +1126,44 @@
  ],
  "lineage": [
   {
+   "tag": "lineage-16.0-20261126-0633-85c902a",
+   "date": "2026-11-26T08:03:35Z",
+   "commit": "85c902a635a98fa6323785b2b2e76a2c7d4056a1",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261126-0633-85c902a",
+   "assets": [
+    {
+     "name": "boot-librehu-bootmenu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261126-0633-85c902a/boot-librehu-bootmenu.img",
+     "size": 10485760
+    },
+    {
+     "name": "boot-librehu.img",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261126-0633-85c902a/boot-librehu.img",
+     "size": 10485760
+    },
+    {
+     "name": "build.prop",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261126-0633-85c902a/build.prop",
+     "size": 3610
+    },
+    {
+     "name": "LibreHU-LineageOS-16.0-ac8257_demo-20261126-85c902a.zip",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261126-0633-85c902a/LibreHU-LineageOS-16.0-ac8257_demo-20261126-85c902a.zip",
+     "size": 722327286
+    },
+    {
+     "name": "SHA256SUMS",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261126-0633-85c902a/SHA256SUMS",
+     "size": 455
+    },
+    {
+     "name": "system.img.zst",
+     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261126-0633-85c902a/system.img.zst",
+     "size": 635871348
+    }
+   ]
+  },
+  {
    "tag": "lineage-16.0-20261124-2348-25cc210",
    "date": "2026-11-25T01:46:17Z",
    "commit": "25cc210deace497666ed9863b990a6d0d7ec8c70",
@@ -1466,47 +1504,25 @@
      "size": 635671306
     }
    ]
-  },
-  {
-   "tag": "lineage-16.0-20261117-2236-7466460",
-   "date": "2026-11-17T22:36:56Z",
-   "commit": "7466460df42e573ec969df2a80e077bb30a3c3f7",
-   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261117-2236-7466460",
-   "assets": [
-    {
-     "name": "boot-librehu-bootmenu.img",
-     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/boot-librehu-bootmenu.img",
-     "size": 10485760
-    },
-    {
-     "name": "boot-librehu.img",
-     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/boot-librehu.img",
-     "size": 10485760
-    },
-    {
-     "name": "build.prop",
-     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/build.prop",
-     "size": 2908
-    },
-    {
-     "name": "LibreHU-LineageOS-16.0-ac8257_demo-20261117-7466460.zip",
-     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/LibreHU-LineageOS-16.0-ac8257_demo-20261117-7466460.zip",
-     "size": 721150909
-    },
-    {
-     "name": "SHA256SUMS",
-     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/SHA256SUMS",
-     "size": 455
-    },
-    {
-     "name": "system.img.zst",
-     "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/download/lineage-16.0-20261117-2236-7466460/system.img.zst",
-     "size": 635730516
-    }
-   ]
   }
  ],
  "roms": [
+  {
+   "component": "lineage",
+   "tag": "lineage-17.1-20261126-0630-1a4e3c0",
+   "name": "LineageOS 17.1",
+   "commit": "1a4e3c0",
+   "date": "2026-11-26T08:06:29Z",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261126-0630-1a4e3c0"
+  },
+  {
+   "component": "lineage",
+   "tag": "lineage-16.0-20261126-0633-85c902a",
+   "name": "LineageOS 16.0",
+   "commit": "85c902a",
+   "date": "2026-11-26T08:03:35Z",
+   "url": "https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261126-0633-85c902a"
+  },
   {
    "component": "lineage",
    "tag": "lineage-17.1-20261125-0841-d15b580",

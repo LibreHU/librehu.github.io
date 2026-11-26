@@ -20,7 +20,7 @@
   "LibreHU/LibreHU-flashablesZips@main": "2026-11-24T23:35:11Z",
   "LibreHU/LibreHU-helper-app@main": "2026-11-20T21:04:00Z",
   "LibreHU/LibreHU-open-headunit-app@main": "2026-11-08T21:06:15Z",
-  "LibreHU/LibreHU-service@main": "2026-11-25T22:31:27Z",
+  "LibreHU/LibreHU-service@main": "2026-11-26T06:03:55Z",
   "LibreHU/LibreHU-widget-app@ivi": "2026-11-12T05:29:27Z",
   "LibreHU/LibreHU-widget-app@librehu-service": "2026-11-12T05:29:29Z",
   "LibreHU/LibreHU-widget-app@main": "2026-11-12T05:29:25Z",
@@ -40,6 +40,10 @@
   "events"
  ],
  "entries": [
+{"c":"lineage","d":"2026-11-26T08:06:29Z","id":"rom:lineage-17.1-20261126-0630-1a4e3c0","k":"release","n":"LineageOS 17.1","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-17.1-20261126-0630-1a4e3c0","v":"1a4e3c0"},
+{"c":"lineage","d":"2026-11-26T08:03:35Z","id":"rom:lineage-16.0-20261126-0633-85c902a","k":"release","n":"LineageOS 16.0","u":"https://github.com/LibreHU/android_device_alps_ac8257_demo/releases/tag/lineage-16.0-20261126-0633-85c902a","v":"85c902a"},
+{"c":"service","d":"2026-11-26T06:10:11Z","id":"app:service:main:241","k":"release","n":"8830205-main","u":"https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/LibreHU-service-main.apk","v":241},
+{"a":"2026-11-26T06:03:55Z","b":["main"],"c":"service","d":"2026-11-26T06:03:55Z","k":"commit","m":"Front LEDs: notification blink starts with \"off\" at night","s":"8830205455086ac6308a7e2282a759a4716a0b10","u":"https://github.com/LibreHU/LibreHU-service/commit/8830205455086ac6308a7e2282a759a4716a0b10"},
 {"c":"zips","d":"2026-11-26T01:50:41Z","g":"jancar-settings","id":"zip:jancar-settings:b9d3335-main","k":"release","n":"Réglages Jancar remplacés","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/jancar-settings-provider.zip","v":"b9d3335-main"},
 {"c":"kernel","d":"2026-11-26T01:50:41Z","g":"boot32","id":"zip:boot32:20261125-37727ae9","k":"release","n":"Partition boot 32 Mio","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32-restore.zip","v":"20261125-37727ae9"},
 {"c":"kernel","d":"2026-11-26T01:50:41Z","g":"boot32","id":"zip:boot32:20261125-3649bf0e","k":"release","n":"Partition boot 32 Mio","quiet":false,"u":"https://github.com/LibreHU/LibreHU-flashablesZips/releases/download/zips/boot32.zip","v":"20261125-3649bf0e"},
